@@ -23,7 +23,11 @@ Universelle, self-hosted und offline-fähige Operations Control Plane, die Sourc
 
 ## Letztes Work Package
 
-`CO-WP-001 – NDF Project Bootstrap – Core Governance Skeleton` (docs-only). Nach Bearbeitung im **Nova Review**.
+`CO-WP-001A – Complete NDF v1.0.0 Skills Bootstrap` (docs-only). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-001 – GO WITH NOTES`.
+
+## Lokaler NDF-Skills-Bestand
+
+Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (38 Skills, 39 Dateien, byte-identisch, Commit `9dcadc1`). Skills werden **pro Work Package selektiv** verwendet, nicht automatisch vollständig aktiviert. Provenance/Lock: `project-system/NDF_SKILLS_PROVENANCE.md`, `project-system/ndf-skills-lock.json`.
 
 ## Nächstes Work Package
 
@@ -60,9 +64,12 @@ Universelle, self-hosted und offline-fähige Operations Control Plane, die Sourc
 - [project-system/PROJECT_PROFILE.md](../project-system/PROJECT_PROFILE.md)
 - [project-system/WORK_PACKAGE_QUEUE.md](../project-system/WORK_PACKAGE_QUEUE.md)
 - [project-system/NEXT_PHASE.md](../project-system/NEXT_PHASE.md)
+- [project-system/NDF_SKILLS_PROVENANCE.md](../project-system/NDF_SKILLS_PROVENANCE.md)
+- [project-system/ndf-skills-lock.json](../project-system/ndf-skills-lock.json)
 - [project-brain/PROJECT_BRAIN.md](PROJECT_BRAIN.md)
 - [ROADMAP.md](../ROADMAP.md)
 
 ## Kompakte Historie
 
-- `CO-WP-001` (docs-only): Core Governance Skeleton erstellt (7 Dateien). Kein Code, keine ADR, keine Technologieauswahl. Umsetzung abgeschlossen; Nova Review ausstehend.
+- `CO-WP-001` (docs-only): Core Governance Skeleton erstellt (7 Dateien). Kein Code, keine ADR, keine Technologieauswahl. Nova-Bewertung: `GO WITH NOTES` (read-only-Git-Note).
+- `CO-WP-001A` (docs-only): Vollständiger NDF-v1.0.0-Skills-Pack lokal bereitgestellt (38 Skills, 39 Dateien, byte-identisch, Commit `9dcadc1`), Provenance + Lock erstellt, Statusdokumente fortgeschrieben. Kein Code, keine ADR, kein Git Write. Nova Review ausstehend.

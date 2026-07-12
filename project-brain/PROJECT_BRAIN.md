@@ -56,11 +56,21 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 
 ## Lessons Learned
 
-- Noch keine (Bootstrap). Skills-first ergab: keine lokal verifizierten NDF-v1.0.0-Skills im Projektverzeichnis vorhanden.
+- `CO-WP-001` erhielt von Nova `GO WITH NOTES`. Ursache der Note: eine nicht ausdrücklich dokumentierte read-only-Git-Abweichung (`git status --porcelain` unter einem pauschalen Git-Verbot). Konsequenz: Künftige Work Packages unterscheiden ausdrücklich zwischen **Git Read** (erlaubt) und **Git Write** (verboten ohne Human-Maintainer-Freigabe).
+- `CO-WP-001A`: Der vollständige NDF-v1.0.0-Skills-Pack wurde lokal bereitgestellt (byte-identisch, verifiziert). Skills-first für spätere Work Packages ist damit lokal möglich; Auswahl erfolgt selektiv pro Work Package.
+
+## Lokaler NDF-Skills-Bestand
+
+- Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` bereitgestellt.
+- Normative Quelle: Tag `v1.0.0`, Commit `9dcadc1` (`main` nicht verwendet).
+- 38 Skills, 39 Dateien, byte-identisch übernommen.
+- Provenance: [NDF_SKILLS_PROVENANCE.md](../project-system/NDF_SKILLS_PROVENANCE.md); Lock: [ndf-skills-lock.json](../project-system/ndf-skills-lock.json).
+- Keine Skill-Datei wurde ausgeführt oder verändert.
+- Keine automatische Vollaktivierung; Auswahl selektiv pro Work Package.
 
 ## Letztes Work Package
 
-`CO-WP-001 – NDF Project Bootstrap – Core Governance Skeleton` (docs-only). Umsetzung abgeschlossen, Nova Review ausstehend.
+`CO-WP-001A – Complete NDF v1.0.0 Skills Bootstrap` (docs-only). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-001 – GO WITH NOTES`.
 
 ## Nächstes Work Package
 
@@ -72,7 +82,8 @@ Freigabe, Staging, Commit, Push, Merge, Tags, Releases, produktive Deployments s
 
 ## Rückmeldung-an-Nova-Historie
 
-- `CO-WP-001`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
+- `CO-WP-001`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova-Bewertung: `GO WITH NOTES`.
+- `CO-WP-001A`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
 
 ---
 

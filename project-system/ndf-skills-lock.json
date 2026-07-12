@@ -1,0 +1,400 @@
+{
+  "schemaVersion": 1,
+  "framework": {
+    "name": "Nova Development Framework",
+    "tag": "v1.0.0",
+    "commit": "9dcadc1",
+    "repository": "https://github.com/KayKaspers/Nova-Development-Framework"
+  },
+  "sourcePath": ".claude/skills",
+  "importMode": "byte-identical",
+  "skills": [
+    {
+      "name": "ndf-accessibility-reviewer",
+      "relativePath": ".claude/skills/ndf-accessibility-reviewer",
+      "fileCount": 1
+    },
+    {
+      "name": "ndf-adr-governance-review",
+      "relativePath": ".claude/skills/ndf-adr-governance-review",
+      "fileCount": 1
+    },
+    {
+      "name": "ndf-architecture-blueprint-runner",
+      "relativePath": ".claude/skills/ndf-architecture-blueprint-runner",
+      "fileCount": 1
+    },
+    {
+      "name": "ndf-behavioral-adoption-reviewer",
+      "relativePath": ".claude/skills/ndf-behavioral-adoption-reviewer",
+      "fileCount": 1
+    },
+    {
+      "name": "ndf-branding-kit-runner",
+      "relativePath": ".claude/skills/ndf-branding-kit-runner",
+      "fileCount": 1
+    },
+    {
+      "name": "ndf-changelog-writer",
+      "relativePath": ".claude/skills/ndf-changelog-writer",
+      "fileCount": 1
+    },
+    {
+      "name": "ndf-compact-context-summary-runner",
+      "relativePath": ".claude/skills/ndf-compact-context-summary-runner",
+      "fileCount": 1
+    },
+    {
+      "name": "ndf-content-tone-reviewer",
+      "relativePath": ".claude/skills/ndf-content-tone-reviewer",
+      "fileCount": 1
+    },
+    {
+      "name": "ndf-context-pack-maintainer",
+      "relativePath": ".claude/skills/ndf-context-pack-maintainer",
+      "fileCount": 1
+    },
+    {
+      "name": "ndf-creative-direction-runner",
+      "relativePath": ".claude/skills/ndf-creative-direction-runner",
+      "fileCount": 1
+    },
+    {
+      "name": "ndf-debugging-root-cause-reviewer",
+      "relativePath": ".claude/skills/ndf-debugging-root-cause-reviewer",
+      "fileCount": 1
+    },
+    {
+      "name": "ndf-docs-polish-runner",
+      "relativePath": ".claude/skills/ndf-docs-polish-runner",
+      "fileCount": 1
+    },
+    {
+      "name": "ndf-ethical-growth-reviewer",
+      "relativePath": ".claude/skills/ndf-ethical-growth-reviewer",
+      "fileCount": 1
+    },
+    {
+      "name": "ndf-existing-project-analysis-runner",
+      "relativePath": ".claude/skills/ndf-existing-project-analysis-runner",
+      "fileCount": 1
+    },
+    {
+      "name": "ndf-feature-scope-runner",
+      "relativePath": ".claude/skills/ndf-feature-scope-runner",
+      "fileCount": 1
+    },
+    {
+      "name": "ndf-feedback-triage-runner",
+      "relativePath": ".claude/skills/ndf-feedback-triage-runner",
+      "fileCount": 1
+    },
+    {
+      "name": "ndf-implementation-review-runner",
+      "relativePath": ".claude/skills/ndf-implementation-review-runner",
+      "fileCount": 1
+    },
+    {
+      "name": "ndf-landing-page-concept-runner",
+      "relativePath": ".claude/skills/ndf-landing-page-concept-runner",
+      "fileCount": 1
+    },
+    {
+      "name": "ndf-naming-runner",
+      "relativePath": ".claude/skills/ndf-naming-runner",
+      "fileCount": 1
+    },
+    {
+      "name": "ndf-onboarding-friction-reviewer",
+      "relativePath": ".claude/skills/ndf-onboarding-friction-reviewer",
+      "fileCount": 1
+    },
+    {
+      "name": "ndf-privacy-data-minimization-reviewer",
+      "relativePath": ".claude/skills/ndf-privacy-data-minimization-reviewer",
+      "fileCount": 1
+    },
+    {
+      "name": "ndf-product-discovery-runner",
+      "relativePath": ".claude/skills/ndf-product-discovery-runner",
+      "fileCount": 1
+    },
+    {
+      "name": "ndf-project-adapter-quality-reviewer",
+      "relativePath": ".claude/skills/ndf-project-adapter-quality-reviewer",
+      "fileCount": 1
+    },
+    {
+      "name": "ndf-project-brief-runner",
+      "relativePath": ".claude/skills/ndf-project-brief-runner",
+      "fileCount": 1
+    },
+    {
+      "name": "ndf-public-neutrality-guard",
+      "relativePath": ".claude/skills/ndf-public-neutrality-guard",
+      "fileCount": 1
+    },
+    {
+      "name": "ndf-public-release-body-reviewer",
+      "relativePath": ".claude/skills/ndf-public-release-body-reviewer",
+      "fileCount": 1
+    },
+    {
+      "name": "ndf-readme-quality-reviewer",
+      "relativePath": ".claude/skills/ndf-readme-quality-reviewer",
+      "fileCount": 1
+    },
+    {
+      "name": "ndf-release-notes-runner",
+      "relativePath": ".claude/skills/ndf-release-notes-runner",
+      "fileCount": 1
+    },
+    {
+      "name": "ndf-release-safety",
+      "relativePath": ".claude/skills/ndf-release-safety",
+      "fileCount": 1
+    },
+    {
+      "name": "ndf-skill-quality-reviewer",
+      "relativePath": ".claude/skills/ndf-skill-quality-reviewer",
+      "fileCount": 1
+    },
+    {
+      "name": "ndf-skill-supply-chain-risk-reviewer",
+      "relativePath": ".claude/skills/ndf-skill-supply-chain-risk-reviewer",
+      "fileCount": 1
+    },
+    {
+      "name": "ndf-skill-trigger-quality-reviewer",
+      "relativePath": ".claude/skills/ndf-skill-trigger-quality-reviewer",
+      "fileCount": 1
+    },
+    {
+      "name": "ndf-test-strategy-runner",
+      "relativePath": ".claude/skills/ndf-test-strategy-runner",
+      "fileCount": 1
+    },
+    {
+      "name": "ndf-ui-style-system-runner",
+      "relativePath": ".claude/skills/ndf-ui-style-system-runner",
+      "fileCount": 1
+    },
+    {
+      "name": "ndf-ux-flow-reviewer",
+      "relativePath": ".claude/skills/ndf-ux-flow-reviewer",
+      "fileCount": 1
+    },
+    {
+      "name": "ndf-v1-readiness-review",
+      "relativePath": ".claude/skills/ndf-v1-readiness-review",
+      "fileCount": 1
+    },
+    {
+      "name": "ndf-validation-evidence-reviewer",
+      "relativePath": ".claude/skills/ndf-validation-evidence-reviewer",
+      "fileCount": 1
+    },
+    {
+      "name": "ndf-work-package-runner",
+      "relativePath": ".claude/skills/ndf-work-package-runner",
+      "fileCount": 1
+    }
+  ],
+  "files": [
+    {
+      "relativePath": ".claude/skills/README.md",
+      "sizeBytes": 9917,
+      "sha256": "7d686d341a1db2581b53d5ba5c6192d38032a6130d7350995ac70937a4b04bf9"
+    },
+    {
+      "relativePath": ".claude/skills/ndf-accessibility-reviewer/SKILL.md",
+      "sizeBytes": 2412,
+      "sha256": "766571cea6903b49161e2d6911823a40537738713df4296ad3be482945ab130c"
+    },
+    {
+      "relativePath": ".claude/skills/ndf-adr-governance-review/SKILL.md",
+      "sizeBytes": 2653,
+      "sha256": "7afab46747b5370d9b0e72a30b4aa406c166a56ef41fb88934c73e142983a510"
+    },
+    {
+      "relativePath": ".claude/skills/ndf-architecture-blueprint-runner/SKILL.md",
+      "sizeBytes": 2226,
+      "sha256": "0ab2654b2f42fae8935938440b874e497edf6722bee22af9f96de378109dd446"
+    },
+    {
+      "relativePath": ".claude/skills/ndf-behavioral-adoption-reviewer/SKILL.md",
+      "sizeBytes": 2299,
+      "sha256": "2a09480365c3e4e7cc07d466e84e5efde9bdbe0a112addf7f316dd1fefcbb175"
+    },
+    {
+      "relativePath": ".claude/skills/ndf-branding-kit-runner/SKILL.md",
+      "sizeBytes": 1918,
+      "sha256": "890951b70af234a7ff659d3ae8c363b211ae07950349014f480c5fbc30c4436c"
+    },
+    {
+      "relativePath": ".claude/skills/ndf-changelog-writer/SKILL.md",
+      "sizeBytes": 2774,
+      "sha256": "77e9b316303edf5b69a27ed26eba991c0ae8c6c7ce15145d7eb0f18929dc3b56"
+    },
+    {
+      "relativePath": ".claude/skills/ndf-compact-context-summary-runner/SKILL.md",
+      "sizeBytes": 3157,
+      "sha256": "cc8ec4ff0dbe0dc1ea6952cd125ed64ecb58af8b800ae0ff9105c72a7c660a65"
+    },
+    {
+      "relativePath": ".claude/skills/ndf-content-tone-reviewer/SKILL.md",
+      "sizeBytes": 1934,
+      "sha256": "793db4f7c0dc25ec7ade49e457c4892181cd72a373b6757232d56bee740cf8ba"
+    },
+    {
+      "relativePath": ".claude/skills/ndf-context-pack-maintainer/SKILL.md",
+      "sizeBytes": 3080,
+      "sha256": "3241e1050c25a1b909c2df7b1d643d52c0de2ea95fe9257d885b740b17b22563"
+    },
+    {
+      "relativePath": ".claude/skills/ndf-creative-direction-runner/SKILL.md",
+      "sizeBytes": 1938,
+      "sha256": "e4c4acdcf9b69737bacdfaff7763a762e27368a71d8984494ce41dd4d9d4a6b7"
+    },
+    {
+      "relativePath": ".claude/skills/ndf-debugging-root-cause-reviewer/SKILL.md",
+      "sizeBytes": 2048,
+      "sha256": "f9cf7db8e9a3188683ed929f29db60e74c432118655cfc5e3fd82051a174d1f4"
+    },
+    {
+      "relativePath": ".claude/skills/ndf-docs-polish-runner/SKILL.md",
+      "sizeBytes": 2874,
+      "sha256": "65ce20d590151baa7d812926781be6fa5139614040e9bd68d2c82e329a3056fa"
+    },
+    {
+      "relativePath": ".claude/skills/ndf-ethical-growth-reviewer/SKILL.md",
+      "sizeBytes": 2352,
+      "sha256": "bbbb3b54ee1e53492fd663fac116a2be10086e0a6ab12da03de0b0400432f81a"
+    },
+    {
+      "relativePath": ".claude/skills/ndf-existing-project-analysis-runner/SKILL.md",
+      "sizeBytes": 3205,
+      "sha256": "f6b57e540724efd4b172ec42faaee054d3b6ff5c64249bd62419a4b1e594d26e"
+    },
+    {
+      "relativePath": ".claude/skills/ndf-feature-scope-runner/SKILL.md",
+      "sizeBytes": 1975,
+      "sha256": "03e251ee3ed09b9df863f44fc280c489aab83084c1820c61a27e5c41235d86db"
+    },
+    {
+      "relativePath": ".claude/skills/ndf-feedback-triage-runner/SKILL.md",
+      "sizeBytes": 2465,
+      "sha256": "48198ba908f5b3c09efd3c75439c2e5a9793cdb8d76cebdecf5cbd6e4292befa"
+    },
+    {
+      "relativePath": ".claude/skills/ndf-implementation-review-runner/SKILL.md",
+      "sizeBytes": 1962,
+      "sha256": "b02d09a1689b751c9734145c2ad304772bd118e8bf2219a42b3f95fcf04d7ab8"
+    },
+    {
+      "relativePath": ".claude/skills/ndf-landing-page-concept-runner/SKILL.md",
+      "sizeBytes": 2000,
+      "sha256": "cdac8b6bf268718ce93eb235d9832c04b86d3e52a92c033f7b117816cb2acf6d"
+    },
+    {
+      "relativePath": ".claude/skills/ndf-naming-runner/SKILL.md",
+      "sizeBytes": 1930,
+      "sha256": "84a22f62dd88761413beb886172cde462ec408c0752a16a4b141cafcd6a1d092"
+    },
+    {
+      "relativePath": ".claude/skills/ndf-onboarding-friction-reviewer/SKILL.md",
+      "sizeBytes": 2165,
+      "sha256": "284b48b54ae558c336f05effffcb864c7d366c1b395dd0f00bc681ac4b9281fa"
+    },
+    {
+      "relativePath": ".claude/skills/ndf-privacy-data-minimization-reviewer/SKILL.md",
+      "sizeBytes": 2437,
+      "sha256": "0e247e1e94d8b35e530222bcdfff6db6e4352d6a2acc7c666267228eb6ddf8a6"
+    },
+    {
+      "relativePath": ".claude/skills/ndf-product-discovery-runner/SKILL.md",
+      "sizeBytes": 2096,
+      "sha256": "73b0086b1453f19c1fe70421a508efc0dea8cfb92d5a936cb1f14722660fd20b"
+    },
+    {
+      "relativePath": ".claude/skills/ndf-project-adapter-quality-reviewer/SKILL.md",
+      "sizeBytes": 2543,
+      "sha256": "2371ac24cb497585298d5ded0f401cfea34ba4d02de8b3e21a1d8d55c87936b1"
+    },
+    {
+      "relativePath": ".claude/skills/ndf-project-brief-runner/SKILL.md",
+      "sizeBytes": 2122,
+      "sha256": "621e0f0982af7e9f6a9f669b257f27bf81624a2cfef66eff795b445d621de2a1"
+    },
+    {
+      "relativePath": ".claude/skills/ndf-public-neutrality-guard/SKILL.md",
+      "sizeBytes": 3060,
+      "sha256": "e76b80ce96767be6a7d0b5d787c1e50de5505e3394c4e0f2a07071727b75d0a6"
+    },
+    {
+      "relativePath": ".claude/skills/ndf-public-release-body-reviewer/SKILL.md",
+      "sizeBytes": 2459,
+      "sha256": "e1315839c7192c3f4ca0fc26aa54026bdd6ab787e7c44215d3078e94d682ee63"
+    },
+    {
+      "relativePath": ".claude/skills/ndf-readme-quality-reviewer/SKILL.md",
+      "sizeBytes": 2188,
+      "sha256": "40b5067be271ce045956a75e9c84edc8b56f38d35cb4d0da4286913c6fd0ecce"
+    },
+    {
+      "relativePath": ".claude/skills/ndf-release-notes-runner/SKILL.md",
+      "sizeBytes": 2433,
+      "sha256": "1204ef76a7923c0be4525f76f1ff8f9626de81a83efdbe560ddcfb10b27f2ab1"
+    },
+    {
+      "relativePath": ".claude/skills/ndf-release-safety/SKILL.md",
+      "sizeBytes": 2703,
+      "sha256": "4168e0e88ec3ccf40a7b926c3d81e79c6ac26993673f48acdeb5aad5b02a9fd1"
+    },
+    {
+      "relativePath": ".claude/skills/ndf-skill-quality-reviewer/SKILL.md",
+      "sizeBytes": 3206,
+      "sha256": "eaa8819266765c71cbe40ad852d96858feee7dc24480b61c5797128bc14927e0"
+    },
+    {
+      "relativePath": ".claude/skills/ndf-skill-supply-chain-risk-reviewer/SKILL.md",
+      "sizeBytes": 2580,
+      "sha256": "cdcf7fe8001f1c4455e87e3673326c5a9f7dd1f6922f5ebc257e1cbcbddc0826"
+    },
+    {
+      "relativePath": ".claude/skills/ndf-skill-trigger-quality-reviewer/SKILL.md",
+      "sizeBytes": 2484,
+      "sha256": "2843aba42405f8d249c94b14439a8e4a93080a59a927c04b3945991f34890294"
+    },
+    {
+      "relativePath": ".claude/skills/ndf-test-strategy-runner/SKILL.md",
+      "sizeBytes": 1957,
+      "sha256": "b201f92bd80fd053e145cae4f456946eb8f9020c9996615780c490171b6c5d0e"
+    },
+    {
+      "relativePath": ".claude/skills/ndf-ui-style-system-runner/SKILL.md",
+      "sizeBytes": 2001,
+      "sha256": "f258de5270a9924a2d66c9cb929e84ad27a0b03d875c9f91a386a3ef2681efcb"
+    },
+    {
+      "relativePath": ".claude/skills/ndf-ux-flow-reviewer/SKILL.md",
+      "sizeBytes": 2061,
+      "sha256": "4e6af955bd79ed56fd26c2296ecf430b43a6f617b3ee8d72a5256a438afdb82a"
+    },
+    {
+      "relativePath": ".claude/skills/ndf-v1-readiness-review/SKILL.md",
+      "sizeBytes": 2551,
+      "sha256": "3e0107c4f3f5158792919dbba5d32b8dc862e45ac2bdd85a14552a7ee56ff71a"
+    },
+    {
+      "relativePath": ".claude/skills/ndf-validation-evidence-reviewer/SKILL.md",
+      "sizeBytes": 2665,
+      "sha256": "42db28185873768cefa9b3e47d8e77c2ec9969a57a238289e27e21612d51684b"
+    },
+    {
+      "relativePath": ".claude/skills/ndf-work-package-runner/SKILL.md",
+      "sizeBytes": 3931,
+      "sha256": "3d231df07dd350b31f027ce569d683331485cbd8b1fc2891696e4e7617b36ae5"
+    }
+  ]
+}

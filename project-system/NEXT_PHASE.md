@@ -8,6 +8,12 @@
 
 > Vorläufiger Arbeitsname. Die endgültige Phasen- und Release-Taxonomie wird durch `CO-WP-003` festgelegt.
 
+## Local NDF Skills Baseline
+
+Complete NDF v1.0.0 skills pack implemented, pending Nova review.
+
+Next planned work package: `CO-WP-002 – Concept v3.0 Registration and Decision Classification`.
+
 ## Current Goal
 
 Dokumentation, Scope, Architektur, Security, Governance und Verträge definieren — ohne Anwendungscode, ohne verbindliche Technologieauswahl und ohne akzeptierte ADRs.

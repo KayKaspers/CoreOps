@@ -8,8 +8,9 @@ Jedes Work Package hat genau **einen** primären Typ.
 
 | ID        | Type              | Title                                                          | Status                        |
 | --------- | ----------------- | -------------------------------------------------------------- | ----------------------------- |
-| CO-WP-001 | docs-only         | NDF Project Bootstrap – Core Governance Skeleton               | implemented-awaiting-review   |
-| CO-WP-002 | docs-only         | Concept v3.0 Registration and Decision Classification          | planned-next                  |
+| CO-WP-001 | docs-only         | NDF Project Bootstrap – Core Governance Skeleton               | completed-go-with-notes         |
+| CO-WP-001A| docs-only         | Complete NDF v1.0.0 Skills Bootstrap                           | implemented-awaiting-nova-review|
+| CO-WP-002 | docs-only         | Concept v3.0 Registration and Decision Classification          | planned-next                    |
 | CO-WP-003 | docs-only         | Project Brief, Scope Lock and Release Taxonomy                 | planned                       |
 | CO-WP-004 | docs-only         | Foundation Capability Matrix and Initial Support Boundary      | planned                       |
 | CO-WP-005 | docs-only         | Language Standard, Public Neutrality and Repository Governance | planned                       |
