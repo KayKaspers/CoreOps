@@ -50,7 +50,7 @@ paths:
   roadmap: ROADMAP.md
 
 repository:
-  url: pending-human-maintainer   # Keine Repository-URL erfunden.
+  url: https://github.com/KayKaspers/CoreOps   # Verifiziert via origin (Clone-Remote: .git). CO-WP-003.
 
 source:
   product_vision: "CoreOps Concept v3.0 - Platform Foundation"
@@ -60,15 +60,16 @@ source:
            entscheidungen gelten als unbestaetigte Foundation-Kandidaten."
 
 notes:
-  - id: ndf-level-ambiguity
+  - id: ndf-level-semantics
     text: >
-      Dieses Manifest nutzt ndf_level 1 gemaess der allgemeinen NDF-v1.0.0-
-      Project-System-Vorlage. Eine abweichende Starter-Vorlage verwendet
-      ndf_level 2. Diese Ambiguitaet ist bewusst offen dokumentiert und
-      NICHT aufgeloest. ndf_level 1 ist hier ausschliesslich als initialer
-      Bootstrap-Status zu lesen.
+      ndf_level 1 bedeutet fuer CoreOps ausschliesslich "initialer NDF-
+      Projektbootstrap". Es bedeutet NICHT vollstaendige NDF-Konformitaet,
+      technische Reife, Releasebereitschaft, Sicherheitsfreigabe oder eine
+      erreichte Produktstufe. Der Zahlenwert bleibt in CO-WP-003 unveraendert.
+      Die abweichende Starter-Vorlage mit ndf_level 2 bleibt als dokumentierte
+      NDF-Quellambiguitaet erhalten, ist aber kein CoreOps-Blocker (CCR-03).
   - id: repository-status
     text: >
-      Es ist keine verbindliche Remote-Repository-URL hinterlegt. Der Wert
-      "pending-human-maintainer" ist eine ehrliche Kennzeichnung, keine
-      erfundene URL.
+      Repository-URL in CO-WP-003 verifiziert und gesetzt: kanonische Web-URL
+      https://github.com/KayKaspers/CoreOps (Clone-Remote origin endet auf
+      .git). Aufloesung des vorherigen Platzhalters "pending-human-maintainer".

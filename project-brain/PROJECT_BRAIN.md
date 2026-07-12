@@ -2,17 +2,17 @@
 
 Kompakter, fortschreibbarer Wissensstand des Projekts. Wird pro Work Package aktualisiert.
 
-**NDF-Basis:** `v1.0.0` (Tag `v1.0.0`, Commit `9dcadc1`) — `main` ist **nicht** normativ.
+**NDF-Basis:** `v1.0.0` (Tag `v1.0.0`, Commit `9dcadc1`) — `main` ist informativ, **nicht** normativ (CCR-04 geklärt: Übernahme aus `main` nur via eigenes freigegebenes WP).
 
 ---
 
 ## Projektstatus
 
-Foundation – Initial Bootstrap. Es existiert ausschließlich das Core Governance Skeleton (Manifest, Profile, Brain, Context Pack, Queue, Next Phase, Roadmap).
+Foundation 0.1. Concept v3.0 registriert und klassifiziert; Project Brief, Foundation Scope Lock und Release-Taxonomie erstellt (`Proposed for acceptance`). Weiterhin kein Anwendungscode.
 
 ## Aktuelle Phase
 
-`Foundation 0.1 – Platform Foundation` (vorläufiger Arbeitsname).
+`Foundation 0.1` (interner Phasenname der dokumentations-/governanceorientierten Foundation; Release-Taxonomie: Foundation-Tag-Kandidat `v0.0.1-foundation`, erster Observe-Prerelease-Kandidat `v0.1.0-alpha.1`).
 
 ## Akzeptierte Produktvision
 
@@ -37,28 +37,26 @@ Keine technische Entscheidung getroffen. Technologie-Stack nicht ausgewählt.
 
 ## Noch nicht akzeptierte ADR-Kandidaten
 
-Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Caching/Queue, Agent-Technologie, Observability-Stack, Policy-Engine, Workflow-Engine, Delivery Baseline (`docker-first`). **Keiner ist Accepted.**
+Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Caching/Queue, Agent-Technologie, Observability-Stack, Policy-Engine, Workflow-Engine. **Keiner ist Accepted.** (Docker-first ist in CO-WP-003 als Delivery-/Betriebsanforderung eingeordnet — `proposed` —, nicht als Anwendungsarchitektur; die konkrete Umsetzung bleibt ADR-relevant.)
 
 ## Bekannte Risiken
 
-- NDF-Level-Ambiguität (Level 1 vs. Starter-Vorlage Level 2).
-- Unbekannter Repository-Status (`pending-human-maintainer`).
-- Offene Release-Taxonomie (`Foundation 0.1` vs. `Release 0.1 – Observe`).
-- Breiter Scope mit hohem Sicherheitsanspruch (siehe [RISK_REGISTER.md](../project-system/RISK_REGISTER.md), 18 Foundation-Risiken).
-- Offene Konflikte aus der Concept-Klassifikation (u. a. Plane-Taxonomie, Offline-Policy, Machine Identity vs. Air-Gap, Audit vs. Datenschutz, Docker-first-Einordnung).
+- Breiter Scope mit hohem Sicherheitsanspruch (siehe [RISK_REGISTER.md](../project-system/RISK_REGISTER.md), 21 Foundation-Risiken; RISK-02/04/09/11 mit Impact `critical`).
+- Governance-Risiken RISK-14 (Release-Taxonomie), RISK-17 (NDF-Level), RISK-19 (Queue-Autorität), RISK-20 (Docker-first), RISK-21 (NDF-`main`) in CO-WP-003 auf `treatment-planned` (Schließung nach Human-Maintainer-Commit).
+- Weiterhin offene Konflikte aus der Concept-Klassifikation: Plane-Taxonomie (CCR-01), Offline-Policy (CCR-05), Machine Identity vs. Air-Gap (CCR-06), privilegierte Ausführung (CCR-07), Audit vs. Datenschutz (CCR-08), Offline-First-Facetten (CCR-09), Herstellersupport-Grenze (CCR-12).
 
 ## Offene Fragen
 
-- Verbindliche NDF-Level-Vorlage?
-- Bestätigung `docker-first` als Delivery Baseline?
-- Finale Release-Taxonomie (→ `CO-WP-003`)?
-- Technologie-Auswahl per ADR?
+- Technologie-/Architekturauswahl per ADR (weiterhin vollständig offen).
+- Auflösung der verbleibenden Konflikte CCR-01, 05, 06, 07, 08, 09, 12 in den jeweiligen Foundation-WPs.
+- Capability Matrix und Support Boundary (→ `CO-WP-004`).
 
 ## Lessons Learned
 
 - `CO-WP-001` erhielt von Nova `GO WITH NOTES`. Ursache der Note: eine nicht ausdrücklich dokumentierte read-only-Git-Abweichung (`git status --porcelain` unter einem pauschalen Git-Verbot). Konsequenz: Künftige Work Packages unterscheiden ausdrücklich zwischen **Git Read** (erlaubt) und **Git Write** (verboten ohne Human-Maintainer-Freigabe).
 - `CO-WP-001A`: Der vollständige NDF-v1.0.0-Skills-Pack wurde lokal bereitgestellt (byte-identisch, verifiziert) und von Nova mit `GO` bewertet. Skills-first für spätere Work Packages ist damit lokal möglich; Auswahl erfolgt selektiv pro Work Package.
-- `CO-WP-002`: Fail-closed-Blocker (fehlende Quelle) war korrekt (`GO – Blocker bestätigt`); nach Bereitstellung der lokalen read-only-Quelle wurde das Concept v3.0 vollständig registriert. Lesson: Quelle als verlässliche lokale Datei vor der Registrierung verifizieren (Identität, Abschnitte, Ende, Trunkierung).
+- `CO-WP-002`: Fail-closed-Blocker (fehlende Quelle) war korrekt (`GO – Blocker bestätigt`); nach Bereitstellung der lokalen read-only-Quelle wurde das Concept v3.0 vollständig registriert und mit `GO WITH NOTES` bewertet. Lesson: Quelle als verlässliche lokale Datei vor der Registrierung verifizieren (Identität, Abschnitte, Ende, Trunkierung).
+- `CO-WP-003`: Governance-Konsolidierung — Konflikte CCR-02/04/10/11 vorgeschlagen aufgelöst; Zusatzstatus (`proposed`/`clarified`/`verified`) im Decision Index eingeführt, ohne technische Architektur zu akzeptieren.
 
 ## Lokaler NDF-Skills-Bestand
 
@@ -77,13 +75,23 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 - 32 ADR-Kandidaten erfasst, **kein** ADR Accepted, **keine** ADR-Datei erzeugt.
 - 12 offene Konflikte (CCR-01…12) dokumentiert und bleiben offen.
 
+## Brief, Scope Lock und Release-Taxonomie (CO-WP-003)
+
+- Project Brief: [docs/architecture/PROJECT_BRIEF.md](../docs/architecture/PROJECT_BRIEF.md) (Proposed for acceptance).
+- Foundation Scope Lock: [docs/governance/FOUNDATION_SCOPE_LOCK.md](../docs/governance/FOUNDATION_SCOPE_LOCK.md) (In/Out of Scope, Source Hierarchy, Change Control, Exit Gates offen).
+- Release-Taxonomie: [docs/governance/RELEASE_TAXONOMY.md](../docs/governance/RELEASE_TAXONOMY.md) — Foundation `v0.0.1-foundation`, Observe `v0.1.0-alpha.1` (Proposed; kein Tag/Release erzeugt).
+- Docker-first als akzeptierte Delivery-/Betriebsanforderung eingeordnet (keine Anwendungsarchitektur, kein K8s-Zwang, noch nicht implementiert).
+- Aktive Queue autoritativ (WORK_PACKAGE_QUEUE.md) gegenüber Concept-§50-Queue geklärt.
+- NDF-`main`-Auslegung und NDF-Level-Semantik geklärt; Repository-URL verifiziert (`https://github.com/KayKaspers/CoreOps`).
+- **Technische Architektur weiterhin offen; keine Technologie ausgewählt; keine ADR erzeugt/akzeptiert.**
+
 ## Letztes Work Package
 
-`CO-WP-002 – Concept v3.0 Registration and Decision Classification` (docs-only). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-001A – GO`.
+`CO-WP-003 – Project Brief, Foundation Scope Lock and Release Taxonomy` (docs-only). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-002 – GO WITH NOTES`.
 
 ## Nächstes Work Package
 
-`CO-WP-003 – Project Brief, Scope Lock and Release Taxonomy` (planned-next; pending Nova review und Human-Maintainer-Freigabe).
+`CO-WP-004 – Foundation Capability Matrix and Initial Support Boundary` (planned-next; pending Nova review und Human-Maintainer-Freigabe).
 
 ## Human-Maintainer-Gates
 
@@ -93,7 +101,8 @@ Freigabe, Staging, Commit, Push, Merge, Tags, Releases, produktive Deployments s
 
 - `CO-WP-001`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova-Bewertung: `GO WITH NOTES`.
 - `CO-WP-001A`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova-Bewertung: `GO`.
-- `CO-WP-002`: Fail-closed-Blocker gemeldet (`GO – Blocker bestätigt`); nach Source-Handoff regulär umgesetzt und strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
+- `CO-WP-002`: Fail-closed-Blocker gemeldet (`GO – Blocker bestätigt`); nach Source-Handoff regulär umgesetzt; Nova-Bewertung: `GO WITH NOTES`.
+- `CO-WP-003`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
 
 ---
 

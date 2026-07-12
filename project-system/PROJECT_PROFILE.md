@@ -157,8 +157,17 @@ Folgende Themen benötigen vor jeder verbindlichen technischen Festlegung einen 
 
 ---
 
+## CO-WP-003 Konsolidierung
+
+- **Project Brief:** [docs/architecture/PROJECT_BRIEF.md](../docs/architecture/PROJECT_BRIEF.md) (Proposed for acceptance).
+- **Foundation Scope Lock:** [docs/governance/FOUNDATION_SCOPE_LOCK.md](../docs/governance/FOUNDATION_SCOPE_LOCK.md) (Proposed for acceptance).
+- **Release-Taxonomie:** [docs/governance/RELEASE_TAXONOMY.md](../docs/governance/RELEASE_TAXONOMY.md) — Foundation-Tag-Kandidat `v0.0.1-foundation`, erster Observe-Prerelease-Kandidat `v0.1.0-alpha.1` (Proposed for acceptance; kein Tag/Release erzeugt).
+- **Docker-first-Einordnung:** akzeptierte Delivery-/Betriebsanforderung für die zentrale Plattform (dokumentierte Docker-/Compose-Standardinstallation, reproduzierbare self-hosted Bereitstellung ohne Cloudpflicht). **Nicht** implementiert/getestet; bestimmt **keine** interne Anwendungsarchitektur; Kubernetes ist keine Voraussetzung; Agents/Relays dürfen native Binärdateien sein.
+- **Aktive Work-Package-Queue:** ausschließlich [WORK_PACKAGE_QUEUE.md](WORK_PACKAGE_QUEUE.md) (`CO-WP-001…031` + `CO-WP-001A`). Die Concept-§50-Queue (21 WPs) ist historischer Vorschlag.
+- **NDF-`main`-Klarstellung:** `v1.0.0` / `9dcadc1` normativ; `main` ausschließlich informativ; jede Übernahme aus `main` benötigt ein eigenes freigegebenes Work Package (CCR-04 geklärt, keine ADR).
+- **Repository-Status:** verifiziert und gesetzt — `https://github.com/KayKaspers/CoreOps` (origin-Clone-Remote endet auf `.git`).
+
 ## Notes
 
-- **NDF-Level-Ambiguität:** Das Manifest nutzt `ndf_level: 1` (allgemeine NDF-v1.0.0-Vorlage). Eine abweichende Starter-Vorlage verwendet `ndf_level: 2`. Diese Ambiguität ist bewusst offen und **nicht** aufgelöst. `ndf_level: 1` steht hier ausschließlich für den initialen Bootstrap-Status — keine NDF-Reife, keine Zertifizierung, keine vollständige Compliance.
-- **Repository:** kein verbindliches Remote hinterlegt (`pending-human-maintainer`).
-- **Skills-first:** Keine lokal verifizierten NDF-v1.0.0-Skills im Projektverzeichnis gefunden; dieses Work Package wurde mit dem vollständigen Prompt bearbeitet.
+- **NDF-Level-Semantik:** `ndf_level: 1` bedeutet ausschließlich „initialer NDF-Projektbootstrap" — keine vollständige NDF-Konformität, technische Reife, Releasebereitschaft, Sicherheitsfreigabe oder erreichte Produktstufe. Der Zahlenwert bleibt unverändert. Die Starter-Vorlage mit `ndf_level: 2` bleibt dokumentierte NDF-Quellambiguität, ist aber kein Blocker (CCR-03).
+- **Skills-first:** Lokaler NDF-v1.0.0-Skills-Pack seit CO-WP-001A vorhanden; pro Work Package selektiv genutzt.

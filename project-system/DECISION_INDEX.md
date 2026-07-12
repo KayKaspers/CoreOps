@@ -6,6 +6,7 @@
 **Grundregeln:** Keine technische Entscheidung erhält `accepted`. Produktentscheidungen dürfen `accepted-product` sein, wenn sie im Concept ausdrücklich als akzeptierte Vision vorgegeben sind. ADRs sind ausschließlich `adr-candidate`.
 
 Statuswerte: `accepted-product` · `binding-governance` · `open` · `adr-candidate` · `deferred` · `non-goal` · `blocked`
+Zusatzstatus (eingeführt in CO-WP-003, alle vor dem Human-Maintainer-Commit unverbindlich): `proposed` · `proposed-binding-governance` · `clarified` · `verified`. Diese kennzeichnen in CO-WP-003 aufgelöste Governance-/Scope-Punkte, die mit dem Human-Maintainer-Commit bindend werden. Keiner davon markiert eine technische Architektur- oder Technologieentscheidung als `accepted`.
 Owner-Werte: `Human Maintainer` (HM) · `Nova`
 
 ## Accepted Product Decisions
@@ -39,16 +40,17 @@ Owner-Werte: `Human Maintainer` (HM) · `Nova`
 | Decision ID | Topic | Status | Class | Source | Owner | Target WP | ADR Required | Notes |
 | ----------- | ----- | ------ | ----- | ------ | ----- | --------- | ------------ | ----- |
 | DEC-O-01 | Plane-Taxonomie (Domain Packs als Plane?) | open | CCR | §10 | Nova | CO-WP-006/008 | ja (ADR-0005) | CCR-01 |
-| DEC-O-02 | Release-Taxonomie / SemVer / 0.1-Kollision | open | CCR | §49 | HM | CO-WP-003 | ja | CCR-02 |
-| DEC-O-03 | NDF-Level (1 vs. 2) | open | CCR | Manifest | HM | CO-WP-005 | nein | CCR-03 |
-| DEC-O-04 | `main`-Normativität (Concept vs. Governance) | open | CCR | §Ausgangskontext | HM | CO-WP-005 | nein | CCR-04 |
+| DEC-O-02 | Release-Taxonomie / SemVer / 0.1-Kollision | proposed | CCR | §49 | HM | CO-WP-003 | nein | CCR-02 aufgelöst in RELEASE_TAXONOMY.md (Proposed for acceptance); Tag-Kandidaten `v0.0.1-foundation`, `v0.1.0-alpha.1` |
+| DEC-O-03 | NDF-Level (1 vs. 2) | clarified | CCR | Manifest | HM | CO-WP-005 | nein | CCR-03: Semantik geklärt (Bootstrap-Status), Zahlenwert unverändert; Quellambiguität dokumentiert, kein Blocker |
+| DEC-O-04 | `main`-Normativität (Concept vs. Governance) | proposed-binding-governance | BG | §Ausgangskontext | HM | CO-WP-003 | nein | CCR-04 geklärt: `v1.0.0`/`9dcadc1` normativ, `main` informativ; Übernahme nur via eigenes WP |
 | DEC-O-05 | Offline-Policy bei getrennter Control Plane | open | CCR/FR | §21,§38 | Nova | CO-WP-013/023 | ja | CCR-05 |
 | DEC-O-06 | Machine Identity vs. Air-Gap-Laufzeiten | open | CCR/FR | §31,§38 | Nova | CO-WP-010 | ja (ADR-0013) | CCR-06 |
 | DEC-O-07 | Privilegierte Ausführung vs. „keine Remote-Root-Shell" | open | CCR/FR | §52 | Nova | CO-WP-013 | ja | CCR-07 |
 | DEC-O-08 | Immutable Audit vs. Redaction/Retention | open | CCR/FR | §35,§41 | Nova | CO-WP-025 | ja (ADR-0024) | CCR-08 |
 | DEC-O-09 | Offline-First-Facetten (Runtime/Install/Update/Recovery/Build) | open | CCR/FR | §38 | Nova | CO-WP-023 | ja (ADR-0030) | CCR-09 |
-| DEC-O-10 | Docker-first: Anforderung/Baseline/Architektur/Kandidat | open | CCR | §3,§53 | HM | CO-WP-003 | ja | CCR-10 |
-| DEC-O-11 | Foundation-Queue-Abweichung (Concept §50 vs. verbindliche Queue) | open | CCR | §50 | Nova | CO-WP-003 | nein | CCR-11 |
+| DEC-O-10 | Docker-first: Anforderung/Baseline/Architektur/Kandidat | proposed | APC | §3,§53 | HM | CO-WP-003 | nein | CCR-10 eingeordnet: akzeptierte Delivery-/Betriebsanforderung (Compose-Standardinstallation), keine Anwendungsarchitektur, kein K8s-Zwang; noch nicht implementiert |
+| DEC-O-11 | Foundation-Queue-Autorität (Concept §50 vs. aktive Queue) | proposed | CCR | §50 | Nova | CO-WP-003 | nein | CCR-11 geklärt: aktive Queue ausschließlich WORK_PACKAGE_QUEUE.md; Concept-Queue historischer Vorschlag |
+| DEC-O-16 | Repository-Referenz | verified | — | origin | HM | CO-WP-003 | nein | `https://github.com/KayKaspers/CoreOps` verifiziert und im Manifest gesetzt |
 | DEC-O-12 | Herstellersupport-Grenze | open | CCR/APC | §18,§26,§27 | Nova | CO-WP-004 | nein | CCR-12 |
 | DEC-O-13 | Source-of-Truth-Konfliktprioritäten je Datenklasse | open | FR/AC | §19 | Nova | CO-WP-011 | ja (ADR-0009) | — |
 | DEC-O-14 | OIC v0.1 Vertragsumfang | open | FR | §17,§18 | Nova | CO-WP-014 | ja (ADR-0006) | — |
@@ -96,9 +98,11 @@ Alle 30 Concept-ADR-Kandidaten (§51) plus zwei Foundation-Klärungen (Delivery 
 
 - Accepted Product Decisions: 8
 - Binding Governance Decisions: 8
-- Open Foundation Decisions: 15
+- Foundation Decisions (Sektion „Open Foundation Decisions"): 16 — davon offen 10, `proposed`/`proposed-binding-governance` 4, `clarified` 1, `verified` 1 (CO-WP-003)
 - ADR Candidates: 32 (30 Concept + 2 Foundation)
 - Deferred Decisions: 6
 - Non-Goals: 12
 
-**Bestätigung:** Keine technische Entscheidung trägt den Status `accepted`. Keine ADR ist Accepted. Es wurde keine ADR-Datei erzeugt.
+**CO-WP-003-Auflösungen (vor Human-Maintainer-Commit unverbindlich):** DEC-O-02 Release-Taxonomie `proposed`, DEC-O-03 NDF-Level `clarified`, DEC-O-04 `main`-Auslegung `proposed-binding-governance`, DEC-O-10 Docker-first `proposed`, DEC-O-11 aktive Queue-Autorität `proposed`, DEC-O-16 Repository-Referenz `verified`.
+
+**Bestätigung:** Keine technische Architektur- oder Technologieentscheidung trägt den Status `accepted`. Keine ADR ist Accepted. Es wurde keine ADR-Datei erzeugt.

@@ -1,6 +1,6 @@
 # CoreOps – Roadmap (Gerüst)
 
-**NDF-Basis:** `v1.0.0` (Tag `v1.0.0`, Commit `9dcadc1`) — `main` ist **nicht** normativ.
+**NDF-Basis:** `v1.0.0` (Tag `v1.0.0`, Commit `9dcadc1`) — `main` ist informativ, **nicht** normativ.
 
 Dieses Dokument ist ein **kompaktes, vorläufiges Gerüst**. Es enthält bewusst **keine** finale SemVer-Zuordnung, keine Release-Termine, keine Fertigstellungsversprechen und keine detaillierten Technologieentscheidungen.
 
@@ -17,11 +17,21 @@ Dieses Dokument ist ein **kompaktes, vorläufiges Gerüst**. Es enthält bewusst
 7. Extend *(vorläufig)*
 8. Scale *(vorläufig)*
 
-## Offene Release-Taxonomie
+## Release-Taxonomie (Proposed for acceptance)
 
-Es besteht eine **Kollision** zwischen dem internen Phasennamen `Foundation 0.1` (siehe [NEXT_PHASE.md](project-system/NEXT_PHASE.md)) und einem möglichen `Release 0.1 – Observe`. Diese Kollision ist **nicht** aufgelöst.
+Die frühere Kollision zwischen `Foundation 0.1` und `Release 0.1 – Observe` ist in CO-WP-003 vorgeschlagen aufgelöst (siehe [RELEASE_TAXONOMY.md](docs/governance/RELEASE_TAXONOMY.md)):
 
-Die **finale Release-Taxonomie** (inklusive verbindlicher SemVer-Zuordnung und Abgrenzung zwischen Foundation-Phase und Produkt-Releases) wird durch **`CO-WP-003 – Project Brief, Scope Lock and Release Taxonomy`** festgelegt.
+```text
+Foundation documentation release:
+v0.0.1-foundation candidate
+
+First functional Observe prerelease:
+v0.1.0-alpha.1 candidate
+```
+
+- `Foundation 0.1` ist die dokumentations-/governanceorientierte Phase (kein funktionaler Produktrelease).
+- `Observe` ist der erste funktionale Produktmeilenstein; sein erster Prerelease-Kandidat ist `v0.1.0-alpha.1` (erst nach funktionaler Implementierung und separater Readiness-Prüfung).
+- Status `Proposed for acceptance` bis zum Human-Maintainer-Commit. Es wird **kein** Tag und **kein** Release erzeugt.
 
 ## Hinweise
 

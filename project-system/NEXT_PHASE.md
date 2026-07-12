@@ -14,10 +14,14 @@ Complete NDF v1.0.0 skills pack implemented (CO-WP-001A: GO).
 
 ## Concept Registration
 
-Current implemented WP: `CO-WP-002 – Concept v3.0 Registration and Decision Classification` – pending Nova review.
-Concept v3.0 vollständig registriert; Decision Classification, Decision Index und Risk Register initial vorhanden. Keine technische ADR Accepted.
+Concept v3.0 vollständig registriert (CO-WP-002: GO WITH NOTES); Decision Classification, Decision Index und Risk Register vorhanden.
 
-Next planned WP: `CO-WP-003 – Project Brief, Scope Lock and Release Taxonomy`.
+## Brief, Scope Lock and Release Taxonomy
+
+Current implemented WP: `CO-WP-003 – Project Brief, Foundation Scope Lock and Release Taxonomy` – pending Nova review.
+Project Brief, Foundation Scope Lock und Release-Taxonomie erstellt (alle `Proposed for acceptance`). Docker-first als Delivery-/Betriebsanforderung eingeordnet; aktive Queue autoritativ geklärt; NDF-`main`-Auslegung und NDF-Level-Semantik geklärt; Repository-URL verifiziert. Keine technische Architektur akzeptiert; keine ADR erzeugt.
+
+Next planned WP: `CO-WP-004 – Foundation Capability Matrix and Initial Support Boundary`.
 
 ## Current Goal
 
