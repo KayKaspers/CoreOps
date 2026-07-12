@@ -1,0 +1,74 @@
+# CoreOps – Project System Manifest
+# NDF-Basis: Nova-Development-Framework v1.0.0 (Tag v1.0.0, Commit 9dcadc1)
+# Der veraenderliche Branch "main" ist NICHT normativ.
+# Erzeugt durch Work Package CO-WP-001 (docs-only, Core Governance Skeleton).
+
+project:
+  name: CoreOps
+  slug: coreops
+  slogan: "One Dashboard. Controlled Operations."
+  status: foundation-initial-bootstrap
+  project_type: Universal Operations Control Plane
+
+roles:
+  owner: Human Maintainer
+  architecture_lead: Nova
+  implementation_assistant: Claude
+
+language:
+  primary: Deutsch
+  secondary: Englisch
+
+delivery:
+  self_hosted: target            # Zielbild, noch zu bestaetigen
+  offline_capable: target        # Zielbild, noch zu bestaetigen
+  docker_first: pending          # Delivery Baseline noch nicht verbindlich bestaetigt
+
+governance:
+  documentation: required
+  security: required
+  tests: required
+  ci: recommended                # Status: pending
+
+ndf:
+  framework: Nova-Development-Framework
+  version: "1.0.0"
+  tag: "v1.0.0"
+  commit: "9dcadc1"
+  normative_source: tag-and-commit-only
+  main_branch_normative: false
+  ndf_level: 1                   # Initialer Bootstrap-Status. Keine NDF-Reife,
+                                 # keine Zertifizierung, keine vollstaendige
+                                 # Compliance behauptet. Siehe Note unten.
+
+paths:
+  project_brain: project-brain/PROJECT_BRAIN.md
+  context_pack_foundation: project-brain/CONTEXT_PACK_FOUNDATION_0_1.md
+  project_profile: project-system/PROJECT_PROFILE.md
+  work_package_queue: project-system/WORK_PACKAGE_QUEUE.md
+  next_phase: project-system/NEXT_PHASE.md
+  roadmap: ROADMAP.md
+
+repository:
+  url: pending-human-maintainer   # Keine Repository-URL erfunden.
+
+source:
+  product_vision: "CoreOps Concept v3.0 - Platform Foundation"
+  provided_by: Human Maintainer
+  provided_on: "2026-07-12"
+  status: "Als Produktvision und Ausgangsbasis akzeptiert. Technische Detail-
+           entscheidungen gelten als unbestaetigte Foundation-Kandidaten."
+
+notes:
+  - id: ndf-level-ambiguity
+    text: >
+      Dieses Manifest nutzt ndf_level 1 gemaess der allgemeinen NDF-v1.0.0-
+      Project-System-Vorlage. Eine abweichende Starter-Vorlage verwendet
+      ndf_level 2. Diese Ambiguitaet ist bewusst offen dokumentiert und
+      NICHT aufgeloest. ndf_level 1 ist hier ausschliesslich als initialer
+      Bootstrap-Status zu lesen.
+  - id: repository-status
+    text: >
+      Es ist keine verbindliche Remote-Repository-URL hinterlegt. Der Wert
+      "pending-human-maintainer" ist eine ehrliche Kennzeichnung, keine
+      erfundene URL.
