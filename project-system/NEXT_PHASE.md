@@ -10,9 +10,14 @@
 
 ## Local NDF Skills Baseline
 
-Complete NDF v1.0.0 skills pack implemented, pending Nova review.
+Complete NDF v1.0.0 skills pack implemented (CO-WP-001A: GO).
 
-Next planned work package: `CO-WP-002 – Concept v3.0 Registration and Decision Classification`.
+## Concept Registration
+
+Current implemented WP: `CO-WP-002 – Concept v3.0 Registration and Decision Classification` – pending Nova review.
+Concept v3.0 vollständig registriert; Decision Classification, Decision Index und Risk Register initial vorhanden. Keine technische ADR Accepted.
+
+Next planned WP: `CO-WP-003 – Project Brief, Scope Lock and Release Taxonomy`.
 
 ## Current Goal
 

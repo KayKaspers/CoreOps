@@ -44,8 +44,8 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 - NDF-Level-Ambiguität (Level 1 vs. Starter-Vorlage Level 2).
 - Unbekannter Repository-Status (`pending-human-maintainer`).
 - Offene Release-Taxonomie (`Foundation 0.1` vs. `Release 0.1 – Observe`).
-- Concept v3.0 noch nicht vollständig übernommen.
-- Breiter Scope mit hohem Sicherheitsanspruch.
+- Breiter Scope mit hohem Sicherheitsanspruch (siehe [RISK_REGISTER.md](../project-system/RISK_REGISTER.md), 18 Foundation-Risiken).
+- Offene Konflikte aus der Concept-Klassifikation (u. a. Plane-Taxonomie, Offline-Policy, Machine Identity vs. Air-Gap, Audit vs. Datenschutz, Docker-first-Einordnung).
 
 ## Offene Fragen
 
@@ -57,7 +57,8 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 ## Lessons Learned
 
 - `CO-WP-001` erhielt von Nova `GO WITH NOTES`. Ursache der Note: eine nicht ausdrücklich dokumentierte read-only-Git-Abweichung (`git status --porcelain` unter einem pauschalen Git-Verbot). Konsequenz: Künftige Work Packages unterscheiden ausdrücklich zwischen **Git Read** (erlaubt) und **Git Write** (verboten ohne Human-Maintainer-Freigabe).
-- `CO-WP-001A`: Der vollständige NDF-v1.0.0-Skills-Pack wurde lokal bereitgestellt (byte-identisch, verifiziert). Skills-first für spätere Work Packages ist damit lokal möglich; Auswahl erfolgt selektiv pro Work Package.
+- `CO-WP-001A`: Der vollständige NDF-v1.0.0-Skills-Pack wurde lokal bereitgestellt (byte-identisch, verifiziert) und von Nova mit `GO` bewertet. Skills-first für spätere Work Packages ist damit lokal möglich; Auswahl erfolgt selektiv pro Work Package.
+- `CO-WP-002`: Fail-closed-Blocker (fehlende Quelle) war korrekt (`GO – Blocker bestätigt`); nach Bereitstellung der lokalen read-only-Quelle wurde das Concept v3.0 vollständig registriert. Lesson: Quelle als verlässliche lokale Datei vor der Registrierung verifizieren (Identität, Abschnitte, Ende, Trunkierung).
 
 ## Lokaler NDF-Skills-Bestand
 
@@ -68,13 +69,21 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 - Keine Skill-Datei wurde ausgeführt oder verändert.
 - Keine automatische Vollaktivierung; Auswahl selektiv pro Work Package.
 
+## Concept-Registrierung und Klassifikation
+
+- Concept v3.0 vollständig registriert unter [docs/architecture/COREOPS_CONCEPT_V3.md](../docs/architecture/COREOPS_CONCEPT_V3.md) (alle 57 Abschnitte; ein privater Standortname öffentlich neutralisiert).
+- Decision Classification: [CONCEPT_DECISION_CLASSIFICATION.md](../docs/architecture/CONCEPT_DECISION_CLASSIFICATION.md) — 10 Klassen; technische Aussagen klassifiziert, **nicht** akzeptiert.
+- Decision Index ([DECISION_INDEX.md](../project-system/DECISION_INDEX.md)) und Risk Register ([RISK_REGISTER.md](../project-system/RISK_REGISTER.md)) initial vorhanden.
+- 32 ADR-Kandidaten erfasst, **kein** ADR Accepted, **keine** ADR-Datei erzeugt.
+- 12 offene Konflikte (CCR-01…12) dokumentiert und bleiben offen.
+
 ## Letztes Work Package
 
-`CO-WP-001A – Complete NDF v1.0.0 Skills Bootstrap` (docs-only). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-001 – GO WITH NOTES`.
+`CO-WP-002 – Concept v3.0 Registration and Decision Classification` (docs-only). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-001A – GO`.
 
 ## Nächstes Work Package
 
-`CO-WP-002 – Concept v3.0 Registration and Decision Classification` (planned-next; pending Nova review und Human-Maintainer-Freigabe).
+`CO-WP-003 – Project Brief, Scope Lock and Release Taxonomy` (planned-next; pending Nova review und Human-Maintainer-Freigabe).
 
 ## Human-Maintainer-Gates
 
@@ -83,7 +92,8 @@ Freigabe, Staging, Commit, Push, Merge, Tags, Releases, produktive Deployments s
 ## Rückmeldung-an-Nova-Historie
 
 - `CO-WP-001`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova-Bewertung: `GO WITH NOTES`.
-- `CO-WP-001A`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
+- `CO-WP-001A`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova-Bewertung: `GO`.
+- `CO-WP-002`: Fail-closed-Blocker gemeldet (`GO – Blocker bestätigt`); nach Source-Handoff regulär umgesetzt und strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
 
 ---
 

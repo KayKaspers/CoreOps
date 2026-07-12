@@ -23,7 +23,13 @@ Universelle, self-hosted und offline-fähige Operations Control Plane, die Sourc
 
 ## Letztes Work Package
 
-`CO-WP-001A – Complete NDF v1.0.0 Skills Bootstrap` (docs-only). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-001 – GO WITH NOTES`.
+`CO-WP-002 – Concept v3.0 Registration and Decision Classification` (docs-only). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-001A – GO`.
+
+## Concept-Registrierung
+
+- Concept v3.0 vollständig registriert (alle 57 Abschnitte) unter `docs/architecture/COREOPS_CONCEPT_V3.md`; ein privater Standortname öffentlich neutralisiert.
+- Decision Classification (`docs/architecture/CONCEPT_DECISION_CLASSIFICATION.md`), initialer Decision Index (`project-system/DECISION_INDEX.md`) und initiales Risk Register (`project-system/RISK_REGISTER.md`) vorhanden.
+- Technische Aussagen klassifiziert, **nicht** akzeptiert; keine ADR Accepted; keine ADR-Datei erzeugt.
 
 ## Lokaler NDF-Skills-Bestand
 
@@ -31,11 +37,11 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 
 ## Nächstes Work Package
 
-`CO-WP-002 – Concept v3.0 Registration and Decision Classification` (vorgeschlagen; pending Nova review und Human-Maintainer-Freigabe).
+`CO-WP-003 – Project Brief, Scope Lock and Release Taxonomy` (vorgeschlagen; pending Nova review und Human-Maintainer-Freigabe).
 
 ## Aktuelle Blocker
 
-- Keine harten Blocker. Offene Punkte: NDF-Level-Ambiguität, unbekannter Repository-Status, offene Release-Taxonomie, noch ausstehende vollständige Concept-v3.0-Übernahme.
+- Keine harten Blocker. Offene Punkte: NDF-Level-Ambiguität, unbekannter Repository-Status, offene Release-Taxonomie sowie 12 klassifizierte Konflikte (CCR-01…12) aus der Concept-Klassifikation.
 
 ## Zentrale Sicherheitsgrenzen
 
@@ -51,11 +57,11 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 
 ## Bekannte Notes und Risiken
 
-- NDF-Level-Ambiguität: Manifest `ndf_level: 1` vs. Starter-Vorlage `ndf_level: 2` (offen, nicht aufgelöst; nur Bootstrap-Status).
-- Repository-Status `pending-human-maintainer` (keine erfundene URL).
-- Release-Taxonomie offen: Kollision `Foundation 0.1` vs. `Release 0.1 – Observe` (→ `CO-WP-003`).
-- Concept v3.0 noch nicht vollständig ins Repository übernommen.
+- NDF-Level-Ambiguität: Manifest `ndf_level: 1` vs. Starter-Vorlage `ndf_level: 2` (offen; CCR-03).
+- Repository-Status `pending-human-maintainer` im Manifest (Remote origin: `github.com/KayKaspers/CoreOps.git`).
+- Release-Taxonomie offen: Kollision `Foundation 0.1` vs. `Release 0.1 – Observe` (CCR-02 → `CO-WP-003`).
 - Fehlende Capability Matrix (folgt `CO-WP-004`).
+- 12 klassifizierte Konflikte (CCR-01…12) und 18 Foundation-Risiken (RISK-01…18) offen.
 - Keine akzeptierten technischen ADRs.
 
 ## Relevante Quelldateien
@@ -64,12 +70,17 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 - [project-system/PROJECT_PROFILE.md](../project-system/PROJECT_PROFILE.md)
 - [project-system/WORK_PACKAGE_QUEUE.md](../project-system/WORK_PACKAGE_QUEUE.md)
 - [project-system/NEXT_PHASE.md](../project-system/NEXT_PHASE.md)
+- [project-system/DECISION_INDEX.md](../project-system/DECISION_INDEX.md)
+- [project-system/RISK_REGISTER.md](../project-system/RISK_REGISTER.md)
 - [project-system/NDF_SKILLS_PROVENANCE.md](../project-system/NDF_SKILLS_PROVENANCE.md)
 - [project-system/ndf-skills-lock.json](../project-system/ndf-skills-lock.json)
+- [docs/architecture/COREOPS_CONCEPT_V3.md](../docs/architecture/COREOPS_CONCEPT_V3.md)
+- [docs/architecture/CONCEPT_DECISION_CLASSIFICATION.md](../docs/architecture/CONCEPT_DECISION_CLASSIFICATION.md)
 - [project-brain/PROJECT_BRAIN.md](PROJECT_BRAIN.md)
 - [ROADMAP.md](../ROADMAP.md)
 
 ## Kompakte Historie
 
-- `CO-WP-001` (docs-only): Core Governance Skeleton erstellt (7 Dateien). Kein Code, keine ADR, keine Technologieauswahl. Nova-Bewertung: `GO WITH NOTES` (read-only-Git-Note).
-- `CO-WP-001A` (docs-only): Vollständiger NDF-v1.0.0-Skills-Pack lokal bereitgestellt (38 Skills, 39 Dateien, byte-identisch, Commit `9dcadc1`), Provenance + Lock erstellt, Statusdokumente fortgeschrieben. Kein Code, keine ADR, kein Git Write. Nova Review ausstehend.
+- `CO-WP-001` (docs-only): Core Governance Skeleton erstellt (7 Dateien). Nova-Bewertung: `GO WITH NOTES` (read-only-Git-Note).
+- `CO-WP-001A` (docs-only): Vollständiger NDF-v1.0.0-Skills-Pack lokal bereitgestellt (38 Skills, 39 Dateien, byte-identisch, Commit `9dcadc1`), Provenance + Lock erstellt. Nova-Bewertung: `GO`.
+- `CO-WP-002` (docs-only): Zunächst fail-closed geblockt (fehlende Quelle, `GO – Blocker bestätigt`); nach read-only-Source-Handoff Concept v3.0 vollständig registriert (57 Abschnitte), Decision Classification + Decision Index + Risk Register erstellt, Statusdokumente fortgeschrieben. Kein Code, keine ADR, kein Git Write. Nova Review ausstehend.

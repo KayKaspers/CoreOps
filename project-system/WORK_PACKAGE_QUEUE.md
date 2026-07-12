@@ -9,9 +9,9 @@ Jedes Work Package hat genau **einen** primären Typ.
 | ID        | Type              | Title                                                          | Status                        |
 | --------- | ----------------- | -------------------------------------------------------------- | ----------------------------- |
 | CO-WP-001 | docs-only         | NDF Project Bootstrap – Core Governance Skeleton               | completed-go-with-notes         |
-| CO-WP-001A| docs-only         | Complete NDF v1.0.0 Skills Bootstrap                           | implemented-awaiting-nova-review|
-| CO-WP-002 | docs-only         | Concept v3.0 Registration and Decision Classification          | planned-next                    |
-| CO-WP-003 | docs-only         | Project Brief, Scope Lock and Release Taxonomy                 | planned                       |
+| CO-WP-001A| docs-only         | Complete NDF v1.0.0 Skills Bootstrap                           | completed-go                    |
+| CO-WP-002 | docs-only         | Concept v3.0 Registration and Decision Classification          | implemented-awaiting-nova-review|
+| CO-WP-003 | docs-only         | Project Brief, Scope Lock and Release Taxonomy                 | planned-next                    |
 | CO-WP-004 | docs-only         | Foundation Capability Matrix and Initial Support Boundary      | planned                       |
 | CO-WP-005 | docs-only         | Language Standard, Public Neutrality and Repository Governance | planned                       |
 | CO-WP-006 | docs-only         | System Context, Plane Taxonomy and External Boundaries         | planned                       |
@@ -44,7 +44,7 @@ Jedes Work Package hat genau **einen** primären Typ.
 ## Regeln
 
 - Genau ein primärer Typ pro Work Package.
-- Nur `CO-WP-002` ist der nächste geplante Schritt (`planned-next`).
+- Nur `CO-WP-003` ist der nächste geplante Schritt (`planned-next`).
 - Keine automatische Freigabe eines Folge-Work-Packages.
 - Die Queue ist noch **nicht** final scope-locked.
 - Änderungen an der Queue nur durch ein später freigegebenes Work Package.
