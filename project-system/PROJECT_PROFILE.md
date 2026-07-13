@@ -192,10 +192,17 @@ Folgende Themen benötigen vor jeder verbindlichen technischen Festlegung einen 
 
 ## CO-WP-004B1 Konsolidierung (First NDF Feedback Transfer Package)
 
-- **Transferpaket:** [docs/governance/NDF_FEEDBACK_TRANSFER_PACKAGE_001.md](../docs/governance/NDF_FEEDBACK_TRANSFER_PACKAGE_001.md) — Prepared for Human-Maintainer Approval; 3 Bundles; alle 7 Kandidaten enthalten.
-- **Kandidatenstatus:** alle 7 auf `approved-for-transfer` (Nova Gate: approved; Human-Maintainer Gate: pending until commit; `Backlink Status: transfer-package-prepared`).
+- **Transferpaket:** [docs/governance/NDF_FEEDBACK_TRANSFER_PACKAGE_001.md](../docs/governance/NDF_FEEDBACK_TRANSFER_PACKAGE_001.md) — approved for NDF Intake; 3 Bundles; alle 7 Kandidaten enthalten.
+- **Kandidatenstatus:** alle 7 auf `approved-for-transfer` (Nova Gate: approved; Human-Maintainer Gate: approved, Commit 4ad3111; `Backlink Status: transfer-package-prepared`).
 - **Klassenstatistik-Korrektur:** Zusammenfassungsfehler im Lessons-Learned-Register behoben (LL-PROCESS-Liste enthielt fälschlich „001"; keine Lesson umklassifiziert).
 - **Status:** Kein Kandidat an das NDF übertragen oder adoptiert; kein NDF-Repository verändert.
+
+## CO-WP-004B2 Konsolidierung (Finalize NDF Intake Approval Gates)
+
+- **Governance-Korrektur:** Transfer Package Status und alle 7 Human-Maintainer-Gates explizit in Repository-Dokumenten auf "approved" gesetzt.
+- **Neue Lesson:** LL-016 erfasst — „Commit-gated status transitions must be represented in repository state" — Evidenz für Blockierungserlebnis und Ursachenanalyse.
+- **Lehrpunkt:** Ein Commit liefert Evidenz für eine Freigabe, verändert aber keine Statuswerte in Repository-Dokumenten. Freigabefelder müssen VOR dem Commit auf den beabsichtigten Zielzustand gesetzt werden.
+- **Status:** Kein Kandidat übertragen/adoptiert; NDF-Repository unverändert; kein NDF-Work-Package erstellt.
 
 ## Notes
 

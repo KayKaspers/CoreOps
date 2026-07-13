@@ -34,12 +34,17 @@ Lessons-Learned-Prozess und NDF-Feedback-Prozess etabliert (CO-WP-004B: GO WITH 
 
 ## First NDF Feedback Transfer Package
 
-Current implemented WP: `CO-WP-004B1 – First NDF Feedback Transfer Package` – pending Nova review.
-Übergabeschwelle mit sieben Kandidaten erreicht (Nova-Feststellung); Transfer Package 001 mit drei Bundles erstellt; alle 7 Kandidaten auf `approved-for-transfer` (Nova Gate: approved, Human-Maintainer Gate: pending until commit). Kein Kandidat übertragen/adoptiert, kein NDF-Repository verändert, kein NDF-Work-Package erstellt.
+`CO-WP-004B1 – First NDF Feedback Transfer Package` completed; Nova Review pending.
+Übergabeschwelle mit sieben Kandidaten erreicht (Nova-Feststellung); Transfer Package 001 mit drei Bundles erstellt; alle 7 Kandidaten auf `approved-for-transfer` (Nova Gate: approved, Human-Maintainer Gate: approved, Commit 4ad3111). Kein Kandidat übertragen/adoptiert, kein NDF-Repository verändert, kein NDF-Work-Package erstellt.
 
-Next planned CoreOps WP: `CO-WP-004C – BSI and Public-Sector Readiness Baseline`.
+## NDF Intake Approval Gate Finalization
 
-Parallel external action after Nova review: NDF Intake Review for Transfer Package 001.
+Current implemented WP: `CO-WP-004B2 – Finalize NDF Intake Approval Gates` – pending Nova review.
+Transfer Package Status auf `Approved for NDF Intake` gesetzt; alle 7 Human-Maintainer-Gates auf `approved` gesetzt (Commit 4ad3111 als Evidenz). Neue Lesson LL-016 erfasst: „Commit-gated status transitions must be represented in repository state". NDF-Repository unverändert; kein Kandidat übertragen/adoptiert.
+
+Next planned CoreOps WP: `CO-WP-004C – BSI and Public-Sector Readiness Baseline` (planned-next; pending Nova review und Human-Maintainer-Freigabe).
+
+Parallel external action after CO-WP-004B2 Nova review and Kay-Commit: NDF Intake Review for Transfer Package 001 wiederaufnehmen.
 
 ## Current Goal
 
@@ -70,7 +75,7 @@ Dokumentation, Scope, Architektur, Security, Governance und Verträge definieren
 
 ## Next Work Package
 
-`CO-WP-002 – Concept v3.0 Registration and Decision Classification`
+`CO-WP-004C – BSI and Public-Sector Readiness Baseline` (after CO-WP-004B2 Nova review and Kay-Commit)
 
 ## Foundation Exit Conditions
 

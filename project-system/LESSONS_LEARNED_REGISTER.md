@@ -336,12 +336,34 @@ Owner-Rollen: `Human Maintainer` · `Nova` · `Implementation Agent` · `Securit
 - **Follow-up Work Package:** ggf. spätere NDF-Kandidatenprüfung
 - **Notes:** Neu erfasst in diesem Work Package selbst; noch nicht validiert durch Nova Review.
 
+## LL-016
+
+- **Source Project:** CoreOps
+- **Source Work Package:** CO-WP-004B2
+- **Date or Phase:** Foundation 0.1
+- **Title:** Commit-gated status transitions must be represented in repository state
+- **Context:** A downstream NDF intake review was blocked because the Human Maintainer had committed an approval package (`CO-WP-004B1`, Commit 4ad3111) while the stored gate fields still said `pending until commit`. The commit provided evidence of approval intent, but the documentation state diverged from that intent.
+- **Observation:** A commit provides evidence for a decision but does not automatically change status values stored in repository documents. The commitment of approval intent and the documentation of approval state are separate acts — both are required for completeness.
+- **Impact:** The downstream intake correctly stopped fail-closed, preventing unauthorized continuation of a process based on contradictory documented state.
+- **Contributing Factor or Root Cause:** The prior workflow treated the commit operation as if it could implicitly mutate documentation state within the same repository. This is not the case in a multi-step governance model with explicit state machines.
+- **Recommended Project Change:** Approval fields must be set to the intended approved state BEFORE staging and committing. The Human-Maintainer commit then serves as external evidence and audit trail of that documented approval, but does not retroactively change status values.
+- **Classification:** LL-PROCESS
+- **Secondary Classifications:** LL-DOCUMENTATION, LL-SECURITY
+- **Reusable Beyond CoreOps:** yes
+- **Security Relevance:** yes, because ambiguous or contradictory gate state can cause unauthorized continuation (state validation bypass) or unnecessary blocking (false negatives in approval logic).
+- **Evidence:** First NDF Intake attempt (`NDF-INTAKE-COREOPS-001`) blocked on Preflight with `Transfer Package Status: Prepared for Human-Maintainer Approval` and all seven `Human-Maintainer Gate: pending until commit` despite committed approval evidence. Status fields corrected in `CO-WP-004B2`.
+- **NDF Candidate ID:** —
+- **Owner Role:** Project Governance
+- **Status:** validated
+- **Follow-up Work Package:** NDF-seitige Governance-Überprüfung bei zukünftigen Intake Reviews
+- **Notes:** Neue Lesson aus Blockierungserlebnis in `CO-WP-004B2` selbst; keine automatische NDF-Kandidatenförderung in diesem Work Package (nur projektlokale Dokumentation der Erkenntnis).
+
 ## Zusammenfassung
 
-- **Anzahl Lessons:** 15 (LL-001…LL-013 retrospektiv, LL-014…LL-015 aus CO-WP-004B selbst)
+- **Anzahl Lessons:** 16 (LL-001…LL-013 retrospektiv, LL-014…LL-015 aus CO-WP-004B selbst, LL-016 aus CO-WP-004B2)
 - **Verteilung nach Primärklasse:** LL-PROCESS 8 (004,005,006,010,011,013,014,015) · LL-PROMPT 1 (001) · LL-TOOLING 1 (002) · LL-SECURITY 1 (003) · LL-ARCHITECTURE 3 (007,008,012) · LL-DOCUMENTATION 1 (009)
   > Korrektur (CO-WP-004B1): Der vorherige Eintrag listete fälschlich 9 IDs für LL-PROCESS (inkl. „001"), obwohl „8" als Zahl genannt war. Ursache: LL-001 trägt `LL-PROCESS` nur als **Sekundärklasse**; ihre Primärklasse ist `LL-PROMPT`. Keine Lesson wurde umklassifiziert — nur der Zusammenfassungssatz wurde korrigiert. Verifiziert gegen alle 15 `Classification`-Felder; Summe 8+1+1+1+3+1 = 15.
-- **Verteilung nach Status:** `validated` 13 (LL-001…LL-013) · `observed` 2 (LL-014, LL-015)
+- **Verteilung nach Status:** `validated` 14 (LL-001…LL-013, LL-016) · `observed` 2 (LL-014, LL-015)
 - **NDF-relevante Lessons (Reusable Beyond CoreOps: yes):** alle 15
 - **Projektlokal ohne eigenen NDF-Kandidaten:** LL-006, LL-007, LL-009, LL-010, LL-012, LL-014, LL-015 (Muster bereits projektintern umgesetzt bzw. zu spezifisch für einen eigenständigen Kandidaten)
 

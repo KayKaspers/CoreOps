@@ -1,13 +1,17 @@
 # CoreOps – NDF Feedback Transfer Package 001
 
-> Transfer Package Status: **Prepared for Human-Maintainer Approval**
+> Transfer Package Status: **Approved for NDF Intake**
 > NDF Adoption Status: **Not transferred**
 > NDF Repository Status: **Unchanged**
 > Erzeugt durch `CO-WP-004B1 – First NDF Feedback Transfer Package` (docs-only / transfer-preparation)
 
 ## 1. Status
 
-Prepared for Human-Maintainer Approval. Dieses Dokument ist ein **Transferpaket-Vorschlag**, keine vollzogene NDF-Übernahme.
+Approved for NDF Intake. This Transfer Package has passed Human-Maintainer approval and is authorized for the NDF intake review process. This status authorizes an NDF intake review only.
+
+It does not claim transfer, adoption, implementation or inclusion in any NDF version.
+
+Dieses Dokument ist ein **genehmigter Transferpaket-Vorschlag** für die NDF-Überprüfung durch das NDF-Team. Es bestätigt die Human-Maintainer-Freigabe zur Vorbereitung, **nicht** den tatsächlichen NDF-Transfer.
 
 ## 2. Purpose
 
