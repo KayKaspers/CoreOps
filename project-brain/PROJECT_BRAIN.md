@@ -156,13 +156,22 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 - Decision Index +8 (DEC-S-23…30, löst DEC-S-10/11), Risk Register +11 (RISK-50…60).
 - **Keine Zertifizierung/Endorsement, keine Tool-Abhängigkeit, keine ADR; Capability Matrix und Lessons-Learned-Register unverändert; keine NDF-Rückführung gestartet.**
 
+## Capability Matrix Security and Governance Alignment (CO-WP-004E)
+
+- Zwei neue Dokumente: [CAPABILITY_SECURITY_AND_GOVERNANCE_ALIGNMENT.md](../docs/security/CAPABILITY_SECURITY_AND_GOVERNANCE_ALIGNMENT.md) und [CAPABILITY_MATRIX_SPEC.md](../docs/project-system/CAPABILITY_MATRIX_SPEC.md) (letztere existierte lokal nicht, neu erstellt).
+- Foundation Capability Matrix additiv erweitert: fünf getrennte Statusdimensionen (Roadmap/Implementation/Support/Evidence/Security-Governance), Profile Relevance, PSR-01…18-Zuordnung, Responsibility-Codes (P/O/S) — für alle Capabilities; keine gelöscht/umbenannt/hochgestuft.
+- **Zählkorrektur:** Matrix enthält **94** Capabilities (grep-verifiziert); frühere Summe „74" korrigiert; andere „74"-Referenzen später abzugleichen (an Nova gemeldet).
+- PSR-Mapping = Readiness-Relevanz, **nicht** BSI-Compliance; kein detailliertes Control-Mapping; Evidence durchgehend `not-assessed`; kein `compliant`/`requirement-satisfied`.
+- Decision Index +7 (DEC-S-31…37, erweitert DEC-O-19), Risk Register +6 (RISK-61…66).
+- **Keine Capability implementiert; keine ADR; keine Technologieauswahl; Lessons-Learned-Register unverändert; keine NDF-Rückführung.**
+
 ## Letztes Work Package
 
-`CO-WP-004D – ITIL and PRINCE2 Applicability and Tailoring Decision` (docs-only / governance-framework applicability review). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-004C – GO WITH NOTES`.
+`CO-WP-004E – Capability Matrix Security and Governance Alignment` (docs-only / capability-governance alignment). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-004D – GO WITH NOTES`.
 
 ## Nächstes Work Package
 
-`CO-WP-004E – Capability Matrix Security and Governance Alignment` (planned-next; pending Nova review von CO-WP-004D und Human-Maintainer-Freigabe). `CO-WP-005` bleibt `planned-after-CO-WP-004E`.
+`CO-WP-005 – Language Standard, Public Neutrality and Repository Governance` (planned-next; pending Nova review von CO-WP-004E und Human-Maintainer-Freigabe). Die 004er-Erweiterungsserie (004A…004E) ist abgeschlossen.
 
 ## Human-Maintainer-Gates
 
@@ -183,6 +192,7 @@ Freigabe, Staging, Commit, Push, Merge, Tags, Releases, produktive Deployments s
 - `CO-WP-004B4`: Rückmeldung geliefert; Nova Review `pending`.
 - `CO-WP-004C`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
 - `CO-WP-004D`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
+- `CO-WP-004E`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
 
 ---
 

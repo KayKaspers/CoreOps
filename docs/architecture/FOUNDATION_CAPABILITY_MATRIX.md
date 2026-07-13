@@ -42,6 +42,10 @@ Die drei Dimensionen sind voneinander unabhängig.
 - Eine nur geplante Capability ist `not-supported`.
 - `blocked`/`revoked` benötigen eine dokumentierte Begründung.
 
+## Erweitertes Status- und Governance-Modell (CO-WP-004E)
+
+`CO-WP-004E` erweitert dieses Statusmodell additiv um zwei weitere Dimensionen (**Evidence Status**, **Security/Governance Status**) sowie **Profile Relevance**, **PSR-Domänen-Zuordnung** und **Responsibility-Codes**. Die bestehenden drei Dimensionen (Roadmap/Implementation/Support) bleiben unverändert autoritativ. Die vollständige Definition steht in [CAPABILITY_MATRIX_SPEC.md](../project-system/CAPABILITY_MATRIX_SPEC.md) und [CAPABILITY_SECURITY_AND_GOVERNANCE_ALIGNMENT.md](../security/CAPABILITY_SECURITY_AND_GOVERNANCE_ALIGNMENT.md). Die per-Capability-Zuordnung steht im Abschnitt „Security and Governance Alignment" unten. **Keine** Capability wird durch CO-WP-004E hochgestuft, gelöscht oder umbenannt; PSR-Zuordnung bedeutet Readiness-Relevanz, **nicht** BSI-Compliance.
+
 ## Funktionale Integrationslevel
 
 ```text
@@ -236,12 +240,167 @@ Zur Kompaktheit werden folgende Kürzel verwendet:
 
 ---
 
+## Security and Governance Alignment (CO-WP-004E)
+
+Additive per-Capability-Zuordnung (gleiche IDs, keine parallele Liste). Spalten: **Evidence** (Evidence Status) · **Sec/Gov** (Security/Governance Status) · **Profiles** (Readiness: S=Standard/H=Hardened/G=Government; Governance: SO=Service Operations/MDP=Major Deployment Project/PSD=Public-Sector Delivery) · **PSR** (Readiness-Domänen PSR-01…18, Relevanz — **keine** BSI-Compliance) · **Resp** (P=Product/O=Operator/S=Shared).
+
+> Evidence Status ist projektweit `not-assessed` (keine per-Capability-Evidenz in diesem WP bewertet). Kein `implemented`/`supported`/`validated`/`compliant`. `controls-required` markiert sicherheitskritische oder schreibende Capabilities, die noch Controls-Design benötigen.
+
+### Platform and Experience
+| ID | Evidence | Sec/Gov | Profiles | PSR | Resp |
+|----|----------|---------|----------|-----|------|
+| CAP-PLATFORM-001 | not-assessed | baseline-mapped | S/H/G | PSR-01,05 | P/O |
+| CAP-PLATFORM-002 | not-assessed | not-assessed | S/H/G | mapping-review-required | P |
+| CAP-PLATFORM-003 | not-assessed | baseline-mapped | S/H/G; SO | PSR-16 | P/O |
+| CAP-PLATFORM-004 | not-assessed | baseline-mapped | S/H/G | PSR-16 | P/O |
+| CAP-PLATFORM-005 | not-assessed | baseline-mapped | S/H/G | PSR-16 | P/O |
+| CAP-PLATFORM-006 | not-assessed | baseline-mapped | S/H/G; PSD | PSR-07,16 | P/O |
+| CAP-PLATFORM-007 | not-assessed | baseline-mapped | S/H/G | PSR-16 | P/O |
+
+### Identity and Governance
+| ID | Evidence | Sec/Gov | Profiles | PSR | Resp |
+|----|----------|---------|----------|-----|------|
+| CAP-IDENTITY-001 | not-assessed | controls-required | S/H/G; PSD | PSR-03,01 | P/O/S |
+| CAP-IDENTITY-002 | not-assessed | controls-required | S/H/G; PSD | PSR-03,04 | P/O/S |
+| CAP-IDENTITY-003 | not-assessed | controls-required | H/G; PSD | PSR-04,13 | P/O/S |
+| CAP-IDENTITY-004 | not-assessed | controls-required | H/G; MDP,PSD | PSR-04,13 | P/O/S |
+| CAP-IDENTITY-005 | not-assessed | controls-required | H/G; PSD | PSR-04 | P/O/S |
+| CAP-IDENTITY-006 | not-assessed | controls-required | H/G | PSR-03,12 | P/O/S |
+
+### Inventory and Source of Truth
+| ID | Evidence | Sec/Gov | Profiles | PSR | Resp |
+|----|----------|---------|----------|-----|------|
+| CAP-INVENTORY-001 | not-assessed | baseline-mapped | S/H/G | PSR-02 | P/O |
+| CAP-INVENTORY-002 | not-assessed | baseline-mapped | S/H/G | PSR-02 | P/O |
+| CAP-INVENTORY-003 | not-assessed | baseline-mapped | S/H/G | PSR-02 | P/O |
+| CAP-INVENTORY-004 | not-assessed | baseline-mapped | S/H/G | PSR-02,14 | P/O |
+| CAP-INVENTORY-005 | not-assessed | baseline-mapped | S/H/G | PSR-02 | P/O |
+| CAP-INVENTORY-006 | not-assessed | baseline-mapped | S/H/G | PSR-02,16 | P/O |
+| CAP-INVENTORY-007 | not-assessed | baseline-mapped | S/H/G | PSR-02,11 | P/O |
+
+### Discovery
+| ID | Evidence | Sec/Gov | Profiles | PSR | Resp |
+|----|----------|---------|----------|-----|------|
+| CAP-DISCOVERY-001 | not-assessed | baseline-mapped | S/H/G | PSR-02,11 | P/O/S |
+| CAP-DISCOVERY-002 | not-assessed | baseline-mapped | S/H/G | PSR-02,05 | P/O/S |
+| CAP-DISCOVERY-003 | not-assessed | baseline-mapped | S/H/G | PSR-02,11 | P/O/S |
+| CAP-DISCOVERY-004 | not-assessed | baseline-mapped | S/H/G | PSR-02 | P/O/S |
+| CAP-DISCOVERY-005 | not-assessed | baseline-mapped | S/H/G | PSR-02 | P/O/S |
+| CAP-DISCOVERY-006 | not-assessed | baseline-mapped | S/H/G | PSR-02,14 | P/O/S |
+| CAP-DISCOVERY-007 | not-assessed | baseline-mapped | S/H/G | PSR-02 | P/O/S |
+| CAP-DISCOVERY-008 | not-assessed | controls-required | S/H/G | PSR-11,13,05 | P/O/S |
+
+### Monitoring and Observability
+| ID | Evidence | Sec/Gov | Profiles | PSR | Resp |
+|----|----------|---------|----------|-----|------|
+| CAP-MONITORING-001 | not-assessed | baseline-mapped | S/H/G; SO | PSR-07,08 | P/O/S |
+| CAP-MONITORING-002 | not-assessed | baseline-mapped | S/H/G; SO | PSR-07,08 | P/O/S |
+| CAP-MONITORING-003 | not-assessed | baseline-mapped | S/H/G; SO | PSR-07 | P/O/S |
+| CAP-MONITORING-004 | not-assessed | baseline-mapped | S/H/G; SO | PSR-08 | P/O/S |
+| CAP-MONITORING-005 | not-assessed | baseline-mapped | S/H/G; SO | PSR-07,16 | P/O/S |
+| CAP-MONITORING-006 | not-assessed | baseline-mapped | S/H/G; SO,PSD | PSR-07 | P/O/S |
+| CAP-MONITORING-007 | not-assessed | baseline-mapped | S/H/G; SO | PSR-07 | P/O/S |
+| CAP-MONITORING-008 | not-assessed | baseline-mapped | S/H/G; SO | PSR-07 | P/O/S |
+
+### Network
+| ID | Evidence | Sec/Gov | Profiles | PSR | Resp |
+|----|----------|---------|----------|-----|------|
+| CAP-NETWORK-001 | not-assessed | baseline-mapped | S/H/G; SO | PSR-11,02 | P/O/S |
+| CAP-NETWORK-002 | not-assessed | baseline-mapped | S/H/G; SO | PSR-11,02 | P/O/S |
+| CAP-NETWORK-003 | not-assessed | baseline-mapped | S/H/G | PSR-11 | P/O/S |
+| CAP-NETWORK-004 | not-assessed | baseline-mapped | S/H/G | PSR-11 | P/O/S |
+| CAP-NETWORK-005 | not-assessed | baseline-mapped | S/H/G | PSR-11 | P/O/S |
+| CAP-NETWORK-006 | not-assessed | baseline-mapped | S/H/G | PSR-11 | P/O/S |
+| CAP-NETWORK-007 | not-assessed | baseline-mapped | S/H/G; SO | PSR-11,10 | P/O/S |
+| CAP-NETWORK-008 | not-assessed | controls-required | H/G; MDP | PSR-13,11 | P/O/S |
+
+### Topology
+| ID | Evidence | Sec/Gov | Profiles | PSR | Resp |
+|----|----------|---------|----------|-----|------|
+| CAP-TOPOLOGY-001 | not-assessed | baseline-mapped | S/H/G | PSR-02,11 | P/O |
+| CAP-TOPOLOGY-002 | not-assessed | baseline-mapped | S/H/G | PSR-02,11 | P/O |
+
+### Print
+| ID | Evidence | Sec/Gov | Profiles | PSR | Resp |
+|----|----------|---------|----------|-----|------|
+| CAP-PRINT-001 | not-assessed | baseline-mapped | S/H/G; SO | PSR-02 | P/O/S |
+| CAP-PRINT-002 | not-assessed | baseline-mapped | S/H/G; SO | PSR-02 | P/O/S |
+| CAP-PRINT-003 | not-assessed | baseline-mapped | S/H/G | PSR-02,15 | P/O/S |
+| CAP-PRINT-004 | not-assessed | baseline-mapped | S/H/G; SO | PSR-08,02 | P/O/S |
+| CAP-PRINT-005 | not-assessed | controls-required | H/G; PSD | PSR-15,07 | P/O/S |
+| CAP-PRINT-006 | not-assessed | controls-required | H/G; MDP | PSR-13,15 | P/O/S |
+| CAP-PRINT-007 | not-assessed | baseline-mapped | S/H/G | PSR-02,16 | P/O |
+| CAP-PRINT-008 | not-assessed | controls-required | H/G; MDP | PSR-13 | P/O/S |
+
+### Virtualization and Containers
+| ID | Evidence | Sec/Gov | Profiles | PSR | Resp |
+|----|----------|---------|----------|-----|------|
+| CAP-VIRT-001 | not-assessed | baseline-mapped | S/H/G | PSR-02 | P/O/S |
+| CAP-VIRT-002 | not-assessed | baseline-mapped | S/H/G | PSR-02,14 | P/O/S |
+| CAP-VIRT-003 | not-assessed | baseline-mapped | S/H/G | PSR-02,14 | P/O/S |
+| CAP-VIRT-004 | not-assessed | controls-required | H/G; MDP | PSR-13 | P/O/S |
+| CAP-VIRT-005 | not-assessed | baseline-mapped | S/H/G | PSR-02,13 | P/O/S |
+| CAP-VIRT-006 | not-assessed | controls-required | H/G; MDP | PSR-13,14 | P/O/S |
+
+### Deployments and Change
+| ID | Evidence | Sec/Gov | Profiles | PSR | Resp |
+|----|----------|---------|----------|-----|------|
+| CAP-DEPLOY-001 | not-assessed | baseline-mapped | S/H/G; MDP | PSR-14 | P/O/S |
+| CAP-DEPLOY-002 | not-assessed | baseline-mapped | S/H/G; MDP | PSR-13 | P/O/S |
+| CAP-DEPLOY-003 | not-assessed | baseline-mapped | S/H/G; MDP | PSR-13 | P/O/S |
+| CAP-DEPLOY-004 | not-assessed | controls-required | H/G; MDP,PSD | PSR-13,04 | P/O/S |
+| CAP-DEPLOY-005 | not-assessed | baseline-mapped | S/H/G; MDP,SO | PSR-13,08 | P/O/S |
+| CAP-DEPLOY-006 | not-assessed | controls-required | H/G; MDP | PSR-09,13 | P/O/S |
+| CAP-DEPLOY-007 | not-assessed | controls-required | H/G; MDP | PSR-13,14 | P/O/S |
+| CAP-DEPLOY-008 | not-assessed | controls-required | H/G; MDP | PSR-13 | P/O/S |
+| CAP-DEPLOY-009 | not-assessed | controls-required | H/G; MDP | PSR-13 | P/O/S |
+| CAP-DEPLOY-010 | not-assessed | controls-required | H/G; MDP | PSR-13,11 | P/O/S |
+| CAP-DEPLOY-011 | not-assessed | controls-required | H/G; MDP | PSR-13,06 | P/O/S |
+
+### Automation and Response
+| ID | Evidence | Sec/Gov | Profiles | PSR | Resp |
+|----|----------|---------|----------|-----|------|
+| CAP-AUTOMATION-001 | not-assessed | controls-required | H/G; MDP | PSR-13,14 | P/O/S |
+| CAP-AUTOMATION-002 | not-assessed | controls-required | H/G; MDP | PSR-13 | P/O/S |
+| CAP-AUTOMATION-003 | not-assessed | baseline-mapped | S/H/G; SO | PSR-08,16 | P/O |
+| CAP-AUTOMATION-004 | not-assessed | controls-required | H/G; MDP | PSR-13,06 | P/O/S |
+| CAP-AUTOMATION-005 | not-assessed | baseline-mapped | S/H/G; SO | PSR-08 | P/O/S |
+| CAP-AUTOMATION-006 | not-assessed | baseline-mapped | S/H/G; SO | PSR-08,07 | P/O/S |
+
+### Trust and Offline
+| ID | Evidence | Sec/Gov | Profiles | PSR | Resp |
+|----|----------|---------|----------|-----|------|
+| CAP-TRUST-001 | not-assessed | controls-required | H/G; PSD | PSR-12 | P/O/S |
+| CAP-TRUST-002 | not-assessed | controls-required | H/G | PSR-12 | P/O/S |
+| CAP-TRUST-003 | not-assessed | controls-required | H/G | PSR-12,11 | P/O/S |
+| CAP-TRUST-004 | not-assessed | controls-required | H/G; MDP | PSR-14 | P/O/S |
+| CAP-TRUST-005 | not-assessed | baseline-mapped | S/H/G; MDP | PSR-14 | P/O/S |
+| CAP-TRUST-006 | not-assessed | controls-required | H/G; MDP | PSR-14 | P/O/S |
+| CAP-TRUST-007 | not-assessed | controls-required | H/G; PSD | PSR-14,10,17 | P/O/S |
+| CAP-TRUST-008 | not-assessed | baseline-mapped | H/G | PSR-10 | P/O/S |
+| CAP-TRUST-009 | not-assessed | baseline-mapped | H/G | PSR-10 | P/O/S |
+
+### Protection and Recovery
+| ID | Evidence | Sec/Gov | Profiles | PSR | Resp |
+|----|----------|---------|----------|-----|------|
+| CAP-PROTECT-001 | not-assessed | controls-required | H/G; PSD | PSR-05,15 | P/O/S |
+| CAP-PROTECT-002 | not-assessed | baseline-mapped | S/H/G; PSD | PSR-09 | P/O/S |
+| CAP-PROTECT-003 | not-assessed | baseline-mapped | S/H/G; PSD | PSR-09 | P/O/S |
+| CAP-PROTECT-004 | not-assessed | baseline-mapped | S/H/G | PSR-09,13 | P/O/S |
+| CAP-PROTECT-005 | not-assessed | controls-required | H/G | PSR-10 | P/O/S |
+| CAP-PROTECT-006 | not-assessed | baseline-mapped | S/H/G | PSR-10 | P/O/S |
+| CAP-PROTECT-007 | not-assessed | controls-required | H/G; PSD | PSR-15,16 | P/O/S |
+| CAP-PROTECT-008 | not-assessed | baseline-mapped | S/H/G | PSR-10 | P/O |
+
+> **Alignment-Bestätigung:** 94 Capabilities zugeordnet; keine Capability gelöscht/umbenannt/hochgestuft; Evidence durchgehend `not-assessed`; kein `compliant`/`requirement-satisfied`/`government-approved`. PSR-Zuordnung = Readiness-Relevanz, **nicht** BSI-Control-Erfüllung.
+
 ## Zusammenfassung
 
 - **Domains:** 12 (Platform · Identity · Inventory · Discovery · Monitoring · Network · Topology · Print · Virtualization · Deployments · Automation · Trust · Protection — Topology als eigenständige Gruppe innerhalb der Network-nahen Domänen geführt).
-- **Capabilities gesamt:** 74.
-- **Implementation Status:** 74× `not-implemented` (100 %).
-- **Support Status:** 74× `not-supported` (100 %). Keine Integration `supported`.
+- **Capabilities gesamt:** 94.
+  > **Zählkorrektur (CO-WP-004E):** Die frühere Zusammenfassung nannte „74". Eine deterministische Zeilenzählung (`grep -cE "^\| CAP-"`) ergibt **94** eindeutige Capability-Zeilen mit 94 eindeutigen IDs und ohne Duplikate. Keine Capability wurde hinzugefügt oder entfernt; nur die Summenangabe wurde auf den tatsächlichen Bestand korrigiert. Weitere Projektdokumente, die noch „74" nennen, sollten in einem späteren Documentation-Consistency-Schritt abgeglichen werden (an Nova gemeldet).
+- **Implementation Status:** 94× `not-implemented` (100 %).
+- **Support Status:** 94× `not-supported` (100 %). Keine Integration `supported`.
 - **Read/Write-Verteilung:** `read` und `platform` dominieren die frühen Meilensteine; `write-target` ausschließlich ab `Deploy`/`Extend`/`Automate` und **nie** im Observe-Meilenstein.
 - **Roadmap-Verteilung (grob):** `target-observe` ~30 · `target-map` ~10 · `target-plan` ~6 · `target-deploy` ~14 · `target-automate` ~6 · `target-extend` ~8. (Näherung; verbindlich ist die Zeilenangabe.)
 

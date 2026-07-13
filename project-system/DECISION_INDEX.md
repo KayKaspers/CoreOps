@@ -123,6 +123,20 @@ Alle 30 Concept-ADR-Kandidaten (§51) plus zwei Foundation-Klärungen (Delivery 
 | DEC-S-29 | External certification or endorsement | not-claimed | NG | CO-WP-004D | HM | — | nein | Not claimed; keine PeopleCert-/Akkreditierungs-Claims |
 | DEC-S-30 | Framework-specific tooling dependency | not-selected | NG | CO-WP-004D | HM | — | nein | Kein ITSM-/PM-Produkt ausgewählt |
 
+## Capability Governance Alignment Decisions (CO-WP-004E)
+
+> Registriert über [CAPABILITY_SECURITY_AND_GOVERNANCE_ALIGNMENT.md](../docs/security/CAPABILITY_SECURITY_AND_GOVERNANCE_ALIGNMENT.md), [CAPABILITY_MATRIX_SPEC.md](../docs/project-system/CAPABILITY_MATRIX_SPEC.md) und der ausgerichteten [FOUNDATION_CAPABILITY_MATRIX.md](../docs/architecture/FOUNDATION_CAPABILITY_MATRIX.md). Erweitert DEC-O-19 (drei Statusdimensionen). Keine Capability implementiert, keine BSI-Compliance, keine ADR.
+
+| Decision ID | Topic | Status | Class | Source | Owner | Target WP | ADR Required | Notes |
+| ----------- | ----- | ------ | ----- | ------ | ----- | --------- | ------------ | ----- |
+| DEC-S-31 | Multi-dimensional capability status | accepted-product-direction | BG | CO-WP-004E | Nova | CO-WP-004E | nein | Accepted für die Foundation Capability Matrix; erweitert DEC-O-19 |
+| DEC-S-32 | Roadmap/Implementation/Support/Evidence | binding-governance-direction | BG | CO-WP-004E | Nova | laufend | nein | Separate, unabhängige Dimensionen (+ Security/Governance) |
+| DEC-S-33 | PSR-domain mapping | accepted-product-direction | RC | CO-WP-004E | Nova | later mapping WP | nein | Readiness-Relationship, **nicht** Compliance-Mapping |
+| DEC-S-34 | Responsibility mapping | binding-governance-direction | BG | CO-WP-004E | Nova | CO-WP-004E | nein | Product/Operator/Shared-Dimensionen erforderlich |
+| DEC-S-35 | Evidence capability | binding-governance-direction | BG | CO-WP-004E | Nova | laufend | nein | Getrennt von deployment evidence und requirement satisfaction |
+| DEC-S-36 | Detailed BSI control mapping | deferred | DF | CO-WP-004E | Nova | later ingestion WP | teils | Deferred; versionsgenaue Source-Ingestion nötig |
+| DEC-S-37 | Capability certification or compliance status | not-claimed | NG | CO-WP-004E | HM | — | nein | Not claimed; kein `compliant`-Wert in der Matrix |
+
 ## Deferred Decisions
 
 | Decision ID | Topic | Status | Class | Source | Owner | Target WP | ADR Required |
@@ -171,5 +185,7 @@ Alle 30 Concept-ADR-Kandidaten (§51) plus zwei Foundation-Klärungen (Delivery 
 **CO-WP-004C-Registrierungen:** 7 Public-Sector-Readiness-Entscheidungen (DEC-S-16…22): interne Profile Standard/Hardened/Government und BSI-orientierte Positionierung sowie Public-Sector-Readiness-Baseline als `accepted-product-direction` (mit expliziten Claim Boundaries); detailliertes BSI-Requirement-Mapping `deferred`; Government-Profil-Zertifizierung `not-claimed`; Cloud C5/C3A `open` (conditional/deployment-dependent); VS-NfD `not-claimed` (not assessed). Keine technische Architektur ausgewählt, keine ADR erzeugt.
 
 **CO-WP-004D-Registrierungen:** 8 Framework-Tailoring-Entscheidungen (DEC-S-23…30): ausgewählte ITIL-Konzepte `adopted-with-tailoring`; ITIL 4 und Version 5 mit expliziten Versionsgrenzen; vollständige ITIL-Implementierung `rejected`; PRINCE2 Version 7 `optional-profile`; vollständige PRINCE2-Implementierung `rejected`; NDF-Primat `binding-governance-direction`; externe Zertifizierung/Endorsement `not-claimed`; Framework-Tool-Abhängigkeit `not-selected`. Löst DEC-S-10/DEC-S-11 (ITIL/PRINCE2 foundation-candidate) auf. Keine ADR, keine Tool-Auswahl.
+
+**CO-WP-004E-Registrierungen:** 7 Capability-Governance-Alignment-Entscheidungen (DEC-S-31…37): mehrdimensionaler Capability-Status `accepted-product-direction`; Roadmap/Implementation/Support/Evidence als getrennte Dimensionen und Evidence-Capability-Trennung `binding-governance-direction`; PSR-Mapping = Readiness-Relationship (nicht Compliance); Responsibility-Mapping erforderlich; detailliertes BSI-Control-Mapping `deferred`; Capability-Zertifizierung/Compliance `not-claimed`. Erweitert DEC-O-19; keine ADR, keine Technologieauswahl.
 
 **Bestätigung:** Keine technische Architektur-, Technologie- oder Implementierungsentscheidung trägt den Status `accepted`. Keine Integration ist `supported`. Keine Zertifizierung/VS-Eignung behauptet. Keine ADR ist Accepted. Es wurde keine ADR-Datei erzeugt.

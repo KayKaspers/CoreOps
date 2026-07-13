@@ -69,18 +69,28 @@ Risk Level ist eine qualitative Ableitung aus Likelihood × Impact. Kein Risiko 
 | RISK-58 | Projektmanagement-Tool-Lock-in | Bindung an ein PM-Produkt durch Projektprofil | architecture | low | medium | low | Kein PM-Produkt ausgewählt (DEC-S-30); Profile tool-neutral | Vendor-neutrale Umsetzung | Nova | later ops WP | treatment-planned | docs/governance/COREOPS_SERVICE_AND_PROJECT_GOVERNANCE_PROFILES.md §5 |
 | RISK-59 | Betriebsguidance ≠ implementierte Capability | Guidance wird als implementierte CoreOps-Funktion missverstanden | communication | medium | medium | medium | Adoption-Levels (u. a. `future-capability-reference`); Capability-Mapping erst CO-WP-004E | Konsequente Trennung Guidance/Capability | Nova | CO-WP-004E | treatment-planned | docs/governance/ITIL_AND_PRINCE2_APPLICABILITY_AND_TAILORING.md §8 |
 | RISK-60 | Profil ≠ Zertifizierung | Interne Governance-Profile als Zertifizierungsstufen missverstanden | communication | medium | medium | medium | Profile explizit `internal/optional/tailorable/not certification levels` | Human-Maintainer-Commit; Public-Neutrality-Reviews | Nova | CO-WP-004E | treatment-planned | docs/governance/COREOPS_SERVICE_AND_PROJECT_GOVERNANCE_PROFILES.md §3, §14 |
+| RISK-61 | Evidenzfähigkeit ≠ vorhandene Evidenz | „CoreOps kann Nachweis erzeugen" wird als „im Deployment liegt Evidenz vor" gelesen | communication | medium | medium | medium | Evidence-Model §11 (capability/available/satisfied); Evidence Status `not-assessed` in der Matrix | Konsequente Trennung in Evidenz-/Capability-WPs | Nova | later evidence WP | treatment-planned | docs/security/CAPABILITY_SECURITY_AND_GOVERNANCE_ALIGNMENT.md §11 |
+| RISK-62 | PSR-Mapping ≠ BSI-Compliance | PSR-Domänen-Zuordnung wird als erfüllte BSI-Anforderung missverstanden | compliance | medium | high | medium | Alignment §9/§16: „relevant to readiness domain", kein Klausel-Mapping; erweitert RISK-49 | Versionsgenaues Mapping erst in späterem WP | Nova | later mapping WP | treatment-planned | docs/security/CAPABILITY_SECURITY_AND_GOVERNANCE_ALIGNMENT.md §16 |
+| RISK-63 | Capability-Identity-Drift | Capability-IDs/Namen driften oder werden dupliziert | governance | low | medium | low | Stabile IDs `CAP-<DOMAIN>-<NNN>`; Eindeutigkeit grep-verifiziert (94/94); keine parallele Liste | ID-Prüfung bei jeder Matrixänderung | Nova | laufend | treatment-planned | docs/project-system/CAPABILITY_MATRIX_SPEC.md §2 |
+| RISK-64 | Matrixbreite/Komplexität mindert Wartbarkeit | Zu viele Spalten machen die Matrix unlesbar/unpflegbar | process | low | medium | low | Zweistufige Darstellung (Hauptmatrix + additive Sec/Gov-Tabelle); kompakte Codes | Regelmäßige Lesbarkeitsprüfung | Nova | laufend | treatment-planned | docs/architecture/FOUNDATION_CAPABILITY_MATRIX.md |
+| RISK-65 | Unbekannte Zustände positiv interpretiert | `not-assessed`/pending wird stillschweigend als implementiert/supported/compliant gelesen | governance | medium | medium | medium | Spec §9: unbekannte Zustände nie positiv; kein Upgrade ohne Evidenz | Konsequente Statusdisziplin in Folge-WPs | Nova | CO-WP-004E | treatment-planned | docs/project-system/CAPABILITY_MATRIX_SPEC.md §9 |
+| RISK-66 | Capability-Zählungsinkonsistenz | Mehrere Dokumente nennen „74", die Matrix enthält 94 Zeilen | quality | low | low | low | Matrix-Summe auf 94 korrigiert (grep-verifiziert) mit Note; Diskrepanz an Nova gemeldet | Documentation-Consistency-Abgleich der „74"-Referenzen in späterem WP | Nova | later consistency WP | treatment-planned | docs/architecture/FOUNDATION_CAPABILITY_MATRIX.md (Zusammenfassung) |
 
 ## Verteilung nach Risk Level
 
 - high: 18 (RISK-01, 02, 03, 04, 05, 08, 09, 11, 22, 25, 28, 30, 40, 42, 43, 44, 45, 49) — kritischer Impact bei RISK-02/04/09/11.
-- medium: 34 (RISK-06, 07, 10, 12, 13, 14, 15, 16, 18, 19, 20, 21, 23, 24, 26, 27, 29, 31, 32, 34, 36, 37, 39, 41, 46, 47, 48, 50, 52, 54, 55, 56, 59, 60)
-- low: 8 (RISK-17, 33, 35, 38, 51, 53, 57, 58)
+- medium: 37 (RISK-06, 07, 10, 12, 13, 14, 15, 16, 18, 19, 20, 21, 23, 24, 26, 27, 29, 31, 32, 34, 36, 37, 39, 41, 46, 47, 48, 50, 52, 54, 55, 56, 59, 60, 61, 62, 65)
+- low: 11 (RISK-17, 33, 35, 38, 51, 53, 57, 58, 63, 64, 66)
 
-Gesamt: 60 Risiken. Status: `open` 17 · `treatment-planned` 43. Kein Risiko `accepted-by-human`.
+Gesamt: 66 Risiken. Status: `open` 17 · `treatment-planned` 49. Kein Risiko `accepted-by-human`.
 
 ## Höchste Risiken (Fokus)
 
 RISK-02 (Sicherheitskomplexität), RISK-04 (privilegierte Remote-Ausführung), RISK-09 (Secret Custody), RISK-11 (Self-Dependency) — jeweils Impact `critical`. Behandlung in den security-baseline-Work-Packages CO-WP-007, CO-WP-013, CO-WP-024, CO-WP-026.
+
+## CO-WP-004E – geänderte Risiken
+
+Neu erfasst RISK-61 (Evidenzfähigkeit ≠ vorhandene Evidenz), RISK-62 (PSR-Mapping ≠ BSI-Compliance, erweitert RISK-49), RISK-63 (Capability-Identity-Drift), RISK-64 (Matrixbreite/Wartbarkeit), RISK-65 (unbekannte Zustände positiv interpretiert), RISK-66 (Capability-Zählungsinkonsistenz „74" vs. 94). Bestehende RISK-24 (Capability-Maturity), RISK-43 (Verantwortung), RISK-44 (Evidenz/Erfüllung), RISK-60 (Profil ≠ Zertifizierung) bleiben gültig und werden nicht dupliziert. **Kein Risiko ohne Evidenz geschlossen; kein Risiko `accepted-by-human`.**
 
 ## CO-WP-004D – geänderte Risiken
 

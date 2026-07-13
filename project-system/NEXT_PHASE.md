@@ -58,18 +58,21 @@ Alle 7 Kandidaten auf `adopted-in-ndf` (drei Adoption-Commits 1ebffa6 / e894c6f 
 
 ## ITIL and PRINCE2 Applicability and Tailoring
 
-Current implemented WP: `CO-WP-004D – ITIL and PRINCE2 Applicability and Tailoring Decision` – pending Nova review.
+`CO-WP-004D – ITIL and PRINCE2 Applicability and Tailoring Decision` completed; Nova Review pending. ITIL `adopted-with-tailoring`, PRINCE2 V7 `optional-profile`, NDF bleibt primär; drei interne Governance-Profile; keine Zertifizierung.
 
-Current framework decisions:
-Selected ITIL concepts adopted with tailoring.
-ITIL 4 and ITIL Version 5 are tracked with explicit version boundaries.
-PRINCE2 Project Management Version 7 remains optional project and deployment guidance.
-NDF remains the primary development framework.
-No certification, endorsement or full-framework implementation is claimed.
+## Capability Matrix Security and Governance Alignment
 
-Zwei neue Dokumente: ITIL/PRINCE2-Applicability-and-Tailoring (Matrizen, Versionsgrenze, Konflikthierarchie, Overload-Guards) und interne Service-/Project-Governance-Profile (Service Operations Guidance, Major Deployment Project Profile, Public-Sector Delivery Profile). Decision Index +8 (DEC-S-23…30, löst DEC-S-10/11), Risk Register +11 (RISK-50…60). Capability Matrix und Lessons-Learned-Register unverändert; keine NDF-Rückführung.
+Current implemented WP: `CO-WP-004E – Capability Matrix Security and Governance Alignment` – pending Nova review.
 
-Next planned WP: `CO-WP-004E – Capability Matrix Security and Governance Alignment`.
+Current capability-governance state:
+Foundation Capability Matrix aligned with multi-dimensional status,
+PSR readiness domains, responsibility boundaries and evidence states.
+
+No detailed BSI control mapping or compliance claim.
+
+Zwei neue Dokumente (Alignment + Capability-Matrix-Spezifikation); Foundation Capability Matrix additiv um Evidence-/Security-Governance-Status, Profile Relevance, PSR-Zuordnung und Responsibility-Codes für alle 94 Capabilities erweitert. Zählkorrektur: Matrix enthält 94 Capabilities (frühere Summe „74" korrigiert, grep-verifiziert). Decision Index +7 (DEC-S-31…37), Risk Register +6 (RISK-61…66). Lessons-Learned-Register unverändert; keine NDF-Rückführung; keine ADR; keine Capability implementiert/hochgestuft.
+
+Next planned WP: `CO-WP-005 – Language Standard, Public Neutrality and Repository Governance`.
 
 ## Current Goal
 

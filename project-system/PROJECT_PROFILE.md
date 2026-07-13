@@ -239,6 +239,16 @@ Folgende Themen benötigen vor jeder verbindlichen technischen Festlegung einen 
 - **Claim-Grenzen:** keine ITIL-/PRINCE2-Zertifizierung, keine vollständige Implementierung, kein Endorsement (u. a. PeopleCert), keine Tool-Abhängigkeit.
 - **Status:** Tailoring-Entscheidung umgesetzt; Capability Matrix und Lessons-Learned-Register unverändert; keine ADR; keine NDF-Rückführung.
 
+## CO-WP-004E Konsolidierung (Capability Matrix Security and Governance Alignment)
+
+- **Alignment-Dokument:** [CAPABILITY_SECURITY_AND_GOVERNANCE_ALIGNMENT.md](../docs/security/CAPABILITY_SECURITY_AND_GOVERNANCE_ALIGNMENT.md) — fünf Statusdimensionen (Roadmap/Implementation/Support/Evidence/Security-Governance), Profile, PSR-Mapping, Verantwortung, Evidenz-Drei-Zustands-Modell.
+- **Capability-Matrix-Spezifikation:** [CAPABILITY_MATRIX_SPEC.md](../docs/project-system/CAPABILITY_MATRIX_SPEC.md) — neu erstellt (existierte lokal nicht); mehrdimensionales Modell + Migrationsregeln.
+- **Foundation Capability Matrix:** additiv um Evidence-/Security-Governance-Status, Profile Relevance, PSR-Zuordnung und Responsibility-Codes für alle Capabilities erweitert; keine gelöscht/umbenannt/hochgestuft.
+- **Zählkorrektur:** Matrix enthält **94** Capabilities (frühere Summe „74" grep-verifiziert korrigiert; „74"-Referenzen anderer Dokumente später abzugleichen).
+- **Governance-Fortschreibung:** Decision Index +7 (DEC-S-31…37), Risk Register +6 (RISK-61…66).
+- **Claim-Grenzen:** PSR-Mapping = Readiness-Relevanz, keine BSI-Compliance; kein detailliertes Control-Mapping; kein `compliant`/`requirement-satisfied`/`government-approved`.
+- **Status:** Alignment dokumentiert; keine Capability implementiert; keine ADR; Lessons-Learned-Register unverändert; keine NDF-Rückführung.
+
 ## Notes
 
 - **NDF-Level-Semantik:** `ndf_level: 1` bedeutet ausschließlich „initialer NDF-Projektbootstrap" — keine vollständige NDF-Konformität, technische Reife, Releasebereitschaft, Sicherheitsfreigabe oder erreichte Produktstufe. Der Zahlenwert bleibt unverändert. Die Starter-Vorlage mit `ndf_level: 2` bleibt dokumentierte NDF-Quellambiguität, ist aber kein Blocker (CCR-03).
