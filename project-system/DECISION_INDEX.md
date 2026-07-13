@@ -184,6 +184,25 @@ Alle 30 Concept-ADR-Kandidaten (§51) plus zwei Foundation-Klärungen (Delivery 
 | DEC-S-62 | Detailed security architecture | architecture-context | deferred | non-binding | CO-WP-007 | Nova | Deferred zu späteren Security-Architektur-WPs |
 | DEC-S-63 | Technology and crypto selection | architecture-context | deferred | non-binding | CO-WP-007 | Nova | Deferred; keine Krypto-/Authentisierungs-/Netzauswahl |
 
+## Logical Module Architecture Decisions (CO-WP-008)
+
+> Registriert über [COREOPS_LOGICAL_MODULE_ARCHITECTURE.md](../docs/architecture/COREOPS_LOGICAL_MODULE_ARCHITECTURE.md), [COREOPS_MODULE_CATALOG.md](../docs/architecture/COREOPS_MODULE_CATALOG.md) und [MODULE_BOUNDARY_AND_DEPENDENCY_STANDARD.md](../docs/architecture/MODULE_BOUNDARY_AND_DEPENDENCY_STANDARD.md). **Getrennte Dimensionen**; keine kombinierten Pseudostatuswerte; keine Technologie-/Deployment-Auswahl; keine ADR.
+
+| Decision ID | Topic | Decision Class | Lifecycle Status | Binding Level | Source | Owner | Notes |
+| ----------- | ----- | -------------- | ---------------- | ------------- | ------ | ----- | ----- |
+| DEC-S-64 | Logical module architecture | architecture-context | accepted | binding-governance | CO-WP-008 | HM | Accepted foundation architecture direction (17 Module) |
+| DEC-S-65 | Module IDs | governance-direction | accepted | binding-governance | CO-WP-008 | Nova | Stabil, nicht wiederverwendbar |
+| DEC-S-66 | Module semantics | architecture-context | accepted | guidance | CO-WP-008 | Nova | Logische Verantwortungsgrenzen, **keine** Pflicht-Services/Deployment-Einheiten |
+| DEC-S-67 | Policy/Control/Execution separation | security-context | accepted | binding-governance | CO-WP-008 | Nova | Getrennte Autoritätsgrenzen |
+| DEC-S-68 | Experience module boundary | security-context | accepted | binding-governance | CO-WP-008 | Nova | Darf privilegierte Ausführung **nicht** direkt auslösen |
+| DEC-S-69 | Adapter boundary | security-context | accepted | binding-governance | CO-WP-008 | Nova | Adapter besitzen/umgehen globale Governance **nicht** |
+| DEC-S-70 | Agent module | architecture-context | accepted | binding-governance | CO-WP-008 | Nova | Optional; agentless möglich |
+| DEC-S-71 | Offline transfer boundary | security-context | accepted | binding-governance | CO-WP-008 | Nova | Getrennte Intake-/Approval-Grenze; keine direkte Ausführung |
+| DEC-S-72 | Authoritative data ownership | governance-direction | accepted | binding-governance | CO-WP-008 | Nova | Muss explizit sein (ein Owner pro Konzept) |
+| DEC-S-73 | Communication technology | architecture-context | deferred | non-binding | CO-WP-008 | Nova | Deferred; nur konzeptionelle Muster |
+| DEC-S-74 | Deployment topology | architecture-context | deferred | non-binding | CO-WP-008 | Nova | Deferred |
+| DEC-S-75 | Implementation architecture | architecture-context | deferred | non-binding | CO-WP-008 | Nova | Deferred (Monolith/Microservices offen) |
+
 ## Deferred Decisions
 
 | Decision ID | Topic | Status | Class | Source | Owner | Target WP | ADR Required |
@@ -240,5 +259,7 @@ Alle 30 Concept-ADR-Kandidaten (§51) plus zwei Foundation-Klärungen (Delivery 
 **CO-WP-006-Registrierungen:** 10 System-Context-/Architektur-Taxonomie-Entscheidungen (DEC-S-44…53), **getrennte Dimensionen**: System Context und Plane Taxonomy `accepted`/`binding-governance`; Plane-Semantik = logische Bereiche (kein Deployment-Zwang); Managed Resources außerhalb Produktgrenze; External Services optional; Agent Plane optional (agentless möglich); Offline-Core als Produktrichtung; Control Authority erfordert explizite Autorisierung; Detailtechnologie und Threat Model `deferred`. Keine Technologieauswahl; keine ADR.
 
 **CO-WP-007-Registrierungen:** 10 Threat-Model-/Security-Baseline-Entscheidungen (DEC-S-54…63), **getrennte Dimensionen**: Foundation Threat Model und Threat Scenario Register `accepted`/`binding-governance`; Threat-IDs stabil; Ratings qualitativ/evidence-bounded; Security-Invarianten bindende Designanforderungen (keine implementierten Kontrollen); Mitigation-Implementierung `not-claimed`; Mitigation-Validierung, Penetration Testing, Detail-Security-Architektur und Technologie-/Kryptoauswahl `deferred`. Keine Sicherheitskontrolle implementiert; keine ADR.
+
+**CO-WP-008-Registrierungen:** 12 Logical-Module-Architecture-Entscheidungen (DEC-S-64…75), **getrennte Dimensionen**: logische Modularchitektur und Module-Semantik `accepted`; Module-IDs stabil; Policy/Control/Execution-Trennung, Experience-, Adapter-, Offline-Grenzen als Security-Kontext `binding-governance`; Agent-Modul optional; autoritative Datenownership explizit; Communication-Technologie, Deployment-Topologie und Implementation-Architektur `deferred`. Keine Technologie-/Deployment-Auswahl; keine ADR.
 
 **Bestätigung:** Keine technische Architektur-, Technologie- oder Implementierungsentscheidung trägt den Status `accepted`. Keine Integration ist `supported`. Keine Zertifizierung/VS-Eignung behauptet. Keine ADR ist Accepted. Es wurde keine ADR-Datei erzeugt.

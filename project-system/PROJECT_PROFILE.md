@@ -276,6 +276,15 @@ Folgende Themen benötigen vor jeder verbindlichen technischen Festlegung einen 
 - **Grenzen:** keine Sicherheitskontrolle implementiert/validiert; kein Pentest/Scan; keine Technologie-/Krypto-/Authentisierungsauswahl; keine ADR; Capability Matrix unverändert. Invarianten = Designanforderungen, keine implementierten Kontrollen.
 - **Status:** Foundation-Security-Baseline etabliert; nächstes WP `CO-WP-008`; Lessons-Learned-Register unverändert; keine NDF-Rückführung.
 
+## CO-WP-008 Konsolidierung (Architecture and Module Boundaries)
+
+- **Logical Module Architecture:** [COREOPS_LOGICAL_MODULE_ARCHITECTURE.md](../docs/architecture/COREOPS_LOGICAL_MODULE_ARCHITECTURE.md) — 17 logische Module (MOD-EXP/IAM/POL/INV/OBS/TOP/WFL/EXE/ADP/AGT/DEP/STA/SEC/EVD/NOT/OFF/EXT-001), Modulklassifikation, Policy/Control/Execution-Trennung, 2 Mermaid-Diagramme (Logical Module, Prohibited Bypass).
+- **Module Catalog:** [COREOPS_MODULE_CATALOG.md](../docs/architecture/COREOPS_MODULE_CATALOG.md) — vollständiges 17-Modul-Register; autoritative Daten-/Zustandsownership (ein Owner pro Konzept); Threat-/Invarianten-/Capability-Domänen-Referenzen; ersetzt **nicht** die Capability Matrix.
+- **Boundary/Dependency Standard:** [MODULE_BOUNDARY_AND_DEPENDENCY_STANDARD.md](../docs/architecture/MODULE_BOUNDARY_AND_DEPENDENCY_STANDARD.md) — Autoritätsgrenzen, erlaubte/verbotene Abhängigkeiten, verbotene Bypässe, Zyklusverbot, Adapter-/Agent-/Evidence-/Offline-/Plugin-Grenzen.
+- **Governance-Fortschreibung:** Decision Index +12 (DEC-S-64…75), Risk Register +15 (RISK-104…118).
+- **Grenzen:** module ≠ microservice/process/container/deployment unit; keine Technologie-/Protokoll-/Deployment-Auswahl; keine ADR; Invarianten = Designanforderungen; Capability Matrix + Threat-Dateien unverändert.
+- **Status:** Foundation-Logische-Architektur etabliert; nächstes WP `CO-WP-009`; Lessons-Learned-Register unverändert; keine NDF-Rückführung.
+
 ## Notes
 
 - **NDF-Level-Semantik:** `ndf_level: 1` bedeutet ausschließlich „initialer NDF-Projektbootstrap" — keine vollständige NDF-Konformität, technische Reife, Releasebereitschaft, Sicherheitsfreigabe oder erreichte Produktstufe. Der Zahlenwert bleibt unverändert. Die Starter-Vorlage mit `ndf_level: 2` bleibt dokumentierte NDF-Quellambiguität, ist aber kein Blocker (CCR-03).

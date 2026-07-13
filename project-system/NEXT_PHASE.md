@@ -74,23 +74,27 @@ Alle 7 Kandidaten auf `adopted-in-ndf` (drei Adoption-Commits 1ebffa6 / e894c6f 
 
 ## Threat Model and Trust Boundaries
 
-Current implemented WP: `CO-WP-007 – Threat Model and Trust Boundaries` – pending Nova review.
+`CO-WP-007 – Threat Model and Trust Boundaries` completed; Nova Review pending. Foundation Threat Model (24 Assets, 40 Threat Scenarios THR-001…040, 17 Invarianten, 5 Abuse Cases); keine implementierten/validierten Kontrollen.
 
-Current security state:
-Foundation threat model and authoritative threat-scenario register established.
+## Architecture and Module Boundaries
 
-Implemented mitigations:
-none claimed
+Current implemented WP: `CO-WP-008 – Architecture and Module Boundaries` – pending Nova review.
 
-Validated mitigations:
-none claimed
+Current architecture state:
+Foundation logical modules, stable module identities, authority boundaries and dependency rules defined.
 
-Detailed security architecture:
-not yet selected
+Technology selection:
+none
 
-Zwei neue Dokumente: Foundation Threat Model (24 Assets, 16 Threat Actors, 18 Threat-Kategorien, Angriffsflächen für alle 10 Planes, Trust-Boundary-Analyse TB-01…11, 17 Sicherheitsinvarianten, 5 Abuse Cases, 2 Mermaid-Diagramme) und Threat Scenario Register (40 Szenarien THR-001…040, stabile IDs, qualitative evidence-bounded Ratings, Mitigation States). Trust-Boundary-Dokument additiv um stabile Boundary-IDs + Threat-Verweise erweitert. Decision Index +10 (DEC-S-54…63), Risk Register +10 (RISK-94…103, nur Threat-Model-Governance-Risiken; einzelne Threats nicht dupliziert). Keine Sicherheitskontrolle implementiert/validiert; kein Pentest; keine Technologie-/Kryptoauswahl; keine ADR; Lessons-Learned-Register unverändert; keine NDF-Rückführung.
+Deployment topology:
+not selected
 
-Next planned WP: `CO-WP-008 – Architecture and Module Boundaries`.
+Implementation:
+not started
+
+Drei neue Dokumente: Logical Module Architecture (17 Module MOD-*, Modulklassifikation, Policy/Control/Execution-Trennung, Adapter-/Agentengrenzen, 2 Mermaid-Diagramme), Module Catalog (17-Modul-Register, Daten-/Zustandsownership, Threat-/Invarianten-Referenzen) und Module Boundary and Dependency Standard (Autoritätsgrenzen, erlaubte/verbotene Abhängigkeiten, verbotene Bypässe, Zyklusverbot). Decision Index +12 (DEC-S-64…75), Risk Register +15 (RISK-104…118). Module = logische Verantwortungsgrenzen (keine Microservices/Deployments); keine Technologie-/Deployment-Auswahl; keine ADR; Capability Matrix + Threat-Dateien + Lessons-Learned-Register unverändert; keine NDF-Rückführung.
+
+Next planned WP: `CO-WP-009 – Human Identity, Workspaces, RBAC and Break Glass`.
 
 ## Current Goal
 

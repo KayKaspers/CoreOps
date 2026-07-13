@@ -192,13 +192,22 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 - Decision Index +10 (DEC-S-54…63), Risk Register +10 (RISK-94…103, nur Threat-Model-Governance; einzelne Threats im Register, nicht dupliziert).
 - **Kein Pentest/Scan; keine Technologie-/Krypto-/Authentisierungsauswahl; keine ADR; Capability Matrix + Lessons-Learned-Register unverändert; keine NDF-Rückführung.**
 
+## Architecture and Module Boundaries (CO-WP-008)
+
+- Drei neue Dokumente: [COREOPS_LOGICAL_MODULE_ARCHITECTURE.md](../docs/architecture/COREOPS_LOGICAL_MODULE_ARCHITECTURE.md), [COREOPS_MODULE_CATALOG.md](../docs/architecture/COREOPS_MODULE_CATALOG.md), [MODULE_BOUNDARY_AND_DEPENDENCY_STANDARD.md](../docs/architecture/MODULE_BOUNDARY_AND_DEPENDENCY_STANDARD.md).
+- 17 logische Module (MOD-*) mit stabilen IDs, Klassifikation, Verantwortungen, Daten-/Zustandsownership (ein Owner pro Konzept), erlaubten/verbotenen Abhängigkeiten, Threat-/Invarianten-Referenzen; 2 Mermaid-Diagramme (conceptual).
+- Policy/Control/Execution getrennt; Experience löst Execution nicht direkt aus; Adapter umgehen Governance nicht; Agenten optional (agentless möglich); Offline-Intake keine direkte Ausführung; Evidence ohne Execution-Autorität; Notification ≠ Kommandokanal; Plugins umgehen Verträge nicht.
+- **module ≠ microservice/process/container/deployment unit; keine Technologie-/Protokoll-/Deployment-Auswahl; Invarianten = Designanforderungen, keine implementierten Kontrollen.**
+- Decision Index +12 (DEC-S-64…75), Risk Register +15 (RISK-104…118).
+- **Keine ADR; Capability Matrix + Threat-Dateien + Lessons-Learned-Register unverändert; keine NDF-Rückführung.**
+
 ## Letztes Work Package
 
-`CO-WP-007 – Threat Model and Trust Boundaries` (docs-only / security-baseline). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-006 – GO WITH NOTES`.
+`CO-WP-008 – Architecture and Module Boundaries` (docs-only / logical-architecture foundation). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-007 – GO WITH NOTES`.
 
 ## Nächstes Work Package
 
-`CO-WP-008 – Architecture and Module Boundaries` (docs-only; planned-next; pending Nova review von CO-WP-007 und Human-Maintainer-Freigabe).
+`CO-WP-009 – Human Identity, Workspaces, RBAC and Break Glass` (security-baseline; planned-next; pending Nova review von CO-WP-008 und Human-Maintainer-Freigabe).
 
 ## Human-Maintainer-Gates
 
@@ -223,6 +232,7 @@ Freigabe, Staging, Commit, Push, Merge, Tags, Releases, produktive Deployments s
 - `CO-WP-005`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
 - `CO-WP-006`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
 - `CO-WP-007`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
+- `CO-WP-008`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
 
 ---
 
