@@ -108,6 +108,21 @@ Alle 30 Concept-ADR-Kandidaten (§51) plus zwei Foundation-Klärungen (Delivery 
 | DEC-S-21 | Cloud C5/C3A applicability | open | CCR | CO-WP-004C | Nova | CO-WP-023 | teils | **Conditional and deployment-dependent**; nur bei Cloud-Szenarien relevant |
 | DEC-S-22 | VS-NfD suitability | not-claimed | NG | CO-WP-004C | HM | — | nein | **Not assessed and not claimed** (vgl. DEC-S-07 not-current-target) |
 
+## Framework Tailoring Decisions (CO-WP-004D)
+
+> Registriert über [ITIL_AND_PRINCE2_APPLICABILITY_AND_TAILORING.md](../docs/governance/ITIL_AND_PRINCE2_APPLICABILITY_AND_TAILORING.md) und [COREOPS_SERVICE_AND_PROJECT_GOVERNANCE_PROFILES.md](../docs/governance/COREOPS_SERVICE_AND_PROJECT_GOVERNANCE_PROFILES.md). Löst die Kandidaten DEC-S-10 (ITIL) und DEC-S-11 (PRINCE2) auf. Keine Zertifizierung/Endorsement, keine Tool-Abhängigkeit, keine ADR.
+
+| Decision ID | Topic | Status | Class | Source | Owner | Target WP | ADR Required | Notes |
+| ----------- | ----- | ------ | ----- | ------ | ----- | --------- | ------------ | ----- |
+| DEC-S-23 | Selected ITIL concepts | adopted-with-tailoring | RC | CO-WP-004D | HM | CO-WP-004E | nein | Service-management guidance; löst DEC-S-10 |
+| DEC-S-24 | ITIL 4 and ITIL Version 5 | binding-governance-direction | RC | CO-WP-004D | Nova | later ops WP | nein | Both tracked **with explicit version boundaries**; Bridge-Pfad anerkannt |
+| DEC-S-25 | Full ITIL implementation | rejected | NG | CO-WP-004D | HM | — | nein | Rejected; Framework-Overload-Schutz |
+| DEC-S-26 | PRINCE2 Project Management Version 7 | optional-profile | RC | CO-WP-004D | HM | CO-WP-004E | nein | Optional project/deployment governance guidance; löst DEC-S-11 |
+| DEC-S-27 | Full PRINCE2 implementation | rejected | NG | CO-WP-004D | HM | — | nein | Rejected; NDF bleibt maßgeblich |
+| DEC-S-28 | NDF primacy | binding-governance-direction | BG | CO-WP-004D | Nova | laufend | nein | NDF remains primary software-development and repository-governance framework |
+| DEC-S-29 | External certification or endorsement | not-claimed | NG | CO-WP-004D | HM | — | nein | Not claimed; keine PeopleCert-/Akkreditierungs-Claims |
+| DEC-S-30 | Framework-specific tooling dependency | not-selected | NG | CO-WP-004D | HM | — | nein | Kein ITSM-/PM-Produkt ausgewählt |
+
 ## Deferred Decisions
 
 | Decision ID | Topic | Status | Class | Source | Owner | Target WP | ADR Required |
@@ -154,5 +169,7 @@ Alle 30 Concept-ADR-Kandidaten (§51) plus zwei Foundation-Klärungen (Delivery 
 **CO-WP-004B-Registrierungen:** 4 Governance-Entscheidungen (DEC-S-12…15): Lessons-Learned-Prozess, NDF-Feedback-Prozess, kein automatischer NDF-Rückfluss und Human-Maintainer-Gate für NDF-Transfer — alle `proposed-binding-governance`.
 
 **CO-WP-004C-Registrierungen:** 7 Public-Sector-Readiness-Entscheidungen (DEC-S-16…22): interne Profile Standard/Hardened/Government und BSI-orientierte Positionierung sowie Public-Sector-Readiness-Baseline als `accepted-product-direction` (mit expliziten Claim Boundaries); detailliertes BSI-Requirement-Mapping `deferred`; Government-Profil-Zertifizierung `not-claimed`; Cloud C5/C3A `open` (conditional/deployment-dependent); VS-NfD `not-claimed` (not assessed). Keine technische Architektur ausgewählt, keine ADR erzeugt.
+
+**CO-WP-004D-Registrierungen:** 8 Framework-Tailoring-Entscheidungen (DEC-S-23…30): ausgewählte ITIL-Konzepte `adopted-with-tailoring`; ITIL 4 und Version 5 mit expliziten Versionsgrenzen; vollständige ITIL-Implementierung `rejected`; PRINCE2 Version 7 `optional-profile`; vollständige PRINCE2-Implementierung `rejected`; NDF-Primat `binding-governance-direction`; externe Zertifizierung/Endorsement `not-claimed`; Framework-Tool-Abhängigkeit `not-selected`. Löst DEC-S-10/DEC-S-11 (ITIL/PRINCE2 foundation-candidate) auf. Keine ADR, keine Tool-Auswahl.
 
 **Bestätigung:** Keine technische Architektur-, Technologie- oder Implementierungsentscheidung trägt den Status `accepted`. Keine Integration ist `supported`. Keine Zertifizierung/VS-Eignung behauptet. Keine ADR ist Accepted. Es wurde keine ADR-Datei erzeugt.

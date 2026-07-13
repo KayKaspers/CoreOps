@@ -147,13 +147,22 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 - Governance: Decision Index +7 (DEC-S-16…22), Risk Register +10 (RISK-40…49). BSI-Positionierung additiv aktualisiert.
 - **Keine BSI-Zertifizierung/Vollkonformität/Behörden-/VS-NfD-Freigabe behauptet; keine einzelnen BSI-Anforderungen erfunden; Capability Matrix unverändert (→ CO-WP-004E); keine ADR; keine Technologie ausgewählt.**
 
+## ITIL and PRINCE2 Applicability and Tailoring (CO-WP-004D)
+
+- Zwei neue Dokumente: [ITIL_AND_PRINCE2_APPLICABILITY_AND_TAILORING.md](../docs/governance/ITIL_AND_PRINCE2_APPLICABILITY_AND_TAILORING.md) und [COREOPS_SERVICE_AND_PROJECT_GOVERNANCE_PROFILES.md](../docs/governance/COREOPS_SERVICE_AND_PROJECT_GOVERNANCE_PROFILES.md).
+- ITIL `adopted-with-tailoring` (Service-Management-Guidance); PRINCE2 Version 7 `optional-profile`; vollständige Implementierung beider `rejected`. ITIL 4 und Version 5 mit expliziten Versionsgrenzen (Bridge-Pfad anerkannt).
+- NDF bleibt primäres Entwicklungs-/Repository-Governance-Framework; Konflikthierarchie und Overload-Guards dokumentiert; keine parallele Governance.
+- Drei interne, optionale Governance-Profile (Service Operations / Major Deployment Project / Public-Sector Delivery), keine Zertifizierungsstufen.
+- Decision Index +8 (DEC-S-23…30, löst DEC-S-10/11), Risk Register +11 (RISK-50…60).
+- **Keine Zertifizierung/Endorsement, keine Tool-Abhängigkeit, keine ADR; Capability Matrix und Lessons-Learned-Register unverändert; keine NDF-Rückführung gestartet.**
+
 ## Letztes Work Package
 
-`CO-WP-004C – BSI and Public-Sector Readiness Baseline` (docs-only / security-governance baseline). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-004B4 – GO WITH NOTES`.
+`CO-WP-004D – ITIL and PRINCE2 Applicability and Tailoring Decision` (docs-only / governance-framework applicability review). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-004C – GO WITH NOTES`.
 
 ## Nächstes Work Package
 
-`CO-WP-004D – ITIL and PRINCE2 Applicability and Tailoring Decision` (planned-next; pending Nova review von CO-WP-004C und Human-Maintainer-Freigabe). Danach `CO-WP-004E`. `CO-WP-005` bleibt `planned-after-CO-WP-004E`.
+`CO-WP-004E – Capability Matrix Security and Governance Alignment` (planned-next; pending Nova review von CO-WP-004D und Human-Maintainer-Freigabe). `CO-WP-005` bleibt `planned-after-CO-WP-004E`.
 
 ## Human-Maintainer-Gates
 
@@ -173,6 +182,7 @@ Freigabe, Staging, Commit, Push, Merge, Tags, Releases, produktive Deployments s
 - `CO-WP-004B3`: Rückmeldung geliefert; Nova Review `pending`.
 - `CO-WP-004B4`: Rückmeldung geliefert; Nova Review `pending`.
 - `CO-WP-004C`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
+- `CO-WP-004D`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
 
 ---
 

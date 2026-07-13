@@ -230,6 +230,15 @@ Folgende Themen benötigen vor jeder verbindlichen technischen Festlegung einen 
 - **Claim-Grenzen:** Keine BSI-Zertifizierung, keine IT-Grundschutz-Vollkonformität, keine Behörden-/VS-NfD-Freigabe; Produktreife ≠ Deployment-Compliance.
 - **Status:** Baseline etabliert; Capability Matrix unverändert (→ CO-WP-004E); keine ADR, keine Technologieauswahl.
 
+## CO-WP-004D Konsolidierung (ITIL and PRINCE2 Applicability and Tailoring Decision)
+
+- **Applicability/Tailoring:** [ITIL_AND_PRINCE2_APPLICABILITY_AND_TAILORING.md](../docs/governance/ITIL_AND_PRINCE2_APPLICABILITY_AND_TAILORING.md) — ITIL `adopted-with-tailoring` (20-Element-Matrix), PRINCE2 Version 7 `optional-profile` (12-Muster-Matrix), ITIL-4-/Version-5-Grenze, Konflikthierarchie, Overload-Guards.
+- **Governance-Profile:** [COREOPS_SERVICE_AND_PROJECT_GOVERNANCE_PROFILES.md](../docs/governance/COREOPS_SERVICE_AND_PROJECT_GOVERNANCE_PROFILES.md) — Service Operations Guidance, Major Deployment Project Profile, Public-Sector Delivery Profile (intern, optional, keine Zertifizierungsstufen).
+- **NDF-Primat:** NDF bleibt primäres Softwareentwicklungs-/Repository-Governance-Framework; keine parallele WP-/Decision-/Risk-Struktur.
+- **Governance-Fortschreibung:** Decision Index +8 (DEC-S-23…30, löst DEC-S-10/11), Risk Register +11 (RISK-50…60).
+- **Claim-Grenzen:** keine ITIL-/PRINCE2-Zertifizierung, keine vollständige Implementierung, kein Endorsement (u. a. PeopleCert), keine Tool-Abhängigkeit.
+- **Status:** Tailoring-Entscheidung umgesetzt; Capability Matrix und Lessons-Learned-Register unverändert; keine ADR; keine NDF-Rückführung.
+
 ## Notes
 
 - **NDF-Level-Semantik:** `ndf_level: 1` bedeutet ausschließlich „initialer NDF-Projektbootstrap" — keine vollständige NDF-Konformität, technische Reife, Releasebereitschaft, Sicherheitsfreigabe oder erreichte Produktstufe. Der Zahlenwert bleibt unverändert. Die Starter-Vorlage mit `ndf_level: 2` bleibt dokumentierte NDF-Quellambiguität, ist aber kein Blocker (CCR-03).

@@ -54,17 +54,22 @@ Alle 7 Kandidaten auf `adopted-in-ndf` (drei Adoption-Commits 1ebffa6 / e894c6f 
 
 ## BSI and Public-Sector Readiness Baseline
 
-Current implemented WP: `CO-WP-004C – BSI and Public-Sector Readiness Baseline` – pending Nova review.
+`CO-WP-004C – BSI and Public-Sector Readiness Baseline` completed; Nova Review pending. Drei Dokumente (Readiness-Baseline mit 18 PSR-Domänen, Reference-/Claims-Register, Public-Sector-Profil); keine Zertifizierung/Compliance behauptet.
 
-Current baseline:
-BSI and Public-Sector Readiness Baseline established.
-No certification or deployment-compliance claim.
+## ITIL and PRINCE2 Applicability and Tailoring
 
-Drei neue Dokumente erstellt: Readiness-Baseline (18 PSR-Domänen, Verantwortungs-/Evidenzmodell, Offline/Souveränität), Reference-/Claims-Register (offizielles BSI-Referenzset mit Versions-/Anwendbarkeitsstatus; C5/C3A bedingt) und Public-Sector-Profil (Standard/Hardened/Government, intern). BSI-Positionierung additiv aktualisiert. Decision Index (+7 DEC-S-16…22) und Risk Register (+10 RISK-40…49) fortgeschrieben. Capability Matrix unverändert. Keine BSI-Zertifizierung, keine IT-Grundschutz-Vollkonformität, keine Behörden-/VS-NfD-Freigabe behauptet; keine einzelnen BSI-Anforderungen erfunden.
+Current implemented WP: `CO-WP-004D – ITIL and PRINCE2 Applicability and Tailoring Decision` – pending Nova review.
 
-Next planned CoreOps WP: `CO-WP-004D – ITIL and PRINCE2 Applicability and Tailoring Decision` (planned-next; pending Nova review und Human-Maintainer-Freigabe).
+Current framework decisions:
+Selected ITIL concepts adopted with tailoring.
+ITIL 4 and ITIL Version 5 are tracked with explicit version boundaries.
+PRINCE2 Project Management Version 7 remains optional project and deployment guidance.
+NDF remains the primary development framework.
+No certification, endorsement or full-framework implementation is claimed.
 
-Following WP: `CO-WP-004E – Capability Matrix Security and Governance Alignment`.
+Zwei neue Dokumente: ITIL/PRINCE2-Applicability-and-Tailoring (Matrizen, Versionsgrenze, Konflikthierarchie, Overload-Guards) und interne Service-/Project-Governance-Profile (Service Operations Guidance, Major Deployment Project Profile, Public-Sector Delivery Profile). Decision Index +8 (DEC-S-23…30, löst DEC-S-10/11), Risk Register +11 (RISK-50…60). Capability Matrix und Lessons-Learned-Register unverändert; keine NDF-Rückführung.
+
+Next planned WP: `CO-WP-004E – Capability Matrix Security and Governance Alignment`.
 
 ## Current Goal
 
