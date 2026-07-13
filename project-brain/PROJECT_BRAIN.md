@@ -41,8 +41,8 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 
 ## Bekannte Risiken
 
-- Breiter Scope mit hohem Sicherheitsanspruch (siehe [RISK_REGISTER.md](../project-system/RISK_REGISTER.md), 34 Foundation-Risiken; RISK-02/04/09/11 mit Impact `critical`).
-- Governance-/Scope-Risiken auf `treatment-planned`: RISK-13/14/17/19/20/21 (CO-WP-003), RISK-22/23/24/25 (CO-WP-004) und RISK-26…34 (CO-WP-004A: Souveränität, Basisabhängigkeiten, BSI-Claims, Public-Sector-Aufwand, Framework-Overload, Lessons Learned, NDF-Rückfluss).
+- Breiter Scope mit hohem Sicherheitsanspruch (siehe [RISK_REGISTER.md](../project-system/RISK_REGISTER.md), 39 Foundation-Risiken; RISK-02/04/09/11 mit Impact `critical`).
+- Governance-/Scope-Risiken auf `treatment-planned`: RISK-13/14/17/19/20/21 (CO-WP-003), RISK-22/23/24/25 (CO-WP-004), RISK-26…34 (CO-WP-004A) und RISK-35…39 (CO-WP-004B: Transferprozesslast, Security-Learning-Verspätung, Evidenz-Verallgemeinerung, Duplikate, inkonsistente Statuswerte).
 - Weiterhin offene Konflikte aus der Concept-Klassifikation: Plane-Taxonomie (CCR-01), Offline-Policy (CCR-05), Machine Identity vs. Air-Gap (CCR-06), privilegierte Ausführung (CCR-07), Audit vs. Datenschutz (CCR-08), Offline-First-Facetten (CCR-09). CCR-12 (Herstellersupport-Grenze) in CO-WP-004 vorgeschlagen aufgelöst.
 
 ## Offene Fragen
@@ -58,7 +58,8 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 - `CO-WP-002`: Fail-closed-Blocker (fehlende Quelle) war korrekt (`GO – Blocker bestätigt`); nach Bereitstellung der lokalen read-only-Quelle wurde das Concept v3.0 vollständig registriert und mit `GO WITH NOTES` bewertet. Lesson: Quelle als verlässliche lokale Datei vor der Registrierung verifizieren (Identität, Abschnitte, Ende, Trunkierung).
 - `CO-WP-003`: Governance-Konsolidierung — Konflikte CCR-02/04/10/11 vorgeschlagen aufgelöst; Zusatzstatus (`proposed`/`clarified`/`verified`) im Decision Index eingeführt, ohne technische Architektur zu akzeptieren. Nova-Bewertung: `GO WITH NOTES`; durch Human-Maintainer-Commit angenommen.
 - `CO-WP-004`: Capability Matrix und Observe-Supportgrenze — drei getrennte Statusdimensionen trennen Planung, Implementierung und Support sauber. Lesson: „Capability target ≠ implemented ≠ verified ≠ supported"; Herstellernennung ist kein Support (CCR-12 vorgeschlagen aufgelöst). Nova-Bewertung: `GO WITH NOTES`; durch Human-Maintainer-Commit angenommen.
-- `CO-WP-004A`: Strategische Erweiterung registriert (Souveränität, BSI-Orientierung). Lesson: Ausrichtung akzeptieren, ohne Technologie, Konformität oder Zertifizierung zu behaupten; Unabhängigkeit ≠ vollständige Eigenentwicklung; ITIL/PRINCE2/BSI bewusst schlank halten (Framework-Overload-Risiko).
+- `CO-WP-004A`: Strategische Erweiterung registriert (Souveränität, BSI-Orientierung). Lesson: Ausrichtung akzeptieren, ohne Technologie, Konformität oder Zertifizierung zu behaupten; Unabhängigkeit ≠ vollständige Eigenentwicklung; ITIL/PRINCE2/BSI bewusst schlank halten (Framework-Overload-Risiko). Nova-Bewertung: `GO WITH NOTES`; durch Human-Maintainer-Commit angenommen.
+- `CO-WP-004B`: Lessons-Learned- und NDF-Feedback-Governance etabliert; 15 Lessons erfasst (13 retrospektiv, 2 aus dem WP selbst), 7 reservierte NDF-Kandidaten bewertet. Lesson: getrennte Statusmodelle für Lessons vs. NDF-Kandidaten und eine explizite Positivliste erlaubter Agent-Status verhindern eine versehentliche Simulation von Freigabeentscheidungen.
 
 ## Lokaler NDF-Skills-Bestand
 
@@ -105,13 +106,21 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 - ITIL und PRINCE2 bleiben Foundation-Kandidaten (Tailoring in `CO-WP-004D`).
 - **Capability Matrix unverändert; technische Architektur weiterhin offen; keine ADR.**
 
+## Lessons Learned und NDF Feedback (CO-WP-004B)
+
+- Lessons-Learned-Prozess ([LESSONS_LEARNED_PROCESS.md](../docs/governance/LESSONS_LEARNED_PROCESS.md)) und NDF-Feedback-Prozess ([NDF_FEEDBACK_PROCESS.md](../docs/governance/NDF_FEEDBACK_PROCESS.md)) etabliert (Proposed for acceptance).
+- Retrospektive Ersterfassung: 13 Lessons aus CO-WP-001…004A plus 2 Lessons aus CO-WP-004B selbst (insgesamt 15) im [LESSONS_LEARNED_REGISTER.md](../project-system/LESSONS_LEARNED_REGISTER.md).
+- 7 reservierte NDF-Feedback-Kandidaten (NDF-FC-COREOPS-001…007) bewertet, alle `ready-for-bundling`, im [NDF_FEEDBACK_CANDIDATES.md](../project-system/NDF_FEEDBACK_CANDIDATES.md).
+- **Kein Kandidat wurde an das NDF übertragen oder adoptiert; kein NDF-Repository verändert; kein NDF-Work-Package erstellt.**
+- Transferentscheidungen (`approved-for-transfer` und höher) bleiben ausschließlich Nova Review + Human-Maintainer-Gate vorbehalten.
+
 ## Letztes Work Package
 
-`CO-WP-004A – Sovereignty, BSI Orientation and Concept Amendment Registration` (docs-only / governance-baseline). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-004 – GO WITH NOTES`.
+`CO-WP-004B – Lessons Learned and NDF Feedback Governance` (docs-only / governance). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-004A – GO WITH NOTES`.
 
 ## Nächstes Work Package
 
-`CO-WP-004B – Lessons Learned and NDF Feedback Governance` (planned-next; pending Nova review und Human-Maintainer-Freigabe). `CO-WP-005` ist `planned-after-CO-WP-004E`.
+`CO-WP-004C – BSI and Public-Sector Readiness Baseline` (planned-next; pending Nova review und Human-Maintainer-Freigabe). `CO-WP-005` bleibt `planned-after-CO-WP-004E`.
 
 ## Human-Maintainer-Gates
 
@@ -124,7 +133,8 @@ Freigabe, Staging, Commit, Push, Merge, Tags, Releases, produktive Deployments s
 - `CO-WP-002`: Fail-closed-Blocker gemeldet (`GO – Blocker bestätigt`); nach Source-Handoff regulär umgesetzt; Nova-Bewertung: `GO WITH NOTES`.
 - `CO-WP-003`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova-Bewertung: `GO WITH NOTES`.
 - `CO-WP-004`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova-Bewertung: `GO WITH NOTES`.
-- `CO-WP-004A`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
+- `CO-WP-004A`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova-Bewertung: `GO WITH NOTES`.
+- `CO-WP-004B`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
 
 ---
 

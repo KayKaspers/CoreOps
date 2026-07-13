@@ -2,7 +2,7 @@
 
 **NDF-Basis:** `v1.0.0` (Tag `v1.0.0`, Commit `9dcadc1`) — `main` ist **nicht** normativ.
 
-Diese Queue ist die **aktive, verbindliche** Foundation-Queue für CoreOps (autoritativ gegenüber der historischen Concept-§50-Queue; siehe [FOUNDATION_SCOPE_LOCK.md](../docs/governance/FOUNDATION_SCOPE_LOCK.md)). Änderungen an der Queue dürfen ausschließlich durch ein später freigegebenes Work Package erfolgen. Es erfolgt **keine** automatische Freigabe eines Folge-Work-Packages. Genau `CO-WP-004B` ist als nächster geplanter Schritt markiert. `CO-WP-005` ist als `planned-after-CO-WP-004E` markiert (die 004er-Erweiterungsserie wird zuvor abgeschlossen). Titel von `CO-WP-004C`/`CO-WP-004E` sind vorläufig und durch Nova zu präzisieren.
+Diese Queue ist die **aktive, verbindliche** Foundation-Queue für CoreOps (autoritativ gegenüber der historischen Concept-§50-Queue; siehe [FOUNDATION_SCOPE_LOCK.md](../docs/governance/FOUNDATION_SCOPE_LOCK.md)). Änderungen an der Queue dürfen ausschließlich durch ein später freigegebenes Work Package erfolgen. Es erfolgt **keine** automatische Freigabe eines Folge-Work-Packages. Genau `CO-WP-004C` ist als nächster geplanter Schritt markiert. `CO-WP-005` ist als `planned-after-CO-WP-004E` markiert (die 004er-Erweiterungsserie wird zuvor abgeschlossen).
 
 Jedes Work Package hat genau **einen** primären Typ.
 
@@ -13,11 +13,11 @@ Jedes Work Package hat genau **einen** primären Typ.
 | CO-WP-002 | docs-only         | Concept v3.0 Registration and Decision Classification          | completed-go-with-notes         |
 | CO-WP-003 | docs-only         | Project Brief, Scope Lock and Release Taxonomy                 | completed-go-with-notes         |
 | CO-WP-004 | docs-only         | Foundation Capability Matrix and Initial Support Boundary      | completed-go-with-notes         |
-| CO-WP-004A| gov-baseline      | Sovereignty, BSI Orientation and Concept Amendment Registration| implemented-awaiting-nova-review|
-| CO-WP-004B| gov-baseline      | Lessons Learned and NDF Feedback Governance                    | planned-next                    |
-| CO-WP-004C| docs-only         | 004-Series Follow-up (Nova-defined)                            | planned                         |
-| CO-WP-004D| gov-baseline      | ITIL and PRINCE2 Alignment Tailoring Decision                  | planned                         |
-| CO-WP-004E| docs-only         | 004-Series Consolidation (Nova-defined)                        | planned                         |
+| CO-WP-004A| gov-baseline      | Sovereignty, BSI Orientation and Concept Amendment Registration| completed-go-with-notes         |
+| CO-WP-004B| gov-baseline      | Lessons Learned and NDF Feedback Governance                    | implemented-awaiting-nova-review|
+| CO-WP-004C| docs-only         | BSI and Public-Sector Readiness Baseline                       | planned-next                    |
+| CO-WP-004D| gov-baseline      | ITIL and PRINCE2 Applicability and Tailoring Decision          | planned                         |
+| CO-WP-004E| docs-only         | Capability Matrix Security and Governance Alignment            | planned                         |
 | CO-WP-005 | docs-only         | Language Standard, Public Neutrality and Repository Governance | planned-after-CO-WP-004E        |
 | CO-WP-006 | docs-only         | System Context, Plane Taxonomy and External Boundaries         | planned                       |
 | CO-WP-007 | security-baseline | Threat Model and Trust Boundaries                              | planned                       |
@@ -49,7 +49,7 @@ Jedes Work Package hat genau **einen** primären Typ.
 ## Regeln
 
 - Genau ein primärer Typ pro Work Package.
-- Nur `CO-WP-004B` ist der nächste geplante Schritt (`planned-next`).
+- Nur `CO-WP-004C` ist der nächste geplante Schritt (`planned-next`).
 - Keine automatische Freigabe eines Folge-Work-Packages.
 - Die Queue ist noch **nicht** final scope-locked.
 - Änderungen an der Queue nur durch ein später freigegebenes Work Package.

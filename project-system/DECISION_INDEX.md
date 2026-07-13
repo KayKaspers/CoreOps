@@ -89,6 +89,10 @@ Alle 30 Concept-ADR-Kandidaten (§51) plus zwei Foundation-Klärungen (Delivery 
 | DEC-S-09 | NDF Feedback | controlled-candidate-process | BG | CO-WP-004A | HM | CO-WP-004B | nein | Übernahme nur via eigenes NDF-WP |
 | DEC-S-10 | ITIL alignment | foundation-candidate | RC | CO-WP-004A | Nova | CO-WP-004D | nein | Nur Kandidat |
 | DEC-S-11 | PRINCE2-derived governance | foundation-candidate | RC | CO-WP-004A | Nova | CO-WP-004D | nein | Nur Kandidat |
+| DEC-S-12 | Lessons-Learned-Prozess | proposed-binding-governance | BG | CO-WP-004B | Nova | CO-WP-004B | nein | [LESSONS_LEARNED_PROCESS.md](../docs/governance/LESSONS_LEARNED_PROCESS.md) |
+| DEC-S-13 | NDF-Feedback-Prozess | proposed-binding-governance | BG | CO-WP-004B | Nova | CO-WP-004B | nein | [NDF_FEEDBACK_PROCESS.md](../docs/governance/NDF_FEEDBACK_PROCESS.md) |
+| DEC-S-14 | Kein automatischer NDF-Rückfluss | proposed-binding-governance | BG | CO-WP-004B | HM | CO-WP-004B | nein | „No Automatic Synchronization" §18 |
+| DEC-S-15 | Human-Maintainer-Gate für NDF-Transfer | proposed-binding-governance | BG | CO-WP-004B | HM | CO-WP-004B | nein | Nur Nova+HM dürfen `approved-for-transfer` setzen |
 
 ## Deferred Decisions
 
@@ -132,5 +136,7 @@ Alle 30 Concept-ADR-Kandidaten (§51) plus zwei Foundation-Klärungen (Delivery 
 **CO-WP-004-Auflösungen (vor Human-Maintainer-Commit unverbindlich):** DEC-O-12 Herstellersupport-Grenze `proposed` (CCR-12), DEC-O-17 Capability Matrix `proposed`, DEC-O-18 Observe Support Boundary `proposed`, DEC-O-19 drei Statusdimensionen `proposed-binding-governance`, DEC-O-20 Support-Evidence `proposed-binding-governance`, DEC-O-21 Herstellerlisten ≠ Support `proposed-binding-governance`.
 
 **CO-WP-004A-Registrierungen:** 11 Produkt-/Strategie-/Governance-Entscheidungen (DEC-S-01…11): Souveränität und BSI-orientierte Entwicklung als `accepted-product-direction`; verpflichtende externe Managementprodukte `prohibited`; Zertifizierung `not-claimed`, VS-NfD `not-current-target`; Lessons Learned `binding-governance-direction`, NDF-Feedback `controlled-candidate-process`; ITIL und PRINCE2 `foundation-candidate`; technische Basisabhängigkeiten `open`.
+
+**CO-WP-004B-Registrierungen:** 4 Governance-Entscheidungen (DEC-S-12…15): Lessons-Learned-Prozess, NDF-Feedback-Prozess, kein automatischer NDF-Rückfluss und Human-Maintainer-Gate für NDF-Transfer — alle `proposed-binding-governance`.
 
 **Bestätigung:** Keine technische Architektur-, Technologie- oder Implementierungsentscheidung trägt den Status `accepted`. Keine Integration ist `supported`. Keine Zertifizierung/VS-Eignung behauptet. Keine ADR ist Accepted. Es wurde keine ADR-Datei erzeugt.

@@ -26,10 +26,14 @@ Foundation Capability Matrix (74 Capabilities) und initiale Observe-Supportgrenz
 
 ## Sovereignty and BSI Orientation
 
-Current implemented WP: `CO-WP-004A – Sovereignty, BSI Orientation and Concept Amendment Registration` – pending Nova review.
-Concept-v3.1-Amendment, Sovereignty-and-Dependency-Policy und BSI-Alignment-Positioning erstellt. Produktsouveränität und BSI-orientierte Entwicklung akzeptiert; verpflichtende externe Managementprodukte als Kernabhängigkeit ausgeschlossen; keine Zertifizierung/VS-Eignung behauptet; Standard-/Hardened-/Government-Profile registriert; Lessons Learned und kontrollierter NDF-Rückfluss registriert; ITIL/PRINCE2 nur Kandidaten. Keine Technologie ausgewählt; keine ADR; Capability Matrix unverändert.
+Concept-v3.1-Amendment, Sovereignty-and-Dependency-Policy und BSI-Alignment-Positioning erstellt (CO-WP-004A: GO WITH NOTES). Produktsouveränität und BSI-orientierte Entwicklung akzeptiert; verpflichtende externe Managementprodukte als Kernabhängigkeit ausgeschlossen; keine Zertifizierung/VS-Eignung behauptet; Standard-/Hardened-/Government-Profile registriert.
 
-Next planned WP: `CO-WP-004B – Lessons Learned and NDF Feedback Governance`.
+## Lessons Learned and NDF Feedback Governance
+
+Current implemented WP: `CO-WP-004B – Lessons Learned and NDF Feedback Governance` – pending Nova review.
+Lessons-Learned-Prozess und NDF-Feedback-Prozess etabliert; 15 Lessons retrospektiv/neu erfasst; 7 reservierte NDF-Feedback-Kandidaten bewertet (alle `ready-for-bundling`, keiner übertragen/adoptiert). Kein NDF-Repository verändert, kein NDF-Work-Package erstellt, keine ADR.
+
+Next planned WP: `CO-WP-004C – BSI and Public-Sector Readiness Baseline`.
 
 ## Current Goal
 

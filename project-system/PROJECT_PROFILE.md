@@ -183,6 +183,13 @@ Folgende Themen benötigen vor jeder verbindlichen technischen Festlegung einen 
 - **Lessons Learned & NDF-Feedback:** als Governance-Richtung bzw. kontrollierter Kandidatenprozess registriert; Detailprozess in `CO-WP-004B`.
 - **ITIL/PRINCE2:** nur Foundation-Kandidaten; Tailoring in `CO-WP-004D`.
 
+## CO-WP-004B Konsolidierung (Lessons Learned & NDF Feedback)
+
+- **Lessons-Learned-Prozess:** [docs/governance/LESSONS_LEARNED_PROCESS.md](../docs/governance/LESSONS_LEARNED_PROCESS.md) — Lifecycle, Klassen, Pflichtfelder, Statuswerte (Proposed for acceptance).
+- **NDF-Feedback-Prozess:** [docs/governance/NDF_FEEDBACK_PROCESS.md](../docs/governance/NDF_FEEDBACK_PROCESS.md) — kontrollierte, manuelle Rückführung; kein automatischer NDF-Rückfluss; Human-Maintainer-Gate für jeden Transfer.
+- **Register:** [LESSONS_LEARNED_REGISTER.md](LESSONS_LEARNED_REGISTER.md) (15 Lessons) und [NDF_FEEDBACK_CANDIDATES.md](NDF_FEEDBACK_CANDIDATES.md) (7 Kandidaten, alle `ready-for-bundling`).
+- **Status:** Kein Kandidat an das NDF übertragen oder adoptiert; kein NDF-Repository verändert.
+
 ## Notes
 
 - **NDF-Level-Semantik:** `ndf_level: 1` bedeutet ausschließlich „initialer NDF-Projektbootstrap" — keine vollständige NDF-Konformität, technische Reife, Releasebereitschaft, Sicherheitsfreigabe oder erreichte Produktstufe. Der Zahlenwert bleibt unverändert. Die Starter-Vorlage mit `ndf_level: 2` bleibt dokumentierte NDF-Quellambiguität, ist aber kein Blocker (CCR-03).

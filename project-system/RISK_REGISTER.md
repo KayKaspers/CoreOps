@@ -41,20 +41,29 @@ Risk Level ist eine qualitative Ableitung aus Likelihood × Impact. Kein Risiko 
 | RISK-30 | Unkontrollierte Basisabhängigkeiten | Dependencies ohne Zweck/Lizenz/SBOM/Exit eingeführt | security | medium | high | high | Dependency Admission Criteria (10 Punkte) + Human-Gate | Human-Maintainer-Commit; Einhaltung pro Dependency-WP | Nova | CO-WP-022 | treatment-planned | docs/architecture/SOVEREIGNTY_AND_DEPENDENCY_POLICY.md |
 | RISK-31 | Fehlende Offline-Verfügbarkeit von Dependencies | Basisabhängigkeit erfordert zwingend Online-Zugang | operations | medium | medium | medium | Policy: Offline-Verfügbarkeit als Zulassungskriterium; CorePack | Prüfung pro Dependency | Nova | CO-WP-023 | treatment-planned | docs/architecture/SOVEREIGNTY_AND_DEPENDENCY_POLICY.md |
 | RISK-32 | Framework-Overload (BSI/ITIL/PRINCE2) | Zu viele Rahmenwerke gleichzeitig übernommen, Governance überladen | process | medium | medium | medium | ITIL/PRINCE2 nur Kandidaten; Tailoring erst CO-WP-004D; BSI orientierend | Bewusste, schlanke Tailoring-Entscheidung | Nova | CO-WP-004D | open | docs/architecture/COREOPS_CONCEPT_V3_1_AMENDMENT.md |
-| RISK-33 | Verlust von Lessons Learned | Erkenntnisse werden nicht erfasst/wiederverwendet | process | medium | low | low | Lessons-Learned-Prüfpflicht als Governance-Richtung registriert | Detailprozess in CO-WP-004B | Nova | CO-WP-004B | treatment-planned | docs/architecture/COREOPS_CONCEPT_V3_1_AMENDMENT.md |
-| RISK-34 | Ungeprüfte Rückführung projektspezifischer Infos ins NDF | Private/projektspezifische Inhalte gelangen unkontrolliert ins öffentliche NDF | privacy/governance | low | medium | medium | Kontrollierter NDF-Feedback-Kandidatenprozess; Übernahme nur via eigenes NDF-WP + Human-Gate | Detailprozess in CO-WP-004B; Public-Neutrality-Guard | Nova | CO-WP-004B | treatment-planned | docs/architecture/COREOPS_CONCEPT_V3_1_AMENDMENT.md |
+| RISK-33 | Verlust von Lessons Learned | Erkenntnisse werden nicht erfasst/wiederverwendet | process | medium | low | low | LESSONS_LEARNED_PROCESS.md: verbindlicher Lifecycle, Trigger, Register; keine stille Löschung ohne Begründung | Human-Maintainer-Commit des Prozesses; konsequente Anwendung ab CO-WP-004B | Nova | CO-WP-004B | treatment-planned | docs/governance/LESSONS_LEARNED_PROCESS.md; project-system/LESSONS_LEARNED_REGISTER.md |
+| RISK-34 | Ungeprüfte Rückführung projektspezifischer Infos ins NDF | Private/projektspezifische Inhalte gelangen unkontrolliert ins öffentliche NDF | privacy/governance | low | medium | medium | NDF_FEEDBACK_PROCESS.md §6–7: Public-Neutrality- und Security/Privacy-Review vor jedem Statusfortschritt; Human-Gate für Transfer | Human-Maintainer-Commit des Prozesses; Einhaltung pro Kandidat | Nova | CO-WP-004B | treatment-planned | docs/governance/NDF_FEEDBACK_PROCESS.md |
+| RISK-35 | Prozesslast durch Einzeltransfers | Viele einzelne NDF-Übergaben statt Bündelung erzeugen Overhead für Nova/Human Maintainer | process | medium | low | low | Bündelungsregel + Übergabeauslöser (5–10 Kandidaten, Meilenstein, Mehrprojekt-Impact); Einzeleskalation nur für kritische Security-Learnings | Konsequente Anwendung der Bündelungsregel | Nova | CO-WP-004B | treatment-planned | docs/governance/NDF_FEEDBACK_PROCESS.md §9, §15 |
+| RISK-36 | Verspätete Übertragung wichtiger Security-Learnings | Kritisches Security-Learning wartet auf Bündelung statt sofort eskaliert zu werden | security | low | high | medium | Emergency-Security-Feedback-Eskalationspfad (§17): einzelne Eskalation bei kritischen Learnings, weiterhin mit Nova Review + Human-Gate | Konsequente Nutzung des Eskalationspfads | Security Review | CO-WP-004B | treatment-planned | docs/governance/NDF_FEEDBACK_PROCESS.md §17 |
+| RISK-37 | Kandidaten ohne Evidenz verallgemeinert | Eine Lesson wird als generalisierbar dargestellt, ohne dass Evidenz dies trägt | quality | medium | medium | medium | Transfer-Readiness-Kriterium 1–2 (validierte Lesson + Evidenz) vor jedem Statusfortschritt; `validation-required` als Fallback | Konsequente Validierung vor `ready-for-bundling` | Nova | CO-WP-004B | treatment-planned | docs/governance/NDF_FEEDBACK_PROCESS.md §5, §10 |
+| RISK-38 | Duplikate mehrfach ins NDF eingebracht | Derselbe oder ein gleichwertiger Kandidat wird wiederholt vorgeschlagen | process | low | low | low | Duplicate-and-Existing-Rule-Check (§8) vor Bündelung; Status `duplicate` bei Übereinstimmung | Konsequente Duplikatsprüfung vor Transfer | Nova | CO-WP-004B | treatment-planned | docs/governance/NDF_FEEDBACK_PROCESS.md §8 |
+| RISK-39 | Inkonsistente Statuswerte | Lesson- oder Candidate-Status wird außerhalb des definierten Vokabulars oder durch falsche Instanz gesetzt | governance | low | medium | medium | Fest definiertes Statusvokabular je Register; explizite Positivliste erlaubter Agent-Status; `approved-for-transfer`+ nur Nova/HM | Konsequente Einhaltung der Statuslisten in Folge-WPs | Project Governance | CO-WP-004B | treatment-planned | docs/governance/NDF_FEEDBACK_PROCESS.md §13; project-system/LESSONS_LEARNED_REGISTER.md |
 
 ## Verteilung nach Risk Level
 
 - high: 12 (RISK-01, 02, 03, 04, 05, 08, 09, 11, 22, 25, 28, 30) — kritischer Impact bei RISK-02/04/09/11.
-- medium: 20 (RISK-06, 07, 10, 12, 13, 14, 15, 16, 18, 19, 20, 21, 23, 24, 26, 27, 29, 31, 32, 34)
-- low: 2 (RISK-17, 33)
+- medium: 23 (RISK-06, 07, 10, 12, 13, 14, 15, 16, 18, 19, 20, 21, 23, 24, 26, 27, 29, 31, 32, 34, 36, 37, 39)
+- low: 4 (RISK-17, 33, 35, 38)
 
-Gesamt: 34 Risiken. Status: `open` 17 · `treatment-planned` 17. Kein Risiko `accepted-by-human`.
+Gesamt: 39 Risiken. Status: `open` 17 · `treatment-planned` 22. Kein Risiko `accepted-by-human`.
 
 ## Höchste Risiken (Fokus)
 
 RISK-02 (Sicherheitskomplexität), RISK-04 (privilegierte Remote-Ausführung), RISK-09 (Secret Custody), RISK-11 (Self-Dependency) — jeweils Impact `critical`. Behandlung in den security-baseline-Work-Packages CO-WP-007, CO-WP-013, CO-WP-024, CO-WP-026.
+
+## CO-WP-004B – geänderte Risiken
+
+RISK-33 (Verlust von Lessons Learned) und RISK-34 (ungeprüfte NDF-Rückführung) mit konkreter Prozess-Evidenz (LESSONS_LEARNED_PROCESS.md / NDF_FEEDBACK_PROCESS.md) präzisiert. Neu erfasst: RISK-35 (Prozesslast durch Einzeltransfers), RISK-36 (verspätete Security-Learning-Übertragung), RISK-37 (Kandidaten ohne Evidenz verallgemeinert), RISK-38 (Duplikate mehrfach ins NDF), RISK-39 (inkonsistente Statuswerte). **Kein Risiko ohne Evidenz geschlossen; kein Risiko `accepted-by-human`.**
 
 ## CO-WP-004A – geänderte Risiken
 

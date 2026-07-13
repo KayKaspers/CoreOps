@@ -23,7 +23,15 @@ Universelle, self-hosted und offline-fähige Operations Control Plane, die Sourc
 
 ## Letztes Work Package
 
-`CO-WP-004A – Sovereignty, BSI Orientation and Concept Amendment Registration` (docs-only / governance-baseline). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-004 – GO WITH NOTES`.
+`CO-WP-004B – Lessons Learned and NDF Feedback Governance` (docs-only / governance). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-004A – GO WITH NOTES`.
+
+## Lessons Learned und NDF Feedback (CO-WP-004B)
+
+- Lessons-Learned-Prozess und NDF-Feedback-Prozess etabliert (Proposed for acceptance).
+- 15 Lessons erfasst (13 retrospektiv aus CO-WP-001…004A, 2 aus CO-WP-004B selbst) im Lessons-Learned-Register.
+- 7 reservierte NDF-Feedback-Kandidaten (NDF-FC-COREOPS-001…007) bewertet, alle `ready-for-bundling`.
+- **Kein Kandidat übertragen/adoptiert; kein NDF-Repository verändert; kein NDF-Work-Package erstellt.**
+- Transferentscheidungen bleiben Nova Review + Human-Maintainer-Gate vorbehalten.
 
 ## Souveränität und BSI-Orientierung (CO-WP-004A)
 
@@ -56,12 +64,12 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 
 ## Nächstes Work Package
 
-`CO-WP-004B – Lessons Learned and NDF Feedback Governance` (vorgeschlagen; pending Nova review und Human-Maintainer-Freigabe). `CO-WP-005` ist `planned-after-CO-WP-004E`.
+`CO-WP-004C – BSI and Public-Sector Readiness Baseline` (vorgeschlagen; pending Nova review und Human-Maintainer-Freigabe). `CO-WP-005` bleibt `planned-after-CO-WP-004E`.
 
 ## Aktuelle Blocker
 
-- Keine harten Blocker. In CO-WP-003/004/004A adressiert (proposed/treatment-planned/accepted-direction): Release-Taxonomie, Docker-first, Queue-Autorität, NDF-`main`, NDF-Level, CCR-12, Observe-Scope, Legacy-Protokolle, Capability-Maturity, Drucktelemetrie, Produktsouveränität, BSI-Orientierung, Basisabhängigkeiten.
-- Weiter offen: Konflikte CCR-01, 05, 06, 07, 08, 09; technische ADR-Kandidaten; ITIL/PRINCE2-Tailoring (CO-WP-004D); Lessons-Learned-/NDF-Feedback-Detailprozess (CO-WP-004B).
+- Keine harten Blocker. In CO-WP-003/004/004A/004B adressiert (proposed/treatment-planned/accepted-direction): Release-Taxonomie, Docker-first, Queue-Autorität, NDF-`main`, NDF-Level, CCR-12, Observe-Scope, Legacy-Protokolle, Capability-Maturity, Drucktelemetrie, Produktsouveränität, BSI-Orientierung, Basisabhängigkeiten, Lessons-Learned-/NDF-Feedback-Prozess.
+- Weiter offen: Konflikte CCR-01, 05, 06, 07, 08, 09; technische ADR-Kandidaten; ITIL/PRINCE2-Tailoring (CO-WP-004D); konkretes IT-Grundschutz-Mapping (CO-WP-004C).
 
 ## Zentrale Sicherheitsgrenzen
 
@@ -83,7 +91,8 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 - Docker-first eingeordnet (CCR-10); aktive Queue-Autorität geklärt (CCR-11); NDF-`main` geklärt (CCR-04); Herstellersupport-Grenze vorgeschlagen aufgelöst (CCR-12).
 - Capability Matrix (74 Capabilities) und Observe-Supportgrenze vorhanden; alle Capabilities `not-implemented`/`not-supported`.
 - Souveränität und BSI-Orientierung als Accepted Product Direction registriert (CO-WP-004A); keine Zertifizierung/VS-Eignung behauptet; keine konkrete Dependency akzeptiert.
-- Weiter offen: Konflikte CCR-01, 05, 06, 07, 08, 09; 34 Foundation-Risiken (RISK-01…34, davon 17 `treatment-planned`).
+- Lessons-Learned- und NDF-Feedback-Prozess etabliert (CO-WP-004B); 15 Lessons, 7 NDF-Kandidaten (alle `ready-for-bundling`); kein Kandidat übertragen/adoptiert.
+- Weiter offen: Konflikte CCR-01, 05, 06, 07, 08, 09; 39 Foundation-Risiken (RISK-01…39, davon 22 `treatment-planned`).
 - Keine akzeptierten technischen ADRs.
 
 ## Relevante Quelldateien
@@ -106,6 +115,10 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 - [docs/architecture/COREOPS_CONCEPT_V3_1_AMENDMENT.md](../docs/architecture/COREOPS_CONCEPT_V3_1_AMENDMENT.md)
 - [docs/architecture/SOVEREIGNTY_AND_DEPENDENCY_POLICY.md](../docs/architecture/SOVEREIGNTY_AND_DEPENDENCY_POLICY.md)
 - [docs/security/BSI_ALIGNMENT_POSITIONING.md](../docs/security/BSI_ALIGNMENT_POSITIONING.md)
+- [docs/governance/LESSONS_LEARNED_PROCESS.md](../docs/governance/LESSONS_LEARNED_PROCESS.md)
+- [docs/governance/NDF_FEEDBACK_PROCESS.md](../docs/governance/NDF_FEEDBACK_PROCESS.md)
+- [project-system/LESSONS_LEARNED_REGISTER.md](../project-system/LESSONS_LEARNED_REGISTER.md)
+- [project-system/NDF_FEEDBACK_CANDIDATES.md](../project-system/NDF_FEEDBACK_CANDIDATES.md)
 - [project-brain/PROJECT_BRAIN.md](PROJECT_BRAIN.md)
 - [ROADMAP.md](../ROADMAP.md)
 
@@ -116,4 +129,5 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 - `CO-WP-002` (docs-only): Nach fail-closed-Blocker und Source-Handoff Concept v3.0 vollständig registriert (57 Abschnitte), Decision Classification + Decision Index + Risk Register erstellt. Nova-Bewertung: `GO WITH NOTES`.
 - `CO-WP-003` (docs-only): Project Brief, Foundation Scope Lock und Release-Taxonomie erstellt (Proposed); CCR-02/04/10/11 aufgelöst, NDF-Level geklärt, Repository verifiziert. Nova-Bewertung: `GO WITH NOTES`.
 - `CO-WP-004` (docs-only): Foundation Capability Matrix (74 Capabilities) und initiale Observe-Supportgrenze erstellt (Proposed); drei Statusdimensionen, Support-Evidence, CCR-12 vorgeschlagen aufgelöst. Nova-Bewertung: `GO WITH NOTES`.
-- `CO-WP-004A` (docs-only / gov-baseline): Concept-v3.1-Amendment, Sovereignty-and-Dependency-Policy und BSI-Alignment-Positioning erstellt; Souveränität und BSI-Orientierung als Accepted Product Direction; keine Zertifizierung/VS-Eignung; Standard-/Hardened-/Government-Profile; Lessons-Learned-/NDF-Feedback-Richtung; ITIL/PRINCE2 Kandidaten. Capability Matrix unverändert, keine ADR, kein Git Write. Nova Review ausstehend.
+- `CO-WP-004A` (docs-only / gov-baseline): Concept-v3.1-Amendment, Sovereignty-and-Dependency-Policy und BSI-Alignment-Positioning erstellt; Souveränität und BSI-Orientierung als Accepted Product Direction; keine Zertifizierung/VS-Eignung; Standard-/Hardened-/Government-Profile; Lessons-Learned-/NDF-Feedback-Richtung; ITIL/PRINCE2 Kandidaten. Nova-Bewertung: `GO WITH NOTES`.
+- `CO-WP-004B` (docs-only / governance): Lessons-Learned-Prozess und NDF-Feedback-Prozess etabliert; 15 Lessons erfasst; 7 reservierte NDF-Kandidaten bewertet (alle `ready-for-bundling`). Kein Kandidat übertragen/adoptiert, kein NDF-Repository verändert, keine ADR, kein Git Write. Nova Review ausstehend.
