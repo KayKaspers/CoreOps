@@ -184,13 +184,21 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 - **Keine Technologie/Architektur/Threat Model ausgewählt; keine ADR; Capability Matrix unverändert; Lessons-Learned-Register unverändert; keine NDF-Rückführung.**
 - Pfadhinweis: Scope Lock liegt unter `docs/governance/FOUNDATION_SCOPE_LOCK.md` (Prompt nannte `project-system/…`).
 
+## Threat Model and Trust Boundaries (CO-WP-007)
+
+- Zwei neue Dokumente: [COREOPS_FOUNDATION_THREAT_MODEL.md](../docs/security/COREOPS_FOUNDATION_THREAT_MODEL.md) und [THREAT_SCENARIO_REGISTER.md](../docs/security/THREAT_SCENARIO_REGISTER.md); Trust-Boundary-Dokument additiv erweitert (TB-IDs + Threat-Verweise).
+- 24 Assets (AST-01…24), 16 Threat Actors, 18 Threat-Kategorien; Angriffsflächen für alle 10 Planes; Trust-Boundary-Analyse TB-01…11; 40 Threat Scenarios (THR-001…040) mit stabilen IDs und qualitativen evidence-bounded Ratings; 17 Sicherheitsinvarianten; 5 Abuse Cases (AB-1…5); 2 Mermaid-Diagramme (conceptual).
+- **Threat Model = Bedrohungen + Sicherheitsanforderungen, keine implementierten/validierten Kontrollen. Invarianten = Designanforderungen. Kein `mitigated`/`closed` ohne Evidenz (aktuell keiner).**
+- Decision Index +10 (DEC-S-54…63), Risk Register +10 (RISK-94…103, nur Threat-Model-Governance; einzelne Threats im Register, nicht dupliziert).
+- **Kein Pentest/Scan; keine Technologie-/Krypto-/Authentisierungsauswahl; keine ADR; Capability Matrix + Lessons-Learned-Register unverändert; keine NDF-Rückführung.**
+
 ## Letztes Work Package
 
-`CO-WP-006 – System Context, Plane Taxonomy and External Boundaries` (docs-only / architecture-context foundation). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-005 – GO WITH NOTES`.
+`CO-WP-007 – Threat Model and Trust Boundaries` (docs-only / security-baseline). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-006 – GO WITH NOTES`.
 
 ## Nächstes Work Package
 
-`CO-WP-007 – Threat Model and Trust Boundaries` (security-baseline; planned-next; pending Nova review von CO-WP-006 und Human-Maintainer-Freigabe).
+`CO-WP-008 – Architecture and Module Boundaries` (docs-only; planned-next; pending Nova review von CO-WP-007 und Human-Maintainer-Freigabe).
 
 ## Human-Maintainer-Gates
 
@@ -214,6 +222,7 @@ Freigabe, Staging, Commit, Push, Merge, Tags, Releases, produktive Deployments s
 - `CO-WP-004E`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
 - `CO-WP-005`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
 - `CO-WP-006`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
+- `CO-WP-007`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
 
 ---
 

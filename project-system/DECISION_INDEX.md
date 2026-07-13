@@ -167,6 +167,23 @@ Alle 30 Concept-ADR-Kandidaten (§51) plus zwei Foundation-Klärungen (Delivery 
 | DEC-S-52 | Detailed technology architecture | architecture-context | deferred | non-binding | CO-WP-006 | Nova | Deferred; spätere Architektur-WPs/ADRs |
 | DEC-S-53 | Detailed threat model | security-context | deferred | non-binding | CO-WP-006 | Nova | Deferred zu CO-WP-007 |
 
+## Threat Model and Security Baseline Decisions (CO-WP-007)
+
+> Registriert über [COREOPS_FOUNDATION_THREAT_MODEL.md](../docs/security/COREOPS_FOUNDATION_THREAT_MODEL.md) und [THREAT_SCENARIO_REGISTER.md](../docs/security/THREAT_SCENARIO_REGISTER.md). **Getrennte Dimensionen**; keine kombinierten Pseudostatuswerte; keine Sicherheitskontrolle implementiert; keine Technologie-/Kryptoauswahl; keine ADR.
+
+| Decision ID | Topic | Decision Class | Lifecycle Status | Binding Level | Source | Owner | Notes |
+| ----------- | ----- | -------------- | ---------------- | ------------- | ------ | ----- | ----- |
+| DEC-S-54 | Foundation threat model | security-context | accepted | binding-governance | CO-WP-007 | HM | Accepted security-governance baseline; nicht implementiert/validiert |
+| DEC-S-55 | Threat scenario register | security-context | accepted | binding-governance | CO-WP-007 | Nova | Accepted authoritative threat inventory (THR-001…040) |
+| DEC-S-56 | Threat IDs | governance-direction | accepted | binding-governance | CO-WP-007 | Nova | Stabil, nicht wiederverwendet, nicht still gelöscht |
+| DEC-S-57 | Threat and risk ratings | governance-direction | accepted | guidance | CO-WP-007 | Nova | Qualitativ, evidence-bounded; keine numerische Präzision |
+| DEC-S-58 | Security invariants | security-context | accepted | binding-governance | CO-WP-007 | Nova | Bindende Designanforderungen, **keine** implementierten Kontrollen |
+| DEC-S-59 | Mitigation implementation | security-context | not-claimed | non-binding | CO-WP-007 | HM | Not claimed; keine Kontrolle implementiert |
+| DEC-S-60 | Mitigation validation | security-context | deferred | non-binding | CO-WP-007 | Nova | Deferred; keine Validierung durchgeführt |
+| DEC-S-61 | Penetration testing | security-context | deferred | non-binding | CO-WP-007 | HM | Deferred; kein Pentest durchgeführt |
+| DEC-S-62 | Detailed security architecture | architecture-context | deferred | non-binding | CO-WP-007 | Nova | Deferred zu späteren Security-Architektur-WPs |
+| DEC-S-63 | Technology and crypto selection | architecture-context | deferred | non-binding | CO-WP-007 | Nova | Deferred; keine Krypto-/Authentisierungs-/Netzauswahl |
+
 ## Deferred Decisions
 
 | Decision ID | Topic | Status | Class | Source | Owner | Target WP | ADR Required |
@@ -221,5 +238,7 @@ Alle 30 Concept-ADR-Kandidaten (§51) plus zwei Foundation-Klärungen (Delivery 
 **CO-WP-005-Registrierungen:** 6 Language-/Repository-Governance-Entscheidungen (DEC-S-38…43), mit **getrennten Dimensionen** (Decision Class · Lifecycle Status · Binding Level), alle `governance-direction` / `accepted` / `binding-governance`: kanonische Sprache (Englisch maschinenbezogen, DE/EN Produkt); Übersetzungsparität evidenzbasiert; Public Neutrality/Disclosure; Human-Maintainer-Repository-Gates; Source-of-Truth-Präzedenz; UTF-8/Zeilenenden. Keine kombinierten Pseudostatuswerte; keine ADR; keine automatisierte Durchsetzung.
 
 **CO-WP-006-Registrierungen:** 10 System-Context-/Architektur-Taxonomie-Entscheidungen (DEC-S-44…53), **getrennte Dimensionen**: System Context und Plane Taxonomy `accepted`/`binding-governance`; Plane-Semantik = logische Bereiche (kein Deployment-Zwang); Managed Resources außerhalb Produktgrenze; External Services optional; Agent Plane optional (agentless möglich); Offline-Core als Produktrichtung; Control Authority erfordert explizite Autorisierung; Detailtechnologie und Threat Model `deferred`. Keine Technologieauswahl; keine ADR.
+
+**CO-WP-007-Registrierungen:** 10 Threat-Model-/Security-Baseline-Entscheidungen (DEC-S-54…63), **getrennte Dimensionen**: Foundation Threat Model und Threat Scenario Register `accepted`/`binding-governance`; Threat-IDs stabil; Ratings qualitativ/evidence-bounded; Security-Invarianten bindende Designanforderungen (keine implementierten Kontrollen); Mitigation-Implementierung `not-claimed`; Mitigation-Validierung, Penetration Testing, Detail-Security-Architektur und Technologie-/Kryptoauswahl `deferred`. Keine Sicherheitskontrolle implementiert; keine ADR.
 
 **Bestätigung:** Keine technische Architektur-, Technologie- oder Implementierungsentscheidung trägt den Status `accepted`. Keine Integration ist `supported`. Keine Zertifizierung/VS-Eignung behauptet. Keine ADR ist Accepted. Es wurde keine ADR-Datei erzeugt.

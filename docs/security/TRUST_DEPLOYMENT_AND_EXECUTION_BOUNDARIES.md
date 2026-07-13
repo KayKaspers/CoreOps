@@ -30,6 +30,28 @@ Trust boundary model and the individual boundaries with, for each: assets crossi
 
 A trust boundary is a point where assets cross between parties/components with different trust levels and where authorization, integrity, confidentiality, and audit expectations must be defined. Boundaries below are conceptual; enforcement mechanisms are later decisions.
 
+### 5a. Boundary IDs and Threat-Model Cross-Reference (CO-WP-007)
+
+Stable boundary IDs and their threat scenarios from the [Foundation Threat Model](COREOPS_FOUNDATION_THREAT_MODEL.md) / [Threat Scenario Register](THREAT_SCENARIO_REGISTER.md). This is an additive cross-reference; the boundary semantics below are unchanged, and this does **not** claim implemented mitigations.
+
+```text
+Threat Model Status: Foundation model, not implemented, not validated
+```
+
+| Boundary ID | Boundary (§) | Threat scenarios |
+|---|---|---|
+| TB-01 | User Boundary (§6) | THR-001, THR-002, THR-036, THR-038 |
+| TB-02 | Managed Environment Boundary (§7) | THR-005, THR-006, THR-007, THR-034 |
+| TB-03 | External Provider Boundary (§8) | THR-010, THR-011, THR-023, THR-036, THR-039 |
+| TB-04 | Policy-to-Action Boundary (§9) | THR-003, THR-004 |
+| TB-05 | Control-to-Execution Boundary (§10) | THR-004, THR-005, THR-026, THR-028, THR-029, THR-031, THR-032 |
+| TB-06 | Agent Boundary (§11) | THR-008, THR-009, THR-039 |
+| TB-07 | Telemetry Boundary (§12) | THR-012, THR-013, THR-014, THR-015, THR-027 |
+| TB-08 | Evidence Boundary (§13) | THR-016, THR-017, THR-018, THR-019, THR-020, THR-030, THR-040 |
+| TB-09 | Online-to-Offline Transfer Boundary (§14) | THR-021, THR-024, THR-025 |
+| TB-10 | Organisational Boundary (§16) | THR-035 |
+| TB-11 | Privilege Boundary (§15) | THR-002, THR-016, THR-033, THR-037 |
+
 ## 6. User Boundary
 
 - **Assets crossing:** user intents, credentials/tokens (exchange only), requests, evidence reads.

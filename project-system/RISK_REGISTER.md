@@ -102,18 +102,34 @@ Risk Level ist eine qualitative Ableitung aus Likelihood × Impact. Kein Risiko 
 | RISK-91 | Managed-System-Admin ≠ CoreOps-Admin | Zielsystem-Administrator wird als CoreOps-Administrator behandelt | governance | medium | medium | medium | Actors §5: Managed-System Administrator ≠ CoreOps-Administrator | Rollenmodell in Identity-WPs | Nova | CO-WP-009 | treatment-planned | docs/architecture/SYSTEM_CONTEXT_AND_EXTERNAL_BOUNDARIES.md §5 |
 | RISK-92 | Kontroll- und Ausführungsautorität nicht getrennt | Control- und Execution-Autorität verschmelzen | security | low | high | high | Trust Boundaries §9/§10: Policy-to-Action und Control-to-Execution getrennt; nur autorisierte Aktionen | Autoritätstrennung in Policy-/Execution-WPs | Nova | CO-WP-013 | treatment-planned | docs/security/TRUST_DEPLOYMENT_AND_EXECUTION_BOUNDARIES.md §10 |
 | RISK-93 | Kontextdiagramm als Deployment-Topologie | Konzeptdiagramme werden als reale Topologie missverstanden | communication | low | low | low | Diagramme explizit `conceptual`, keine Deployment-Topologie; keine Technologie/private Umgebung | Kennzeichnung beibehalten | Nova | laufend | treatment-planned | docs/architecture/SYSTEM_CONTEXT_AND_EXTERNAL_BOUNDARIES.md §17 |
+| RISK-94 | Threat-Register driftet vom Systemkontext | Threat Register und System Context/Boundaries werden inkonsistent | governance | medium | medium | medium | Threat Model referenziert System Context/Boundaries (AST/TB/THR); Cross-References §8 | Konsistenzprüfung bei Architekturänderungen | Nova | CO-WP-007-followup | treatment-planned | docs/security/THREAT_SCENARIO_REGISTER.md §8 |
+| RISK-95 | Threat-Ratings als validierte Messwerte | Qualitative Ratings werden als gemessene/validierte Werte gelesen | governance | medium | medium | medium | Rating Model §5: qualitativ/evidence-bounded; `unassessed` erlaubt; keine numerische Präzision | Ratings bei realem Deployment neu bewerten | Nova | later security WP | treatment-planned | docs/security/THREAT_SCENARIO_REGISTER.md §5 |
+| RISK-96 | Invarianten als implementierte Kontrollen | Security-Invarianten werden als bereits durchgesetzt missverstanden | security | medium | high | high | Threat Model §14: Invarianten = Designanforderungen, keine implementierten Kontrollen; Status not-implemented | Klarstellung in Security-Architektur-WPs | Security Review | later security WP | treatment-planned | docs/security/COREOPS_FOUNDATION_THREAT_MODEL.md §14 |
+| RISK-97 | Mitigation-Status überzeichnet | `mitigated`/`closed` ohne Evidenz behauptet | governance | medium | medium | medium | Mitigation States §6: `mitigated`/`closed` nur mit Evidenz; aktuell keiner | Evidenzpflicht in Folge-WPs | Nova | later security WP | treatment-planned | docs/security/THREAT_SCENARIO_REGISTER.md §6 |
+| RISK-98 | Threat-IDs wiederverwendet/still entfernt | THR-IDs driften oder werden gelöscht | governance | low | medium | low | Threat-ID Rules §4: stabil, nie wiederverwendet, keine stille Löschung; Historical Retention §11 | ID-Disziplin bei jeder Registeränderung | Nova | laufend | treatment-planned | docs/security/THREAT_SCENARIO_REGISTER.md §4 |
+| RISK-99 | Threat Model zu früh technologiespezifisch | Konkrete Technologie/Krypto wird verfrüht ins Threat Model gezogen | architecture | low | medium | low | Method/Source Boundary §5: technologieunabhängig; Technologieauswahl deferred (DEC-S-63) | Trennung in Security-Architektur-WPs wahren | Nova | later security WP | treatment-planned | docs/security/COREOPS_FOUNDATION_THREAT_MODEL.md §5 |
+| RISK-100 | Trust-Boundary-Verweise driften | Boundary-IDs/Verweise zwischen Dokumenten werden inkonsistent | governance | low | low | low | Stabile TB-IDs (TB-01…11); additive Cross-Reference statt Parallelmodell | ID-Konsistenz bei Änderungen | Nova | laufend | treatment-planned | docs/security/TRUST_DEPLOYMENT_AND_EXECUTION_BOUNDARIES.md §5a |
+| RISK-101 | Abuse-Pfade in Architekturentscheidungen ignoriert | Spätere Architektur berücksichtigt Abuse Cases nicht | security | medium | medium | medium | Abuse Cases (AB-1…5) mit Prevention/Containment/Recovery; Follow-up-WPs verknüpft | Abuse-Case-Review in Architektur-/Security-WPs | Nova | later security WP | treatment-planned | docs/security/COREOPS_FOUNDATION_THREAT_MODEL.md §13 |
+| RISK-102 | High-Risk-Threat ohne Follow-up-Ownership | Hoch bewertete Threats bleiben ohne zugewiesene Folgearbeit | governance | medium | medium | medium | Jeder THR trägt Owner + Follow-up-WP; High-Risk-Threats mit Security-Review/Owner | Nachverfolgung offener High-Risk-Threats | Nova | later security WP | treatment-planned | docs/security/THREAT_SCENARIO_REGISTER.md §7 |
+| RISK-103 | Threat Model nach Architekturänderung nicht reviewt | Threat Model veraltet nach größerer Architekturänderung | governance | medium | medium | medium | Review Triggers §10: Review bei größerer Architekturänderung/neuer Plane/Boundary | Konsequente Review-Trigger-Anwendung | Nova | laufend | treatment-planned | docs/security/THREAT_SCENARIO_REGISTER.md §10 |
 
 ## Verteilung nach Risk Level
 
-- high: 24 (RISK-01, 02, 03, 04, 05, 08, 09, 11, 22, 25, 28, 30, 40, 42, 43, 44, 45, 49, 70, 71, 82, 89, 90, 92) — kritischer Impact bei RISK-02/04/09/11.
-- medium: 51 (RISK-06, 07, 10, 12, 13, 14, 15, 16, 18, 19, 20, 21, 23, 24, 26, 27, 29, 31, 32, 34, 36, 37, 39, 41, 46, 47, 48, 50, 52, 54, 55, 56, 59, 60, 61, 62, 65, 67, 68, 72, 73, 77, 78, 80, 81, 84, 85, 86, 87, 88, 91)
-- low: 18 (RISK-17, 33, 35, 38, 51, 53, 57, 58, 63, 64, 66, 69, 74, 75, 76, 79, 83, 93)
+- high: 25 (RISK-01, 02, 03, 04, 05, 08, 09, 11, 22, 25, 28, 30, 40, 42, 43, 44, 45, 49, 70, 71, 82, 89, 90, 92, 96) — kritischer Impact bei RISK-02/04/09/11.
+- medium: 57 (RISK-06, 07, 10, 12, 13, 14, 15, 16, 18, 19, 20, 21, 23, 24, 26, 27, 29, 31, 32, 34, 36, 37, 39, 41, 46, 47, 48, 50, 52, 54, 55, 56, 59, 60, 61, 62, 65, 67, 68, 72, 73, 77, 78, 80, 81, 84, 85, 86, 87, 88, 91, 94, 95, 97, 101, 102, 103)
+- low: 21 (RISK-17, 33, 35, 38, 51, 53, 57, 58, 63, 64, 66, 69, 74, 75, 76, 79, 83, 93, 98, 99, 100)
 
-Gesamt: 93 Risiken. Status: `open` 17 · `treatment-planned` 76. Kein Risiko `accepted-by-human`.
+Gesamt: 103 Risiken. Status: `open` 17 · `treatment-planned` 86. Kein Risiko `accepted-by-human`.
+
+> **Hinweis:** Individuelle Bedrohungsszenarien (THR-001…040) werden im [Threat Scenario Register](../docs/security/THREAT_SCENARIO_REGISTER.md) geführt und **nicht** als Projekt-Governance-Risiken dupliziert. RISK-94…103 erfassen nur übergreifende Threat-Model-Governance-Risiken.
 
 ## Höchste Risiken (Fokus)
 
 RISK-02 (Sicherheitskomplexität), RISK-04 (privilegierte Remote-Ausführung), RISK-09 (Secret Custody), RISK-11 (Self-Dependency) — jeweils Impact `critical`. Behandlung in den security-baseline-Work-Packages CO-WP-007, CO-WP-013, CO-WP-024, CO-WP-026.
+
+## CO-WP-007 – geänderte Risiken
+
+Neu erfasst RISK-94 (Threat-Register-Drift), RISK-95 (Ratings als validierte Messwerte), RISK-96 (Invarianten als implementierte Kontrollen), RISK-97 (Mitigation-Status überzeichnet), RISK-98 (Threat-ID-Drift/-Löschung), RISK-99 (Threat Model zu früh technologiespezifisch), RISK-100 (Trust-Boundary-Verweisdrift), RISK-101 (Abuse-Pfade ignoriert), RISK-102 (High-Risk-Threat ohne Follow-up-Ownership), RISK-103 (kein Review nach Architekturänderung). **Nur übergreifende Threat-Model-Governance-Risiken**; individuelle Bedrohungen bleiben im Threat Scenario Register (THR-001…040), nicht dupliziert. **Kein Risiko ohne Evidenz geschlossen; kein Risiko `accepted-by-human`.**
 
 ## CO-WP-006 – geänderte Risiken
 

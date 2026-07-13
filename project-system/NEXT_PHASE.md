@@ -70,23 +70,27 @@ Alle 7 Kandidaten auf `adopted-in-ndf` (drei Adoption-Commits 1ebffa6 / e894c6f 
 
 ## System Context, Plane Taxonomy and External Boundaries
 
-Current implemented WP: `CO-WP-006 – System Context, Plane Taxonomy and External Boundaries` – pending Nova review.
+`CO-WP-006 – System Context, Plane Taxonomy and External Boundaries` completed; Nova Review pending. Systemkontext, 10 Planes und 11 Vertrauensgrenzen definiert; keine Technologieauswahl.
 
-Current architecture state:
-Foundation system context, plane taxonomy and external/trust boundaries defined.
+## Threat Model and Trust Boundaries
 
-Technology selections:
-none
+Current implemented WP: `CO-WP-007 – Threat Model and Trust Boundaries` – pending Nova review.
 
-Detailed threat model:
-not yet performed
+Current security state:
+Foundation threat model and authoritative threat-scenario register established.
 
-Detailed component architecture:
+Implemented mitigations:
+none claimed
+
+Validated mitigations:
+none claimed
+
+Detailed security architecture:
 not yet selected
 
-Drei neue Dokumente: System Context and External Boundaries (Akteure/Rollen, Produkt-/Deployment-/Managed-/Provider-/Evidence-Grenzen, 20 externe Systemklassen, 15 Interaktionsklassen, Kontrollautorität, Connected/Restricted/Offline-Modi, Failure-/Degradationsgrenzen, 13 Datenklassen, Mermaid-Kontextdiagramm), Plane Taxonomy (10 logische Planes, plane ≠ Deployment-Einheit, Mermaid-Plane-Diagramm, Deployment-Unabhängigkeit) und Trust/Deployment/Execution Boundaries (11 Vertrauensgrenzen, fail-closed, Threat Model deferred). Decision Index +10 (DEC-S-44…53, getrennte Dimensionen), Risk Register +14 (RISK-80…93). Keine Technologieauswahl; keine ADR; Lessons-Learned-Register unverändert; keine NDF-Rückführung.
+Zwei neue Dokumente: Foundation Threat Model (24 Assets, 16 Threat Actors, 18 Threat-Kategorien, Angriffsflächen für alle 10 Planes, Trust-Boundary-Analyse TB-01…11, 17 Sicherheitsinvarianten, 5 Abuse Cases, 2 Mermaid-Diagramme) und Threat Scenario Register (40 Szenarien THR-001…040, stabile IDs, qualitative evidence-bounded Ratings, Mitigation States). Trust-Boundary-Dokument additiv um stabile Boundary-IDs + Threat-Verweise erweitert. Decision Index +10 (DEC-S-54…63), Risk Register +10 (RISK-94…103, nur Threat-Model-Governance-Risiken; einzelne Threats nicht dupliziert). Keine Sicherheitskontrolle implementiert/validiert; kein Pentest; keine Technologie-/Kryptoauswahl; keine ADR; Lessons-Learned-Register unverändert; keine NDF-Rückführung.
 
-Next planned WP: `CO-WP-007 – Threat Model and Trust Boundaries`.
+Next planned WP: `CO-WP-008 – Architecture and Module Boundaries`.
 
 ## Current Goal
 

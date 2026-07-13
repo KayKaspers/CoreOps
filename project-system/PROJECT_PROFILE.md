@@ -267,6 +267,15 @@ Folgende Themen benötigen vor jeder verbindlichen technischen Festlegung einen 
 - **Grenzen:** keine Technologieauswahl, keine Komponentenarchitektur, kein Threat Model, keine ADR; Diagramme `conceptual`, keine Deployment-Topologie.
 - **Status:** Architektur-Kontext-Foundation etabliert; nächstes WP `CO-WP-007`; Lessons-Learned-Register unverändert; keine NDF-Rückführung.
 
+## CO-WP-007 Konsolidierung (Threat Model and Trust Boundaries)
+
+- **Foundation Threat Model:** [COREOPS_FOUNDATION_THREAT_MODEL.md](../docs/security/COREOPS_FOUNDATION_THREAT_MODEL.md) — 24 Assets (AST-01…24), 16 Threat Actors, 18 Threat-Kategorien, Angriffsflächen für alle 10 Planes, Trust-Boundary-Analyse (TB-01…11), 17 Sicherheitsinvarianten, 5 Abuse Cases (AB-1…5), 2 Mermaid-Diagramme (Threat Surface Overlay, Abuse-Path).
+- **Threat Scenario Register:** [THREAT_SCENARIO_REGISTER.md](../docs/security/THREAT_SCENARIO_REGISTER.md) — 40 Szenarien (THR-001…040), stabile IDs, qualitative evidence-bounded Ratings, Mitigation States; kein `mitigated`/`closed` ohne Evidenz.
+- **Trust-Boundary-Dokument:** additiv um stabile Boundary-IDs (TB-01…11) + Threat-Verweise + Threat-Model-Status erweitert (kein Parallelmodell).
+- **Governance-Fortschreibung:** Decision Index +10 (DEC-S-54…63, getrennte Dimensionen), Risk Register +10 (RISK-94…103, nur Threat-Model-Governance; einzelne Threats nicht dupliziert).
+- **Grenzen:** keine Sicherheitskontrolle implementiert/validiert; kein Pentest/Scan; keine Technologie-/Krypto-/Authentisierungsauswahl; keine ADR; Capability Matrix unverändert. Invarianten = Designanforderungen, keine implementierten Kontrollen.
+- **Status:** Foundation-Security-Baseline etabliert; nächstes WP `CO-WP-008`; Lessons-Learned-Register unverändert; keine NDF-Rückführung.
+
 ## Notes
 
 - **NDF-Level-Semantik:** `ndf_level: 1` bedeutet ausschließlich „initialer NDF-Projektbootstrap" — keine vollständige NDF-Konformität, technische Reife, Releasebereitschaft, Sicherheitsfreigabe oder erreichte Produktstufe. Der Zahlenwert bleibt unverändert. Die Starter-Vorlage mit `ndf_level: 2` bleibt dokumentierte NDF-Quellambiguität, ist aber kein Blocker (CCR-03).
