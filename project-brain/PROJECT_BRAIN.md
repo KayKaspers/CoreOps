@@ -201,13 +201,23 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 - Decision Index +12 (DEC-S-64…75), Risk Register +15 (RISK-104…118).
 - **Keine ADR; Capability Matrix + Threat-Dateien + Lessons-Learned-Register unverändert; keine NDF-Rückführung.**
 
+## Human Identity, Workspaces, RBAC and Break Glass (CO-WP-009)
+
+- Drei neue Dokumente: [HUMAN_IDENTITY_AND_ACCESS_GOVERNANCE.md](../docs/security/HUMAN_IDENTITY_AND_ACCESS_GOVERNANCE.md), [WORKSPACE_RBAC_AND_SCOPE_MODEL.md](../docs/security/WORKSPACE_RBAC_AND_SCOPE_MODEL.md), [BREAK_GLASS_AND_EMERGENCY_ACCESS_POLICY.md](../docs/security/BREAK_GLASS_AND_EMERGENCY_ACCESS_POLICY.md).
+- Getrennte Konzepte person/identity/account/principal; Repository-Autorität ≠ Runtime-Autorität; Auth ≠ Authz; Account-Lifecycle; Sessions gebunden an aktuellen Status; Delegation explizit/non-transitive; SoD mit Kleininstallations-Ausnahmen.
+- Workspace ≠ Security-Tenant; deny-by-default/least-privilege/scope-bound RBAC; Permission-Taxonomie (19 Aktionen); 8 Scope-Typen; Membership ohne globale Autorität; Cross-Workspace explizit/auditierbar.
+- Break Glass benannt/temporär/reason-/scope-bound/auditiert mit Ablaufpflicht und verpflichtendem Post-Event Review; Offline-Emergency governed (nicht anonym); keine Dauer-Admin-Rolle.
+- **14 Security-Invarianten (Designanforderungen, keine Kontrollen); keine Auth-/IdP-/Session-/MFA-/Policy-Engine-Auswahl.**
+- Decision Index +14 (DEC-S-76…89), Risk Register +18 (RISK-119…136).
+- **Keine ADR; Modul-/Capability-/Threat-Dateien + Lessons-Learned-Register unverändert; keine NDF-Rückführung.**
+
 ## Letztes Work Package
 
-`CO-WP-008 – Architecture and Module Boundaries` (docs-only / logical-architecture foundation). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-007 – GO WITH NOTES`.
+`CO-WP-009 – Human Identity, Workspaces, RBAC and Break Glass` (docs-only / security-baseline). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-008 – GO WITH NOTES`.
 
 ## Nächstes Work Package
 
-`CO-WP-009 – Human Identity, Workspaces, RBAC and Break Glass` (security-baseline; planned-next; pending Nova review von CO-WP-008 und Human-Maintainer-Freigabe).
+`CO-WP-010 – Machine Identity, Enrollment and Offline Credential Lifecycle` (security-baseline; planned-next; pending Nova review von CO-WP-009 und Human-Maintainer-Freigabe).
 
 ## Human-Maintainer-Gates
 
@@ -233,6 +243,7 @@ Freigabe, Staging, Commit, Push, Merge, Tags, Releases, produktive Deployments s
 - `CO-WP-006`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
 - `CO-WP-007`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
 - `CO-WP-008`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
+- `CO-WP-009`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
 
 ---
 

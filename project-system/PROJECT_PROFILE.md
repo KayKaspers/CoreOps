@@ -285,6 +285,15 @@ Folgende Themen benötigen vor jeder verbindlichen technischen Festlegung einen 
 - **Grenzen:** module ≠ microservice/process/container/deployment unit; keine Technologie-/Protokoll-/Deployment-Auswahl; keine ADR; Invarianten = Designanforderungen; Capability Matrix + Threat-Dateien unverändert.
 - **Status:** Foundation-Logische-Architektur etabliert; nächstes WP `CO-WP-009`; Lessons-Learned-Register unverändert; keine NDF-Rückführung.
 
+## CO-WP-009 Konsolidierung (Human Identity, Workspaces, RBAC and Break Glass)
+
+- **Identity Governance:** [HUMAN_IDENTITY_AND_ACCESS_GOVERNANCE.md](../docs/security/HUMAN_IDENTITY_AND_ACCESS_GOVERNANCE.md) — Begriffsmodell (person/identity/account/principal), Projekt- ≠ Runtime-Rollen (Human Maintainer ≠ Runtime-Autorität), Account-Lifecycle, Auth ≠ Authz, Sessions/Reauth, Recovery, Delegation, SoD.
+- **Workspace/RBAC/Scope:** [WORKSPACE_RBAC_AND_SCOPE_MODEL.md](../docs/security/WORKSPACE_RBAC_AND_SCOPE_MODEL.md) — Workspace ≠ Security-Tenant; deny-by-default/least-privilege RBAC; Permission-Taxonomie; 8 Scope-Typen; Cross-Workspace explizit/auditierbar.
+- **Break-Glass:** [BREAK_GLASS_AND_EMERGENCY_ACCESS_POLICY.md](../docs/security/BREAK_GLASS_AND_EMERGENCY_ACCESS_POLICY.md) — benannt/temporär/reason-/scope-bound/auditiert; Ablaufpflicht; verpflichtender Post-Event Review; Offline-Emergency governed (nicht anonym).
+- **Governance-Fortschreibung:** Decision Index +14 (DEC-S-76…89), Risk Register +18 (RISK-119…136).
+- **Grenzen:** keine Auth-/IdP-/Session-/MFA-/Policy-Engine-/Tenant-Isolation-Auswahl; keine ADR; Invarianten = Designanforderungen; Modul-/Capability-/Threat-Dateien unverändert.
+- **Status:** Foundation-Identity-/RBAC-/Break-Glass-Baseline etabliert; nächstes WP `CO-WP-010`; Lessons-Learned-Register unverändert; keine NDF-Rückführung.
+
 ## Notes
 
 - **NDF-Level-Semantik:** `ndf_level: 1` bedeutet ausschließlich „initialer NDF-Projektbootstrap" — keine vollständige NDF-Konformität, technische Reife, Releasebereitschaft, Sicherheitsfreigabe oder erreichte Produktstufe. Der Zahlenwert bleibt unverändert. Die Starter-Vorlage mit `ndf_level: 2` bleibt dokumentierte NDF-Quellambiguität, ist aber kein Blocker (CCR-03).

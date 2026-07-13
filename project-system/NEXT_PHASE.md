@@ -78,23 +78,27 @@ Alle 7 Kandidaten auf `adopted-in-ndf` (drei Adoption-Commits 1ebffa6 / e894c6f 
 
 ## Architecture and Module Boundaries
 
-Current implemented WP: `CO-WP-008 – Architecture and Module Boundaries` – pending Nova review.
+`CO-WP-008 – Architecture and Module Boundaries` completed; Nova Review pending. 17 logische Module (MOD-*), Autoritätsgrenzen, Datenownership, verbotene Bypässe; keine Technologie-/Deployment-Auswahl.
 
-Current architecture state:
-Foundation logical modules, stable module identities, authority boundaries and dependency rules defined.
+## Human Identity, Workspaces, RBAC and Break Glass
 
-Technology selection:
-none
+Current implemented WP: `CO-WP-009 – Human Identity, Workspaces, RBAC and Break Glass` – pending Nova review.
 
-Deployment topology:
+Current security state:
+Foundation human-identity, workspace, scoped RBAC and break-glass governance defined.
+
+Authentication technology:
 not selected
 
-Implementation:
-not started
+Policy engine:
+not selected
 
-Drei neue Dokumente: Logical Module Architecture (17 Module MOD-*, Modulklassifikation, Policy/Control/Execution-Trennung, Adapter-/Agentengrenzen, 2 Mermaid-Diagramme), Module Catalog (17-Modul-Register, Daten-/Zustandsownership, Threat-/Invarianten-Referenzen) und Module Boundary and Dependency Standard (Autoritätsgrenzen, erlaubte/verbotene Abhängigkeiten, verbotene Bypässe, Zyklusverbot). Decision Index +12 (DEC-S-64…75), Risk Register +15 (RISK-104…118). Module = logische Verantwortungsgrenzen (keine Microservices/Deployments); keine Technologie-/Deployment-Auswahl; keine ADR; Capability Matrix + Threat-Dateien + Lessons-Learned-Register unverändert; keine NDF-Rückführung.
+Break-glass mechanism:
+not implemented
 
-Next planned WP: `CO-WP-009 – Human Identity, Workspaces, RBAC and Break Glass`.
+Drei neue Dokumente: Human Identity and Access Governance (Begriffsmodell, Projekt- ≠ Runtime-Rollen, Account-Lifecycle, Sessions/Reauth, Delegation, SoD), Workspace/RBAC/Scope Model (Workspace ≠ Tenant, deny-by-default RBAC, Permission-Taxonomie, Scope-Modell, Cross-Workspace) und Break-Glass and Emergency Access Policy (benannt/temporär/scope-bound/auditiert, Ablaufpflicht, Post-Event Review, Offline-Emergency governed). Decision Index +14 (DEC-S-76…89), Risk Register +18 (RISK-119…136). Keine Auth-/IdP-/Session-/MFA-/Policy-Engine-Auswahl; keine ADR; Invarianten = Designanforderungen; Modul-/Capability-/Threat-Dateien + Lessons-Learned-Register unverändert; keine NDF-Rückführung.
+
+Next planned WP: `CO-WP-010 – Machine Identity, Enrollment and Offline Credential Lifecycle`.
 
 ## Current Goal
 

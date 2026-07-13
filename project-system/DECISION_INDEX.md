@@ -203,6 +203,27 @@ Alle 30 Concept-ADR-Kandidaten (§51) plus zwei Foundation-Klärungen (Delivery 
 | DEC-S-74 | Deployment topology | architecture-context | deferred | non-binding | CO-WP-008 | Nova | Deferred |
 | DEC-S-75 | Implementation architecture | architecture-context | deferred | non-binding | CO-WP-008 | Nova | Deferred (Monolith/Microservices offen) |
 
+## Human Identity, RBAC and Break-Glass Decisions (CO-WP-009)
+
+> Registriert über [HUMAN_IDENTITY_AND_ACCESS_GOVERNANCE.md](../docs/security/HUMAN_IDENTITY_AND_ACCESS_GOVERNANCE.md), [WORKSPACE_RBAC_AND_SCOPE_MODEL.md](../docs/security/WORKSPACE_RBAC_AND_SCOPE_MODEL.md) und [BREAK_GLASS_AND_EMERGENCY_ACCESS_POLICY.md](../docs/security/BREAK_GLASS_AND_EMERGENCY_ACCESS_POLICY.md). **Getrennte Dimensionen**; keine kombinierten Pseudostatuswerte; keine Identity-/Auth-/Session-Technologie ausgewählt; keine ADR.
+
+| Decision ID | Topic | Decision Class | Lifecycle Status | Binding Level | Source | Owner | Notes |
+| ----------- | ----- | -------------- | ---------------- | ------------- | ------ | ----- | ----- |
+| DEC-S-76 | Human identity and account | security-context | accepted | binding-governance | CO-WP-009 | Nova | Getrennte Konzepte (person/identity/account/principal) |
+| DEC-S-77 | Repository vs runtime authority | security-context | accepted | binding-governance | CO-WP-009 | HM | Getrennt; Human Maintainer ≠ Runtime-Autorität |
+| DEC-S-78 | Workspace boundary | security-context | accepted | binding-governance | CO-WP-009 | Nova | Administrative/Ressourcen-Scope-Grenze, **nicht** automatisch Security-Tenant |
+| DEC-S-79 | RBAC direction | security-context | accepted | binding-governance | CO-WP-009 | Nova | deny-by-default, least-privilege, scope-bound |
+| DEC-S-80 | Workspace membership | security-context | accepted | binding-governance | CO-WP-009 | Nova | Erzeugt **keine** globale Autorität |
+| DEC-S-81 | Role assignment | governance-direction | accepted | binding-governance | CO-WP-009 | Nova | Explizit, auditierbar, widerrufbar |
+| DEC-S-82 | Sensitive operations | security-context | accepted | binding-governance | CO-WP-009 | Nova | Können Reauthentication und Approval verlangen |
+| DEC-S-83 | Delegation | governance-direction | accepted | binding-governance | CO-WP-009 | Nova | Explizit, scope-bound, non-transitive by default |
+| DEC-S-84 | Break glass | security-context | accepted | binding-governance | CO-WP-009 | HM | Temporär, benannt, reason-/scope-bound, auditiert |
+| DEC-S-85 | Break-glass permissions | security-context | accepted | binding-governance | CO-WP-009 | Nova | Müssen ablaufen oder widerrufen werden |
+| DEC-S-86 | Offline emergency access | security-context | accepted | binding-governance | CO-WP-009 | Nova | Governed Design-Anforderung; Mechanismus deferred |
+| DEC-S-87 | Identity provider / authentication technology | architecture-context | deferred | non-binding | CO-WP-009 | Nova | Deferred |
+| DEC-S-88 | Session technology | architecture-context | deferred | non-binding | CO-WP-009 | Nova | Deferred |
+| DEC-S-89 | Tenant-isolation implementation | architecture-context | deferred | non-binding | CO-WP-009 | Nova | Deferred |
+
 ## Deferred Decisions
 
 | Decision ID | Topic | Status | Class | Source | Owner | Target WP | ADR Required |
@@ -261,5 +282,7 @@ Alle 30 Concept-ADR-Kandidaten (§51) plus zwei Foundation-Klärungen (Delivery 
 **CO-WP-007-Registrierungen:** 10 Threat-Model-/Security-Baseline-Entscheidungen (DEC-S-54…63), **getrennte Dimensionen**: Foundation Threat Model und Threat Scenario Register `accepted`/`binding-governance`; Threat-IDs stabil; Ratings qualitativ/evidence-bounded; Security-Invarianten bindende Designanforderungen (keine implementierten Kontrollen); Mitigation-Implementierung `not-claimed`; Mitigation-Validierung, Penetration Testing, Detail-Security-Architektur und Technologie-/Kryptoauswahl `deferred`. Keine Sicherheitskontrolle implementiert; keine ADR.
 
 **CO-WP-008-Registrierungen:** 12 Logical-Module-Architecture-Entscheidungen (DEC-S-64…75), **getrennte Dimensionen**: logische Modularchitektur und Module-Semantik `accepted`; Module-IDs stabil; Policy/Control/Execution-Trennung, Experience-, Adapter-, Offline-Grenzen als Security-Kontext `binding-governance`; Agent-Modul optional; autoritative Datenownership explizit; Communication-Technologie, Deployment-Topologie und Implementation-Architektur `deferred`. Keine Technologie-/Deployment-Auswahl; keine ADR.
+
+**CO-WP-009-Registrierungen:** 14 Human-Identity-/RBAC-/Break-Glass-Entscheidungen (DEC-S-76…89), **getrennte Dimensionen**: getrennte Identity-/Account-Konzepte; Repository- ≠ Runtime-Autorität; Workspace ≠ automatischer Security-Tenant; RBAC deny-by-default/least-privilege/scope-bound; Membership ohne globale Autorität; Rollenzuweisung explizit/auditierbar/widerrufbar; sensible Aktionen mit Reauth/Approval; Delegation explizit/scope-bound/non-transitive; Break Glass temporär/benannt/auditiert mit Ablaufpflicht; Offline-Emergency-Access governed (Mechanismus deferred); Identity-Provider-/Auth-/Session-Technologie und Tenant-Isolation `deferred`. Keine Technologieauswahl; keine ADR.
 
 **Bestätigung:** Keine technische Architektur-, Technologie- oder Implementierungsentscheidung trägt den Status `accepted`. Keine Integration ist `supported`. Keine Zertifizierung/VS-Eignung behauptet. Keine ADR ist Accepted. Es wurde keine ADR-Datei erzeugt.
