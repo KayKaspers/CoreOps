@@ -118,27 +118,26 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 ## Erstes NDF-Transferpaket (CO-WP-004B1)
 
 - Nova hat die Übergabeschwelle (5–10 Kandidaten) als erreicht festgestellt und die Vorbereitung für alle 7 reservierten Kandidaten autorisiert.
-- [NDF_FEEDBACK_TRANSFER_PACKAGE_001.md](../docs/governance/NDF_FEEDBACK_TRANSFER_PACKAGE_001.md) erstellt mit 3 Bundles (Work-Package Safety and Source Handling; Skills Availability and Context Economy; Governance and Status Modeling).
 - Alle 7 Kandidaten auf `approved-for-transfer` (Nova Gate: approved; Human-Maintainer Gate: approved, Commit 4ad3111).
-- **Kein Kandidat übertragen oder adoptiert; kein NDF-Repository verändert; kein NDF-Work-Package erstellt.**
-- Der Human-Maintainer-Commit dieses WPs bildet nur das zweite Transfer-Gate (Freigabe zur Vorbereitung), nicht den tatsächlichen NDF-Transfer — dieser erfolgt über ein eigenständiges NDF-Work-Package im NDF-Intake-Review.
 
 ## NDF Intake Approval Gate Finalization (CO-WP-004B2)
 
-- CO-WP-004B2 ist eine docs-only/governance-correction.
-- Transfer Package Status auf `Approved for NDF Intake` gesetzt.
-- Alle 7 Human-Maintainer-Gates auf `approved` gesetzt (evidenziert durch Commit 4ad3111).
-- Neue Lesson LL-016 erfasst: „Commit-gated status transitions must be represented in repository state" — Erkenntnis aus blockiertem ersten NDF Intake Review.
-- Lehrpunkt: Ein Commit liefert Evidenz für eine Freigabe, verändert aber keine Statuswerte in Repository-Dokumenten. Freigabefelder müssen VOR dem Commit auf den beabsichtigten Zielzustand gesetzt werden.
-- **Kein Kandidat übertragen/adoptiert; kein NDF-Repository verändert; kein NDF-Work-Package erstellt.**
+- Transfer Package Status auf `Approved for NDF Intake` gesetzt; alle 7 Human-Maintainer-Gates auf `approved` gesetzt.
+- Neue Lesson LL-016 erfasst: „Commit-gated status transitions must be represented in repository state".
+
+## NDF Intake Transfer Recording (CO-WP-004B3)
+
+- Transfer Package 001 wurde dem NDF-Intake übertragen (NDF-INTAKE-COREOPS-001, Commit d08e35e).
+- Alle 7 Kandidaten auf `transferred-to-ndf` gesetzt (NDF Work Package: NDF-INTAKE-COREOPS-001).
+- **Kein Kandidat adoptiert; Adoption Version leer; NDF-Repository unverändert; keine Adoption-WPs gestartet.**
 
 ## Letztes Work Package
 
-`CO-WP-004B2 – Finalize NDF Intake Approval Gates` (docs-only / governance-correction). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-004B1 – GO (partial)`.
+`CO-WP-004B3 – Record Completed NDF Intake Transfer` (docs-only / cross-project-traceability). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-004B2 – GO WITH NOTES`.
 
 ## Nächstes Work Package
 
-`CO-WP-004C – BSI and Public-Sector Readiness Baseline` (planned-next; pending Nova review von CO-WP-004B2 und Human-Maintainer-Freigabe). Parallel nach CO-WP-004B2 Kay-Commit: NDF Intake Review für Transfer Package 001 wiederaufnehmen (außerhalb CoreOps-Scope). `CO-WP-005` bleibt `planned-after-CO-WP-004E`.
+`CO-WP-004C – BSI and Public-Sector Readiness Baseline` (planned-next; pending Nova review von CO-WP-004B3 und Human-Maintainer-Freigabe). `CO-WP-005` bleibt `planned-after-CO-WP-004E`.
 
 ## Human-Maintainer-Gates
 
@@ -153,8 +152,9 @@ Freigabe, Staging, Commit, Push, Merge, Tags, Releases, produktive Deployments s
 - `CO-WP-004`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova-Bewertung: `GO WITH NOTES`.
 - `CO-WP-004A`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova-Bewertung: `GO WITH NOTES`.
 - `CO-WP-004B`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova-Bewertung: `GO WITH NOTES`.
-- `CO-WP-004B1`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`; erster NDF Intake-Versuch fail-closed blockiert.
-- `CO-WP-004B2`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
+- `CO-WP-004B1`: Rückmeldung geliefert; Nova Review `pending`.
+- `CO-WP-004B2`: Rückmeldung geliefert; Nova Review: `GO WITH NOTES`.
+- `CO-WP-004B3`: Rückmeldung geliefert; Nova Review `pending`.
 
 ---
 

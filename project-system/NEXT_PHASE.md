@@ -39,12 +39,19 @@ Lessons-Learned-Prozess und NDF-Feedback-Prozess etabliert (CO-WP-004B: GO WITH 
 
 ## NDF Intake Approval Gate Finalization
 
-Current implemented WP: `CO-WP-004B2 – Finalize NDF Intake Approval Gates` – pending Nova review.
-Transfer Package Status auf `Approved for NDF Intake` gesetzt; alle 7 Human-Maintainer-Gates auf `approved` gesetzt (Commit 4ad3111 als Evidenz). Neue Lesson LL-016 erfasst: „Commit-gated status transitions must be represented in repository state". NDF-Repository unverändert; kein Kandidat übertragen/adoptiert.
+`CO-WP-004B2 – Finalize NDF Intake Approval Gates` completed; Nova Review: `GO WITH NOTES`.
+Transfer Package Status auf `Approved for NDF Intake` gesetzt; alle 7 Human-Maintainer-Gates auf `approved` gesetzt. Neue Lesson LL-016 erfasst. NDF-Repository unverändert.
+
+## NDF Intake Transfer Recording
+
+Current implemented WP: `CO-WP-004B3 – Record Completed NDF Intake Transfer` – pending Nova review.
+Transfer Package 001 wurde dem NDF-Intake übertragen (NDF-INTAKE-COREOPS-001, Commit d08e35e).
+Alle 7 Kandidaten von `approved-for-transfer` auf `transferred-to-ndf` gesetzt; NDF Work Package: `NDF-INTAKE-COREOPS-001` für alle 7; Adoption Version bleibt leer.
+Kein Kandidat adoptiert; NDF-Repository unverändert.
 
 Next planned CoreOps WP: `CO-WP-004C – BSI and Public-Sector Readiness Baseline` (planned-next; pending Nova review und Human-Maintainer-Freigabe).
 
-Parallel external action after CO-WP-004B2 Nova review and Kay-Commit: NDF Intake Review for Transfer Package 001 wiederaufnehmen.
+External NDF status: Transfer Package 001 Intake abgeschlossen; Adoption ausstehend.
 
 ## Current Goal
 

@@ -1,17 +1,18 @@
 # CoreOps – NDF Feedback Transfer Package 001
 
-> Transfer Package Status: **Approved for NDF Intake**
-> NDF Adoption Status: **Not transferred**
-> NDF Repository Status: **Unchanged**
+> Transfer Package Status: **Transferred to NDF Intake**
+> NDF Intake Status: **Completed (NDF-INTAKE-COREOPS-001, Commit d08e35e)**
+> NDF Adoption Status: **No candidate adopted**
+> Framework Modification Status: **None**
 > Erzeugt durch `CO-WP-004B1 – First NDF Feedback Transfer Package` (docs-only / transfer-preparation)
 
 ## 1. Status
 
-Approved for NDF Intake. This Transfer Package has passed Human-Maintainer approval and is authorized for the NDF intake review process. This status authorizes an NDF intake review only.
+Transferred to NDF Intake. This Transfer Package has been reviewed by the NDF team (NDF-INTAKE-COREOPS-001, Commit d08e35e). The intake review is completed; all seven candidates have been transferred to the NDF intake status.
 
-It does not claim transfer, adoption, implementation or inclusion in any NDF version.
+This status confirms transfer to the NDF intake review; it does **not** claim adoption, implementation, or inclusion in any NDF version. Adoption decisions and implementation follow in later, independent NDF work packages.
 
-Dieses Dokument ist ein **genehmigter Transferpaket-Vorschlag** für die NDF-Überprüfung durch das NDF-Team. Es bestätigt die Human-Maintainer-Freigabe zur Vorbereitung, **nicht** den tatsächlichen NDF-Transfer.
+Dieses Dokument ist ein **an den NDF-Intake übertragenes Transferpaket**. Die Intake-Überprüfung ist abgeschlossen; alle sieben Kandidaten wurden in den NDF-Intake-Status versetzt. Die tatsächliche Adoption erfolgt nur durch künftige eigenständige NDF-Work-Packages.
 
 ## 2. Purpose
 

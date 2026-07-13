@@ -202,7 +202,14 @@ Folgende Themen benötigen vor jeder verbindlichen technischen Festlegung einen 
 - **Governance-Korrektur:** Transfer Package Status und alle 7 Human-Maintainer-Gates explizit in Repository-Dokumenten auf "approved" gesetzt.
 - **Neue Lesson:** LL-016 erfasst — „Commit-gated status transitions must be represented in repository state" — Evidenz für Blockierungserlebnis und Ursachenanalyse.
 - **Lehrpunkt:** Ein Commit liefert Evidenz für eine Freigabe, verändert aber keine Statuswerte in Repository-Dokumenten. Freigabefelder müssen VOR dem Commit auf den beabsichtigten Zielzustand gesetzt werden.
-- **Status:** Kein Kandidat übertragen/adoptiert; NDF-Repository unverändert; kein NDF-Work-Package erstellt.
+- **Status:** Kein Kandidat übertragen/adoptiert; NDF-Repository unverändert.
+
+## CO-WP-004B3 Konsolidierung (Record Completed NDF Intake Transfer)
+
+- **Intake-Dokumentation:** Transfer Package 001 dem NDF-Intake übertragen (NDF-INTAKE-COREOPS-001, Commit d08e35e).
+- **Kandidaten-Status:** Alle 7 auf `transferred-to-ndf` (NDF Work Package: `NDF-INTAKE-COREOPS-001`; Backlink Status: `intake-review-committed`).
+- **Adoption:** Kein Kandidat adoptiert; Adoption Version leer; Adoption-Entscheidungen ausstehend.
+- **Status:** Intake abgeschlossen; NDF-Repository unverändert; keine Adoption-WPs gestartet.
 
 ## Notes
 

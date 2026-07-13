@@ -23,7 +23,7 @@ Universelle, self-hosted und offline-fähige Operations Control Plane, die Sourc
 
 ## Letztes Work Package
 
-`CO-WP-004B2 – Finalize NDF Intake Approval Gates` (docs-only / governance-correction). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-004B1 – GO (partial)`.
+`CO-WP-004B3 – Record Completed NDF Intake Transfer` (docs-only / cross-project-traceability). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-004B2 – GO WITH NOTES`.
 
 ## Erstes NDF-Transferpaket (CO-WP-004B1)
 
@@ -79,7 +79,7 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 
 ## Nächstes Work Package
 
-`CO-WP-004C – BSI and Public-Sector Readiness Baseline` (planned-next; pending Nova review von CO-WP-004B2 und Human-Maintainer-Freigabe). Parallel nach CO-WP-004B2 Kay-Commit: NDF Intake Review für Transfer Package 001 wiederaufnehmen. `CO-WP-005` bleibt `planned-after-CO-WP-004E`.
+`CO-WP-004C – BSI and Public-Sector Readiness Baseline` (planned-next; pending Nova review von CO-WP-004B3 und Human-Maintainer-Freigabe). `CO-WP-005` bleibt `planned-after-CO-WP-004E`. External: NDF Adoption-Entscheidungen ausstehend.
 
 ## Aktuelle Blocker
 
