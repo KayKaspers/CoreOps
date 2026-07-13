@@ -1,18 +1,43 @@
 # CoreOps – NDF Feedback Transfer Package 001
 
-> Transfer Package Status: **Transferred to NDF Intake**
+> Transfer Package Status: **Closed – all candidates processed**
 > NDF Intake Status: **Completed (NDF-INTAKE-COREOPS-001, Commit d08e35e)**
-> NDF Adoption Status: **No candidate adopted**
-> Framework Modification Status: **None**
+> NDF Adoption Status: **Completed for all seven candidates**
+> NDF Release Assignment: **Not yet assigned**
+> CoreOps Backlink Status: **Completed**
 > Erzeugt durch `CO-WP-004B1 – First NDF Feedback Transfer Package` (docs-only / transfer-preparation)
 
 ## 1. Status
 
-Transferred to NDF Intake. This Transfer Package has been reviewed by the NDF team (NDF-INTAKE-COREOPS-001, Commit d08e35e). The intake review is completed; all seven candidates have been transferred to the NDF intake status.
+Closed – all candidates processed. This Transfer Package has completed the full cross-project feedback lifecycle: intake review, adoption into the NDF development branch, and CoreOps-side backlink recording. All seven candidates carry `Status: adopted-in-ndf`.
 
-This status confirms transfer to the NDF intake review; it does **not** claim adoption, implementation, or inclusion in any NDF version. Adoption decisions and implementation follow in later, independent NDF work packages.
+**Important distinction:** `adopted-in-ndf` means the candidates were adopted into the current NDF **development branch** through reviewed Human-Maintainer commits. It does **not** mean the changes are included in a released NDF version. NDF release-version assignment remains pending and is not claimed here.
 
-Dieses Dokument ist ein **an den NDF-Intake übertragenes Transferpaket**. Die Intake-Überprüfung ist abgeschlossen; alle sieben Kandidaten wurden in den NDF-Intake-Status versetzt. Die tatsächliche Adoption erfolgt nur durch künftige eigenständige NDF-Work-Packages.
+Dieses Dokument ist ein **abgeschlossenes Transferpaket**. Intake-Überprüfung und NDF-Adoption sind abgeschlossen; alle sieben Kandidaten wurden über drei geprüfte Human-Maintainer-Commits in den aktuellen NDF-Entwicklungszweig adoptiert. Eine NDF-Release-Version wird **nicht** behauptet.
+
+## 1a. Intake and Adoption Record
+
+```text
+Intake Work Package:      NDF-INTAKE-COREOPS-001
+Intake Commit:             d08e35e
+
+Adoption A Work Package:   NDF-ADOPT-COREOPS-001A
+Adoption A Commit:         1ebffa6
+Adoption A Candidates:     NDF-FC-COREOPS-001, -003, -004
+Adoption A Commit Subject: docs(standards): adopt work-package prompt safety baseline
+
+Adoption B Work Package:   NDF-ADOPT-COREOPS-001B
+Adoption B Commit:         e894c6f
+Adoption B Candidates:     NDF-FC-COREOPS-002
+Adoption B Commit Subject: docs(security): adopt skill provenance and integrity lock guidance
+
+Adoption C Work Package:   NDF-ADOPT-COREOPS-001C
+Adoption C Commit:         ebf716c
+Adoption C Candidates:     NDF-FC-COREOPS-005, -006, -007
+Adoption C Commit Subject: docs(governance): adopt decision status and framework tailoring guidance
+```
+
+All seven CoreOps feedback candidates were adopted into the current NDF development branch through three reviewed Human-Maintainer commits. Release-version assignment remains pending.
 
 ## 2. Purpose
 

@@ -17,7 +17,8 @@ Jedes Work Package hat genau **einen** primären Typ.
 | CO-WP-004B| gov-baseline      | Lessons Learned and NDF Feedback Governance                    | completed-go-with-notes         |
 | CO-WP-004B1| transfer-preparation | First NDF Feedback Transfer Package                        | completed-go-with-notes        |
 | CO-WP-004B2| gov-correction    | Finalize NDF Intake Approval Gates                             | completed-go-with-notes        |
-| CO-WP-004B3| cross-project-traceability | Record Completed NDF Intake Transfer                      | implemented-awaiting-nova-review|
+| CO-WP-004B3| cross-project-traceability | Record Completed NDF Intake Transfer                      | completed-go-with-notes        |
+| CO-WP-004B4| cross-project-adoption-traceability | Record Completed NDF Adoption and Close Transfer Package 001 | implemented-awaiting-nova-review|
 | CO-WP-004C| docs-only         | BSI and Public-Sector Readiness Baseline                       | planned-next                    |
 | CO-WP-004D| gov-baseline      | ITIL and PRINCE2 Applicability and Tailoring Decision          | planned                         |
 | CO-WP-004E| docs-only         | Capability Matrix Security and Governance Alignment            | planned                         |

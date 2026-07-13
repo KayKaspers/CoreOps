@@ -23,22 +23,20 @@ Universelle, self-hosted und offline-fähige Operations Control Plane, die Sourc
 
 ## Letztes Work Package
 
-`CO-WP-004B3 – Record Completed NDF Intake Transfer` (docs-only / cross-project-traceability). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-004B2 – GO WITH NOTES`.
+`CO-WP-004B4 – Record Completed NDF Adoption and Close Transfer Package 001` (docs-only / cross-project adoption traceability). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-004B3 – GO WITH NOTES`.
 
-## Erstes NDF-Transferpaket (CO-WP-004B1)
+## NDF-Transferpaket – Vollständiger Lebenszyklus (CO-WP-004B1 bis 004B4)
 
-- Übergabeschwelle (5–10 Kandidaten) erreicht; Nova autorisiert Vorbereitung für alle 7 reservierten Kandidaten.
-- Transfer Package 001 mit 3 Bundles erstellt (Work-Package Safety/Source Handling; Skills Availability/Context Economy; Governance/Status Modeling).
-- Alle 7 Kandidaten auf `approved-for-transfer` (Nova Gate: approved; Human-Maintainer Gate: approved, Commit 4ad3111).
-- **Kein Kandidat übertragen/adoptiert; kein NDF-Repository verändert; kein NDF-Work-Package erstellt.**
-
-## NDF Intake Approval Gate Finalization (CO-WP-004B2)
-
-- Transfer Package Status auf `Approved for NDF Intake` gesetzt.
-- Alle 7 Human-Maintainer-Gates auf `approved` gesetzt (evidenziert durch Commit 4ad3111).
-- Neue Lesson LL-016 erfasst: „Commit-gated status transitions must be represented in repository state".
-- Lehrpunkt: Commit liefert Evidenz, verändert aber nicht automatisch Statuswerte. Freigabefelder müssen VOR dem Commit gesetzt werden.
-- **Kein Kandidat übertragen/adoptiert; kein NDF-Repository verändert; kein NDF-Work-Package erstellt.**
+- **CO-WP-004B1:** Transfer Package 001 mit 3 Bundles erstellt; alle 7 Kandidaten auf `approved-for-transfer`.
+- **CO-WP-004B2:** Package Status und 7 Human-Maintainer-Gates auf `approved`; Lesson LL-016 erfasst.
+- **CO-WP-004B3:** Alle 7 Kandidaten auf `transferred-to-ndf` (NDF-INTAKE-COREOPS-001, Commit d08e35e).
+- **CO-WP-004B4:** Alle 7 Kandidaten auf `adopted-in-ndf`, verteilt auf drei Adoption-WPs:
+  - Adoption A (`NDF-ADOPT-COREOPS-001A`, Commit 1ebffa6): 001, 003, 004.
+  - Adoption B (`NDF-ADOPT-COREOPS-001B`, Commit e894c6f): 002.
+  - Adoption C (`NDF-ADOPT-COREOPS-001C`, Commit ebf716c): 005, 006, 007.
+- **Transfer Package 001 Status:** `Closed – all candidates processed`.
+- **Release-Grenze:** NDF-Release-Zuordnung bleibt `not yet assigned`; keine NDF-Version behauptet. `adopted-in-ndf` ≠ in veröffentlichter NDF-Version enthalten.
+- **NDF-Repository unverändert durch CoreOps; keine weiteren Adoption-WPs gestartet.**
 
 ## Lessons Learned und NDF Feedback (CO-WP-004B)
 
@@ -79,7 +77,7 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 
 ## Nächstes Work Package
 
-`CO-WP-004C – BSI and Public-Sector Readiness Baseline` (planned-next; pending Nova review von CO-WP-004B3 und Human-Maintainer-Freigabe). `CO-WP-005` bleibt `planned-after-CO-WP-004E`. External: NDF Adoption-Entscheidungen ausstehend.
+`CO-WP-004C – BSI and Public-Sector Readiness Baseline` (planned-next; pending Nova review von CO-WP-004B4 und Human-Maintainer-Freigabe). `CO-WP-005` bleibt `planned-after-CO-WP-004E`. External: NDF-Release-Zuordnung für die drei Adoption-Commits ausstehend.
 
 ## Aktuelle Blocker
 
@@ -147,5 +145,7 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 - `CO-WP-004` (docs-only): Foundation Capability Matrix (74 Capabilities) und initiale Observe-Supportgrenze erstellt (Proposed); drei Statusdimensionen, Support-Evidence, CCR-12 vorgeschlagen aufgelöst. Nova-Bewertung: `GO WITH NOTES`.
 - `CO-WP-004A` (docs-only / gov-baseline): Concept-v3.1-Amendment, Sovereignty-and-Dependency-Policy und BSI-Alignment-Positioning erstellt; Souveränität und BSI-Orientierung als Accepted Product Direction; keine Zertifizierung/VS-Eignung; Standard-/Hardened-/Government-Profile; Lessons-Learned-/NDF-Feedback-Richtung; ITIL/PRINCE2 Kandidaten. Nova-Bewertung: `GO WITH NOTES`.
 - `CO-WP-004B` (docs-only / governance): Lessons-Learned-Prozess und NDF-Feedback-Prozess etabliert; 15 Lessons erfasst; 7 reservierte NDF-Kandidaten bewertet (alle `ready-for-bundling`). Nova-Bewertung: `GO WITH NOTES`.
-- `CO-WP-004B1` (docs-only / transfer-preparation): Übergabeschwelle erreicht; Transfer Package 001 mit 3 Bundles erstellt; alle 7 Kandidaten auf `approved-for-transfer` (Nova Gate: approved; Human-Maintainer Gate: pending until commit); Zusammenfassungsfehler im Lessons-Register korrigiert (keine Umklassifizierung). Kein Kandidat übertragen/adoptiert, kein NDF-Repository verändert, kein Git Write. Nova Review ausstehend; erster NDF Intake-Versuch fail-closed blockiert.
-- `CO-WP-004B2` (docs-only / governance-correction): Transfer Package Status und alle 7 Human-Maintainer-Gates auf `approved` gesetzt (Commit 4ad3111 als Evidenz); neue Lesson LL-016 erfasst („Commit-gated status transitions must be represented in repository state"); Lehrpunkt: Statuswerte müssen VOR dem Commit gesetzt werden, nicht durch den Commit. Kein Kandidat übertragen/adoptiert, kein NDF-Repository verändert. Nova Review ausstehend.
+- `CO-WP-004B1` (docs-only / transfer-preparation): Transfer Package 001 mit 3 Bundles erstellt; alle 7 Kandidaten auf `approved-for-transfer`. Erster NDF Intake-Versuch fail-closed blockiert.
+- `CO-WP-004B2` (docs-only / governance-correction): Package Status und alle 7 Human-Maintainer-Gates auf `approved`; neue Lesson LL-016 erfasst.
+- `CO-WP-004B3` (docs-only / cross-project-traceability): Transfer Package 001 dem NDF-Intake übertragen (NDF-INTAKE-COREOPS-001, Commit d08e35e); alle 7 Kandidaten auf `transferred-to-ndf`.
+- `CO-WP-004B4` (docs-only / cross-project adoption traceability): Alle 7 Kandidaten auf `adopted-in-ndf` über drei Adoption-WPs (Commits 1ebffa6, e894c6f, ebf716c); Transfer Package 001 geschlossen; NDF-Release-Zuordnung bleibt offen. Nova Review ausstehend.

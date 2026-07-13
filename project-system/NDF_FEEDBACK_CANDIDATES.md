@@ -29,14 +29,19 @@
 - **Duplicate Check:** kein bekanntes Duplikat innerhalb der CoreOps-lokalen Register.
 - **Breaking-Change Potential:** gering — additive Klarstellung bestehender Prompt-Konventionen, keine Verhaltensänderung bestehender Skills.
 - **Suggested Bundle:** Bundle „Prompt Governance Patterns" (mit NDF-FC-COREOPS-004).
-- **Status:** transferred-to-ndf
+- **Status:** adopted-in-ndf
 - **Nova Gate:** approved
 - **Human-Maintainer Gate:** approved
 - **Transfer Readiness:** Kriterien 1–12 erfüllt; Transfer durchgeführt über NDF-INTAKE-COREOPS-001 (Commit d08e35e).
+- **Intake Work Package:** NDF-INTAKE-COREOPS-001
+- **Intake Commit:** d08e35e
 - **NDF Work Package:** NDF-INTAKE-COREOPS-001
-- **NDF Adoption Version:** —
-- **Backlink Status:** intake-review-committed
-- **Notes:** Teil von Transfer Package 001, Bundle 1 (Work-Package Safety and Source Handling). Übertragen zum NDF-Intake; Adoption ausstehend.
+- **Adoption Work Package:** NDF-ADOPT-COREOPS-001A
+- **NDF Adoption Commit:** 1ebffa6
+- **Adoption Status:** adopted
+- **NDF Adoption Version:** — (not yet assigned; no NDF release version claimed)
+- **Backlink Status:** adoption-recorded
+- **Notes:** Teil von Transfer Package 001, Bundle 1 (Work-Package Safety and Source Handling). Adoptiert in den aktuellen NDF-Entwicklungsstand über NDF-ADOPT-COREOPS-001A (Commit 1ebffa6). Release-Versionszuordnung noch offen.
 
 ## NDF-FC-COREOPS-002
 
@@ -58,14 +63,19 @@
 - **Duplicate Check:** kein bekanntes Duplikat.
 - **Breaking-Change Potential:** gering — beschreibt ein bereits kompatibles Vorgehen, keine Änderung an bestehenden NDF-Skill-Definitionen.
 - **Suggested Bundle:** Bundle „Skills Onboarding & Provenance".
-- **Status:** transferred-to-ndf
+- **Status:** adopted-in-ndf
 - **Nova Gate:** approved
 - **Human-Maintainer Gate:** approved
 - **Transfer Readiness:** Kriterien 1–12 erfüllt; Transfer durchgeführt über NDF-INTAKE-COREOPS-001 (Commit d08e35e).
+- **Intake Work Package:** NDF-INTAKE-COREOPS-001
+- **Intake Commit:** d08e35e
 - **NDF Work Package:** NDF-INTAKE-COREOPS-001
-- **NDF Adoption Version:** —
-- **Backlink Status:** intake-review-committed
-- **Notes:** Bündelt zwei verwandte Lessons (Selektionsmodell + Provenance/Lock). Teil von Transfer Package 001, Bundle 2 (Skills Availability and Context Economy). Übertragen zum NDF-Intake; Adoption ausstehend.
+- **Adoption Work Package:** NDF-ADOPT-COREOPS-001B
+- **NDF Adoption Commit:** e894c6f
+- **Adoption Status:** adopted
+- **NDF Adoption Version:** — (not yet assigned; no NDF release version claimed)
+- **Backlink Status:** adoption-recorded
+- **Notes:** Bündelt zwei verwandte Lessons (Selektionsmodell + Provenance/Lock). Teil von Transfer Package 001, Bundle 2 (Skills Availability and Context Economy). Adoptiert in den aktuellen NDF-Entwicklungsstand über NDF-ADOPT-COREOPS-001B (Commit e894c6f). Release-Versionszuordnung noch offen.
 
 ## NDF-FC-COREOPS-003
 
@@ -87,14 +97,19 @@
 - **Duplicate Check:** kein bekanntes Duplikat.
 - **Breaking-Change Potential:** gering — zusätzliche Prüfschritte vor Registrierung, keine Änderung bestehender Abläufe.
 - **Suggested Bundle:** Bundle „Prompt Governance Patterns" (mit NDF-FC-COREOPS-004).
-- **Status:** transferred-to-ndf
+- **Status:** adopted-in-ndf
 - **Nova Gate:** approved
 - **Human-Maintainer Gate:** approved
 - **Transfer Readiness:** Kriterien 1–12 erfüllt; Transfer durchgeführt über NDF-INTAKE-COREOPS-001 (Commit d08e35e).
+- **Intake Work Package:** NDF-INTAKE-COREOPS-001
+- **Intake Commit:** d08e35e
 - **NDF Work Package:** NDF-INTAKE-COREOPS-001
-- **NDF Adoption Version:** —
-- **Backlink Status:** intake-review-committed
-- **Notes:** Teil von Transfer Package 001, Bundle 1 (Work-Package Safety and Source Handling). Übertragen zum NDF-Intake; Adoption ausstehend.
+- **Adoption Work Package:** NDF-ADOPT-COREOPS-001A
+- **NDF Adoption Commit:** 1ebffa6
+- **Adoption Status:** adopted
+- **NDF Adoption Version:** — (not yet assigned; no NDF release version claimed)
+- **Backlink Status:** adoption-recorded
+- **Notes:** Teil von Transfer Package 001, Bundle 1 (Work-Package Safety and Source Handling). Adoptiert in den aktuellen NDF-Entwicklungsstand über NDF-ADOPT-COREOPS-001A (Commit 1ebffa6). Release-Versionszuordnung noch offen.
 
 ## NDF-FC-COREOPS-004
 
@@ -116,14 +131,19 @@
 - **Duplicate Check:** kein bekanntes Duplikat.
 - **Breaking-Change Potential:** gering.
 - **Suggested Bundle:** Bundle „Prompt Governance Patterns" (mit NDF-FC-COREOPS-001, 003).
-- **Status:** transferred-to-ndf
+- **Status:** adopted-in-ndf
 - **Nova Gate:** approved
 - **Human-Maintainer Gate:** approved
 - **Transfer Readiness:** Kriterien 1–12 erfüllt; Transfer durchgeführt über NDF-INTAKE-COREOPS-001 (Commit d08e35e).
+- **Intake Work Package:** NDF-INTAKE-COREOPS-001
+- **Intake Commit:** d08e35e
 - **NDF Work Package:** NDF-INTAKE-COREOPS-001
-- **NDF Adoption Version:** —
-- **Backlink Status:** intake-review-committed
-- **Notes:** Teil von Transfer Package 001, Bundle 1 (Work-Package Safety and Source Handling). Übertragen zum NDF-Intake; Adoption ausstehend.
+- **Adoption Work Package:** NDF-ADOPT-COREOPS-001A
+- **NDF Adoption Commit:** 1ebffa6
+- **Adoption Status:** adopted
+- **NDF Adoption Version:** — (not yet assigned; no NDF release version claimed)
+- **Backlink Status:** adoption-recorded
+- **Notes:** Teil von Transfer Package 001, Bundle 1 (Work-Package Safety and Source Handling). Adoptiert in den aktuellen NDF-Entwicklungsstand über NDF-ADOPT-COREOPS-001A (Commit 1ebffa6). Release-Versionszuordnung noch offen.
 
 ## NDF-FC-COREOPS-005
 
@@ -145,14 +165,19 @@
 - **Duplicate Check:** kein bekanntes Duplikat.
 - **Breaking-Change Potential:** gering bis mittel — neue optionale Statuswert-Familie, keine Änderung bestehender Pflichtfelder.
 - **Suggested Bundle:** Bundle „Decision & Status Modeling" (mit NDF-FC-COREOPS-006).
-- **Status:** transferred-to-ndf
+- **Status:** adopted-in-ndf
 - **Nova Gate:** approved
 - **Human-Maintainer Gate:** approved
 - **Transfer Readiness:** Kriterien 1–12 erfüllt; Transfer durchgeführt über NDF-INTAKE-COREOPS-001 (Commit d08e35e).
+- **Intake Work Package:** NDF-INTAKE-COREOPS-001
+- **Intake Commit:** d08e35e
 - **NDF Work Package:** NDF-INTAKE-COREOPS-001
-- **NDF Adoption Version:** —
-- **Backlink Status:** intake-review-committed
-- **Notes:** Teil von Transfer Package 001, Bundle 3 (Governance and Status Modeling). Übertragen zum NDF-Intake; Adoption ausstehend.
+- **Adoption Work Package:** NDF-ADOPT-COREOPS-001C
+- **NDF Adoption Commit:** ebf716c
+- **Adoption Status:** adopted
+- **NDF Adoption Version:** — (not yet assigned; no NDF release version claimed)
+- **Backlink Status:** adoption-recorded
+- **Notes:** Teil von Transfer Package 001, Bundle 3 (Governance and Status Modeling). Adoptiert in den aktuellen NDF-Entwicklungsstand über NDF-ADOPT-COREOPS-001C (Commit ebf716c). Release-Versionszuordnung noch offen.
 
 ## NDF-FC-COREOPS-006
 
@@ -174,14 +199,19 @@
 - **Duplicate Check:** kein bekanntes Duplikat.
 - **Breaking-Change Potential:** gering.
 - **Suggested Bundle:** Bundle „Decision & Status Modeling" (mit NDF-FC-COREOPS-005).
-- **Status:** transferred-to-ndf
+- **Status:** adopted-in-ndf
 - **Nova Gate:** approved
 - **Human-Maintainer Gate:** approved
 - **Transfer Readiness:** Kriterien 1–12 erfüllt; Transfer durchgeführt über NDF-INTAKE-COREOPS-001 (Commit d08e35e).
+- **Intake Work Package:** NDF-INTAKE-COREOPS-001
+- **Intake Commit:** d08e35e
 - **NDF Work Package:** NDF-INTAKE-COREOPS-001
-- **NDF Adoption Version:** —
-- **Backlink Status:** intake-review-committed
-- **Notes:** Teil von Transfer Package 001, Bundle 3 (Governance and Status Modeling). Im NDF Intake Review als Guidance/optionales Muster eingeordnet. Übertragen zum NDF-Intake; Adoption ausstehend.
+- **Adoption Work Package:** NDF-ADOPT-COREOPS-001C
+- **NDF Adoption Commit:** ebf716c
+- **Adoption Status:** adopted
+- **NDF Adoption Version:** — (not yet assigned; no NDF release version claimed)
+- **Backlink Status:** adoption-recorded
+- **Notes:** Teil von Transfer Package 001, Bundle 3 (Governance and Status Modeling). Im NDF Intake Review als Guidance/optionales Muster eingeordnet. Adoptiert in den aktuellen NDF-Entwicklungsstand über NDF-ADOPT-COREOPS-001C (Commit ebf716c). Release-Versionszuordnung noch offen.
 
 ## NDF-FC-COREOPS-007
 
@@ -203,19 +233,25 @@
 - **Duplicate Check:** kein bekanntes Duplikat.
 - **Breaking-Change Potential:** gering.
 - **Suggested Bundle:** Bundle „Decision & Status Modeling" (thematisch verwandt, aber eigenständig wegen Fokus auf externe Rahmenwerke statt interne Stati).
-- **Status:** transferred-to-ndf
+- **Status:** adopted-in-ndf
 - **Nova Gate:** approved
 - **Human-Maintainer Gate:** approved
 - **Transfer Readiness:** Kriterien 1–12 erfüllt; Transfer durchgeführt über NDF-INTAKE-COREOPS-001 (Commit d08e35e).
+- **Intake Work Package:** NDF-INTAKE-COREOPS-001
+- **Intake Commit:** d08e35e
 - **NDF Work Package:** NDF-INTAKE-COREOPS-001
-- **NDF Adoption Version:** —
-- **Backlink Status:** intake-review-committed
-- **Notes:** Tatsächliche Tailoring-Entscheidung für CoreOps selbst erfolgt in `CO-WP-004D`; dieser Kandidat betrifft nur das generalisierte NDF-Prozessmuster. Teil von Transfer Package 001, Bundle 3. Im NDF Intake Review als Guidance/optionales Muster eingeordnet. Übertragen zum NDF-Intake; Adoption ausstehend.
+- **Adoption Work Package:** NDF-ADOPT-COREOPS-001C
+- **NDF Adoption Commit:** ebf716c
+- **Adoption Status:** adopted
+- **NDF Adoption Version:** — (not yet assigned; no NDF release version claimed)
+- **Backlink Status:** adoption-recorded
+- **Notes:** Tatsächliche Tailoring-Entscheidung für CoreOps selbst erfolgt in `CO-WP-004D`; dieser Kandidat betrifft nur das generalisierte NDF-Prozessmuster. Teil von Transfer Package 001, Bundle 3. Im NDF Intake Review als Guidance/optionales Muster eingeordnet. Adoptiert in den aktuellen NDF-Entwicklungsstand über NDF-ADOPT-COREOPS-001C (Commit ebf716c). Release-Versionszuordnung noch offen.
 
 ## Zusammenfassung
 
 - **Anzahl Kandidaten:** 7 (alle reservierten IDs NDF-FC-COREOPS-001…007 bewertet)
-- **Status-Verteilung (nach CO-WP-004B3):** `transferred-to-ndf` 7 · `adopted-in-ndf` 0
+- **Status-Verteilung (nach CO-WP-004B4):** `adopted-in-ndf` 7 · `transferred-to-ndf` 0
 - **Bundles (Transfer Package 001):** Bundle 1 „Work-Package Safety and Source Handling" (001, 003, 004), Bundle 2 „Skills Availability and Context Economy" (002), Bundle 3 „Governance and Status Modeling" (005, 006, 007)
-- **Nova Gate:** approved für alle 7. **Human-Maintainer Gate:** approved für alle 7. **NDF Work Package:** NDF-INTAKE-COREOPS-001 für alle 7.
-- **Alle sieben Kandidaten wurden zum NDF-Intake übertragen (Commit d08e35e).** Kein Kandidat ist `adopted-in-ndf`. Die Adoption erfolgt ausschließlich durch künftige NDF-Work-Packages gemäß NDF-seitigem Entscheidungsprozess.
+- **Nova Gate:** approved für alle 7. **Human-Maintainer Gate:** approved für alle 7. **Intake Work Package:** NDF-INTAKE-COREOPS-001 für alle 7 (Commit d08e35e).
+- **Adoption-Zuordnung:** Adoption A `NDF-ADOPT-COREOPS-001A` (Commit 1ebffa6) — Kandidaten 001, 003, 004. Adoption B `NDF-ADOPT-COREOPS-001B` (Commit e894c6f) — Kandidat 002. Adoption C `NDF-ADOPT-COREOPS-001C` (Commit ebf716c) — Kandidaten 005, 006, 007.
+- **Alle sieben Kandidaten wurden über drei geprüfte Human-Maintainer-Commits in den aktuellen NDF-Entwicklungszweig adoptiert.** Release-Versionszuordnung bleibt offen (`not yet assigned`); keine NDF-Version wird behauptet. `adopted-in-ndf` bedeutet **nicht** "in einer veröffentlichten NDF-Version enthalten".

@@ -129,15 +129,24 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 
 - Transfer Package 001 wurde dem NDF-Intake übertragen (NDF-INTAKE-COREOPS-001, Commit d08e35e).
 - Alle 7 Kandidaten auf `transferred-to-ndf` gesetzt (NDF Work Package: NDF-INTAKE-COREOPS-001).
-- **Kein Kandidat adoptiert; Adoption Version leer; NDF-Repository unverändert; keine Adoption-WPs gestartet.**
+
+## NDF Adoption Completion and Transfer Package Closure (CO-WP-004B4)
+
+- Alle 7 Kandidaten von `transferred-to-ndf` auf `adopted-in-ndf` gesetzt, verteilt auf drei Adoption-Work-Packages:
+  - Adoption A (`NDF-ADOPT-COREOPS-001A`, Commit 1ebffa6): 001, 003, 004.
+  - Adoption B (`NDF-ADOPT-COREOPS-001B`, Commit e894c6f): 002.
+  - Adoption C (`NDF-ADOPT-COREOPS-001C`, Commit ebf716c): 005, 006, 007.
+- Transfer Package 001 geschlossen (`Closed – all candidates processed`).
+- **Release-Zuordnung bleibt `not yet assigned`; keine NDF-Version behauptet. `adopted-in-ndf` ≠ in veröffentlichter NDF-Version enthalten.**
+- NDF-Repository unverändert; keine weiteren Adoption-WPs gestartet.
 
 ## Letztes Work Package
 
-`CO-WP-004B3 – Record Completed NDF Intake Transfer` (docs-only / cross-project-traceability). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-004B2 – GO WITH NOTES`.
+`CO-WP-004B4 – Record Completed NDF Adoption and Close Transfer Package 001` (docs-only / cross-project adoption traceability). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-004B3 – GO WITH NOTES`.
 
 ## Nächstes Work Package
 
-`CO-WP-004C – BSI and Public-Sector Readiness Baseline` (planned-next; pending Nova review von CO-WP-004B3 und Human-Maintainer-Freigabe). `CO-WP-005` bleibt `planned-after-CO-WP-004E`.
+`CO-WP-004C – BSI and Public-Sector Readiness Baseline` (planned-next; pending Nova review von CO-WP-004B4 und Human-Maintainer-Freigabe). `CO-WP-005` bleibt `planned-after-CO-WP-004E`.
 
 ## Human-Maintainer-Gates
 
@@ -155,6 +164,7 @@ Freigabe, Staging, Commit, Push, Merge, Tags, Releases, produktive Deployments s
 - `CO-WP-004B1`: Rückmeldung geliefert; Nova Review `pending`.
 - `CO-WP-004B2`: Rückmeldung geliefert; Nova Review: `GO WITH NOTES`.
 - `CO-WP-004B3`: Rückmeldung geliefert; Nova Review `pending`.
+- `CO-WP-004B4`: Rückmeldung geliefert; Nova Review `pending`.
 
 ---
 

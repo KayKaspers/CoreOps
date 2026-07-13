@@ -211,6 +211,16 @@ Folgende Themen benötigen vor jeder verbindlichen technischen Festlegung einen 
 - **Adoption:** Kein Kandidat adoptiert; Adoption Version leer; Adoption-Entscheidungen ausstehend.
 - **Status:** Intake abgeschlossen; NDF-Repository unverändert; keine Adoption-WPs gestartet.
 
+## CO-WP-004B4 Konsolidierung (Record Completed NDF Adoption and Close Transfer Package 001)
+
+- **Adoption-Dokumentation:** Alle 7 Kandidaten von `transferred-to-ndf` auf `adopted-in-ndf` gesetzt, verteilt auf drei Adoption-Work-Packages.
+- **Adoption A** (`NDF-ADOPT-COREOPS-001A`, Commit 1ebffa6): NDF-FC-COREOPS-001, -003, -004.
+- **Adoption B** (`NDF-ADOPT-COREOPS-001B`, Commit e894c6f): NDF-FC-COREOPS-002.
+- **Adoption C** (`NDF-ADOPT-COREOPS-001C`, Commit ebf716c): NDF-FC-COREOPS-005, -006, -007.
+- **Transfer Package 001:** Status `Closed – all candidates processed`; Intake, Adoption und CoreOps-Backlink vollständig.
+- **Release-Grenze:** NDF-Release-Zuordnung bleibt `not yet assigned`; keine NDF-Version behauptet. `adopted-in-ndf` ≠ in veröffentlichter NDF-Version enthalten.
+- **Status:** Adoption für alle 7 abgeschlossen; NDF-Repository unverändert; kein weiteres Adoption-WP gestartet.
+
 ## Notes
 
 - **NDF-Level-Semantik:** `ndf_level: 1` bedeutet ausschließlich „initialer NDF-Projektbootstrap" — keine vollständige NDF-Konformität, technische Reife, Releasebereitschaft, Sicherheitsfreigabe oder erreichte Produktstufe. Der Zahlenwert bleibt unverändert. Die Starter-Vorlage mit `ndf_level: 2` bleibt dokumentierte NDF-Quellambiguität, ist aber kein Blocker (CCR-03).

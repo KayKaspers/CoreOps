@@ -44,14 +44,21 @@ Transfer Package Status auf `Approved for NDF Intake` gesetzt; alle 7 Human-Main
 
 ## NDF Intake Transfer Recording
 
-Current implemented WP: `CO-WP-004B3 – Record Completed NDF Intake Transfer` – pending Nova review.
-Transfer Package 001 wurde dem NDF-Intake übertragen (NDF-INTAKE-COREOPS-001, Commit d08e35e).
-Alle 7 Kandidaten von `approved-for-transfer` auf `transferred-to-ndf` gesetzt; NDF Work Package: `NDF-INTAKE-COREOPS-001` für alle 7; Adoption Version bleibt leer.
-Kein Kandidat adoptiert; NDF-Repository unverändert.
+`CO-WP-004B3 – Record Completed NDF Intake Transfer` completed; Nova Review pending.
+Transfer Package 001 wurde dem NDF-Intake übertragen (NDF-INTAKE-COREOPS-001, Commit d08e35e). Alle 7 Kandidaten auf `transferred-to-ndf` gesetzt.
+
+## NDF Adoption Completion and Transfer Package Closure
+
+Current implemented WP: `CO-WP-004B4 – Record Completed NDF Adoption and Close Transfer Package 001` – pending Nova review.
+Alle 7 Kandidaten von `transferred-to-ndf` auf `adopted-in-ndf` gesetzt, verteilt auf drei Adoption-Work-Packages: NDF-ADOPT-COREOPS-001A (Commit 1ebffa6, Kandidaten 001/003/004), NDF-ADOPT-COREOPS-001B (Commit e894c6f, Kandidat 002), NDF-ADOPT-COREOPS-001C (Commit ebf716c, Kandidaten 005/006/007).
+Transfer Package 001 geschlossen (`Closed – all candidates processed`). NDF-Release-Zuordnung bleibt offen (`not yet assigned`); keine NDF-Version behauptet.
+
+Cross-project feedback status:
+Transfer Package 001 intake and adoption completed.
+All seven candidates are linked to their NDF adoption commits.
+NDF release assignment remains pending.
 
 Next planned CoreOps WP: `CO-WP-004C – BSI and Public-Sector Readiness Baseline` (planned-next; pending Nova review und Human-Maintainer-Freigabe).
-
-External NDF status: Transfer Package 001 Intake abgeschlossen; Adoption ausstehend.
 
 ## Current Goal
 
