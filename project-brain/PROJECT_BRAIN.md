@@ -59,7 +59,8 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 - `CO-WP-003`: Governance-Konsolidierung — Konflikte CCR-02/04/10/11 vorgeschlagen aufgelöst; Zusatzstatus (`proposed`/`clarified`/`verified`) im Decision Index eingeführt, ohne technische Architektur zu akzeptieren. Nova-Bewertung: `GO WITH NOTES`; durch Human-Maintainer-Commit angenommen.
 - `CO-WP-004`: Capability Matrix und Observe-Supportgrenze — drei getrennte Statusdimensionen trennen Planung, Implementierung und Support sauber. Lesson: „Capability target ≠ implemented ≠ verified ≠ supported"; Herstellernennung ist kein Support (CCR-12 vorgeschlagen aufgelöst). Nova-Bewertung: `GO WITH NOTES`; durch Human-Maintainer-Commit angenommen.
 - `CO-WP-004A`: Strategische Erweiterung registriert (Souveränität, BSI-Orientierung). Lesson: Ausrichtung akzeptieren, ohne Technologie, Konformität oder Zertifizierung zu behaupten; Unabhängigkeit ≠ vollständige Eigenentwicklung; ITIL/PRINCE2/BSI bewusst schlank halten (Framework-Overload-Risiko). Nova-Bewertung: `GO WITH NOTES`; durch Human-Maintainer-Commit angenommen.
-- `CO-WP-004B`: Lessons-Learned- und NDF-Feedback-Governance etabliert; 15 Lessons erfasst (13 retrospektiv, 2 aus dem WP selbst), 7 reservierte NDF-Kandidaten bewertet. Lesson: getrennte Statusmodelle für Lessons vs. NDF-Kandidaten und eine explizite Positivliste erlaubter Agent-Status verhindern eine versehentliche Simulation von Freigabeentscheidungen.
+- `CO-WP-004B`: Lessons-Learned- und NDF-Feedback-Governance etabliert; 15 Lessons erfasst (13 retrospektiv, 2 aus dem WP selbst), 7 reservierte NDF-Kandidaten bewertet. Lesson: getrennte Statusmodelle für Lessons vs. NDF-Kandidaten und eine explizite Positivliste erlaubter Agent-Status verhindern eine versehentliche Simulation von Freigabeentscheidungen. Nova-Bewertung: `GO WITH NOTES`; durch Human-Maintainer-Commit angenommen.
+- `CO-WP-004B1`: Erstes NDF-Transferpaket vorbereitet. Lesson: Eine gemeldete Statistik-Inkonsistenz (LL-PROCESS „8 gemeldet, 9 IDs gelistet") ließ sich auf einen Zusammenfassungsfehler zurückführen (Vermischung von Primär- und Sekundärklasse bei LL-001) — Korrektur betraf nur den Text, keine Lesson wurde umklassifiziert. Konsequenz: Zusammenfassungssätze über klassifizierte Register stets gegen die Einzelfelder gegenprüfen, nicht nur gegen frühere Zusammenfassungen.
 
 ## Lokaler NDF-Skills-Bestand
 
@@ -114,13 +115,21 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 - **Kein Kandidat wurde an das NDF übertragen oder adoptiert; kein NDF-Repository verändert; kein NDF-Work-Package erstellt.**
 - Transferentscheidungen (`approved-for-transfer` und höher) bleiben ausschließlich Nova Review + Human-Maintainer-Gate vorbehalten.
 
+## Erstes NDF-Transferpaket (CO-WP-004B1)
+
+- Nova hat die Übergabeschwelle (5–10 Kandidaten) als erreicht festgestellt und die Vorbereitung für alle 7 reservierten Kandidaten autorisiert.
+- [NDF_FEEDBACK_TRANSFER_PACKAGE_001.md](../docs/governance/NDF_FEEDBACK_TRANSFER_PACKAGE_001.md) erstellt mit 3 Bundles (Work-Package Safety and Source Handling; Skills Availability and Context Economy; Governance and Status Modeling).
+- Alle 7 Kandidaten auf `approved-for-transfer` (Nova Gate: approved; Human-Maintainer Gate: pending until commit).
+- **Kein Kandidat übertragen oder adoptiert; kein NDF-Repository verändert; kein NDF-Work-Package erstellt.**
+- Der Human-Maintainer-Commit dieses WPs bildet nur das zweite Transfer-Gate (Freigabe zur Vorbereitung), nicht den tatsächlichen NDF-Transfer — dieser erfolgt über ein eigenständiges NDF-Work-Package im NDF-Intake-Review.
+
 ## Letztes Work Package
 
-`CO-WP-004B – Lessons Learned and NDF Feedback Governance` (docs-only / governance). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-004A – GO WITH NOTES`.
+`CO-WP-004B1 – First NDF Feedback Transfer Package` (docs-only / transfer-preparation). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-004B – GO WITH NOTES`.
 
 ## Nächstes Work Package
 
-`CO-WP-004C – BSI and Public-Sector Readiness Baseline` (planned-next; pending Nova review und Human-Maintainer-Freigabe). `CO-WP-005` bleibt `planned-after-CO-WP-004E`.
+`CO-WP-004C – BSI and Public-Sector Readiness Baseline` (planned-next; pending Nova review und Human-Maintainer-Freigabe). Parallel: NDF Intake Review für Transfer Package 001 (außerhalb CoreOps-Scope). `CO-WP-005` bleibt `planned-after-CO-WP-004E`.
 
 ## Human-Maintainer-Gates
 
@@ -134,7 +143,8 @@ Freigabe, Staging, Commit, Push, Merge, Tags, Releases, produktive Deployments s
 - `CO-WP-003`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova-Bewertung: `GO WITH NOTES`.
 - `CO-WP-004`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova-Bewertung: `GO WITH NOTES`.
 - `CO-WP-004A`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova-Bewertung: `GO WITH NOTES`.
-- `CO-WP-004B`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
+- `CO-WP-004B`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova-Bewertung: `GO WITH NOTES`.
+- `CO-WP-004B1`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
 
 ---
 

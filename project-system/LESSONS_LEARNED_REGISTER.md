@@ -339,7 +339,8 @@ Owner-Rollen: `Human Maintainer` · `Nova` · `Implementation Agent` · `Securit
 ## Zusammenfassung
 
 - **Anzahl Lessons:** 15 (LL-001…LL-013 retrospektiv, LL-014…LL-015 aus CO-WP-004B selbst)
-- **Verteilung nach Primärklasse:** LL-PROCESS 8 (001,004,005,006,010,011,013,014,015 — siehe Einzeleinträge) · LL-PROMPT 1 (002 sek., 001 prim.) · LL-TOOLING 1 (002) · LL-SECURITY 1 (003) · LL-ARCHITECTURE 3 (007,008,012) · LL-DOCUMENTATION 1 (009)
+- **Verteilung nach Primärklasse:** LL-PROCESS 8 (004,005,006,010,011,013,014,015) · LL-PROMPT 1 (001) · LL-TOOLING 1 (002) · LL-SECURITY 1 (003) · LL-ARCHITECTURE 3 (007,008,012) · LL-DOCUMENTATION 1 (009)
+  > Korrektur (CO-WP-004B1): Der vorherige Eintrag listete fälschlich 9 IDs für LL-PROCESS (inkl. „001"), obwohl „8" als Zahl genannt war. Ursache: LL-001 trägt `LL-PROCESS` nur als **Sekundärklasse**; ihre Primärklasse ist `LL-PROMPT`. Keine Lesson wurde umklassifiziert — nur der Zusammenfassungssatz wurde korrigiert. Verifiziert gegen alle 15 `Classification`-Felder; Summe 8+1+1+1+3+1 = 15.
 - **Verteilung nach Status:** `validated` 13 (LL-001…LL-013) · `observed` 2 (LL-014, LL-015)
 - **NDF-relevante Lessons (Reusable Beyond CoreOps: yes):** alle 15
 - **Projektlokal ohne eigenen NDF-Kandidaten:** LL-006, LL-007, LL-009, LL-010, LL-012, LL-014, LL-015 (Muster bereits projektintern umgesetzt bzw. zu spezifisch für einen eigenständigen Kandidaten)

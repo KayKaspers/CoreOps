@@ -187,7 +187,14 @@ Folgende Themen benötigen vor jeder verbindlichen technischen Festlegung einen 
 
 - **Lessons-Learned-Prozess:** [docs/governance/LESSONS_LEARNED_PROCESS.md](../docs/governance/LESSONS_LEARNED_PROCESS.md) — Lifecycle, Klassen, Pflichtfelder, Statuswerte (Proposed for acceptance).
 - **NDF-Feedback-Prozess:** [docs/governance/NDF_FEEDBACK_PROCESS.md](../docs/governance/NDF_FEEDBACK_PROCESS.md) — kontrollierte, manuelle Rückführung; kein automatischer NDF-Rückfluss; Human-Maintainer-Gate für jeden Transfer.
-- **Register:** [LESSONS_LEARNED_REGISTER.md](LESSONS_LEARNED_REGISTER.md) (15 Lessons) und [NDF_FEEDBACK_CANDIDATES.md](NDF_FEEDBACK_CANDIDATES.md) (7 Kandidaten, alle `ready-for-bundling`).
+- **Register:** [LESSONS_LEARNED_REGISTER.md](LESSONS_LEARNED_REGISTER.md) (15 Lessons) und [NDF_FEEDBACK_CANDIDATES.md](NDF_FEEDBACK_CANDIDATES.md) (7 Kandidaten).
+- **Status:** Kein Kandidat an das NDF übertragen oder adoptiert; kein NDF-Repository verändert.
+
+## CO-WP-004B1 Konsolidierung (First NDF Feedback Transfer Package)
+
+- **Transferpaket:** [docs/governance/NDF_FEEDBACK_TRANSFER_PACKAGE_001.md](../docs/governance/NDF_FEEDBACK_TRANSFER_PACKAGE_001.md) — Prepared for Human-Maintainer Approval; 3 Bundles; alle 7 Kandidaten enthalten.
+- **Kandidatenstatus:** alle 7 auf `approved-for-transfer` (Nova Gate: approved; Human-Maintainer Gate: pending until commit; `Backlink Status: transfer-package-prepared`).
+- **Klassenstatistik-Korrektur:** Zusammenfassungsfehler im Lessons-Learned-Register behoben (LL-PROCESS-Liste enthielt fälschlich „001"; keine Lesson umklassifiziert).
 - **Status:** Kein Kandidat an das NDF übertragen oder adoptiert; kein NDF-Repository verändert.
 
 ## Notes

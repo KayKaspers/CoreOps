@@ -30,10 +30,16 @@ Concept-v3.1-Amendment, Sovereignty-and-Dependency-Policy und BSI-Alignment-Posi
 
 ## Lessons Learned and NDF Feedback Governance
 
-Current implemented WP: `CO-WP-004B – Lessons Learned and NDF Feedback Governance` – pending Nova review.
-Lessons-Learned-Prozess und NDF-Feedback-Prozess etabliert; 15 Lessons retrospektiv/neu erfasst; 7 reservierte NDF-Feedback-Kandidaten bewertet (alle `ready-for-bundling`, keiner übertragen/adoptiert). Kein NDF-Repository verändert, kein NDF-Work-Package erstellt, keine ADR.
+Lessons-Learned-Prozess und NDF-Feedback-Prozess etabliert (CO-WP-004B: GO WITH NOTES); 15 Lessons retrospektiv/neu erfasst; 7 reservierte NDF-Feedback-Kandidaten bewertet.
 
-Next planned WP: `CO-WP-004C – BSI and Public-Sector Readiness Baseline`.
+## First NDF Feedback Transfer Package
+
+Current implemented WP: `CO-WP-004B1 – First NDF Feedback Transfer Package` – pending Nova review.
+Übergabeschwelle mit sieben Kandidaten erreicht (Nova-Feststellung); Transfer Package 001 mit drei Bundles erstellt; alle 7 Kandidaten auf `approved-for-transfer` (Nova Gate: approved, Human-Maintainer Gate: pending until commit). Kein Kandidat übertragen/adoptiert, kein NDF-Repository verändert, kein NDF-Work-Package erstellt.
+
+Next planned CoreOps WP: `CO-WP-004C – BSI and Public-Sector Readiness Baseline`.
+
+Parallel external action after Nova review: NDF Intake Review for Transfer Package 001.
 
 ## Current Goal
 
