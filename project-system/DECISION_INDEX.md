@@ -137,6 +137,19 @@ Alle 30 Concept-ADR-Kandidaten (§51) plus zwei Foundation-Klärungen (Delivery 
 | DEC-S-36 | Detailed BSI control mapping | deferred | DF | CO-WP-004E | Nova | later ingestion WP | teils | Deferred; versionsgenaue Source-Ingestion nötig |
 | DEC-S-37 | Capability certification or compliance status | not-claimed | NG | CO-WP-004E | HM | — | nein | Not claimed; kein `compliant`-Wert in der Matrix |
 
+## Language and Repository Governance Decisions (CO-WP-005)
+
+> Registriert über [COREOPS_LANGUAGE_STANDARD.md](../docs/governance/COREOPS_LANGUAGE_STANDARD.md), [PUBLIC_NEUTRALITY_AND_DISCLOSURE_POLICY.md](../docs/governance/PUBLIC_NEUTRALITY_AND_DISCLOSURE_POLICY.md) und [REPOSITORY_GOVERNANCE_STANDARD.md](../docs/governance/REPOSITORY_GOVERNANCE_STANDARD.md). **Dimensionen getrennt** (Decision Class · Lifecycle Status · Binding Level); keine kombinierten Pseudostatuswerte. Keine ADR, keine Technologieauswahl, keine automatisierte Durchsetzung.
+
+| Decision ID | Topic | Decision Class | Lifecycle Status | Binding Level | Source | Owner | Notes |
+| ----------- | ----- | -------------- | ---------------- | ------------- | ------ | ----- | ----- |
+| DEC-S-38 | Canonical language | governance-direction | accepted | binding-governance | CO-WP-005 | HM | English canonical for machine-facing/technical identifiers; DE/EN primary product languages |
+| DEC-S-39 | Translation parity | governance-direction | accepted | binding-governance | CO-WP-005 | Nova | Parity must be explicit and evidence-based; no automatic full-bilingual claim |
+| DEC-S-40 | Public neutrality and disclosure | governance-direction | accepted | binding-governance | CO-WP-005 | HM | Public artifacts organisation-/vendor-neutral, free of unnecessary private infrastructure data |
+| DEC-S-41 | Human-Maintainer repository gates | governance-direction | accepted | binding-governance | CO-WP-005 | HM | HM gates mandatory for git writes, commits, pushes, tags, releases and final governance decisions |
+| DEC-S-42 | Source-of-truth precedence | governance-direction | accepted | binding-governance | CO-WP-005 | Nova | Summaries and derived artifacts must not override authoritative sources |
+| DEC-S-43 | Encoding and line endings | governance-direction | accepted | binding-governance | CO-WP-005 | Nova | New text artifacts use UTF-8; existing line-ending conventions preserved unless a dedicated migration is approved |
+
 ## Deferred Decisions
 
 | Decision ID | Topic | Status | Class | Source | Owner | Target WP | ADR Required |
@@ -187,5 +200,7 @@ Alle 30 Concept-ADR-Kandidaten (§51) plus zwei Foundation-Klärungen (Delivery 
 **CO-WP-004D-Registrierungen:** 8 Framework-Tailoring-Entscheidungen (DEC-S-23…30): ausgewählte ITIL-Konzepte `adopted-with-tailoring`; ITIL 4 und Version 5 mit expliziten Versionsgrenzen; vollständige ITIL-Implementierung `rejected`; PRINCE2 Version 7 `optional-profile`; vollständige PRINCE2-Implementierung `rejected`; NDF-Primat `binding-governance-direction`; externe Zertifizierung/Endorsement `not-claimed`; Framework-Tool-Abhängigkeit `not-selected`. Löst DEC-S-10/DEC-S-11 (ITIL/PRINCE2 foundation-candidate) auf. Keine ADR, keine Tool-Auswahl.
 
 **CO-WP-004E-Registrierungen:** 7 Capability-Governance-Alignment-Entscheidungen (DEC-S-31…37): mehrdimensionaler Capability-Status `accepted-product-direction`; Roadmap/Implementation/Support/Evidence als getrennte Dimensionen und Evidence-Capability-Trennung `binding-governance-direction`; PSR-Mapping = Readiness-Relationship (nicht Compliance); Responsibility-Mapping erforderlich; detailliertes BSI-Control-Mapping `deferred`; Capability-Zertifizierung/Compliance `not-claimed`. Erweitert DEC-O-19; keine ADR, keine Technologieauswahl.
+
+**CO-WP-005-Registrierungen:** 6 Language-/Repository-Governance-Entscheidungen (DEC-S-38…43), mit **getrennten Dimensionen** (Decision Class · Lifecycle Status · Binding Level), alle `governance-direction` / `accepted` / `binding-governance`: kanonische Sprache (Englisch maschinenbezogen, DE/EN Produkt); Übersetzungsparität evidenzbasiert; Public Neutrality/Disclosure; Human-Maintainer-Repository-Gates; Source-of-Truth-Präzedenz; UTF-8/Zeilenenden. Keine kombinierten Pseudostatuswerte; keine ADR; keine automatisierte Durchsetzung.
 
 **Bestätigung:** Keine technische Architektur-, Technologie- oder Implementierungsentscheidung trägt den Status `accepted`. Keine Integration ist `supported`. Keine Zertifizierung/VS-Eignung behauptet. Keine ADR ist Accepted. Es wurde keine ADR-Datei erzeugt.

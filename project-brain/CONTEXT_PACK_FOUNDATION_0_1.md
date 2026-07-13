@@ -23,7 +23,15 @@ Universelle, self-hosted und offline-fähige Operations Control Plane, die Sourc
 
 ## Letztes Work Package
 
-`CO-WP-004E – Capability Matrix Security and Governance Alignment` (docs-only / capability-governance alignment). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-004D – GO WITH NOTES`.
+`CO-WP-005 – Language Standard, Public Neutrality and Repository Governance` (docs-only / repository-governance foundation). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-004E – GO WITH NOTES`.
+
+## Language Standard, Public Neutrality and Repository Governance (CO-WP-005)
+
+- Drei neue Governance-Dokumente: Language Standard, Public-Neutrality-and-Disclosure-Policy, Repository-Governance-Standard.
+- Englisch kanonisch für maschinenbezogene Bezeichner; DE/EN primäre Produktsprachen; Translation-Status-Modell; semantische Parität Pflicht; keine automatische Parität.
+- Hersteller-/Organisations-/institutionelle Neutralität; Nennung ≠ Endorsement; Public-Sector ≠ Behördenfreigabe; Secrets-/Datenschutzgrenzen; synthetische Beispieldaten; Redaction.
+- Human-Maintainer-Gates erhalten; Source-of-Truth-Hierarchie (erweitert FOUNDATION_SCOPE_LOCK); Dokumentstatus/Supersession; Dateinamen/stabile IDs; UTF-8/Zeilenenden; PowerShell-Korrekturstandard.
+- Decision Index +6 (DEC-S-38…43), Risk Register +13 (RISK-67…79). Keine ADR; keine automatisierte Durchsetzung; Lessons-Learned unverändert; keine NDF-Rückführung.
 
 ## Capability Matrix Security and Governance Alignment (CO-WP-004E)
 
@@ -99,7 +107,7 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 
 ## Nächstes Work Package
 
-`CO-WP-005 – Language Standard, Public Neutrality and Repository Governance` (planned-next; pending Nova review von CO-WP-004E und Human-Maintainer-Freigabe). Die 004er-Erweiterungsserie (004A…004E) ist abgeschlossen. External: NDF-Release-Zuordnung für die drei Adoption-Commits ausstehend.
+`CO-WP-006 – System Context, Plane Taxonomy and External Boundaries` (planned-next; pending Nova review von CO-WP-005 und Human-Maintainer-Freigabe). Die 004er-Erweiterungsserie (004A…004E) und CO-WP-005 sind abgeschlossen. External: NDF-Release-Zuordnung für die drei Adoption-Commits ausstehend.
 
 ## Aktuelle Blocker
 
@@ -174,3 +182,4 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 - `CO-WP-004C` (docs-only / security-governance baseline): BSI- und Public-Sector-Readiness-Baseline (18 PSR-Domänen), Reference-/Claims-Register und Public-Sector-Profil erstellt; Decision Index +7, Risk Register +10; BSI-Positionierung additiv aktualisiert. Keine Zertifizierung/Compliance/Behördenfreigabe behauptet; Capability Matrix unverändert; keine ADR. Nova Review ausstehend.
 - `CO-WP-004D` (docs-only / governance-framework applicability review): ITIL `adopted-with-tailoring`, PRINCE2 Version 7 `optional-profile`; ITIL 4 & Version 5 mit Versionsgrenzen; drei interne Governance-Profile; NDF bleibt primär; Decision Index +8 (DEC-S-23…30), Risk Register +11 (RISK-50…60). Keine Zertifizierung/Endorsement/Tool-Abhängigkeit; Capability Matrix + Lessons-Learned unverändert; keine NDF-Rückführung. Nova Review ausstehend.
 - `CO-WP-004E` (docs-only / capability-governance alignment): Foundation Capability Matrix um fünf Statusdimensionen, Profile, PSR-Mapping und Responsibility-Codes erweitert (94 Capabilities; Zählkorrektur von „74"); Alignment-Dokument + Capability-Matrix-Spezifikation erstellt; Decision Index +7 (DEC-S-31…37), Risk Register +6 (RISK-61…66). PSR-Mapping ≠ BSI-Compliance; keine Capability implementiert; keine ADR; Lessons-Learned unverändert. Nova Review ausstehend.
+- `CO-WP-005` (docs-only / repository-governance foundation): Language Standard, Public-Neutrality-and-Disclosure-Policy und Repository-Governance-Standard erstellt; Englisch kanonisch (maschinenbezogen), DE/EN Produkt; Neutralitäts-/Disclosure-Grenzen; Source-of-Truth-Hierarchie; Human-Maintainer-Gates; UTF-8/Zeilenenden; PowerShell-Korrekturstandard. Decision Index +6 (DEC-S-38…43), Risk Register +13 (RISK-67…79). Keine ADR; keine automatisierte Durchsetzung; Lessons-Learned unverändert; keine NDF-Rückführung. Nova Review ausstehend.

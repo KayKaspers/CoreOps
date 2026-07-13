@@ -249,6 +249,15 @@ Folgende Themen benötigen vor jeder verbindlichen technischen Festlegung einen 
 - **Claim-Grenzen:** PSR-Mapping = Readiness-Relevanz, keine BSI-Compliance; kein detailliertes Control-Mapping; kein `compliant`/`requirement-satisfied`/`government-approved`.
 - **Status:** Alignment dokumentiert; keine Capability implementiert; keine ADR; Lessons-Learned-Register unverändert; keine NDF-Rückführung.
 
+## CO-WP-005 Konsolidierung (Language Standard, Public Neutrality and Repository Governance)
+
+- **Language Standard:** [COREOPS_LANGUAGE_STANDARD.md](../docs/governance/COREOPS_LANGUAGE_STANDARD.md) — Englisch kanonisch für maschinenbezogene Bezeichner; DE/EN primäre Produktsprachen; Translation-Status-Modell; semantische Parität Pflicht; keine automatische Paritätsbehauptung.
+- **Public Neutrality & Disclosure:** [PUBLIC_NEUTRALITY_AND_DISCLOSURE_POLICY.md](../docs/governance/PUBLIC_NEUTRALITY_AND_DISCLOSURE_POLICY.md) — Hersteller-/Organisations-/institutionelle Neutralität; Secrets-/Datenschutz-/Infrastrukturgrenzen; sichere synthetische Beispieldaten; Redaction; Endorsement-Grenzen.
+- **Repository Governance:** [REPOSITORY_GOVERNANCE_STANDARD.md](../docs/governance/REPOSITORY_GOVERNANCE_STANDARD.md) — Human-Maintainer-Gates erhalten; Source-of-Truth-Hierarchie (erweitert FOUNDATION_SCOPE_LOCK); authoritative/derived; Dokumentstatus/Supersession; Dateinamen/stabile IDs; UTF-8/Zeilenenden; PowerShell-Korrekturstandard; Public-Hygiene.
+- **Governance-Fortschreibung:** Decision Index +6 (DEC-S-38…43, getrennte Dimensionen Decision Class/Lifecycle/Binding Level), Risk Register +13 (RISK-67…79).
+- **Grenzen:** keine automatisierte Durchsetzung, keine README/CONTRIBUTING/.gitignore/.gitattributes-Änderung, keine Übersetzung, keine Massenkonvertierung, keine ADR.
+- **Status:** Governance-Foundation etabliert; nächstes WP `CO-WP-006`; Lessons-Learned-Register unverändert; keine NDF-Rückführung.
+
 ## Notes
 
 - **NDF-Level-Semantik:** `ndf_level: 1` bedeutet ausschließlich „initialer NDF-Projektbootstrap" — keine vollständige NDF-Konformität, technische Reife, Releasebereitschaft, Sicherheitsfreigabe oder erreichte Produktstufe. Der Zahlenwert bleibt unverändert. Die Starter-Vorlage mit `ndf_level: 2` bleibt dokumentierte NDF-Quellambiguität, ist aber kein Blocker (CCR-03).

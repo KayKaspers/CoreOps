@@ -165,13 +165,22 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 - Decision Index +7 (DEC-S-31…37, erweitert DEC-O-19), Risk Register +6 (RISK-61…66).
 - **Keine Capability implementiert; keine ADR; keine Technologieauswahl; Lessons-Learned-Register unverändert; keine NDF-Rückführung.**
 
+## Language Standard, Public Neutrality and Repository Governance (CO-WP-005)
+
+- Drei neue Governance-Dokumente: [COREOPS_LANGUAGE_STANDARD.md](../docs/governance/COREOPS_LANGUAGE_STANDARD.md), [PUBLIC_NEUTRALITY_AND_DISCLOSURE_POLICY.md](../docs/governance/PUBLIC_NEUTRALITY_AND_DISCLOSURE_POLICY.md), [REPOSITORY_GOVERNANCE_STANDARD.md](../docs/governance/REPOSITORY_GOVERNANCE_STANDARD.md).
+- Sprachstandard: Englisch kanonisch für maschinenbezogene Bezeichner/IDs/Commit-Messages; DE/EN primäre Produktsprachen; Translation-Status-Modell; semantische Parität Pflicht; keine automatische Paritätsbehauptung.
+- Public Neutrality: Hersteller-/Organisations-/institutionelle Neutralität; Nennung ≠ Endorsement; Public-Sector ≠ Behördenfreigabe. Disclosure: keine Secrets/personenbezogenen/privaten Infrastrukturdaten; synthetische Beispieldaten; Redaction.
+- Repository Governance: Human-Maintainer-Gates erhalten; Source-of-Truth-Hierarchie (erweitert FOUNDATION_SCOPE_LOCK, „summary must not override source"); Dokumentstatus/Supersession; Dateinamen/stabile IDs; UTF-8/Zeilenenden; PowerShell-Korrekturstandard; Public-Hygiene.
+- Decision Index +6 (DEC-S-38…43, getrennte Dimensionen), Risk Register +13 (RISK-67…79).
+- **Keine automatisierte Durchsetzung; keine README/.gitignore/.gitattributes-Änderung; keine Übersetzung; keine ADR; Lessons-Learned-Register unverändert; keine NDF-Rückführung.**
+
 ## Letztes Work Package
 
-`CO-WP-004E – Capability Matrix Security and Governance Alignment` (docs-only / capability-governance alignment). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-004D – GO WITH NOTES`.
+`CO-WP-005 – Language Standard, Public Neutrality and Repository Governance` (docs-only / repository-governance foundation). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-004E – GO WITH NOTES`.
 
 ## Nächstes Work Package
 
-`CO-WP-005 – Language Standard, Public Neutrality and Repository Governance` (planned-next; pending Nova review von CO-WP-004E und Human-Maintainer-Freigabe). Die 004er-Erweiterungsserie (004A…004E) ist abgeschlossen.
+`CO-WP-006 – System Context, Plane Taxonomy and External Boundaries` (planned-next; pending Nova review von CO-WP-005 und Human-Maintainer-Freigabe). Die 004er-Erweiterungsserie (004A…004E) und CO-WP-005 (Governance-Foundation) sind abgeschlossen.
 
 ## Human-Maintainer-Gates
 
@@ -193,6 +202,7 @@ Freigabe, Staging, Commit, Push, Merge, Tags, Releases, produktive Deployments s
 - `CO-WP-004C`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
 - `CO-WP-004D`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
 - `CO-WP-004E`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
+- `CO-WP-005`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
 
 ---
 

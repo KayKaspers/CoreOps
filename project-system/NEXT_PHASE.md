@@ -62,17 +62,30 @@ Alle 7 Kandidaten auf `adopted-in-ndf` (drei Adoption-Commits 1ebffa6 / e894c6f 
 
 ## Capability Matrix Security and Governance Alignment
 
-Current implemented WP: `CO-WP-004E – Capability Matrix Security and Governance Alignment` – pending Nova review.
+`CO-WP-004E – Capability Matrix Security and Governance Alignment` completed; Nova Review pending. Foundation Capability Matrix mehrdimensional ausgerichtet (94 Capabilities); PSR-Mapping ≠ Compliance.
 
-Current capability-governance state:
-Foundation Capability Matrix aligned with multi-dimensional status,
-PSR readiness domains, responsibility boundaries and evidence states.
+## Language Standard, Public Neutrality and Repository Governance
 
-No detailed BSI control mapping or compliance claim.
+Current implemented WP: `CO-WP-005 – Language Standard, Public Neutrality and Repository Governance` – pending Nova review.
 
-Zwei neue Dokumente (Alignment + Capability-Matrix-Spezifikation); Foundation Capability Matrix additiv um Evidence-/Security-Governance-Status, Profile Relevance, PSR-Zuordnung und Responsibility-Codes für alle 94 Capabilities erweitert. Zählkorrektur: Matrix enthält 94 Capabilities (frühere Summe „74" korrigiert, grep-verifiziert). Decision Index +7 (DEC-S-31…37), Risk Register +6 (RISK-61…66). Lessons-Learned-Register unverändert; keine NDF-Rückführung; keine ADR; keine Capability implementiert/hochgestuft.
+Current governance state:
+Language, public-neutrality and repository-governance foundation established.
 
-Next planned WP: `CO-WP-005 – Language Standard, Public Neutrality and Repository Governance`.
+Primary technical language:
+English
+
+Primary product languages:
+German and English
+
+Public repository:
+Organisation-neutral and disclosure-bounded
+
+Automated enforcement:
+Not implemented
+
+Drei neue Dokumente: Language Standard (kanonisch Englisch maschinenbezogen, DE/EN Produkt, Translation-Status-Modell, semantische Parität), Public-Neutrality-and-Disclosure-Policy (Hersteller-/Organisations-/institutionelle Neutralität, Secrets-/Datenschutzgrenzen, Redaction, sichere Beispieldaten) und Repository-Governance-Standard (Human-Maintainer-Gates, Source-of-Truth-Hierarchie, Dokumentstatus/Supersession, Dateinamen, UTF-8/Zeilenenden, PowerShell-Korrekturstandard, Public-Hygiene). Decision Index +6 (DEC-S-38…43, getrennte Dimensionen), Risk Register +13 (RISK-67…79). Keine Übersetzung/README-Überarbeitung; keine ADR; Lessons-Learned-Register unverändert; keine NDF-Rückführung.
+
+Next planned WP: `CO-WP-006 – System Context, Plane Taxonomy and External Boundaries`.
 
 ## Current Goal
 
