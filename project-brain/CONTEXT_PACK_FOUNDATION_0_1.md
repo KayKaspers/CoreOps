@@ -23,7 +23,15 @@ Universelle, self-hosted und offline-fähige Operations Control Plane, die Sourc
 
 ## Letztes Work Package
 
-`CO-WP-004B4 – Record Completed NDF Adoption and Close Transfer Package 001` (docs-only / cross-project adoption traceability). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-004B3 – GO WITH NOTES`.
+`CO-WP-004C – BSI and Public-Sector Readiness Baseline` (docs-only / security-governance baseline). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-004B4 – GO WITH NOTES`.
+
+## BSI and Public-Sector Readiness Baseline (CO-WP-004C)
+
+- Drei neue Dokumente: Readiness-Baseline (18 PSR-Domänen, Verantwortungs-/Evidenzmodell), Reference-/Claims-Register (offizielles BSI-Referenzset; C5/C3A bedingt), Public-Sector-Profil (Standard ⊂ Hardened ⊂ Government, intern).
+- Claim Boundaries: keine BSI-Zertifizierung/Vollkonformität/Behörden-/VS-NfD-Freigabe; Produktreife ≠ Deployment-Compliance; keine einzelnen BSI-Anforderungen erfunden.
+- Evidenz-Drei-Zustands-Modell (capability ≠ available ≠ satisfied). Offline/Air-Gap und Souveränität/Cloud eingeordnet.
+- Decision Index +7 (DEC-S-16…22), Risk Register +10 (RISK-40…49). BSI-Positionierung additiv aktualisiert.
+- **Capability Matrix unverändert (→ CO-WP-004E); keine ADR; keine Technologie ausgewählt.**
 
 ## NDF-Transferpaket – Vollständiger Lebenszyklus (CO-WP-004B1 bis 004B4)
 
@@ -77,7 +85,7 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 
 ## Nächstes Work Package
 
-`CO-WP-004C – BSI and Public-Sector Readiness Baseline` (planned-next; pending Nova review von CO-WP-004B4 und Human-Maintainer-Freigabe). `CO-WP-005` bleibt `planned-after-CO-WP-004E`. External: NDF-Release-Zuordnung für die drei Adoption-Commits ausstehend.
+`CO-WP-004D – ITIL and PRINCE2 Applicability and Tailoring Decision` (planned-next; pending Nova review von CO-WP-004C und Human-Maintainer-Freigabe). Danach `CO-WP-004E – Capability Matrix Security and Governance Alignment`. `CO-WP-005` bleibt `planned-after-CO-WP-004E`. External: NDF-Release-Zuordnung für die drei Adoption-Commits ausstehend.
 
 ## Aktuelle Blocker
 
@@ -149,3 +157,4 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 - `CO-WP-004B2` (docs-only / governance-correction): Package Status und alle 7 Human-Maintainer-Gates auf `approved`; neue Lesson LL-016 erfasst.
 - `CO-WP-004B3` (docs-only / cross-project-traceability): Transfer Package 001 dem NDF-Intake übertragen (NDF-INTAKE-COREOPS-001, Commit d08e35e); alle 7 Kandidaten auf `transferred-to-ndf`.
 - `CO-WP-004B4` (docs-only / cross-project adoption traceability): Alle 7 Kandidaten auf `adopted-in-ndf` über drei Adoption-WPs (Commits 1ebffa6, e894c6f, ebf716c); Transfer Package 001 geschlossen; NDF-Release-Zuordnung bleibt offen. Nova Review ausstehend.
+- `CO-WP-004C` (docs-only / security-governance baseline): BSI- und Public-Sector-Readiness-Baseline (18 PSR-Domänen), Reference-/Claims-Register und Public-Sector-Profil erstellt; Decision Index +7, Risk Register +10; BSI-Positionierung additiv aktualisiert. Keine Zertifizierung/Compliance/Behördenfreigabe behauptet; Capability Matrix unverändert; keine ADR. Nova Review ausstehend.

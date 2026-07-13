@@ -94,6 +94,20 @@ Alle 30 Concept-ADR-Kandidaten (§51) plus zwei Foundation-Klärungen (Delivery 
 | DEC-S-14 | Kein automatischer NDF-Rückfluss | proposed-binding-governance | BG | CO-WP-004B | HM | CO-WP-004B | nein | „No Automatic Synchronization" §18 |
 | DEC-S-15 | Human-Maintainer-Gate für NDF-Transfer | proposed-binding-governance | BG | CO-WP-004B | HM | CO-WP-004B | nein | Nur Nova+HM dürfen `approved-for-transfer` setzen |
 
+## Public-Sector Readiness Decisions (CO-WP-004C)
+
+> Registriert über [BSI_AND_PUBLIC_SECTOR_READINESS_BASELINE.md](../docs/security/BSI_AND_PUBLIC_SECTOR_READINESS_BASELINE.md), [BSI_REFERENCE_AND_CLAIMS_REGISTER.md](../docs/security/BSI_REFERENCE_AND_CLAIMS_REGISTER.md) und [PUBLIC_SECTOR_READINESS_PROFILE.md](../docs/governance/PUBLIC_SECTOR_READINESS_PROFILE.md). Keine technische Architektur ausgewählt, keine ADR erzeugt, keine Zertifizierung behauptet.
+
+| Decision ID | Topic | Status | Class | Source | Owner | Target WP | ADR Required | Notes |
+| ----------- | ----- | ------ | ----- | ------ | ----- | --------- | ------------ | ----- |
+| DEC-S-16 | Internal profiles Standard, Hardened and Government | accepted-product-direction | RC | CO-WP-004C | HM | CO-WP-004E | nein | Accepted product and governance direction; interne Profile, keine Zertifizierungsstufen |
+| DEC-S-17 | BSI-oriented and IT-Grundschutz-aligned positioning | accepted-product-direction | APC | CO-WP-004C | HM | later baseline | nein | Accepted **with explicit claim boundaries**; keine Konformität/Zertifizierung |
+| DEC-S-18 | Public-sector readiness baseline | accepted-product-direction | APC | CO-WP-004C | HM | CO-WP-004E | nein | Accepted **foundation baseline**; 18 PSR-Domänen, Verantwortungs-/Evidenzmodell |
+| DEC-S-19 | Detailed BSI requirement mapping | deferred | DF | CO-WP-004C | Nova | later ingestion WP | teils | Deferred to later work; versionsgenaue Source-Ingestion erforderlich |
+| DEC-S-20 | Government profile certification or approval | not-claimed | NG | CO-WP-004C | HM | — | nein | Not claimed; Government Profile ist internes Readiness-Profil |
+| DEC-S-21 | Cloud C5/C3A applicability | open | CCR | CO-WP-004C | Nova | CO-WP-023 | teils | **Conditional and deployment-dependent**; nur bei Cloud-Szenarien relevant |
+| DEC-S-22 | VS-NfD suitability | not-claimed | NG | CO-WP-004C | HM | — | nein | **Not assessed and not claimed** (vgl. DEC-S-07 not-current-target) |
+
 ## Deferred Decisions
 
 | Decision ID | Topic | Status | Class | Source | Owner | Target WP | ADR Required |
@@ -138,5 +152,7 @@ Alle 30 Concept-ADR-Kandidaten (§51) plus zwei Foundation-Klärungen (Delivery 
 **CO-WP-004A-Registrierungen:** 11 Produkt-/Strategie-/Governance-Entscheidungen (DEC-S-01…11): Souveränität und BSI-orientierte Entwicklung als `accepted-product-direction`; verpflichtende externe Managementprodukte `prohibited`; Zertifizierung `not-claimed`, VS-NfD `not-current-target`; Lessons Learned `binding-governance-direction`, NDF-Feedback `controlled-candidate-process`; ITIL und PRINCE2 `foundation-candidate`; technische Basisabhängigkeiten `open`.
 
 **CO-WP-004B-Registrierungen:** 4 Governance-Entscheidungen (DEC-S-12…15): Lessons-Learned-Prozess, NDF-Feedback-Prozess, kein automatischer NDF-Rückfluss und Human-Maintainer-Gate für NDF-Transfer — alle `proposed-binding-governance`.
+
+**CO-WP-004C-Registrierungen:** 7 Public-Sector-Readiness-Entscheidungen (DEC-S-16…22): interne Profile Standard/Hardened/Government und BSI-orientierte Positionierung sowie Public-Sector-Readiness-Baseline als `accepted-product-direction` (mit expliziten Claim Boundaries); detailliertes BSI-Requirement-Mapping `deferred`; Government-Profil-Zertifizierung `not-claimed`; Cloud C5/C3A `open` (conditional/deployment-dependent); VS-NfD `not-claimed` (not assessed). Keine technische Architektur ausgewählt, keine ADR erzeugt.
 
 **Bestätigung:** Keine technische Architektur-, Technologie- oder Implementierungsentscheidung trägt den Status `accepted`. Keine Integration ist `supported`. Keine Zertifizierung/VS-Eignung behauptet. Keine ADR ist Accepted. Es wurde keine ADR-Datei erzeugt.

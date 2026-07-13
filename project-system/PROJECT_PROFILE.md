@@ -221,6 +221,15 @@ Folgende Themen benötigen vor jeder verbindlichen technischen Festlegung einen 
 - **Release-Grenze:** NDF-Release-Zuordnung bleibt `not yet assigned`; keine NDF-Version behauptet. `adopted-in-ndf` ≠ in veröffentlichter NDF-Version enthalten.
 - **Status:** Adoption für alle 7 abgeschlossen; NDF-Repository unverändert; kein weiteres Adoption-WP gestartet.
 
+## CO-WP-004C Konsolidierung (BSI and Public-Sector Readiness Baseline)
+
+- **Readiness-Baseline:** [BSI_AND_PUBLIC_SECTOR_READINESS_BASELINE.md](../docs/security/BSI_AND_PUBLIC_SECTOR_READINESS_BASELINE.md) — Claim Boundaries, 18 Readiness-Domänen (PSR-01…PSR-18), Verantwortungs- und Evidenzmodell (capability ≠ available ≠ satisfied), Logging/Detection, Offline/Air-Gap, Souveränität/Cloud.
+- **Referenz-/Claims-Register:** [BSI_REFERENCE_AND_CLAIMS_REGISTER.md](../docs/security/BSI_REFERENCE_AND_CLAIMS_REGISTER.md) — offizielles Referenzset (BSI 200-1…200-4, IT-Grundschutz-Kompendium versionsoffen, Mindeststandards, Protokollierung/Detektion v2.1; C5/C3A bedingt), keine erfundenen Anforderungen.
+- **Public-Sector-Profil:** [PUBLIC_SECTOR_READINESS_PROFILE.md](../docs/governance/PUBLIC_SECTOR_READINESS_PROFILE.md) — interne Profile Standard ⊂ Hardened ⊂ Government (keine Zertifizierungsstufen).
+- **Governance-Fortschreibung:** Decision Index +7 (DEC-S-16…22), Risk Register +10 (RISK-40…49). BSI-Positionierung additiv aktualisiert.
+- **Claim-Grenzen:** Keine BSI-Zertifizierung, keine IT-Grundschutz-Vollkonformität, keine Behörden-/VS-NfD-Freigabe; Produktreife ≠ Deployment-Compliance.
+- **Status:** Baseline etabliert; Capability Matrix unverändert (→ CO-WP-004E); keine ADR, keine Technologieauswahl.
+
 ## Notes
 
 - **NDF-Level-Semantik:** `ndf_level: 1` bedeutet ausschließlich „initialer NDF-Projektbootstrap" — keine vollständige NDF-Konformität, technische Reife, Releasebereitschaft, Sicherheitsfreigabe oder erreichte Produktstufe. Der Zahlenwert bleibt unverändert. Die Starter-Vorlage mit `ndf_level: 2` bleibt dokumentierte NDF-Quellambiguität, ist aber kein Blocker (CCR-03).

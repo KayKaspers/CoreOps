@@ -49,16 +49,22 @@ Transfer Package 001 wurde dem NDF-Intake übertragen (NDF-INTAKE-COREOPS-001, C
 
 ## NDF Adoption Completion and Transfer Package Closure
 
-Current implemented WP: `CO-WP-004B4 – Record Completed NDF Adoption and Close Transfer Package 001` – pending Nova review.
-Alle 7 Kandidaten von `transferred-to-ndf` auf `adopted-in-ndf` gesetzt, verteilt auf drei Adoption-Work-Packages: NDF-ADOPT-COREOPS-001A (Commit 1ebffa6, Kandidaten 001/003/004), NDF-ADOPT-COREOPS-001B (Commit e894c6f, Kandidat 002), NDF-ADOPT-COREOPS-001C (Commit ebf716c, Kandidaten 005/006/007).
-Transfer Package 001 geschlossen (`Closed – all candidates processed`). NDF-Release-Zuordnung bleibt offen (`not yet assigned`); keine NDF-Version behauptet.
+`CO-WP-004B4 – Record Completed NDF Adoption and Close Transfer Package 001` completed; Nova Review pending.
+Alle 7 Kandidaten auf `adopted-in-ndf` (drei Adoption-Commits 1ebffa6 / e894c6f / ebf716c); Transfer Package 001 geschlossen.
 
-Cross-project feedback status:
-Transfer Package 001 intake and adoption completed.
-All seven candidates are linked to their NDF adoption commits.
-NDF release assignment remains pending.
+## BSI and Public-Sector Readiness Baseline
 
-Next planned CoreOps WP: `CO-WP-004C – BSI and Public-Sector Readiness Baseline` (planned-next; pending Nova review und Human-Maintainer-Freigabe).
+Current implemented WP: `CO-WP-004C – BSI and Public-Sector Readiness Baseline` – pending Nova review.
+
+Current baseline:
+BSI and Public-Sector Readiness Baseline established.
+No certification or deployment-compliance claim.
+
+Drei neue Dokumente erstellt: Readiness-Baseline (18 PSR-Domänen, Verantwortungs-/Evidenzmodell, Offline/Souveränität), Reference-/Claims-Register (offizielles BSI-Referenzset mit Versions-/Anwendbarkeitsstatus; C5/C3A bedingt) und Public-Sector-Profil (Standard/Hardened/Government, intern). BSI-Positionierung additiv aktualisiert. Decision Index (+7 DEC-S-16…22) und Risk Register (+10 RISK-40…49) fortgeschrieben. Capability Matrix unverändert. Keine BSI-Zertifizierung, keine IT-Grundschutz-Vollkonformität, keine Behörden-/VS-NfD-Freigabe behauptet; keine einzelnen BSI-Anforderungen erfunden.
+
+Next planned CoreOps WP: `CO-WP-004D – ITIL and PRINCE2 Applicability and Tailoring Decision` (planned-next; pending Nova review und Human-Maintainer-Freigabe).
+
+Following WP: `CO-WP-004E – Capability Matrix Security and Governance Alignment`.
 
 ## Current Goal
 

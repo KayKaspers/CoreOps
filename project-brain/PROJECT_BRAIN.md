@@ -140,13 +140,20 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 - **Release-Zuordnung bleibt `not yet assigned`; keine NDF-Version behauptet. `adopted-in-ndf` ≠ in veröffentlichter NDF-Version enthalten.**
 - NDF-Repository unverändert; keine weiteren Adoption-WPs gestartet.
 
+## BSI and Public-Sector Readiness Baseline (CO-WP-004C)
+
+- Drei neue Dokumente: Readiness-Baseline ([BSI_AND_PUBLIC_SECTOR_READINESS_BASELINE.md](../docs/security/BSI_AND_PUBLIC_SECTOR_READINESS_BASELINE.md), 18 PSR-Domänen), Reference-/Claims-Register ([BSI_REFERENCE_AND_CLAIMS_REGISTER.md](../docs/security/BSI_REFERENCE_AND_CLAIMS_REGISTER.md)), Public-Sector-Profil ([PUBLIC_SECTOR_READINESS_PROFILE.md](../docs/governance/PUBLIC_SECTOR_READINESS_PROFILE.md)).
+- Interne Profile Standard ⊂ Hardened ⊂ Government (keine Zertifizierung). Verantwortungs- und Evidenzmodell (capability ≠ available ≠ satisfied). Offline/Air-Gap und Souveränität/Cloud (C5/C3A bedingt) eingeordnet.
+- Governance: Decision Index +7 (DEC-S-16…22), Risk Register +10 (RISK-40…49). BSI-Positionierung additiv aktualisiert.
+- **Keine BSI-Zertifizierung/Vollkonformität/Behörden-/VS-NfD-Freigabe behauptet; keine einzelnen BSI-Anforderungen erfunden; Capability Matrix unverändert (→ CO-WP-004E); keine ADR; keine Technologie ausgewählt.**
+
 ## Letztes Work Package
 
-`CO-WP-004B4 – Record Completed NDF Adoption and Close Transfer Package 001` (docs-only / cross-project adoption traceability). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-004B3 – GO WITH NOTES`.
+`CO-WP-004C – BSI and Public-Sector Readiness Baseline` (docs-only / security-governance baseline). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-004B4 – GO WITH NOTES`.
 
 ## Nächstes Work Package
 
-`CO-WP-004C – BSI and Public-Sector Readiness Baseline` (planned-next; pending Nova review von CO-WP-004B4 und Human-Maintainer-Freigabe). `CO-WP-005` bleibt `planned-after-CO-WP-004E`.
+`CO-WP-004D – ITIL and PRINCE2 Applicability and Tailoring Decision` (planned-next; pending Nova review von CO-WP-004C und Human-Maintainer-Freigabe). Danach `CO-WP-004E`. `CO-WP-005` bleibt `planned-after-CO-WP-004E`.
 
 ## Human-Maintainer-Gates
 
@@ -165,6 +172,7 @@ Freigabe, Staging, Commit, Push, Merge, Tags, Releases, produktive Deployments s
 - `CO-WP-004B2`: Rückmeldung geliefert; Nova Review: `GO WITH NOTES`.
 - `CO-WP-004B3`: Rückmeldung geliefert; Nova Review `pending`.
 - `CO-WP-004B4`: Rückmeldung geliefert; Nova Review `pending`.
+- `CO-WP-004C`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
 
 ---
 

@@ -68,3 +68,13 @@ Das konkrete IT-Grundschutz-Mapping, die Härtungsbaseline und die Nachweisartef
 - VS-Eignung: **kein aktuelles Ziel**.
 - IT-Grundschutz-Mapping: **noch nicht vorhanden** (späteres WP).
 - Government/Hardened Profile: **als Zielrichtung registriert**, nicht implementiert.
+
+## 11. Readiness Baseline (CO-WP-004C)
+
+Diese Positionierung wird additiv durch drei Baseline-Dokumente aus `CO-WP-004C` ergänzt (keine Zertifizierung, keine vollständige IT-Grundschutz-Compliance, keine Behörden- oder VS-NfD-Freigabe):
+
+- [BSI_AND_PUBLIC_SECTOR_READINESS_BASELINE.md](BSI_AND_PUBLIC_SECTOR_READINESS_BASELINE.md) — Claim Boundaries, 18 Readiness-Domänen (PSR-01…PSR-18), Verantwortungs- und Evidenzmodell, Offline/Air-Gap- und Souveränitäts-Grenzen.
+- [BSI_REFERENCE_AND_CLAIMS_REGISTER.md](BSI_REFERENCE_AND_CLAIMS_REGISTER.md) — offizielles Referenzset (BSI 200-1…200-4, IT-Grundschutz-Kompendium versionsoffen, Mindeststandards, Protokollierung/Detektion v2.1; C5/C3A bedingt) mit Versions- und Anwendbarkeitsstatus.
+- [PUBLIC_SECTOR_READINESS_PROFILE.md](../governance/PUBLIC_SECTOR_READINESS_PROFILE.md) — interne Standard-/Hardened-/Government-Profile.
+
+**Produkt- vs. Deployment-Verantwortung:** Produktreife ≠ Deployment-Compliance; Compliance hängt von Architektur, Betreiberprozessen, Konfiguration, Evidenz, rechtlicher Anwendbarkeit und ggf. externer Bewertung ab. **Versionsgenaue Control-Mappings** (Klausel-zu-Capability) bleiben späteren Work Packages vorbehalten; hier werden **keine** einzelnen BSI-Anforderungen behauptet.
