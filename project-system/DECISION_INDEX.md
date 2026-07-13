@@ -224,6 +224,29 @@ Alle 30 Concept-ADR-Kandidaten (§51) plus zwei Foundation-Klärungen (Delivery 
 | DEC-S-88 | Session technology | architecture-context | deferred | non-binding | CO-WP-009 | Nova | Deferred |
 | DEC-S-89 | Tenant-isolation implementation | architecture-context | deferred | non-binding | CO-WP-009 | Nova | Deferred |
 
+## Machine Identity and Credential Lifecycle Decisions (CO-WP-010)
+
+> Registriert über [MACHINE_IDENTITY_AND_PRINCIPAL_GOVERNANCE.md](../docs/security/MACHINE_IDENTITY_AND_PRINCIPAL_GOVERNANCE.md), [MACHINE_ENROLLMENT_AND_TRUST_LIFECYCLE.md](../docs/security/MACHINE_ENROLLMENT_AND_TRUST_LIFECYCLE.md) und [OFFLINE_CREDENTIAL_AND_ROTATION_GOVERNANCE.md](../docs/security/OFFLINE_CREDENTIAL_AND_ROTATION_GOVERNANCE.md). **Getrennte Dimensionen**; keine kombinierten Pseudostatuswerte; keine PKI-/Krypto-/Protokoll-/Secret-Store-Auswahl; keine ADR.
+
+| Decision ID | Topic | Decision Class | Lifecycle Status | Binding Level | Source | Owner | Notes |
+| ----------- | ----- | -------------- | ---------------- | ------------- | ------ | ----- | ----- |
+| DEC-S-90 | Human vs machine identity | security-context | accepted | binding-governance | CO-WP-010 | Nova | Getrennt; keine anonyme Human-Ersetzung |
+| DEC-S-91 | Machine identity vs credential | security-context | accepted | binding-governance | CO-WP-010 | Nova | Getrennte Konzepte |
+| DEC-S-92 | Discovery vs enrollment | security-context | accepted | binding-governance | CO-WP-010 | Nova | Discovery erzeugt keine Identität |
+| DEC-S-93 | Registration vs trust | security-context | accepted | binding-governance | CO-WP-010 | Nova | Registration allein ≠ privilegiertes Vertrauen |
+| DEC-S-94 | Enrollment governance | security-context | accepted | binding-governance | CO-WP-010 | Nova | Explizit, owner-/scope-bound, auditierbar; keine unbeschränkte Autorität |
+| DEC-S-95 | Machine principal scope | security-context | accepted | binding-governance | CO-WP-010 | Nova | Scope-bound; keine geerbte Human-/Owner-Autorität |
+| DEC-S-96 | Agent/adapter identity boundary | security-context | accepted | binding-governance | CO-WP-010 | Nova | Umgehen Policy-Grenzen **nicht** |
+| DEC-S-97 | Bootstrap material | security-context | accepted | binding-governance | CO-WP-010 | Nova | Keine permanente Identität; scope-/zeitgebunden |
+| DEC-S-98 | Credential governance vs raw secret | security-context | accepted | binding-governance | CO-WP-010 | Nova | Governance ≠ Rohsecret-Ownership |
+| DEC-S-99 | Rotation/renewal scope | security-context | accepted | binding-governance | CO-WP-010 | Nova | Keine stille Scope-Erweiterung |
+| DEC-S-100 | Compromise handling | security-context | accepted | binding-governance | CO-WP-010 | Nova | Containment + explizite Re-Enrollment-Entscheidung; nicht automatisch |
+| DEC-S-101 | Decommissioned ID reuse | governance-direction | accepted | binding-governance | CO-WP-010 | Nova | Keine stille Wiederverwendung |
+| DEC-S-102 | Offline enrollment | security-context | accepted | binding-governance | CO-WP-010 | Nova | Provenance, Integrität, Approval erforderlich; Mechanismus deferred |
+| DEC-S-103 | PKI/credential format/crypto/trust anchors | architecture-context | deferred | non-binding | CO-WP-010 | Nova | Deferred |
+| DEC-S-104 | Enrollment protocol | architecture-context | deferred | non-binding | CO-WP-010 | Nova | Deferred |
+| DEC-S-105 | Raw secret storage | architecture-context | deferred | non-binding | CO-WP-010 | Nova | Deferred (ob CoreOps Rohsecrets speichert) |
+
 ## Deferred Decisions
 
 | Decision ID | Topic | Status | Class | Source | Owner | Target WP | ADR Required |
@@ -284,5 +307,7 @@ Alle 30 Concept-ADR-Kandidaten (§51) plus zwei Foundation-Klärungen (Delivery 
 **CO-WP-008-Registrierungen:** 12 Logical-Module-Architecture-Entscheidungen (DEC-S-64…75), **getrennte Dimensionen**: logische Modularchitektur und Module-Semantik `accepted`; Module-IDs stabil; Policy/Control/Execution-Trennung, Experience-, Adapter-, Offline-Grenzen als Security-Kontext `binding-governance`; Agent-Modul optional; autoritative Datenownership explizit; Communication-Technologie, Deployment-Topologie und Implementation-Architektur `deferred`. Keine Technologie-/Deployment-Auswahl; keine ADR.
 
 **CO-WP-009-Registrierungen:** 14 Human-Identity-/RBAC-/Break-Glass-Entscheidungen (DEC-S-76…89), **getrennte Dimensionen**: getrennte Identity-/Account-Konzepte; Repository- ≠ Runtime-Autorität; Workspace ≠ automatischer Security-Tenant; RBAC deny-by-default/least-privilege/scope-bound; Membership ohne globale Autorität; Rollenzuweisung explizit/auditierbar/widerrufbar; sensible Aktionen mit Reauth/Approval; Delegation explizit/scope-bound/non-transitive; Break Glass temporär/benannt/auditiert mit Ablaufpflicht; Offline-Emergency-Access governed (Mechanismus deferred); Identity-Provider-/Auth-/Session-Technologie und Tenant-Isolation `deferred`. Keine Technologieauswahl; keine ADR.
+
+**CO-WP-010-Registrierungen:** 16 Machine-Identity-/Credential-Lifecycle-Entscheidungen (DEC-S-90…105), **getrennte Dimensionen**: Human ≠ Machine Identity; Identity ≠ Credential; Discovery ≠ Enrollment; Registration ≠ Trust; Enrollment explizit/owner-/scope-bound (keine unbeschränkte Autorität); Machine Principals scope-bound; Agent/Adapter-Identität umgeht Policy nicht; Bootstrap ≠ permanente Identität; Credential-Governance ≠ Rohsecret-Ownership; Rotation/Renewal ohne stille Scope-Erweiterung; Compromise mit Containment + expliziter Re-Enrollment-Entscheidung; keine stille Decommission-ID-Wiederverwendung; Offline-Enrollment mit Provenance/Integrität/Approval; PKI/Krypto/Trust-Anchors, Enrollment-Protokoll und Rohsecret-Speicherung `deferred`. Keine Technologieauswahl; keine ADR.
 
 **Bestätigung:** Keine technische Architektur-, Technologie- oder Implementierungsentscheidung trägt den Status `accepted`. Keine Integration ist `supported`. Keine Zertifizierung/VS-Eignung behauptet. Keine ADR ist Accepted. Es wurde keine ADR-Datei erzeugt.

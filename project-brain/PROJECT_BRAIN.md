@@ -211,13 +211,22 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 - Decision Index +14 (DEC-S-76…89), Risk Register +18 (RISK-119…136).
 - **Keine ADR; Modul-/Capability-/Threat-Dateien + Lessons-Learned-Register unverändert; keine NDF-Rückführung.**
 
+## Machine Identity, Enrollment and Offline Credential Lifecycle (CO-WP-010)
+
+- Drei neue Dokumente: [MACHINE_IDENTITY_AND_PRINCIPAL_GOVERNANCE.md](../docs/security/MACHINE_IDENTITY_AND_PRINCIPAL_GOVERNANCE.md), [MACHINE_ENROLLMENT_AND_TRUST_LIFECYCLE.md](../docs/security/MACHINE_ENROLLMENT_AND_TRUST_LIFECYCLE.md), [OFFLINE_CREDENTIAL_AND_ROTATION_GOVERNANCE.md](../docs/security/OFFLINE_CREDENTIAL_AND_ROTATION_GOVERNANCE.md).
+- Human ≠ Machine Identity; Identity ≠ Credential; Discovery ≠ Enrollment; Registration ≠ Trust; Enrollment ≠ Write Authority. 10 Principal-Klassen (managed-resource/agent/relay/adapter/integration/automation-client/deployment-runner/observation-collector/offline-transfer/evidence-export).
+- Lifecycle (discovered…archived); Bootstrap ≠ permanente Identität; Trust nicht aus IP/Hostname/MAC/Netzposition/Self-Assertion. Rotation/Renewal ohne stille Scope-Erweiterung; Revocation nicht nur Doku-Status; Compromise → explizite Re-Enrollment-Entscheidung; Decommissioned-IDs nicht still wiederverwendet.
+- **Credential-Governance ≠ Rohsecret-Ownership (Speicherung deferred); Offline-Enrollment/-Credentials mit Provenance/Integrität/Approval; Offline-Revocation als anerkannte Herausforderung. 12 Machine-Identity- + weitere Invarianten (Designanforderungen).**
+- Decision Index +16 (DEC-S-90…105), Risk Register +19 (RISK-137…155).
+- **Keine PKI-/Krypto-/Protokoll-/Secret-Store-Auswahl; keine ADR; Human-Identity-/Modul-/Capability-/Threat-Dateien + Lessons-Learned-Register unverändert; keine NDF-Rückführung.**
+
 ## Letztes Work Package
 
-`CO-WP-009 – Human Identity, Workspaces, RBAC and Break Glass` (docs-only / security-baseline). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-008 – GO WITH NOTES`.
+`CO-WP-010 – Machine Identity, Enrollment and Offline Credential Lifecycle` (docs-only / security-baseline). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-009 – GO WITH NOTES`.
 
 ## Nächstes Work Package
 
-`CO-WP-010 – Machine Identity, Enrollment and Offline Credential Lifecycle` (security-baseline; planned-next; pending Nova review von CO-WP-009 und Human-Maintainer-Freigabe).
+`CO-WP-011 – Source of Truth and Field Provenance` (docs-only; planned-next; pending Nova review von CO-WP-010 und Human-Maintainer-Freigabe).
 
 ## Human-Maintainer-Gates
 
@@ -244,6 +253,7 @@ Freigabe, Staging, Commit, Push, Merge, Tags, Releases, produktive Deployments s
 - `CO-WP-007`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
 - `CO-WP-008`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
 - `CO-WP-009`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
+- `CO-WP-010`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
 
 ---
 

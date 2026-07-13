@@ -294,6 +294,15 @@ Folgende Themen benötigen vor jeder verbindlichen technischen Festlegung einen 
 - **Grenzen:** keine Auth-/IdP-/Session-/MFA-/Policy-Engine-/Tenant-Isolation-Auswahl; keine ADR; Invarianten = Designanforderungen; Modul-/Capability-/Threat-Dateien unverändert.
 - **Status:** Foundation-Identity-/RBAC-/Break-Glass-Baseline etabliert; nächstes WP `CO-WP-010`; Lessons-Learned-Register unverändert; keine NDF-Rückführung.
 
+## CO-WP-010 Konsolidierung (Machine Identity, Enrollment and Offline Credential Lifecycle)
+
+- **Machine Identity Governance:** [MACHINE_IDENTITY_AND_PRINCIPAL_GOVERNANCE.md](../docs/security/MACHINE_IDENTITY_AND_PRINCIPAL_GOVERNANCE.md) — Begriffsmodell, Human ≠ Machine, 10 Principal-Klassen (mit Owning-Modul/Threats), Lifecycle, Scope/Authorization, Agent-/Adapter-Grenze, Automation Clients.
+- **Enrollment & Trust Lifecycle:** [MACHINE_ENROLLMENT_AND_TRUST_LIFECYCLE.md](../docs/security/MACHINE_ENROLLMENT_AND_TRUST_LIFECYCLE.md) — Enrollment (explizit/owner-/scope-bound), Bootstrap-Grenze, Trust Establishment (Registration ≠ Trust), Suspension/Revocation/Compromise, Re-Enrollment, Decommissioning, Offline-Enrollment.
+- **Credential & Rotation Governance:** [OFFLINE_CREDENTIAL_AND_ROTATION_GOVERNANCE.md](../docs/security/OFFLINE_CREDENTIAL_AND_ROTATION_GOVERNANCE.md) — Credential-Metadaten, Raw-Secret-Grenze (Governance ≠ Rohsecret-Ownership; Speicherung deferred), Rotation/Renewal/Overlap, Offline-Distribution/Reconciliation.
+- **Governance-Fortschreibung:** Decision Index +16 (DEC-S-90…105), Risk Register +19 (RISK-137…155).
+- **Grenzen:** Discovery ≠ Enrollment; Enrollment ≠ Write Authority; keine PKI-/Zertifikats-/Krypto-/TPM-/mTLS-/SSH-/Enrollment-Protokoll-/Secret-Store-Auswahl; keine ADR; Invarianten = Designanforderungen.
+- **Status:** Foundation-Machine-Identity-Baseline etabliert; nächstes WP `CO-WP-011`; Lessons-Learned-Register unverändert; keine NDF-Rückführung.
+
 ## Notes
 
 - **NDF-Level-Semantik:** `ndf_level: 1` bedeutet ausschließlich „initialer NDF-Projektbootstrap" — keine vollständige NDF-Konformität, technische Reife, Releasebereitschaft, Sicherheitsfreigabe oder erreichte Produktstufe. Der Zahlenwert bleibt unverändert. Die Starter-Vorlage mit `ndf_level: 2` bleibt dokumentierte NDF-Quellambiguität, ist aber kein Blocker (CCR-03).

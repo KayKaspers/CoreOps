@@ -82,23 +82,27 @@ Alle 7 Kandidaten auf `adopted-in-ndf` (drei Adoption-Commits 1ebffa6 / e894c6f 
 
 ## Human Identity, Workspaces, RBAC and Break Glass
 
-Current implemented WP: `CO-WP-009 – Human Identity, Workspaces, RBAC and Break Glass` – pending Nova review.
+`CO-WP-009 – Human Identity, Workspaces, RBAC and Break Glass` completed; Nova Review pending. Human-Identity-, Workspace/RBAC- und Break-Glass-Governance; keine Auth-/IdP-/Policy-Engine-Auswahl.
 
-Current security state:
-Foundation human-identity, workspace, scoped RBAC and break-glass governance defined.
+## Machine Identity, Enrollment and Offline Credential Lifecycle
 
-Authentication technology:
+Current implemented WP: `CO-WP-010 – Machine Identity, Enrollment and Offline Credential Lifecycle` – pending Nova review.
+
+Current identity state:
+Foundation machine-identity, enrollment and offline credential-lifecycle governance defined.
+
+PKI and credential technology:
 not selected
 
-Policy engine:
-not selected
+Enrollment implementation:
+not started
 
-Break-glass mechanism:
+Offline credential mechanism:
 not implemented
 
-Drei neue Dokumente: Human Identity and Access Governance (Begriffsmodell, Projekt- ≠ Runtime-Rollen, Account-Lifecycle, Sessions/Reauth, Delegation, SoD), Workspace/RBAC/Scope Model (Workspace ≠ Tenant, deny-by-default RBAC, Permission-Taxonomie, Scope-Modell, Cross-Workspace) und Break-Glass and Emergency Access Policy (benannt/temporär/scope-bound/auditiert, Ablaufpflicht, Post-Event Review, Offline-Emergency governed). Decision Index +14 (DEC-S-76…89), Risk Register +18 (RISK-119…136). Keine Auth-/IdP-/Session-/MFA-/Policy-Engine-Auswahl; keine ADR; Invarianten = Designanforderungen; Modul-/Capability-/Threat-Dateien + Lessons-Learned-Register unverändert; keine NDF-Rückführung.
+Drei neue Dokumente: Machine Identity and Principal Governance (Begriffsmodell, Human ≠ Machine, 10 Principal-Klassen, Lifecycle, Scope/Authorization, Agent-/Adapter-Grenze), Machine Enrollment and Trust Lifecycle (Enrollment/Bootstrap/Trust Establishment, Suspension/Revocation/Compromise, Re-Enrollment, Decommissioning, Offline-Enrollment) und Offline Credential and Rotation Governance (Credential-Metadaten, Raw-Secret-Grenze, Rotation/Renewal/Overlap, Offline-Distribution/Reconciliation). Decision Index +16 (DEC-S-90…105), Risk Register +19 (RISK-137…155). Discovery ≠ Enrollment; Registration ≠ Trust; Credential-Governance ≠ Rohsecret-Ownership; keine PKI-/Krypto-/Protokoll-/Secret-Store-Auswahl; keine ADR; Human-Identity-/Modul-/Capability-/Threat-Dateien + Lessons-Learned-Register unverändert; keine NDF-Rückführung.
 
-Next planned WP: `CO-WP-010 – Machine Identity, Enrollment and Offline Credential Lifecycle`.
+Next planned WP: `CO-WP-011 – Source of Truth and Field Provenance`.
 
 ## Current Goal
 

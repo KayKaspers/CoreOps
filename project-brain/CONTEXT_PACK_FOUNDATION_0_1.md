@@ -23,7 +23,13 @@ Universelle, self-hosted und offline-fähige Operations Control Plane, die Sourc
 
 ## Letztes Work Package
 
-`CO-WP-009 – Human Identity, Workspaces, RBAC and Break Glass` (docs-only / security-baseline). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-008 – GO WITH NOTES`.
+`CO-WP-010 – Machine Identity, Enrollment and Offline Credential Lifecycle` (docs-only / security-baseline). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-009 – GO WITH NOTES`.
+
+## Machine Identity, Enrollment and Offline Credential Lifecycle (CO-WP-010)
+
+- Drei neue Dokumente: Machine Identity and Principal Governance, Machine Enrollment and Trust Lifecycle, Offline Credential and Rotation Governance.
+- Human ≠ Machine; Identity ≠ Credential; Discovery ≠ Enrollment; Registration ≠ Trust; Enrollment ≠ Write Authority. 10 Principal-Klassen; Lifecycle; Bootstrap ≠ permanente Identität; Rotation/Renewal ohne Scope-Erweiterung; Revocation nicht nur Doku; Compromise → explizite Re-Enrollment; Credential-Governance ≠ Rohsecret-Ownership.
+- Decision Index +16 (DEC-S-90…105), Risk Register +19 (RISK-137…155). Keine PKI-/Krypto-/Protokoll-/Secret-Store-Auswahl; keine ADR; Human-Identity-/Modul-/Capability-/Threat-Dateien + Lessons-Learned unverändert; keine NDF-Rückführung.
 
 ## Human Identity, Workspaces, RBAC and Break Glass (CO-WP-009)
 
@@ -133,7 +139,7 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 
 ## Nächstes Work Package
 
-`CO-WP-010 – Machine Identity, Enrollment and Offline Credential Lifecycle` (security-baseline; planned-next; pending Nova review von CO-WP-009 und Human-Maintainer-Freigabe). Die 004er-Erweiterungsserie (004A…004E) und CO-WP-005…009 sind abgeschlossen. External: NDF-Release-Zuordnung für die drei Adoption-Commits ausstehend.
+`CO-WP-011 – Source of Truth and Field Provenance` (docs-only; planned-next; pending Nova review von CO-WP-010 und Human-Maintainer-Freigabe). Die 004er-Erweiterungsserie (004A…004E) und CO-WP-005…010 sind abgeschlossen. External: NDF-Release-Zuordnung für die drei Adoption-Commits ausstehend.
 
 ## Aktuelle Blocker
 
@@ -213,3 +219,4 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 - `CO-WP-007` (docs-only / security-baseline): Foundation Threat Model (24 Assets, 16 Actors, 18 Kategorien, 10 Plane-Angriffsflächen, TB-01…11, 17 Invarianten, 5 Abuse Cases, 2 Mermaid) und Threat Scenario Register (40 Szenarien THR-001…040) erstellt; Trust-Boundary-Dokument additiv erweitert. Decision Index +10 (DEC-S-54…63), Risk Register +10 (RISK-94…103). Keine implementierten/validierten Kontrollen; kein Pentest; keine Technologie/Krypto; keine ADR; Capability Matrix + Lessons-Learned unverändert; keine NDF-Rückführung. Nova Review ausstehend.
 - `CO-WP-008` (docs-only / logical-architecture foundation): Logical Module Architecture (17 Module MOD-*), Module Catalog (17-Modul-Register, Daten-/Zustandsownership) und Module Boundary and Dependency Standard erstellt; Policy/Control/Execution getrennt; module ≠ microservice/deployment; 2 Mermaid-Diagramme. Decision Index +12 (DEC-S-64…75), Risk Register +15 (RISK-104…118). Keine Technologie/Deployment; keine ADR; Capability Matrix + Threat-Dateien + Lessons-Learned unverändert; keine NDF-Rückführung. Nova Review ausstehend.
 - `CO-WP-009` (docs-only / security-baseline): Human Identity and Access Governance, Workspace/RBAC/Scope Model und Break-Glass and Emergency Access Policy erstellt; person/identity/account getrennt; Repository ≠ Runtime; Workspace ≠ Tenant; deny-by-default RBAC + Permission-Taxonomie; Break Glass benannt/temporär/auditiert mit Post-Event Review; 14 Invarianten. Decision Index +14 (DEC-S-76…89), Risk Register +18 (RISK-119…136). Keine Auth-/IdP-/Session-/Policy-Engine-Auswahl; keine ADR; Modul-/Capability-/Threat-Dateien + Lessons-Learned unverändert; keine NDF-Rückführung. Nova Review ausstehend.
+- `CO-WP-010` (docs-only / security-baseline): Machine Identity and Principal Governance, Machine Enrollment and Trust Lifecycle und Offline Credential and Rotation Governance erstellt; Human ≠ Machine; Discovery ≠ Enrollment; Registration ≠ Trust; 10 Principal-Klassen; Bootstrap ≠ permanente Identität; Credential-Governance ≠ Rohsecret-Ownership; Offline mit Provenance/Approval. Decision Index +16 (DEC-S-90…105), Risk Register +19 (RISK-137…155). Keine PKI-/Krypto-/Protokoll-/Secret-Store-Auswahl; keine ADR; Human-Identity-/Modul-/Capability-/Threat-Dateien + Lessons-Learned unverändert; keine NDF-Rückführung. Nova Review ausstehend.
