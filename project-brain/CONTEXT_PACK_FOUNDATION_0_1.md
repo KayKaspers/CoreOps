@@ -23,7 +23,14 @@ Universelle, self-hosted und offline-fähige Operations Control Plane, die Sourc
 
 ## Letztes Work Package
 
-`CO-WP-005 – Language Standard, Public Neutrality and Repository Governance` (docs-only / repository-governance foundation). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-004E – GO WITH NOTES`.
+`CO-WP-006 – System Context, Plane Taxonomy and External Boundaries` (docs-only / architecture-context foundation). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-005 – GO WITH NOTES`.
+
+## System Context, Plane Taxonomy and External Boundaries (CO-WP-006)
+
+- Drei neue Dokumente: System Context and External Boundaries, Plane Taxonomy, Trust/Deployment/Execution Boundaries.
+- 7 Akteure; Produkt- ≠ Deployment- ≠ Managed-Grenze; 20 externe Systemklassen (optional); 15 Interaktionsklassen (read ≠ write); Kontrollautorität; Connected/Restricted/Offline-Modi; Failure-Grundregeln; 13 Datenklassen; zwei Mermaid-Diagramme (conceptual).
+- 10 logische Planes (plane ≠ Deployment-Einheit); Edge/Agent Plane optional; Managed Resource Plane außerhalb Produktgrenze. 11 Vertrauensgrenzen; Control-to-Execution/Policy-to-Action getrennt; fail-closed; Threat Model deferred (CO-WP-007).
+- Decision Index +10 (DEC-S-44…53), Risk Register +14 (RISK-80…93). Keine Technologie/Architektur/Threat Model; keine ADR; Lessons-Learned unverändert; keine NDF-Rückführung.
 
 ## Language Standard, Public Neutrality and Repository Governance (CO-WP-005)
 
@@ -107,7 +114,7 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 
 ## Nächstes Work Package
 
-`CO-WP-006 – System Context, Plane Taxonomy and External Boundaries` (planned-next; pending Nova review von CO-WP-005 und Human-Maintainer-Freigabe). Die 004er-Erweiterungsserie (004A…004E) und CO-WP-005 sind abgeschlossen. External: NDF-Release-Zuordnung für die drei Adoption-Commits ausstehend.
+`CO-WP-007 – Threat Model and Trust Boundaries` (security-baseline; planned-next; pending Nova review von CO-WP-006 und Human-Maintainer-Freigabe). Die 004er-Erweiterungsserie (004A…004E), CO-WP-005 und CO-WP-006 sind abgeschlossen. External: NDF-Release-Zuordnung für die drei Adoption-Commits ausstehend.
 
 ## Aktuelle Blocker
 
@@ -183,3 +190,4 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 - `CO-WP-004D` (docs-only / governance-framework applicability review): ITIL `adopted-with-tailoring`, PRINCE2 Version 7 `optional-profile`; ITIL 4 & Version 5 mit Versionsgrenzen; drei interne Governance-Profile; NDF bleibt primär; Decision Index +8 (DEC-S-23…30), Risk Register +11 (RISK-50…60). Keine Zertifizierung/Endorsement/Tool-Abhängigkeit; Capability Matrix + Lessons-Learned unverändert; keine NDF-Rückführung. Nova Review ausstehend.
 - `CO-WP-004E` (docs-only / capability-governance alignment): Foundation Capability Matrix um fünf Statusdimensionen, Profile, PSR-Mapping und Responsibility-Codes erweitert (94 Capabilities; Zählkorrektur von „74"); Alignment-Dokument + Capability-Matrix-Spezifikation erstellt; Decision Index +7 (DEC-S-31…37), Risk Register +6 (RISK-61…66). PSR-Mapping ≠ BSI-Compliance; keine Capability implementiert; keine ADR; Lessons-Learned unverändert. Nova Review ausstehend.
 - `CO-WP-005` (docs-only / repository-governance foundation): Language Standard, Public-Neutrality-and-Disclosure-Policy und Repository-Governance-Standard erstellt; Englisch kanonisch (maschinenbezogen), DE/EN Produkt; Neutralitäts-/Disclosure-Grenzen; Source-of-Truth-Hierarchie; Human-Maintainer-Gates; UTF-8/Zeilenenden; PowerShell-Korrekturstandard. Decision Index +6 (DEC-S-38…43), Risk Register +13 (RISK-67…79). Keine ADR; keine automatisierte Durchsetzung; Lessons-Learned unverändert; keine NDF-Rückführung. Nova Review ausstehend.
+- `CO-WP-006` (docs-only / architecture-context foundation): System Context and External Boundaries, Plane Taxonomy (10 Planes) und Trust/Deployment/Execution Boundaries erstellt; Produkt- ≠ Deployment- ≠ Managed-Grenze; 20 externe Systemklassen; Kontrollautorität; Connected/Restricted/Offline-Modi; zwei Mermaid-Diagramme (conceptual). Decision Index +10 (DEC-S-44…53), Risk Register +14 (RISK-80…93). Keine Technologie/Architektur/Threat Model; keine ADR; Capability Matrix + Lessons-Learned unverändert; keine NDF-Rückführung. Nova Review ausstehend.

@@ -66,26 +66,27 @@ Alle 7 Kandidaten auf `adopted-in-ndf` (drei Adoption-Commits 1ebffa6 / e894c6f 
 
 ## Language Standard, Public Neutrality and Repository Governance
 
-Current implemented WP: `CO-WP-005 – Language Standard, Public Neutrality and Repository Governance` – pending Nova review.
+`CO-WP-005 – Language Standard, Public Neutrality and Repository Governance` completed; Nova Review pending. Englisch kanonisch (maschinenbezogen), DE/EN Produkt; Neutralitäts-/Disclosure-Grenzen; Source-of-Truth-Hierarchie; Human-Maintainer-Gates.
 
-Current governance state:
-Language, public-neutrality and repository-governance foundation established.
+## System Context, Plane Taxonomy and External Boundaries
 
-Primary technical language:
-English
+Current implemented WP: `CO-WP-006 – System Context, Plane Taxonomy and External Boundaries` – pending Nova review.
 
-Primary product languages:
-German and English
+Current architecture state:
+Foundation system context, plane taxonomy and external/trust boundaries defined.
 
-Public repository:
-Organisation-neutral and disclosure-bounded
+Technology selections:
+none
 
-Automated enforcement:
-Not implemented
+Detailed threat model:
+not yet performed
 
-Drei neue Dokumente: Language Standard (kanonisch Englisch maschinenbezogen, DE/EN Produkt, Translation-Status-Modell, semantische Parität), Public-Neutrality-and-Disclosure-Policy (Hersteller-/Organisations-/institutionelle Neutralität, Secrets-/Datenschutzgrenzen, Redaction, sichere Beispieldaten) und Repository-Governance-Standard (Human-Maintainer-Gates, Source-of-Truth-Hierarchie, Dokumentstatus/Supersession, Dateinamen, UTF-8/Zeilenenden, PowerShell-Korrekturstandard, Public-Hygiene). Decision Index +6 (DEC-S-38…43, getrennte Dimensionen), Risk Register +13 (RISK-67…79). Keine Übersetzung/README-Überarbeitung; keine ADR; Lessons-Learned-Register unverändert; keine NDF-Rückführung.
+Detailed component architecture:
+not yet selected
 
-Next planned WP: `CO-WP-006 – System Context, Plane Taxonomy and External Boundaries`.
+Drei neue Dokumente: System Context and External Boundaries (Akteure/Rollen, Produkt-/Deployment-/Managed-/Provider-/Evidence-Grenzen, 20 externe Systemklassen, 15 Interaktionsklassen, Kontrollautorität, Connected/Restricted/Offline-Modi, Failure-/Degradationsgrenzen, 13 Datenklassen, Mermaid-Kontextdiagramm), Plane Taxonomy (10 logische Planes, plane ≠ Deployment-Einheit, Mermaid-Plane-Diagramm, Deployment-Unabhängigkeit) und Trust/Deployment/Execution Boundaries (11 Vertrauensgrenzen, fail-closed, Threat Model deferred). Decision Index +10 (DEC-S-44…53, getrennte Dimensionen), Risk Register +14 (RISK-80…93). Keine Technologieauswahl; keine ADR; Lessons-Learned-Register unverändert; keine NDF-Rückführung.
+
+Next planned WP: `CO-WP-007 – Threat Model and Trust Boundaries`.
 
 ## Current Goal
 

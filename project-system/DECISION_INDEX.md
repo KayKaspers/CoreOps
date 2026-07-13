@@ -150,6 +150,23 @@ Alle 30 Concept-ADR-Kandidaten (§51) plus zwei Foundation-Klärungen (Delivery 
 | DEC-S-42 | Source-of-truth precedence | governance-direction | accepted | binding-governance | CO-WP-005 | Nova | Summaries and derived artifacts must not override authoritative sources |
 | DEC-S-43 | Encoding and line endings | governance-direction | accepted | binding-governance | CO-WP-005 | Nova | New text artifacts use UTF-8; existing line-ending conventions preserved unless a dedicated migration is approved |
 
+## System Context and Architecture Taxonomy Decisions (CO-WP-006)
+
+> Registriert über [SYSTEM_CONTEXT_AND_EXTERNAL_BOUNDARIES.md](../docs/architecture/SYSTEM_CONTEXT_AND_EXTERNAL_BOUNDARIES.md), [COREOPS_PLANE_TAXONOMY.md](../docs/architecture/COREOPS_PLANE_TAXONOMY.md) und [TRUST_DEPLOYMENT_AND_EXECUTION_BOUNDARIES.md](../docs/security/TRUST_DEPLOYMENT_AND_EXECUTION_BOUNDARIES.md). **Getrennte Dimensionen** (Decision Class · Lifecycle Status · Binding Level); keine kombinierten Pseudostatuswerte; keine Technologieauswahl; keine ADR.
+
+| Decision ID | Topic | Decision Class | Lifecycle Status | Binding Level | Source | Owner | Notes |
+| ----------- | ----- | -------------- | ---------------- | ------------- | ------ | ----- | ----- |
+| DEC-S-44 | System context | architecture-context | accepted | binding-governance | CO-WP-006 | HM | Accepted foundation architecture context; technologieunabhängig |
+| DEC-S-45 | Plane taxonomy | architecture-context | accepted | binding-governance | CO-WP-006 | Nova | Accepted conceptual architecture taxonomy (10 Planes) |
+| DEC-S-46 | Plane semantics | architecture-context | accepted | guidance | CO-WP-006 | Nova | Logische Verantwortungs-/Datenflussbereiche, **keine** verpflichtenden Deployment-Einheiten |
+| DEC-S-47 | Managed resources | architecture-context | accepted | binding-governance | CO-WP-006 | Nova | Außerhalb der CoreOps-Produktgrenze |
+| DEC-S-48 | External services | architecture-context | accepted | binding-governance | CO-WP-006 | HM | Optional, sofern nicht später ausdrücklich akzeptiert |
+| DEC-S-49 | Agent plane | architecture-context | accepted | binding-governance | CO-WP-006 | Nova | Optional; agentless-Betrieb bleibt möglich |
+| DEC-S-50 | Offline core | product-direction | accepted | binding-governance | CO-WP-006 | HM | Accepted product and governance direction; lokale Kernfunktion ohne Cloudpflicht |
+| DEC-S-51 | Control authority | governance-direction | accepted | binding-governance | CO-WP-006 | Nova | Explizite Autorisierung für Write- und Execution-Aktionen erforderlich |
+| DEC-S-52 | Detailed technology architecture | architecture-context | deferred | non-binding | CO-WP-006 | Nova | Deferred; spätere Architektur-WPs/ADRs |
+| DEC-S-53 | Detailed threat model | security-context | deferred | non-binding | CO-WP-006 | Nova | Deferred zu CO-WP-007 |
+
 ## Deferred Decisions
 
 | Decision ID | Topic | Status | Class | Source | Owner | Target WP | ADR Required |
@@ -202,5 +219,7 @@ Alle 30 Concept-ADR-Kandidaten (§51) plus zwei Foundation-Klärungen (Delivery 
 **CO-WP-004E-Registrierungen:** 7 Capability-Governance-Alignment-Entscheidungen (DEC-S-31…37): mehrdimensionaler Capability-Status `accepted-product-direction`; Roadmap/Implementation/Support/Evidence als getrennte Dimensionen und Evidence-Capability-Trennung `binding-governance-direction`; PSR-Mapping = Readiness-Relationship (nicht Compliance); Responsibility-Mapping erforderlich; detailliertes BSI-Control-Mapping `deferred`; Capability-Zertifizierung/Compliance `not-claimed`. Erweitert DEC-O-19; keine ADR, keine Technologieauswahl.
 
 **CO-WP-005-Registrierungen:** 6 Language-/Repository-Governance-Entscheidungen (DEC-S-38…43), mit **getrennten Dimensionen** (Decision Class · Lifecycle Status · Binding Level), alle `governance-direction` / `accepted` / `binding-governance`: kanonische Sprache (Englisch maschinenbezogen, DE/EN Produkt); Übersetzungsparität evidenzbasiert; Public Neutrality/Disclosure; Human-Maintainer-Repository-Gates; Source-of-Truth-Präzedenz; UTF-8/Zeilenenden. Keine kombinierten Pseudostatuswerte; keine ADR; keine automatisierte Durchsetzung.
+
+**CO-WP-006-Registrierungen:** 10 System-Context-/Architektur-Taxonomie-Entscheidungen (DEC-S-44…53), **getrennte Dimensionen**: System Context und Plane Taxonomy `accepted`/`binding-governance`; Plane-Semantik = logische Bereiche (kein Deployment-Zwang); Managed Resources außerhalb Produktgrenze; External Services optional; Agent Plane optional (agentless möglich); Offline-Core als Produktrichtung; Control Authority erfordert explizite Autorisierung; Detailtechnologie und Threat Model `deferred`. Keine Technologieauswahl; keine ADR.
 
 **Bestätigung:** Keine technische Architektur-, Technologie- oder Implementierungsentscheidung trägt den Status `accepted`. Keine Integration ist `supported`. Keine Zertifizierung/VS-Eignung behauptet. Keine ADR ist Accepted. Es wurde keine ADR-Datei erzeugt.

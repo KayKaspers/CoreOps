@@ -258,6 +258,15 @@ Folgende Themen benötigen vor jeder verbindlichen technischen Festlegung einen 
 - **Grenzen:** keine automatisierte Durchsetzung, keine README/CONTRIBUTING/.gitignore/.gitattributes-Änderung, keine Übersetzung, keine Massenkonvertierung, keine ADR.
 - **Status:** Governance-Foundation etabliert; nächstes WP `CO-WP-006`; Lessons-Learned-Register unverändert; keine NDF-Rückführung.
 
+## CO-WP-006 Konsolidierung (System Context, Plane Taxonomy and External Boundaries)
+
+- **System Context:** [SYSTEM_CONTEXT_AND_EXTERNAL_BOUNDARIES.md](../docs/architecture/SYSTEM_CONTEXT_AND_EXTERNAL_BOUNDARIES.md) — Akteure/Rollen (7), Produkt-/Deployment-/Managed-/Operator-/Provider-/Evidence-Grenzen, 20 externe Systemklassen, 15 Interaktionsklassen, Kontrollautorität, Connected/Restricted/Offline-Modi, Failure-/Degradationsgrenzen, 13 Datenklassen, Mermaid-Kontextdiagramm.
+- **Plane Taxonomy:** [COREOPS_PLANE_TAXONOMY.md](../docs/architecture/COREOPS_PLANE_TAXONOMY.md) — 10 logische Planes (plane ≠ Prozess/Container/Microservice/Segment/Deployment-Einheit); Edge/Agent Plane optional (agentless möglich); Managed Resource Plane außerhalb Produktgrenze; Mermaid-Plane-Diagramm.
+- **Trust Boundaries:** [TRUST_DEPLOYMENT_AND_EXECUTION_BOUNDARIES.md](../docs/security/TRUST_DEPLOYMENT_AND_EXECUTION_BOUNDARIES.md) — 11 Vertrauensgrenzen; Policy-to-Action und Control-to-Execution getrennt; fail-closed; Threat Model deferred zu CO-WP-007.
+- **Governance-Fortschreibung:** Decision Index +10 (DEC-S-44…53, getrennte Dimensionen), Risk Register +14 (RISK-80…93).
+- **Grenzen:** keine Technologieauswahl, keine Komponentenarchitektur, kein Threat Model, keine ADR; Diagramme `conceptual`, keine Deployment-Topologie.
+- **Status:** Architektur-Kontext-Foundation etabliert; nächstes WP `CO-WP-007`; Lessons-Learned-Register unverändert; keine NDF-Rückführung.
+
 ## Notes
 
 - **NDF-Level-Semantik:** `ndf_level: 1` bedeutet ausschließlich „initialer NDF-Projektbootstrap" — keine vollständige NDF-Konformität, technische Reife, Releasebereitschaft, Sicherheitsfreigabe oder erreichte Produktstufe. Der Zahlenwert bleibt unverändert. Die Starter-Vorlage mit `ndf_level: 2` bleibt dokumentierte NDF-Quellambiguität, ist aber kein Blocker (CCR-03).

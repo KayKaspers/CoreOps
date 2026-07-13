@@ -174,13 +174,23 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 - Decision Index +6 (DEC-S-38…43, getrennte Dimensionen), Risk Register +13 (RISK-67…79).
 - **Keine automatisierte Durchsetzung; keine README/.gitignore/.gitattributes-Änderung; keine Übersetzung; keine ADR; Lessons-Learned-Register unverändert; keine NDF-Rückführung.**
 
+## System Context, Plane Taxonomy and External Boundaries (CO-WP-006)
+
+- Drei neue Dokumente: [SYSTEM_CONTEXT_AND_EXTERNAL_BOUNDARIES.md](../docs/architecture/SYSTEM_CONTEXT_AND_EXTERNAL_BOUNDARIES.md), [COREOPS_PLANE_TAXONOMY.md](../docs/architecture/COREOPS_PLANE_TAXONOMY.md), [TRUST_DEPLOYMENT_AND_EXECUTION_BOUNDARIES.md](../docs/security/TRUST_DEPLOYMENT_AND_EXECUTION_BOUNDARIES.md).
+- Systemkontext: 7 Akteure/Rollen; Produkt- ≠ Deployment- ≠ Managed-Grenze; 20 externe Systemklassen (alle optional); 15 Interaktionsklassen (read ≠ write); Kontrollautorität-Zustände; Connected/Restricted/Offline-Modi; Failure-Grundregeln (unknown ≠ healthy usw.); 13 Datenklassen; Mermaid-Kontextdiagramm.
+- Plane Taxonomy: 10 logische Planes; plane ≠ Deployment-Einheit; Edge/Agent Plane optional (agentless möglich); Managed Resource Plane außerhalb Produktgrenze; Mermaid-Plane-Diagramm; Deployment-Unabhängigkeit.
+- Trust Boundaries: 11 Vertrauensgrenzen; Policy-to-Action und Control-to-Execution getrennt; fail-closed; Online-zu-Offline-Import mit Provenance; Threat Model deferred zu CO-WP-007.
+- Decision Index +10 (DEC-S-44…53), Risk Register +14 (RISK-80…93).
+- **Keine Technologie/Architektur/Threat Model ausgewählt; keine ADR; Capability Matrix unverändert; Lessons-Learned-Register unverändert; keine NDF-Rückführung.**
+- Pfadhinweis: Scope Lock liegt unter `docs/governance/FOUNDATION_SCOPE_LOCK.md` (Prompt nannte `project-system/…`).
+
 ## Letztes Work Package
 
-`CO-WP-005 – Language Standard, Public Neutrality and Repository Governance` (docs-only / repository-governance foundation). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-004E – GO WITH NOTES`.
+`CO-WP-006 – System Context, Plane Taxonomy and External Boundaries` (docs-only / architecture-context foundation). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-005 – GO WITH NOTES`.
 
 ## Nächstes Work Package
 
-`CO-WP-006 – System Context, Plane Taxonomy and External Boundaries` (planned-next; pending Nova review von CO-WP-005 und Human-Maintainer-Freigabe). Die 004er-Erweiterungsserie (004A…004E) und CO-WP-005 (Governance-Foundation) sind abgeschlossen.
+`CO-WP-007 – Threat Model and Trust Boundaries` (security-baseline; planned-next; pending Nova review von CO-WP-006 und Human-Maintainer-Freigabe).
 
 ## Human-Maintainer-Gates
 
@@ -203,6 +213,7 @@ Freigabe, Staging, Commit, Push, Merge, Tags, Releases, produktive Deployments s
 - `CO-WP-004D`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
 - `CO-WP-004E`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
 - `CO-WP-005`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
+- `CO-WP-006`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
 
 ---
 
