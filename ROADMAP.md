@@ -33,6 +33,15 @@ v0.1.0-alpha.1 candidate
 - `Observe` ist der erste funktionale Produktmeilenstein; sein erster Prerelease-Kandidat ist `v0.1.0-alpha.1` (erst nach funktionaler Implementierung und separater Readiness-Prüfung).
 - Status `Proposed for acceptance` bis zum Human-Maintainer-Commit. Es wird **kein** Tag und **kein** Release erzeugt.
 
+## Strategische Richtungen (Accepted Product Direction, CO-WP-004A)
+
+- CoreOps Core bleibt **unabhängig** von externen Managementprodukten (siehe [SOVEREIGNTY_AND_DEPENDENCY_POLICY.md](docs/architecture/SOVEREIGNTY_AND_DEPENDENCY_POLICY.md)).
+- **Hardened Profile** ist ein späterer Foundation-/Release-Kandidat.
+- **Government Profile** ist ein späterer Readiness-Kandidat (keine Zertifizierung/Zulassung).
+- **BSI-Nachweisartefakte** werden in späteren Work Packages definiert (BSI-orientiert; siehe [BSI_ALIGNMENT_POSITIONING.md](docs/security/BSI_ALIGNMENT_POSITIONING.md)) — keine Zertifizierung versprochen.
+- **ITIL-/PRINCE2-Tailoring** bleibt offen (Kandidaten; Entscheidung in `CO-WP-004D`).
+- **Lessons Learned** werden projektübergreifend kontrolliert ausgewertet; NDF-Rückfluss nur via eigenes NDF-WP (`CO-WP-004B`).
+
 ## Hinweise
 
 - Keine detaillierten Technologieentscheidungen in diesem Dokument.

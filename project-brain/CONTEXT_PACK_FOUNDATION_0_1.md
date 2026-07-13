@@ -23,7 +23,15 @@ Universelle, self-hosted und offline-fähige Operations Control Plane, die Sourc
 
 ## Letztes Work Package
 
-`CO-WP-004 – Foundation Capability Matrix and Initial Support Boundary` (docs-only). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-003 – GO WITH NOTES`.
+`CO-WP-004A – Sovereignty, BSI Orientation and Concept Amendment Registration` (docs-only / governance-baseline). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-004 – GO WITH NOTES`.
+
+## Souveränität und BSI-Orientierung (CO-WP-004A)
+
+- Concept-v3.1-Amendment, Sovereignty-and-Dependency-Policy und BSI-Alignment-Positioning erstellt (Accepted Product Direction).
+- Produktsouveränität akzeptiert; verpflichtende externe Managementprodukte als Kernabhängigkeit ausgeschlossen; technische Basisabhängigkeiten offen (keine akzeptiert).
+- BSI-orientiert; **keine** Zertifizierung/Konformität/Zulassung/VS-Eignung behauptet. Standard-/Hardened-/Government-Profile registriert.
+- Lessons Learned (Governance-Richtung) und kontrollierter NDF-Rückfluss (Kandidatenprozess) registriert; ITIL/PRINCE2 nur Kandidaten.
+- Capability Matrix unverändert; technische Architektur offen; keine ADR.
 
 ## Capability Matrix und Support Boundary (CO-WP-004)
 
@@ -48,12 +56,12 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 
 ## Nächstes Work Package
 
-`CO-WP-005 – Language Standard, Public Neutrality and Repository Governance` (vorgeschlagen; pending Nova review und Human-Maintainer-Freigabe).
+`CO-WP-004B – Lessons Learned and NDF Feedback Governance` (vorgeschlagen; pending Nova review und Human-Maintainer-Freigabe). `CO-WP-005` ist `planned-after-CO-WP-004E`.
 
 ## Aktuelle Blocker
 
-- Keine harten Blocker. In CO-WP-003/004 adressiert (proposed/treatment-planned): Release-Taxonomie, Docker-first, Queue-Autorität, NDF-`main`, NDF-Level, Herstellersupport-Grenze (CCR-12), Observe-Scope, Legacy-Protokolle, Capability-Maturity, Drucktelemetrie.
-- Weiter offen: Konflikte CCR-01, 05, 06, 07, 08, 09 sowie alle technischen ADR-Kandidaten.
+- Keine harten Blocker. In CO-WP-003/004/004A adressiert (proposed/treatment-planned/accepted-direction): Release-Taxonomie, Docker-first, Queue-Autorität, NDF-`main`, NDF-Level, CCR-12, Observe-Scope, Legacy-Protokolle, Capability-Maturity, Drucktelemetrie, Produktsouveränität, BSI-Orientierung, Basisabhängigkeiten.
+- Weiter offen: Konflikte CCR-01, 05, 06, 07, 08, 09; technische ADR-Kandidaten; ITIL/PRINCE2-Tailoring (CO-WP-004D); Lessons-Learned-/NDF-Feedback-Detailprozess (CO-WP-004B).
 
 ## Zentrale Sicherheitsgrenzen
 
@@ -74,7 +82,8 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 - Release-Taxonomie vorgeschlagen aufgelöst (CCR-02): `v0.0.1-foundation` / `v0.1.0-alpha.1`.
 - Docker-first eingeordnet (CCR-10); aktive Queue-Autorität geklärt (CCR-11); NDF-`main` geklärt (CCR-04); Herstellersupport-Grenze vorgeschlagen aufgelöst (CCR-12).
 - Capability Matrix (74 Capabilities) und Observe-Supportgrenze vorhanden; alle Capabilities `not-implemented`/`not-supported`.
-- Weiter offen: Konflikte CCR-01, 05, 06, 07, 08, 09; 25 Foundation-Risiken (RISK-01…25, davon 10 `treatment-planned`).
+- Souveränität und BSI-Orientierung als Accepted Product Direction registriert (CO-WP-004A); keine Zertifizierung/VS-Eignung behauptet; keine konkrete Dependency akzeptiert.
+- Weiter offen: Konflikte CCR-01, 05, 06, 07, 08, 09; 34 Foundation-Risiken (RISK-01…34, davon 17 `treatment-planned`).
 - Keine akzeptierten technischen ADRs.
 
 ## Relevante Quelldateien
@@ -94,6 +103,9 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 - [docs/governance/RELEASE_TAXONOMY.md](../docs/governance/RELEASE_TAXONOMY.md)
 - [docs/architecture/FOUNDATION_CAPABILITY_MATRIX.md](../docs/architecture/FOUNDATION_CAPABILITY_MATRIX.md)
 - [docs/integrations/INITIAL_SUPPORT_BOUNDARY.md](../docs/integrations/INITIAL_SUPPORT_BOUNDARY.md)
+- [docs/architecture/COREOPS_CONCEPT_V3_1_AMENDMENT.md](../docs/architecture/COREOPS_CONCEPT_V3_1_AMENDMENT.md)
+- [docs/architecture/SOVEREIGNTY_AND_DEPENDENCY_POLICY.md](../docs/architecture/SOVEREIGNTY_AND_DEPENDENCY_POLICY.md)
+- [docs/security/BSI_ALIGNMENT_POSITIONING.md](../docs/security/BSI_ALIGNMENT_POSITIONING.md)
 - [project-brain/PROJECT_BRAIN.md](PROJECT_BRAIN.md)
 - [ROADMAP.md](../ROADMAP.md)
 
@@ -103,4 +115,5 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 - `CO-WP-001A` (docs-only): Vollständiger NDF-v1.0.0-Skills-Pack lokal bereitgestellt (38 Skills, 39 Dateien, byte-identisch, Commit `9dcadc1`), Provenance + Lock erstellt. Nova-Bewertung: `GO`.
 - `CO-WP-002` (docs-only): Nach fail-closed-Blocker und Source-Handoff Concept v3.0 vollständig registriert (57 Abschnitte), Decision Classification + Decision Index + Risk Register erstellt. Nova-Bewertung: `GO WITH NOTES`.
 - `CO-WP-003` (docs-only): Project Brief, Foundation Scope Lock und Release-Taxonomie erstellt (Proposed); CCR-02/04/10/11 aufgelöst, NDF-Level geklärt, Repository verifiziert. Nova-Bewertung: `GO WITH NOTES`.
-- `CO-WP-004` (docs-only): Foundation Capability Matrix (74 Capabilities) und initiale Observe-Supportgrenze erstellt (Proposed); drei Statusdimensionen, Support-Evidence, CCR-12 vorgeschlagen aufgelöst. Keine Capability implementiert, keine Integration supported, keine ADR, kein Git Write. Nova Review ausstehend.
+- `CO-WP-004` (docs-only): Foundation Capability Matrix (74 Capabilities) und initiale Observe-Supportgrenze erstellt (Proposed); drei Statusdimensionen, Support-Evidence, CCR-12 vorgeschlagen aufgelöst. Nova-Bewertung: `GO WITH NOTES`.
+- `CO-WP-004A` (docs-only / gov-baseline): Concept-v3.1-Amendment, Sovereignty-and-Dependency-Policy und BSI-Alignment-Positioning erstellt; Souveränität und BSI-Orientierung als Accepted Product Direction; keine Zertifizierung/VS-Eignung; Standard-/Hardened-/Government-Profile; Lessons-Learned-/NDF-Feedback-Richtung; ITIL/PRINCE2 Kandidaten. Capability Matrix unverändert, keine ADR, kein Git Write. Nova Review ausstehend.

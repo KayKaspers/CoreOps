@@ -6,7 +6,8 @@
 **Grundregeln:** Keine technische Entscheidung erhält `accepted`. Produktentscheidungen dürfen `accepted-product` sein, wenn sie im Concept ausdrücklich als akzeptierte Vision vorgegeben sind. ADRs sind ausschließlich `adr-candidate`.
 
 Statuswerte: `accepted-product` · `binding-governance` · `open` · `adr-candidate` · `deferred` · `non-goal` · `blocked`
-Zusatzstatus (eingeführt in CO-WP-003, alle vor dem Human-Maintainer-Commit unverbindlich): `proposed` · `proposed-binding-governance` · `clarified` · `verified`. Diese kennzeichnen in CO-WP-003 aufgelöste Governance-/Scope-Punkte, die mit dem Human-Maintainer-Commit bindend werden. Keiner davon markiert eine technische Architektur- oder Technologieentscheidung als `accepted`.
+Zusatzstatus (eingeführt in CO-WP-003, alle vor dem Human-Maintainer-Commit unverbindlich): `proposed` · `proposed-binding-governance` · `clarified` · `verified`. Diese kennzeichnen in CO-WP-003 aufgelöste Governance-/Scope-Punkte, die mit dem Human-Maintainer-Commit bindend werden.
+Zusatzstatus für Produkt-/Strategierichtung (eingeführt in CO-WP-004A): `accepted-product-direction` · `prohibited` · `not-claimed` · `not-current-target` · `binding-governance-direction` · `controlled-candidate-process` · `foundation-candidate`. Keiner dieser Werte markiert eine technische Architektur- oder Technologieentscheidung als `accepted`.
 Owner-Werte: `Human Maintainer` (HM) · `Nova`
 
 ## Accepted Product Decisions
@@ -71,6 +72,24 @@ Alle 30 Concept-ADR-Kandidaten (§51) plus zwei Foundation-Klärungen (Delivery 
 | DEC-A-0031 | Delivery Baseline (Docker-first-Klassifikation) | adr-candidate | ADR | §3,§53 | HM | CO-WP-003 | ja |
 | DEC-A-0032 | Release-Taxonomie / SemVer | adr-candidate | ADR | §49 | HM | CO-WP-003 | ja |
 
+## Product Direction and Governance Decisions (CO-WP-004A)
+
+> `accepted-product-direction` = durch den Human Maintainer akzeptierte Produkt-/Strategierichtung (kein technischer Architektur-/Technologie-`accepted`). Registriert über [COREOPS_CONCEPT_V3_1_AMENDMENT.md](../docs/architecture/COREOPS_CONCEPT_V3_1_AMENDMENT.md).
+
+| Decision ID | Topic | Status | Class | Source | Owner | Target WP | ADR Required | Notes |
+| ----------- | ----- | ------ | ----- | ------ | ----- | --------- | ------------ | ----- |
+| DEC-S-01 | Product Sovereignty | accepted-product-direction | APC | CO-WP-004A | HM | CO-WP-004A | nein | Eigenständiges Kernprodukt |
+| DEC-S-02 | Mandatory external management products | prohibited | BG/NG | CO-WP-004A | HM | CO-WP-004A | nein | Nicht verpflichtend für CoreOps-Kern |
+| DEC-S-03 | Technical foundation dependencies | open | FR | CO-WP-004A | Nova | later review | teils | Keine konkrete Dependency akzeptiert |
+| DEC-S-04 | BSI-oriented development | accepted-product-direction | APC | CO-WP-004A | HM | CO-WP-007/Baseline | nein | Orientierung, keine Konformität |
+| DEC-S-05 | Government Profile | accepted-product-direction | RC | CO-WP-004A | HM | später | nein | Roadmap-Richtung, keine Zertifizierung |
+| DEC-S-06 | BSI certification | not-claimed | NG | CO-WP-004A | HM | — | nein | Keine Zertifizierung behauptet |
+| DEC-S-07 | VS-NfD | not-current-target | NG | CO-WP-004A | HM | — | nein | Kein aktuelles Releaseziel |
+| DEC-S-08 | Lessons Learned | binding-governance-direction | BG | CO-WP-004A | Nova | CO-WP-004B | nein | Prüfpflicht; Detailprozess in 004B |
+| DEC-S-09 | NDF Feedback | controlled-candidate-process | BG | CO-WP-004A | HM | CO-WP-004B | nein | Übernahme nur via eigenes NDF-WP |
+| DEC-S-10 | ITIL alignment | foundation-candidate | RC | CO-WP-004A | Nova | CO-WP-004D | nein | Nur Kandidat |
+| DEC-S-11 | PRINCE2-derived governance | foundation-candidate | RC | CO-WP-004A | Nova | CO-WP-004D | nein | Nur Kandidat |
+
 ## Deferred Decisions
 
 | Decision ID | Topic | Status | Class | Source | Owner | Target WP | ADR Required |
@@ -112,4 +131,6 @@ Alle 30 Concept-ADR-Kandidaten (§51) plus zwei Foundation-Klärungen (Delivery 
 
 **CO-WP-004-Auflösungen (vor Human-Maintainer-Commit unverbindlich):** DEC-O-12 Herstellersupport-Grenze `proposed` (CCR-12), DEC-O-17 Capability Matrix `proposed`, DEC-O-18 Observe Support Boundary `proposed`, DEC-O-19 drei Statusdimensionen `proposed-binding-governance`, DEC-O-20 Support-Evidence `proposed-binding-governance`, DEC-O-21 Herstellerlisten ≠ Support `proposed-binding-governance`.
 
-**Bestätigung:** Keine technische Architektur-, Technologie- oder Implementierungsentscheidung trägt den Status `accepted`. Keine Integration ist `supported`. Keine ADR ist Accepted. Es wurde keine ADR-Datei erzeugt.
+**CO-WP-004A-Registrierungen:** 11 Produkt-/Strategie-/Governance-Entscheidungen (DEC-S-01…11): Souveränität und BSI-orientierte Entwicklung als `accepted-product-direction`; verpflichtende externe Managementprodukte `prohibited`; Zertifizierung `not-claimed`, VS-NfD `not-current-target`; Lessons Learned `binding-governance-direction`, NDF-Feedback `controlled-candidate-process`; ITIL und PRINCE2 `foundation-candidate`; technische Basisabhängigkeiten `open`.
+
+**Bestätigung:** Keine technische Architektur-, Technologie- oder Implementierungsentscheidung trägt den Status `accepted`. Keine Integration ist `supported`. Keine Zertifizierung/VS-Eignung behauptet. Keine ADR ist Accepted. Es wurde keine ADR-Datei erzeugt.

@@ -22,10 +22,14 @@ Project Brief, Foundation Scope Lock und Release-Taxonomie erstellt (CO-WP-003: 
 
 ## Capability Matrix and Support Boundary
 
-Current implemented WP: `CO-WP-004 – Foundation Capability Matrix and Initial Support Boundary` – pending Nova review.
-Foundation Capability Matrix (74 Capabilities) und initiale Observe-Supportgrenze erstellt (`Proposed for acceptance`). Drei getrennte Statusdimensionen und Support-Evidence-Anforderungen definiert; `CCR-12` vorgeschlagen aufgelöst. Aktuell keine Runtime-Capability implementiert, keine Integration `supported`. Keine technische Architektur akzeptiert; keine ADR erzeugt.
+Foundation Capability Matrix (74 Capabilities) und initiale Observe-Supportgrenze erstellt (CO-WP-004: GO WITH NOTES, `Proposed for acceptance`); durch Human-Maintainer-Commit angenommen. Drei Statusdimensionen und Support-Evidence definiert; `CCR-12` vorgeschlagen aufgelöst. Keine Runtime-Capability implementiert, keine Integration `supported`.
 
-Next planned WP: `CO-WP-005 – Language Standard, Public Neutrality and Repository Governance`.
+## Sovereignty and BSI Orientation
+
+Current implemented WP: `CO-WP-004A – Sovereignty, BSI Orientation and Concept Amendment Registration` – pending Nova review.
+Concept-v3.1-Amendment, Sovereignty-and-Dependency-Policy und BSI-Alignment-Positioning erstellt. Produktsouveränität und BSI-orientierte Entwicklung akzeptiert; verpflichtende externe Managementprodukte als Kernabhängigkeit ausgeschlossen; keine Zertifizierung/VS-Eignung behauptet; Standard-/Hardened-/Government-Profile registriert; Lessons Learned und kontrollierter NDF-Rückfluss registriert; ITIL/PRINCE2 nur Kandidaten. Keine Technologie ausgewählt; keine ADR; Capability Matrix unverändert.
+
+Next planned WP: `CO-WP-004B – Lessons Learned and NDF Feedback Governance`.
 
 ## Current Goal
 

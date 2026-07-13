@@ -34,18 +34,31 @@ Risk Level ist eine qualitative Ableitung aus Likelihood × Impact. Kein Risiko 
 | RISK-23 | Unsichere Legacy-Protokolle | SNMPv1/v2c oder andere Legacy-Zugänge werden stillschweigend aktiviert | security | low | high | medium | SNMPv3 als sicherer Default dokumentiert; Legacy nur nach gesonderter Sicherheitsentscheidung | Sicherheitsentscheidung vor optionaler Legacy-Unterstützung | Nova | CO-WP-007 | treatment-planned | docs/integrations/INITIAL_SUPPORT_BOUNDARY.md |
 | RISK-24 | Unklare Capability-Maturity | Capability-Ziel wird als implementiert/verifiziert/supported missverstanden | communication | medium | medium | medium | Drei getrennte Statusdimensionen; alle Capabilities `not-implemented`/`not-supported`; Invarianten dokumentiert | Human-Maintainer-Commit der Statusdimensionen; konsequente Pflege | Nova | CO-WP-004 | treatment-planned | docs/architecture/FOUNDATION_CAPABILITY_MATRIX.md |
 | RISK-25 | Personenbezogene Drucktelemetrie | Druckauftragsnamen/Benutzerdaten als Standard-Telemetrie erfasst | privacy | medium | high | high | Print-Ziele: keine Auftragsnamen als Default-Telemetrie; Queue Read als Map mit Datenschutz-Note | Datenklassifizierung/Redaction-Modell | Nova | CO-WP-025 | treatment-planned | docs/integrations/INITIAL_SUPPORT_BOUNDARY.md |
+| RISK-26 | Abhängigkeit von externen Managementprodukten | Kern wird faktisch von externem Monitoring/CMDB/ITSM/Automation/GitOps abhängig | architecture | low | high | medium | SOVEREIGNTY_AND_DEPENDENCY_POLICY.md: verpflichtende externe Managementprodukte verboten; optionale Integrationen | Human-Maintainer-Commit der Policy; Einhaltung in Architektur-WPs | HM | CO-WP-004A | treatment-planned | docs/architecture/SOVEREIGNTY_AND_DEPENDENCY_POLICY.md |
+| RISK-27 | Übermäßige Eigenentwicklung | Alles selbst neu bauen statt etablierte Basiskomponenten zu nutzen | scope | medium | medium | medium | Policy: Unabhängigkeit ≠ vollständige Eigenentwicklung; kontrollierte Basisabhängigkeiten zulässig | Balance in Architektur-/Dependency-WPs | Nova | CO-WP-004A | treatment-planned | docs/architecture/SOVEREIGNTY_AND_DEPENDENCY_POLICY.md |
+| RISK-28 | Falsche BSI-Konformitätsbehauptungen | „zertifiziert/konform/zugelassen" ohne formale Prüfung | compliance | medium | high | high | BSI_ALIGNMENT_POSITIONING.md: zulässige vs. verbotene Claims; Zertifizierungs-/VS-Grenze | Human-Maintainer-Commit der Positionierung; Public-Neutrality-Reviews | Nova | CO-WP-004A | treatment-planned | docs/security/BSI_ALIGNMENT_POSITIONING.md |
+| RISK-29 | Unterschätzter Public-Sector-Readiness-Aufwand | Government Profile/IT-Grundschutz-Mapping deutlich aufwendiger als angenommen | planning | medium | medium | medium | Government Profile nur als spätere Richtung registriert; Mapping späteren WPs vorbehalten | Aufwandsschätzung in Baseline-WPs | Nova | CO-WP-007 | open | docs/security/BSI_ALIGNMENT_POSITIONING.md |
+| RISK-30 | Unkontrollierte Basisabhängigkeiten | Dependencies ohne Zweck/Lizenz/SBOM/Exit eingeführt | security | medium | high | high | Dependency Admission Criteria (10 Punkte) + Human-Gate | Human-Maintainer-Commit; Einhaltung pro Dependency-WP | Nova | CO-WP-022 | treatment-planned | docs/architecture/SOVEREIGNTY_AND_DEPENDENCY_POLICY.md |
+| RISK-31 | Fehlende Offline-Verfügbarkeit von Dependencies | Basisabhängigkeit erfordert zwingend Online-Zugang | operations | medium | medium | medium | Policy: Offline-Verfügbarkeit als Zulassungskriterium; CorePack | Prüfung pro Dependency | Nova | CO-WP-023 | treatment-planned | docs/architecture/SOVEREIGNTY_AND_DEPENDENCY_POLICY.md |
+| RISK-32 | Framework-Overload (BSI/ITIL/PRINCE2) | Zu viele Rahmenwerke gleichzeitig übernommen, Governance überladen | process | medium | medium | medium | ITIL/PRINCE2 nur Kandidaten; Tailoring erst CO-WP-004D; BSI orientierend | Bewusste, schlanke Tailoring-Entscheidung | Nova | CO-WP-004D | open | docs/architecture/COREOPS_CONCEPT_V3_1_AMENDMENT.md |
+| RISK-33 | Verlust von Lessons Learned | Erkenntnisse werden nicht erfasst/wiederverwendet | process | medium | low | low | Lessons-Learned-Prüfpflicht als Governance-Richtung registriert | Detailprozess in CO-WP-004B | Nova | CO-WP-004B | treatment-planned | docs/architecture/COREOPS_CONCEPT_V3_1_AMENDMENT.md |
+| RISK-34 | Ungeprüfte Rückführung projektspezifischer Infos ins NDF | Private/projektspezifische Inhalte gelangen unkontrolliert ins öffentliche NDF | privacy/governance | low | medium | medium | Kontrollierter NDF-Feedback-Kandidatenprozess; Übernahme nur via eigenes NDF-WP + Human-Gate | Detailprozess in CO-WP-004B; Public-Neutrality-Guard | Nova | CO-WP-004B | treatment-planned | docs/architecture/COREOPS_CONCEPT_V3_1_AMENDMENT.md |
 
 ## Verteilung nach Risk Level
 
-- high: 10 (RISK-01, 02, 03, 04, 05, 08, 09, 11, 22, 25) — kritischer Impact bei RISK-02/04/09/11.
-- medium: 14 (RISK-06, 07, 10, 12, 13, 14, 15, 16, 18, 19, 20, 21, 23, 24)
-- low: 1 (RISK-17)
+- high: 12 (RISK-01, 02, 03, 04, 05, 08, 09, 11, 22, 25, 28, 30) — kritischer Impact bei RISK-02/04/09/11.
+- medium: 20 (RISK-06, 07, 10, 12, 13, 14, 15, 16, 18, 19, 20, 21, 23, 24, 26, 27, 29, 31, 32, 34)
+- low: 2 (RISK-17, 33)
 
-Gesamt: 25 Risiken. Status: `open` 15 · `treatment-planned` 10 (RISK-13, 14, 17, 19, 20, 21, 22, 23, 24, 25 — durch CO-WP-003/004 adressiert, Schließung erst nach Human-Maintainer-Commit).
+Gesamt: 34 Risiken. Status: `open` 17 · `treatment-planned` 17. Kein Risiko `accepted-by-human`.
 
 ## Höchste Risiken (Fokus)
 
 RISK-02 (Sicherheitskomplexität), RISK-04 (privilegierte Remote-Ausführung), RISK-09 (Secret Custody), RISK-11 (Self-Dependency) — jeweils Impact `critical`. Behandlung in den security-baseline-Work-Packages CO-WP-007, CO-WP-013, CO-WP-024, CO-WP-026.
+
+## CO-WP-004A – geänderte Risiken
+
+Neu erfasst RISK-26 (externe Managementprodukt-Abhängigkeit), RISK-27 (übermäßige Eigenentwicklung), RISK-28 (falsche BSI-Claims), RISK-29 (Public-Sector-Aufwand), RISK-30 (unkontrollierte Basisabhängigkeiten), RISK-31 (Offline-Verfügbarkeit von Dependencies), RISK-32 (Framework-Overload), RISK-33 (Verlust von Lessons Learned), RISK-34 (unkontrollierte NDF-Rückführung). **Kein Risiko ohne Evidenz geschlossen; kein Risiko `accepted-by-human`.**
 
 ## CO-WP-004 – geänderte Risiken
 

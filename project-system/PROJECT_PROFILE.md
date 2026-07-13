@@ -174,6 +174,15 @@ Folgende Themen benötigen vor jeder verbindlichen technischen Festlegung einen 
 - **Statusdimensionen und Evidence:** drei getrennte Statusdimensionen (Roadmap/Implementation/Support) und ein standardisierter Support-Evidence-Satz definiert; Herausgeberklasse ≠ Supportstatus.
 - **Herstellersupport-Grenze:** `CCR-12` vorgeschlagen aufgelöst — Herstellernennung = Kandidat, kein Support/Partnerschaft/Zertifizierung. Aktuell keine Integration `supported`, keine Runtime-Capability implementiert.
 
+## CO-WP-004A Konsolidierung (Sovereignty & BSI)
+
+- **Concept-v3.1-Amendment:** [docs/architecture/COREOPS_CONCEPT_V3_1_AMENDMENT.md](../docs/architecture/COREOPS_CONCEPT_V3_1_AMENDMENT.md) (Accepted Product Direction; erweitert v3.0).
+- **Sovereignty & Dependency Policy:** [docs/architecture/SOVEREIGNTY_AND_DEPENDENCY_POLICY.md](../docs/architecture/SOVEREIGNTY_AND_DEPENDENCY_POLICY.md) — CoreOps-Kern ohne verpflichtende externe Management-/CMDB-/ITSM-/Automation-/Container-/GitOps-Plattform; technische Basisabhängigkeiten getrennt und offen (keine akzeptiert).
+- **BSI-Positionierung:** [docs/security/BSI_ALIGNMENT_POSITIONING.md](../docs/security/BSI_ALIGNMENT_POSITIONING.md) — BSI-orientiert entwickelt; **keine** Zertifizierung/Konformität/Zulassung/VS-Eignung behauptet.
+- **Betriebsprofile (Zielmodell):** Standard / Hardened / Government (Government = späteres Nachweisprofil, keine Zertifizierung).
+- **Lessons Learned & NDF-Feedback:** als Governance-Richtung bzw. kontrollierter Kandidatenprozess registriert; Detailprozess in `CO-WP-004B`.
+- **ITIL/PRINCE2:** nur Foundation-Kandidaten; Tailoring in `CO-WP-004D`.
+
 ## Notes
 
 - **NDF-Level-Semantik:** `ndf_level: 1` bedeutet ausschließlich „initialer NDF-Projektbootstrap" — keine vollständige NDF-Konformität, technische Reife, Releasebereitschaft, Sicherheitsfreigabe oder erreichte Produktstufe. Der Zahlenwert bleibt unverändert. Die Starter-Vorlage mit `ndf_level: 2` bleibt dokumentierte NDF-Quellambiguität, ist aber kein Blocker (CCR-03).
