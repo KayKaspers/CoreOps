@@ -8,14 +8,14 @@ Dieses Dokument ist ein **kompaktes, vorläufiges Gerüst**. Es enthält bewusst
 
 > Die Nummerierung ist **vorläufig** und dient nur der Ordnung. Sie ist **keine** verbindliche Versions- oder Release-Nummer.
 
-1. Foundation – Platform Foundation *(vorläufig)*
-2. Observe *(vorläufig)*
-3. Map *(vorläufig)*
-4. Plan *(vorläufig)*
-5. Deploy *(vorläufig)*
-6. Automate *(vorläufig)*
-7. Extend *(vorläufig)*
-8. Scale *(vorläufig)*
+1. Foundation – Platform Foundation *(vorläufig)* — nur Dokumentation, Architektur, Governance, Security.
+2. Observe *(vorläufig)* — **vollständig read-only**; Inventory, generische Protokoll- und Read-only-Domain-Beobachtung (Details: [FOUNDATION_CAPABILITY_MATRIX.md](docs/architecture/FOUNDATION_CAPABILITY_MATRIX.md), [INITIAL_SUPPORT_BOUNDARY.md](docs/integrations/INITIAL_SUPPORT_BOUNDARY.md)).
+3. Map *(vorläufig)* — Topologie, LLDP/CDP, MAC/ARP, VLAN, Path Explorer und Basis-IPAM.
+4. Plan *(vorläufig)* — Desired State, Drift, Deployment-Blueprints, Policy Evaluation und Preview.
+5. Deploy *(vorläufig)* — erste kontrollierte Write-Aktionen (z. B. Docker Compose), Health Checks, Rollback, Evidence.
+6. Automate *(vorläufig)* — Workflows, Runbooks, Skriptbibliothek, Event-Korrelation.
+7. Extend *(vorläufig)* — Windows, Hyper-V, Kubernetes, Netzwerk-/Druckerbereitstellung, Firmware.
+8. Scale *(vorläufig)* — Multi-Site, Site Relay, HA, Multi-Tenant.
 
 ## Release-Taxonomie (Proposed for acceptance)
 

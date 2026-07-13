@@ -41,9 +41,9 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 
 ## Bekannte Risiken
 
-- Breiter Scope mit hohem Sicherheitsanspruch (siehe [RISK_REGISTER.md](../project-system/RISK_REGISTER.md), 21 Foundation-Risiken; RISK-02/04/09/11 mit Impact `critical`).
-- Governance-Risiken RISK-14 (Release-Taxonomie), RISK-17 (NDF-Level), RISK-19 (Queue-Autorität), RISK-20 (Docker-first), RISK-21 (NDF-`main`) in CO-WP-003 auf `treatment-planned` (Schließung nach Human-Maintainer-Commit).
-- Weiterhin offene Konflikte aus der Concept-Klassifikation: Plane-Taxonomie (CCR-01), Offline-Policy (CCR-05), Machine Identity vs. Air-Gap (CCR-06), privilegierte Ausführung (CCR-07), Audit vs. Datenschutz (CCR-08), Offline-First-Facetten (CCR-09), Herstellersupport-Grenze (CCR-12).
+- Breiter Scope mit hohem Sicherheitsanspruch (siehe [RISK_REGISTER.md](../project-system/RISK_REGISTER.md), 25 Foundation-Risiken; RISK-02/04/09/11 mit Impact `critical`).
+- Governance-/Scope-Risiken auf `treatment-planned` (Schließung nach Human-Maintainer-Commit): RISK-13/14/17/19/20/21 (CO-WP-003) und RISK-22/23/24/25 (CO-WP-004: Observe-Scope, Legacy-Protokolle, Capability-Maturity, Drucktelemetrie).
+- Weiterhin offene Konflikte aus der Concept-Klassifikation: Plane-Taxonomie (CCR-01), Offline-Policy (CCR-05), Machine Identity vs. Air-Gap (CCR-06), privilegierte Ausführung (CCR-07), Audit vs. Datenschutz (CCR-08), Offline-First-Facetten (CCR-09). CCR-12 (Herstellersupport-Grenze) in CO-WP-004 vorgeschlagen aufgelöst.
 
 ## Offene Fragen
 
@@ -56,7 +56,8 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 - `CO-WP-001` erhielt von Nova `GO WITH NOTES`. Ursache der Note: eine nicht ausdrücklich dokumentierte read-only-Git-Abweichung (`git status --porcelain` unter einem pauschalen Git-Verbot). Konsequenz: Künftige Work Packages unterscheiden ausdrücklich zwischen **Git Read** (erlaubt) und **Git Write** (verboten ohne Human-Maintainer-Freigabe).
 - `CO-WP-001A`: Der vollständige NDF-v1.0.0-Skills-Pack wurde lokal bereitgestellt (byte-identisch, verifiziert) und von Nova mit `GO` bewertet. Skills-first für spätere Work Packages ist damit lokal möglich; Auswahl erfolgt selektiv pro Work Package.
 - `CO-WP-002`: Fail-closed-Blocker (fehlende Quelle) war korrekt (`GO – Blocker bestätigt`); nach Bereitstellung der lokalen read-only-Quelle wurde das Concept v3.0 vollständig registriert und mit `GO WITH NOTES` bewertet. Lesson: Quelle als verlässliche lokale Datei vor der Registrierung verifizieren (Identität, Abschnitte, Ende, Trunkierung).
-- `CO-WP-003`: Governance-Konsolidierung — Konflikte CCR-02/04/10/11 vorgeschlagen aufgelöst; Zusatzstatus (`proposed`/`clarified`/`verified`) im Decision Index eingeführt, ohne technische Architektur zu akzeptieren.
+- `CO-WP-003`: Governance-Konsolidierung — Konflikte CCR-02/04/10/11 vorgeschlagen aufgelöst; Zusatzstatus (`proposed`/`clarified`/`verified`) im Decision Index eingeführt, ohne technische Architektur zu akzeptieren. Nova-Bewertung: `GO WITH NOTES`; durch Human-Maintainer-Commit angenommen.
+- `CO-WP-004`: Capability Matrix und Observe-Supportgrenze — drei getrennte Statusdimensionen trennen Planung, Implementierung und Support sauber. Lesson: „Capability target ≠ implemented ≠ verified ≠ supported"; Herstellernennung ist kein Support (CCR-12 vorgeschlagen aufgelöst).
 
 ## Lokaler NDF-Skills-Bestand
 
@@ -85,13 +86,21 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 - NDF-`main`-Auslegung und NDF-Level-Semantik geklärt; Repository-URL verifiziert (`https://github.com/KayKaspers/CoreOps`).
 - **Technische Architektur weiterhin offen; keine Technologie ausgewählt; keine ADR erzeugt/akzeptiert.**
 
+## Capability Matrix und Support Boundary (CO-WP-004)
+
+- Foundation Capability Matrix: [docs/architecture/FOUNDATION_CAPABILITY_MATRIX.md](../docs/architecture/FOUNDATION_CAPABILITY_MATRIX.md) — 74 Capabilities, 12 Domains; alle `not-implemented`/`not-supported` (Proposed for acceptance).
+- Initiale Observe-Supportgrenze: [docs/integrations/INITIAL_SUPPORT_BOUNDARY.md](../docs/integrations/INITIAL_SUPPORT_BOUNDARY.md) — Observe vollständig read-only, max. Integrationslevel 2; Map/Write ausgeschlossen.
+- Drei getrennte Statusdimensionen (Roadmap/Implementation/Support), Integrationslevel präzisiert, Herausgeberklassen und 21-Punkte-Support-Evidence-Satz definiert.
+- `CCR-12` vorgeschlagen aufgelöst: Herstellernennung = Kandidat, kein Support/Partnerschaft/Zertifizierung.
+- **Aktuell keine Runtime-Capability implementiert, keine Integration `supported`. Technische Architektur/Technologie weiterhin offen; keine ADR erzeugt.**
+
 ## Letztes Work Package
 
-`CO-WP-003 – Project Brief, Foundation Scope Lock and Release Taxonomy` (docs-only). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-002 – GO WITH NOTES`.
+`CO-WP-004 – Foundation Capability Matrix and Initial Support Boundary` (docs-only). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-003 – GO WITH NOTES`.
 
 ## Nächstes Work Package
 
-`CO-WP-004 – Foundation Capability Matrix and Initial Support Boundary` (planned-next; pending Nova review und Human-Maintainer-Freigabe).
+`CO-WP-005 – Language Standard, Public Neutrality and Repository Governance` (planned-next; pending Nova review und Human-Maintainer-Freigabe).
 
 ## Human-Maintainer-Gates
 
@@ -102,7 +111,8 @@ Freigabe, Staging, Commit, Push, Merge, Tags, Releases, produktive Deployments s
 - `CO-WP-001`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova-Bewertung: `GO WITH NOTES`.
 - `CO-WP-001A`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova-Bewertung: `GO`.
 - `CO-WP-002`: Fail-closed-Blocker gemeldet (`GO – Blocker bestätigt`); nach Source-Handoff regulär umgesetzt; Nova-Bewertung: `GO WITH NOTES`.
-- `CO-WP-003`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
+- `CO-WP-003`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova-Bewertung: `GO WITH NOTES`.
+- `CO-WP-004`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
 
 ---
 

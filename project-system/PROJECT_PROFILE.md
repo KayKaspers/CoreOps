@@ -167,6 +167,13 @@ Folgende Themen benötigen vor jeder verbindlichen technischen Festlegung einen 
 - **NDF-`main`-Klarstellung:** `v1.0.0` / `9dcadc1` normativ; `main` ausschließlich informativ; jede Übernahme aus `main` benötigt ein eigenes freigegebenes Work Package (CCR-04 geklärt, keine ADR).
 - **Repository-Status:** verifiziert und gesetzt — `https://github.com/KayKaspers/CoreOps` (origin-Clone-Remote endet auf `.git`).
 
+## CO-WP-004 Konsolidierung
+
+- **Foundation Capability Matrix:** [docs/architecture/FOUNDATION_CAPABILITY_MATRIX.md](../docs/architecture/FOUNDATION_CAPABILITY_MATRIX.md) — 74 Capabilities über 12 Domains; alle `not-implemented`/`not-supported` (Proposed for acceptance).
+- **Initiale Observe-Supportgrenze:** [docs/integrations/INITIAL_SUPPORT_BOUNDARY.md](../docs/integrations/INITIAL_SUPPORT_BOUNDARY.md) — Observe vollständig read-only, max. Integrationslevel 2; Map/Write ausgeschlossen (Proposed for acceptance).
+- **Statusdimensionen und Evidence:** drei getrennte Statusdimensionen (Roadmap/Implementation/Support) und ein standardisierter Support-Evidence-Satz definiert; Herausgeberklasse ≠ Supportstatus.
+- **Herstellersupport-Grenze:** `CCR-12` vorgeschlagen aufgelöst — Herstellernennung = Kandidat, kein Support/Partnerschaft/Zertifizierung. Aktuell keine Integration `supported`, keine Runtime-Capability implementiert.
+
 ## Notes
 
 - **NDF-Level-Semantik:** `ndf_level: 1` bedeutet ausschließlich „initialer NDF-Projektbootstrap" — keine vollständige NDF-Konformität, technische Reife, Releasebereitschaft, Sicherheitsfreigabe oder erreichte Produktstufe. Der Zahlenwert bleibt unverändert. Die Starter-Vorlage mit `ndf_level: 2` bleibt dokumentierte NDF-Quellambiguität, ist aber kein Blocker (CCR-03).

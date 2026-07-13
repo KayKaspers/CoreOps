@@ -51,8 +51,13 @@ Owner-Werte: `Human Maintainer` (HM) · `Nova`
 | DEC-O-10 | Docker-first: Anforderung/Baseline/Architektur/Kandidat | proposed | APC | §3,§53 | HM | CO-WP-003 | nein | CCR-10 eingeordnet: akzeptierte Delivery-/Betriebsanforderung (Compose-Standardinstallation), keine Anwendungsarchitektur, kein K8s-Zwang; noch nicht implementiert |
 | DEC-O-11 | Foundation-Queue-Autorität (Concept §50 vs. aktive Queue) | proposed | CCR | §50 | Nova | CO-WP-003 | nein | CCR-11 geklärt: aktive Queue ausschließlich WORK_PACKAGE_QUEUE.md; Concept-Queue historischer Vorschlag |
 | DEC-O-16 | Repository-Referenz | verified | — | origin | HM | CO-WP-003 | nein | `https://github.com/KayKaspers/CoreOps` verifiziert und im Manifest gesetzt |
-| DEC-O-12 | Herstellersupport-Grenze | open | CCR/APC | §18,§26,§27 | Nova | CO-WP-004 | nein | CCR-12 |
+| DEC-O-12 | Herstellersupport-Grenze | proposed | APC/CCR | §18,§26,§27 | Nova | CO-WP-004 | nein | CCR-12 vorgeschlagen aufgelöst in INITIAL_SUPPORT_BOUNDARY.md: Nennung = Kandidat, kein Support/Partnerschaft/Zertifizierung |
 | DEC-O-13 | Source-of-Truth-Konfliktprioritäten je Datenklasse | open | FR/AC | §19 | Nova | CO-WP-011 | ja (ADR-0009) | — |
+| DEC-O-17 | Foundation Capability Matrix | proposed | — | CO-WP-004 | Nova | CO-WP-004 | nein | Planungs-/Governance-Landkarte; 74 Capabilities, alle not-implemented/not-supported |
+| DEC-O-18 | Initial Observe Support Boundary | proposed | — | CO-WP-004 | HM | CO-WP-004 | nein | Observe read-only bis Level 2; Write ausgeschlossen |
+| DEC-O-19 | Drei getrennte Statusdimensionen | proposed-binding-governance | BG | CO-WP-004 | Nova | CO-WP-004 | nein | Roadmap/Implementation/Support unabhängig |
+| DEC-O-20 | Support-Evidence-Anforderungen | proposed-binding-governance | BG | CO-WP-004 | Nova | CO-WP-004 | nein | 21-Punkte-Evidence-Satz; ohne Evidenz max. experimental |
+| DEC-O-21 | Herstellerlisten sind keine Supportzusage | proposed-binding-governance | BG | CO-WP-004 | Nova | CO-WP-004 | nein | Vendor priority ≠ vendor support |
 | DEC-O-14 | OIC v0.1 Vertragsumfang | open | FR | §17,§18 | Nova | CO-WP-014 | ja (ADR-0006) | — |
 | DEC-O-15 | Topologie-Evidence und manuelle Autorität | open | FR/AC | §28 | Nova | CO-WP-020 | ja (ADR-0020/0021) | — |
 
@@ -98,11 +103,13 @@ Alle 30 Concept-ADR-Kandidaten (§51) plus zwei Foundation-Klärungen (Delivery 
 
 - Accepted Product Decisions: 8
 - Binding Governance Decisions: 8
-- Foundation Decisions (Sektion „Open Foundation Decisions"): 16 — davon offen 10, `proposed`/`proposed-binding-governance` 4, `clarified` 1, `verified` 1 (CO-WP-003)
+- Foundation Decisions (Sektion „Open Foundation Decisions"): 21 — davon offen 9, `proposed`/`proposed-binding-governance` 10, `clarified` 1, `verified` 1
 - ADR Candidates: 32 (30 Concept + 2 Foundation)
 - Deferred Decisions: 6
 - Non-Goals: 12
 
-**CO-WP-003-Auflösungen (vor Human-Maintainer-Commit unverbindlich):** DEC-O-02 Release-Taxonomie `proposed`, DEC-O-03 NDF-Level `clarified`, DEC-O-04 `main`-Auslegung `proposed-binding-governance`, DEC-O-10 Docker-first `proposed`, DEC-O-11 aktive Queue-Autorität `proposed`, DEC-O-16 Repository-Referenz `verified`.
+**CO-WP-003-Auflösungen (vor Human-Maintainer-Commit unverbindlich):** DEC-O-02 `proposed`, DEC-O-03 `clarified`, DEC-O-04 `proposed-binding-governance`, DEC-O-10 `proposed`, DEC-O-11 `proposed`, DEC-O-16 `verified`.
 
-**Bestätigung:** Keine technische Architektur- oder Technologieentscheidung trägt den Status `accepted`. Keine ADR ist Accepted. Es wurde keine ADR-Datei erzeugt.
+**CO-WP-004-Auflösungen (vor Human-Maintainer-Commit unverbindlich):** DEC-O-12 Herstellersupport-Grenze `proposed` (CCR-12), DEC-O-17 Capability Matrix `proposed`, DEC-O-18 Observe Support Boundary `proposed`, DEC-O-19 drei Statusdimensionen `proposed-binding-governance`, DEC-O-20 Support-Evidence `proposed-binding-governance`, DEC-O-21 Herstellerlisten ≠ Support `proposed-binding-governance`.
+
+**Bestätigung:** Keine technische Architektur-, Technologie- oder Implementierungsentscheidung trägt den Status `accepted`. Keine Integration ist `supported`. Keine ADR ist Accepted. Es wurde keine ADR-Datei erzeugt.

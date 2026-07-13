@@ -18,10 +18,14 @@ Concept v3.0 vollständig registriert (CO-WP-002: GO WITH NOTES); Decision Class
 
 ## Brief, Scope Lock and Release Taxonomy
 
-Current implemented WP: `CO-WP-003 – Project Brief, Foundation Scope Lock and Release Taxonomy` – pending Nova review.
-Project Brief, Foundation Scope Lock und Release-Taxonomie erstellt (alle `Proposed for acceptance`). Docker-first als Delivery-/Betriebsanforderung eingeordnet; aktive Queue autoritativ geklärt; NDF-`main`-Auslegung und NDF-Level-Semantik geklärt; Repository-URL verifiziert. Keine technische Architektur akzeptiert; keine ADR erzeugt.
+Project Brief, Foundation Scope Lock und Release-Taxonomie erstellt (CO-WP-003: GO WITH NOTES, alle `Proposed for acceptance`); durch Human-Maintainer-Commit angenommen. Docker-first eingeordnet; aktive Queue autoritativ; NDF-`main` und NDF-Level geklärt; Repository-URL verifiziert.
 
-Next planned WP: `CO-WP-004 – Foundation Capability Matrix and Initial Support Boundary`.
+## Capability Matrix and Support Boundary
+
+Current implemented WP: `CO-WP-004 – Foundation Capability Matrix and Initial Support Boundary` – pending Nova review.
+Foundation Capability Matrix (74 Capabilities) und initiale Observe-Supportgrenze erstellt (`Proposed for acceptance`). Drei getrennte Statusdimensionen und Support-Evidence-Anforderungen definiert; `CCR-12` vorgeschlagen aufgelöst. Aktuell keine Runtime-Capability implementiert, keine Integration `supported`. Keine technische Architektur akzeptiert; keine ADR erzeugt.
+
+Next planned WP: `CO-WP-005 – Language Standard, Public Neutrality and Repository Governance`.
 
 ## Current Goal
 
