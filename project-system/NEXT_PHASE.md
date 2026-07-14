@@ -122,8 +122,8 @@ Milestone Review Status: `completed-go-with-notes` (Commit 74f8e32).
 
 ## Policy, Approval and Execution Authorization
 
-Current implemented WP:
-`CO-WP-013 – Policy, Approval and Execution Authorization` – pending Nova review.
+WP Status:
+`CO-WP-013 – Policy, Approval and Execution Authorization` – `completed-go-with-notes` (Commit 438a5a0).
 
 Current authorization foundation:
 Policy evaluation, approval and execution authorization are separate, bounded and auditable. A policy permit does not imply approval or execution authorization; execution authorization is action-, target-, scope-, plan- and time-bound; expired/revoked/consumed authorization is not reusable; machine principals cannot self-approve.
@@ -139,7 +139,26 @@ not implemented
 
 Drei neue Dokumente: Policy Decision and Evaluation Model (Policy-Klassen, Lifecycle, Evaluation Inputs, Decision Outcomes, Default-Deny, Konflikte/Präzedenz, Exceptions, Offline Evaluation), Approval and Authorization Lifecycle (Approval Requirements/Requests/Decisions, Approver Authority, Separation of Duties, Expiry/Revocation/Consumption, Replay-Grenze, Offline Approval) und Execution Authorization and Guard Policy (Execution Intent/Plan/Authorization, Authorization Lifecycle, Pre-Execution Guards, Execution Boundary, Replay/Duplicate, Verification/Closure, Fail-Closed). Decision Index +16 (DEC-S-137…152), Risk Register +17 (RISK-190…206). Keine Policy-/Approval-/Execution-Engine, kein Autorisierungsartefakt/Token, kein Replay-Mechanismus, keine Queue/Workflow-Runtime ausgewählt; keine ADR; Identity-/Modul-/State-/Provenance-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.
 
-Next planned WP nach Nova Review und Human-Maintainer-Commit: `CO-WP-014 – CoreOps Integration Contract v0.1`.
+## CoreOps Integration Contract v0.1
+
+Current implemented WP:
+`CO-WP-014 – CoreOps Integration Contract v0.1` – pending Nova review.
+
+Current integration foundation:
+CoreOps Integration Contract v0.1, capability and operation model, and integration trust/failure policy defined. Advertised/detected/permitted/implemented/supported/validated capabilities are separate; request acceptance ≠ authorization ≠ execution; completion ≠ success; success ≠ verification; unknown outcome stays explicit and blocks automatic retry; read-only integration gains no silent write authority; integration results inherit no authoritative state automatically; adapters/agents cannot expand scope; contract extensions cannot override security invariants.
+
+Protocol and schema:
+not selected
+
+SDK and adapters:
+not implemented
+
+Runtime integration:
+not implemented
+
+Drei neue Dokumente: CoreOps Integration Contract v0.1 (Contract-Version, Integration Classes/Identity/Lifecycle, Request-/Acceptance-/Operation-Lifecycle, Result-/Failure-Semantik, Async, Retry/Replay, Cancellation/Rollback/Recovery, Offline, Provenance, Versioning, Extensions), Integration Capability and Operation Model (sechs Capability-Dimensionen, Operation Classes, Privilege Classification, Detection/Permission/Validation) und Integration Trust, Failure and Recovery Policy (Trust Boundary, Failure Classification, Unknown Outcome, Retry/Replay, Partial Failure, Rollback/Recovery, Fail-Closed). Decision Index +16 (DEC-S-153…168), Risk Register +13 (RISK-207…219, gesamt 219). Keine Protokoll-/Schema-/Transport-/SDK-/Adapter-/Replay-/Queue-/Messaging-Technologie ausgewählt; keine ADR; Identity-/Authorization-/State-/Provenance-/Modul-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.
+
+Next planned WP nach Nova Review und Human-Maintainer-Commit: `CO-WP-015 – Domain Pack Governance, Support Levels and Compatibility`.
 
 ## Current Goal
 

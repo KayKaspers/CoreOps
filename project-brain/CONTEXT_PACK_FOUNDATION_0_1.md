@@ -23,7 +23,14 @@ Universelle, self-hosted und offline-fähige Operations Control Plane, die Sourc
 
 ## Letztes Work Package
 
-`CO-WP-013 – Policy, Approval and Execution Authorization` (docs-only / security-baseline). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-012 – completed-go-with-notes`; dazwischen `Milestone Lessons Review CO-WP-005…012 – GO WITH NOTES` (Commit 74f8e32).
+`CO-WP-014 – CoreOps Integration Contract v0.1` (docs-only / integration-architecture and security foundation). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-013 – completed-go-with-notes` (Commit 438a5a0).
+
+## CoreOps Integration Contract v0.1 (CO-WP-014)
+
+- Drei neue Dokumente: CoreOps Integration Contract v0.1, Integration Capability and Operation Model, Integration Trust/Failure/Recovery Policy.
+- Contract Version 0.1 ≠ Produktversion. Sechs Capability-Dimensionen getrennt (advertised/detected/permitted/implemented/supported/validated); Adapter erteilt sich keine Permission per Declaration. request acceptance ≠ authorization ≠ execution; completion ≠ success ≠ verification; transport failure ≠ keine Nebenwirkung; unknown outcome sichtbar/blockiert Retry; partial failure sichtbar; rollback/recovery brauchen Verifikation.
+- Read-only ohne stille Write Authority; Write/Execution brauchen explizite Policy+Authorization (CO-WP-013 Guards autoritativ); Adapter/Agent erweitern Scope nicht; Integrationsergebnisse erben keine Autorität (CO-WP-011 autoritativ); Offline mit Target-Binding/Provenance/Integrität/expliziter Aktivierung; Extensions überschreiben keine Invariante.
+- Decision Index +16 (DEC-S-153…168), Risk Register +13 (RISK-207…219, gesamt 219). Keine Protokoll-/Schema-/Transport-/SDK-/Adapter-/Replay-/Queue-/Messaging-Technologie; keine ADR; Identity-/Authorization-/State-/Provenance-/Modul-/Capability-/Threat-Dateien + Lessons-Learned + NDF-Kandidaten unverändert; keine NDF-Rückführung.
 
 ## Policy, Approval and Execution Authorization (CO-WP-013)
 
@@ -166,7 +173,7 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 
 ## Nächstes Work Package
 
-`CO-WP-014 – CoreOps Integration Contract v0.1` (docs-only; planned-next; erst nach Nova Review von CO-WP-013 und Human-Maintainer-Commit). Die 004er-Erweiterungsserie (004A…004E), CO-WP-005…012, der Milestone Lessons Review (005…012) und CO-WP-013 sind bearbeitet; CO-WP-013 ist `implemented-awaiting-nova-review`. Milestone-Bündelentscheidung (Lessons/NDF-Kandidaten 008…010) liegt bei Nova/HM. External: NDF-Release-Zuordnung für die drei Adoption-Commits ausstehend.
+`CO-WP-015 – Domain Pack Governance, Support Levels and Compatibility` (docs-only; planned-next; erst nach Nova Review von CO-WP-014 und Human-Maintainer-Commit). Die 004er-Erweiterungsserie (004A…004E), CO-WP-005…013, der Milestone Lessons Review (005…012) und CO-WP-014 sind bearbeitet; CO-WP-014 ist `implemented-awaiting-nova-review`. Milestone-Bündelentscheidung (Lessons/NDF-Kandidaten 008…010) liegt bei Nova/HM. External: NDF-Release-Zuordnung für die drei Adoption-Commits ausstehend.
 
 ## Aktuelle Blocker
 

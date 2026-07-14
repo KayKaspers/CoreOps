@@ -338,7 +338,16 @@ Folgende Themen benötigen vor jeder verbindlichen technischen Festlegung einen 
 - **Execution Guard:** [EXECUTION_AUTHORIZATION_AND_GUARD_POLICY.md](../docs/security/EXECUTION_AUTHORIZATION_AND_GUARD_POLICY.md) — Execution Intent/Plan/Authorization, Authorization Lifecycle, Pre-Execution Guards, Execution Boundary, Replay/Duplicate, Verification/Closure, Fail-Closed.
 - **Governance-Fortschreibung:** Decision Index +16 (DEC-S-137…152), Risk Register +17 (RISK-190…206, gesamt 206).
 - **Grenzen:** Policy permit ≠ Approval ≠ Execution Authorization; Execution Authorization action-/target-/scope-/plan-/time-bound; expired/revoked/consumed nicht wiederverwendbar; Machine ohne Self-Approval; Executed ≠ successful ≠ verified; closed ≠ successful; keine Policy-/Approval-/Execution-Engine, kein Token/Artefakt, kein Replay-Mechanismus, keine Queue/Workflow-Runtime; keine ADR; Invarianten = Designanforderungen.
-- **Status:** Foundation-Authorization-Baseline etabliert; nächstes WP `CO-WP-014`; Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung. Nova Review pending.
+- **Status:** Foundation-Authorization-Baseline etabliert; `completed-go-with-notes` (Commit 438a5a0).
+
+## CO-WP-014 Konsolidierung (CoreOps Integration Contract v0.1)
+
+- **Contract:** [COREOPS_INTEGRATION_CONTRACT_V0_1.md](../docs/architecture/COREOPS_INTEGRATION_CONTRACT_V0_1.md) — Contract Version 0.1 (≠ Produktversion), 18 Integration Classes, Integration Identity/Lifecycle, Request-/Acceptance-/Operation-Lifecycle, Result-/Failure-Semantik, Async, Retry/Replay, Cancellation/Rollback/Recovery, Offline, Provenance, Versioning, Extensions.
+- **Capability/Operation:** [INTEGRATION_CAPABILITY_AND_OPERATION_MODEL.md](../docs/architecture/INTEGRATION_CAPABILITY_AND_OPERATION_MODEL.md) — sechs getrennte Capability-Dimensionen (advertised/detected/permitted/implemented/supported/validated), 18 Operation Classes, Privilege Classification, Detection/Permission/Validation.
+- **Trust/Failure:** [INTEGRATION_TRUST_FAILURE_AND_RECOVERY_POLICY.md](../docs/security/INTEGRATION_TRUST_FAILURE_AND_RECOVERY_POLICY.md) — Trust Boundary, Failure Classification, Unknown Outcome, Retry/Replay, Partial Failure, Rollback/Recovery, Fail-Closed.
+- **Governance-Fortschreibung:** Decision Index +16 (DEC-S-153…168), Risk Register +13 (RISK-207…219, gesamt 219).
+- **Grenzen:** advertised ≠ detected ≠ permitted ≠ implemented ≠ supported ≠ validated; request acceptance ≠ authorization ≠ execution; completion ≠ success ≠ verification; transport failure ≠ keine Nebenwirkung; unknown outcome sichtbar/blockiert Retry; Read-only ohne stille Write Authority; Integrationsergebnisse erben keine Autorität; Adapter/Agent erweitern Scope nicht; Extensions überschreiben keine Invariante; keine Protokoll-/Schema-/SDK-/Adapter-/Replay-Technologie; keine ADR; Invarianten = Designanforderungen.
+- **Status:** Foundation-Integration-Contract etabliert; nächstes WP `CO-WP-015`; Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung. Nova Review pending.
 
 ## Notes
 

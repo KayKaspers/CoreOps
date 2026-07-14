@@ -315,6 +315,29 @@ Alle 30 Concept-ADR-Kandidaten (§51) plus zwei Foundation-Klärungen (Delivery 
 | DEC-S-151 | Policy/approval/authorization engine technology | architecture-context | deferred | non-binding | CO-WP-013 | Nova | Deferred |
 | DEC-S-152 | Authorization artifact and replay-protection mechanism | architecture-context | deferred | non-binding | CO-WP-013 | Nova | Deferred |
 
+## Integration Contract Decisions (CO-WP-014)
+
+> Registriert über [COREOPS_INTEGRATION_CONTRACT_V0_1.md](../docs/architecture/COREOPS_INTEGRATION_CONTRACT_V0_1.md), [INTEGRATION_CAPABILITY_AND_OPERATION_MODEL.md](../docs/architecture/INTEGRATION_CAPABILITY_AND_OPERATION_MODEL.md) und [INTEGRATION_TRUST_FAILURE_AND_RECOVERY_POLICY.md](../docs/security/INTEGRATION_TRUST_FAILURE_AND_RECOVERY_POLICY.md). **Getrennte Dimensionen** (Decision Class · Lifecycle Status · Binding Level); keine kombinierten Pseudostatuswerte; keine Protokoll-/Schema-/Transport-/SDK-/Adapter-/Replay-Technologie ausgewählt; keine ADR.
+
+| Decision ID | Topic | Decision Class | Lifecycle Status | Binding Level | Source | Owner | Notes |
+| ----------- | ----- | -------------- | ---------------- | ------------- | ------ | ----- | ----- |
+| DEC-S-153 | CoreOps Integration Contract | architecture-context | accepted | binding-governance | CO-WP-014 | Nova | Foundation Contract Version 0.1 |
+| DEC-S-154 | Contract version scope | governance-direction | accepted | binding-governance | CO-WP-014 | Nova | Contract-Version ≠ CoreOps-Produkt-/Release-Version |
+| DEC-S-155 | Capability dimensions | security-context | accepted | binding-governance | CO-WP-014 | Nova | advertised/detected/permitted/implemented/supported/validated getrennt |
+| DEC-S-156 | Request acceptance semantics | security-context | accepted | binding-governance | CO-WP-014 | Nova | Acceptance ≠ Authorization ≠ Execution |
+| DEC-S-157 | Operation completion semantics | governance-direction | accepted | binding-governance | CO-WP-014 | Nova | Completion ≠ success |
+| DEC-S-158 | Operation success semantics | governance-direction | accepted | binding-governance | CO-WP-014 | Nova | Success ≠ verification |
+| DEC-S-159 | Unknown outcome | security-context | accepted | binding-governance | CO-WP-014 | Nova | Erfordert Reconciliation; blockiert automatischen Retry |
+| DEC-S-160 | Read-only integration | security-context | accepted | binding-governance | CO-WP-014 | Nova | Erhält **nicht** still Write Authority |
+| DEC-S-161 | Write/execution authority | security-context | accepted | binding-governance | CO-WP-014 | Nova | Erfordern explizite Policy + anwendbare Authorization |
+| DEC-S-162 | Integration result authority | security-context | accepted | binding-governance | CO-WP-014 | Nova | Erben **nicht** automatisch autoritativen State |
+| DEC-S-163 | Adapter/agent scope | security-context | accepted | binding-governance | CO-WP-014 | Nova | Erweitern Target/Action/Scope **nicht** |
+| DEC-S-164 | Offline integration | security-context | accepted | binding-governance | CO-WP-014 | Nova | Provenance, Integrität, Target-Binding, explizite Aktivierung |
+| DEC-S-165 | Contract extensions | security-context | accepted | binding-governance | CO-WP-014 | Nova | Überschreiben **keine** Core-Sicherheitsinvariante |
+| DEC-S-166 | Protocol/schema/transport/SDK technology | architecture-context | deferred | non-binding | CO-WP-014 | Nova | Deferred |
+| DEC-S-167 | Replay/deduplication/idempotency mechanism | architecture-context | deferred | non-binding | CO-WP-014 | Nova | Deferred |
+| DEC-S-168 | Recovery automation | architecture-context | deferred | non-binding | CO-WP-014 | Nova | Deferred |
+
 ## Deferred Decisions
 
 | Decision ID | Topic | Status | Class | Source | Owner | Target WP | ADR Required |
@@ -381,6 +404,8 @@ Alle 30 Concept-ADR-Kandidaten (§51) plus zwei Foundation-Klärungen (Delivery 
 **CO-WP-011-Registrierungen:** 16 Source-of-Truth-/Field-Provenance-Entscheidungen (DEC-S-106…121), **getrennte Dimensionen**: Source of Truth ≠ System of Record; autoritative Feldownership explizit/modulgebunden; Desired/Observed/Effective/Derived getrennt; Derived/Cached nicht autoritativ per Default; importierte Daten erben keine Autorität; neuester Timestamp gewinnt nicht automatisch; Overrides explizit/feld-/reason-bound mit Provenance-Erhalt; Konflikte bleiben sichtbar; widerrufene Quellen nicht autoritativ; Offline-Reconciliation mit Provenance/Integrität/Authority/Conflict-Review (fail-closed); Field-Provenance durch Transformationen erhalten; Audit-/Evidence-History nicht durch Reconciliation umgeschrieben; Storage/Merge/Sync-Technologie, kryptografische Provenance und universelles Feldschema `deferred`. Keine Technologieauswahl; keine ADR.
 
 **CO-WP-012-Registrierungen:** 15 State-/Drift-/Safe-Remediation-Entscheidungen (DEC-S-122…136), **getrennte Dimensionen**: Desired/Observed/Reported/Effective/Last-Known getrennt; Effective State bleibt indeterminate/conflicted bei unklarer Autorität; keine Beobachtung ≠ keine Drift; kein erkannter Drift ≠ Compliance; Drift-Erkennung ohne Write Authority; Detection/Recommendation/Plan/Approval/Execution/Verification getrennt; privilegierte Remediation mit expliziter Autorität + Approval; Exceptions explizit/reviewbar; Executed ≠ successful; Successful ≠ verified convergence; Verified convergence ≠ Compliance; Partial Failure explizit; automatische Remediation, Engine-/Retry-/Queue-/Scheduling-Technologie `deferred`. Keine Technologieauswahl; keine ADR.
+
+**CO-WP-014-Registrierungen:** 16 Integration-Contract-Entscheidungen (DEC-S-153…168), **getrennte Dimensionen**: CoreOps Integration Contract als Foundation Version 0.1; Contract-Version ≠ Produkt-/Release-Version; sechs Capability-Dimensionen (advertised/detected/permitted/implemented/supported/validated) getrennt; Request Acceptance ≠ Authorization ≠ Execution; Completion ≠ success; Success ≠ verification; Unknown Outcome erfordert Reconciliation und blockiert automatischen Retry; Read-only-Integration erhält nicht still Write Authority; Write/Execution erfordern explizite Policy + Authorization; Integrationsergebnisse erben nicht automatisch autoritativen State; Adapter/Agent erweitern Target/Action/Scope nicht; Offline Integration mit Provenance/Integrität/Target-Binding/expliziter Aktivierung; Contract-Extensions überschreiben keine Core-Sicherheitsinvariante; Protokoll-/Schema-/Transport-/SDK-, Replay-/Deduplication-/Idempotency- und Recovery-Automation-Technologie `deferred`. Keine Technologieauswahl; keine ADR. `DEC-S-01…37` bleiben unverändert.
 
 **CO-WP-013-Registrierungen:** 16 Policy-/Approval-/Execution-Authorization-Entscheidungen (DEC-S-137…152), **getrennte Dimensionen**: Policy Evaluation, Approval und Execution Authorization getrennt; Policy permit ≠ Approval ≠ Execution Authorization; kein Default-Permit (deny/indeterminate außer explizit autorisiert); Policy-Konflikte bleiben sichtbar; Approval explizit/zurechenbar/scope-bound/widerrufbar; Machine Principals ohne Self-Approval; Approver-Rollenname ≠ unbegrenzter Scope; Execution Authorization action-/target-/scope-/plan-/time-bound; materielle Plan-/Target-Änderung → Re-Evaluation; expired/revoked/consumed nicht wiederverwendbar; Break Glass außergewöhnlich (kein Parallelmodell); Offline Authorization mit Target-Binding/Provenance/Integrität/expliziter Aktivierung; Execution result ≠ success; Success ≠ verification, closed ≠ success; Policy-/Approval-/Authorization-Engine, Autorisierungsartefakt/Token und Replay-Mechanismus `deferred`. Keine Technologieauswahl; keine ADR. `DEC-S-01…37` bleiben unverändert (Legacy-Format-Follow-up für CO-WP-029).
 

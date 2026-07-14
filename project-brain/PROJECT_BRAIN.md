@@ -256,14 +256,25 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 - Executed ≠ successful ≠ verified; closed ≠ successful; audit evidence ≠ execution authority.
 - Decision Index +16 (DEC-S-137…152), Risk Register +17 (RISK-190…206, gesamt 206).
 - **Keine Policy-/Approval-/Execution-Engine, kein Autorisierungsartefakt/Token, kein Replay-Mechanismus, keine Queue/Workflow-Runtime ausgewählt; keine ADR; Identity-/Modul-/State-/Provenance-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.**
+- Status: `completed-go-with-notes` (Commit 438a5a0).
+
+## CoreOps Integration Contract v0.1 (CO-WP-014)
+
+- Drei neue Dokumente: [COREOPS_INTEGRATION_CONTRACT_V0_1.md](../docs/architecture/COREOPS_INTEGRATION_CONTRACT_V0_1.md), [INTEGRATION_CAPABILITY_AND_OPERATION_MODEL.md](../docs/architecture/INTEGRATION_CAPABILITY_AND_OPERATION_MODEL.md), [INTEGRATION_TRUST_FAILURE_AND_RECOVERY_POLICY.md](../docs/security/INTEGRATION_TRUST_FAILURE_AND_RECOVERY_POLICY.md).
+- Contract Version 0.1 ≠ CoreOps-Produkt-/Release-Version. 18 Integration Classes herstellerneutral. Integration Identity/Lifecycle (`discovered`…`archived`; `active-write-enabled` braucht Policy+Authorization; keine stille ID-Wiederverwendung).
+- Sechs Capability-Dimensionen getrennt (advertised/detected/permitted/implemented/supported/validated); Adapter erteilt sich keine Permission per Declaration. 18 Operation Classes mit Privilege/Authorization-Einordnung; read ≠ export, observe ≠ configure, execute ≠ deploy, capability-to-execute ≠ authorization-to-execute.
+- request acceptance ≠ authorization ≠ execution; execution-completed ≠ successful; successful ≠ verified; transport failure ≠ keine Nebenwirkung; unknown outcome sichtbar und blockiert automatischen Retry; partial failure sichtbar; rollback/recovery brauchen Verifikation.
+- Read-only ohne stille Write Authority; Write/Execution brauchen explizite Policy+Authorization (CO-WP-013 Guards autoritativ, kein Parallelmodell); Adapter/Agent erweitern Target/Action/Scope nicht; Integrationsergebnisse erben keine Autorität (SoT/Provenance CO-WP-011 autoritativ); Offline mit Target-Binding/Provenance/Integrität/expliziter Aktivierung; Extensions überschreiben keine Core-Invariante.
+- Decision Index +16 (DEC-S-153…168), Risk Register +13 (RISK-207…219, gesamt 219).
+- **Keine Protokoll-/Schema-/Transport-/SDK-/Adapter-/Replay-/Queue-/Messaging-Technologie ausgewählt; keine ADR; Identity-/Authorization-/State-/Provenance-/Modul-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.**
 
 ## Letztes Work Package
 
-`CO-WP-013 – Policy, Approval and Execution Authorization` (docs-only / security-baseline). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-012 – completed-go-with-notes`; dazwischen `Milestone Lessons Review CO-WP-005…012 – GO WITH NOTES` (Commit 74f8e32).
+`CO-WP-014 – CoreOps Integration Contract v0.1` (docs-only / integration-architecture and security foundation). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-013 – completed-go-with-notes` (Commit 438a5a0).
 
 ## Nächstes Work Package
 
-`CO-WP-014 – CoreOps Integration Contract v0.1` (docs-only; planned-next; erst nach Nova Review von CO-WP-013 und Human-Maintainer-Commit).
+`CO-WP-015 – Domain Pack Governance, Support Levels and Compatibility` (docs-only; planned-next; erst nach Nova Review von CO-WP-014 und Human-Maintainer-Commit).
 
 ## Human-Maintainer-Gates
 
