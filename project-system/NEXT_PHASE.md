@@ -290,8 +290,8 @@ Neues Dokument `project-brain/MILESTONE_REVIEW_CO_WP_013_TO_020.md`. Acht konsol
 
 ## Deployment Control Plane and Blueprint Schema
 
-Current implemented WP:
-`CO-WP-021 – Deployment Control Plane and Blueprint Schema` – pending Nova review.
+WP Status:
+`CO-WP-021 – Deployment Control Plane and Blueprint Schema` – `completed-go-with-notes` (Commit a152091).
 
 Current deployment foundation:
 Deployment control plane, blueprint identity, bounded target snapshots, artifact and dependency binding, waves, verification, rollback, recovery and offline deployment governance defined. Blueprint availability ≠ deployment authorization; intent/plan/approval/authorization/execution/verification/closure separate; dynamic topology selection materialised into a bounded target-set snapshot; target-set approval re-evaluated after material change; parameters/overlays do not weaken security silently; artifact availability ≠ trust/integrity/compatibility; execution ≠ desired-state verification; partial/unknown per-target results visible and block unsafe retry; cancellation ≠ no side effects; rollback needs verification; machine principals cannot imitate human deployment approval.
@@ -307,7 +307,26 @@ not performed
 
 Drei neue Dokumente: Deployment Control Plane and Execution Model (Control-Plane-Grenze, Intent/Plan, Target Sets/Snapshots, Topology Selection/Revalidation, Artifacts/Dependencies, Preflight, Lifecycle, Waves/Batches, Pause/Resume/Cancellation, Partial/Unknown, Verification, Rollback/Forward Recovery, State-Authority-/Policy-Bindung, Offline), Deployment Blueprint Versioning and Compatibility Model (Blueprint Identity/Lifecycle, Versionsdimensionen, Inputs/Parameters/Overlays, Effective Blueprint, Artifact-/Dependency-Bindung, Compatibility, Deprecation) und Deployment Targeting, Execution and Recovery Policy (Authority, Target-Set-Authority/Revalidation, Preflight/Audit-Start, Waves, Partial, Verification, Rollback/Recovery, Manual Authority, Offline, Fail-Closed). Decision Index +15 (DEC-S-274…288), Risk Register +5 (RISK-280…284, gesamt 284; Wachstumsgrenze §4 eingehalten). Keine Deployment-Engine-/Orchestrator-/Pipeline-/Blueprint-Format-/Schema-/Agent-/Registry-/Rollback-Technologie ausgewählt; keine ADR; Policy-/Integration-/Domain-Pack-/Data-/API-/Event-/Evidence-/Telemetry-/Topology-/Identity-/Authorization-/State-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.
 
-Next planned WP nach Nova Review und Human-Maintainer-Commit: `CO-WP-022 – Artifact Trust, SBOM, Provenance and Revocation`.
+## Artifact Trust, SBOM, Provenance and Revocation
+
+Current implemented WP:
+`CO-WP-022 – Artifact Trust, SBOM, Provenance and Revocation` – pending Nova review.
+
+Current artifact foundation:
+Artifact identity, resolution, provenance, integrity, SBOM, component and dependency relationships, trust, quarantine, revocation and offline distribution governance defined. Artifact available ≠ trusted; identity ≠ alias ≠ file name ≠ repository path; version ≠ revision; mutable alias not a final privileged-deployment binding; provenance/integrity/validation/trust/support/compatibility separate; SBOM available ≠ complete ≠ accurate; missing information ≠ absence; vulnerability reference ≠ deployment exploitable; trust decision use-/target-/scope-/version-/time-bound (≠ execution authorization); quarantine release ≠ deployment authorization; withdrawal/revocation/repository-removal separate; revocation → new deployment blocked unless governed exception; reinstatement preserves history; offline transfer needs provenance/integrity/target binding/explicit import governance.
+
+Artifact registry and trust technology:
+not selected
+
+Artifact validation:
+not performed
+
+Runtime supply-chain implementation:
+not started
+
+Drei neue Dokumente: Artifact Identity, Provenance and SBOM Model (Artifact-Klassen/-Identität, Version/Revision/Instance/Alias/Resolution, Lifecycle, Rollen, Provenance/Integrity/Validation/Trust, SBOM/Components/Dependencies, Deployment Binding, Offline), Artifact Dependency, Compatibility and Distribution Model (Resolution, Component Identity, Dependency Classes/Relationships, Compatibility, Vulnerability/Advisory, Withdrawal/Revocation/Replacement, Existing Deployments, Delayed Revocation) und Artifact Trust, Quarantine and Revocation Policy (Authority, Quarantine, Trust Decision, Revocation/Reinstatement, Existing-Deployment-Response, Exceptions, Offline, Fail-Closed). Decision Index +15 (DEC-S-289…303), Risk Register +5 (RISK-285…289, gesamt 289; Wachstumsgrenze §4 eingehalten). Keine Registry-/Package-/SBOM-/Hash-/Signing-/Trust-Anchor-/Transparency-/Scanner-/Build-/Dependency-Resolution-Technologie ausgewählt; keine ADR; Deployment-/Integration-/Domain-Pack-/Data-/API-/Event-/Evidence-/Telemetry-/Topology-/Identity-/Authorization-/State-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.
+
+Next planned WP nach Nova Review und Human-Maintainer-Commit: `CO-WP-023 – Restricted, Isolated, Air-Gapped Operation and CorePack`.
 
 ## Current Goal
 

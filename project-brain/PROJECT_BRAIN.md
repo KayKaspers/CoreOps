@@ -349,14 +349,25 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 - State-Authority-Boundary (`deployment executed ≠ observed matches ≠ effective verified`; SoT/Drift autoritativ). Machine Principals imitieren keine Human Deployment Approval/Manual Authority. Offline mit Provenance/Integrität/Target-Binding/gebundener Authorization/expliziter Aktivierung.
 - Decision Index +15 (DEC-S-274…288), Risk Register +5 (RISK-280…284, gesamt 284; Wachstumsgrenze §4 eingehalten).
 - **Keine Deployment-Engine-/Orchestrator-/Pipeline-/Blueprint-Format-/Schema-/Agent-/Registry-/Rollback-Technologie ausgewählt; keine ADR; Policy-/Integration-/Domain-Pack-/Data-/API-/Event-/Evidence-/Telemetry-/Topology-/Identity-/Authorization-/State-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.**
+- Status: `completed-go-with-notes` (Commit a152091).
+
+## Artifact Trust, SBOM, Provenance and Revocation (CO-WP-022)
+
+- Drei neue Dokumente: [ARTIFACT_IDENTITY_PROVENANCE_AND_SBOM_MODEL.md](../docs/architecture/ARTIFACT_IDENTITY_PROVENANCE_AND_SBOM_MODEL.md), [ARTIFACT_DEPENDENCY_COMPATIBILITY_AND_DISTRIBUTION_MODEL.md](../docs/architecture/ARTIFACT_DEPENDENCY_COMPATIBILITY_AND_DISTRIBUTION_MODEL.md), [ARTIFACT_TRUST_QUARANTINE_AND_REVOCATION_POLICY.md](../docs/security/ARTIFACT_TRUST_QUARANTINE_AND_REVOCATION_POLICY.md).
+- `artifact available ≠ trusted`; `identity ≠ alias ≠ file name ≠ repository path`; `version ≠ revision`; `same version label ≠ same revision`; `newer ≠ safer ≠ compatible ≠ authorised replacement`. 19 Artifact-Klassen; 13 Rollen getrennt (`repository operator ≠ artifact owner`; `distributor ≠ trust authority`; `maintainer ≠ revocation authority`). Mutable Alias unterstützt Discovery, aber privilegiertes Deployment bindet aufgelöste Identität/Version/Revision.
+- Provenance/Integrity/Validation/Trust/Support/Compatibility getrennt (`provenance available ≠ validated`; `integrity checked ≠ safe`; `validated ≠ universally trusted`; Trust-States untrusted…revoked; `trusted-for-bounded-scope` mit Scope/Versions/Evidence/Owner/Review). SBOM/Components (`SBOM available ≠ complete ≠ accurate`; `component absent from SBOM ≠ component absent`; `multiple SBOMs ≠ independent sources`); Component Identity (`same name/version ≠ same component/revision`).
+- Vulnerability getrennt (`vulnerability reference ≠ artifact affected`; `component affected ≠ deployment exploitable`; `no scanner finding ≠ no vulnerability`; `fixed version ≠ compatible ≠ authorised`; `severity ≠ deployment-context risk`). Trust Decision use-/target-/scope-/version-/time-bound (`trusted-for-one-use ≠ trusted globally`; ≠ Execution Authorization). Quarantine (`quarantined ≠ malicious proven`; `quarantine released ≠ deployment authorised`).
+- Withdrawal/Revocation/Repository-Removal/Support-Withdrawal getrennt; `revocation issued ≠ delivered to every offline environment`; **`revocation received → new deployment blocked unless explicit governed exception`**; `existing deployment ≠ permission for new deployment`; `artifact revoked ≠ automatic destructive removal`. Reinstatement (`reinstated ≠ historical revocation erased ≠ globally trusted`). Deployment Binding an konkrete Resolution + Pre-Execution-Recheck. Offline mit Provenance/Integrität/Target-Binding/gebundenem Trust/expliziter Import-Governance; Delayed Revocation sichtbar.
+- Decision Index +15 (DEC-S-289…303), Risk Register +5 (RISK-285…289, gesamt 289; Wachstumsgrenze §4 eingehalten).
+- **Keine Registry-/Package-/SBOM-/Hash-/Signing-/Trust-Anchor-/Transparency-/Scanner-/Build-/Dependency-Resolution-Technologie ausgewählt; keine ADR; Deployment-/Integration-/Domain-Pack-/Data-/API-/Event-/Evidence-/Telemetry-/Topology-/Identity-/Authorization-/State-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.**
 
 ## Letztes Work Package
 
-`CO-WP-021 – Deployment Control Plane and Blueprint Schema` (docs-only / deployment architecture, targeting and execution-governance foundation). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-020 – completed-go-with-notes` (Commit 2c6d416); dazwischen `Milestone Lessons Review CO-WP-013…020 – GO WITH NOTES` (Commit d09d91b).
+`CO-WP-022 – Artifact Trust, SBOM, Provenance and Revocation` (docs-only / artifact identity, software-supply-chain and trust-governance foundation). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-021 – completed-go-with-notes` (Commit a152091).
 
 ## Nächstes Work Package
 
-`CO-WP-022 – Artifact Trust, SBOM, Provenance and Revocation` (security-baseline; planned-next; erst nach Nova Review von CO-WP-021 und Human-Maintainer-Commit).
+`CO-WP-023 – Restricted, Isolated, Air-Gapped Operation and CorePack` (docs-only; planned-next; erst nach Nova Review von CO-WP-022 und Human-Maintainer-Commit).
 
 ## Human-Maintainer-Gates
 

@@ -23,7 +23,15 @@ Universelle, self-hosted und offline-fähige Operations Control Plane, die Sourc
 
 ## Letztes Work Package
 
-`CO-WP-021 – Deployment Control Plane and Blueprint Schema` (docs-only / deployment architecture, targeting and execution-governance foundation) — **Nova Review pending**. Vorheriges WP: `CO-WP-020 – completed-go-with-notes` (Commit 2c6d416); dazwischen `Milestone Lessons Review CO-WP-013…020 – GO WITH NOTES` (Commit d09d91b).
+`CO-WP-022 – Artifact Trust, SBOM, Provenance and Revocation` (docs-only / artifact identity, software-supply-chain and trust-governance foundation) — **Nova Review pending**. Vorheriges WP: `CO-WP-021 – completed-go-with-notes` (Commit a152091).
+
+## Artifact Trust, SBOM, Provenance and Revocation (CO-WP-022)
+
+- Drei neue Dokumente: Artifact Identity/Provenance/SBOM Model, Artifact Dependency/Compatibility/Distribution Model, Artifact Trust/Quarantine/Revocation Policy.
+- `artifact available ≠ trusted`; `identity ≠ alias ≠ file name ≠ repo path`; `version ≠ revision`; `same version label ≠ same revision`. 19 Artifact-Klassen; 13 Rollen getrennt; Mutable Alias ≠ finale privilegierte Deployment-Bindung (Resolution bindet Identität/Version/Revision).
+- Provenance/Integrity/Validation/Trust/Support/Compatibility getrennt (`integrity checked ≠ safe`; `validated ≠ trusted`); SBOM (`available ≠ complete ≠ accurate`; `missing ≠ absence`); Component Identity (`same name/version ≠ same component`); Vulnerability (`reference ≠ affected ≠ deployment exploitable`; `no finding ≠ no vulnerability`). Trust Decision use-/target-/scope-/version-/time-bound (≠ execution authorization); Quarantine release ≠ deployment authorization.
+- Withdrawal/Revocation/Repository-Removal getrennt; `revocation → new deployment blocked unless governed exception`; `existing deployment ≠ permission for new`; Reinstatement erhält Historie. Deployment Binding an Resolution + Pre-Execution-Recheck; Offline mit Provenance/Integrität/Target-Binding/Trust/Import-Governance; Delayed Revocation sichtbar.
+- Decision Index +15 (DEC-S-289…303), Risk Register +5 (RISK-285…289, gesamt 289; Wachstumsgrenze §4 eingehalten). Keine Registry-/SBOM-/Signing-/Scanner-Technologie; keine ADR; Deployment-/Integration-/Domain-Pack-/Data-/API-/Event-/Evidence-/Telemetry-/Topology-/Identity-/Authorization-/State-/Capability-/Threat-Dateien + Lessons-Learned + NDF-Kandidaten unverändert; keine NDF-Rückführung.
 
 ## Deployment Control Plane and Blueprint Schema (CO-WP-021)
 
@@ -230,7 +238,7 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 
 ## Nächstes Work Package
 
-`CO-WP-022 – Artifact Trust, SBOM, Provenance and Revocation` (security-baseline; planned-next; erst nach Nova Review von CO-WP-021 und Human-Maintainer-Commit). Die 004er-Erweiterungsserie (004A…004E), CO-WP-005…020, beide Milestone Lessons Reviews (005…012, 013…020) und CO-WP-021 sind bearbeitet; der Milestone Review 013…020 ist `completed-go-with-notes` (Commit d09d91b), CO-WP-021 ist `implemented-awaiting-nova-review`. CO-WP-014…020 und der Milestone-Review-Commit wurden gepusht (Branch bei Preflight auf origin/main-Höhe); CO-WP-021 noch nicht committet. Milestone-Bündelentscheidung für NDF-Kandidaten 008…013 liegt bei Nova/HM. External: NDF-Release-Zuordnung für die drei Adoption-Commits (001…007) ausstehend.
+`CO-WP-023 – Restricted, Isolated, Air-Gapped Operation and CorePack` (docs-only; planned-next; erst nach Nova Review von CO-WP-022 und Human-Maintainer-Commit). Die 004er-Erweiterungsserie (004A…004E), CO-WP-005…021, beide Milestone Lessons Reviews (005…012, 013…020) und CO-WP-022 sind bearbeitet; CO-WP-021 ist `completed-go-with-notes` (Commit a152091), CO-WP-022 ist `implemented-awaiting-nova-review`. CO-WP-014…020 und der Milestone-Review-Commit wurden gepusht; CO-WP-021 committet aber noch nicht gepusht (Branch ahead 1 bei Preflight); CO-WP-022 noch nicht committet. Push von CO-WP-021/022 nach HM-Commit von CO-WP-022 vorgesehen. Milestone-Bündelentscheidung für NDF-Kandidaten 008…013 liegt bei Nova/HM. External: NDF-Release-Zuordnung für die drei Adoption-Commits (001…007) ausstehend.
 
 ## Aktuelle Blocker
 
