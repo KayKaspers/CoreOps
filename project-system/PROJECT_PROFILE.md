@@ -365,7 +365,16 @@ Folgende Themen benötigen vor jeder verbindlichen technischen Festlegung einen 
 - **Migration-Security:** [DATA_MIGRATION_INTEGRITY_AND_RECOVERY_POLICY.md](../docs/security/DATA_MIGRATION_INTEGRITY_AND_RECOVERY_POLICY.md) — Authority, Klassifikation, Backup/Recovery, destruktive Migration, Identity-/Audit-Daten, Offline, Concurrency, Fail-Closed.
 - **Governance-Fortschreibung:** Decision Index +18 (DEC-S-186…203), Risk Register +10 (RISK-230…239, gesamt 239).
 - **Grenzen:** data owner ≠ storage operator; storage responsibility ≠ write authority ≠ migration authority; schema version ≠ data version; unknown/conflicted compatibility blockiert destruktive Migration; executed ≠ validated; backup exists ≠ restorable; restore ≠ service recovery; partial migration sichtbar; rollback braucht Verifikation; Migration reaktiviert keine widerrufene Autorität; Audit-/Evidence-Provenance erhalten; keine DB-/ORM-/Schema-/Migration-/Backup-Technologie; keine ADR; Invarianten = Designanforderungen.
-- **Status:** Foundation-Data-Ownership-/Migration-Governance etabliert; nächstes WP `CO-WP-017`; Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung. Nova Review pending.
+- **Status:** Foundation-Data-Ownership-/Migration-Governance etabliert; `completed-go-with-notes` (Commit 69b3334).
+
+## CO-WP-017 Konsolidierung (API Governance, Versioning, Errors and Idempotency)
+
+- **API Governance:** [API_GOVERNANCE_AND_OPERATION_MODEL.md](../docs/architecture/API_GOVERNANCE_AND_OPERATION_MODEL.md) — 13 API-Klassen, API Identity (≠ route/URL/transport), Lifecycle, Producers/Consumers, 17 Operation Classes, Side-Effect-Klassifikation, Request/Response Model, Acceptance/Result, Bulk, Pagination, Async, Policy-/Authorization-Bindung, Workspace-Isolation.
+- **Versioning/Compatibility:** [API_VERSIONING_COMPATIBILITY_AND_DEPRECATION_MODEL.md](../docs/architecture/API_VERSIONING_COMPATIBILITY_AND_DEPRECATION_MODEL.md) — 12 Versionsdimensionen, 13 Compatibility-Klassen, 14 Change Classes, Request/Response/Error/Behavioural Compatibility, Deprecation/Retirement.
+- **Error/Idempotency:** [API_ERROR_IDEMPOTENCY_AND_REPLAY_POLICY.md](../docs/security/API_ERROR_IDEMPOTENCY_AND_REPLAY_POLICY.md) — Error Classes/Disclosure, Retry Classification, Idempotency Context, Duplicate/Replay, Unknown Outcome, Fail-Closed.
+- **Governance-Fortschreibung:** Decision Index +16 (DEC-S-204…219), Risk Register +10 (RISK-240…249, gesamt 249).
+- **Grenzen:** API availability ≠ authorization; request acceptance ≠ execution; successful response ≠ verified; error response ≠ keine Nebenwirkung; API-Version ≠ Produkt-/Schema-Version; request-/response-/error-/behavioural-compatibility getrennt; unknown ≠ compatible; idempotency context ≠ authorization; unknown outcome blockiert Retry; duplicate/replay erhält Historie; bulk erhält Per-Target-Autorität; pagination ≠ Snapshot/aktuelle Authorization; Read-only ohne stille Write-Eskalation; keine Transport-/API-Style-/Schema-/Statuscode-/Idempotency-/Replay-Technologie; keine ADR; Invarianten = Designanforderungen.
+- **Status:** Foundation-API-Governance etabliert; nächstes WP `CO-WP-018`; Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung. Nova Review pending.
 
 ## Notes
 

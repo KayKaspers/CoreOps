@@ -23,7 +23,14 @@ Universelle, self-hosted und offline-fähige Operations Control Plane, die Sourc
 
 ## Letztes Work Package
 
-`CO-WP-016 – Data Ownership, Persistence, Schema Versioning and Migration` (docs-only / data-architecture, persistence and migration foundation). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-015 – completed-go-with-notes` (Commit 8191e06).
+`CO-WP-017 – API Governance, Versioning, Errors and Idempotency` (docs-only / API architecture and security foundation). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-016 – completed-go-with-notes` (Commit 69b3334).
+
+## API Governance, Versioning, Errors and Idempotency (CO-WP-017)
+
+- Drei neue Dokumente: API Governance and Operation Model, API Versioning/Compatibility/Deprecation Model, API Error/Idempotency/Replay Policy.
+- Konkretisiert Integration Contract für programmatische Schnittstellen. 13 API-Klassen; API Identity stabil (≠ route/URL/transport/product version); 17 Operation Classes mit Side-Effect-/Privilege-Klassifikation. `API availability ≠ authorization`; `acceptance ≠ execution`; `successful response ≠ verified`; `error response ≠ proof of no side effect`.
+- Zwölf Versionsdimensionen getrennt; Request/Response/Error/Behavioural-Compatibility getrennt (`unknown ≠ compatible`; formal additiv kann breaking sein). Idempotency Context ≠ authorization; `unknown outcome → kein Auto-Retry` + Reconciliation; Duplicate/Replay erhält Historie; Bulk erhält Per-Target-Autorität; Pagination ≠ Snapshot/aktuelle Authorization; Consumer-safe Error-Disclosure; Workspace-Isolation.
+- Decision Index +16 (DEC-S-204…219), Risk Register +10 (RISK-240…249, gesamt 249). Keine Transport-/API-Style-/Schema-/Statuscode-/Gateway-/Idempotency-/Replay-Technologie; keine ADR; Integration-/Data-/Identity-/Authorization-/State-/Provenance-/Capability-/Threat-Dateien + Lessons-Learned + NDF-Kandidaten unverändert; keine NDF-Rückführung.
 
 ## Data Ownership, Persistence, Schema Versioning and Migration (CO-WP-016)
 
@@ -188,7 +195,7 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 
 ## Nächstes Work Package
 
-`CO-WP-017 – API Governance, Versioning, Errors and Idempotency` (docs-only; planned-next; erst nach Nova Review von CO-WP-016 und Human-Maintainer-Commit). Die 004er-Erweiterungsserie (004A…004E), CO-WP-005…015, der Milestone Lessons Review (005…012) und CO-WP-016 sind bearbeitet; CO-WP-016 ist `implemented-awaiting-nova-review`. Branch ahead 3 (CO-WP-014/015/016 noch nicht gepusht — Push nach HM-Commit von CO-WP-016 vorgesehen). Milestone-Bündelentscheidung (Lessons/NDF-Kandidaten 008…010) liegt bei Nova/HM. External: NDF-Release-Zuordnung für die drei Adoption-Commits ausstehend.
+`CO-WP-018 – Event, Audit Correlation and Evidence Model` (docs-only; planned-next; erst nach Nova Review von CO-WP-017 und Human-Maintainer-Commit). Die 004er-Erweiterungsserie (004A…004E), CO-WP-005…016, der Milestone Lessons Review (005…012) und CO-WP-017 sind bearbeitet; CO-WP-017 ist `implemented-awaiting-nova-review`. CO-WP-014/015/016 wurden gepusht (Branch war bei Preflight auf origin/main-Höhe); CO-WP-017 noch nicht committet/gepusht. Milestone-Bündelentscheidung (Lessons/NDF-Kandidaten 008…010) liegt bei Nova/HM. External: NDF-Release-Zuordnung für die drei Adoption-Commits ausstehend.
 
 ## Aktuelle Blocker
 

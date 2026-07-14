@@ -287,14 +287,24 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 - Backup exists ≠ restorable; restore ≠ service recovery; rollback braucht Verifikation. Partial Migration sichtbar; Mixed-Version bounded. Destruktive Migration: gebundene Autorität + Approval, fail-closed. Migration erzeugt keine neue Autorität, reaktiviert keine widerrufene/konsumierte Authorization; Audit-/Evidence-Provenance erhalten; keine Roh-Secret-Speicherung entschieden. Offline mit Target-Binding/Provenance/Integrität/expliziter Aktivierung.
 - Decision Index +18 (DEC-S-186…203), Risk Register +10 (RISK-230…239, gesamt 239).
 - **Keine Storage-/DB-/ORM-/Schema-/Serialisierungs-/Migration-/Backup-/Replikations-/Cluster-/Transaction-Technologie ausgewählt; keine ADR; Integration-/Domain-Pack-/Identity-/Authorization-/State-/Provenance-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.**
+- Status: `completed-go-with-notes` (Commit 69b3334).
+
+## API Governance, Versioning, Errors and Idempotency (CO-WP-017)
+
+- Drei neue Dokumente: [API_GOVERNANCE_AND_OPERATION_MODEL.md](../docs/architecture/API_GOVERNANCE_AND_OPERATION_MODEL.md), [API_VERSIONING_COMPATIBILITY_AND_DEPRECATION_MODEL.md](../docs/architecture/API_VERSIONING_COMPATIBILITY_AND_DEPRECATION_MODEL.md), [API_ERROR_IDEMPOTENCY_AND_REPLAY_POLICY.md](../docs/security/API_ERROR_IDEMPOTENCY_AND_REPLAY_POLICY.md).
+- Konkretisiert den Integration Contract für programmatische Schnittstellen (kein Parallelmodell). 13 API-Klassen; API Identity stabil (`route/URL/transport ≠ identity`; `API version ≠ product version`); Lifecycle (proposed…archived). 17 Operation Classes mit Side-Effect-/Privilege-Klassifikation (`read ≠ export`, `configure ≠ execute`, `operation available ≠ authorised`).
+- `API availability ≠ authorization`; `request acceptance ≠ execution`; `successful response ≠ verified outcome`; `error response ≠ proof of no side effect`; `duplicate response ≠ duplicate execution`. Zwölf Versionsdimensionen getrennt; Request/Response/Error/Behavioural-Compatibility getrennt (formal additiv kann breaking sein; `unknown ≠ compatible`); 14 Change Classes.
+- Idempotency Context gebunden, verlängert/ersetzt keine Authorization; retry ≠ replay; `unknown outcome → kein Auto-Retry`, Reconciliation erforderlich; Duplicate/Replay erhält Historie und autorisiert nicht neu. Bulk erhält Per-Target-Autorität, Partial sichtbar; Pagination ≠ Snapshot/aktuelle Authorization/authoritative count. Consumer-safe Error-Disclosure (keine Secrets/Ressourcenexistenz); Workspace-Isolation explizit; API erzeugt keine parallele Autorisierungsautorität (CO-WP-013 autoritativ).
+- Decision Index +16 (DEC-S-204…219), Risk Register +10 (RISK-240…249, gesamt 249).
+- **Keine Transport-/API-Style-/Statuscode-/Schema-/Gateway-/Idempotency-/Replay-/Rate-Limit-Technologie ausgewählt; keine ADR; Integration-/Data-/Identity-/Authorization-/State-/Provenance-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.**
 
 ## Letztes Work Package
 
-`CO-WP-016 – Data Ownership, Persistence, Schema Versioning and Migration` (docs-only / data-architecture, persistence and migration foundation). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-015 – completed-go-with-notes` (Commit 8191e06).
+`CO-WP-017 – API Governance, Versioning, Errors and Idempotency` (docs-only / API architecture and security foundation). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-016 – completed-go-with-notes` (Commit 69b3334).
 
 ## Nächstes Work Package
 
-`CO-WP-017 – API Governance, Versioning, Errors and Idempotency` (docs-only; planned-next; erst nach Nova Review von CO-WP-016 und Human-Maintainer-Commit).
+`CO-WP-018 – Event, Audit Correlation and Evidence Model` (docs-only; planned-next; erst nach Nova Review von CO-WP-017 und Human-Maintainer-Commit).
 
 ## Human-Maintainer-Gates
 
