@@ -34,9 +34,9 @@ Jedes Work Package hat genau **einen** primären Typ.
 | CO-WP-014 | docs-only         | CoreOps Integration Contract v0.1                              | completed-go-with-notes        |
 | CO-WP-015 | docs-only         | Domain Pack Governance, Support Levels and Compatibility       | completed-go-with-notes        |
 | CO-WP-016 | docs-only         | Data Ownership, Persistence, Schema Versioning and Migration   | completed-go-with-notes        |
-| CO-WP-017 | docs-only         | API Governance, Versioning, Errors and Idempotency             | implemented-awaiting-nova-review|
-| CO-WP-018 | docs-only         | Event, Audit Correlation and Evidence Model                    | planned-next                  |
-| CO-WP-019 | docs-only         | Telemetry and Normalization Schema                             | planned                       |
+| CO-WP-017 | docs-only         | API Governance, Versioning, Errors and Idempotency             | completed-go-with-notes        |
+| CO-WP-018 | docs-only         | Event, Audit Correlation and Evidence Model                    | implemented-awaiting-nova-review|
+| CO-WP-019 | docs-only         | Telemetry and Normalization Schema                             | planned-next                  |
 | CO-WP-020 | docs-only         | Topology Graph, Evidence and Manual Authority                  | planned                       |
 | CO-WP-021 | docs-only         | Deployment Control Plane and Blueprint Schema                  | planned                       |
 | CO-WP-022 | security-baseline | Artifact Trust, SBOM, Provenance and Revocation                | planned                       |
@@ -55,7 +55,7 @@ Jedes Work Package hat genau **einen** primären Typ.
 ## Regeln
 
 - Genau ein primärer Typ pro Work Package.
-- Nur `CO-WP-018` ist der nächste geplante Schritt (`planned-next`). `CO-WP-017` ist `implemented-awaiting-nova-review` und wird erst nach Nova Review und Human-Maintainer-Commit als abgeschlossen geführt.
+- Nur `CO-WP-019` ist der nächste geplante Schritt (`planned-next`). `CO-WP-018` ist `implemented-awaiting-nova-review` und wird erst nach Nova Review und Human-Maintainer-Commit als abgeschlossen geführt.
 - Keine automatische Freigabe eines Folge-Work-Packages.
 - Die Queue ist noch **nicht** final scope-locked.
 - Änderungen an der Queue nur durch ein später freigegebenes Work Package.

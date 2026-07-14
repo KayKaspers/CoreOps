@@ -23,7 +23,14 @@ Universelle, self-hosted und offline-fähige Operations Control Plane, die Sourc
 
 ## Letztes Work Package
 
-`CO-WP-017 – API Governance, Versioning, Errors and Idempotency` (docs-only / API architecture and security foundation). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-016 – completed-go-with-notes` (Commit 69b3334).
+`CO-WP-018 – Event, Audit Correlation and Evidence Model` (docs-only / event, audit, evidence and security-governance foundation). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-017 – completed-go-with-notes` (Commit 7170c84).
+
+## Event, Audit Correlation and Evidence Model (CO-WP-018)
+
+- Drei neue Dokumente: Event and Audit Correlation Model, Evidence Reference/Validation/Lineage Model, Audit Integrity/Retention/Disclosure Policy.
+- Konsolidiert Audit-/Evidence-Begriffe ohne Parallelmodell. `event ≠ command ≠ notification ≠ audit event ≠ evidence`; `event identity ≠ correlation/request/operation/attempt`. 20 Event-Klassen. Vier Zeitbegriffe getrennt; `timestamp/sequence ≠ globale Ordnung`; `correlation ≠ causation`; `recorded ≠ validated/complete`; `missing event ≠ Nichtausführung`.
+- Sechs Evidence-Dimensionen getrennt (`available ≠ valid ≠ sufficient`); Sufficiency decision-/scope-/time-bound; `handling history ≠ legal admissibility`. `append-only-governed ≠ technisch unveränderlich`; `audit administrator ≠ unrestricted disclosure`; `read ≠ export permission`. Offline mit Provenance/Integrität/Target-Binding/Governance; Failure sichtbar; `closed ≠ complete/validated/sufficient/compliance`.
+- Decision Index +17 (DEC-S-220…236), Risk Register +10 (RISK-250…259, gesamt 259). Keine Event-Bus-/Logging-/SIEM-/Storage-/Schema-/Hash-/Signatur-/WORM-/Redaction-Technologie; keine ADR; API-/Integration-/Data-/Identity-/Authorization-/State-/Provenance-/Capability-/Threat-Dateien + Lessons-Learned + NDF-Kandidaten unverändert; keine NDF-Rückführung.
 
 ## API Governance, Versioning, Errors and Idempotency (CO-WP-017)
 
@@ -195,7 +202,7 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 
 ## Nächstes Work Package
 
-`CO-WP-018 – Event, Audit Correlation and Evidence Model` (docs-only; planned-next; erst nach Nova Review von CO-WP-017 und Human-Maintainer-Commit). Die 004er-Erweiterungsserie (004A…004E), CO-WP-005…016, der Milestone Lessons Review (005…012) und CO-WP-017 sind bearbeitet; CO-WP-017 ist `implemented-awaiting-nova-review`. CO-WP-014/015/016 wurden gepusht (Branch war bei Preflight auf origin/main-Höhe); CO-WP-017 noch nicht committet/gepusht. Milestone-Bündelentscheidung (Lessons/NDF-Kandidaten 008…010) liegt bei Nova/HM. External: NDF-Release-Zuordnung für die drei Adoption-Commits ausstehend.
+`CO-WP-019 – Telemetry and Normalization Schema` (docs-only; planned-next; erst nach Nova Review von CO-WP-018 und Human-Maintainer-Commit). Die 004er-Erweiterungsserie (004A…004E), CO-WP-005…017, der Milestone Lessons Review (005…012) und CO-WP-018 sind bearbeitet; CO-WP-018 ist `implemented-awaiting-nova-review`. CO-WP-014/015/016 wurden gepusht; CO-WP-017 committet aber noch nicht gepusht (Branch ahead 1 bei Preflight); CO-WP-018 noch nicht committet. Push von CO-WP-017/018 nach HM-Commit von CO-WP-018 vorgesehen. Milestone-Bündelentscheidung (Lessons/NDF-Kandidaten 008…010) liegt bei Nova/HM. External: NDF-Release-Zuordnung für die drei Adoption-Commits ausstehend.
 
 ## Aktuelle Blocker
 

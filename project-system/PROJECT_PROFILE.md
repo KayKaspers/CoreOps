@@ -374,7 +374,16 @@ Folgende Themen benötigen vor jeder verbindlichen technischen Festlegung einen 
 - **Error/Idempotency:** [API_ERROR_IDEMPOTENCY_AND_REPLAY_POLICY.md](../docs/security/API_ERROR_IDEMPOTENCY_AND_REPLAY_POLICY.md) — Error Classes/Disclosure, Retry Classification, Idempotency Context, Duplicate/Replay, Unknown Outcome, Fail-Closed.
 - **Governance-Fortschreibung:** Decision Index +16 (DEC-S-204…219), Risk Register +10 (RISK-240…249, gesamt 249).
 - **Grenzen:** API availability ≠ authorization; request acceptance ≠ execution; successful response ≠ verified; error response ≠ keine Nebenwirkung; API-Version ≠ Produkt-/Schema-Version; request-/response-/error-/behavioural-compatibility getrennt; unknown ≠ compatible; idempotency context ≠ authorization; unknown outcome blockiert Retry; duplicate/replay erhält Historie; bulk erhält Per-Target-Autorität; pagination ≠ Snapshot/aktuelle Authorization; Read-only ohne stille Write-Eskalation; keine Transport-/API-Style-/Schema-/Statuscode-/Idempotency-/Replay-Technologie; keine ADR; Invarianten = Designanforderungen.
-- **Status:** Foundation-API-Governance etabliert; nächstes WP `CO-WP-018`; Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung. Nova Review pending.
+- **Status:** Foundation-API-Governance etabliert; `completed-go-with-notes` (Commit 7170c84).
+
+## CO-WP-018 Konsolidierung (Event, Audit Correlation and Evidence Model)
+
+- **Event/Correlation:** [EVENT_AND_AUDIT_CORRELATION_MODEL.md](../docs/architecture/EVENT_AND_AUDIT_CORRELATION_MODEL.md) — 20 Event-Klassen, Event Identity, Producers/Sources, vier Zeitbegriffe, Clock Uncertainty, Correlation/Causation, Operation/Attempt-Linkage, Ordering/Sequence, Duplicate/Replay, Audit Events/Lifecycle, Gaps/Completeness.
+- **Evidence:** [EVIDENCE_REFERENCE_VALIDATION_AND_LINEAGE_MODEL.md](../docs/architecture/EVIDENCE_REFERENCE_VALIDATION_AND_LINEAGE_MODEL.md) — sechs Evidence-Dimensionen, References/Sets, Availability/Freshness/Integrity/Provenance/Validation/Sufficiency, Conflicts/Supersession, Handling History (keine rechtliche Beweiskraft).
+- **Audit-Security:** [AUDIT_INTEGRITY_RETENTION_AND_DISCLOSURE_POLICY.md](../docs/security/AUDIT_INTEGRITY_RETENTION_AND_DISCLOSURE_POLICY.md) — Authority, Integrity, Completeness/Gaps, Retention/Archival/Purge, Disclosure/Export, Workspace-Isolation, Privacy, Offline, Failure/Unknown, Fail-Closed.
+- **Governance-Fortschreibung:** Decision Index +17 (DEC-S-220…236), Risk Register +10 (RISK-250…259, gesamt 259).
+- **Grenzen:** event ≠ command ≠ notification ≠ audit event ≠ evidence; event identity ≠ correlation/request/operation/attempt; occurrence/observation/recording/ingestion getrennt; timestamp/sequence ≠ globale Ordnung; correlation ≠ causation; recorded ≠ validated/complete; missing event ≠ Nichtausführung; evidence capability/availability/freshness/integrity/validation/sufficiency getrennt; sufficiency decision-/scope-/time-bound; audit administrator ≠ unrestricted disclosure; append-only-governed ≠ technisch unveränderlich; closed ≠ complete/validated/sufficient/compliance; keine Event-Bus-/Logging-/SIEM-/Hash-/WORM-Technologie; keine ADR; Invarianten = Designanforderungen; keine rechtliche Beweiskraft.
+- **Status:** Foundation-Event-/Audit-/Evidence-Governance etabliert; nächstes WP `CO-WP-019`; Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung. Nova Review pending.
 
 ## Notes
 

@@ -198,8 +198,8 @@ Drei neue Dokumente: Data Ownership and Persistence Model (Ownership-Dimensionen
 
 ## API Governance, Versioning, Errors and Idempotency
 
-Current implemented WP:
-`CO-WP-017 – API Governance, Versioning, Errors and Idempotency` – pending Nova review.
+WP Status:
+`CO-WP-017 – API Governance, Versioning, Errors and Idempotency` – `completed-go-with-notes` (Commit 7170c84).
 
 Current API foundation:
 API governance, independent version dimensions, compatibility, error semantics, idempotency and replay boundaries defined. API identity ≠ route/URL/transport/product version; API availability ≠ authorization; request acceptance ≠ execution; successful response ≠ verified outcome; error response ≠ proof of no side effect; idempotency context ≠ execution authorization; unknown outcome blocks automatic retry and requires reconciliation; bulk preserves per-target authority and partial results; pagination/continuation imply no snapshot/current authorization; read-only API gains no silent write authority.
@@ -215,7 +215,26 @@ not performed
 
 Drei neue Dokumente: API Governance and Operation Model (API Classes/Identity/Lifecycle, Producers/Consumers, Operation Classes, Side-Effect-Klassifikation, Request/Response, Acceptance/Result, Bulk, Pagination, Async, Policy/Authorization-Bindung, Workspace-Isolation), API Versioning, Compatibility and Deprecation Model (zwölf Versionsdimensionen, Compatibility-/Change-Klassen, Request/Response/Error/Behavioural Compatibility, Deprecation/Retirement) und API Error, Idempotency and Replay Policy (Error Classes/Disclosure, Retry Classification, Idempotency Context, Duplicate/Replay, Unknown Outcome, Fail-Closed). Decision Index +16 (DEC-S-204…219), Risk Register +10 (RISK-240…249, gesamt 249). Keine Transport-/API-Style-/Statuscode-/Schema-/Gateway-/Idempotency-/Replay-/Rate-Limit-Technologie ausgewählt; keine ADR; Integration-/Data-/Identity-/Authorization-/State-/Provenance-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.
 
-Next planned WP nach Nova Review und Human-Maintainer-Commit: `CO-WP-018 – Event, Audit Correlation and Evidence Model`.
+## Event, Audit Correlation and Evidence Model
+
+Current implemented WP:
+`CO-WP-018 – Event, Audit Correlation and Evidence Model` – pending Nova review.
+
+Current audit and evidence foundation:
+Event identity, correlation, causation, audit completeness, evidence references, validation, sufficiency, retention, disclosure and offline continuity defined. Event ≠ command ≠ notification ≠ audit event ≠ evidence; event identity ≠ correlation/request/operation/attempt; occurrence/observation/recording/ingestion time separate; timestamp/sequence ≠ authoritative global ordering; correlation ≠ causation; recorded ≠ validated/complete; missing event ≠ no action; evidence capability/availability/freshness/integrity/validation/sufficiency separate; sufficiency decision-/scope-/time-bound; audit administrator ≠ unrestricted disclosure; closed ≠ complete/validated/sufficient/compliance.
+
+Event transport and storage:
+not selected
+
+Audit implementation:
+not started
+
+Evidence validation:
+not performed
+
+Drei neue Dokumente: Event and Audit Correlation Model (Event Classes/Identity, Producers/Sources, vier Zeitbegriffe, Clock Uncertainty, Correlation/Causation, Operation/Attempt-Linkage, Ordering/Sequence, Duplicate/Replay, Audit Events/Lifecycle, Gaps/Completeness), Evidence Reference, Validation and Lineage Model (Evidence-Dimensionen, References/Sets, Availability/Freshness/Integrity/Provenance/Validation/Sufficiency, Conflicts/Supersession) und Audit Integrity, Retention and Disclosure Policy (Authority, Integrity, Completeness/Gaps, Retention/Archival/Purge, Disclosure/Export, Workspace-Isolation, Privacy, Offline, Failure/Unknown, Fail-Closed). Decision Index +17 (DEC-S-220…236), Risk Register +10 (RISK-250…259, gesamt 259). Keine Event-Bus-/Logging-/SIEM-/Storage-/Schema-/Ordering-/Hash-/Signatur-/WORM-/Redaction-Technologie ausgewählt; keine ADR; API-/Integration-/Data-/Identity-/Authorization-/State-/Provenance-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.
+
+Next planned WP nach Nova Review und Human-Maintainer-Commit: `CO-WP-019 – Telemetry and Normalization Schema`.
 
 ## Current Goal
 

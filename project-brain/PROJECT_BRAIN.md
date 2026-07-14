@@ -297,14 +297,24 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 - Idempotency Context gebunden, verlängert/ersetzt keine Authorization; retry ≠ replay; `unknown outcome → kein Auto-Retry`, Reconciliation erforderlich; Duplicate/Replay erhält Historie und autorisiert nicht neu. Bulk erhält Per-Target-Autorität, Partial sichtbar; Pagination ≠ Snapshot/aktuelle Authorization/authoritative count. Consumer-safe Error-Disclosure (keine Secrets/Ressourcenexistenz); Workspace-Isolation explizit; API erzeugt keine parallele Autorisierungsautorität (CO-WP-013 autoritativ).
 - Decision Index +16 (DEC-S-204…219), Risk Register +10 (RISK-240…249, gesamt 249).
 - **Keine Transport-/API-Style-/Statuscode-/Schema-/Gateway-/Idempotency-/Replay-/Rate-Limit-Technologie ausgewählt; keine ADR; Integration-/Data-/Identity-/Authorization-/State-/Provenance-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.**
+- Status: `completed-go-with-notes` (Commit 7170c84).
+
+## Event, Audit Correlation and Evidence Model (CO-WP-018)
+
+- Drei neue Dokumente: [EVENT_AND_AUDIT_CORRELATION_MODEL.md](../docs/architecture/EVENT_AND_AUDIT_CORRELATION_MODEL.md), [EVIDENCE_REFERENCE_VALIDATION_AND_LINEAGE_MODEL.md](../docs/architecture/EVIDENCE_REFERENCE_VALIDATION_AND_LINEAGE_MODEL.md), [AUDIT_INTEGRITY_RETENTION_AND_DISCLOSURE_POLICY.md](../docs/security/AUDIT_INTEGRITY_RETENTION_AND_DISCLOSURE_POLICY.md).
+- Konsolidiert bestehende Audit-/Evidence-Begriffe ohne Parallelmodell. `event ≠ command ≠ notification ≠ audit event ≠ evidence`; `event identity ≠ correlation/request/operation/attempt`; `event producer ≠ authoritative source`. 20 Event-Klassen. Vier Zeitbegriffe getrennt (`occurrence/observation/recording/ingestion`); `timestamp/sequence ≠ authoritative global ordering`; `correlation ≠ causation`.
+- Audit Events: `recorded ≠ validated`; `validated ≠ complete`; `correlated ≠ causally proven`; `purged ≠ historical event never existed`. Mehrere Attempts nicht zu einem Resultat verschmolzen. Duplicate/Replay/legitime Wiederholung getrennt (Historie erhalten). Audit Gaps sichtbar: `no event present ≠ action did not occur`; `missing evidence ≠ evidence of absence`; Completeness scope-bound/`unknown` möglich.
+- Sechs Evidence-Dimensionen getrennt (capability/availability/freshness/integrity/validation/sufficiency); `available ≠ valid ≠ sufficient`; `stated integrity ≠ verified`; Sufficiency decision-/scope-/time-bound; `handling history ≠ legal admissibility` (keine rechtliche Beweiskraft). Audit Integrity: `append-only-governed ≠ technisch unveränderlich`; `audit administrator ≠ unrestricted disclosure/editor`; `read permission ≠ export permission`. Retention/Purge (keine Fristen); Offline mit Provenance/Integrität/Target-Binding/expliziter Governance; Failure sichtbar (`audit failure ≠ target action failed`); `closed ≠ complete/validated/sufficient/compliance`.
+- Decision Index +17 (DEC-S-220…236), Risk Register +10 (RISK-250…259, gesamt 259).
+- **Keine Event-Bus-/Logging-/SIEM-/Storage-/Schema-/Ordering-/Hash-/Signatur-/WORM-/Redaction-Technologie ausgewählt; keine ADR; API-/Integration-/Data-/Identity-/Authorization-/State-/Provenance-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.**
 
 ## Letztes Work Package
 
-`CO-WP-017 – API Governance, Versioning, Errors and Idempotency` (docs-only / API architecture and security foundation). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-016 – completed-go-with-notes` (Commit 69b3334).
+`CO-WP-018 – Event, Audit Correlation and Evidence Model` (docs-only / event, audit, evidence and security-governance foundation). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-017 – completed-go-with-notes` (Commit 7170c84).
 
 ## Nächstes Work Package
 
-`CO-WP-018 – Event, Audit Correlation and Evidence Model` (docs-only; planned-next; erst nach Nova Review von CO-WP-017 und Human-Maintainer-Commit).
+`CO-WP-019 – Telemetry and Normalization Schema` (docs-only; planned-next; erst nach Nova Review von CO-WP-018 und Human-Maintainer-Commit).
 
 ## Human-Maintainer-Gates
 

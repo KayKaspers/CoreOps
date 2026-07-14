@@ -410,6 +410,30 @@ Alle 30 Concept-ADR-Kandidaten (§51) plus zwei Foundation-Klärungen (Delivery 
 | DEC-S-218 | Deprecated/retired API IDs | governance-direction | accepted | binding-governance | CO-WP-017 | Nova | Nicht still wiederverwendbar |
 | DEC-S-219 | Transport/API-style/schema/status-code/pagination/idempotency/replay technology | architecture-context | deferred | non-binding | CO-WP-017 | Nova | Deferred |
 
+## Event, Audit and Evidence Decisions (CO-WP-018)
+
+> Registriert über [EVENT_AND_AUDIT_CORRELATION_MODEL.md](../docs/architecture/EVENT_AND_AUDIT_CORRELATION_MODEL.md), [EVIDENCE_REFERENCE_VALIDATION_AND_LINEAGE_MODEL.md](../docs/architecture/EVIDENCE_REFERENCE_VALIDATION_AND_LINEAGE_MODEL.md) und [AUDIT_INTEGRITY_RETENTION_AND_DISCLOSURE_POLICY.md](../docs/security/AUDIT_INTEGRITY_RETENTION_AND_DISCLOSURE_POLICY.md). **Getrennte Dimensionen** (Decision Class · Lifecycle Status · Binding Level); keine kombinierten Pseudostatuswerte; keine Event-Bus-/Logging-/SIEM-/Storage-/Schema-/Ordering-/Hash-/Signatur-/WORM-/Redaction-Technologie ausgewählt; keine ADR.
+
+| Decision ID | Topic | Decision Class | Lifecycle Status | Binding Level | Source | Owner | Notes |
+| ----------- | ----- | -------------- | ---------------- | ------------- | ------ | ----- | ----- |
+| DEC-S-220 | Event identity | governance-direction | accepted | binding-governance | CO-WP-018 | Nova | Getrennt von Correlation/Request/Operation/Attempt |
+| DEC-S-221 | Event concept separation | architecture-context | accepted | binding-governance | CO-WP-018 | Nova | Event/Audit Event/Notification/Command/Evidence getrennt |
+| DEC-S-222 | Event time dimensions | architecture-context | accepted | binding-governance | CO-WP-018 | Nova | Occurrence/Observation/Recording/Ingestion getrennt |
+| DEC-S-223 | Timestamp ordering | security-context | accepted | binding-governance | CO-WP-018 | Nova | Liefert **keine** autoritative globale Ordnung |
+| DEC-S-224 | Correlation vs causation | security-context | accepted | binding-governance | CO-WP-018 | Nova | Correlation beweist **keine** Causation |
+| DEC-S-225 | Event recorded semantics | governance-direction | accepted | binding-governance | CO-WP-018 | Nova | Recorded ≠ validated/complete |
+| DEC-S-226 | Audit record semantics | security-context | accepted | binding-governance | CO-WP-018 | Nova | ≠ validated evidence; nicht inhärent wahr |
+| DEC-S-227 | Missing event semantics | security-context | accepted | binding-governance | CO-WP-018 | Nova | Beweist **keine** Nichtausführung |
+| DEC-S-228 | Evidence dimensions | security-context | accepted | binding-governance | CO-WP-018 | Nova | Capability/Availability/Freshness/Integrity/Validation/Sufficiency getrennt |
+| DEC-S-229 | Evidence sufficiency | security-context | accepted | binding-governance | CO-WP-018 | Nova | Decision-/Scope-/Time-bound |
+| DEC-S-230 | Audit completeness | governance-direction | accepted | binding-governance | CO-WP-018 | Nova | Scope-bound; kann `unknown` bleiben |
+| DEC-S-231 | Duplicate/replay handling | security-context | accepted | binding-governance | CO-WP-018 | Nova | Erhält Event-/Attempt-Historie |
+| DEC-S-232 | Audit administrator authority | security-context | accepted | binding-governance | CO-WP-018 | HM | Keine uneingeschränkte Disclosure Authority |
+| DEC-S-233 | Audit/evidence export | security-context | accepted | binding-governance | CO-WP-018 | Nova | Explizite Scope; Provenance erhalten |
+| DEC-S-234 | Offline audit/evidence import | security-context | accepted | binding-governance | CO-WP-018 | Nova | Provenance, Integrität, Target-Binding, explizite Governance |
+| DEC-S-235 | Audit closure | governance-direction | accepted | binding-governance | CO-WP-018 | Nova | ≠ Completeness/Validation/Sufficiency/Compliance |
+| DEC-S-236 | Event-bus/logging/SIEM/storage/schema/ordering/hash/signature/WORM/redaction technology | architecture-context | deferred | non-binding | CO-WP-018 | Nova | Deferred |
+
 ## Deferred Decisions
 
 | Decision ID | Topic | Status | Class | Source | Owner | Target WP | ADR Required |
@@ -476,6 +500,8 @@ Alle 30 Concept-ADR-Kandidaten (§51) plus zwei Foundation-Klärungen (Delivery 
 **CO-WP-011-Registrierungen:** 16 Source-of-Truth-/Field-Provenance-Entscheidungen (DEC-S-106…121), **getrennte Dimensionen**: Source of Truth ≠ System of Record; autoritative Feldownership explizit/modulgebunden; Desired/Observed/Effective/Derived getrennt; Derived/Cached nicht autoritativ per Default; importierte Daten erben keine Autorität; neuester Timestamp gewinnt nicht automatisch; Overrides explizit/feld-/reason-bound mit Provenance-Erhalt; Konflikte bleiben sichtbar; widerrufene Quellen nicht autoritativ; Offline-Reconciliation mit Provenance/Integrität/Authority/Conflict-Review (fail-closed); Field-Provenance durch Transformationen erhalten; Audit-/Evidence-History nicht durch Reconciliation umgeschrieben; Storage/Merge/Sync-Technologie, kryptografische Provenance und universelles Feldschema `deferred`. Keine Technologieauswahl; keine ADR.
 
 **CO-WP-012-Registrierungen:** 15 State-/Drift-/Safe-Remediation-Entscheidungen (DEC-S-122…136), **getrennte Dimensionen**: Desired/Observed/Reported/Effective/Last-Known getrennt; Effective State bleibt indeterminate/conflicted bei unklarer Autorität; keine Beobachtung ≠ keine Drift; kein erkannter Drift ≠ Compliance; Drift-Erkennung ohne Write Authority; Detection/Recommendation/Plan/Approval/Execution/Verification getrennt; privilegierte Remediation mit expliziter Autorität + Approval; Exceptions explizit/reviewbar; Executed ≠ successful; Successful ≠ verified convergence; Verified convergence ≠ Compliance; Partial Failure explizit; automatische Remediation, Engine-/Retry-/Queue-/Scheduling-Technologie `deferred`. Keine Technologieauswahl; keine ADR.
+
+**CO-WP-018-Registrierungen:** 17 Event-/Audit-/Evidence-Entscheidungen (DEC-S-220…236), **getrennte Dimensionen**: Event Identity getrennt von Correlation/Request/Operation/Attempt; Event/Audit Event/Notification/Command/Evidence getrennte Konzepte; vier Zeitdimensionen getrennt; Timestamp/Sequence ohne autoritative globale Ordnung; Correlation ≠ Causation; Recorded ≠ validated/complete; Audit Record ≠ validated evidence; Missing Event ≠ Nichtausführung; sechs Evidence-Dimensionen getrennt; Sufficiency decision-/scope-/time-bound; Audit Completeness scope-bound (kann unknown bleiben); Duplicate/Replay erhält Event-/Attempt-Historie; Audit Administrator ohne uneingeschränkte Disclosure Authority; Export mit expliziter Scope + Provenance-Erhalt; Offline-Import mit Provenance/Integrität/Target-Binding/expliziter Governance; Audit Closure ≠ Completeness/Validation/Sufficiency/Compliance; Event-Bus-/Logging-/SIEM-/Storage-/Schema-/Ordering-/Hash-/Signatur-/WORM-/Redaction-Technologie `deferred`. Keine Technologieauswahl; keine ADR. `DEC-S-01…37` bleiben unverändert.
 
 **CO-WP-017-Registrierungen:** 16 API-Governance-Entscheidungen (DEC-S-204…219), **getrennte Dimensionen**: API Identity stabil (≠ route/URL/transport); zwölf Versionsdimensionen getrennt; API Availability ≠ Authorization; Request Acceptance ≠ Execution; Successful Response ≠ verifiziertes Ergebnis; Error Response ≠ Abwesenheit von Nebenwirkungen; Read-only-API erhält nicht still Write Authority; Request/Response/Error/Behavioural-Compatibility getrennt; Unknown Compatibility ≠ Compatibility; Idempotency Context verlängert/ersetzt keine Authorization; Unknown Outcome blockiert automatischen Retry und erfordert Reconciliation; Duplicate/Replay erhält Request-/Attempt-/Result-Historie; Bulk erhält Per-Target-Autorität und Partial Results; Pagination/Continuation impliziert kein Snapshot/keine aktuelle Authorization; deprecated/retired API-IDs nicht still wiederverwendbar; Transport-/API-Style-/Schema-/Statuscode-/Pagination-/Idempotency-/Replay-Technologie `deferred`. Keine Technologieauswahl; keine ADR. `DEC-S-01…37` bleiben unverändert.
 
