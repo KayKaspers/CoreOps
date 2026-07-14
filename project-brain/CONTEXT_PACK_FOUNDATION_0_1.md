@@ -31,6 +31,13 @@ Universelle, self-hosted und offline-fähige Operations Control Plane, die Sourc
 - Desired/Observed/Reported/Effective/Last-Known getrennt; Effective indeterminate/conflicted bei unklarer Autorität; keine Beobachtung ≠ keine Drift; kein Drift ≠ Compliance. Detection/Recommendation/Plan/Approval/Execution/Verification getrennt; Executed ≠ successful ≠ verified ≠ compliant; Rollback braucht Verifikation; Auto-Remediation deferred; fail-closed.
 - Decision Index +15 (DEC-S-122…136), Risk Register +17 (RISK-173…189). Keine Engine-/Scheduler-/Queue-/Auto-Remediation-Auswahl; keine ADR; SoT-/Identity-/Modul-/Capability-/Threat-Dateien + Lessons-Learned unverändert; keine NDF-Rückführung. Milestone-Lessons-Review-Eignung `yes` (CO-WP-005…012).
 
+## Milestone Lessons Review (CO-WP-005…012)
+
+- Gebündelter docs-only Review abgeschlossen; Nova Review pending. Dokument: `project-brain/MILESTONE_REVIEW_CO_WP_005_TO_012.md`. Ergebnis: **GO WITH NOTES FOR CO-WP-013**.
+- Sechs konsolidierte Lessons LL-017…022 (gesamt 22); drei NDF-Feedback-Kandidaten NDF-FC-COREOPS-008…010 (`candidate-pending-nova-review`).
+- Read-only-Befunde (Follow-up, nicht umgesetzt): Risk Register 189 → Konsolidierung ~CO-WP-029/030; Decision Index Alt-Kombistatus (DEC-S-01…37) vs. getrennte Dimensionen (DEC-S-38…136); Capability-Count „74→94" in Alt-Abschnitten.
+- **Risk Register und Decision Index unverändert (read-only); kein NDF-Transfer; CO-WP-013 nicht begonnen.**
+
 ## Source of Truth and Field Provenance (CO-WP-011)
 
 - Drei neue Dokumente: Source of Truth and State Authority Model, Field Provenance and Data Lineage Standard, Offline Data Reconciliation and Conflict Policy.

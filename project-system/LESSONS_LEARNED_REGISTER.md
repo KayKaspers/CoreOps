@@ -358,13 +358,146 @@ Owner-Rollen: `Human Maintainer` · `Nova` · `Implementation Agent` · `Securit
 - **Follow-up Work Package:** NDF-seitige Governance-Überprüfung bei zukünftigen Intake Reviews
 - **Notes:** Neue Lesson aus Blockierungserlebnis in `CO-WP-004B2` selbst; keine automatische NDF-Kandidatenförderung in diesem Work Package (nur projektlokale Dokumentation der Erkenntnis).
 
+## LL-017
+
+- **Source Project:** CoreOps
+- **Source Work Package:** CO-WP-005…CO-WP-012 (Milestone Review)
+- **Date or Phase:** Foundation 0.1
+- **Title:** Getrennte Entscheidungsdimensionen verhindern überladene Pseudo-Statuswerte
+- **Context:** Ab CO-WP-005 wurden Entscheidungen durchgängig über drei getrennte Dimensionen (Decision Class · Lifecycle Status · Binding Level) statt über kombinierte Werte wie `binding-governance-direction` geführt.
+- **Observation:** Die getrennten Dimensionen (DEC-S-38…136) blieben über acht Work Packages konsistent und eindeutig auswertbar, während die früheren kombinierten Werte (DEC-S-01…37) heute eine zweite, abweichende Konvention bilden.
+- **Evidence:** Decision Index DEC-S-38…136 (getrennt) vs. DEC-S-01…37 (kombiniert); Milestone Review §12.
+- **Impact:** Eindeutige Filterbarkeit und geringere Fehldeutung von Verbindlichkeit; zugleich Bedarf einer späteren Harmonisierung der Alt-Einträge.
+- **Contributing Factor or Root Cause:** Kombinierte Statuswerte vermischen orthogonale Eigenschaften (Art, Reifegrad, Verbindlichkeit).
+- **Recommended Project Change:** Getrennte Dimensionen als Standard beibehalten; Alt-Einträge in einer späteren Konsistenz-WP harmonisieren.
+- **Classification:** LL-PROCESS
+- **Secondary Classifications:** LL-DOCUMENTATION
+- **Reusable Beyond CoreOps:** yes
+- **Security Relevance:** partly (Verbindlichkeit von Sicherheitsentscheidungen muss eindeutig lesbar sein)
+- **NDF Candidate ID:** NDF-FC-COREOPS-008
+- **Owner Role:** Project Governance
+- **Status:** observed
+- **Follow-up Work Package:** Nova Review dieses Milestone Reviews; Konsistenz-WP (~CO-WP-029)
+- **Notes:** Konsolidiert im Milestone Review CO-WP-005…012.
+
+## LL-018
+
+- **Source Project:** CoreOps
+- **Source Work Package:** CO-WP-007…CO-WP-012 (Milestone Review)
+- **Date or Phase:** Foundation 0.1
+- **Title:** Ein wiederverwendetes Vokabular an Sicherheitsinvarianten hält einen großen Dokumentensatz kohärent
+- **Context:** Die 17 Threat-Model-Invarianten aus CO-WP-007 (§14) wurden als Designanforderungen wortgleich in Modul-, Identity-, Daten- und State-Dokumenten wiederverwendet.
+- **Observation:** Die durchgängige „≠"-Kette (read≠write, unknown≠healthy, stale≠current, queued≠executed, executed≠successful, successful≠compliant, evidence-capability≠available≠satisfied) verhinderte konkurrierende Formulierungen über acht Work Packages.
+- **Evidence:** CO-WP-007 §14; Wiederverwendung in CO-WP-008/009/010/011/012; Milestone Review §6, §10.
+- **Impact:** Hohe konzeptionelle Konsistenz ohne Paralleldefinitionen; einfache Querverweisbarkeit.
+- **Contributing Factor or Root Cause:** Ein einmal zentral definiertes, benanntes Invariantenset reduziert Neuformulierungsdrift.
+- **Recommended Project Change:** Zentrales Invariantenvokabular pflegen und in Folgedokumenten referenzieren statt neu formulieren.
+- **Classification:** LL-ARCHITECTURE
+- **Secondary Classifications:** LL-SECURITY, LL-DOCUMENTATION
+- **Reusable Beyond CoreOps:** yes
+- **Security Relevance:** yes
+- **NDF Candidate ID:** NDF-FC-COREOPS-009
+- **Owner Role:** Project Security / Governance
+- **Status:** observed
+- **Follow-up Work Package:** Nova Review dieses Milestone Reviews
+- **Notes:** Konsolidiert im Milestone Review CO-WP-005…012.
+
+## LL-019
+
+- **Source Project:** CoreOps
+- **Source Work Package:** CO-WP-007, CO-WP-006…CO-WP-012 (Milestone Review)
+- **Date or Phase:** Foundation 0.1
+- **Title:** Trennung von Threat-Scenario-Register und Projekt-Risk-Register vermeidet Per-Threat-Duplikate, erfordert aber periodische Konsolidierung
+- **Context:** Individuelle Bedrohungen werden im Threat Scenario Register (THR-001…040) geführt, während das Risk Register Governance-Risiken führt; einzelne Threats werden nicht als eigene Governance-Risiken dupliziert.
+- **Observation:** Die Trennung verhinderte Duplikate, doch das Risk Register wuchs über die acht WPs auf 189 Einträge; mehrere späte Einträge formulieren nur eine bestehende Invariante um.
+- **Evidence:** RISK-94…103 (Threat-Model-Governance-Hinweis); Risk-Register-Wachstum 66→189; Milestone Review §11.
+- **Impact:** Klare Zuständigkeit je Registertyp, aber ansteigende Wartungslast des Risk Registers.
+- **Contributing Factor or Root Cause:** Additive Registerpflege ohne Konsolidierungstakt führt zu Größenwachstum.
+- **Recommended Project Change:** Registertrennung beibehalten; einen Konsolidierungs-/Indizierungslauf vor dem Foundation Readiness Review einplanen.
+- **Classification:** LL-PROCESS
+- **Secondary Classifications:** LL-SECURITY, LL-DOCUMENTATION
+- **Reusable Beyond CoreOps:** yes
+- **Security Relevance:** partly
+- **NDF Candidate ID:** NDF-FC-COREOPS-010
+- **Owner Role:** Project Governance
+- **Status:** observed
+- **Follow-up Work Package:** Risk-Register-Konsolidierung (~CO-WP-029/030)
+- **Notes:** Konsolidiert im Milestone Review CO-WP-005…012.
+
+## LL-020
+
+- **Source Project:** CoreOps
+- **Source Work Package:** CO-WP-006…CO-WP-012 (Milestone Review)
+- **Date or Phase:** Foundation 0.1
+- **Title:** Das Muster „Modell + Standard/Register + Policy" mit additiven Registerupdates skaliert für Foundation-Governance
+- **Context:** Jedes der WPs 006…012 lieferte zwei bis drei Dokumente (ein Modell/Kontext, ein Standard/Register, eine Policy) plus additive Updates an Decision Index, Risk Register, Queue und Context Pack.
+- **Observation:** Dieses gleichförmige Ausgabemuster hielt den Scope je WP eng und die Querverweise stabil; die Allowed/Forbidden-File-Grenze blieb über acht WPs sauber.
+- **Evidence:** Dokumentanzahl je WP; stabile IDs (CAP/MOD/THR/DEC-S/RISK); Milestone Review §5, §14.
+- **Impact:** Vorhersehbare, review-freundliche Struktur; geringe Scope-Drift.
+- **Contributing Factor or Root Cause:** Ein wiederholbares Dokument-Triplett-Muster reduziert Strukturentscheidungen je WP.
+- **Recommended Project Change:** Muster für weitere Foundation-Governance-WPs beibehalten.
+- **Classification:** LL-PROCESS
+- **Secondary Classifications:** LL-DOCUMENTATION
+- **Reusable Beyond CoreOps:** yes
+- **Security Relevance:** no
+- **NDF Candidate ID:** —
+- **Owner Role:** Project Governance
+- **Status:** observed
+- **Follow-up Work Package:** —
+- **Notes:** Konsolidiert im Milestone Review CO-WP-005…012; nicht als eigener NDF-Kandidat gefördert (Workflow-Muster, teils bereits durch bestehende NDF-Prozessführung abgedeckt).
+
+## LL-021
+
+- **Source Project:** CoreOps
+- **Source Work Package:** CO-WP-005…CO-WP-012 (Milestone Review)
+- **Date or Phase:** Foundation 0.1
+- **Title:** Milestone-Lessons-Konsolidierung nach fünf bis acht Work Packages ist die richtige Taktung
+- **Context:** Jedes WP 005…012 hat Routine-Lessons bewusst zurückgestellt; die Konsolidierung erfolgte gebündelt in diesem Milestone Review.
+- **Observation:** Die Zurückstellung hielt einzelne WPs schlank und vermied verfrühte NDF-Churn; nach acht WPs lagen genügend Muster für eine sinnvolle Konsolidierung vor.
+- **Evidence:** „Lessons-Learned Register: unchanged" in den Rückmeldungen von CO-WP-005…012; dieser gebündelte Review.
+- **Impact:** Geringerer Overhead je WP; höhere Signalqualität der konsolidierten Lessons.
+- **Contributing Factor or Root Cause:** Lessons gewinnen an Aussagekraft, wenn sie über mehrere WPs gemustert werden.
+- **Recommended Project Change:** Milestone-Lessons-Review-Takt (5–8 WPs) als Standard beibehalten.
+- **Classification:** LL-PROCESS
+- **Secondary Classifications:** —
+- **Reusable Beyond CoreOps:** yes
+- **Security Relevance:** no
+- **NDF Candidate ID:** — (teilweise durch bestehende NDF-Feedback-Bündelungsregel abgedeckt)
+- **Owner Role:** Project Governance
+- **Status:** observed
+- **Follow-up Work Package:** —
+- **Notes:** Konsolidiert im Milestone Review CO-WP-005…012; nicht als eigener NDF-Kandidat gefördert wegen Überschneidung mit der bereits adoptierten Bündelungsregel.
+
+## LL-022
+
+- **Source Project:** CoreOps
+- **Source Work Package:** CO-WP-005…CO-WP-012 (Milestone Review)
+- **Date or Phase:** Foundation 0.1
+- **Title:** Governance-Register nähern sich einer Wartbarkeitsschwelle und brauchen einen Konsolidierungsschritt vor dem Readiness Review
+- **Context:** Risk Register (189 Einträge) und Decision Index (DEC-S bis 136, plus DEC-P/-Alt-Einträge) sind über acht WPs stark gewachsen; zwei Decision-Status-Konventionen koexistieren.
+- **Observation:** Ohne einen Konsolidierungs-/Indizierungsschritt steigt das Risiko von Duplikaten, uneinheitlichem Status (`treatment-planned` pauschal) und veralteten Count-Angaben (z. B. „74" statt 94 Capabilities in Alt-Abschnitten).
+- **Evidence:** Milestone Review §11, §12, §13; RISK-66 (Capability-Count-Korrektur); PROJECT_BRAIN/Context-Alt-Abschnitte.
+- **Impact:** Wartbarkeits- und Konsistenzrisiko vor dem Foundation Readiness Review.
+- **Contributing Factor or Root Cause:** Rein additive Registerpflege ohne periodische Konsolidierung.
+- **Recommended Project Change:** Dedizierten Konsistenz-/Konsolidierungsschritt (~CO-WP-029/030) vor Readiness Review vorsehen; als Follow-up dokumentiert, nicht still umgesetzt.
+- **Classification:** LL-DOCUMENTATION
+- **Secondary Classifications:** LL-PROCESS
+- **Reusable Beyond CoreOps:** partly
+- **Security Relevance:** no
+- **NDF Candidate ID:** —
+- **Owner Role:** Project Governance
+- **Status:** observed
+- **Follow-up Work Package:** Konsistenz-/Konsolidierungs-WP (~CO-WP-029/030)
+- **Notes:** Konsolidiert im Milestone Review CO-WP-005…012; projektlokal, kein NDF-Kandidat.
+
 ## Zusammenfassung
 
-- **Anzahl Lessons:** 16 (LL-001…LL-013 retrospektiv, LL-014…LL-015 aus CO-WP-004B selbst, LL-016 aus CO-WP-004B2)
-- **Verteilung nach Primärklasse:** LL-PROCESS 8 (004,005,006,010,011,013,014,015) · LL-PROMPT 1 (001) · LL-TOOLING 1 (002) · LL-SECURITY 1 (003) · LL-ARCHITECTURE 3 (007,008,012) · LL-DOCUMENTATION 1 (009)
-  > Korrektur (CO-WP-004B1): Der vorherige Eintrag listete fälschlich 9 IDs für LL-PROCESS (inkl. „001"), obwohl „8" als Zahl genannt war. Ursache: LL-001 trägt `LL-PROCESS` nur als **Sekundärklasse**; ihre Primärklasse ist `LL-PROMPT`. Keine Lesson wurde umklassifiziert — nur der Zusammenfassungssatz wurde korrigiert. Verifiziert gegen alle 15 `Classification`-Felder; Summe 8+1+1+1+3+1 = 15.
-- **Verteilung nach Status:** `validated` 14 (LL-001…LL-013, LL-016) · `observed` 2 (LL-014, LL-015)
-- **NDF-relevante Lessons (Reusable Beyond CoreOps: yes):** alle 15
-- **Projektlokal ohne eigenen NDF-Kandidaten:** LL-006, LL-007, LL-009, LL-010, LL-012, LL-014, LL-015 (Muster bereits projektintern umgesetzt bzw. zu spezifisch für einen eigenständigen Kandidaten)
+- **Anzahl Lessons:** 22 (LL-001…LL-013 retrospektiv, LL-014…LL-015 aus CO-WP-004B selbst, LL-016 aus CO-WP-004B2, LL-017…LL-022 aus dem Milestone Review CO-WP-005…012)
+- **Verteilung nach Primärklasse:** LL-PROCESS 13 (004,005,006,010,011,013,014,015,016,017,019,020,021) · LL-PROMPT 1 (001) · LL-TOOLING 1 (002) · LL-SECURITY 1 (003) · LL-ARCHITECTURE 4 (007,008,012,018) · LL-DOCUMENTATION 2 (009,022)
+  > Korrektur (CO-WP-004B1): Der vorherige Eintrag listete fälschlich 9 IDs für LL-PROCESS (inkl. „001"), obwohl „8" als Zahl genannt war. Ursache: LL-001 trägt `LL-PROCESS` nur als **Sekundärklasse**; ihre Primärklasse ist `LL-PROMPT`. Keine Lesson wurde umklassifiziert — nur der Zusammenfassungssatz wurde korrigiert. Fortschreibung (Milestone Review): LL-016 (PROCESS) sowie LL-017…LL-022 ergänzt; Summe 13+1+1+1+4+2 = 22.
+- **Verteilung nach Status:** `validated` 14 (LL-001…LL-013, LL-016) · `observed` 8 (LL-014, LL-015, LL-017…LL-022)
+- **NDF-relevante Lessons (Reusable Beyond CoreOps: yes):** 21 (`yes`); LL-022 = `partly`
+- **NDF-Kandidaten aus dem Milestone Review:** LL-017 → NDF-FC-COREOPS-008 · LL-018 → NDF-FC-COREOPS-009 · LL-019 → NDF-FC-COREOPS-010 (alle `candidate-pending-nova-review`)
+- **Projektlokal ohne eigenen NDF-Kandidaten:** LL-006, LL-007, LL-009, LL-010, LL-012, LL-014, LL-015, LL-020, LL-021, LL-022 (Muster bereits projektintern umgesetzt, durch bestehende NDF-Prozessführung abgedeckt bzw. zu spezifisch für einen eigenständigen Kandidaten)
 
 **Bestätigung:** Keine Lesson wurde ohne lokale Evidenz erfunden. Keine Lesson ist bereits als NDF übernommen markiert.

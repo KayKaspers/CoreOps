@@ -239,6 +239,13 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 - **Keine Engine-/Scheduler-/Queue-/Policy-Engine-/Auto-Remediation-Auswahl; keine ADR; SoT-/Identity-/Modul-/Capability-/Threat-Dateien + Lessons-Learned-Register unverändert; keine NDF-Rückführung.**
 - **Milestone:** CO-WP-005…012 = acht WPs → Milestone-Lessons-Review-Eignung `yes` (Bündelentscheidung Nova/Human Maintainer; nicht automatisch gestartet).
 
+## Milestone Lessons Review (CO-WP-005…012)
+
+- Gebündelter docs-only Review der acht Foundation-WPs abgeschlossen; Nova Review pending. Neues Dokument [MILESTONE_REVIEW_CO_WP_005_TO_012.md](MILESTONE_REVIEW_CO_WP_005_TO_012.md). Ergebnis: **GO WITH NOTES FOR CO-WP-013**.
+- Sechs konsolidierte Lessons LL-017…022 (Lessons gesamt 22); drei NDF-Feedback-Kandidaten NDF-FC-COREOPS-008…010 (`candidate-pending-nova-review`).
+- Read-only-Befunde (nur als Follow-up dokumentiert, nichts umgesetzt): Risk Register 189 Einträge → Konsolidierungslauf ~CO-WP-029/030; Decision Index mischt Alt-Kombistatus (DEC-S-01…37) mit getrennten Dimensionen (DEC-S-38…136); Capability-Count „74→94" in Alt-Abschnitten.
+- **Risk Register und Decision Index unverändert (read-only); kein NDF-Transfer/keine Adoption; CO-WP-013 nicht begonnen.**
+
 ## Letztes Work Package
 
 `CO-WP-012 – Observed, Desired, Effective State and Drift` (docs-only / state-management and safe-remediation foundation). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-011 – GO WITH NOTES`.

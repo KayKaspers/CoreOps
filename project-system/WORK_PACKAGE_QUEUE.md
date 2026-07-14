@@ -50,6 +50,8 @@ Jedes Work Package hat genau **einen** primären Typ.
 | CO-WP-030 | review-only       | Foundation Readiness Review                                    | planned                       |
 | CO-WP-031 | release-prep      | Foundation 0.1 Release Preparation                             | planned                       |
 
+> **Milestone-Hinweis (nicht nummeriert):** `Milestone Lessons Review CO-WP-005 through CO-WP-012` — `implemented-awaiting-nova-review`. Gebündelter docs-only Review der acht Foundation-WPs; Ergebnis **GO WITH NOTES FOR CO-WP-013**. Keine `CO-WP-*`-ID; verändert die Queue-Reihenfolge nicht. `CO-WP-012` bleibt abgeschlossen, `CO-WP-013` bleibt `planned-next` / not started. Follow-ups (Capability-Count-Reconciliation, Risk-Register-Konsolidierung, Decision-Status-Harmonisierung) sind für ~`CO-WP-029`/`CO-WP-030` vorgemerkt.
+
 ## Regeln
 
 - Genau ein primärer Typ pro Work Package.

@@ -247,11 +247,114 @@
 - **Backlink Status:** adoption-recorded
 - **Notes:** Tatsächliche Tailoring-Entscheidung für CoreOps selbst erfolgt in `CO-WP-004D`; dieser Kandidat betrifft nur das generalisierte NDF-Prozessmuster. Teil von Transfer Package 001, Bundle 3. Im NDF Intake Review als Guidance/optionales Muster eingeordnet. Adoptiert in den aktuellen NDF-Entwicklungsstand über NDF-ADOPT-COREOPS-001C (Commit ebf716c). Release-Versionszuordnung noch offen.
 
+## NDF-FC-COREOPS-008
+
+- **Candidate ID:** NDF-FC-COREOPS-008
+- **Source Lesson ID:** LL-017
+- **Source Project:** CoreOps
+- **Source Work Package:** CO-WP-005…CO-WP-012 (Milestone Review)
+- **Category:** Governance / Decision Modeling
+- **Title:** Getrennte Entscheidungsdimensionen (Decision Class · Lifecycle Status · Binding Level)
+- **Generalized Observation:** Entscheidungsregister bleiben eindeutig auswertbar, wenn Art (Class), Reifegrad (Lifecycle Status) und Verbindlichkeit (Binding Level) als getrennte Dimensionen geführt werden statt als kombinierte Pseudo-Statuswerte.
+- **Cross-Project Impact:** Relevant für jedes Projekt mit einem Decision Index / ADR-Vorstufe.
+- **Recommended NDF Change:** Getrennte Entscheidungsdimensionen als optionales NDF-Decision-Index-Muster dokumentieren; kombinierte Statuswerte ausdrücklich als Anti-Muster benennen.
+- **Potential NDF Target Area:** NDF Governance-/Decision-Index-Vorlagen.
+- **Evidence:** `project-system/DECISION_INDEX.md` DEC-S-38…136 (getrennt) vs. DEC-S-01…37 (kombiniert); `project-brain/MILESTONE_REVIEW_CO_WP_005_TO_012.md` §12.
+- **Security Relevance:** partly (Verbindlichkeit von Sicherheitsentscheidungen muss eindeutig lesbar sein).
+- **Privacy Review:** PASS.
+- **Public-Neutrality Review:** PASS.
+- **Existing NDF Rule Check:** verwandt mit NDF-FC-COREOPS-006 (mehrdimensionaler Capability-Status), aber eigenständig (dort Capabilities, hier Entscheidungen); nicht als bereits verbindlich abgedeckt bekannt.
+- **Duplicate Check:** kein bekanntes Duplikat.
+- **Breaking-Change Potential:** gering (additive Vorlage/Guidance).
+- **Suggested Bundle:** potenzielles Bundle „Decision & Status Modeling" (mit NDF-FC-COREOPS-009/010).
+- **Status:** candidate-pending-nova-review
+- **Nova Gate:** pending
+- **Human-Maintainer Gate:** pending
+- **Transfer Readiness:** nicht bewertet; kein Transfer gestartet.
+- **Intake Work Package:** —
+- **Intake Commit:** —
+- **NDF Work Package:** —
+- **Adoption Work Package:** —
+- **NDF Adoption Commit:** —
+- **Adoption Status:** not started
+- **NDF Adoption Version:** —
+- **Backlink Status:** none
+- **Notes:** Evidenz aus acht Work Packages (CO-WP-005…012). Keine CoreOps-Technologieentscheidung enthalten. Erwartet Nova-/Human-Maintainer-Bündelentscheidung; kein Transfer/keine Adoption automatisch gestartet.
+
+## NDF-FC-COREOPS-009
+
+- **Candidate ID:** NDF-FC-COREOPS-009
+- **Source Lesson ID:** LL-018
+- **Source Project:** CoreOps
+- **Source Work Package:** CO-WP-007…CO-WP-012 (Milestone Review)
+- **Category:** Security / Documentation Coherence
+- **Title:** Wiederverwendbares Vokabular an Sicherheitsinvarianten (die „≠"-Grenzkette)
+- **Generalized Observation:** Ein zentral definiertes, benanntes Set an Sicherheitsinvarianten (read≠write, unknown≠healthy, stale≠current, queued≠executed, executed≠successful, successful≠compliant, evidence-capability≠available≠satisfied), das in Folgedokumenten referenziert statt neu formuliert wird, hält einen großen Dokumentensatz kohärent.
+- **Cross-Project Impact:** Relevant für jedes Projekt mit umfangreicher Sicherheits-/Architektur-Dokumentation.
+- **Recommended NDF Change:** Ein referenzierbares Sicherheitsinvarianten-Vokabular als NDF-Security-Baseline-Muster dokumentieren; Folgedokumente referenzieren statt Invarianten neu zu formulieren.
+- **Potential NDF Target Area:** NDF Security-Baseline / Threat-Model-Vorlagen.
+- **Evidence:** `docs/security/COREOPS_FOUNDATION_THREAT_MODEL.md` §14 (17 Invarianten); Wiederverwendung in CO-WP-008/009/010/011/012; `project-brain/MILESTONE_REVIEW_CO_WP_005_TO_012.md` §6, §10.
+- **Security Relevance:** yes.
+- **Privacy Review:** PASS.
+- **Public-Neutrality Review:** PASS.
+- **Existing NDF Rule Check:** kein bekanntes verbindliches NDF-Äquivalent.
+- **Duplicate Check:** kein bekanntes Duplikat.
+- **Breaking-Change Potential:** gering (additive Guidance).
+- **Suggested Bundle:** potenzielles Bundle „Security Coherence" (mit NDF-FC-COREOPS-010).
+- **Status:** candidate-pending-nova-review
+- **Nova Gate:** pending
+- **Human-Maintainer Gate:** pending
+- **Transfer Readiness:** nicht bewertet; kein Transfer gestartet.
+- **Intake Work Package:** —
+- **Intake Commit:** —
+- **NDF Work Package:** —
+- **Adoption Work Package:** —
+- **NDF Adoption Commit:** —
+- **Adoption Status:** not started
+- **NDF Adoption Version:** —
+- **Backlink Status:** none
+- **Notes:** Evidenz aus sechs Work Packages (CO-WP-007…012). Invarianten sind Designanforderungen, keine implementierten Kontrollen. Kein Transfer/keine Adoption automatisch gestartet.
+
+## NDF-FC-COREOPS-010
+
+- **Candidate ID:** NDF-FC-COREOPS-010
+- **Source Lesson ID:** LL-019
+- **Source Project:** CoreOps
+- **Source Work Package:** CO-WP-007, CO-WP-006…CO-WP-012 (Milestone Review)
+- **Category:** Governance / Risk Modeling
+- **Title:** Trennung von Threat-Scenario-Register und Projekt-Risk-Register
+- **Generalized Observation:** Individuelle Bedrohungen in einem Threat-Scenario-Register zu führen und sie nicht als eigene Governance-Risiken zu duplizieren, hält das Risk Register fokussiert; ergänzend ist ein periodischer Konsolidierungstakt nötig, damit das Risk Register nicht unwartbar wächst.
+- **Cross-Project Impact:** Relevant für jedes Projekt, das sowohl Threat Modeling als auch ein Governance-Risk-Register führt.
+- **Recommended NDF Change:** Guidance zur Registertrennung (Threat Scenario ≠ Governance Risk) plus empfohlener Konsolidierungstakt als NDF-Referenzmuster dokumentieren.
+- **Potential NDF Target Area:** NDF Risk-/Threat-Management-Vorlagen.
+- **Evidence:** `docs/security/THREAT_SCENARIO_REGISTER.md` (THR-001…040); `project-system/RISK_REGISTER.md` RISK-94…103 (Hinweis) und Wachstum 66→189; `project-brain/MILESTONE_REVIEW_CO_WP_005_TO_012.md` §11.
+- **Security Relevance:** partly.
+- **Privacy Review:** PASS.
+- **Public-Neutrality Review:** PASS.
+- **Existing NDF Rule Check:** kein bekanntes verbindliches NDF-Äquivalent.
+- **Duplicate Check:** kein bekanntes Duplikat.
+- **Breaking-Change Potential:** gering (additive Guidance).
+- **Suggested Bundle:** potenzielles Bundle „Security Coherence" (mit NDF-FC-COREOPS-009).
+- **Status:** candidate-pending-nova-review
+- **Nova Gate:** pending
+- **Human-Maintainer Gate:** pending
+- **Transfer Readiness:** nicht bewertet; kein Transfer gestartet.
+- **Intake Work Package:** —
+- **Intake Commit:** —
+- **NDF Work Package:** —
+- **Adoption Work Package:** —
+- **NDF Adoption Commit:** —
+- **Adoption Status:** not started
+- **NDF Adoption Version:** —
+- **Backlink Status:** none
+- **Notes:** Evidenz aus dem Threat Model (CO-WP-007) und der Registerpflege über CO-WP-006…012. Kein Transfer/keine Adoption automatisch gestartet.
+
 ## Zusammenfassung
 
-- **Anzahl Kandidaten:** 7 (alle reservierten IDs NDF-FC-COREOPS-001…007 bewertet)
-- **Status-Verteilung (nach CO-WP-004B4):** `adopted-in-ndf` 7 · `transferred-to-ndf` 0
+- **Anzahl Kandidaten:** 10 (NDF-FC-COREOPS-001…007 adoptiert; NDF-FC-COREOPS-008…010 neu aus dem Milestone Review CO-WP-005…012)
+- **Status-Verteilung (nach Milestone Review):** `adopted-in-ndf` 7 · `candidate-pending-nova-review` 3 · `transferred-to-ndf` 0
 - **Bundles (Transfer Package 001):** Bundle 1 „Work-Package Safety and Source Handling" (001, 003, 004), Bundle 2 „Skills Availability and Context Economy" (002), Bundle 3 „Governance and Status Modeling" (005, 006, 007)
 - **Nova Gate:** approved für alle 7. **Human-Maintainer Gate:** approved für alle 7. **Intake Work Package:** NDF-INTAKE-COREOPS-001 für alle 7 (Commit d08e35e).
 - **Adoption-Zuordnung:** Adoption A `NDF-ADOPT-COREOPS-001A` (Commit 1ebffa6) — Kandidaten 001, 003, 004. Adoption B `NDF-ADOPT-COREOPS-001B` (Commit e894c6f) — Kandidat 002. Adoption C `NDF-ADOPT-COREOPS-001C` (Commit ebf716c) — Kandidaten 005, 006, 007.
 - **Alle sieben Kandidaten wurden über drei geprüfte Human-Maintainer-Commits in den aktuellen NDF-Entwicklungszweig adoptiert.** Release-Versionszuordnung bleibt offen (`not yet assigned`); keine NDF-Version wird behauptet. `adopted-in-ndf` bedeutet **nicht** "in einer veröffentlichten NDF-Version enthalten".
+- **Neue Kandidaten aus dem Milestone Review (008, 009, 010):** Status `candidate-pending-nova-review`; Nova Gate und Human-Maintainer Gate `pending`; kein Transfer, keine Adoption und kein NDF-Commit gestartet. Erwartete Nova-/Human-Maintainer-Bündelentscheidung. Die Zeilen 356–359 beziehen sich ausschließlich auf Transfer Package 001 (Kandidaten 001–007).

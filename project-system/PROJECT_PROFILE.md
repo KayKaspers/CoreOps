@@ -322,6 +322,14 @@ Folgende Themen benötigen vor jeder verbindlichen technischen Festlegung einen 
 - **Milestone:** CO-WP-005…012 (acht WPs) → Milestone-Lessons-Review-Eignung `yes`; Bündelentscheidung bei Nova/Human Maintainer; nicht automatisch gestartet.
 - **Status:** Foundation-State-Management-Baseline etabliert; nächstes WP `CO-WP-013`; Lessons-Learned-Register unverändert; keine NDF-Rückführung.
 
+## Milestone Lessons Review (CO-WP-005…012)
+
+- **Ergebnis:** GO WITH NOTES FOR CO-WP-013. Neues Dokument [MILESTONE_REVIEW_CO_WP_005_TO_012.md](../project-brain/MILESTONE_REVIEW_CO_WP_005_TO_012.md); Nova Review pending.
+- **Lessons:** LL-017…022 konsolidiert (Lessons gesamt 22).
+- **NDF-Kandidaten:** NDF-FC-COREOPS-008…010 (`candidate-pending-nova-review`); keine NDF-Rückführung.
+- **Read-only-Befunde:** Risk Register (189) → späterer Konsolidierungslauf; Decision Index Alt-Kombistatus (DEC-S-01…37) vs. getrennte Dimensionen (DEC-S-38…136); Capability-Count „74→94" in Alt-Abschnitten. Follow-ups ~CO-WP-029/030.
+- **Grenzen:** Risk Register und Decision Index unverändert (read-only); kein NDF-Transfer; CO-WP-013 nicht begonnen.
+
 ## Notes
 
 - **NDF-Level-Semantik:** `ndf_level: 1` bedeutet ausschließlich „initialer NDF-Projektbootstrap" — keine vollständige NDF-Konformität, technische Reife, Releasebereitschaft, Sicherheitsfreigabe oder erreichte Produktstufe. Der Zahlenwert bleibt unverändert. Die Starter-Vorlage mit `ndf_level: 2` bleibt dokumentierte NDF-Quellambiguität, ist aber kein Blocker (CCR-03).
