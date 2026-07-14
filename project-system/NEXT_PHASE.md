@@ -90,23 +90,29 @@ Alle 7 Kandidaten auf `adopted-in-ndf` (drei Adoption-Commits 1ebffa6 / e894c6f 
 
 ## Source of Truth and Field Provenance
 
-Current implemented WP: `CO-WP-011 – Source of Truth and Field Provenance` – pending Nova review.
+`CO-WP-011 – Source of Truth and Field Provenance` completed; Nova Review pending. SoT ≠ System of Record, Field Provenance, Konfliktmodell; keine Storage-/Merge-/Krypto-Auswahl.
 
-Current data-governance state:
-Foundation source-of-truth, field-provenance, state-authority and offline-reconciliation rules defined.
+## Observed, Desired, Effective State and Drift
 
-Storage and merge technology:
-not selected
+Current implemented WP: `CO-WP-012 – Observed, Desired, Effective State and Drift` – pending Nova review.
 
-Runtime reconciliation:
+Current state-management foundation:
+Desired, observed, effective and last-known state semantics, drift detection, convergence and safe-remediation governance defined.
+
+Drift engine:
 not implemented
 
-Field-level provenance validation:
-not performed
+Automatic remediation:
+not selected
 
-Drei neue Dokumente: Source of Truth and State Authority Model (SoT ≠ System of Record, 10 Authority-Klassen, autoritative Modulownership, Desired/Observed/Effective/Derived/Cached, Konfliktmodell), Field Provenance and Data Lineage Standard (Feldidentität, Provenance-Metadaten, Freshness/Trust/Validation, Transformation-Lineage, Import/Derived, Privacy) und Offline Data Reconciliation and Conflict Policy (Conflict Detection/States, Resolution Inputs, Offline-Changes, Revoked Sources, Replay, Time-Uncertainty, Partial Import, fail-closed). Decision Index +16 (DEC-S-106…121), Risk Register +17 (RISK-156…172). Observed ≠ Desired; Derived/Cached nicht autoritativ; importierte Daten erben keine Autorität; neuester Timestamp gewinnt nicht automatisch; Konflikte bleiben sichtbar; keine Storage-/Merge-/Sync-/Krypto-Auswahl; keine ADR; Identity-/Modul-/Capability-/Threat-Dateien + Lessons-Learned-Register unverändert; keine NDF-Rückführung.
+Runtime verification:
+not implemented
 
-Next planned WP: `CO-WP-012 – Observed, Desired, Effective State and Drift`.
+Drei neue Dokumente: Observed/Desired/Effective State Model (State-Semantik, Desired-State-Lifecycle, Effective-State-Grenze, Unknown/Conflicted), Drift Detection and Convergence Model (Drift-Definition/-Arten, Detection States, Drift Record, Impact/Urgency, Exceptions, Konvergenz, Partial Failure) und Safe Remediation and State Change Policy (Detection/Recommendation/Plan/Approval/Execution/Verification getrennt, Read-only-Grenze, Remediation-Lifecycle, Rollback, fail-closed). Decision Index +15 (DEC-S-122…136), Risk Register +17 (RISK-173…189). Keine Beobachtung ≠ keine Drift; kein Drift ≠ Compliance; Drift-Erkennung ohne Write Authority; Executed ≠ successful ≠ verified ≠ compliant; keine Engine-/Scheduler-/Queue-/Auto-Remediation-Auswahl; keine ADR; SoT-/Identity-/Modul-/Capability-/Threat-Dateien + Lessons-Learned-Register unverändert; keine NDF-Rückführung.
+
+**Milestone Lessons Review Eligibility:** yes (CO-WP-005…012 = acht WPs erreicht) — gebündelte Bündelentscheidung durch Nova/Human Maintainer nach CO-WP-012-Commit; kein Review/Transfer automatisch gestartet.
+
+Next planned WP: `CO-WP-013 – Policy, Approval and Execution Authorization`.
 
 ## Current Goal
 

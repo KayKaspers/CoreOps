@@ -270,6 +270,28 @@ Alle 30 Concept-ADR-Kandidaten (§51) plus zwei Foundation-Klärungen (Delivery 
 | DEC-S-120 | Cryptographic provenance | architecture-context | deferred | non-binding | CO-WP-011 | Nova | Deferred |
 | DEC-S-121 | Universal field schema | architecture-context | deferred | non-binding | CO-WP-011 | Nova | Deferred |
 
+## State, Drift and Safe-Remediation Decisions (CO-WP-012)
+
+> Registriert über [OBSERVED_DESIRED_AND_EFFECTIVE_STATE_MODEL.md](../docs/architecture/OBSERVED_DESIRED_AND_EFFECTIVE_STATE_MODEL.md), [DRIFT_DETECTION_AND_CONVERGENCE_MODEL.md](../docs/architecture/DRIFT_DETECTION_AND_CONVERGENCE_MODEL.md) und [SAFE_REMEDIATION_AND_STATE_CHANGE_POLICY.md](../docs/security/SAFE_REMEDIATION_AND_STATE_CHANGE_POLICY.md). **Getrennte Dimensionen**; keine kombinierten Pseudostatuswerte; keine Engine-/Scheduler-/Queue-/Remediation-Auswahl; keine ADR.
+
+| Decision ID | Topic | Decision Class | Lifecycle Status | Binding Level | Source | Owner | Notes |
+| ----------- | ----- | -------------- | ---------------- | ------------- | ------ | ----- | ----- |
+| DEC-S-122 | State concepts | architecture-context | accepted | binding-governance | CO-WP-012 | Nova | Desired/observed/reported/effective/last-known getrennt |
+| DEC-S-123 | Effective state under conflict | security-context | accepted | binding-governance | CO-WP-012 | Nova | Bleibt indeterminate/conflicted bei unklarer Autorität |
+| DEC-S-124 | No observation semantics | governance-direction | accepted | binding-governance | CO-WP-012 | Nova | Keine Beobachtung ≠ keine Drift |
+| DEC-S-125 | No-drift semantics | governance-direction | accepted | binding-governance | CO-WP-012 | Nova | Kein erkannter Drift ≠ Compliance |
+| DEC-S-126 | Drift detection authority | security-context | accepted | binding-governance | CO-WP-012 | Nova | Drift-Erkennung gewährt **keine** Write Authority |
+| DEC-S-127 | Remediation responsibility separation | security-context | accepted | binding-governance | CO-WP-012 | Nova | Detection/Recommendation/Plan/Approval/Execution/Verification getrennt |
+| DEC-S-128 | Privileged remediation authority | security-context | accepted | binding-governance | CO-WP-012 | HM | Explizite Autorität + Approval erforderlich |
+| DEC-S-129 | Divergence exceptions | security-context | accepted | binding-governance | CO-WP-012 | Nova | Explizit, scope-bound, zurechenbar, reviewbar |
+| DEC-S-130 | Execution semantics | security-context | accepted | binding-governance | CO-WP-012 | Nova | Executed ≠ successful |
+| DEC-S-131 | Success semantics | security-context | accepted | binding-governance | CO-WP-012 | Nova | Successful ≠ verified convergence |
+| DEC-S-132 | Convergence semantics | governance-direction | accepted | binding-governance | CO-WP-012 | Nova | Verified convergence ≠ compliance |
+| DEC-S-133 | Partial failure | governance-direction | accepted | binding-governance | CO-WP-012 | Nova | Bleibt explizit repräsentiert |
+| DEC-S-134 | Automatic remediation | security-context | deferred | non-binding | CO-WP-012 | HM | Deferred; nicht ausgewählt/implementiert |
+| DEC-S-135 | State/drift/remediation engine technology | architecture-context | deferred | non-binding | CO-WP-012 | Nova | Deferred |
+| DEC-S-136 | Retry/queue/scheduling technology | architecture-context | deferred | non-binding | CO-WP-012 | Nova | Deferred |
+
 ## Deferred Decisions
 
 | Decision ID | Topic | Status | Class | Source | Owner | Target WP | ADR Required |
@@ -334,5 +356,7 @@ Alle 30 Concept-ADR-Kandidaten (§51) plus zwei Foundation-Klärungen (Delivery 
 **CO-WP-010-Registrierungen:** 16 Machine-Identity-/Credential-Lifecycle-Entscheidungen (DEC-S-90…105), **getrennte Dimensionen**: Human ≠ Machine Identity; Identity ≠ Credential; Discovery ≠ Enrollment; Registration ≠ Trust; Enrollment explizit/owner-/scope-bound (keine unbeschränkte Autorität); Machine Principals scope-bound; Agent/Adapter-Identität umgeht Policy nicht; Bootstrap ≠ permanente Identität; Credential-Governance ≠ Rohsecret-Ownership; Rotation/Renewal ohne stille Scope-Erweiterung; Compromise mit Containment + expliziter Re-Enrollment-Entscheidung; keine stille Decommission-ID-Wiederverwendung; Offline-Enrollment mit Provenance/Integrität/Approval; PKI/Krypto/Trust-Anchors, Enrollment-Protokoll und Rohsecret-Speicherung `deferred`. Keine Technologieauswahl; keine ADR.
 
 **CO-WP-011-Registrierungen:** 16 Source-of-Truth-/Field-Provenance-Entscheidungen (DEC-S-106…121), **getrennte Dimensionen**: Source of Truth ≠ System of Record; autoritative Feldownership explizit/modulgebunden; Desired/Observed/Effective/Derived getrennt; Derived/Cached nicht autoritativ per Default; importierte Daten erben keine Autorität; neuester Timestamp gewinnt nicht automatisch; Overrides explizit/feld-/reason-bound mit Provenance-Erhalt; Konflikte bleiben sichtbar; widerrufene Quellen nicht autoritativ; Offline-Reconciliation mit Provenance/Integrität/Authority/Conflict-Review (fail-closed); Field-Provenance durch Transformationen erhalten; Audit-/Evidence-History nicht durch Reconciliation umgeschrieben; Storage/Merge/Sync-Technologie, kryptografische Provenance und universelles Feldschema `deferred`. Keine Technologieauswahl; keine ADR.
+
+**CO-WP-012-Registrierungen:** 15 State-/Drift-/Safe-Remediation-Entscheidungen (DEC-S-122…136), **getrennte Dimensionen**: Desired/Observed/Reported/Effective/Last-Known getrennt; Effective State bleibt indeterminate/conflicted bei unklarer Autorität; keine Beobachtung ≠ keine Drift; kein erkannter Drift ≠ Compliance; Drift-Erkennung ohne Write Authority; Detection/Recommendation/Plan/Approval/Execution/Verification getrennt; privilegierte Remediation mit expliziter Autorität + Approval; Exceptions explizit/reviewbar; Executed ≠ successful; Successful ≠ verified convergence; Verified convergence ≠ Compliance; Partial Failure explizit; automatische Remediation, Engine-/Retry-/Queue-/Scheduling-Technologie `deferred`. Keine Technologieauswahl; keine ADR.
 
 **Bestätigung:** Keine technische Architektur-, Technologie- oder Implementierungsentscheidung trägt den Status `accepted`. Keine Integration ist `supported`. Keine Zertifizierung/VS-Eignung behauptet. Keine ADR ist Accepted. Es wurde keine ADR-Datei erzeugt.

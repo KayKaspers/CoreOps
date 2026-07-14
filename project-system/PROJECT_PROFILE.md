@@ -312,6 +312,16 @@ Folgende Themen benötigen vor jeder verbindlichen technischen Festlegung einen 
 - **Grenzen:** Observed ≠ Desired; Derived/Cached nicht autoritativ; Import ≠ Authority-Transfer; keine Storage-/DB-/Merge-/CRDT-/Messaging-/Sync-/Krypto-Provenance-Auswahl; keine ADR; Invarianten = Designanforderungen.
 - **Status:** Foundation-Data-Governance-Baseline etabliert; nächstes WP `CO-WP-012`; Lessons-Learned-Register unverändert; keine NDF-Rückführung.
 
+## CO-WP-012 Konsolidierung (Observed, Desired, Effective State and Drift)
+
+- **State-Semantik:** [OBSERVED_DESIRED_AND_EFFECTIVE_STATE_MODEL.md](../docs/architecture/OBSERVED_DESIRED_AND_EFFECTIVE_STATE_MODEL.md) — Desired/Observed/Reported/Effective/Last-Known getrennt; Desired-State-Lifecycle; Effective-State-Grenze (indeterminate/conflicted bei unklarer Autorität); Unknown/Conflicted sichtbar.
+- **Drift & Konvergenz:** [DRIFT_DETECTION_AND_CONVERGENCE_MODEL.md](../docs/architecture/DRIFT_DETECTION_AND_CONVERGENCE_MODEL.md) — Drift-Definition/12 Arten, 14 Detection States, Drift Record, Impact/Urgency, Exceptions, Konvergenz (`verified-converged` braucht Evidenz), Partial Failure.
+- **Safe Remediation:** [SAFE_REMEDIATION_AND_STATE_CHANGE_POLICY.md](../docs/security/SAFE_REMEDIATION_AND_STATE_CHANGE_POLICY.md) — Detection/Recommendation/Plan/Approval/Execution/Verification getrennt; Read-only-Grenze; Remediation-Lifecycle; Rollback braucht Verifikation; fail-closed; **Auto-Remediation deferred**.
+- **Governance-Fortschreibung:** Decision Index +15 (DEC-S-122…136), Risk Register +17 (RISK-173…189).
+- **Grenzen:** keine Beobachtung ≠ keine Drift; kein Drift ≠ Compliance; Executed ≠ successful ≠ verified ≠ compliant; keine Engine-/Scheduler-/Queue-/Auto-Remediation-Auswahl; keine ADR; Invarianten = Designanforderungen.
+- **Milestone:** CO-WP-005…012 (acht WPs) → Milestone-Lessons-Review-Eignung `yes`; Bündelentscheidung bei Nova/Human Maintainer; nicht automatisch gestartet.
+- **Status:** Foundation-State-Management-Baseline etabliert; nächstes WP `CO-WP-013`; Lessons-Learned-Register unverändert; keine NDF-Rückführung.
+
 ## Notes
 
 - **NDF-Level-Semantik:** `ndf_level: 1` bedeutet ausschließlich „initialer NDF-Projektbootstrap" — keine vollständige NDF-Konformität, technische Reife, Releasebereitschaft, Sicherheitsfreigabe oder erreichte Produktstufe. Der Zahlenwert bleibt unverändert. Die Starter-Vorlage mit `ndf_level: 2` bleibt dokumentierte NDF-Quellambiguität, ist aber kein Blocker (CCR-03).

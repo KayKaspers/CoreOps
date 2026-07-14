@@ -229,13 +229,23 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 - Decision Index +16 (DEC-S-106…121), Risk Register +17 (RISK-156…172).
 - **Keine Storage-/DB-/Merge-/CRDT-/Messaging-/Sync-/Krypto-Provenance-Auswahl; keine ADR; Identity-/Modul-/Capability-/Threat-Dateien + Lessons-Learned-Register unverändert; keine NDF-Rückführung.**
 
+## Observed, Desired, Effective State and Drift (CO-WP-012)
+
+- Drei neue Dokumente: [OBSERVED_DESIRED_AND_EFFECTIVE_STATE_MODEL.md](../docs/architecture/OBSERVED_DESIRED_AND_EFFECTIVE_STATE_MODEL.md), [DRIFT_DETECTION_AND_CONVERGENCE_MODEL.md](../docs/architecture/DRIFT_DETECTION_AND_CONVERGENCE_MODEL.md), [SAFE_REMEDIATION_AND_STATE_CHANGE_POLICY.md](../docs/security/SAFE_REMEDIATION_AND_STATE_CHANGE_POLICY.md).
+- Desired/Observed/Reported/Effective/Last-Known getrennt; Effective State bleibt indeterminate/conflicted bei unklarer Autorität. Keine Beobachtung ≠ keine Drift; kein erkannter Drift ≠ Compliance; stale ≠ current.
+- Drift-Definition + 12 Arten + 14 Detection States; Exceptions explizit/reviewbar; Konvergenz (`verified-converged` braucht Evidenz) ≠ Compliance. Detection/Recommendation/Plan/Approval/Execution/Verification strikt getrennt; Drift-Erkennung gewährt keine Write Authority; Executed ≠ successful ≠ verified ≠ compliant; Partial Failure sichtbar; Rollback braucht Verifikation; fail-closed.
+- **Auto-Remediation nicht ausgewählt/implementiert; 12+ Security-Invarianten (Designanforderungen).**
+- Decision Index +15 (DEC-S-122…136), Risk Register +17 (RISK-173…189).
+- **Keine Engine-/Scheduler-/Queue-/Policy-Engine-/Auto-Remediation-Auswahl; keine ADR; SoT-/Identity-/Modul-/Capability-/Threat-Dateien + Lessons-Learned-Register unverändert; keine NDF-Rückführung.**
+- **Milestone:** CO-WP-005…012 = acht WPs → Milestone-Lessons-Review-Eignung `yes` (Bündelentscheidung Nova/Human Maintainer; nicht automatisch gestartet).
+
 ## Letztes Work Package
 
-`CO-WP-011 – Source of Truth and Field Provenance` (docs-only / data-governance and architecture foundation). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-010 – GO WITH NOTES`.
+`CO-WP-012 – Observed, Desired, Effective State and Drift` (docs-only / state-management and safe-remediation foundation). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-011 – GO WITH NOTES`.
 
 ## Nächstes Work Package
 
-`CO-WP-012 – Observed, Desired, Effective State and Drift` (docs-only; planned-next; pending Nova review von CO-WP-011 und Human-Maintainer-Freigabe).
+`CO-WP-013 – Policy, Approval and Execution Authorization` (security-baseline; planned-next; pending Nova review von CO-WP-012 und Human-Maintainer-Freigabe).
 
 ## Human-Maintainer-Gates
 
@@ -264,6 +274,7 @@ Freigabe, Staging, Commit, Push, Merge, Tags, Releases, produktive Deployments s
 - `CO-WP-009`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
 - `CO-WP-010`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
 - `CO-WP-011`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
+- `CO-WP-012`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`. Milestone-Lessons-Review-Eignung gemeldet (CO-WP-005…012).
 
 ---
 

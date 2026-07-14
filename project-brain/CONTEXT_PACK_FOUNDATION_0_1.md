@@ -23,7 +23,13 @@ Universelle, self-hosted und offline-fähige Operations Control Plane, die Sourc
 
 ## Letztes Work Package
 
-`CO-WP-011 – Source of Truth and Field Provenance` (docs-only / data-governance and architecture foundation). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-010 – GO WITH NOTES`.
+`CO-WP-012 – Observed, Desired, Effective State and Drift` (docs-only / state-management and safe-remediation foundation). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-011 – GO WITH NOTES`.
+
+## Observed, Desired, Effective State and Drift (CO-WP-012)
+
+- Drei neue Dokumente: Observed/Desired/Effective State Model, Drift Detection and Convergence Model, Safe Remediation and State Change Policy.
+- Desired/Observed/Reported/Effective/Last-Known getrennt; Effective indeterminate/conflicted bei unklarer Autorität; keine Beobachtung ≠ keine Drift; kein Drift ≠ Compliance. Detection/Recommendation/Plan/Approval/Execution/Verification getrennt; Executed ≠ successful ≠ verified ≠ compliant; Rollback braucht Verifikation; Auto-Remediation deferred; fail-closed.
+- Decision Index +15 (DEC-S-122…136), Risk Register +17 (RISK-173…189). Keine Engine-/Scheduler-/Queue-/Auto-Remediation-Auswahl; keine ADR; SoT-/Identity-/Modul-/Capability-/Threat-Dateien + Lessons-Learned unverändert; keine NDF-Rückführung. Milestone-Lessons-Review-Eignung `yes` (CO-WP-005…012).
 
 ## Source of Truth and Field Provenance (CO-WP-011)
 
@@ -145,7 +151,7 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 
 ## Nächstes Work Package
 
-`CO-WP-012 – Observed, Desired, Effective State and Drift` (docs-only; planned-next; pending Nova review von CO-WP-011 und Human-Maintainer-Freigabe). Die 004er-Erweiterungsserie (004A…004E) und CO-WP-005…011 sind abgeschlossen. External: NDF-Release-Zuordnung für die drei Adoption-Commits ausstehend.
+`CO-WP-013 – Policy, Approval and Execution Authorization` (security-baseline; planned-next; pending Nova review von CO-WP-012 und Human-Maintainer-Freigabe). Die 004er-Erweiterungsserie (004A…004E) und CO-WP-005…012 sind abgeschlossen. Milestone-Lessons-Review-Eignung `yes` (CO-WP-005…012; Bündelentscheidung Nova/HM). External: NDF-Release-Zuordnung für die drei Adoption-Commits ausstehend.
 
 ## Aktuelle Blocker
 
@@ -227,3 +233,4 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 - `CO-WP-009` (docs-only / security-baseline): Human Identity and Access Governance, Workspace/RBAC/Scope Model und Break-Glass and Emergency Access Policy erstellt; person/identity/account getrennt; Repository ≠ Runtime; Workspace ≠ Tenant; deny-by-default RBAC + Permission-Taxonomie; Break Glass benannt/temporär/auditiert mit Post-Event Review; 14 Invarianten. Decision Index +14 (DEC-S-76…89), Risk Register +18 (RISK-119…136). Keine Auth-/IdP-/Session-/Policy-Engine-Auswahl; keine ADR; Modul-/Capability-/Threat-Dateien + Lessons-Learned unverändert; keine NDF-Rückführung. Nova Review ausstehend.
 - `CO-WP-010` (docs-only / security-baseline): Machine Identity and Principal Governance, Machine Enrollment and Trust Lifecycle und Offline Credential and Rotation Governance erstellt; Human ≠ Machine; Discovery ≠ Enrollment; Registration ≠ Trust; 10 Principal-Klassen; Bootstrap ≠ permanente Identität; Credential-Governance ≠ Rohsecret-Ownership; Offline mit Provenance/Approval. Decision Index +16 (DEC-S-90…105), Risk Register +19 (RISK-137…155). Keine PKI-/Krypto-/Protokoll-/Secret-Store-Auswahl; keine ADR; Human-Identity-/Modul-/Capability-/Threat-Dateien + Lessons-Learned unverändert; keine NDF-Rückführung. Nova Review ausstehend.
 - `CO-WP-011` (docs-only / data-governance and architecture foundation): Source of Truth and State Authority Model, Field Provenance and Data Lineage Standard und Offline Data Reconciliation and Conflict Policy erstellt; SoT ≠ System of Record; ein Owner pro Feldkonzept; Desired/Observed/Effective/Derived getrennt; kein Last-Write-Wins; Konflikte sichtbar; Import ≠ Authority; fail-closed Reconciliation. Decision Index +16 (DEC-S-106…121), Risk Register +17 (RISK-156…172). Keine Storage-/Merge-/Sync-/Krypto-Auswahl; keine ADR; Identity-/Modul-/Capability-/Threat-Dateien + Lessons-Learned unverändert; keine NDF-Rückführung. Nova Review ausstehend.
+- `CO-WP-012` (docs-only / state-management and safe-remediation foundation): Observed/Desired/Effective State Model, Drift Detection and Convergence Model und Safe Remediation and State Change Policy erstellt; State-Semantik getrennt; keine Beobachtung ≠ keine Drift; Detection/Recommendation/Approval/Execution/Verification getrennt; Executed ≠ successful ≠ verified ≠ compliant; Auto-Remediation deferred; fail-closed. Decision Index +15 (DEC-S-122…136), Risk Register +17 (RISK-173…189). Keine Engine-/Scheduler-/Queue-/Auto-Remediation-Auswahl; keine ADR; SoT-/Identity-/Modul-/Capability-/Threat-Dateien + Lessons-Learned unverändert; keine NDF-Rückführung. Milestone-Lessons-Review-Eignung `yes`. Nova Review ausstehend.
