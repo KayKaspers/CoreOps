@@ -2,7 +2,7 @@
 
 **NDF-Basis:** `v1.0.0` (Tag `v1.0.0`, Commit `9dcadc1`) — `main` ist **nicht** normativ.
 
-Diese Queue ist die **aktive, verbindliche** Foundation-Queue für CoreOps (autoritativ gegenüber der historischen Concept-§50-Queue; siehe [FOUNDATION_SCOPE_LOCK.md](../docs/governance/FOUNDATION_SCOPE_LOCK.md)). Änderungen an der Queue dürfen ausschließlich durch ein später freigegebenes Work Package erfolgen. Es erfolgt **keine** automatische Freigabe eines Folge-Work-Packages. Genau `CO-WP-011` ist als nächster geplanter Schritt markiert (`CO-WP-005`…`CO-WP-010` umgesetzt und in Nova Review; die 004er-Erweiterungsserie ist mit `CO-WP-004E` abgeschlossen).
+Diese Queue ist die **aktive, verbindliche** Foundation-Queue für CoreOps (autoritativ gegenüber der historischen Concept-§50-Queue; siehe [FOUNDATION_SCOPE_LOCK.md](../docs/governance/FOUNDATION_SCOPE_LOCK.md)). Änderungen an der Queue dürfen ausschließlich durch ein später freigegebenes Work Package erfolgen. Es erfolgt **keine** automatische Freigabe eines Folge-Work-Packages. Genau `CO-WP-012` ist als nächster geplanter Schritt markiert (`CO-WP-005`…`CO-WP-011` umgesetzt und in Nova Review; die 004er-Erweiterungsserie ist mit `CO-WP-004E` abgeschlossen).
 
 Jedes Work Package hat genau **einen** primären Typ.
 
@@ -27,9 +27,9 @@ Jedes Work Package hat genau **einen** primären Typ.
 | CO-WP-007 | security-baseline | Threat Model and Trust Boundaries                              | completed-go-with-notes        |
 | CO-WP-008 | docs-only         | Architecture and Module Boundaries                             | completed-go-with-notes        |
 | CO-WP-009 | security-baseline | Human Identity, Workspaces, RBAC and Break Glass               | completed-go-with-notes        |
-| CO-WP-010 | security-baseline | Machine Identity, Enrollment and Offline Credential Lifecycle  | implemented-awaiting-nova-review|
-| CO-WP-011 | docs-only         | Source of Truth and Field Provenance                           | planned-next                  |
-| CO-WP-012 | docs-only         | Observed, Desired, Effective State and Drift                   | planned                       |
+| CO-WP-010 | security-baseline | Machine Identity, Enrollment and Offline Credential Lifecycle  | completed-go-with-notes        |
+| CO-WP-011 | docs-only         | Source of Truth and Field Provenance                           | implemented-awaiting-nova-review|
+| CO-WP-012 | docs-only         | Observed, Desired, Effective State and Drift                   | planned-next                  |
 | CO-WP-013 | security-baseline | Policy, Approval and Execution Authorization                   | planned                       |
 | CO-WP-014 | docs-only         | CoreOps Integration Contract v0.1                              | planned                       |
 | CO-WP-015 | docs-only         | Domain Pack Governance, Support Levels and Compatibility       | planned                       |
@@ -53,7 +53,7 @@ Jedes Work Package hat genau **einen** primären Typ.
 ## Regeln
 
 - Genau ein primärer Typ pro Work Package.
-- Nur `CO-WP-011` ist der nächste geplante Schritt (`planned-next`).
+- Nur `CO-WP-012` ist der nächste geplante Schritt (`planned-next`).
 - Keine automatische Freigabe eines Folge-Work-Packages.
 - Die Queue ist noch **nicht** final scope-locked.
 - Änderungen an der Queue nur durch ein später freigegebenes Work Package.

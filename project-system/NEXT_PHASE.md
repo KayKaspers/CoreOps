@@ -86,23 +86,27 @@ Alle 7 Kandidaten auf `adopted-in-ndf` (drei Adoption-Commits 1ebffa6 / e894c6f 
 
 ## Machine Identity, Enrollment and Offline Credential Lifecycle
 
-Current implemented WP: `CO-WP-010 – Machine Identity, Enrollment and Offline Credential Lifecycle` – pending Nova review.
+`CO-WP-010 – Machine Identity, Enrollment and Offline Credential Lifecycle` completed; Nova Review pending. Machine-Identity-, Enrollment-/Trust- und Offline-Credential-Governance; keine PKI-/Krypto-/Protokoll-Auswahl.
 
-Current identity state:
-Foundation machine-identity, enrollment and offline credential-lifecycle governance defined.
+## Source of Truth and Field Provenance
 
-PKI and credential technology:
+Current implemented WP: `CO-WP-011 – Source of Truth and Field Provenance` – pending Nova review.
+
+Current data-governance state:
+Foundation source-of-truth, field-provenance, state-authority and offline-reconciliation rules defined.
+
+Storage and merge technology:
 not selected
 
-Enrollment implementation:
-not started
-
-Offline credential mechanism:
+Runtime reconciliation:
 not implemented
 
-Drei neue Dokumente: Machine Identity and Principal Governance (Begriffsmodell, Human ≠ Machine, 10 Principal-Klassen, Lifecycle, Scope/Authorization, Agent-/Adapter-Grenze), Machine Enrollment and Trust Lifecycle (Enrollment/Bootstrap/Trust Establishment, Suspension/Revocation/Compromise, Re-Enrollment, Decommissioning, Offline-Enrollment) und Offline Credential and Rotation Governance (Credential-Metadaten, Raw-Secret-Grenze, Rotation/Renewal/Overlap, Offline-Distribution/Reconciliation). Decision Index +16 (DEC-S-90…105), Risk Register +19 (RISK-137…155). Discovery ≠ Enrollment; Registration ≠ Trust; Credential-Governance ≠ Rohsecret-Ownership; keine PKI-/Krypto-/Protokoll-/Secret-Store-Auswahl; keine ADR; Human-Identity-/Modul-/Capability-/Threat-Dateien + Lessons-Learned-Register unverändert; keine NDF-Rückführung.
+Field-level provenance validation:
+not performed
 
-Next planned WP: `CO-WP-011 – Source of Truth and Field Provenance`.
+Drei neue Dokumente: Source of Truth and State Authority Model (SoT ≠ System of Record, 10 Authority-Klassen, autoritative Modulownership, Desired/Observed/Effective/Derived/Cached, Konfliktmodell), Field Provenance and Data Lineage Standard (Feldidentität, Provenance-Metadaten, Freshness/Trust/Validation, Transformation-Lineage, Import/Derived, Privacy) und Offline Data Reconciliation and Conflict Policy (Conflict Detection/States, Resolution Inputs, Offline-Changes, Revoked Sources, Replay, Time-Uncertainty, Partial Import, fail-closed). Decision Index +16 (DEC-S-106…121), Risk Register +17 (RISK-156…172). Observed ≠ Desired; Derived/Cached nicht autoritativ; importierte Daten erben keine Autorität; neuester Timestamp gewinnt nicht automatisch; Konflikte bleiben sichtbar; keine Storage-/Merge-/Sync-/Krypto-Auswahl; keine ADR; Identity-/Modul-/Capability-/Threat-Dateien + Lessons-Learned-Register unverändert; keine NDF-Rückführung.
+
+Next planned WP: `CO-WP-012 – Observed, Desired, Effective State and Drift`.
 
 ## Current Goal
 

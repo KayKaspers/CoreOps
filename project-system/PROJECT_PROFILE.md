@@ -303,6 +303,15 @@ Folgende Themen benötigen vor jeder verbindlichen technischen Festlegung einen 
 - **Grenzen:** Discovery ≠ Enrollment; Enrollment ≠ Write Authority; keine PKI-/Zertifikats-/Krypto-/TPM-/mTLS-/SSH-/Enrollment-Protokoll-/Secret-Store-Auswahl; keine ADR; Invarianten = Designanforderungen.
 - **Status:** Foundation-Machine-Identity-Baseline etabliert; nächstes WP `CO-WP-011`; Lessons-Learned-Register unverändert; keine NDF-Rückführung.
 
+## CO-WP-011 Konsolidierung (Source of Truth and Field Provenance)
+
+- **Source of Truth / State Authority:** [SOURCE_OF_TRUTH_AND_STATE_AUTHORITY_MODEL.md](../docs/architecture/SOURCE_OF_TRUTH_AND_STATE_AUTHORITY_MODEL.md) — SoT ≠ System of Record; 10 Authority-Klassen; autoritative Modulownership (ein Owner pro Feldkonzept); Desired/Observed/Effective/Derived/Cached; Konfliktmodell.
+- **Field Provenance / Lineage:** [FIELD_PROVENANCE_AND_DATA_LINEAGE_STANDARD.md](../docs/architecture/FIELD_PROVENANCE_AND_DATA_LINEAGE_STANDARD.md) — stabile Feldidentität (≠ UI-Label/Adapter-Feld), 22-Feld-Provenance-Metadatenmodell, Freshness/Trust/Validation getrennt, Transformation-Lineage, Import/Derived, Privacy/Minimierung.
+- **Offline Reconciliation / Conflict:** [OFFLINE_DATA_RECONCILIATION_AND_CONFLICT_POLICY.md](../docs/security/OFFLINE_DATA_RECONCILIATION_AND_CONFLICT_POLICY.md) — Conflict Detection/States, Resolution Inputs (kein universelles Last-Write-Wins), Revoked Sources, Replay/Duplication, Time-Uncertainty, Partial Import, fail-closed.
+- **Governance-Fortschreibung:** Decision Index +16 (DEC-S-106…121), Risk Register +17 (RISK-156…172).
+- **Grenzen:** Observed ≠ Desired; Derived/Cached nicht autoritativ; Import ≠ Authority-Transfer; keine Storage-/DB-/Merge-/CRDT-/Messaging-/Sync-/Krypto-Provenance-Auswahl; keine ADR; Invarianten = Designanforderungen.
+- **Status:** Foundation-Data-Governance-Baseline etabliert; nächstes WP `CO-WP-012`; Lessons-Learned-Register unverändert; keine NDF-Rückführung.
+
 ## Notes
 
 - **NDF-Level-Semantik:** `ndf_level: 1` bedeutet ausschließlich „initialer NDF-Projektbootstrap" — keine vollständige NDF-Konformität, technische Reife, Releasebereitschaft, Sicherheitsfreigabe oder erreichte Produktstufe. Der Zahlenwert bleibt unverändert. Die Starter-Vorlage mit `ndf_level: 2` bleibt dokumentierte NDF-Quellambiguität, ist aber kein Blocker (CCR-03).

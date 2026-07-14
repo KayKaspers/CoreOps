@@ -220,13 +220,22 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 - Decision Index +16 (DEC-S-90…105), Risk Register +19 (RISK-137…155).
 - **Keine PKI-/Krypto-/Protokoll-/Secret-Store-Auswahl; keine ADR; Human-Identity-/Modul-/Capability-/Threat-Dateien + Lessons-Learned-Register unverändert; keine NDF-Rückführung.**
 
+## Source of Truth and Field Provenance (CO-WP-011)
+
+- Drei neue Dokumente: [SOURCE_OF_TRUTH_AND_STATE_AUTHORITY_MODEL.md](../docs/architecture/SOURCE_OF_TRUTH_AND_STATE_AUTHORITY_MODEL.md), [FIELD_PROVENANCE_AND_DATA_LINEAGE_STANDARD.md](../docs/architecture/FIELD_PROVENANCE_AND_DATA_LINEAGE_STANDARD.md), [OFFLINE_DATA_RECONCILIATION_AND_CONFLICT_POLICY.md](../docs/security/OFFLINE_DATA_RECONCILIATION_AND_CONFLICT_POLICY.md).
+- SoT ≠ System of Record; 10 Authority-Klassen; autoritative Modulownership (ein Owner pro Feldkonzept). Desired/Observed/Effective/Derived/Cached getrennt; Effective ≠ compliant. Feldidentität stabil/canonical (≠ UI-Label/Adapter-Feld); 22-Feld-Provenance-Metadaten; Freshness/Trust/Validation getrennt; Transformation-Lineage erhält Input-Autorität.
+- Konfliktmodell (7 States); kein universelles Last-Write-Wins; neuester Timestamp gewinnt nicht automatisch; Konflikte bleiben sichtbar; widerrufene Quellen nicht autoritativ; importierte Daten erben keine Autorität; Overrides mit Provenance-Erhalt; Offline-Reconciliation fail-closed; Zeit-/Sequenzunsicherheit sichtbar; Partial Import ≠ complete.
+- **12 Security-Invarianten (Designanforderungen); Audit-History nicht durch Reconciliation umgeschrieben.**
+- Decision Index +16 (DEC-S-106…121), Risk Register +17 (RISK-156…172).
+- **Keine Storage-/DB-/Merge-/CRDT-/Messaging-/Sync-/Krypto-Provenance-Auswahl; keine ADR; Identity-/Modul-/Capability-/Threat-Dateien + Lessons-Learned-Register unverändert; keine NDF-Rückführung.**
+
 ## Letztes Work Package
 
-`CO-WP-010 – Machine Identity, Enrollment and Offline Credential Lifecycle` (docs-only / security-baseline). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-009 – GO WITH NOTES`.
+`CO-WP-011 – Source of Truth and Field Provenance` (docs-only / data-governance and architecture foundation). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-010 – GO WITH NOTES`.
 
 ## Nächstes Work Package
 
-`CO-WP-011 – Source of Truth and Field Provenance` (docs-only; planned-next; pending Nova review von CO-WP-010 und Human-Maintainer-Freigabe).
+`CO-WP-012 – Observed, Desired, Effective State and Drift` (docs-only; planned-next; pending Nova review von CO-WP-011 und Human-Maintainer-Freigabe).
 
 ## Human-Maintainer-Gates
 
@@ -254,6 +263,7 @@ Freigabe, Staging, Commit, Push, Merge, Tags, Releases, produktive Deployments s
 - `CO-WP-008`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
 - `CO-WP-009`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
 - `CO-WP-010`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
+- `CO-WP-011`: strukturierte Rückmeldung mit Compact Context Summary geliefert; Nova Review `pending`.
 
 ---
 

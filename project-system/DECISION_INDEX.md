@@ -247,6 +247,29 @@ Alle 30 Concept-ADR-Kandidaten (§51) plus zwei Foundation-Klärungen (Delivery 
 | DEC-S-104 | Enrollment protocol | architecture-context | deferred | non-binding | CO-WP-010 | Nova | Deferred |
 | DEC-S-105 | Raw secret storage | architecture-context | deferred | non-binding | CO-WP-010 | Nova | Deferred (ob CoreOps Rohsecrets speichert) |
 
+## Source of Truth and Field Provenance Decisions (CO-WP-011)
+
+> Registriert über [SOURCE_OF_TRUTH_AND_STATE_AUTHORITY_MODEL.md](../docs/architecture/SOURCE_OF_TRUTH_AND_STATE_AUTHORITY_MODEL.md), [FIELD_PROVENANCE_AND_DATA_LINEAGE_STANDARD.md](../docs/architecture/FIELD_PROVENANCE_AND_DATA_LINEAGE_STANDARD.md) und [OFFLINE_DATA_RECONCILIATION_AND_CONFLICT_POLICY.md](../docs/security/OFFLINE_DATA_RECONCILIATION_AND_CONFLICT_POLICY.md). **Getrennte Dimensionen**; keine kombinierten Pseudostatuswerte; keine Storage-/Merge-/Sync-/Krypto-Auswahl; keine ADR.
+
+| Decision ID | Topic | Decision Class | Lifecycle Status | Binding Level | Source | Owner | Notes |
+| ----------- | ----- | -------------- | ---------------- | ------------- | ------ | ----- | ----- |
+| DEC-S-106 | Source of truth vs system of record | architecture-context | accepted | binding-governance | CO-WP-011 | Nova | Getrennte Konzepte |
+| DEC-S-107 | Authoritative field ownership | governance-direction | accepted | binding-governance | CO-WP-011 | Nova | Explizit und modulgebunden (ein Owner pro Feldkonzept) |
+| DEC-S-108 | Desired/observed/effective/derived state | architecture-context | accepted | binding-governance | CO-WP-011 | Nova | Getrennte Konzepte |
+| DEC-S-109 | Derived and cached data | security-context | accepted | binding-governance | CO-WP-011 | Nova | Nicht autoritativ per Default |
+| DEC-S-110 | Imported data authority | security-context | accepted | binding-governance | CO-WP-011 | Nova | Erbt Autorität **nicht** automatisch |
+| DEC-S-111 | Timestamp conflict rule | security-context | accepted | binding-governance | CO-WP-011 | Nova | Neuester Timestamp gewinnt nicht automatisch |
+| DEC-S-112 | Manual overrides | security-context | accepted | binding-governance | CO-WP-011 | Nova | Explizit, feld-/reason-bound, auditierbar |
+| DEC-S-113 | Override provenance | security-context | accepted | binding-governance | CO-WP-011 | Nova | Ursprüngliche Provenance bleibt erhalten |
+| DEC-S-114 | Conflict visibility | security-context | accepted | binding-governance | CO-WP-011 | Nova | Konflikte bleiben sichtbar bis explizit aufgelöst |
+| DEC-S-115 | Revoked/invalidated sources | security-context | accepted | binding-governance | CO-WP-011 | Nova | Bleiben **nicht** autoritativ |
+| DEC-S-116 | Offline reconciliation | security-context | accepted | binding-governance | CO-WP-011 | Nova | Erfordert Provenance/Integrität/Authority/Conflict-Review; fail-closed |
+| DEC-S-117 | Field provenance persistence | governance-direction | accepted | binding-governance | CO-WP-011 | Nova | Bleibt durch Transformationen erhalten |
+| DEC-S-118 | Audit/evidence history | security-context | accepted | binding-governance | CO-WP-011 | Nova | Nicht durch normale Reconciliation umgeschrieben |
+| DEC-S-119 | Storage/merge/synchronisation technology | architecture-context | deferred | non-binding | CO-WP-011 | Nova | Deferred |
+| DEC-S-120 | Cryptographic provenance | architecture-context | deferred | non-binding | CO-WP-011 | Nova | Deferred |
+| DEC-S-121 | Universal field schema | architecture-context | deferred | non-binding | CO-WP-011 | Nova | Deferred |
+
 ## Deferred Decisions
 
 | Decision ID | Topic | Status | Class | Source | Owner | Target WP | ADR Required |
@@ -309,5 +332,7 @@ Alle 30 Concept-ADR-Kandidaten (§51) plus zwei Foundation-Klärungen (Delivery 
 **CO-WP-009-Registrierungen:** 14 Human-Identity-/RBAC-/Break-Glass-Entscheidungen (DEC-S-76…89), **getrennte Dimensionen**: getrennte Identity-/Account-Konzepte; Repository- ≠ Runtime-Autorität; Workspace ≠ automatischer Security-Tenant; RBAC deny-by-default/least-privilege/scope-bound; Membership ohne globale Autorität; Rollenzuweisung explizit/auditierbar/widerrufbar; sensible Aktionen mit Reauth/Approval; Delegation explizit/scope-bound/non-transitive; Break Glass temporär/benannt/auditiert mit Ablaufpflicht; Offline-Emergency-Access governed (Mechanismus deferred); Identity-Provider-/Auth-/Session-Technologie und Tenant-Isolation `deferred`. Keine Technologieauswahl; keine ADR.
 
 **CO-WP-010-Registrierungen:** 16 Machine-Identity-/Credential-Lifecycle-Entscheidungen (DEC-S-90…105), **getrennte Dimensionen**: Human ≠ Machine Identity; Identity ≠ Credential; Discovery ≠ Enrollment; Registration ≠ Trust; Enrollment explizit/owner-/scope-bound (keine unbeschränkte Autorität); Machine Principals scope-bound; Agent/Adapter-Identität umgeht Policy nicht; Bootstrap ≠ permanente Identität; Credential-Governance ≠ Rohsecret-Ownership; Rotation/Renewal ohne stille Scope-Erweiterung; Compromise mit Containment + expliziter Re-Enrollment-Entscheidung; keine stille Decommission-ID-Wiederverwendung; Offline-Enrollment mit Provenance/Integrität/Approval; PKI/Krypto/Trust-Anchors, Enrollment-Protokoll und Rohsecret-Speicherung `deferred`. Keine Technologieauswahl; keine ADR.
+
+**CO-WP-011-Registrierungen:** 16 Source-of-Truth-/Field-Provenance-Entscheidungen (DEC-S-106…121), **getrennte Dimensionen**: Source of Truth ≠ System of Record; autoritative Feldownership explizit/modulgebunden; Desired/Observed/Effective/Derived getrennt; Derived/Cached nicht autoritativ per Default; importierte Daten erben keine Autorität; neuester Timestamp gewinnt nicht automatisch; Overrides explizit/feld-/reason-bound mit Provenance-Erhalt; Konflikte bleiben sichtbar; widerrufene Quellen nicht autoritativ; Offline-Reconciliation mit Provenance/Integrität/Authority/Conflict-Review (fail-closed); Field-Provenance durch Transformationen erhalten; Audit-/Evidence-History nicht durch Reconciliation umgeschrieben; Storage/Merge/Sync-Technologie, kryptografische Provenance und universelles Feldschema `deferred`. Keine Technologieauswahl; keine ADR.
 
 **Bestätigung:** Keine technische Architektur-, Technologie- oder Implementierungsentscheidung trägt den Status `accepted`. Keine Integration ist `supported`. Keine Zertifizierung/VS-Eignung behauptet. Keine ADR ist Accepted. Es wurde keine ADR-Datei erzeugt.

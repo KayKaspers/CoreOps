@@ -23,7 +23,13 @@ Universelle, self-hosted und offline-fähige Operations Control Plane, die Sourc
 
 ## Letztes Work Package
 
-`CO-WP-010 – Machine Identity, Enrollment and Offline Credential Lifecycle` (docs-only / security-baseline). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-009 – GO WITH NOTES`.
+`CO-WP-011 – Source of Truth and Field Provenance` (docs-only / data-governance and architecture foundation). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-010 – GO WITH NOTES`.
+
+## Source of Truth and Field Provenance (CO-WP-011)
+
+- Drei neue Dokumente: Source of Truth and State Authority Model, Field Provenance and Data Lineage Standard, Offline Data Reconciliation and Conflict Policy.
+- SoT ≠ System of Record; 10 Authority-Klassen; ein Owner pro Feldkonzept; Desired/Observed/Effective/Derived/Cached getrennt; stabile canonical Feldidentität; Freshness/Trust/Validation getrennt; Lineage erhält Input-Autorität.
+- Kein universelles Last-Write-Wins; Konflikte bleiben sichtbar; widerrufene Quellen nicht autoritativ; Import ≠ Authority-Transfer; Offline-Reconciliation fail-closed; Audit-History nicht durch Reconciliation umgeschrieben. Decision Index +16 (DEC-S-106…121), Risk Register +17 (RISK-156…172). Keine Storage-/Merge-/Sync-/Krypto-Auswahl; keine ADR; Identity-/Modul-/Capability-/Threat-Dateien + Lessons-Learned unverändert; keine NDF-Rückführung.
 
 ## Machine Identity, Enrollment and Offline Credential Lifecycle (CO-WP-010)
 
@@ -139,7 +145,7 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 
 ## Nächstes Work Package
 
-`CO-WP-011 – Source of Truth and Field Provenance` (docs-only; planned-next; pending Nova review von CO-WP-010 und Human-Maintainer-Freigabe). Die 004er-Erweiterungsserie (004A…004E) und CO-WP-005…010 sind abgeschlossen. External: NDF-Release-Zuordnung für die drei Adoption-Commits ausstehend.
+`CO-WP-012 – Observed, Desired, Effective State and Drift` (docs-only; planned-next; pending Nova review von CO-WP-011 und Human-Maintainer-Freigabe). Die 004er-Erweiterungsserie (004A…004E) und CO-WP-005…011 sind abgeschlossen. External: NDF-Release-Zuordnung für die drei Adoption-Commits ausstehend.
 
 ## Aktuelle Blocker
 
@@ -220,3 +226,4 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 - `CO-WP-008` (docs-only / logical-architecture foundation): Logical Module Architecture (17 Module MOD-*), Module Catalog (17-Modul-Register, Daten-/Zustandsownership) und Module Boundary and Dependency Standard erstellt; Policy/Control/Execution getrennt; module ≠ microservice/deployment; 2 Mermaid-Diagramme. Decision Index +12 (DEC-S-64…75), Risk Register +15 (RISK-104…118). Keine Technologie/Deployment; keine ADR; Capability Matrix + Threat-Dateien + Lessons-Learned unverändert; keine NDF-Rückführung. Nova Review ausstehend.
 - `CO-WP-009` (docs-only / security-baseline): Human Identity and Access Governance, Workspace/RBAC/Scope Model und Break-Glass and Emergency Access Policy erstellt; person/identity/account getrennt; Repository ≠ Runtime; Workspace ≠ Tenant; deny-by-default RBAC + Permission-Taxonomie; Break Glass benannt/temporär/auditiert mit Post-Event Review; 14 Invarianten. Decision Index +14 (DEC-S-76…89), Risk Register +18 (RISK-119…136). Keine Auth-/IdP-/Session-/Policy-Engine-Auswahl; keine ADR; Modul-/Capability-/Threat-Dateien + Lessons-Learned unverändert; keine NDF-Rückführung. Nova Review ausstehend.
 - `CO-WP-010` (docs-only / security-baseline): Machine Identity and Principal Governance, Machine Enrollment and Trust Lifecycle und Offline Credential and Rotation Governance erstellt; Human ≠ Machine; Discovery ≠ Enrollment; Registration ≠ Trust; 10 Principal-Klassen; Bootstrap ≠ permanente Identität; Credential-Governance ≠ Rohsecret-Ownership; Offline mit Provenance/Approval. Decision Index +16 (DEC-S-90…105), Risk Register +19 (RISK-137…155). Keine PKI-/Krypto-/Protokoll-/Secret-Store-Auswahl; keine ADR; Human-Identity-/Modul-/Capability-/Threat-Dateien + Lessons-Learned unverändert; keine NDF-Rückführung. Nova Review ausstehend.
+- `CO-WP-011` (docs-only / data-governance and architecture foundation): Source of Truth and State Authority Model, Field Provenance and Data Lineage Standard und Offline Data Reconciliation and Conflict Policy erstellt; SoT ≠ System of Record; ein Owner pro Feldkonzept; Desired/Observed/Effective/Derived getrennt; kein Last-Write-Wins; Konflikte sichtbar; Import ≠ Authority; fail-closed Reconciliation. Decision Index +16 (DEC-S-106…121), Risk Register +17 (RISK-156…172). Keine Storage-/Merge-/Sync-/Krypto-Auswahl; keine ADR; Identity-/Modul-/Capability-/Threat-Dateien + Lessons-Learned unverändert; keine NDF-Rückführung. Nova Review ausstehend.
