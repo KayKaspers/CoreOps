@@ -411,6 +411,16 @@ Folgende Themen benötigen vor jeder verbindlichen technischen Festlegung einen 
 - **NDF-Kandidaten:** NDF-FC-COREOPS-011…013 (`candidate-pending-nova-review`); keine NDF-Rückführung. Kandidaten gesamt 13 (008…013 pending).
 - **Read-only-Befunde:** Risk Register 279 (high 138/medium 117/low 24) → Konsolidierung ~CO-WP-029/030; Decision Index DEC-S-273, Alt-Kombistatus DEC-S-01…37 vs. getrennte Dimensionen → Harmonisierung ~CO-WP-029; Capability-Count „74→94" ~CO-WP-029; Dokumentationsökonomie ~CO-WP-030.
 - **Grenzen:** Decision Index und Risk Register read-only unverändert; kein NDF-Transfer; CO-WP-021 nicht begonnen; genau acht Allowed Files geändert.
+- **Status:** `completed-go-with-notes` (Commit d09d91b).
+
+## CO-WP-021 Konsolidierung (Deployment Control Plane and Blueprint Schema)
+
+- **Control Plane/Execution:** [DEPLOYMENT_CONTROL_PLANE_AND_EXECUTION_MODEL.md](../docs/architecture/DEPLOYMENT_CONTROL_PLANE_AND_EXECUTION_MODEL.md) — Control-Plane-Grenze, Intent/Plan, Target Sets/Snapshots, Topology Selection/Revalidation, Artifacts/Dependencies, Preflight, Lifecycle (proposed…closed), Waves/Batches, Concurrency, Pause/Resume/Cancellation, Partial/Unknown, Verification, Rollback/Forward Recovery, State-Authority-/Policy-Bindung, Offline.
+- **Blueprint/Versioning:** [DEPLOYMENT_BLUEPRINT_VERSIONING_AND_COMPATIBILITY_MODEL.md](../docs/architecture/DEPLOYMENT_BLUEPRINT_VERSIONING_AND_COMPATIBILITY_MODEL.md) — Blueprint Identity/Lifecycle, Versionsdimensionen, Inputs/Parameters/Defaults/Secret References, Environment Overlays, Effective Blueprint, Artifact-/Dependency-Bindung, Compatibility, Deprecation/Retirement.
+- **Deployment-Security:** [DEPLOYMENT_TARGETING_EXECUTION_AND_RECOVERY_POLICY.md](../docs/security/DEPLOYMENT_TARGETING_EXECUTION_AND_RECOVERY_POLICY.md) — Authority, Target-Set-Authority/Revalidation, Preflight/Audit-Start, Waves, Partial, Verification, Rollback/Recovery, Manual Authority, Offline, Workspace-Isolation, Fail-Closed.
+- **Governance-Fortschreibung:** Decision Index +15 (DEC-S-274…288), Risk Register +5 (RISK-280…284, gesamt 284; Wachstumsgrenze §4 eingehalten).
+- **Grenzen:** blueprint availability ≠ deployment authorization; intent/plan/approval/authorization/execution/verification/closure getrennt; dynamische Topology-Selektion → begrenzter Target-Set-Snapshot; Target-Set-Approval-Re-Evaluation; Parameter/Overlays schwächen Security nicht still; artifact availability ≠ trust/integrity/compatibility; execution ≠ desired-state verification; partial/unknown sichtbar; cancellation ≠ keine Nebenwirkung; rollback braucht Verifikation; Machine ≠ Human Deployment Authority; keine Deployment-Engine-/Blueprint-/Registry-Technologie; keine ADR; Invarianten = Designanforderungen.
+- **Status:** Foundation-Deployment-Governance etabliert; nächstes WP `CO-WP-022`; Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung. Nova Review pending.
 
 ## Notes
 

@@ -38,8 +38,8 @@ Jedes Work Package hat genau **einen** primären Typ.
 | CO-WP-018 | docs-only         | Event, Audit Correlation and Evidence Model                    | completed-go-with-notes        |
 | CO-WP-019 | docs-only         | Telemetry and Normalization Schema                             | completed-go-with-notes        |
 | CO-WP-020 | docs-only         | Topology Graph, Evidence and Manual Authority                  | completed-go-with-notes        |
-| CO-WP-021 | docs-only         | Deployment Control Plane and Blueprint Schema                  | planned-next                  |
-| CO-WP-022 | security-baseline | Artifact Trust, SBOM, Provenance and Revocation                | planned                       |
+| CO-WP-021 | docs-only         | Deployment Control Plane and Blueprint Schema                  | implemented-awaiting-nova-review|
+| CO-WP-022 | security-baseline | Artifact Trust, SBOM, Provenance and Revocation                | planned-next                  |
 | CO-WP-023 | docs-only         | Restricted, Isolated, Air-Gapped Operation and CorePack        | planned                       |
 | CO-WP-024 | security-baseline | Secrets, Configuration Vault and Key Custody                   | planned                       |
 | CO-WP-025 | docs-only         | Data Classification, Retention and Redaction                   | planned                       |
@@ -51,12 +51,12 @@ Jedes Work Package hat genau **einen** primären Typ.
 | CO-WP-031 | release-prep      | Foundation 0.1 Release Preparation                             | planned                       |
 
 > **Milestone-Hinweis 1 (nicht nummeriert):** `Milestone Lessons Review CO-WP-005 through CO-WP-012` — `completed-go-with-notes`. Gebündelter docs-only Review der acht Foundation-WPs; Ergebnis **GO WITH NOTES FOR CO-WP-013** (Commit 74f8e32). Keine `CO-WP-*`-ID; verändert die Queue-Reihenfolge nicht. Follow-ups (Capability-Count-Reconciliation, Risk-Register-Konsolidierung, Decision-Status-Harmonisierung) sind für ~`CO-WP-029`/`CO-WP-030` vorgemerkt.
-> **Milestone-Hinweis 2 (nicht nummeriert):** `Milestone Lessons Review CO-WP-013 through CO-WP-020` — `implemented-awaiting-nova-review`. Gebündelter docs-only Review der acht Foundation-WPs (24 Dokumente); Ergebnis **GO WITH NOTES FOR CO-WP-021**. Neues Dokument `project-brain/MILESTONE_REVIEW_CO_WP_013_TO_020.md`; Lessons LL-023…030; NDF-Kandidaten NDF-FC-COREOPS-011…013 (`candidate-pending-nova-review`). Keine `CO-WP-*`-ID; verändert die Queue-Reihenfolge nicht. `CO-WP-021` bleibt `planned-next`. Follow-ups (Risk-Konsolidierung, Decision-Status-Harmonisierung, Capability-Count, Dokumentationsökonomie) für ~`CO-WP-029`/`CO-WP-030`. Decision Index und Risk Register read-only unverändert.
+> **Milestone-Hinweis 2 (nicht nummeriert):** `Milestone Lessons Review CO-WP-013 through CO-WP-020` — `completed-go-with-notes` (Commit d09d91b). Gebündelter docs-only Review der acht Foundation-WPs (24 Dokumente); Ergebnis **GO WITH NOTES FOR CO-WP-021**. Neues Dokument `project-brain/MILESTONE_REVIEW_CO_WP_013_TO_020.md`; Lessons LL-023…030; NDF-Kandidaten NDF-FC-COREOPS-011…013 (`candidate-pending-nova-review`). Keine `CO-WP-*`-ID; verändert die Queue-Reihenfolge nicht. `CO-WP-021` bleibt `planned-next`. Follow-ups (Risk-Konsolidierung, Decision-Status-Harmonisierung, Capability-Count, Dokumentationsökonomie) für ~`CO-WP-029`/`CO-WP-030`. Decision Index und Risk Register read-only unverändert.
 
 ## Regeln
 
 - Genau ein primärer Typ pro Work Package.
-- Nur `CO-WP-021` ist der nächste geplante Schritt (`planned-next`). `CO-WP-020` ist `implemented-awaiting-nova-review` und wird erst nach Nova Review und Human-Maintainer-Commit als abgeschlossen geführt.
+- Nur `CO-WP-022` ist der nächste geplante Schritt (`planned-next`). `CO-WP-021` ist `implemented-awaiting-nova-review` und wird erst nach Nova Review und Human-Maintainer-Commit als abgeschlossen geführt.
 - Keine automatische Freigabe eines Folge-Work-Packages.
 - Die Queue ist noch **nicht** final scope-locked.
 - Änderungen an der Queue nur durch ein später freigegebenes Work Package.

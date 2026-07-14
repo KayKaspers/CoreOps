@@ -275,7 +275,7 @@ Drei neue Dokumente: Topology Graph and Relationship Model (Node/Relationship Cl
 ## Milestone Lessons Review (CO-WP-013…020)
 
 Current milestone:
-CO-WP-013 through CO-WP-020 reviewed — `Milestone Lessons Review CO-WP-013 through CO-WP-020` completed; Nova Review pending. Ergebnis: **GO WITH NOTES FOR CO-WP-021**.
+CO-WP-013 through CO-WP-020 reviewed — `Milestone Lessons Review CO-WP-013 through CO-WP-020` `completed-go-with-notes` (Commit d09d91b). Ergebnis: **GO WITH NOTES FOR CO-WP-021**.
 
 Current foundation:
 Policy/Approval/Execution, integration, domain-pack, data/migration, API, event/evidence, telemetry and topology governance consolidated as one coherent chain (24 documents), each stage consuming the prior as authoritative boundary; all cross-foundation invariants held; no technology selected.
@@ -288,7 +288,26 @@ pending Nova review, no transfer
 
 Neues Dokument `project-brain/MILESTONE_REVIEW_CO_WP_013_TO_020.md`. Acht konsolidierte Lessons (LL-023…030); drei NDF-Feedback-Kandidaten (NDF-FC-COREOPS-011…013, `candidate-pending-nova-review`). Read-only-Befunde: Risk Register 279 (Konsolidierung ~CO-WP-029/030); Decision Index DEC-S-273 (Alt-Kombistatus DEC-S-01…37 vs. getrennte Dimensionen — Harmonisierung ~CO-WP-029); Capability-Count „74→94" in Alt-Abschnitten (~CO-WP-029); Dokumentationsökonomie (gemeinsames Invarianten-/Template-Referenzdokument ~CO-WP-030). **Decision Index und Risk Register unverändert (read-only); keine NDF-Rückführung; CO-WP-021 nicht begonnen.**
 
-Next planned WP nach Nova Review und Human-Maintainer-Commit des Milestone Reviews: `CO-WP-021 – Deployment Control Plane and Blueprint Schema`.
+## Deployment Control Plane and Blueprint Schema
+
+Current implemented WP:
+`CO-WP-021 – Deployment Control Plane and Blueprint Schema` – pending Nova review.
+
+Current deployment foundation:
+Deployment control plane, blueprint identity, bounded target snapshots, artifact and dependency binding, waves, verification, rollback, recovery and offline deployment governance defined. Blueprint availability ≠ deployment authorization; intent/plan/approval/authorization/execution/verification/closure separate; dynamic topology selection materialised into a bounded target-set snapshot; target-set approval re-evaluated after material change; parameters/overlays do not weaken security silently; artifact availability ≠ trust/integrity/compatibility; execution ≠ desired-state verification; partial/unknown per-target results visible and block unsafe retry; cancellation ≠ no side effects; rollback needs verification; machine principals cannot imitate human deployment approval.
+
+Deployment engine and blueprint technology:
+not selected
+
+Runtime deployment:
+not started
+
+Deployment validation:
+not performed
+
+Drei neue Dokumente: Deployment Control Plane and Execution Model (Control-Plane-Grenze, Intent/Plan, Target Sets/Snapshots, Topology Selection/Revalidation, Artifacts/Dependencies, Preflight, Lifecycle, Waves/Batches, Pause/Resume/Cancellation, Partial/Unknown, Verification, Rollback/Forward Recovery, State-Authority-/Policy-Bindung, Offline), Deployment Blueprint Versioning and Compatibility Model (Blueprint Identity/Lifecycle, Versionsdimensionen, Inputs/Parameters/Overlays, Effective Blueprint, Artifact-/Dependency-Bindung, Compatibility, Deprecation) und Deployment Targeting, Execution and Recovery Policy (Authority, Target-Set-Authority/Revalidation, Preflight/Audit-Start, Waves, Partial, Verification, Rollback/Recovery, Manual Authority, Offline, Fail-Closed). Decision Index +15 (DEC-S-274…288), Risk Register +5 (RISK-280…284, gesamt 284; Wachstumsgrenze §4 eingehalten). Keine Deployment-Engine-/Orchestrator-/Pipeline-/Blueprint-Format-/Schema-/Agent-/Registry-/Rollback-Technologie ausgewählt; keine ADR; Policy-/Integration-/Domain-Pack-/Data-/API-/Event-/Evidence-/Telemetry-/Topology-/Identity-/Authorization-/State-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.
+
+Next planned WP nach Nova Review und Human-Maintainer-Commit: `CO-WP-022 – Artifact Trust, SBOM, Provenance and Revocation`.
 
 ## Current Goal
 

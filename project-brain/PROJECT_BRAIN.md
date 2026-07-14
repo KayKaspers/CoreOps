@@ -338,14 +338,25 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 - Acht konsolidierte Lessons LL-023…030 (Lessons gesamt 30); drei NDF-Feedback-Kandidaten NDF-FC-COREOPS-011…013 (`candidate-pending-nova-review`, Kandidaten gesamt 13; 008…013 pending).
 - Read-only-Befunde (nur Follow-up): Risk Register 279 (high 138/medium 117/low 24) → Konsolidierung ~CO-WP-029/030; Decision Index DEC-S-273 (Alt-Kombistatus DEC-S-01…37 vs. getrennte Dimensionen) → Harmonisierung ~CO-WP-029; Capability-Count „74→94" ~CO-WP-029; Dokumentationsökonomie (gemeinsames Invarianten-/Template-Referenzdokument) ~CO-WP-030.
 - **Decision Index und Risk Register read-only unverändert; kein NDF-Transfer/keine Adoption; CO-WP-021 nicht begonnen; genau acht Allowed Files geändert.**
+- Status: `completed-go-with-notes` (Commit d09d91b).
+
+## Deployment Control Plane and Blueprint Schema (CO-WP-021)
+
+- Drei neue Dokumente: [DEPLOYMENT_CONTROL_PLANE_AND_EXECUTION_MODEL.md](../docs/architecture/DEPLOYMENT_CONTROL_PLANE_AND_EXECUTION_MODEL.md), [DEPLOYMENT_BLUEPRINT_VERSIONING_AND_COMPATIBILITY_MODEL.md](../docs/architecture/DEPLOYMENT_BLUEPRINT_VERSIONING_AND_COMPATIBILITY_MODEL.md), [DEPLOYMENT_TARGETING_EXECUTION_AND_RECOVERY_POLICY.md](../docs/security/DEPLOYMENT_TARGETING_EXECUTION_AND_RECOVERY_POLICY.md).
+- Deployment Control Plane = Governance-/Koordinationsgrenze (≠ Runtime/Engine/Orchestrator). `blueprint ≠ plan`; `deployment intent ≠ approved plan`; `approved plan ≠ execution authorization`; `deployment executed ≠ successful`; `successful ≠ desired state verified`; `closed ≠ successful`. Bindet jede Write-Aktion an CO-WP-013 (keine parallele Authorization Authority).
+- Blueprint Identity stabil (≠ file name/repo path/product version); getrennte Versionsdimensionen; Inputs/Parameters/Defaults/Secret References (`default ≠ safe value`; `secret reference ≠ raw secret`); Environment Overlays (`overlay ≠ permission to weaken security`); Effective Blueprint mit Provenance; Artifact-Bindung (`available ≠ trusted ≠ compatible`; `newer ≠ authorised replacement`).
+- Dynamische Topology-Selektion → **materialisierter, begrenzter Target-Set-Snapshot** (`topology query ≠ authorised target set`); conflicted/unresolved Identität wird nicht still privilegiertes Ziel; Pre-Execution-Revalidation (`approved target snapshot ≠ permanently valid`). Waves (`wave success ≠ remaining targets authorised`); Partial/Unknown Per-Target sichtbar (`unknown → kein Auto-Retry`); Cancellation (`cancel accepted ≠ no side effects`); Verification getrennt (`artifact present/health green/telemetry available ≠ verified/sufficient`); Rollback braucht Verifikation; Forward Recovery.
+- State-Authority-Boundary (`deployment executed ≠ observed matches ≠ effective verified`; SoT/Drift autoritativ). Machine Principals imitieren keine Human Deployment Approval/Manual Authority. Offline mit Provenance/Integrität/Target-Binding/gebundener Authorization/expliziter Aktivierung.
+- Decision Index +15 (DEC-S-274…288), Risk Register +5 (RISK-280…284, gesamt 284; Wachstumsgrenze §4 eingehalten).
+- **Keine Deployment-Engine-/Orchestrator-/Pipeline-/Blueprint-Format-/Schema-/Agent-/Registry-/Rollback-Technologie ausgewählt; keine ADR; Policy-/Integration-/Domain-Pack-/Data-/API-/Event-/Evidence-/Telemetry-/Topology-/Identity-/Authorization-/State-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.**
 
 ## Letztes Work Package
 
-`CO-WP-020 – Topology Graph, Evidence and Manual Authority` (docs-only / topology, relationship, evidence and manual-governance foundation). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-019 – completed-go-with-notes` (Commit 9bb12b2).
+`CO-WP-021 – Deployment Control Plane and Blueprint Schema` (docs-only / deployment architecture, targeting and execution-governance foundation). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-020 – completed-go-with-notes` (Commit 2c6d416); dazwischen `Milestone Lessons Review CO-WP-013…020 – GO WITH NOTES` (Commit d09d91b).
 
 ## Nächstes Work Package
 
-`CO-WP-021 – Deployment Control Plane and Blueprint Schema` (docs-only; planned-next; erst nach Nova Review von CO-WP-020 und Human-Maintainer-Commit).
+`CO-WP-022 – Artifact Trust, SBOM, Provenance and Revocation` (security-baseline; planned-next; erst nach Nova Review von CO-WP-021 und Human-Maintainer-Commit).
 
 ## Human-Maintainer-Gates
 

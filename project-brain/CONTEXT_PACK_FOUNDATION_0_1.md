@@ -23,7 +23,14 @@ Universelle, self-hosted und offline-fähige Operations Control Plane, die Sourc
 
 ## Letztes Work Package
 
-`CO-WP-020 – Topology Graph, Evidence and Manual Authority` (`completed-go-with-notes`, Commit 2c6d416); anschließend `Milestone Lessons Review CO-WP-013 through CO-WP-020` (docs-only / milestone review) — **Nova Review pending**. Vorheriges WP: `CO-WP-019 – completed-go-with-notes` (Commit 9bb12b2).
+`CO-WP-021 – Deployment Control Plane and Blueprint Schema` (docs-only / deployment architecture, targeting and execution-governance foundation) — **Nova Review pending**. Vorheriges WP: `CO-WP-020 – completed-go-with-notes` (Commit 2c6d416); dazwischen `Milestone Lessons Review CO-WP-013…020 – GO WITH NOTES` (Commit d09d91b).
+
+## Deployment Control Plane and Blueprint Schema (CO-WP-021)
+
+- Drei neue Dokumente: Deployment Control Plane and Execution Model, Deployment Blueprint Versioning and Compatibility Model, Deployment Targeting/Execution/Recovery Policy.
+- Deployment Control Plane = Governance-/Koordinationsgrenze (≠ Runtime). `blueprint ≠ plan`; `intent ≠ approved plan`; `approved plan ≠ execution authorization`; `executed ≠ successful ≠ verified`; `closed ≠ successful`. Write/Execution an CO-WP-013 gebunden (keine parallele Authorization Authority).
+- Dynamische Topology-Selektion → materialisierter, begrenzter Target-Set-Snapshot (`topology query ≠ authorised target set`); Pre-Execution-Revalidation; conflicted Identität nicht still privilegiertes Ziel. Blueprint Identity stabil; Parameter/Overlays schwächen Security nicht still (`secret reference ≠ raw secret`); `artifact available ≠ trusted ≠ compatible`. Waves (`wave success ≠ remaining authorised`); Partial/Unknown sichtbar; Cancellation ≠ keine Nebenwirkung; Verification getrennt; Rollback braucht Verifikation; Machine ≠ Human Deployment Authority; Offline mit Provenance/Integrität/Target-Binding/gebundener Authorization/Aktivierung.
+- Decision Index +15 (DEC-S-274…288), Risk Register +5 (RISK-280…284, gesamt 284; Wachstumsgrenze §4 eingehalten). Keine Deployment-Engine-/Blueprint-/Registry-Technologie; keine ADR; Policy-/Integration-/Domain-Pack-/Data-/API-/Event-/Evidence-/Telemetry-/Topology-/Identity-/Authorization-/State-/Capability-/Threat-Dateien + Lessons-Learned + NDF-Kandidaten unverändert; keine NDF-Rückführung.
 
 ## Milestone Lessons Review (CO-WP-013…020)
 
@@ -223,7 +230,7 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 
 ## Nächstes Work Package
 
-`CO-WP-021 – Deployment Control Plane and Blueprint Schema` (docs-only; planned-next; erst nach Nova Review des Milestone Reviews CO-WP-013…020 und Human-Maintainer-Commit). Die 004er-Erweiterungsserie (004A…004E), CO-WP-005…020, der Milestone Lessons Review (005…012) und der Milestone Lessons Review (013…020) sind bearbeitet; CO-WP-020 ist `completed-go-with-notes` (Commit 2c6d416), der Milestone Review 013…020 ist `implemented-awaiting-nova-review`. CO-WP-014…020 wurden gepusht (Branch bei Preflight auf origin/main-Höhe); der Milestone-Review-Commit steht noch aus. Milestone-Bündelentscheidung für NDF-Kandidaten 008…013 liegt bei Nova/HM. External: NDF-Release-Zuordnung für die drei Adoption-Commits (001…007) ausstehend.
+`CO-WP-022 – Artifact Trust, SBOM, Provenance and Revocation` (security-baseline; planned-next; erst nach Nova Review von CO-WP-021 und Human-Maintainer-Commit). Die 004er-Erweiterungsserie (004A…004E), CO-WP-005…020, beide Milestone Lessons Reviews (005…012, 013…020) und CO-WP-021 sind bearbeitet; der Milestone Review 013…020 ist `completed-go-with-notes` (Commit d09d91b), CO-WP-021 ist `implemented-awaiting-nova-review`. CO-WP-014…020 und der Milestone-Review-Commit wurden gepusht (Branch bei Preflight auf origin/main-Höhe); CO-WP-021 noch nicht committet. Milestone-Bündelentscheidung für NDF-Kandidaten 008…013 liegt bei Nova/HM. External: NDF-Release-Zuordnung für die drei Adoption-Commits (001…007) ausstehend.
 
 ## Aktuelle Blocker
 
