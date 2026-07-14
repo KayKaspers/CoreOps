@@ -307,14 +307,25 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 - Sechs Evidence-Dimensionen getrennt (capability/availability/freshness/integrity/validation/sufficiency); `available ≠ valid ≠ sufficient`; `stated integrity ≠ verified`; Sufficiency decision-/scope-/time-bound; `handling history ≠ legal admissibility` (keine rechtliche Beweiskraft). Audit Integrity: `append-only-governed ≠ technisch unveränderlich`; `audit administrator ≠ unrestricted disclosure/editor`; `read permission ≠ export permission`. Retention/Purge (keine Fristen); Offline mit Provenance/Integrität/Target-Binding/expliziter Governance; Failure sichtbar (`audit failure ≠ target action failed`); `closed ≠ complete/validated/sufficient/compliance`.
 - Decision Index +17 (DEC-S-220…236), Risk Register +10 (RISK-250…259, gesamt 259).
 - **Keine Event-Bus-/Logging-/SIEM-/Storage-/Schema-/Ordering-/Hash-/Signatur-/WORM-/Redaction-Technologie ausgewählt; keine ADR; API-/Integration-/Data-/Identity-/Authorization-/State-/Provenance-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.**
+- Status: `completed-go-with-notes` (Commit c7c3d90).
+
+## Telemetry and Normalization Schema (CO-WP-019)
+
+- Drei neue Dokumente: [TELEMETRY_SIGNAL_AND_NORMALIZATION_MODEL.md](../docs/architecture/TELEMETRY_SIGNAL_AND_NORMALIZATION_MODEL.md), [TELEMETRY_MAPPING_QUALITY_AND_COMPATIBILITY_MODEL.md](../docs/architecture/TELEMETRY_MAPPING_QUALITY_AND_COMPATIBILITY_MODEL.md), [TELEMETRY_TRUST_PRIVACY_AND_DISCLOSURE_POLICY.md](../docs/security/TELEMETRY_TRUST_PRIVACY_AND_DISCLOSURE_POLICY.md).
+- `telemetry ≠ event ≠ audit event ≠ evidence ≠ command`; `signal received ≠ source state currently true`. 22 Signal-Klassen; `signal/series/sample/resource identity` getrennt; `producer ≠ source`. Raw/Normalized/Derived/Aggregated getrennt (`raw ≠ validated`; `normalized ≠ lossless`; `derived ≠ independently observed`; `aggregated ≠ complete population`).
+- Metric-Semantik (`counter ≠ rate`; `cumulative ≠ delta`; `zero ≠ missing ≠ unknown`); Logs (`log record ≠ governed audit record`; `absence of log ≠ no action`); Traces (`trace ≠ audit history`; `span completed ≠ operation successful`); Health (`self-reported healthy ≠ externally verified`; `telemetry absent ≠ service down`; `telemetry present ≠ healthy`).
+- Canonical Fields (`same label ≠ same semantics`; `mapped field ≠ authoritative field`); Normalization Profiles (`profile exists ≠ mapping validated`); Units/Scale/Precision getrennt (`unknown/conflicting unit ≠ safe automatic conversion`); Quality/Confidence/Freshness/Validation getrennt; `recently ingested ≠ recently observed`; `stale ≠ invalid automatically`; `missing ≠ zero ≠ resource unavailable`. Sampling/Aggregation sichtbar (`sampled ≠ complete population`); Cardinality-/Label-Grenze (`available label ≠ safe dimension`).
+- State-Authority-Boundary: `telemetry ≠ authoritative state`; `metric threshold ≠ execution authorization` (SoT/State autoritativ, kein Parallelmodell). Event/Evidence-Boundary: `anomaly ≠ incident`; `threshold crossed ≠ execution command`; Telemetry-to-Event/-Evidence mit expliziter Klassifikation/Provenance. Offline mit Provenance/Integrität/Target-Binding/Governance; Failure sichtbar (`telemetry failure ≠ target failure`; `missing telemetry ≠ evidence of absence`).
+- Decision Index +18 (DEC-S-237…254), Risk Register +10 (RISK-260…269, gesamt 269).
+- **Keine Telemetry-/Protokoll-/Schema-/Collector-/Storage-/Mapping-/Unit-/Aggregation-/Alerting-/Dashboard-Technologie ausgewählt; keine ADR; Event-/Audit-/Evidence-/API-/Integration-/Data-/Identity-/Authorization-/State-/Provenance-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.**
 
 ## Letztes Work Package
 
-`CO-WP-018 – Event, Audit Correlation and Evidence Model` (docs-only / event, audit, evidence and security-governance foundation). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-017 – completed-go-with-notes` (Commit 7170c84).
+`CO-WP-019 – Telemetry and Normalization Schema` (docs-only / telemetry, observability and normalization foundation). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-018 – completed-go-with-notes` (Commit c7c3d90).
 
 ## Nächstes Work Package
 
-`CO-WP-019 – Telemetry and Normalization Schema` (docs-only; planned-next; erst nach Nova Review von CO-WP-018 und Human-Maintainer-Commit).
+`CO-WP-020 – Topology Graph, Evidence and Manual Authority` (docs-only; planned-next; erst nach Nova Review von CO-WP-019 und Human-Maintainer-Commit).
 
 ## Human-Maintainer-Gates
 

@@ -23,7 +23,14 @@ Universelle, self-hosted und offline-fähige Operations Control Plane, die Sourc
 
 ## Letztes Work Package
 
-`CO-WP-018 – Event, Audit Correlation and Evidence Model` (docs-only / event, audit, evidence and security-governance foundation). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-017 – completed-go-with-notes` (Commit 7170c84).
+`CO-WP-019 – Telemetry and Normalization Schema` (docs-only / telemetry, observability and normalization foundation). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-018 – completed-go-with-notes` (Commit c7c3d90).
+
+## Telemetry and Normalization Schema (CO-WP-019)
+
+- Drei neue Dokumente: Telemetry Signal and Normalization Model, Telemetry Mapping/Quality/Compatibility Model, Telemetry Trust/Privacy/Disclosure Policy.
+- `telemetry ≠ event ≠ audit event ≠ evidence ≠ command`; `signal received ≠ source state currently true`. 22 Signal-Klassen; signal/series/sample/resource identity getrennt; `producer ≠ source`. Raw/Normalized/Derived/Aggregated getrennt. Metric/Log/Trace/Health-Semantik (`missing ≠ zero`; `self-reported ≠ externally verified`; `telemetry absent ≠ service down`).
+- Canonical Fields (`same label ≠ same semantics`); Normalization Profiles; Units/Scale/Precision getrennt (`unknown/conflicting unit ≠ safe conversion`); Quality/Confidence/Freshness/Validation getrennt; `recently ingested ≠ recently observed`; Sampling/Aggregation sichtbar; Cardinality/Label-Grenze. `telemetry ≠ authoritative state`; `metric threshold ≠ execution authorization`; `anomaly ≠ incident`; Telemetry-to-Event/-Evidence mit Klassifikation/Provenance; Offline mit Provenance/Integrität/Target-Binding/Governance.
+- Decision Index +18 (DEC-S-237…254), Risk Register +10 (RISK-260…269, gesamt 269). Keine Telemetry-/Protokoll-/Storage-/Mapping-Technologie; keine ADR; Event-/Audit-/Evidence-/API-/Integration-/Data-/Identity-/Authorization-/State-/Provenance-/Capability-/Threat-Dateien + Lessons-Learned + NDF-Kandidaten unverändert; keine NDF-Rückführung.
 
 ## Event, Audit Correlation and Evidence Model (CO-WP-018)
 
@@ -202,7 +209,7 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 
 ## Nächstes Work Package
 
-`CO-WP-019 – Telemetry and Normalization Schema` (docs-only; planned-next; erst nach Nova Review von CO-WP-018 und Human-Maintainer-Commit). Die 004er-Erweiterungsserie (004A…004E), CO-WP-005…017, der Milestone Lessons Review (005…012) und CO-WP-018 sind bearbeitet; CO-WP-018 ist `implemented-awaiting-nova-review`. CO-WP-014/015/016 wurden gepusht; CO-WP-017 committet aber noch nicht gepusht (Branch ahead 1 bei Preflight); CO-WP-018 noch nicht committet. Push von CO-WP-017/018 nach HM-Commit von CO-WP-018 vorgesehen. Milestone-Bündelentscheidung (Lessons/NDF-Kandidaten 008…010) liegt bei Nova/HM. External: NDF-Release-Zuordnung für die drei Adoption-Commits ausstehend.
+`CO-WP-020 – Topology Graph, Evidence and Manual Authority` (docs-only; planned-next; erst nach Nova Review von CO-WP-019 und Human-Maintainer-Commit). Die 004er-Erweiterungsserie (004A…004E), CO-WP-005…018, der Milestone Lessons Review (005…012) und CO-WP-019 sind bearbeitet; CO-WP-019 ist `implemented-awaiting-nova-review`. CO-WP-014…018 wurden gepusht (Branch war bei Preflight auf origin/main-Höhe); CO-WP-019 noch nicht committet. Push von CO-WP-019 nach HM-Commit vorgesehen. Milestone-Bündelentscheidung (Lessons/NDF-Kandidaten 008…010) liegt bei Nova/HM. External: NDF-Release-Zuordnung für die drei Adoption-Commits ausstehend.
 
 ## Aktuelle Blocker
 
