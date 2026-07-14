@@ -356,7 +356,16 @@ Folgende Themen benötigen vor jeder verbindlichen technischen Festlegung einen 
 - **Trust/Lifecycle:** [DOMAIN_PACK_TRUST_PROVENANCE_AND_LIFECYCLE_POLICY.md](../docs/security/DOMAIN_PACK_TRUST_PROVENANCE_AND_LIFECYCLE_POLICY.md) — Trust/Provenance/Integrity, Security Review/Response, Suspension/Withdrawal/Revocation, Offline Distribution, Fail-Closed.
 - **Governance-Fortschreibung:** Decision Index +17 (DEC-S-169…185), Risk Register +10 (RISK-220…229, gesamt 229).
 - **Grenzen:** active ≠ implemented ≠ maintained ≠ supported ≠ validated ≠ universally compatible; Support Level ≠ SLA; SUP-3 version-/target-/profil-/limitation-/evidence-bound; expected ≠ validated compatibility; community/external ≠ trust/support/endorsement; Pack-Aktivierung ≠ Runtime Authority; Dependencies nicht still Core-Pflicht; Offline mit Provenance/Integrität/Target-Binding/Aktivierung; retired IDs nicht wiederverwendet; keine Packaging-/Plugin-/Marketplace-/Signaturtechnologie; keine ADR; Invarianten = Designanforderungen.
-- **Status:** Foundation-Domain-Pack-Governance etabliert; nächstes WP `CO-WP-016`; Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung. Nova Review pending.
+- **Status:** Foundation-Domain-Pack-Governance etabliert; `completed-go-with-notes` (Commit 8191e06).
+
+## CO-WP-016 Konsolidierung (Data Ownership, Persistence, Schema Versioning and Migration)
+
+- **Ownership/Persistence:** [DATA_OWNERSHIP_AND_PERSISTENCE_MODEL.md](../docs/architecture/DATA_OWNERSHIP_AND_PERSISTENCE_MODEL.md) — neun Ownership-Dimensionen getrennt, 16 Datenklassen mit autoritativem Modul, 10 Persistence-Klassen, Data Lifecycle, Retention/Recovery/Privacy.
+- **Schema/Migration:** [SCHEMA_VERSIONING_AND_MIGRATION_MODEL.md](../docs/architecture/SCHEMA_VERSIONING_AND_MIGRATION_MODEL.md) — Schema Identity, 8 Versionsdimensionen, 11 Compatibility-Klassen, 12 Change Classes, Migration Plan/Preflight/Lifecycle, Mixed-Version/Partial, Rollback/Forward Recovery.
+- **Migration-Security:** [DATA_MIGRATION_INTEGRITY_AND_RECOVERY_POLICY.md](../docs/security/DATA_MIGRATION_INTEGRITY_AND_RECOVERY_POLICY.md) — Authority, Klassifikation, Backup/Recovery, destruktive Migration, Identity-/Audit-Daten, Offline, Concurrency, Fail-Closed.
+- **Governance-Fortschreibung:** Decision Index +18 (DEC-S-186…203), Risk Register +10 (RISK-230…239, gesamt 239).
+- **Grenzen:** data owner ≠ storage operator; storage responsibility ≠ write authority ≠ migration authority; schema version ≠ data version; unknown/conflicted compatibility blockiert destruktive Migration; executed ≠ validated; backup exists ≠ restorable; restore ≠ service recovery; partial migration sichtbar; rollback braucht Verifikation; Migration reaktiviert keine widerrufene Autorität; Audit-/Evidence-Provenance erhalten; keine DB-/ORM-/Schema-/Migration-/Backup-Technologie; keine ADR; Invarianten = Designanforderungen.
+- **Status:** Foundation-Data-Ownership-/Migration-Governance etabliert; nächstes WP `CO-WP-017`; Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung. Nova Review pending.
 
 ## Notes
 

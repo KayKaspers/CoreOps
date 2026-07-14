@@ -362,6 +362,31 @@ Alle 30 Concept-ADR-Kandidaten (§51) plus zwei Foundation-Klärungen (Delivery 
 | DEC-S-184 | Packaging/marketplace/plugin/update technology | architecture-context | deferred | non-binding | CO-WP-015 | Nova | Deferred |
 | DEC-S-185 | Pack verification/signing/trust-anchor technology | architecture-context | deferred | non-binding | CO-WP-015 | Nova | Deferred |
 
+## Data Ownership, Persistence and Migration Decisions (CO-WP-016)
+
+> Registriert über [DATA_OWNERSHIP_AND_PERSISTENCE_MODEL.md](../docs/architecture/DATA_OWNERSHIP_AND_PERSISTENCE_MODEL.md), [SCHEMA_VERSIONING_AND_MIGRATION_MODEL.md](../docs/architecture/SCHEMA_VERSIONING_AND_MIGRATION_MODEL.md) und [DATA_MIGRATION_INTEGRITY_AND_RECOVERY_POLICY.md](../docs/security/DATA_MIGRATION_INTEGRITY_AND_RECOVERY_POLICY.md). **Getrennte Dimensionen** (Decision Class · Lifecycle Status · Binding Level); keine kombinierten Pseudostatuswerte; keine Storage-/DB-/ORM-/Schema-/Migration-/Backup-Technologie ausgewählt; keine ADR.
+
+| Decision ID | Topic | Decision Class | Lifecycle Status | Binding Level | Source | Owner | Notes |
+| ----------- | ----- | -------------- | ---------------- | ------------- | ------ | ----- | ----- |
+| DEC-S-186 | Ownership responsibilities | security-context | accepted | binding-governance | CO-WP-016 | Nova | Owner/Steward/Storage/Write/Migration/Retention/Recovery getrennt |
+| DEC-S-187 | Storage responsibility | security-context | accepted | binding-governance | CO-WP-016 | Nova | ≠ autoritative Ownership |
+| DEC-S-188 | Migration authority | security-context | accepted | binding-governance | CO-WP-016 | Nova | ≠ uneingeschränkte Write-Autorität |
+| DEC-S-189 | Schema identity | governance-direction | accepted | binding-governance | CO-WP-016 | Nova | Stabil; ≠ storage location/file name |
+| DEC-S-190 | Version dimensions | governance-direction | accepted | binding-governance | CO-WP-016 | Nova | Schema/Data/Producer/Consumer/Migration/Contract/Product getrennt |
+| DEC-S-191 | Compatibility dimensions | security-context | accepted | binding-governance | CO-WP-016 | Nova | Read/Write/Round-Trip getrennt |
+| DEC-S-192 | Unknown/conflicted compatibility | security-context | accepted | binding-governance | CO-WP-016 | Nova | Blockiert automatische destruktive Migration |
+| DEC-S-193 | Migration responsibilities | security-context | accepted | binding-governance | CO-WP-016 | Nova | Plan/Approval/Execution/Validation/Recovery getrennt |
+| DEC-S-194 | Executed migration semantics | governance-direction | accepted | binding-governance | CO-WP-016 | Nova | Executed ≠ validierte Integrität |
+| DEC-S-195 | Backup semantics | governance-direction | accepted | binding-governance | CO-WP-016 | Nova | Backup exists ≠ restorable |
+| DEC-S-196 | Restore semantics | governance-direction | accepted | binding-governance | CO-WP-016 | Nova | Restore completed ≠ service recovery |
+| DEC-S-197 | Partial migration | governance-direction | accepted | binding-governance | CO-WP-016 | Nova | Bleibt explizit |
+| DEC-S-198 | Mixed-version operation | security-context | accepted | binding-governance | CO-WP-016 | Nova | Explizite Compatibility-/Dauergrenzen |
+| DEC-S-199 | Destructive migration | security-context | accepted | binding-governance | CO-WP-016 | HM | Gebundene Autorität + anwendbare Approval |
+| DEC-S-200 | Migration and authority | security-context | accepted | binding-governance | CO-WP-016 | Nova | Reaktiviert keine widerrufene Autorität/konsumierte Authorization |
+| DEC-S-201 | Audit/evidence provenance | security-context | accepted | binding-governance | CO-WP-016 | Nova | Bleibt durch Migration erhalten |
+| DEC-S-202 | Offline migration | security-context | accepted | binding-governance | CO-WP-016 | Nova | Provenance, Integrität, Target-Binding, explizite Aktivierung |
+| DEC-S-203 | Storage/DB/schema/migration/backup/recovery technology | architecture-context | deferred | non-binding | CO-WP-016 | Nova | Deferred |
+
 ## Deferred Decisions
 
 | Decision ID | Topic | Status | Class | Source | Owner | Target WP | ADR Required |
@@ -428,6 +453,8 @@ Alle 30 Concept-ADR-Kandidaten (§51) plus zwei Foundation-Klärungen (Delivery 
 **CO-WP-011-Registrierungen:** 16 Source-of-Truth-/Field-Provenance-Entscheidungen (DEC-S-106…121), **getrennte Dimensionen**: Source of Truth ≠ System of Record; autoritative Feldownership explizit/modulgebunden; Desired/Observed/Effective/Derived getrennt; Derived/Cached nicht autoritativ per Default; importierte Daten erben keine Autorität; neuester Timestamp gewinnt nicht automatisch; Overrides explizit/feld-/reason-bound mit Provenance-Erhalt; Konflikte bleiben sichtbar; widerrufene Quellen nicht autoritativ; Offline-Reconciliation mit Provenance/Integrität/Authority/Conflict-Review (fail-closed); Field-Provenance durch Transformationen erhalten; Audit-/Evidence-History nicht durch Reconciliation umgeschrieben; Storage/Merge/Sync-Technologie, kryptografische Provenance und universelles Feldschema `deferred`. Keine Technologieauswahl; keine ADR.
 
 **CO-WP-012-Registrierungen:** 15 State-/Drift-/Safe-Remediation-Entscheidungen (DEC-S-122…136), **getrennte Dimensionen**: Desired/Observed/Reported/Effective/Last-Known getrennt; Effective State bleibt indeterminate/conflicted bei unklarer Autorität; keine Beobachtung ≠ keine Drift; kein erkannter Drift ≠ Compliance; Drift-Erkennung ohne Write Authority; Detection/Recommendation/Plan/Approval/Execution/Verification getrennt; privilegierte Remediation mit expliziter Autorität + Approval; Exceptions explizit/reviewbar; Executed ≠ successful; Successful ≠ verified convergence; Verified convergence ≠ Compliance; Partial Failure explizit; automatische Remediation, Engine-/Retry-/Queue-/Scheduling-Technologie `deferred`. Keine Technologieauswahl; keine ADR.
+
+**CO-WP-016-Registrierungen:** 18 Data-Ownership-/Persistence-/Migration-Entscheidungen (DEC-S-186…203), **getrennte Dimensionen**: Owner/Steward/Storage/Write/Migration/Retention/Recovery getrennt; Storage ≠ autoritative Ownership; Migration Authority ≠ uneingeschränkte Write-Autorität; Schema Identity stabil (≠ storage location/file name); Schema-/Data-/Producer-/Consumer-/Migration-/Contract-/Product-Version getrennt; Read/Write/Round-Trip-Compatibility getrennt; Unknown/Conflicted Compatibility blockiert automatische destruktive Migration; Plan/Approval/Execution/Validation/Recovery getrennt; Executed ≠ validierte Integrität; Backup exists ≠ restorable; Restore ≠ Service Recovery; Partial Migration explizit; Mixed-Version mit Compatibility-/Dauergrenzen; destruktive Migration mit gebundener Autorität + Approval; Migration reaktiviert keine widerrufene Autorität/konsumierte Authorization; Audit-/Evidence-Provenance bleibt erhalten; Offline-Migration mit Provenance/Integrität/Target-Binding/expliziter Aktivierung; Storage-/DB-/Schema-/Migration-/Backup-/Recovery-Technologie `deferred`. Keine Technologieauswahl; keine ADR. `DEC-S-01…37` bleiben unverändert.
 
 **CO-WP-015-Registrierungen:** 17 Domain-Pack-Governance-Entscheidungen (DEC-S-169…185), **getrennte Dimensionen**: Domain Pack als versionierte Governance-/Produktgrenze (≠ adapter/plugin/deployment unit/certification); stabile, nicht wiederverwendbare Pack-IDs; neun Statusdimensionen getrennt; Support Level ≠ SLA; project-maintained ≠ validated; SUP-3 version-/profil-/limitation-/evidence-bound; Compatibility Claims version-/target-/profil-/evidence-bound; expected ≠ validated compatibility; Community/External Packs nicht automatisch trusted/supported; Vendor-Bezug ≠ Endorsement/Zertifizierung/Herstellersupport; Pack-Aktivierung gewährt keine Runtime-Autorität; Dependencies werden nicht still Core-Pflicht; Offline-Pack-Nutzung mit Provenance/Integrität/Target-Binding/expliziter Aktivierung; Deprecation mit Migration/Maintenance-Boundary; retired Pack-IDs nicht wiederverwendbar (historische Evidenz erhalten); Packaging-/Marketplace-/Plugin-/Update- und Pack-Verification-/Signing-/Trust-Anchor-Technologie `deferred`. Keine Technologieauswahl; keine ADR. `DEC-S-01…37` bleiben unverändert.
 

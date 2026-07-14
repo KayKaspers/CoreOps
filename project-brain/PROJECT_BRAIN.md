@@ -277,14 +277,24 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 - Community/External ≠ trust/support/endorsement; public availability ≠ verified provenance; Vendor-Bezug ≠ Endorsement/Zertifizierung. Pack-Aktivierung gewährt keine Runtime-Autorität; Dependencies nicht still Core-Pflicht; Overlap ≠ doppelte Autorität. Offline mit Target-Binding/Provenance/Integrität/expliziter Aktivierung; kompromittierter Pack/Maintainer suspendierbar/widerrufbar; deprecated ≠ removed; retired ≠ historische Evidenz gelöscht; retired IDs nicht wiederverwendet.
 - Decision Index +17 (DEC-S-169…185), Risk Register +10 (RISK-220…229, gesamt 229).
 - **Keine Packaging-/Marketplace-/Plugin-/Update-/Dependency-Resolution-/Signaturtechnologie ausgewählt; keine ADR; Integration-/Identity-/Authorization-/State-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.**
+- Status: `completed-go-with-notes` (Commit 8191e06).
+
+## Data Ownership, Persistence, Schema Versioning and Migration (CO-WP-016)
+
+- Drei neue Dokumente: [DATA_OWNERSHIP_AND_PERSISTENCE_MODEL.md](../docs/architecture/DATA_OWNERSHIP_AND_PERSISTENCE_MODEL.md), [SCHEMA_VERSIONING_AND_MIGRATION_MODEL.md](../docs/architecture/SCHEMA_VERSIONING_AND_MIGRATION_MODEL.md), [DATA_MIGRATION_INTEGRITY_AND_RECOVERY_POLICY.md](../docs/security/DATA_MIGRATION_INTEGRITY_AND_RECOVERY_POLICY.md).
+- Neun Ownership-Dimensionen getrennt (Data Owner/Steward/Storage/Write/Migration/Retention/Disclosure/Recovery/Evidence). `data owner ≠ storage operator`; `storage responsibility ≠ write authority ≠ migration authority`; ein Adapter/Pack wird nicht durch Speicherung zum Owner. 16 Datenklassen mit autoritativem Modul; 10 Persistence-Klassen (`cached ≠ authoritative`, `append-only-governed ≠ technisch unveränderlich`, `unknown persistence ≠ safe for destructive migration`).
+- Schema Identity stabil (≠ storage location/file name); 8 Versionsdimensionen getrennt (`schema version ≠ data version`); 11 Compatibility-Klassen (`read ≠ write ≠ round-trip`; `unknown ≠ compatible`; `conflicted ≠ safe for automatic migration`); 12 Change Classes. Migration Plan/Preflight/Lifecycle; `executed ≠ validated`; `rolled-back ≠ restored unless verified`; `closed ≠ successful`.
+- Backup exists ≠ restorable; restore ≠ service recovery; rollback braucht Verifikation. Partial Migration sichtbar; Mixed-Version bounded. Destruktive Migration: gebundene Autorität + Approval, fail-closed. Migration erzeugt keine neue Autorität, reaktiviert keine widerrufene/konsumierte Authorization; Audit-/Evidence-Provenance erhalten; keine Roh-Secret-Speicherung entschieden. Offline mit Target-Binding/Provenance/Integrität/expliziter Aktivierung.
+- Decision Index +18 (DEC-S-186…203), Risk Register +10 (RISK-230…239, gesamt 239).
+- **Keine Storage-/DB-/ORM-/Schema-/Serialisierungs-/Migration-/Backup-/Replikations-/Cluster-/Transaction-Technologie ausgewählt; keine ADR; Integration-/Domain-Pack-/Identity-/Authorization-/State-/Provenance-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.**
 
 ## Letztes Work Package
 
-`CO-WP-015 – Domain Pack Governance, Support Levels and Compatibility` (docs-only / modular product-governance and compatibility foundation). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-014 – completed-go-with-notes` (Commit 611773b).
+`CO-WP-016 – Data Ownership, Persistence, Schema Versioning and Migration` (docs-only / data-architecture, persistence and migration foundation). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-015 – completed-go-with-notes` (Commit 8191e06).
 
 ## Nächstes Work Package
 
-`CO-WP-016 – Data Ownership, Persistence, Schema Versioning and Migration` (docs-only; planned-next; erst nach Nova Review von CO-WP-015 und Human-Maintainer-Commit).
+`CO-WP-017 – API Governance, Versioning, Errors and Idempotency` (docs-only; planned-next; erst nach Nova Review von CO-WP-016 und Human-Maintainer-Commit).
 
 ## Human-Maintainer-Gates
 

@@ -23,7 +23,15 @@ Universelle, self-hosted und offline-fähige Operations Control Plane, die Sourc
 
 ## Letztes Work Package
 
-`CO-WP-015 – Domain Pack Governance, Support Levels and Compatibility` (docs-only / modular product-governance and compatibility foundation). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-014 – completed-go-with-notes` (Commit 611773b).
+`CO-WP-016 – Data Ownership, Persistence, Schema Versioning and Migration` (docs-only / data-architecture, persistence and migration foundation). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-015 – completed-go-with-notes` (Commit 8191e06).
+
+## Data Ownership, Persistence, Schema Versioning and Migration (CO-WP-016)
+
+- Drei neue Dokumente: Data Ownership and Persistence Model, Schema Versioning and Migration Model, Data Migration Integrity and Recovery Policy.
+- Neun Ownership-Dimensionen getrennt; `data owner ≠ storage operator`; `storage responsibility ≠ write authority ≠ migration authority`. 16 Datenklassen mit autoritativem Modul; 10 Persistence-Klassen (`cached ≠ authoritative`; `unknown persistence ≠ safe for destructive migration`).
+- Schema Identity stabil; `schema version ≠ data version`; 8 Versionsdimensionen; 11 Compatibility-Klassen (`read ≠ write ≠ round-trip`; `unknown ≠ compatible`); 12 Change Classes. `executed ≠ validated`; `backup exists ≠ restorable`; `restore ≠ service recovery`; `closed ≠ successful`. Partial sichtbar; Mixed-Version bounded; destruktive Migration mit gebundener Autorität + Approval, fail-closed.
+- Migration reaktiviert keine widerrufene/konsumierte Authorization; Audit-/Evidence-Provenance erhalten; Offline mit Target-Binding/Provenance/Integrität/Aktivierung.
+- Decision Index +18 (DEC-S-186…203), Risk Register +10 (RISK-230…239, gesamt 239). Keine Storage-/DB-/ORM-/Schema-/Migration-/Backup-/Cluster-Technologie; keine ADR; Integration-/Domain-Pack-/Identity-/Authorization-/State-/Provenance-/Capability-/Threat-Dateien + Lessons-Learned + NDF-Kandidaten unverändert; keine NDF-Rückführung.
 
 ## Domain Pack Governance, Support Levels and Compatibility (CO-WP-015)
 
@@ -180,7 +188,7 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 
 ## Nächstes Work Package
 
-`CO-WP-016 – Data Ownership, Persistence, Schema Versioning and Migration` (docs-only; planned-next; erst nach Nova Review von CO-WP-015 und Human-Maintainer-Commit). Die 004er-Erweiterungsserie (004A…004E), CO-WP-005…014, der Milestone Lessons Review (005…012) und CO-WP-015 sind bearbeitet; CO-WP-015 ist `implemented-awaiting-nova-review`. Milestone-Bündelentscheidung (Lessons/NDF-Kandidaten 008…010) liegt bei Nova/HM. External: NDF-Release-Zuordnung für die drei Adoption-Commits ausstehend.
+`CO-WP-017 – API Governance, Versioning, Errors and Idempotency` (docs-only; planned-next; erst nach Nova Review von CO-WP-016 und Human-Maintainer-Commit). Die 004er-Erweiterungsserie (004A…004E), CO-WP-005…015, der Milestone Lessons Review (005…012) und CO-WP-016 sind bearbeitet; CO-WP-016 ist `implemented-awaiting-nova-review`. Branch ahead 3 (CO-WP-014/015/016 noch nicht gepusht — Push nach HM-Commit von CO-WP-016 vorgesehen). Milestone-Bündelentscheidung (Lessons/NDF-Kandidaten 008…010) liegt bei Nova/HM. External: NDF-Release-Zuordnung für die drei Adoption-Commits ausstehend.
 
 ## Aktuelle Blocker
 

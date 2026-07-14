@@ -160,8 +160,8 @@ Drei neue Dokumente: CoreOps Integration Contract v0.1 (Contract-Version, Integr
 
 ## Domain Pack Governance, Support Levels and Compatibility
 
-Current implemented WP:
-`CO-WP-015 – Domain Pack Governance, Support Levels and Compatibility` – pending Nova review.
+WP Status:
+`CO-WP-015 – Domain Pack Governance, Support Levels and Compatibility` – `completed-go-with-notes` (Commit 8191e06).
 
 Current modular-product foundation:
 Domain-Pack governance, lifecycle, support levels, compatibility claims and trust boundaries defined. A Domain Pack is a versioned governance/product boundary (≠ adapter/plugin/deployment unit/certification); pack lifecycle/maintenance/support/implementation/validation/evidence/security-review/compatibility are separate dimensions; support level ≠ SLA; SUP-3 is version-/target-/profile-/limitation-/evidence-bound; community/external origin ≠ trust/support/endorsement; pack activation grants no runtime authority; offline pack use needs provenance/integrity/target binding/explicit activation.
@@ -177,7 +177,26 @@ not performed
 
 Drei neue Dokumente: Domain Pack Governance Model (Pack-Begriff/-Klassen/-Identität, Statusdimensionen, Lifecycle, Ownership/Maintenance, Dependencies, Composition/Overlap, Community/External, Vendor Neutrality, Offline), Domain Pack Support and Compatibility Model (SUP-0…SUP-3/SUP-D, Maintenance, Implementation/Validation/Evidence, Compatibility Status/Dimensions/Claims, Deprecation/Retirement) und Domain Pack Trust, Provenance and Lifecycle Policy (Trust/Provenance/Integrity, Security Review/Response, Suspension/Withdrawal, Offline Distribution, Fail-Closed). Decision Index +17 (DEC-S-169…185), Risk Register +10 (RISK-220…229, gesamt 229). Keine Packaging-/Marketplace-/Plugin-/Update-/Dependency-Resolution-/Signaturtechnologie ausgewählt; keine ADR; Integration-/Identity-/Authorization-/State-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.
 
-Next planned WP nach Nova Review und Human-Maintainer-Commit: `CO-WP-016 – Data Ownership, Persistence, Schema Versioning and Migration`.
+## Data Ownership, Persistence, Schema Versioning and Migration
+
+Current implemented WP:
+`CO-WP-016 – Data Ownership, Persistence, Schema Versioning and Migration` – pending Nova review.
+
+Current data foundation:
+Data ownership, persistence classes, schema versioning, migration safety and recovery governance defined. Data owner/steward/storage/write/migration/retention/recovery are separate responsibilities; storage responsibility ≠ authoritative ownership; migration authority ≠ unrestricted write; schema version ≠ data version; unknown/conflicted compatibility blocks automatic destructive migration; executed migration ≠ validated integrity; backup exists ≠ restorable; restore completed ≠ service recovery; migration does not reactivate revoked authority; audit/evidence provenance preserved; offline migration needs provenance/integrity/target binding/explicit activation.
+
+Storage and database technology:
+not selected
+
+Migration implementation:
+not started
+
+Backup and recovery validation:
+not performed
+
+Drei neue Dokumente: Data Ownership and Persistence Model (Ownership-Dimensionen, Datenklassen/autoritative Module, Persistence-Klassen, Data Lifecycle, Retention/Recovery/Privacy), Schema Versioning and Migration Model (Schema Identity, Versionsdimensionen, Compatibility-/Change-Klassen, Migration Plan/Preflight/Lifecycle, Mixed-Version/Partial, Rollback/Forward Recovery) und Data Migration Integrity and Recovery Policy (Authority, Klassifikation, Backup/Recovery, destruktive Migration, Identity-/Audit-Daten, Offline, Concurrency, Fail-Closed). Decision Index +18 (DEC-S-186…203), Risk Register +10 (RISK-230…239, gesamt 239). Keine Storage-/DB-/ORM-/Schema-/Serialisierungs-/Migration-/Backup-/Replikations-/Cluster-/Transaction-Technologie ausgewählt; keine ADR; Integration-/Domain-Pack-/Identity-/Authorization-/State-/Provenance-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.
+
+Next planned WP nach Nova Review und Human-Maintainer-Commit: `CO-WP-017 – API Governance, Versioning, Errors and Idempotency`.
 
 ## Current Goal
 
