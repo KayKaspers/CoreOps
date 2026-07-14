@@ -318,14 +318,25 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 - State-Authority-Boundary: `telemetry ≠ authoritative state`; `metric threshold ≠ execution authorization` (SoT/State autoritativ, kein Parallelmodell). Event/Evidence-Boundary: `anomaly ≠ incident`; `threshold crossed ≠ execution command`; Telemetry-to-Event/-Evidence mit expliziter Klassifikation/Provenance. Offline mit Provenance/Integrität/Target-Binding/Governance; Failure sichtbar (`telemetry failure ≠ target failure`; `missing telemetry ≠ evidence of absence`).
 - Decision Index +18 (DEC-S-237…254), Risk Register +10 (RISK-260…269, gesamt 269).
 - **Keine Telemetry-/Protokoll-/Schema-/Collector-/Storage-/Mapping-/Unit-/Aggregation-/Alerting-/Dashboard-Technologie ausgewählt; keine ADR; Event-/Audit-/Evidence-/API-/Integration-/Data-/Identity-/Authorization-/State-/Provenance-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.**
+- Status: `completed-go-with-notes` (Commit 9bb12b2).
+
+## Topology Graph, Evidence and Manual Authority (CO-WP-020)
+
+- Drei neue Dokumente: [TOPOLOGY_GRAPH_AND_RELATIONSHIP_MODEL.md](../docs/architecture/TOPOLOGY_GRAPH_AND_RELATIONSHIP_MODEL.md), [TOPOLOGY_EVIDENCE_CONFIDENCE_AND_CONFLICT_MODEL.md](../docs/architecture/TOPOLOGY_EVIDENCE_CONFIDENCE_AND_CONFLICT_MODEL.md), [TOPOLOGY_MANUAL_AUTHORITY_AND_DISCLOSURE_POLICY.md](../docs/security/TOPOLOGY_MANUAL_AUTHORITY_AND_DISCLOSURE_POLICY.md).
+- `topology graph ≠ authoritative physical reality`; `node ≠ managed resource automatically`; `edge ≠ verified connectivity`; `relationship assertion ≠ validated relationship`; `missing edge ≠ no relationship exists`. 24 Node-Klassen, 21 Relationship-Klassen; Node/Edge/Assertion Identity getrennt; 10 Assertion Origins (`manual ≠ fact`; `inferred ≠ independently observed`).
+- Canonical Identity/Aliases (`alias match ≠ identity match`; `same hostname/address/external ID ≠ same node`); Identity Resolution (candidate…merged); Merge/Split erhalten historische Identität/Assertions/Evidence. Temporal Validity (`last observed ≠ currently valid indefinitely`; kein Last-Write-Wins); Views/Snapshots (`current view ≠ complete reality`; `snapshot ≠ alle Quellen zeitgleich/immutable`).
+- Evidence-Dimensionen getrennt (Source Trust/Authority/Confidence/Validation/Evidence/Sufficiency/Completeness); `high confidence ≠ authoritative`; `many assertions ≠ independent sources`; `complete local graph ≠ complete physical topology`. Konflikte sichtbar (keine automatische Auflösung/Timestamp-Priorität); ungelöste sicherheitsrelevante Konflikte blockieren privilegierte Automation.
+- Manual Authority human-attributable/scope-bound/reviewbar; Machine Principals imitieren keine Manual Authority; Override löscht keine konkurrierenden Observations/Evidence; `suppressed from view ≠ relationship does not exist`. State-/Execution-Boundary: `topology assertion ≠ authoritative state`; `graph path ≠ authorised network path`; `node selection ≠ authorised target scope`; Write/Execution bleibt an CO-WP-013 gebunden. Offline mit Provenance/Integrität/Target-Binding/Governance.
+- Decision Index +19 (DEC-S-255…273), Risk Register +10 (RISK-270…279, gesamt 279).
+- **Keine Graph-DB-/Discovery-/Query-/Identity-Resolution-/Conflict-Resolution-/Visualization-/Layout-Technologie ausgewählt; keine ADR; Telemetry-/Event-/Audit-/Evidence-/API-/Integration-/Data-/Identity-/Authorization-/State-/Provenance-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.**
 
 ## Letztes Work Package
 
-`CO-WP-019 – Telemetry and Normalization Schema` (docs-only / telemetry, observability and normalization foundation). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-018 – completed-go-with-notes` (Commit c7c3d90).
+`CO-WP-020 – Topology Graph, Evidence and Manual Authority` (docs-only / topology, relationship, evidence and manual-governance foundation). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-019 – completed-go-with-notes` (Commit 9bb12b2).
 
 ## Nächstes Work Package
 
-`CO-WP-020 – Topology Graph, Evidence and Manual Authority` (docs-only; planned-next; erst nach Nova Review von CO-WP-019 und Human-Maintainer-Commit).
+`CO-WP-021 – Deployment Control Plane and Blueprint Schema` (docs-only; planned-next; erst nach Nova Review von CO-WP-020 und Human-Maintainer-Commit).
 
 ## Human-Maintainer-Gates
 

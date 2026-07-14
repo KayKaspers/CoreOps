@@ -23,7 +23,14 @@ Universelle, self-hosted und offline-fähige Operations Control Plane, die Sourc
 
 ## Letztes Work Package
 
-`CO-WP-019 – Telemetry and Normalization Schema` (docs-only / telemetry, observability and normalization foundation). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-018 – completed-go-with-notes` (Commit c7c3d90).
+`CO-WP-020 – Topology Graph, Evidence and Manual Authority` (docs-only / topology, relationship, evidence and manual-governance foundation). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-019 – completed-go-with-notes` (Commit 9bb12b2).
+
+## Topology Graph, Evidence and Manual Authority (CO-WP-020)
+
+- Drei neue Dokumente: Topology Graph and Relationship Model, Topology Evidence/Confidence/Conflict Model, Topology Manual Authority and Disclosure Policy.
+- `topology graph ≠ authoritative physical reality`; `node ≠ managed resource`; `edge ≠ verified connectivity`; `relationship assertion ≠ validated`; `missing edge ≠ no relationship`. 24 Node-/21 Relationship-Klassen; 10 Assertion Origins (`manual ≠ fact`; `inferred ≠ independently observed`). `same name/address/alias ≠ same canonical node`; Merge/Split erhalten Historie/Evidence; kein Timestamp-Last-Write-Wins.
+- Evidence-Dimensionen getrennt (Trust/Authority/Confidence/Validation/Evidence/Sufficiency/Completeness); `complete local graph ≠ complete physical topology`; Konflikte sichtbar, ungelöste blockieren privilegierte Automation. Manual Authority human-attributable/scope-bound; Override löscht keine Observations; `suppressed from view ≠ absent`. `topology ≠ state/network/execution authority` (Write/Execution an CO-WP-013 gebunden); Offline mit Provenance/Integrität/Target-Binding/Governance.
+- Decision Index +19 (DEC-S-255…273), Risk Register +10 (RISK-270…279, gesamt 279). Keine Graph-DB-/Discovery-/Visualization-Technologie; keine ADR; Telemetry-/Event-/Audit-/Evidence-/API-/Integration-/Data-/Identity-/Authorization-/State-/Provenance-/Capability-/Threat-Dateien + Lessons-Learned + NDF-Kandidaten unverändert; keine NDF-Rückführung.
 
 ## Telemetry and Normalization Schema (CO-WP-019)
 
@@ -209,7 +216,7 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 
 ## Nächstes Work Package
 
-`CO-WP-020 – Topology Graph, Evidence and Manual Authority` (docs-only; planned-next; erst nach Nova Review von CO-WP-019 und Human-Maintainer-Commit). Die 004er-Erweiterungsserie (004A…004E), CO-WP-005…018, der Milestone Lessons Review (005…012) und CO-WP-019 sind bearbeitet; CO-WP-019 ist `implemented-awaiting-nova-review`. CO-WP-014…018 wurden gepusht (Branch war bei Preflight auf origin/main-Höhe); CO-WP-019 noch nicht committet. Push von CO-WP-019 nach HM-Commit vorgesehen. Milestone-Bündelentscheidung (Lessons/NDF-Kandidaten 008…010) liegt bei Nova/HM. External: NDF-Release-Zuordnung für die drei Adoption-Commits ausstehend.
+`CO-WP-021 – Deployment Control Plane and Blueprint Schema` (docs-only; planned-next; erst nach Nova Review von CO-WP-020 und Human-Maintainer-Commit). Die 004er-Erweiterungsserie (004A…004E), CO-WP-005…019, der Milestone Lessons Review (005…012) und CO-WP-020 sind bearbeitet; CO-WP-020 ist `implemented-awaiting-nova-review`. CO-WP-014…018 wurden gepusht; CO-WP-019 committet aber noch nicht gepusht (Branch ahead 1 bei Preflight); CO-WP-020 noch nicht committet. Push von CO-WP-019/020 nach HM-Commit von CO-WP-020 vorgesehen. Milestone-Bündelentscheidung (Lessons/NDF-Kandidaten 008…010) liegt bei Nova/HM. External: NDF-Release-Zuordnung für die drei Adoption-Commits ausstehend.
 
 ## Aktuelle Blocker
 

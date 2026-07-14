@@ -236,8 +236,8 @@ Drei neue Dokumente: Event and Audit Correlation Model (Event Classes/Identity, 
 
 ## Telemetry and Normalization Schema
 
-Current implemented WP:
-`CO-WP-019 – Telemetry and Normalization Schema` – pending Nova review.
+WP Status:
+`CO-WP-019 – Telemetry and Normalization Schema` – `completed-go-with-notes` (Commit 9bb12b2).
 
 Current telemetry foundation:
 Telemetry signals, canonical fields, normalisation profiles, quality, freshness, sampling, aggregation, privacy and offline-import boundaries defined. Telemetry ≠ event ≠ audit event ≠ evidence ≠ command; signal/series/sample/resource identity separate; producer ≠ source; raw/normalized/derived/aggregated separate; telemetry inherits no authoritative state or execution authority; unknown/conflicting units block unsafe conversion; missing ≠ zero/inactivity/target failure; sampling/aggregation limitations visible; labels ≠ safe disclosure dimension; telemetry-to-event/-evidence need explicit classification/provenance.
@@ -253,7 +253,26 @@ not performed
 
 Drei neue Dokumente: Telemetry Signal and Normalization Model (22 Signal-Klassen, Signal Identity, Raw/Normalized/Derived/Aggregated, Metric-/Log-/Trace-/Health-Semantik, Canonical Fields, Units/Scale/Precision, Quality/Confidence, Freshness, Sampling, Aggregation, Cardinality, State-Authority-/Event-/Evidence-Boundary), Telemetry Mapping, Quality and Compatibility Model (Source Schemas, Normalization Profiles, Mapping Classes, Transformation History, Units, Quality/Confidence, Validation, Compatibility, Deprecation) und Telemetry Trust, Privacy and Disclosure Policy (Trust Boundary, Cardinality/Labels, Privacy, Disclosure/Export, Cross-Workspace, Telemetry-to-Event/-Evidence, Offline, Fail-Closed). Decision Index +18 (DEC-S-237…254), Risk Register +10 (RISK-260…269, gesamt 269). Keine Telemetry-/Protokoll-/Schema-/Collector-/Storage-/Mapping-/Unit-/Aggregation-/Alerting-/Dashboard-Technologie ausgewählt; keine ADR; Event-/Audit-/Evidence-/API-/Integration-/Data-/Identity-/Authorization-/State-/Provenance-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.
 
-Next planned WP nach Nova Review und Human-Maintainer-Commit: `CO-WP-020 – Topology Graph, Evidence and Manual Authority`.
+## Topology Graph, Evidence and Manual Authority
+
+Current implemented WP:
+`CO-WP-020 – Topology Graph, Evidence and Manual Authority` – pending Nova review.
+
+Current topology foundation:
+Topology graph, node and relationship assertions, identity resolution, evidence, confidence, conflict, manual authority, disclosure and offline-import boundaries defined. Topology graph ≠ authoritative physical reality; node/resource/alias/display-name identity separate; discovered/observed/declared/imported/manual/derived/inferred origins separate; relationship assertion ≠ validated/active connectivity; same name/address/alias ≠ same canonical node; merge/split preserve historical identity and evidence; timestamps give no silent last-write-wins; manual authority human-attributable/scope-bound/reviewable; override does not delete competing observations; suppression ≠ absence; topology grants no state/network/execution authority; unresolved conflicts block unsafe privileged automation.
+
+Graph and discovery technology:
+not selected
+
+Topology implementation:
+not started
+
+Topology validation:
+not performed
+
+Drei neue Dokumente: Topology Graph and Relationship Model (Node/Relationship Classes, Node/Edge/Assertion Identity, Assertion Origins, Canonical Identity/Aliases, Identity Resolution, Merge/Split, Temporal Validity, Views/Snapshots, State-/Event-/Evidence-/Execution-Boundary), Topology Evidence, Confidence and Conflict Model (Source Trust/Authority, Confidence, Validation, Evidence/Sufficiency, Independence, Completeness, Conflicts/Precedence, Supersession/Invalidation) und Topology Manual Authority and Disclosure Policy (Manual Authority/Actions, Overrides, Suppression, Merge/Split-Autorität, Machine-Principal-Grenze, Execution-Boundary, Workspace-Isolation, Disclosure/Export, Offline, Fail-Closed). Decision Index +19 (DEC-S-255…273), Risk Register +10 (RISK-270…279, gesamt 279). Keine Graph-DB-/Discovery-/Query-/Identity-Resolution-/Conflict-Resolution-/Visualization-/Layout-Technologie ausgewählt; keine ADR; Telemetry-/Event-/Audit-/Evidence-/API-/Integration-/Data-/Identity-/Authorization-/State-/Provenance-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.
+
+Next planned WP nach Nova Review und Human-Maintainer-Commit: `CO-WP-021 – Deployment Control Plane and Blueprint Schema`.
 
 ## Current Goal
 
