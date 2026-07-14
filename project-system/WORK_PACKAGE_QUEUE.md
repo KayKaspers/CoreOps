@@ -37,7 +37,7 @@ Jedes Work Package hat genau **einen** primären Typ.
 | CO-WP-017 | docs-only         | API Governance, Versioning, Errors and Idempotency             | completed-go-with-notes        |
 | CO-WP-018 | docs-only         | Event, Audit Correlation and Evidence Model                    | completed-go-with-notes        |
 | CO-WP-019 | docs-only         | Telemetry and Normalization Schema                             | completed-go-with-notes        |
-| CO-WP-020 | docs-only         | Topology Graph, Evidence and Manual Authority                  | implemented-awaiting-nova-review|
+| CO-WP-020 | docs-only         | Topology Graph, Evidence and Manual Authority                  | completed-go-with-notes        |
 | CO-WP-021 | docs-only         | Deployment Control Plane and Blueprint Schema                  | planned-next                  |
 | CO-WP-022 | security-baseline | Artifact Trust, SBOM, Provenance and Revocation                | planned                       |
 | CO-WP-023 | docs-only         | Restricted, Isolated, Air-Gapped Operation and CorePack        | planned                       |
@@ -50,7 +50,8 @@ Jedes Work Package hat genau **einen** primären Typ.
 | CO-WP-030 | review-only       | Foundation Readiness Review                                    | planned                       |
 | CO-WP-031 | release-prep      | Foundation 0.1 Release Preparation                             | planned                       |
 
-> **Milestone-Hinweis (nicht nummeriert):** `Milestone Lessons Review CO-WP-005 through CO-WP-012` — `completed-go-with-notes`. Gebündelter docs-only Review der acht Foundation-WPs; Ergebnis **GO WITH NOTES FOR CO-WP-013** (Commit 74f8e32). Keine `CO-WP-*`-ID; verändert die Queue-Reihenfolge nicht. Follow-ups (Capability-Count-Reconciliation, Risk-Register-Konsolidierung, Decision-Status-Harmonisierung) sind für ~`CO-WP-029`/`CO-WP-030` vorgemerkt.
+> **Milestone-Hinweis 1 (nicht nummeriert):** `Milestone Lessons Review CO-WP-005 through CO-WP-012` — `completed-go-with-notes`. Gebündelter docs-only Review der acht Foundation-WPs; Ergebnis **GO WITH NOTES FOR CO-WP-013** (Commit 74f8e32). Keine `CO-WP-*`-ID; verändert die Queue-Reihenfolge nicht. Follow-ups (Capability-Count-Reconciliation, Risk-Register-Konsolidierung, Decision-Status-Harmonisierung) sind für ~`CO-WP-029`/`CO-WP-030` vorgemerkt.
+> **Milestone-Hinweis 2 (nicht nummeriert):** `Milestone Lessons Review CO-WP-013 through CO-WP-020` — `implemented-awaiting-nova-review`. Gebündelter docs-only Review der acht Foundation-WPs (24 Dokumente); Ergebnis **GO WITH NOTES FOR CO-WP-021**. Neues Dokument `project-brain/MILESTONE_REVIEW_CO_WP_013_TO_020.md`; Lessons LL-023…030; NDF-Kandidaten NDF-FC-COREOPS-011…013 (`candidate-pending-nova-review`). Keine `CO-WP-*`-ID; verändert die Queue-Reihenfolge nicht. `CO-WP-021` bleibt `planned-next`. Follow-ups (Risk-Konsolidierung, Decision-Status-Harmonisierung, Capability-Count, Dokumentationsökonomie) für ~`CO-WP-029`/`CO-WP-030`. Decision Index und Risk Register read-only unverändert.
 
 ## Regeln
 

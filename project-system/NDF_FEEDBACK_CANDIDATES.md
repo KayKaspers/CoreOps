@@ -349,12 +349,115 @@
 - **Backlink Status:** none
 - **Notes:** Evidenz aus dem Threat Model (CO-WP-007) und der Registerpflege über CO-WP-006…012. Kein Transfer/keine Adoption automatisch gestartet.
 
+## NDF-FC-COREOPS-011
+
+- **Candidate ID:** NDF-FC-COREOPS-011
+- **Source Lesson ID:** LL-024
+- **Source Project:** CoreOps
+- **Source Work Package:** CO-WP-013, 014, 016, 017, 018 (Milestone Review CO-WP-013…020)
+- **Category:** Security / Execution and Data Governance
+- **Title:** Unknown-Outcome- und Retry-Governance-Muster
+- **Generalized Observation:** Verteilte Ausführungs-, Integrations-, Migrations-, API- und Audit-Pfade liefern häufig ein **unbekanntes** Ergebnis; ein durchgängiges Muster (`unknown outcome ≠ failed ≠ not executed ≠ successful`; kein automatischer Retry; Reconciliation erforderlich; Side-Effect-Unsicherheit sichtbar) verhindert gefährliche Auto-Wiederholung und Fehlinterpretation.
+- **Cross-Project Impact:** Relevant für jedes Projekt mit privilegierter Ausführung, Datenmigration oder externer Integration.
+- **Recommended NDF Change:** Unknown-Outcome-/Retry-Governance als NDF-Security-Baseline-Muster dokumentieren (Guidance, kein Mechanismus).
+- **Potential NDF Target Area:** NDF Security-Baseline / Execution-Governance-Vorlagen.
+- **Evidence:** `docs/security/EXECUTION_AUTHORIZATION_AND_GUARD_POLICY.md` §17; `docs/security/INTEGRATION_TRUST_FAILURE_AND_RECOVERY_POLICY.md` §13-14; `docs/security/DATA_MIGRATION_INTEGRITY_AND_RECOVERY_POLICY.md` §21; `docs/security/API_ERROR_IDEMPOTENCY_AND_REPLAY_POLICY.md` §14; `docs/security/AUDIT_INTEGRITY_RETENTION_AND_DISCLOSURE_POLICY.md` §22; `project-brain/MILESTONE_REVIEW_CO_WP_013_TO_020.md` §7/§10.
+- **Security Relevance:** yes.
+- **Privacy Review:** PASS.
+- **Public-Neutrality Review:** PASS.
+- **Existing NDF Rule Check:** kein bekanntes verbindliches NDF-Äquivalent; distinct von NDF-FC-COREOPS-009 (allgemeines Invariantenvokabular).
+- **Duplicate Check:** kein bekanntes Duplikat.
+- **Breaking-Change Potential:** gering (additive Guidance).
+- **Suggested Bundle:** potenzielles Bundle „Execution & Data Governance" (mit NDF-FC-COREOPS-012).
+- **Status:** candidate-pending-nova-review
+- **Nova Gate:** pending
+- **Human-Maintainer Gate:** pending
+- **Transfer Readiness:** nicht bewertet; kein Transfer gestartet.
+- **Intake Work Package:** —
+- **Intake Commit:** —
+- **NDF Work Package:** —
+- **Adoption Work Package:** —
+- **NDF Adoption Commit:** —
+- **Adoption Status:** not started
+- **NDF Adoption Version:** —
+- **Backlink Status:** none
+- **Notes:** Evidenz aus fünf Work Packages (CO-WP-013/014/016/017/018). Kein Transfer/keine Adoption automatisch gestartet.
+
+## NDF-FC-COREOPS-012
+
+- **Candidate ID:** NDF-FC-COREOPS-012
+- **Source Lesson ID:** LL-026
+- **Source Project:** CoreOps
+- **Source Work Package:** CO-WP-018, 019, 020 (mit CO-WP-004E) (Milestone Review CO-WP-013…020)
+- **Category:** Governance / Evidence Modeling
+- **Title:** Evidence-Dimension- und Sufficiency-Muster
+- **Generalized Observation:** Eine getrennte Evidenz-Dimensionskette (capability ≠ available ≠ fresh ≠ integrity-verified ≠ validated ≠ sufficient) plus Source Independence (`many items ≠ independent sources`), mit decision-/scope-/zeitgebundener Sufficiency, verhindert Evidenz-Overclaim über Audit-, Telemetry- und Topology-Domänen hinweg.
+- **Cross-Project Impact:** Relevant für jedes Projekt, das Evidenz für Entscheidungen/Readiness/Compliance-Aussagen bewertet.
+- **Recommended NDF Change:** Evidence-Dimension-/Sufficiency-Vokabular als optionales NDF-Validation-/Evidence-Muster dokumentieren (distinct von der adoptierten NDF-FC-COREOPS-006 zu Capability-Status).
+- **Potential NDF Target Area:** NDF Validation-/Evidence-Vorlagen.
+- **Evidence:** `docs/architecture/EVIDENCE_REFERENCE_VALIDATION_AND_LINEAGE_MODEL.md` §16-17; `docs/architecture/TOPOLOGY_EVIDENCE_CONFIDENCE_AND_CONFLICT_MODEL.md` §12-13; `docs/security/TELEMETRY_TRUST_PRIVACY_AND_DISCLOSURE_POLICY.md` §22; `docs/project-system/CAPABILITY_MATRIX_SPEC.md` (Evidence-Capability-Trennung); `project-brain/MILESTONE_REVIEW_CO_WP_013_TO_020.md` §12.
+- **Security Relevance:** partly.
+- **Privacy Review:** PASS.
+- **Public-Neutrality Review:** PASS.
+- **Existing NDF Rule Check:** verwandt mit NDF-FC-COREOPS-006 (Capability-Status), aber eigenständig (dort Capabilities, hier Evidence-Sufficiency); kein bekanntes verbindliches Äquivalent.
+- **Duplicate Check:** kein bekanntes Duplikat.
+- **Breaking-Change Potential:** gering (additive Guidance).
+- **Suggested Bundle:** potenzielles Bundle „Execution & Data Governance" (mit NDF-FC-COREOPS-011).
+- **Status:** candidate-pending-nova-review
+- **Nova Gate:** pending
+- **Human-Maintainer Gate:** pending
+- **Transfer Readiness:** nicht bewertet; kein Transfer gestartet.
+- **Intake Work Package:** —
+- **Intake Commit:** —
+- **NDF Work Package:** —
+- **Adoption Work Package:** —
+- **NDF Adoption Commit:** —
+- **Adoption Status:** not started
+- **NDF Adoption Version:** —
+- **Backlink Status:** none
+- **Notes:** Evidenz aus drei Work Packages (CO-WP-018/019/020) plus Evidence-Capability-Modell (CO-WP-004E). Kein Transfer/keine Adoption automatisch gestartet.
+
+## NDF-FC-COREOPS-013
+
+- **Candidate ID:** NDF-FC-COREOPS-013
+- **Source Lesson ID:** LL-027
+- **Source Project:** CoreOps
+- **Source Work Package:** CO-WP-020 (mit CO-WP-009/012) (Milestone Review CO-WP-013…020)
+- **Category:** Security / Manual Governance
+- **Title:** Nicht-destruktives Manual-Authority-/Override-/Suppression-Muster
+- **Generalized Observation:** Menschliche manuelle Eingriffe in ein beobachtetes/abgeleitetes Modell müssen human-attributable, scope-bound, reviewbar und **nicht-destruktiv** sein: Overrides löschen keine konkurrierenden Observations/Evidence, Suppression bedeutet keine Abwesenheit, Machine Principals imitieren keine Manual Authority.
+- **Cross-Project Impact:** Relevant für jedes Projekt mit manuell korrigierbaren beobachteten/abgeleiteten Daten (Inventar, Topologie, Zustand, Klassifikation).
+- **Recommended NDF Change:** Nicht-destruktives Manual-Authority-/Override-/Suppression-Muster als NDF-Governance-Referenzmuster dokumentieren.
+- **Potential NDF Target Area:** NDF Governance-/Human-Authority-Vorlagen.
+- **Evidence:** `docs/security/TOPOLOGY_MANUAL_AUTHORITY_AND_DISCLOSURE_POLICY.md` §6-11/§16; `docs/security/BREAK_GLASS_AND_EMERGENCY_ACCESS_POLICY.md`; `docs/architecture/DRIFT_DETECTION_AND_CONVERGENCE_MODEL.md` §12; `project-brain/MILESTONE_REVIEW_CO_WP_013_TO_020.md` §14.
+- **Security Relevance:** yes.
+- **Privacy Review:** PASS.
+- **Public-Neutrality Review:** PASS.
+- **Existing NDF Rule Check:** kein bekanntes verbindliches NDF-Äquivalent.
+- **Duplicate Check:** kein bekanntes Duplikat.
+- **Breaking-Change Potential:** gering (additive Guidance).
+- **Suggested Bundle:** potenzielles Bundle „Human Governance & Manual Authority".
+- **Status:** candidate-pending-nova-review
+- **Nova Gate:** pending
+- **Human-Maintainer Gate:** pending
+- **Transfer Readiness:** nicht bewertet; kein Transfer gestartet.
+- **Intake Work Package:** —
+- **Intake Commit:** —
+- **NDF Work Package:** —
+- **Adoption Work Package:** —
+- **NDF Adoption Commit:** —
+- **Adoption Status:** not started
+- **NDF Adoption Version:** —
+- **Backlink Status:** none
+- **Notes:** Evidenz aus CO-WP-020 (Manual Authority) auf Basis Break Glass (CO-WP-009) und Divergence Exceptions (CO-WP-012). Kein Transfer/keine Adoption automatisch gestartet.
+
 ## Zusammenfassung
 
-- **Anzahl Kandidaten:** 10 (NDF-FC-COREOPS-001…007 adoptiert; NDF-FC-COREOPS-008…010 neu aus dem Milestone Review CO-WP-005…012)
-- **Status-Verteilung (nach Milestone Review):** `adopted-in-ndf` 7 · `candidate-pending-nova-review` 3 · `transferred-to-ndf` 0
+- **Anzahl Kandidaten:** 13 (NDF-FC-COREOPS-001…007 adoptiert; NDF-FC-COREOPS-008…010 aus Milestone Review CO-WP-005…012; NDF-FC-COREOPS-011…013 neu aus Milestone Review CO-WP-013…020)
+- **Status-Verteilung (nach Milestone Review CO-WP-013…020):** `adopted-in-ndf` 7 · `candidate-pending-nova-review` 6 · `transferred-to-ndf` 0
 - **Bundles (Transfer Package 001):** Bundle 1 „Work-Package Safety and Source Handling" (001, 003, 004), Bundle 2 „Skills Availability and Context Economy" (002), Bundle 3 „Governance and Status Modeling" (005, 006, 007)
 - **Nova Gate:** approved für alle 7. **Human-Maintainer Gate:** approved für alle 7. **Intake Work Package:** NDF-INTAKE-COREOPS-001 für alle 7 (Commit d08e35e).
 - **Adoption-Zuordnung:** Adoption A `NDF-ADOPT-COREOPS-001A` (Commit 1ebffa6) — Kandidaten 001, 003, 004. Adoption B `NDF-ADOPT-COREOPS-001B` (Commit e894c6f) — Kandidat 002. Adoption C `NDF-ADOPT-COREOPS-001C` (Commit ebf716c) — Kandidaten 005, 006, 007.
 - **Alle sieben Kandidaten wurden über drei geprüfte Human-Maintainer-Commits in den aktuellen NDF-Entwicklungszweig adoptiert.** Release-Versionszuordnung bleibt offen (`not yet assigned`); keine NDF-Version wird behauptet. `adopted-in-ndf` bedeutet **nicht** "in einer veröffentlichten NDF-Version enthalten".
-- **Neue Kandidaten aus dem Milestone Review (008, 009, 010):** Status `candidate-pending-nova-review`; Nova Gate und Human-Maintainer Gate `pending`; kein Transfer, keine Adoption und kein NDF-Commit gestartet. Erwartete Nova-/Human-Maintainer-Bündelentscheidung. Die Zeilen 356–359 beziehen sich ausschließlich auf Transfer Package 001 (Kandidaten 001–007).
+- **Neue Kandidaten aus dem Milestone Review CO-WP-005…012 (008, 009, 010) und CO-WP-013…020 (011, 012, 013):** Status `candidate-pending-nova-review`; Nova Gate und Human-Maintainer Gate `pending`; kein Transfer, keine Adoption und kein NDF-Commit gestartet. Erwartete Nova-/Human-Maintainer-Bündelentscheidung für 008…013. Die Zeilen zum Transfer Package 001 (Adoption/Intake/Commits) beziehen sich ausschließlich auf Kandidaten 001–007.
+- **Mögliche Bündel für 008…013 (Vorschlag, nicht entschieden):** „Decision & Status Modeling" (008), „Security Coherence" (009, 010), „Execution & Data Governance" (011, 012), „Human Governance & Manual Authority" (013).

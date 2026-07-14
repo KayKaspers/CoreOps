@@ -23,7 +23,14 @@ Universelle, self-hosted und offline-fähige Operations Control Plane, die Sourc
 
 ## Letztes Work Package
 
-`CO-WP-020 – Topology Graph, Evidence and Manual Authority` (docs-only / topology, relationship, evidence and manual-governance foundation). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-019 – completed-go-with-notes` (Commit 9bb12b2).
+`CO-WP-020 – Topology Graph, Evidence and Manual Authority` (`completed-go-with-notes`, Commit 2c6d416); anschließend `Milestone Lessons Review CO-WP-013 through CO-WP-020` (docs-only / milestone review) — **Nova Review pending**. Vorheriges WP: `CO-WP-019 – completed-go-with-notes` (Commit 9bb12b2).
+
+## Milestone Lessons Review (CO-WP-013…020)
+
+- Gebündelter docs-only Review der acht Foundation-WPs (24 Dokumente); Ergebnis **GO WITH NOTES FOR CO-WP-021**. Dokument: `project-brain/MILESTONE_REVIEW_CO_WP_013_TO_020.md`.
+- Foundation-Kette (Policy/Approval/Execution → Integration → Domain Pack → Data/Migration → API → Event/Evidence → Telemetry → Topology) kohärent; alle Cross-Foundation-Invarianten gehalten; keine Technologie ausgewählt.
+- Acht Lessons LL-023…030 (gesamt 30); drei NDF-Kandidaten NDF-FC-COREOPS-011…013 (`candidate-pending-nova-review`; gesamt 13, 008…013 pending).
+- Read-only-Befunde (Follow-up): Risk Register 279 → Konsolidierung ~CO-WP-029/030; Decision Index DEC-S-273 (Alt-Kombistatus vs. getrennte Dimensionen) → Harmonisierung ~CO-WP-029; Capability-Count „74→94" ~CO-WP-029; Dokumentationsökonomie ~CO-WP-030. **Decision Index/Risk Register read-only unverändert; kein NDF-Transfer; CO-WP-021 nicht begonnen.**
 
 ## Topology Graph, Evidence and Manual Authority (CO-WP-020)
 
@@ -216,7 +223,7 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 
 ## Nächstes Work Package
 
-`CO-WP-021 – Deployment Control Plane and Blueprint Schema` (docs-only; planned-next; erst nach Nova Review von CO-WP-020 und Human-Maintainer-Commit). Die 004er-Erweiterungsserie (004A…004E), CO-WP-005…019, der Milestone Lessons Review (005…012) und CO-WP-020 sind bearbeitet; CO-WP-020 ist `implemented-awaiting-nova-review`. CO-WP-014…018 wurden gepusht; CO-WP-019 committet aber noch nicht gepusht (Branch ahead 1 bei Preflight); CO-WP-020 noch nicht committet. Push von CO-WP-019/020 nach HM-Commit von CO-WP-020 vorgesehen. Milestone-Bündelentscheidung (Lessons/NDF-Kandidaten 008…010) liegt bei Nova/HM. External: NDF-Release-Zuordnung für die drei Adoption-Commits ausstehend.
+`CO-WP-021 – Deployment Control Plane and Blueprint Schema` (docs-only; planned-next; erst nach Nova Review des Milestone Reviews CO-WP-013…020 und Human-Maintainer-Commit). Die 004er-Erweiterungsserie (004A…004E), CO-WP-005…020, der Milestone Lessons Review (005…012) und der Milestone Lessons Review (013…020) sind bearbeitet; CO-WP-020 ist `completed-go-with-notes` (Commit 2c6d416), der Milestone Review 013…020 ist `implemented-awaiting-nova-review`. CO-WP-014…020 wurden gepusht (Branch bei Preflight auf origin/main-Höhe); der Milestone-Review-Commit steht noch aus. Milestone-Bündelentscheidung für NDF-Kandidaten 008…013 liegt bei Nova/HM. External: NDF-Release-Zuordnung für die drei Adoption-Commits (001…007) ausstehend.
 
 ## Aktuelle Blocker
 

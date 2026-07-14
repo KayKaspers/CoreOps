@@ -329,6 +329,15 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 - Manual Authority human-attributable/scope-bound/reviewbar; Machine Principals imitieren keine Manual Authority; Override löscht keine konkurrierenden Observations/Evidence; `suppressed from view ≠ relationship does not exist`. State-/Execution-Boundary: `topology assertion ≠ authoritative state`; `graph path ≠ authorised network path`; `node selection ≠ authorised target scope`; Write/Execution bleibt an CO-WP-013 gebunden. Offline mit Provenance/Integrität/Target-Binding/Governance.
 - Decision Index +19 (DEC-S-255…273), Risk Register +10 (RISK-270…279, gesamt 279).
 - **Keine Graph-DB-/Discovery-/Query-/Identity-Resolution-/Conflict-Resolution-/Visualization-/Layout-Technologie ausgewählt; keine ADR; Telemetry-/Event-/Audit-/Evidence-/API-/Integration-/Data-/Identity-/Authorization-/State-/Provenance-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.**
+- Status: `completed-go-with-notes` (Commit 2c6d416).
+
+## Milestone Lessons Review (CO-WP-013…020)
+
+- Gebündelter docs-only Review der acht Foundation-WPs (24 Dokumente) abgeschlossen; Nova Review pending. Neues Dokument [MILESTONE_REVIEW_CO_WP_013_TO_020.md](MILESTONE_REVIEW_CO_WP_013_TO_020.md). Ergebnis: **GO WITH NOTES FOR CO-WP-021**.
+- Foundation-Kette (Policy/Approval/Execution → Integration → Domain Pack → Data/Migration → API → Event/Evidence → Telemetry → Topology) kohärent; alle Cross-Foundation-Invarianten gehalten; keine Technologie ausgewählt; keine ADR; keine Implementierungs-/Compliance-Behauptung.
+- Acht konsolidierte Lessons LL-023…030 (Lessons gesamt 30); drei NDF-Feedback-Kandidaten NDF-FC-COREOPS-011…013 (`candidate-pending-nova-review`, Kandidaten gesamt 13; 008…013 pending).
+- Read-only-Befunde (nur Follow-up): Risk Register 279 (high 138/medium 117/low 24) → Konsolidierung ~CO-WP-029/030; Decision Index DEC-S-273 (Alt-Kombistatus DEC-S-01…37 vs. getrennte Dimensionen) → Harmonisierung ~CO-WP-029; Capability-Count „74→94" ~CO-WP-029; Dokumentationsökonomie (gemeinsames Invarianten-/Template-Referenzdokument) ~CO-WP-030.
+- **Decision Index und Risk Register read-only unverändert; kein NDF-Transfer/keine Adoption; CO-WP-021 nicht begonnen; genau acht Allowed Files geändert.**
 
 ## Letztes Work Package
 

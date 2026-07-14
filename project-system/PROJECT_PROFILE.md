@@ -401,7 +401,16 @@ Folgende Themen benötigen vor jeder verbindlichen technischen Festlegung einen 
 - **Manual-Security:** [TOPOLOGY_MANUAL_AUTHORITY_AND_DISCLOSURE_POLICY.md](../docs/security/TOPOLOGY_MANUAL_AUTHORITY_AND_DISCLOSURE_POLICY.md) — Manual Authority/Actions, Overrides, Suppression, Merge/Split-Autorität, Machine-Principal-Grenze, Execution-Boundary, Workspace-Isolation, Disclosure/Export, Offline, Fail-Closed.
 - **Governance-Fortschreibung:** Decision Index +19 (DEC-S-255…273), Risk Register +10 (RISK-270…279, gesamt 279).
 - **Grenzen:** topology graph ≠ autoritative physische Realität; node/resource/alias/display-name identity getrennt; discovered/observed/declared/imported/manual/derived/inferred getrennt; relationship assertion ≠ validierte/aktive Konnektivität; same name/address/alias ≠ same canonical node; merge/split erhalten historische Identität/Evidence; kein Timestamp-Last-Write-Wins; Manual Authority human-attributable/scope-bound/reviewbar; Override löscht keine konkurrierenden Observations; Suppression ≠ Abwesenheit; Topology gewährt keine State-/Netzwerk-/Execution-Autorität; unresolved conflict blockiert unsafe privilegierte Automation; keine Graph-DB-/Discovery-/Visualization-Technologie; keine ADR; Invarianten = Designanforderungen.
-- **Status:** Foundation-Topology-Governance etabliert; nächstes WP `CO-WP-021`; Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung. Nova Review pending.
+- **Status:** Foundation-Topology-Governance etabliert; `completed-go-with-notes` (Commit 2c6d416).
+
+## Milestone Lessons Review (CO-WP-013…020)
+
+- **Ergebnis:** GO WITH NOTES FOR CO-WP-021. Neues Dokument [MILESTONE_REVIEW_CO_WP_013_TO_020.md](../project-brain/MILESTONE_REVIEW_CO_WP_013_TO_020.md); Nova Review pending.
+- **Umfang:** acht WPs (24 Dokumente) als eine kohärente Governance-Kette; alle Cross-Foundation-Invarianten gehalten; keine Technologie ausgewählt; keine Implementierungs-/Compliance-Behauptung.
+- **Lessons:** LL-023…030 konsolidiert (Lessons gesamt 30).
+- **NDF-Kandidaten:** NDF-FC-COREOPS-011…013 (`candidate-pending-nova-review`); keine NDF-Rückführung. Kandidaten gesamt 13 (008…013 pending).
+- **Read-only-Befunde:** Risk Register 279 (high 138/medium 117/low 24) → Konsolidierung ~CO-WP-029/030; Decision Index DEC-S-273, Alt-Kombistatus DEC-S-01…37 vs. getrennte Dimensionen → Harmonisierung ~CO-WP-029; Capability-Count „74→94" ~CO-WP-029; Dokumentationsökonomie ~CO-WP-030.
+- **Grenzen:** Decision Index und Risk Register read-only unverändert; kein NDF-Transfer; CO-WP-021 nicht begonnen; genau acht Allowed Files geändert.
 
 ## Notes
 

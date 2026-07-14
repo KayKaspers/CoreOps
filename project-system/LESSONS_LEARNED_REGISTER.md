@@ -490,14 +490,190 @@ Owner-Rollen: `Human Maintainer` · `Nova` · `Implementation Agent` · `Securit
 - **Follow-up Work Package:** Konsistenz-/Konsolidierungs-WP (~CO-WP-029/030)
 - **Notes:** Konsolidiert im Milestone Review CO-WP-005…012; projektlokal, kein NDF-Kandidat.
 
+## LL-023
+
+- **Source Project:** CoreOps
+- **Source Work Package:** CO-WP-013…CO-WP-020 (Milestone Review)
+- **Date or Phase:** Foundation 0.1
+- **Title:** Mehrdimensionale Trennung von Identity, Authority, Ownership, Lifecycle und Status skaliert domänenübergreifend
+- **Context:** Acht Foundation-WPs trennten wiederholt orthogonale Dimensionen (Policy/Approval/Execution/Authorization in 013; Data Owner/Steward/Storage/Write/Migration/Retention/Recovery in 016; Source Trust vs. Authority in 018/020; Manual vs. Source/Execution Authority in 020).
+- **Observation:** Die konsequente Trennung verhinderte Autoritäts-Overreach (z. B. Storage wird nicht Owner, Machine kann sich nicht selbst genehmigen, Manual imitiert keine beobachtete Wahrheit) und blieb über acht WPs konsistent.
+- **Evidence:** Milestone Review §9; DEC-S-137/142/186…188/267; Cross-Document-Invarianten §7.
+- **Impact:** Klare, auditierbare Autoritätsgrenzen als tragfähige Basis für die spätere Execution-/Deployment-Schicht.
+- **Contributing Factor or Root Cause:** Kombinierte Autoritäts-/Status-Begriffe verbergen orthogonale Eigenschaften und ermöglichen Overreach.
+- **Recommended Project Change:** Mehrdimensionale Trennung als Standard-Governance-Muster für alle Foundation-Domänen beibehalten.
+- **Classification:** LL-ARCHITECTURE
+- **Secondary Classifications:** LL-SECURITY, LL-PROCESS
+- **Reusable Beyond CoreOps:** yes
+- **Security Relevance:** yes
+- **NDF Candidate ID:** — (Muster über LL-017/NDF-FC-COREOPS-008 teilabgedeckt)
+- **Owner Role:** Project Governance
+- **Status:** observed
+- **Follow-up Work Package:** Nova Review dieses Milestone Reviews
+- **Notes:** Konsolidiert im Milestone Review CO-WP-013…020.
+
+## LL-024
+
+- **Source Project:** CoreOps
+- **Source Work Package:** CO-WP-013, 014, 016, 017, 018 (Milestone Review)
+- **Date or Phase:** Foundation 0.1
+- **Title:** „Unknown outcome" benötigt eine durchgängige Governance über alle Ausführungs- und Datenpfade
+- **Context:** Execution (013), Integration (014), Migration (016), API (017) und Audit (018) mussten jeweils den Fall behandeln, dass das Ergebnis einer Aktion unbekannt bleibt.
+- **Observation:** Dasselbe Muster wiederholte sich: `unknown outcome ≠ failed ≠ not executed ≠ successful`; kein automatischer Retry; Reconciliation erforderlich; Side-Effect-Unsicherheit sichtbar. Ein einheitliches Muster verhinderte gefährliche Auto-Wiederholung.
+- **Evidence:** Milestone Review §7, §10; Execution §17, Integration Trust §13/§14, Migration §21, API Error §14, Audit §22.
+- **Impact:** Konsistente Fail-Safe-Behandlung unsicherer Ergebnisse; Grundlage für sichere Retry-/Reconciliation-Governance.
+- **Contributing Factor or Root Cause:** Verteilte Systeme liefern häufig unbekannte statt eindeutige Ergebnisse; naive Gleichsetzung mit Erfolg/Fehler ist gefährlich.
+- **Recommended Project Change:** Unknown-Outcome-Governance als übergreifendes Foundation-Muster kodifizieren.
+- **Classification:** LL-SECURITY
+- **Secondary Classifications:** LL-ARCHITECTURE
+- **Reusable Beyond CoreOps:** yes
+- **Security Relevance:** yes
+- **NDF Candidate ID:** NDF-FC-COREOPS-011
+- **Owner Role:** Project Security / Governance
+- **Status:** observed
+- **Follow-up Work Package:** Nova Review dieses Milestone Reviews
+- **Notes:** Konsolidiert im Milestone Review CO-WP-013…020.
+
+## LL-025
+
+- **Source Project:** CoreOps
+- **Source Work Package:** CO-WP-016, 018, 019, 020 (Milestone Review)
+- **Date or Phase:** Foundation 0.1
+- **Title:** Source Trust ist zeitgebunden und von Source Authority getrennt; Observation Time ≠ Ingestion Time
+- **Context:** Migration (016), Event/Audit (018), Telemetry (019) und Topology (020) mussten Quellen bewerten, die zeitweise vertrauenswürdig, später kompromittiert oder verzögert sein können.
+- **Observation:** Source Trust wurde konsistent als zeitgebunden modelliert (Kompromittierung löscht historische Daten nicht, löst aber Neubewertung aus), getrennt von Source Authority (scopegebunden); Observation/Recording/Ingestion Time blieben getrennt (`recently ingested ≠ recently observed`).
+- **Evidence:** Milestone Review §12; Topology Evidence §7-8, Event Time §11-12, Telemetry Freshness §23, Migration §17.
+- **Impact:** Verhindert falsche Aktualitäts-/Autoritätsannahmen und stille Rückwirkung späterer Kompromittierung.
+- **Contributing Factor or Root Cause:** Trust und Zeit werden leicht mit Autorität und Aktualität verwechselt.
+- **Recommended Project Change:** Zeitgebundene Source-Trust-Neubewertung und Trennung der Zeitbegriffe als Standard beibehalten.
+- **Classification:** LL-SECURITY
+- **Secondary Classifications:** LL-ARCHITECTURE
+- **Reusable Beyond CoreOps:** yes
+- **Security Relevance:** yes
+- **NDF Candidate ID:** — (kandidatfähig; überschneidet sich teils mit NDF-FC-COREOPS-009, nicht in dieser Runde promoted)
+- **Owner Role:** Project Security
+- **Status:** observed
+- **Follow-up Work Package:** ggf. spätere NDF-Kandidatenprüfung
+- **Notes:** Konsolidiert im Milestone Review CO-WP-013…020.
+
+## LL-026
+
+- **Source Project:** CoreOps
+- **Source Work Package:** CO-WP-018, 019, 020 (Milestone Review)
+- **Date or Phase:** Foundation 0.1
+- **Title:** Die Evidence-Dimensionskette plus Source Independence bildet ein wiederverwendbares Sufficiency-Vokabular
+- **Context:** Event/Evidence (018), Telemetry (019) und Topology (020) benötigten ein gemeinsames Vokabular, um Evidenz zu bewerten.
+- **Observation:** Dieselbe Kette (capability ≠ available ≠ fresh ≠ integrity-verified ≠ validated ≠ sufficient) und `many items ≠ independent sources` wurde konsistent wiederverwendet; Sufficiency blieb decision-/scope-/zeitgebunden.
+- **Evidence:** Milestone Review §12; Evidence Model §16-17, Topology Evidence §12-13, Telemetry Quality §20.
+- **Impact:** Konsistente, nicht überzogene Evidenzaussagen über Domänen hinweg; Basis für Readiness-/Validierungsbewertung.
+- **Contributing Factor or Root Cause:** Evidenz wird leicht überinterpretiert (verfügbar ⇒ gültig ⇒ ausreichend ⇒ compliant).
+- **Recommended Project Change:** Evidence-Dimensionskette als gemeinsames Referenzvokabular pflegen.
+- **Classification:** LL-ARCHITECTURE
+- **Secondary Classifications:** LL-SECURITY, LL-DOCUMENTATION
+- **Reusable Beyond CoreOps:** yes
+- **Security Relevance:** yes
+- **NDF Candidate ID:** NDF-FC-COREOPS-012
+- **Owner Role:** Project Governance
+- **Status:** observed
+- **Follow-up Work Package:** Nova Review dieses Milestone Reviews
+- **Notes:** Konsolidiert im Milestone Review CO-WP-013…020; baut auf Evidence-Capability-Trennung (CO-WP-004E) auf.
+
+## LL-027
+
+- **Source Project:** CoreOps
+- **Source Work Package:** CO-WP-020 (mit CO-WP-009/012) (Milestone Review)
+- **Date or Phase:** Foundation 0.1
+- **Title:** Nicht-destruktive Manual Authority mit Override und Suppression schützt konkurrierende Evidenz
+- **Context:** Topology (020) führte Manual Authority/Override/Suppression ein, aufbauend auf Break Glass (009) und Divergence Exceptions (012).
+- **Observation:** Manuelle Eingriffe blieben human-attributable, scope-bound, reviewbar und **nicht-destruktiv** — Overrides löschen keine konkurrierenden Observations/Evidence, Suppression bedeutet keine Abwesenheit, Machine Principals imitieren keine Manual Authority.
+- **Evidence:** Milestone Review §14; Manual Authority Policy §6-11/§16, Break-Glass-Policy, Drift Exceptions §12.
+- **Impact:** Menschliche Korrektur ohne Verlust von Beweislage/Audit; verhindert stille Realitätsverfälschung.
+- **Contributing Factor or Root Cause:** Manuelle Autorität wird leicht als „Wahrheit" behandelt, die konkurrierende Daten überschreibt.
+- **Recommended Project Change:** Nicht-destruktive Manual-Authority-Grenzen als Standardmuster für manuelle Korrekturen beibehalten.
+- **Classification:** LL-SECURITY
+- **Secondary Classifications:** LL-PROCESS
+- **Reusable Beyond CoreOps:** yes
+- **Security Relevance:** yes
+- **NDF Candidate ID:** NDF-FC-COREOPS-013
+- **Owner Role:** Project Security / Governance
+- **Status:** observed
+- **Follow-up Work Package:** Nova Review dieses Milestone Reviews
+- **Notes:** Konsolidiert im Milestone Review CO-WP-013…020.
+
+## LL-028
+
+- **Source Project:** CoreOps
+- **Source Work Package:** CO-WP-015, 016, 017, 019 (Milestone Review)
+- **Date or Phase:** Foundation 0.1
+- **Title:** Support-, Compatibility- und Version-Claims müssen version-, target-, profil- und evidence-gebunden sein
+- **Context:** Domain Pack (015), Schema/Migration (016), API (017) und Telemetry (019) definierten jeweils Compatibility-/Support-Aussagen.
+- **Observation:** Konsistent galt: `same version ≠ same capability set`; `newer ≠ automatically compatible`; formal additiv kann semantisch breaking sein; Claims ohne Scope/Evidenz sind unzulässig; `supported ≠ validated`.
+- **Evidence:** Milestone Review §11; Domain Pack Support §11-13, Schema Compatibility §8, API Versioning §7-12, Telemetry Compatibility §20.
+- **Impact:** Verhindert Kompatibilitäts-Overclaim und blindes Vertrauen in Versionsgleichheit.
+- **Contributing Factor or Root Cause:** Versionsnummern und Support-Labels werden leicht als Garantien missverstanden.
+- **Recommended Project Change:** Claim-Bindung (version/target/profil/evidence) als Standard für alle Compatibility-/Support-Aussagen beibehalten.
+- **Classification:** LL-PROCESS
+- **Secondary Classifications:** LL-DOCUMENTATION
+- **Reusable Beyond CoreOps:** yes
+- **Security Relevance:** partly
+- **NDF Candidate ID:** — (Muster über LL-017/018 und bestehende Kandidaten teilabgedeckt)
+- **Owner Role:** Project Governance
+- **Status:** observed
+- **Follow-up Work Package:** Nova Review dieses Milestone Reviews
+- **Notes:** Konsolidiert im Milestone Review CO-WP-013…020.
+
+## LL-029
+
+- **Source Project:** CoreOps
+- **Source Work Package:** CO-WP-013…CO-WP-020 (Milestone Review)
+- **Date or Phase:** Foundation 0.1
+- **Title:** Governance-Register erreichen die Wartbarkeitsschwelle und brauchen einen bestätigten Konsolidierungsschritt
+- **Context:** Risk Register wuchs von 189 auf 279 (+90) und Decision Index auf DEC-S-273; die Zwei-Konventionen-Koexistenz (DEC-S-01…37 vs. 38…273) besteht fort.
+- **Observation:** Wiederkehrende „X≠Y-Interpretation"-Risk-Familien und pauschaler Status `treatment-planned` erhöhen ohne Konsolidierung die Wartungslast; der Zuwachs wurde ab CO-WP-015 diszipliniert auf ≤10/WP gedeckelt, das Gesamtvolumen bleibt aber hoch.
+- **Evidence:** Milestone Review §16, §17; Risk-Register-Verteilung (high 138/medium 117/low 24); Decision Index max DEC-S-273.
+- **Impact:** Wartbarkeits-/Konsistenzrisiko vor dem Foundation Readiness Review; bestätigt und verstärkt LL-019/LL-022.
+- **Contributing Factor or Root Cause:** Rein additive Registerpflege über 16 WPs ohne Konsolidierungslauf.
+- **Recommended Project Change:** Konsolidierungs-/Indizierungslauf (Merge/Reclassify, Review-Daten, Konventionsharmonisierung) bei CO-WP-029/030 fest einplanen.
+- **Classification:** LL-DOCUMENTATION
+- **Secondary Classifications:** LL-PROCESS
+- **Reusable Beyond CoreOps:** partly
+- **Security Relevance:** no
+- **NDF Candidate ID:** —
+- **Owner Role:** Project Governance
+- **Status:** observed
+- **Follow-up Work Package:** Konsistenz-/Konsolidierungs-WP (~CO-WP-029/030)
+- **Notes:** Konsolidiert im Milestone Review CO-WP-013…020; projektlokal, erweitert LL-022.
+
+## LL-030
+
+- **Source Project:** CoreOps
+- **Source Work Package:** CO-WP-013…CO-WP-020 (Milestone Review)
+- **Date or Phase:** Foundation 0.1
+- **Title:** Ein gemeinsames Invarianten-/Template-Referenzmodell verbessert die Dokumentationsökonomie
+- **Context:** 24 Foundation-Dokumente in gleichförmigem 3-Doc-Triplett wiederholen dieselben Invariantenvokabeln, Statusheader und Technology-Boundary-/Threat-References-Abschnitte.
+- **Observation:** Die Gleichförmigkeit ist review-freundlich, erzeugt aber hohe Wiederholung und Token-Kosten; Begriffe (Provenance, Evidence, Confidence) werden mehrfach eingeführt.
+- **Evidence:** Milestone Review §18; wiederholte „≠"-Ketten und Status-/Technology-Boundary-Abschnitte über CO-WP-013…020.
+- **Impact:** Steigende Token-/Wartungskosten; ein gemeinsames Referenzdokument könnte Wiederholung senken, ohne Konsistenz zu verlieren.
+- **Contributing Factor or Root Cause:** Jedes WP definiert Invarianten/Status/Boundaries eigenständig statt zu referenzieren.
+- **Recommended Project Change:** Gemeinsames Invarianten-/Terminologie-Referenzdokument + Status-/Technology-Boundary-Template prüfen (spätestens Readiness CO-WP-030); bestehende Dokumente nicht rückwirkend kürzen.
+- **Classification:** LL-DOCUMENTATION
+- **Secondary Classifications:** LL-PROCESS
+- **Reusable Beyond CoreOps:** yes
+- **Security Relevance:** no
+- **NDF Candidate ID:** — (projektlokaler Guardrail; spätere Kandidatenprüfung möglich)
+- **Owner Role:** Project Governance
+- **Status:** observed
+- **Follow-up Work Package:** Dokumentationsökonomie-Prüfung (~CO-WP-030)
+- **Notes:** Konsolidiert im Milestone Review CO-WP-013…020; erweitert LL-020/LL-021.
+
 ## Zusammenfassung
 
-- **Anzahl Lessons:** 22 (LL-001…LL-013 retrospektiv, LL-014…LL-015 aus CO-WP-004B selbst, LL-016 aus CO-WP-004B2, LL-017…LL-022 aus dem Milestone Review CO-WP-005…012)
-- **Verteilung nach Primärklasse:** LL-PROCESS 13 (004,005,006,010,011,013,014,015,016,017,019,020,021) · LL-PROMPT 1 (001) · LL-TOOLING 1 (002) · LL-SECURITY 1 (003) · LL-ARCHITECTURE 4 (007,008,012,018) · LL-DOCUMENTATION 2 (009,022)
-  > Korrektur (CO-WP-004B1): Der vorherige Eintrag listete fälschlich 9 IDs für LL-PROCESS (inkl. „001"), obwohl „8" als Zahl genannt war. Ursache: LL-001 trägt `LL-PROCESS` nur als **Sekundärklasse**; ihre Primärklasse ist `LL-PROMPT`. Keine Lesson wurde umklassifiziert — nur der Zusammenfassungssatz wurde korrigiert. Fortschreibung (Milestone Review): LL-016 (PROCESS) sowie LL-017…LL-022 ergänzt; Summe 13+1+1+1+4+2 = 22.
-- **Verteilung nach Status:** `validated` 14 (LL-001…LL-013, LL-016) · `observed` 8 (LL-014, LL-015, LL-017…LL-022)
-- **NDF-relevante Lessons (Reusable Beyond CoreOps: yes):** 21 (`yes`); LL-022 = `partly`
-- **NDF-Kandidaten aus dem Milestone Review:** LL-017 → NDF-FC-COREOPS-008 · LL-018 → NDF-FC-COREOPS-009 · LL-019 → NDF-FC-COREOPS-010 (alle `candidate-pending-nova-review`)
-- **Projektlokal ohne eigenen NDF-Kandidaten:** LL-006, LL-007, LL-009, LL-010, LL-012, LL-014, LL-015, LL-020, LL-021, LL-022 (Muster bereits projektintern umgesetzt, durch bestehende NDF-Prozessführung abgedeckt bzw. zu spezifisch für einen eigenständigen Kandidaten)
+- **Anzahl Lessons:** 30 (LL-001…LL-013 retrospektiv, LL-014…LL-015 aus CO-WP-004B selbst, LL-016 aus CO-WP-004B2, LL-017…LL-022 aus dem Milestone Review CO-WP-005…012, LL-023…LL-030 aus dem Milestone Review CO-WP-013…020)
+- **Verteilung nach Primärklasse:** LL-PROCESS 14 (004,005,006,010,011,013,014,015,016,017,019,020,021,028) · LL-PROMPT 1 (001) · LL-TOOLING 1 (002) · LL-SECURITY 4 (003,024,025,027) · LL-ARCHITECTURE 6 (007,008,012,018,023,026) · LL-DOCUMENTATION 4 (009,022,029,030)
+  > Korrektur (CO-WP-004B1): Der vorherige Eintrag listete fälschlich 9 IDs für LL-PROCESS (inkl. „001"), obwohl „8" als Zahl genannt war. Ursache: LL-001 trägt `LL-PROCESS` nur als **Sekundärklasse**; ihre Primärklasse ist `LL-PROMPT`. Keine Lesson wurde umklassifiziert. Fortschreibung (Milestone Review 005…012): LL-016…LL-022. Fortschreibung (Milestone Review 013…020): LL-023…LL-030. Summe 14+1+1+4+6+4 = 30.
+- **Verteilung nach Status:** `validated` 14 (LL-001…LL-013, LL-016) · `observed` 16 (LL-014, LL-015, LL-017…LL-030)
+- **NDF-relevante Lessons (Reusable Beyond CoreOps: yes):** 28 (`yes`); LL-022, LL-029 = `partly`
+- **NDF-Kandidaten aus den Milestone Reviews:** LL-017 → NDF-FC-COREOPS-008 · LL-018 → NDF-FC-COREOPS-009 · LL-019 → NDF-FC-COREOPS-010 · LL-024 → NDF-FC-COREOPS-011 · LL-026 → NDF-FC-COREOPS-012 · LL-027 → NDF-FC-COREOPS-013 (alle `candidate-pending-nova-review`)
+- **Projektlokal ohne eigenen NDF-Kandidaten:** LL-006, LL-007, LL-009, LL-010, LL-012, LL-014, LL-015, LL-020, LL-021, LL-022, LL-023, LL-025, LL-028, LL-029, LL-030 (Muster bereits projektintern umgesetzt, durch bestehende NDF-Prozessführung/Kandidaten teilabgedeckt, kandidatfähig-aber-nicht-promoted bzw. zu spezifisch für einen eigenständigen Kandidaten)
 
 **Bestätigung:** Keine Lesson wurde ohne lokale Evidenz erfunden. Keine Lesson ist bereits als NDF übernommen markiert.

@@ -255,8 +255,8 @@ Drei neue Dokumente: Telemetry Signal and Normalization Model (22 Signal-Klassen
 
 ## Topology Graph, Evidence and Manual Authority
 
-Current implemented WP:
-`CO-WP-020 – Topology Graph, Evidence and Manual Authority` – pending Nova review.
+WP Status:
+`CO-WP-020 – Topology Graph, Evidence and Manual Authority` – `completed-go-with-notes` (Commit 2c6d416).
 
 Current topology foundation:
 Topology graph, node and relationship assertions, identity resolution, evidence, confidence, conflict, manual authority, disclosure and offline-import boundaries defined. Topology graph ≠ authoritative physical reality; node/resource/alias/display-name identity separate; discovered/observed/declared/imported/manual/derived/inferred origins separate; relationship assertion ≠ validated/active connectivity; same name/address/alias ≠ same canonical node; merge/split preserve historical identity and evidence; timestamps give no silent last-write-wins; manual authority human-attributable/scope-bound/reviewable; override does not delete competing observations; suppression ≠ absence; topology grants no state/network/execution authority; unresolved conflicts block unsafe privileged automation.
@@ -272,7 +272,23 @@ not performed
 
 Drei neue Dokumente: Topology Graph and Relationship Model (Node/Relationship Classes, Node/Edge/Assertion Identity, Assertion Origins, Canonical Identity/Aliases, Identity Resolution, Merge/Split, Temporal Validity, Views/Snapshots, State-/Event-/Evidence-/Execution-Boundary), Topology Evidence, Confidence and Conflict Model (Source Trust/Authority, Confidence, Validation, Evidence/Sufficiency, Independence, Completeness, Conflicts/Precedence, Supersession/Invalidation) und Topology Manual Authority and Disclosure Policy (Manual Authority/Actions, Overrides, Suppression, Merge/Split-Autorität, Machine-Principal-Grenze, Execution-Boundary, Workspace-Isolation, Disclosure/Export, Offline, Fail-Closed). Decision Index +19 (DEC-S-255…273), Risk Register +10 (RISK-270…279, gesamt 279). Keine Graph-DB-/Discovery-/Query-/Identity-Resolution-/Conflict-Resolution-/Visualization-/Layout-Technologie ausgewählt; keine ADR; Telemetry-/Event-/Audit-/Evidence-/API-/Integration-/Data-/Identity-/Authorization-/State-/Provenance-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.
 
-Next planned WP nach Nova Review und Human-Maintainer-Commit: `CO-WP-021 – Deployment Control Plane and Blueprint Schema`.
+## Milestone Lessons Review (CO-WP-013…020)
+
+Current milestone:
+CO-WP-013 through CO-WP-020 reviewed — `Milestone Lessons Review CO-WP-013 through CO-WP-020` completed; Nova Review pending. Ergebnis: **GO WITH NOTES FOR CO-WP-021**.
+
+Current foundation:
+Policy/Approval/Execution, integration, domain-pack, data/migration, API, event/evidence, telemetry and topology governance consolidated as one coherent chain (24 documents), each stage consuming the prior as authoritative boundary; all cross-foundation invariants held; no technology selected.
+
+Runtime implementation:
+not started
+
+NDF candidates:
+pending Nova review, no transfer
+
+Neues Dokument `project-brain/MILESTONE_REVIEW_CO_WP_013_TO_020.md`. Acht konsolidierte Lessons (LL-023…030); drei NDF-Feedback-Kandidaten (NDF-FC-COREOPS-011…013, `candidate-pending-nova-review`). Read-only-Befunde: Risk Register 279 (Konsolidierung ~CO-WP-029/030); Decision Index DEC-S-273 (Alt-Kombistatus DEC-S-01…37 vs. getrennte Dimensionen — Harmonisierung ~CO-WP-029); Capability-Count „74→94" in Alt-Abschnitten (~CO-WP-029); Dokumentationsökonomie (gemeinsames Invarianten-/Template-Referenzdokument ~CO-WP-030). **Decision Index und Risk Register unverändert (read-only); keine NDF-Rückführung; CO-WP-021 nicht begonnen.**
+
+Next planned WP nach Nova Review und Human-Maintainer-Commit des Milestone Reviews: `CO-WP-021 – Deployment Control Plane and Blueprint Schema`.
 
 ## Current Goal
 
