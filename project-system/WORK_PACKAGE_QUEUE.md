@@ -29,9 +29,9 @@ Jedes Work Package hat genau **einen** primären Typ.
 | CO-WP-009 | security-baseline | Human Identity, Workspaces, RBAC and Break Glass               | completed-go-with-notes        |
 | CO-WP-010 | security-baseline | Machine Identity, Enrollment and Offline Credential Lifecycle  | completed-go-with-notes        |
 | CO-WP-011 | docs-only         | Source of Truth and Field Provenance                           | completed-go-with-notes        |
-| CO-WP-012 | docs-only         | Observed, Desired, Effective State and Drift                   | implemented-awaiting-nova-review|
-| CO-WP-013 | security-baseline | Policy, Approval and Execution Authorization                   | planned-next                  |
-| CO-WP-014 | docs-only         | CoreOps Integration Contract v0.1                              | planned                       |
+| CO-WP-012 | docs-only         | Observed, Desired, Effective State and Drift                   | completed-go-with-notes        |
+| CO-WP-013 | security-baseline | Policy, Approval and Execution Authorization                   | implemented-awaiting-nova-review|
+| CO-WP-014 | docs-only         | CoreOps Integration Contract v0.1                              | planned-next                  |
 | CO-WP-015 | docs-only         | Domain Pack Governance, Support Levels and Compatibility       | planned                       |
 | CO-WP-016 | docs-only         | Data Ownership, Persistence, Schema Versioning and Migration   | planned                       |
 | CO-WP-017 | docs-only         | API Governance, Versioning, Errors and Idempotency             | planned                       |
@@ -50,12 +50,12 @@ Jedes Work Package hat genau **einen** primären Typ.
 | CO-WP-030 | review-only       | Foundation Readiness Review                                    | planned                       |
 | CO-WP-031 | release-prep      | Foundation 0.1 Release Preparation                             | planned                       |
 
-> **Milestone-Hinweis (nicht nummeriert):** `Milestone Lessons Review CO-WP-005 through CO-WP-012` — `implemented-awaiting-nova-review`. Gebündelter docs-only Review der acht Foundation-WPs; Ergebnis **GO WITH NOTES FOR CO-WP-013**. Keine `CO-WP-*`-ID; verändert die Queue-Reihenfolge nicht. `CO-WP-012` bleibt abgeschlossen, `CO-WP-013` bleibt `planned-next` / not started. Follow-ups (Capability-Count-Reconciliation, Risk-Register-Konsolidierung, Decision-Status-Harmonisierung) sind für ~`CO-WP-029`/`CO-WP-030` vorgemerkt.
+> **Milestone-Hinweis (nicht nummeriert):** `Milestone Lessons Review CO-WP-005 through CO-WP-012` — `completed-go-with-notes`. Gebündelter docs-only Review der acht Foundation-WPs; Ergebnis **GO WITH NOTES FOR CO-WP-013** (Commit 74f8e32). Keine `CO-WP-*`-ID; verändert die Queue-Reihenfolge nicht. Follow-ups (Capability-Count-Reconciliation, Risk-Register-Konsolidierung, Decision-Status-Harmonisierung) sind für ~`CO-WP-029`/`CO-WP-030` vorgemerkt.
 
 ## Regeln
 
 - Genau ein primärer Typ pro Work Package.
-- Nur `CO-WP-013` ist der nächste geplante Schritt (`planned-next`).
+- Nur `CO-WP-014` ist der nächste geplante Schritt (`planned-next`). `CO-WP-013` ist `implemented-awaiting-nova-review` und wird erst nach Nova Review und Human-Maintainer-Commit als abgeschlossen geführt.
 - Keine automatische Freigabe eines Folge-Work-Packages.
 - Die Queue ist noch **nicht** final scope-locked.
 - Änderungen an der Queue nur durch ein später freigegebenes Work Package.

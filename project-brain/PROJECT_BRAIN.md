@@ -245,14 +245,25 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 - Sechs konsolidierte Lessons LL-017…022 (Lessons gesamt 22); drei NDF-Feedback-Kandidaten NDF-FC-COREOPS-008…010 (`candidate-pending-nova-review`).
 - Read-only-Befunde (nur als Follow-up dokumentiert, nichts umgesetzt): Risk Register 189 Einträge → Konsolidierungslauf ~CO-WP-029/030; Decision Index mischt Alt-Kombistatus (DEC-S-01…37) mit getrennten Dimensionen (DEC-S-38…136); Capability-Count „74→94" in Alt-Abschnitten.
 - **Risk Register und Decision Index unverändert (read-only); kein NDF-Transfer/keine Adoption; CO-WP-013 nicht begonnen.**
+- Status: `completed-go-with-notes` (Commit 74f8e32).
+
+## Policy, Approval and Execution Authorization (CO-WP-013)
+
+- Drei neue Dokumente: [POLICY_DECISION_AND_EVALUATION_MODEL.md](../docs/security/POLICY_DECISION_AND_EVALUATION_MODEL.md), [APPROVAL_AND_AUTHORIZATION_LIFECYCLE.md](../docs/security/APPROVAL_AND_AUTHORIZATION_LIFECYCLE.md), [EXECUTION_AUTHORIZATION_AND_GUARD_POLICY.md](../docs/security/EXECUTION_AUTHORIZATION_AND_GUARD_POLICY.md).
+- Policy Evaluation, Approval und Execution Authorization sind getrennte Verantwortlichkeiten. Policy permit ≠ Approval ≠ Execution Authorization; kein Default-Permit (deny/indeterminate außer explizit autorisiert); `indeterminate`/`conflicted` fail-closed; Policy-Konflikte bleiben sichtbar.
+- Approval explizit/zurechenbar/scope-bound/widerrufbar; Machine Principals ohne Self-Approval; Approver-Rollenname ≠ unbegrenzter Scope; Separation of Duties (kleine Deployments mit sichtbaren kompensierenden Kontrollen).
+- Execution Authorization action-/target-/scope-/plan-/time-bound; materielle Plan-/Target-Änderung → Re-Evaluation; expired/revoked/consumed nicht wiederverwendbar; Pre-Execution Guards + fail-closed; Adapter/Agent erweitern Scope nicht; Break Glass kein Parallelmodell; Offline Authorization mit Target-Binding/Provenance/Integrität/expliziter Aktivierung.
+- Executed ≠ successful ≠ verified; closed ≠ successful; audit evidence ≠ execution authority.
+- Decision Index +16 (DEC-S-137…152), Risk Register +17 (RISK-190…206, gesamt 206).
+- **Keine Policy-/Approval-/Execution-Engine, kein Autorisierungsartefakt/Token, kein Replay-Mechanismus, keine Queue/Workflow-Runtime ausgewählt; keine ADR; Identity-/Modul-/State-/Provenance-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.**
 
 ## Letztes Work Package
 
-`CO-WP-012 – Observed, Desired, Effective State and Drift` (docs-only / state-management and safe-remediation foundation). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-011 – GO WITH NOTES`.
+`CO-WP-013 – Policy, Approval and Execution Authorization` (docs-only / security-baseline). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-012 – completed-go-with-notes`; dazwischen `Milestone Lessons Review CO-WP-005…012 – GO WITH NOTES` (Commit 74f8e32).
 
 ## Nächstes Work Package
 
-`CO-WP-013 – Policy, Approval and Execution Authorization` (security-baseline; planned-next; pending Nova review von CO-WP-012 und Human-Maintainer-Freigabe).
+`CO-WP-014 – CoreOps Integration Contract v0.1` (docs-only; planned-next; erst nach Nova Review von CO-WP-013 und Human-Maintainer-Commit).
 
 ## Human-Maintainer-Gates
 

@@ -23,7 +23,15 @@ Universelle, self-hosted und offline-fähige Operations Control Plane, die Sourc
 
 ## Letztes Work Package
 
-`CO-WP-012 – Observed, Desired, Effective State and Drift` (docs-only / state-management and safe-remediation foundation). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-011 – GO WITH NOTES`.
+`CO-WP-013 – Policy, Approval and Execution Authorization` (docs-only / security-baseline). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-012 – completed-go-with-notes`; dazwischen `Milestone Lessons Review CO-WP-005…012 – GO WITH NOTES` (Commit 74f8e32).
+
+## Policy, Approval and Execution Authorization (CO-WP-013)
+
+- Drei neue Dokumente: Policy Decision and Evaluation Model, Approval and Authorization Lifecycle, Execution Authorization and Guard Policy.
+- Policy Evaluation, Approval und Execution Authorization getrennt. Policy permit ≠ Approval ≠ Execution Authorization; kein Default-Permit; `indeterminate`/`conflicted` fail-closed; Policy-Konflikte bleiben sichtbar.
+- Approval explizit/zurechenbar/scope-bound/widerrufbar; Machine ohne Self-Approval; Approver-Rolle ≠ unbegrenzter Scope; SoD (kleine Deployments berücksichtigt). Execution Authorization action-/target-/scope-/plan-/time-bound; Plan-/Target-Änderung → Re-Evaluation; expired/revoked/consumed nicht wiederverwendbar; Pre-Execution Guards + fail-closed; Adapter/Agent erweitern Scope nicht; Break Glass kein Parallelmodell; Offline Authorization mit Target-Binding/Provenance/Integrität/expliziter Aktivierung.
+- Executed ≠ successful ≠ verified; closed ≠ successful; audit evidence ≠ execution authority.
+- Decision Index +16 (DEC-S-137…152), Risk Register +17 (RISK-190…206, gesamt 206). Keine Policy-/Approval-/Execution-Engine, kein Token/Artefakt, kein Replay-Mechanismus, keine Queue/Workflow-Runtime; keine ADR; Identity-/Modul-/State-/Provenance-/Capability-/Threat-Dateien + Lessons-Learned + NDF-Kandidaten unverändert; keine NDF-Rückführung.
 
 ## Observed, Desired, Effective State and Drift (CO-WP-012)
 
@@ -158,7 +166,7 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 
 ## Nächstes Work Package
 
-`CO-WP-013 – Policy, Approval and Execution Authorization` (security-baseline; planned-next; pending Nova review von CO-WP-012 und Human-Maintainer-Freigabe). Die 004er-Erweiterungsserie (004A…004E) und CO-WP-005…012 sind abgeschlossen. Milestone-Lessons-Review-Eignung `yes` (CO-WP-005…012; Bündelentscheidung Nova/HM). External: NDF-Release-Zuordnung für die drei Adoption-Commits ausstehend.
+`CO-WP-014 – CoreOps Integration Contract v0.1` (docs-only; planned-next; erst nach Nova Review von CO-WP-013 und Human-Maintainer-Commit). Die 004er-Erweiterungsserie (004A…004E), CO-WP-005…012, der Milestone Lessons Review (005…012) und CO-WP-013 sind bearbeitet; CO-WP-013 ist `implemented-awaiting-nova-review`. Milestone-Bündelentscheidung (Lessons/NDF-Kandidaten 008…010) liegt bei Nova/HM. External: NDF-Release-Zuordnung für die drei Adoption-Commits ausstehend.
 
 ## Aktuelle Blocker
 

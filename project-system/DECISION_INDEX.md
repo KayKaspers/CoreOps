@@ -292,6 +292,29 @@ Alle 30 Concept-ADR-Kandidaten (§51) plus zwei Foundation-Klärungen (Delivery 
 | DEC-S-135 | State/drift/remediation engine technology | architecture-context | deferred | non-binding | CO-WP-012 | Nova | Deferred |
 | DEC-S-136 | Retry/queue/scheduling technology | architecture-context | deferred | non-binding | CO-WP-012 | Nova | Deferred |
 
+## Policy, Approval and Execution Authorization Decisions (CO-WP-013)
+
+> Registriert über [POLICY_DECISION_AND_EVALUATION_MODEL.md](../docs/security/POLICY_DECISION_AND_EVALUATION_MODEL.md), [APPROVAL_AND_AUTHORIZATION_LIFECYCLE.md](../docs/security/APPROVAL_AND_AUTHORIZATION_LIFECYCLE.md) und [EXECUTION_AUTHORIZATION_AND_GUARD_POLICY.md](../docs/security/EXECUTION_AUTHORIZATION_AND_GUARD_POLICY.md). **Getrennte Dimensionen** (Decision Class · Lifecycle Status · Binding Level); keine kombinierten Pseudostatuswerte; keine Policy-/Approval-/Execution-Engine, kein Autorisierungsartefakt/Token, kein Replay-Mechanismus ausgewählt; keine ADR.
+
+| Decision ID | Topic | Decision Class | Lifecycle Status | Binding Level | Source | Owner | Notes |
+| ----------- | ----- | -------------- | ---------------- | ------------- | ------ | ----- | ----- |
+| DEC-S-137 | Policy evaluation / approval / execution authorization | security-context | accepted | binding-governance | CO-WP-013 | Nova | Getrennte Verantwortlichkeiten |
+| DEC-S-138 | Policy permit semantics | security-context | accepted | binding-governance | CO-WP-013 | Nova | permit ≠ approval ≠ execution authorization |
+| DEC-S-139 | Default privileged outcome | security-context | accepted | binding-governance | CO-WP-013 | Nova | deny/indeterminate außer explizit autorisiert; kein Default-Permit |
+| DEC-S-140 | Policy conflicts | security-context | accepted | binding-governance | CO-WP-013 | Nova | Bleiben sichtbar bis explizit aufgelöst |
+| DEC-S-141 | Approval properties | security-context | accepted | binding-governance | CO-WP-013 | Nova | Explizit, zurechenbar, scope-bound, widerrufbar |
+| DEC-S-142 | Machine self-approval | security-context | accepted | binding-governance | CO-WP-013 | HM | Machine Principals können sich **nicht** selbst genehmigen |
+| DEC-S-143 | Approver scope | security-context | accepted | binding-governance | CO-WP-013 | Nova | Rollenname ≠ unbegrenzter Approval-Scope |
+| DEC-S-144 | Execution authorization binding | security-context | accepted | binding-governance | CO-WP-013 | Nova | action-/target-/scope-/plan-/time-bound |
+| DEC-S-145 | Plan/target change | security-context | accepted | binding-governance | CO-WP-013 | Nova | Materielle Änderung → Re-Evaluation/ggf. neue Approval |
+| DEC-S-146 | Expired/revoked/consumed authorization | security-context | accepted | binding-governance | CO-WP-013 | Nova | Nicht wiederverwendbar |
+| DEC-S-147 | Break-glass relationship | security-context | accepted | binding-governance | CO-WP-013 | HM | Außergewöhnlich, nicht permanent; referenziert bestehende Break-Glass-Policy (kein Parallelmodell) |
+| DEC-S-148 | Offline authorization | security-context | accepted | binding-governance | CO-WP-013 | Nova | Target-/Scope-/Plan-Binding, Provenance, Integrität, explizite Aktivierung |
+| DEC-S-149 | Execution result semantics | governance-direction | accepted | binding-governance | CO-WP-013 | Nova | Execution result ≠ success |
+| DEC-S-150 | Success/closure semantics | governance-direction | accepted | binding-governance | CO-WP-013 | Nova | Success ≠ verification; closed ≠ success |
+| DEC-S-151 | Policy/approval/authorization engine technology | architecture-context | deferred | non-binding | CO-WP-013 | Nova | Deferred |
+| DEC-S-152 | Authorization artifact and replay-protection mechanism | architecture-context | deferred | non-binding | CO-WP-013 | Nova | Deferred |
+
 ## Deferred Decisions
 
 | Decision ID | Topic | Status | Class | Source | Owner | Target WP | ADR Required |
@@ -358,5 +381,7 @@ Alle 30 Concept-ADR-Kandidaten (§51) plus zwei Foundation-Klärungen (Delivery 
 **CO-WP-011-Registrierungen:** 16 Source-of-Truth-/Field-Provenance-Entscheidungen (DEC-S-106…121), **getrennte Dimensionen**: Source of Truth ≠ System of Record; autoritative Feldownership explizit/modulgebunden; Desired/Observed/Effective/Derived getrennt; Derived/Cached nicht autoritativ per Default; importierte Daten erben keine Autorität; neuester Timestamp gewinnt nicht automatisch; Overrides explizit/feld-/reason-bound mit Provenance-Erhalt; Konflikte bleiben sichtbar; widerrufene Quellen nicht autoritativ; Offline-Reconciliation mit Provenance/Integrität/Authority/Conflict-Review (fail-closed); Field-Provenance durch Transformationen erhalten; Audit-/Evidence-History nicht durch Reconciliation umgeschrieben; Storage/Merge/Sync-Technologie, kryptografische Provenance und universelles Feldschema `deferred`. Keine Technologieauswahl; keine ADR.
 
 **CO-WP-012-Registrierungen:** 15 State-/Drift-/Safe-Remediation-Entscheidungen (DEC-S-122…136), **getrennte Dimensionen**: Desired/Observed/Reported/Effective/Last-Known getrennt; Effective State bleibt indeterminate/conflicted bei unklarer Autorität; keine Beobachtung ≠ keine Drift; kein erkannter Drift ≠ Compliance; Drift-Erkennung ohne Write Authority; Detection/Recommendation/Plan/Approval/Execution/Verification getrennt; privilegierte Remediation mit expliziter Autorität + Approval; Exceptions explizit/reviewbar; Executed ≠ successful; Successful ≠ verified convergence; Verified convergence ≠ Compliance; Partial Failure explizit; automatische Remediation, Engine-/Retry-/Queue-/Scheduling-Technologie `deferred`. Keine Technologieauswahl; keine ADR.
+
+**CO-WP-013-Registrierungen:** 16 Policy-/Approval-/Execution-Authorization-Entscheidungen (DEC-S-137…152), **getrennte Dimensionen**: Policy Evaluation, Approval und Execution Authorization getrennt; Policy permit ≠ Approval ≠ Execution Authorization; kein Default-Permit (deny/indeterminate außer explizit autorisiert); Policy-Konflikte bleiben sichtbar; Approval explizit/zurechenbar/scope-bound/widerrufbar; Machine Principals ohne Self-Approval; Approver-Rollenname ≠ unbegrenzter Scope; Execution Authorization action-/target-/scope-/plan-/time-bound; materielle Plan-/Target-Änderung → Re-Evaluation; expired/revoked/consumed nicht wiederverwendbar; Break Glass außergewöhnlich (kein Parallelmodell); Offline Authorization mit Target-Binding/Provenance/Integrität/expliziter Aktivierung; Execution result ≠ success; Success ≠ verification, closed ≠ success; Policy-/Approval-/Authorization-Engine, Autorisierungsartefakt/Token und Replay-Mechanismus `deferred`. Keine Technologieauswahl; keine ADR. `DEC-S-01…37` bleiben unverändert (Legacy-Format-Follow-up für CO-WP-029).
 
 **Bestätigung:** Keine technische Architektur-, Technologie- oder Implementierungsentscheidung trägt den Status `accepted`. Keine Integration ist `supported`. Keine Zertifizierung/VS-Eignung behauptet. Keine ADR ist Accepted. Es wurde keine ADR-Datei erzeugt.

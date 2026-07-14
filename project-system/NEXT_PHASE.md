@@ -118,7 +118,28 @@ Next planned WP: `CO-WP-013 – Policy, Approval and Execution Authorization`.
 
 `Milestone Lessons Review CO-WP-005 through CO-WP-012` completed; Nova Review pending. Gebündelter Review der acht Foundation-WPs (docs-only). Ergebnis: **GO WITH NOTES FOR CO-WP-013**. Neues Dokument `project-brain/MILESTONE_REVIEW_CO_WP_005_TO_012.md`. Sechs konsolidierte Lessons (LL-017…022) und drei NDF-Feedback-Kandidaten (NDF-FC-COREOPS-008…010, `candidate-pending-nova-review`) erfasst. Read-only-Befunde: Risk Register (189 Einträge) braucht einen späteren Konsolidierungslauf; Decision Index mischt Alt-Kombistatus (DEC-S-01…37) mit getrennten Dimensionen (DEC-S-38…136); Capability-Count „74→94" in Alt-Abschnitten. Follow-ups bis ~CO-WP-029/030. **Risk Register und Decision Index unverändert (read-only); keine NDF-Rückführung; CO-WP-013 nicht begonnen.**
 
-Next planned WP nach Nova Review: `CO-WP-013 – Policy, Approval and Execution Authorization`.
+Milestone Review Status: `completed-go-with-notes` (Commit 74f8e32).
+
+## Policy, Approval and Execution Authorization
+
+Current implemented WP:
+`CO-WP-013 – Policy, Approval and Execution Authorization` – pending Nova review.
+
+Current authorization foundation:
+Policy evaluation, approval and execution authorization are separate, bounded and auditable. A policy permit does not imply approval or execution authorization; execution authorization is action-, target-, scope-, plan- and time-bound; expired/revoked/consumed authorization is not reusable; machine principals cannot self-approve.
+
+Policy engine:
+not selected
+
+Approval engine:
+not selected
+
+Execution authorization mechanism:
+not implemented
+
+Drei neue Dokumente: Policy Decision and Evaluation Model (Policy-Klassen, Lifecycle, Evaluation Inputs, Decision Outcomes, Default-Deny, Konflikte/Präzedenz, Exceptions, Offline Evaluation), Approval and Authorization Lifecycle (Approval Requirements/Requests/Decisions, Approver Authority, Separation of Duties, Expiry/Revocation/Consumption, Replay-Grenze, Offline Approval) und Execution Authorization and Guard Policy (Execution Intent/Plan/Authorization, Authorization Lifecycle, Pre-Execution Guards, Execution Boundary, Replay/Duplicate, Verification/Closure, Fail-Closed). Decision Index +16 (DEC-S-137…152), Risk Register +17 (RISK-190…206). Keine Policy-/Approval-/Execution-Engine, kein Autorisierungsartefakt/Token, kein Replay-Mechanismus, keine Queue/Workflow-Runtime ausgewählt; keine ADR; Identity-/Modul-/State-/Provenance-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.
+
+Next planned WP nach Nova Review und Human-Maintainer-Commit: `CO-WP-014 – CoreOps Integration Contract v0.1`.
 
 ## Current Goal
 

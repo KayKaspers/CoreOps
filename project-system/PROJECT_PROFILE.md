@@ -329,6 +329,16 @@ Folgende Themen benötigen vor jeder verbindlichen technischen Festlegung einen 
 - **NDF-Kandidaten:** NDF-FC-COREOPS-008…010 (`candidate-pending-nova-review`); keine NDF-Rückführung.
 - **Read-only-Befunde:** Risk Register (189) → späterer Konsolidierungslauf; Decision Index Alt-Kombistatus (DEC-S-01…37) vs. getrennte Dimensionen (DEC-S-38…136); Capability-Count „74→94" in Alt-Abschnitten. Follow-ups ~CO-WP-029/030.
 - **Grenzen:** Risk Register und Decision Index unverändert (read-only); kein NDF-Transfer; CO-WP-013 nicht begonnen.
+- **Status:** `completed-go-with-notes` (Commit 74f8e32).
+
+## CO-WP-013 Konsolidierung (Policy, Approval and Execution Authorization)
+
+- **Policy Decision:** [POLICY_DECISION_AND_EVALUATION_MODEL.md](../docs/security/POLICY_DECISION_AND_EVALUATION_MODEL.md) — 12 Policy-Klassen, Lifecycle (draft…archived), Evaluation Inputs, Decision Outcomes (`permit`/`deny`/`approval-required`/`not-applicable`/`indeterminate`/`conflicted`), Default-Deny, Konflikte/Präzedenz, Exceptions, Offline Evaluation.
+- **Approval/Authorization:** [APPROVAL_AND_AUTHORIZATION_LIFECYCLE.md](../docs/security/APPROVAL_AND_AUTHORIZATION_LIFECYCLE.md) — Approval Requirements/Requests/Decisions, Approver Authority (scope-bound), Separation of Duties (kleine Deployments berücksichtigt), Expiry/Revocation/Consumption, Replay-Grenze, Offline Approval.
+- **Execution Guard:** [EXECUTION_AUTHORIZATION_AND_GUARD_POLICY.md](../docs/security/EXECUTION_AUTHORIZATION_AND_GUARD_POLICY.md) — Execution Intent/Plan/Authorization, Authorization Lifecycle, Pre-Execution Guards, Execution Boundary, Replay/Duplicate, Verification/Closure, Fail-Closed.
+- **Governance-Fortschreibung:** Decision Index +16 (DEC-S-137…152), Risk Register +17 (RISK-190…206, gesamt 206).
+- **Grenzen:** Policy permit ≠ Approval ≠ Execution Authorization; Execution Authorization action-/target-/scope-/plan-/time-bound; expired/revoked/consumed nicht wiederverwendbar; Machine ohne Self-Approval; Executed ≠ successful ≠ verified; closed ≠ successful; keine Policy-/Approval-/Execution-Engine, kein Token/Artefakt, kein Replay-Mechanismus, keine Queue/Workflow-Runtime; keine ADR; Invarianten = Designanforderungen.
+- **Status:** Foundation-Authorization-Baseline etabliert; nächstes WP `CO-WP-014`; Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung. Nova Review pending.
 
 ## Notes
 
