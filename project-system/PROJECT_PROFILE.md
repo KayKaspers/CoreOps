@@ -347,7 +347,16 @@ Folgende Themen benötigen vor jeder verbindlichen technischen Festlegung einen 
 - **Trust/Failure:** [INTEGRATION_TRUST_FAILURE_AND_RECOVERY_POLICY.md](../docs/security/INTEGRATION_TRUST_FAILURE_AND_RECOVERY_POLICY.md) — Trust Boundary, Failure Classification, Unknown Outcome, Retry/Replay, Partial Failure, Rollback/Recovery, Fail-Closed.
 - **Governance-Fortschreibung:** Decision Index +16 (DEC-S-153…168), Risk Register +13 (RISK-207…219, gesamt 219).
 - **Grenzen:** advertised ≠ detected ≠ permitted ≠ implemented ≠ supported ≠ validated; request acceptance ≠ authorization ≠ execution; completion ≠ success ≠ verification; transport failure ≠ keine Nebenwirkung; unknown outcome sichtbar/blockiert Retry; Read-only ohne stille Write Authority; Integrationsergebnisse erben keine Autorität; Adapter/Agent erweitern Scope nicht; Extensions überschreiben keine Invariante; keine Protokoll-/Schema-/SDK-/Adapter-/Replay-Technologie; keine ADR; Invarianten = Designanforderungen.
-- **Status:** Foundation-Integration-Contract etabliert; nächstes WP `CO-WP-015`; Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung. Nova Review pending.
+- **Status:** Foundation-Integration-Contract etabliert; `completed-go-with-notes` (Commit 611773b).
+
+## CO-WP-015 Konsolidierung (Domain Pack Governance, Support Levels and Compatibility)
+
+- **Governance:** [DOMAIN_PACK_GOVERNANCE_MODEL.md](../docs/architecture/DOMAIN_PACK_GOVERNANCE_MODEL.md) — Domain Pack = versionierte Governance-/Produktgrenze (≠ adapter/plugin/deployment unit/certification), 15 Pack-Klassen, stabile Pack-IDs, neun getrennte Statusdimensionen, Lifecycle (proposed…archived), Ownership/Maintenance, Dependencies, Composition/Overlap, Community/External, Vendor Neutrality, Offline.
+- **Support/Compatibility:** [DOMAIN_PACK_SUPPORT_AND_COMPATIBILITY_MODEL.md](../docs/architecture/DOMAIN_PACK_SUPPORT_AND_COMPATIBILITY_MODEL.md) — SUP-0…SUP-3/SUP-D, Maintenance Responsibility, Implementation/Validation/Evidence-Status, Compatibility Status/Dimensions/Claims, Deprecation/Retirement.
+- **Trust/Lifecycle:** [DOMAIN_PACK_TRUST_PROVENANCE_AND_LIFECYCLE_POLICY.md](../docs/security/DOMAIN_PACK_TRUST_PROVENANCE_AND_LIFECYCLE_POLICY.md) — Trust/Provenance/Integrity, Security Review/Response, Suspension/Withdrawal/Revocation, Offline Distribution, Fail-Closed.
+- **Governance-Fortschreibung:** Decision Index +17 (DEC-S-169…185), Risk Register +10 (RISK-220…229, gesamt 229).
+- **Grenzen:** active ≠ implemented ≠ maintained ≠ supported ≠ validated ≠ universally compatible; Support Level ≠ SLA; SUP-3 version-/target-/profil-/limitation-/evidence-bound; expected ≠ validated compatibility; community/external ≠ trust/support/endorsement; Pack-Aktivierung ≠ Runtime Authority; Dependencies nicht still Core-Pflicht; Offline mit Provenance/Integrität/Target-Binding/Aktivierung; retired IDs nicht wiederverwendet; keine Packaging-/Plugin-/Marketplace-/Signaturtechnologie; keine ADR; Invarianten = Designanforderungen.
+- **Status:** Foundation-Domain-Pack-Governance etabliert; nächstes WP `CO-WP-016`; Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung. Nova Review pending.
 
 ## Notes
 

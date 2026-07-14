@@ -141,8 +141,8 @@ Drei neue Dokumente: Policy Decision and Evaluation Model (Policy-Klassen, Lifec
 
 ## CoreOps Integration Contract v0.1
 
-Current implemented WP:
-`CO-WP-014 – CoreOps Integration Contract v0.1` – pending Nova review.
+WP Status:
+`CO-WP-014 – CoreOps Integration Contract v0.1` – `completed-go-with-notes` (Commit 611773b).
 
 Current integration foundation:
 CoreOps Integration Contract v0.1, capability and operation model, and integration trust/failure policy defined. Advertised/detected/permitted/implemented/supported/validated capabilities are separate; request acceptance ≠ authorization ≠ execution; completion ≠ success; success ≠ verification; unknown outcome stays explicit and blocks automatic retry; read-only integration gains no silent write authority; integration results inherit no authoritative state automatically; adapters/agents cannot expand scope; contract extensions cannot override security invariants.
@@ -158,7 +158,26 @@ not implemented
 
 Drei neue Dokumente: CoreOps Integration Contract v0.1 (Contract-Version, Integration Classes/Identity/Lifecycle, Request-/Acceptance-/Operation-Lifecycle, Result-/Failure-Semantik, Async, Retry/Replay, Cancellation/Rollback/Recovery, Offline, Provenance, Versioning, Extensions), Integration Capability and Operation Model (sechs Capability-Dimensionen, Operation Classes, Privilege Classification, Detection/Permission/Validation) und Integration Trust, Failure and Recovery Policy (Trust Boundary, Failure Classification, Unknown Outcome, Retry/Replay, Partial Failure, Rollback/Recovery, Fail-Closed). Decision Index +16 (DEC-S-153…168), Risk Register +13 (RISK-207…219, gesamt 219). Keine Protokoll-/Schema-/Transport-/SDK-/Adapter-/Replay-/Queue-/Messaging-Technologie ausgewählt; keine ADR; Identity-/Authorization-/State-/Provenance-/Modul-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.
 
-Next planned WP nach Nova Review und Human-Maintainer-Commit: `CO-WP-015 – Domain Pack Governance, Support Levels and Compatibility`.
+## Domain Pack Governance, Support Levels and Compatibility
+
+Current implemented WP:
+`CO-WP-015 – Domain Pack Governance, Support Levels and Compatibility` – pending Nova review.
+
+Current modular-product foundation:
+Domain-Pack governance, lifecycle, support levels, compatibility claims and trust boundaries defined. A Domain Pack is a versioned governance/product boundary (≠ adapter/plugin/deployment unit/certification); pack lifecycle/maintenance/support/implementation/validation/evidence/security-review/compatibility are separate dimensions; support level ≠ SLA; SUP-3 is version-/target-/profile-/limitation-/evidence-bound; community/external origin ≠ trust/support/endorsement; pack activation grants no runtime authority; offline pack use needs provenance/integrity/target binding/explicit activation.
+
+Domain-Pack implementation:
+not started
+
+Packaging and plugin runtime:
+not selected
+
+Compatibility validation:
+not performed
+
+Drei neue Dokumente: Domain Pack Governance Model (Pack-Begriff/-Klassen/-Identität, Statusdimensionen, Lifecycle, Ownership/Maintenance, Dependencies, Composition/Overlap, Community/External, Vendor Neutrality, Offline), Domain Pack Support and Compatibility Model (SUP-0…SUP-3/SUP-D, Maintenance, Implementation/Validation/Evidence, Compatibility Status/Dimensions/Claims, Deprecation/Retirement) und Domain Pack Trust, Provenance and Lifecycle Policy (Trust/Provenance/Integrity, Security Review/Response, Suspension/Withdrawal, Offline Distribution, Fail-Closed). Decision Index +17 (DEC-S-169…185), Risk Register +10 (RISK-220…229, gesamt 229). Keine Packaging-/Marketplace-/Plugin-/Update-/Dependency-Resolution-/Signaturtechnologie ausgewählt; keine ADR; Integration-/Identity-/Authorization-/State-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.
+
+Next planned WP nach Nova Review und Human-Maintainer-Commit: `CO-WP-016 – Data Ownership, Persistence, Schema Versioning and Migration`.
 
 ## Current Goal
 

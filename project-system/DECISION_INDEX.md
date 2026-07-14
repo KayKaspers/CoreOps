@@ -338,6 +338,30 @@ Alle 30 Concept-ADR-Kandidaten (§51) plus zwei Foundation-Klärungen (Delivery 
 | DEC-S-167 | Replay/deduplication/idempotency mechanism | architecture-context | deferred | non-binding | CO-WP-014 | Nova | Deferred |
 | DEC-S-168 | Recovery automation | architecture-context | deferred | non-binding | CO-WP-014 | Nova | Deferred |
 
+## Domain Pack Governance Decisions (CO-WP-015)
+
+> Registriert über [DOMAIN_PACK_GOVERNANCE_MODEL.md](../docs/architecture/DOMAIN_PACK_GOVERNANCE_MODEL.md), [DOMAIN_PACK_SUPPORT_AND_COMPATIBILITY_MODEL.md](../docs/architecture/DOMAIN_PACK_SUPPORT_AND_COMPATIBILITY_MODEL.md) und [DOMAIN_PACK_TRUST_PROVENANCE_AND_LIFECYCLE_POLICY.md](../docs/security/DOMAIN_PACK_TRUST_PROVENANCE_AND_LIFECYCLE_POLICY.md). **Getrennte Dimensionen** (Decision Class · Lifecycle Status · Binding Level); keine kombinierten Pseudostatuswerte; keine Packaging-/Marketplace-/Plugin-/Update-/Signaturtechnologie ausgewählt; keine ADR.
+
+| Decision ID | Topic | Decision Class | Lifecycle Status | Binding Level | Source | Owner | Notes |
+| ----------- | ----- | -------------- | ---------------- | ------------- | ------ | ----- | ----- |
+| DEC-S-169 | Domain Pack definition | architecture-context | accepted | binding-governance | CO-WP-015 | Nova | Versionierte Governance-/Produktgrenze; ≠ adapter/plugin/deployment unit/certification |
+| DEC-S-170 | Pack identity | governance-direction | accepted | binding-governance | CO-WP-015 | Nova | Stabile IDs, nicht wiederverwendbar |
+| DEC-S-171 | Pack status dimensions | governance-direction | accepted | binding-governance | CO-WP-015 | Nova | Lifecycle/Maintenance/Support/Implementation/Validation/Evidence/Security-Review/Compatibility getrennt |
+| DEC-S-172 | Support level semantics | governance-direction | accepted | binding-governance | CO-WP-015 | Nova | Support Level ≠ SLA |
+| DEC-S-173 | Project-maintained semantics | security-context | accepted | binding-governance | CO-WP-015 | Nova | project-maintained ≠ validated |
+| DEC-S-174 | SUP-3 scope | security-context | accepted | binding-governance | CO-WP-015 | Nova | Version-/Profil-/Limitation-/Evidence-bound |
+| DEC-S-175 | Compatibility claims | security-context | accepted | binding-governance | CO-WP-015 | Nova | Version-/Target-/Profil-/Evidence-bound |
+| DEC-S-176 | Expected compatibility | governance-direction | accepted | binding-governance | CO-WP-015 | Nova | expected ≠ validated compatibility |
+| DEC-S-177 | Community/external packs | security-context | accepted | binding-governance | CO-WP-015 | Nova | Nicht automatisch trusted/supported |
+| DEC-S-178 | Vendor reference | governance-direction | accepted | binding-governance | CO-WP-015 | Nova | Kein Endorsement/Zertifizierung/Herstellersupport |
+| DEC-S-179 | Pack activation authority | security-context | accepted | binding-governance | CO-WP-015 | Nova | Gewährt **keine** Runtime-Autorität automatisch |
+| DEC-S-180 | Pack dependencies | security-context | accepted | binding-governance | CO-WP-015 | Nova | Werden **nicht** still zur Core-Pflicht |
+| DEC-S-181 | Offline pack use | security-context | accepted | binding-governance | CO-WP-015 | Nova | Provenance, Integrität, Target-Binding, explizite Aktivierung |
+| DEC-S-182 | Deprecation | governance-direction | accepted | binding-governance | CO-WP-015 | Nova | Erfordert Migration und Maintenance-Boundary |
+| DEC-S-183 | Retired pack IDs | governance-direction | accepted | binding-governance | CO-WP-015 | Nova | Nicht wiederverwendbar; historische Evidenz erhalten |
+| DEC-S-184 | Packaging/marketplace/plugin/update technology | architecture-context | deferred | non-binding | CO-WP-015 | Nova | Deferred |
+| DEC-S-185 | Pack verification/signing/trust-anchor technology | architecture-context | deferred | non-binding | CO-WP-015 | Nova | Deferred |
+
 ## Deferred Decisions
 
 | Decision ID | Topic | Status | Class | Source | Owner | Target WP | ADR Required |
@@ -404,6 +428,8 @@ Alle 30 Concept-ADR-Kandidaten (§51) plus zwei Foundation-Klärungen (Delivery 
 **CO-WP-011-Registrierungen:** 16 Source-of-Truth-/Field-Provenance-Entscheidungen (DEC-S-106…121), **getrennte Dimensionen**: Source of Truth ≠ System of Record; autoritative Feldownership explizit/modulgebunden; Desired/Observed/Effective/Derived getrennt; Derived/Cached nicht autoritativ per Default; importierte Daten erben keine Autorität; neuester Timestamp gewinnt nicht automatisch; Overrides explizit/feld-/reason-bound mit Provenance-Erhalt; Konflikte bleiben sichtbar; widerrufene Quellen nicht autoritativ; Offline-Reconciliation mit Provenance/Integrität/Authority/Conflict-Review (fail-closed); Field-Provenance durch Transformationen erhalten; Audit-/Evidence-History nicht durch Reconciliation umgeschrieben; Storage/Merge/Sync-Technologie, kryptografische Provenance und universelles Feldschema `deferred`. Keine Technologieauswahl; keine ADR.
 
 **CO-WP-012-Registrierungen:** 15 State-/Drift-/Safe-Remediation-Entscheidungen (DEC-S-122…136), **getrennte Dimensionen**: Desired/Observed/Reported/Effective/Last-Known getrennt; Effective State bleibt indeterminate/conflicted bei unklarer Autorität; keine Beobachtung ≠ keine Drift; kein erkannter Drift ≠ Compliance; Drift-Erkennung ohne Write Authority; Detection/Recommendation/Plan/Approval/Execution/Verification getrennt; privilegierte Remediation mit expliziter Autorität + Approval; Exceptions explizit/reviewbar; Executed ≠ successful; Successful ≠ verified convergence; Verified convergence ≠ Compliance; Partial Failure explizit; automatische Remediation, Engine-/Retry-/Queue-/Scheduling-Technologie `deferred`. Keine Technologieauswahl; keine ADR.
+
+**CO-WP-015-Registrierungen:** 17 Domain-Pack-Governance-Entscheidungen (DEC-S-169…185), **getrennte Dimensionen**: Domain Pack als versionierte Governance-/Produktgrenze (≠ adapter/plugin/deployment unit/certification); stabile, nicht wiederverwendbare Pack-IDs; neun Statusdimensionen getrennt; Support Level ≠ SLA; project-maintained ≠ validated; SUP-3 version-/profil-/limitation-/evidence-bound; Compatibility Claims version-/target-/profil-/evidence-bound; expected ≠ validated compatibility; Community/External Packs nicht automatisch trusted/supported; Vendor-Bezug ≠ Endorsement/Zertifizierung/Herstellersupport; Pack-Aktivierung gewährt keine Runtime-Autorität; Dependencies werden nicht still Core-Pflicht; Offline-Pack-Nutzung mit Provenance/Integrität/Target-Binding/expliziter Aktivierung; Deprecation mit Migration/Maintenance-Boundary; retired Pack-IDs nicht wiederverwendbar (historische Evidenz erhalten); Packaging-/Marketplace-/Plugin-/Update- und Pack-Verification-/Signing-/Trust-Anchor-Technologie `deferred`. Keine Technologieauswahl; keine ADR. `DEC-S-01…37` bleiben unverändert.
 
 **CO-WP-014-Registrierungen:** 16 Integration-Contract-Entscheidungen (DEC-S-153…168), **getrennte Dimensionen**: CoreOps Integration Contract als Foundation Version 0.1; Contract-Version ≠ Produkt-/Release-Version; sechs Capability-Dimensionen (advertised/detected/permitted/implemented/supported/validated) getrennt; Request Acceptance ≠ Authorization ≠ Execution; Completion ≠ success; Success ≠ verification; Unknown Outcome erfordert Reconciliation und blockiert automatischen Retry; Read-only-Integration erhält nicht still Write Authority; Write/Execution erfordern explizite Policy + Authorization; Integrationsergebnisse erben nicht automatisch autoritativen State; Adapter/Agent erweitern Target/Action/Scope nicht; Offline Integration mit Provenance/Integrität/Target-Binding/expliziter Aktivierung; Contract-Extensions überschreiben keine Core-Sicherheitsinvariante; Protokoll-/Schema-/Transport-/SDK-, Replay-/Deduplication-/Idempotency- und Recovery-Automation-Technologie `deferred`. Keine Technologieauswahl; keine ADR. `DEC-S-01…37` bleiben unverändert.
 

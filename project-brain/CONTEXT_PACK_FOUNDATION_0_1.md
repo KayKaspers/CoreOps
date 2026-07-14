@@ -23,7 +23,14 @@ Universelle, self-hosted und offline-fähige Operations Control Plane, die Sourc
 
 ## Letztes Work Package
 
-`CO-WP-014 – CoreOps Integration Contract v0.1` (docs-only / integration-architecture and security foundation). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-013 – completed-go-with-notes` (Commit 438a5a0).
+`CO-WP-015 – Domain Pack Governance, Support Levels and Compatibility` (docs-only / modular product-governance and compatibility foundation). Nach Bearbeitung im **Nova Review** (`pending`). Vorheriges WP: `CO-WP-014 – completed-go-with-notes` (Commit 611773b).
+
+## Domain Pack Governance, Support Levels and Compatibility (CO-WP-015)
+
+- Drei neue Dokumente: Domain Pack Governance Model, Domain Pack Support and Compatibility Model, Domain Pack Trust/Provenance/Lifecycle Policy.
+- Domain Pack = versionierte Governance-/Produktgrenze (≠ adapter/plugin/deployment unit/certification); 15 Pack-Klassen; stabile, nicht wiederverwendbare IDs. Neun Statusdimensionen getrennt; `active ≠ implemented ≠ maintained ≠ supported ≠ validated ≠ universally compatible`. Support Levels SUP-0/1/2/3/D; Support Level ≠ SLA; SUP-3 version-/target-/profil-/limitation-/evidence-bound; Compatibility Claims version-/target-/profil-/evidence-bound; expected ≠ validated; unknown ≠ compatible.
+- Community/External ≠ trust/support/endorsement; Vendor ≠ Endorsement; Pack-Aktivierung ≠ Runtime Authority; Dependencies nicht still Core-Pflicht; Offline mit Target-Binding/Provenance/Integrität/Aktivierung; kompromittierter Pack/Maintainer suspendierbar; retired IDs nicht wiederverwendet, historische Evidenz erhalten.
+- Decision Index +17 (DEC-S-169…185), Risk Register +10 (RISK-220…229, gesamt 229). Keine Packaging-/Marketplace-/Plugin-/Update-/Dependency-Resolution-/Signaturtechnologie; keine ADR; Integration-/Identity-/Authorization-/State-/Capability-/Threat-Dateien + Lessons-Learned + NDF-Kandidaten unverändert; keine NDF-Rückführung.
 
 ## CoreOps Integration Contract v0.1 (CO-WP-014)
 
@@ -173,7 +180,7 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 
 ## Nächstes Work Package
 
-`CO-WP-015 – Domain Pack Governance, Support Levels and Compatibility` (docs-only; planned-next; erst nach Nova Review von CO-WP-014 und Human-Maintainer-Commit). Die 004er-Erweiterungsserie (004A…004E), CO-WP-005…013, der Milestone Lessons Review (005…012) und CO-WP-014 sind bearbeitet; CO-WP-014 ist `implemented-awaiting-nova-review`. Milestone-Bündelentscheidung (Lessons/NDF-Kandidaten 008…010) liegt bei Nova/HM. External: NDF-Release-Zuordnung für die drei Adoption-Commits ausstehend.
+`CO-WP-016 – Data Ownership, Persistence, Schema Versioning and Migration` (docs-only; planned-next; erst nach Nova Review von CO-WP-015 und Human-Maintainer-Commit). Die 004er-Erweiterungsserie (004A…004E), CO-WP-005…014, der Milestone Lessons Review (005…012) und CO-WP-015 sind bearbeitet; CO-WP-015 ist `implemented-awaiting-nova-review`. Milestone-Bündelentscheidung (Lessons/NDF-Kandidaten 008…010) liegt bei Nova/HM. External: NDF-Release-Zuordnung für die drei Adoption-Commits ausstehend.
 
 ## Aktuelle Blocker
 

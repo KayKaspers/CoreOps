@@ -267,14 +267,24 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 - Read-only ohne stille Write Authority; Write/Execution brauchen explizite Policy+Authorization (CO-WP-013 Guards autoritativ, kein Parallelmodell); Adapter/Agent erweitern Target/Action/Scope nicht; Integrationsergebnisse erben keine Autorität (SoT/Provenance CO-WP-011 autoritativ); Offline mit Target-Binding/Provenance/Integrität/expliziter Aktivierung; Extensions überschreiben keine Core-Invariante.
 - Decision Index +16 (DEC-S-153…168), Risk Register +13 (RISK-207…219, gesamt 219).
 - **Keine Protokoll-/Schema-/Transport-/SDK-/Adapter-/Replay-/Queue-/Messaging-Technologie ausgewählt; keine ADR; Identity-/Authorization-/State-/Provenance-/Modul-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.**
+- Status: `completed-go-with-notes` (Commit 611773b).
+
+## Domain Pack Governance, Support Levels and Compatibility (CO-WP-015)
+
+- Drei neue Dokumente: [DOMAIN_PACK_GOVERNANCE_MODEL.md](../docs/architecture/DOMAIN_PACK_GOVERNANCE_MODEL.md), [DOMAIN_PACK_SUPPORT_AND_COMPATIBILITY_MODEL.md](../docs/architecture/DOMAIN_PACK_SUPPORT_AND_COMPATIBILITY_MODEL.md), [DOMAIN_PACK_TRUST_PROVENANCE_AND_LIFECYCLE_POLICY.md](../docs/security/DOMAIN_PACK_TRUST_PROVENANCE_AND_LIFECYCLE_POLICY.md).
+- Domain Pack = versionierte Governance-/Produktgrenze (≠ adapter/plugin/deployment unit/certification). 15 Pack-Klassen herstellerneutral; stabile, nicht wiederverwendbare Pack-IDs. Neun Statusdimensionen getrennt (Lifecycle/Maintenance/Support/Implementation/Validation/Evidence/Security-Review/Compatibility/Release).
+- `active ≠ implemented ≠ maintained ≠ supported ≠ validated ≠ universally compatible`. Support Levels SUP-0/1/2/3/D; Support Level ≠ SLA; project-maintained ≠ validated; SUP-3 version-/target-/profil-/limitation-/evidence-bound. Compatibility Claims version-/target-/profil-/evidence-bound; expected ≠ validated; unknown ≠ compatible.
+- Community/External ≠ trust/support/endorsement; public availability ≠ verified provenance; Vendor-Bezug ≠ Endorsement/Zertifizierung. Pack-Aktivierung gewährt keine Runtime-Autorität; Dependencies nicht still Core-Pflicht; Overlap ≠ doppelte Autorität. Offline mit Target-Binding/Provenance/Integrität/expliziter Aktivierung; kompromittierter Pack/Maintainer suspendierbar/widerrufbar; deprecated ≠ removed; retired ≠ historische Evidenz gelöscht; retired IDs nicht wiederverwendet.
+- Decision Index +17 (DEC-S-169…185), Risk Register +10 (RISK-220…229, gesamt 229).
+- **Keine Packaging-/Marketplace-/Plugin-/Update-/Dependency-Resolution-/Signaturtechnologie ausgewählt; keine ADR; Integration-/Identity-/Authorization-/State-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.**
 
 ## Letztes Work Package
 
-`CO-WP-014 – CoreOps Integration Contract v0.1` (docs-only / integration-architecture and security foundation). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-013 – completed-go-with-notes` (Commit 438a5a0).
+`CO-WP-015 – Domain Pack Governance, Support Levels and Compatibility` (docs-only / modular product-governance and compatibility foundation). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-014 – completed-go-with-notes` (Commit 611773b).
 
 ## Nächstes Work Package
 
-`CO-WP-015 – Domain Pack Governance, Support Levels and Compatibility` (docs-only; planned-next; erst nach Nova Review von CO-WP-014 und Human-Maintainer-Commit).
+`CO-WP-016 – Data Ownership, Persistence, Schema Versioning and Migration` (docs-only; planned-next; erst nach Nova Review von CO-WP-015 und Human-Maintainer-Commit).
 
 ## Human-Maintainer-Gates
 
