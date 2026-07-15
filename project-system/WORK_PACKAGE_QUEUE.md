@@ -42,8 +42,8 @@ Jedes Work Package hat genau **einen** primären Typ.
 | CO-WP-022 | security-baseline | Artifact Trust, SBOM, Provenance and Revocation                | completed-go-with-notes        |
 | CO-WP-023 | docs-only         | Restricted, Isolated, Air-Gapped Operation and CorePack        | completed-go-with-notes        |
 | CO-WP-024 | security-baseline | Secrets, Configuration Vault and Key Custody                   | completed-go-with-notes        |
-| CO-WP-025 | docs-only         | Data Classification, Retention and Redaction                   | planned-next                  |
-| CO-WP-026 | security-baseline | Self-Protection, Degraded Modes and Recovery Mode              | planned                       |
+| CO-WP-025 | docs-only         | Data Classification, Retention and Redaction                   | completed-go-with-notes        |
+| CO-WP-026 | security-baseline | Self-Protection, Degraded Modes and Recovery Mode              | planned-next                  |
 | CO-WP-027 | docs-only         | UX Information Architecture and Dashboard System               | planned                       |
 | CO-WP-028 | docs-only         | Test Strategy, Fixtures and Integration Lab                    | planned                       |
 | CO-WP-029 | review-only       | Cross-Document Consistency and ADR Candidate Review            | planned                       |
@@ -52,12 +52,29 @@ Jedes Work Package hat genau **einen** primären Typ.
 
 > **Milestone-Hinweis 1 (nicht nummeriert):** `Milestone Lessons Review CO-WP-005 through CO-WP-012` — `completed-go-with-notes`. Gebündelter docs-only Review der acht Foundation-WPs; Ergebnis **GO WITH NOTES FOR CO-WP-013** (Commit 74f8e32). Keine `CO-WP-*`-ID; verändert die Queue-Reihenfolge nicht. Follow-ups (Capability-Count-Reconciliation, Risk-Register-Konsolidierung, Decision-Status-Harmonisierung) sind für ~`CO-WP-029`/`CO-WP-030` vorgemerkt.
 > **Milestone-Hinweis 2 (nicht nummeriert):** `Milestone Lessons Review CO-WP-013 through CO-WP-020` — `completed-go-with-notes` (Commit d09d91b). Gebündelter docs-only Review der acht Foundation-WPs (24 Dokumente); Ergebnis **GO WITH NOTES FOR CO-WP-021**. Neues Dokument `project-brain/MILESTONE_REVIEW_CO_WP_013_TO_020.md`; Lessons LL-023…030; NDF-Kandidaten NDF-FC-COREOPS-011…013 (`candidate-pending-nova-review`). Keine `CO-WP-*`-ID; verändert die Queue-Reihenfolge nicht. `CO-WP-021` bleibt `planned-next`. Follow-ups (Risk-Konsolidierung, Decision-Status-Harmonisierung, Capability-Count, Dokumentationsökonomie) für ~`CO-WP-029`/`CO-WP-030`. Decision Index und Risk Register read-only unverändert.
+> **Milestone-Vormerkung 3 (Planungshinweis, nicht nummeriert):** After completion of `CO-WP-026`, perform a bundled `CO-WP-021…026` Foundation Milestone Review. Umfang: gebündelte Lessons Learned · NDF Candidates · Decision-/Risk-Wachstum · Foundation-Konsistenz · Reporting-/Vulnerability-Roadmap · nächste Phase. Noch **nicht** terminiert; keine `CO-WP-*`-ID; verändert die Queue-Reihenfolge nicht; Lessons-Learned-/NDF-Register bleiben jetzt unverändert.
+
+## Zukünftige Reporting- und Vulnerability-Roadmap (roadmap-candidate, nicht nummeriert)
+
+> **Status je Capability:** `roadmap-candidate` · `not scheduled` · `WP identifier pending queue review` · `not implemented`. **Keine neuen Work-Package-Nummern vergeben**, keine Technologie/API/Datenbank/Scanner/SBOM/PDF/Rendering ausgewählt, keine Decision/kein Risk registriert. Reihenfolge indikativ, nicht bindend; Einplanung erst durch spätere Queue-Review.
+
+Geplante Capability-Chain (ohne WP-Nummern):
+
+1. **Reporting Foundation**
+2. **Asset and Component Inventory**
+3. **Vulnerability Intelligence Ingestion**
+4. **Vulnerability Correlation**
+5. **Exposure and Remediation**
+6. **Reporting Implementation**
+
+**Reporting-Mindestscope (konzeptionell):** professionelle PDF-Berichte · CoreOps-Standarddesign · eigenes Logo · Corporate-Design- und Mandantenprofile · Template-/Branding-Version · Management-/Standard-/Detailberichte · Deutsch/Englisch · Inventar-/Log-/Update-/Deployment-/Topologie-/Audit-/Evidence-/Vulnerability-Berichte · Redaction vor Rendering ([CO-WP-025](../docs/security/REDACTION_MINIMIZATION_AND_CONTROLLED_DISCLOSURE_POLICY.md)) · getrennte Disclosure-/Export-Autorisierung ([CO-WP-025](../docs/governance/DATA_CLASSIFICATION_AND_HANDLING_MODEL.md)) · keine Raw Secrets oder wiederverwendbaren Credentials ([CO-WP-024](../docs/security/SECRETS_CONFIGURATION_VAULT_AND_CUSTODY_GOVERNANCE.md)).
+
+**Vulnerability-Mindestscope (konzeptionell):** Inventarisierung von Hardware/Betriebssystem/Firmware/Software/Paketen/Diensten/Containern/Images/Bibliotheken/SBOM-Komponenten · Identitäten wie CPE/purl/Paketkoordinate/Firmware-ID/Image Digest/SBOM Component Identity · konzeptionelle Quellen CVE Records/NVD-CPE/Hersteller-Advisories/CISA KEV/EPSS/SBOM-VEX · Match Confidence · getrennte Zustände Candidate/Applicability/Confirmed/Not-Affected/Mitigated/Remediated/Verification-Pending/Outcome-Unknown · Produktnamensmatch ≠ bestätigte Betroffenheit · Offline Vulnerability-Intelligence-Snapshots/CorePacks ([CO-WP-023](../docs/architecture/COREPACK_IDENTITY_CONTENT_AND_LIFECYCLE_MODEL.md)) · Remediation über Deployment Governance ([CO-WP-021](../docs/architecture/DEPLOYMENT_CONTROL_PLANE_AND_EXECUTION_MODEL.md)) · Re-Inventarisierung und Verifikation · professionelle PDF-Vulnerability-Berichte. **Keine konkrete Technologie/API/Datenbank/Scanner-/SBOM-/PDF-/Rendering-Implementierung ausgewählt.**
 
 ## Regeln
 
 - Genau ein primärer Typ pro Work Package.
-- Nur `CO-WP-025` ist der nächste geplante Schritt (`planned-next`) und **noch nicht begonnen**. `CO-WP-024` ist nach **Nova Review `GO WITH NOTES`** und geschlossener Korrekturrunde (verbindliche Nova-Notes 1–4) `completed-go-with-notes`; der Human-Maintainer-Commit steht noch aus (Push wird **nicht** als bereits erfolgt dargestellt). `CO-WP-023` ist nach Human-Maintainer-Commit (`b324aad`) und Push `completed-go-with-notes`.
-- **Prozeduraler Hinweis (Nova Note 1, CO-WP-024):** Preflight passed with one Nova-accepted procedural deviation: the committed CO-WP-023 queue label had not yet been flipped to `completed-go-with-notes`. Nova accepted this deviation for CO-WP-024 only. It is not a precedent for future hard preflight mismatches.
+- Nur `CO-WP-026` ist der nächste geplante Schritt (`planned-next`) und **noch nicht begonnen**. `CO-WP-025` ist nach **Nova Review `GO WITH NOTES`** und geschlossener Notes-Runde `completed-go-with-notes`; der Human-Maintainer-Commit steht noch aus (Push wird **nicht** als bereits erfolgt dargestellt). `CO-WP-024` (`916ba66`) und `CO-WP-023` (`b324aad`) sind committet, gepusht und `completed-go-with-notes`.
 - Keine automatische Freigabe eines Folge-Work-Packages.
 - Die Queue ist noch **nicht** final scope-locked.
 - Änderungen an der Queue nur durch ein später freigegebenes Work Package.

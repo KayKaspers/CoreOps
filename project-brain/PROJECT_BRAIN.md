@@ -379,13 +379,27 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 - Decision Index +14 (DEC-S-318…331; nach Nova-GO-WITH-NOTES-Deduplizierung, ursprünglich 16), Risk Register +5 (RISK-295…299, gesamt 299; Wachstumsgrenze §36 eingehalten).
 - **Keine Vault-/KMS-/HSM-/TPM-/PKI-/Key-Format-/Algorithmus-/Secret-Store-/Injection-/Configuration-/Rotation-/Backup-/Transfer-/Sync-Technologie ausgewählt; Rohsecret-/Rohschlüsselspeicherung nicht entschieden; keine ADR; bestehende Identity-/Authorization-/Trust-/Deployment-/Artifact-/Evidence-/Offline-/CorePack-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.**
 
+## Data Classification, Retention and Redaction (CO-WP-025)
+
+- Drei neue Dokumente: [DATA_CLASSIFICATION_AND_HANDLING_MODEL.md](../docs/governance/DATA_CLASSIFICATION_AND_HANDLING_MODEL.md), [DATA_RETENTION_DELETION_AND_PRESERVATION_POLICY.md](../docs/governance/DATA_RETENTION_DELETION_AND_PRESERVATION_POLICY.md), [REDACTION_MINIMIZATION_AND_CONTROLLED_DISCLOSURE_POLICY.md](../docs/security/REDACTION_MINIMIZATION_AND_CONTROLLED_DISCLOSURE_POLICY.md). Konkretisiert DEC-P-08; baut auf CO-WP-016/018/019/024 auf; kein Parallelmodell.
+- `data classification ≠ deployment profile ≠ connectivity class ≠ national-security classification`; `classification label ≠ proven handling compliance`; `unknown-classification → fail-closed`; 7 Klassen (public/internal/sensitive/restricted/secret-bearing/evidence-protected/unknown); Classification Identity/Scope/Version/Freshness getrennt (materiale Änderung → Reassessment; reclassification erhält Historie). Getrennte Daten-Autoritäten (owner/steward/custodian/collection/use/disclosure/export/retention/hold/deletion/redaction).
+- `collection permitted ≠ every later use`; `useful ≠ necessary`; Retention beginnt an definiertem Start Event; `retention expired ≠ deletion completed`; Preservation Hold und Retention getrennte Autoritäten (`hold ≠ unrestricted access`; neutraler Begriff, keine Rechtswirkung); Deletion request/authorization/execution/verification getrennt (`primary deletion ≠ all copies`; `logical ≠ destruction`; `unknown ≠ deleted`); Kopien/Backups/Caches/Derived im Scope.
+- Redaction erzeugt gebundene Derived View (`redacted view ≠ source`; `redaction applied ≠ disclosure safe`); `masked/pseudonymized ≠ anonymous`; `hash ≠ anonymization`; Disclosure/Export/Publication getrennt von read/local (`data available ≠ disclosure authorized`); Secret-bearing Data an CO-WP-024 gebunden (Redaction ≠ Secret Removal); Evidence Retention ≠ Source Retention; Offline erweitert keine Retention-/Deletion-/Disclosure-Autorität; Unknown Outcomes fail-closed; Profile = Kontrollstärke (keine Zertifizierung).
+- Decision Index +13 (DEC-S-332…344), Risk Register +5 (RISK-300…304, gesamt 304; Wachstumsgrenze §33 eingehalten).
+- **Keine Retention-/Deletion-/Archiv-/DLP-/Discovery-/Redaction-/Masking-/Anonymisierungs-/Storage-/Backup-/Encryption-/Sync-Technologie ausgewählt; keine ADR; keine reine Technology-Deferral-Decision; keine Compliance-/Rechts-/Zertifizierungsbehauptung; bestehende Data-/Audit-/Evidence-/Telemetry-/Topology-/Secret-/Offline-/CorePack-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.**
+
 ## Letztes Work Package
 
-`CO-WP-024 – Secrets, Configuration Vault and Key Custody` (docs-only / security, configuration, secret-lifecycle and key-custody governance foundation). Nova Review `GO WITH NOTES`; verbindliche Nova-Notes 1–4 vor dem Commit geschlossen; `completed-go-with-notes`; Human-Maintainer-Commit ausstehend (Push nicht als erfolgt dargestellt). Vorheriges WP: `CO-WP-023 – completed-go-with-notes` (Commit b324aad, gepusht).
+`CO-WP-025 – Data Classification, Retention and Redaction` (docs-only / data-governance, retention, minimization, redaction and controlled-disclosure foundation). Nova Review `GO WITH NOTES`; Notes-Runde geschlossen; `completed-go-with-notes`; Human-Maintainer-Commit ausstehend (Push nicht als erfolgt dargestellt). Vorheriges WP: `CO-WP-024 – completed-go-with-notes` (Commit 916ba66, gepusht).
+
+## Zukünftige Roadmap und Milestone-Vormerkung
+
+- **Reporting-/Vulnerability-Roadmap** (in [WORK_PACKAGE_QUEUE.md](../project-system/WORK_PACKAGE_QUEUE.md) registriert, `roadmap-candidate` · `not scheduled` · `WP identifier pending queue review` · `not implemented`, **keine WP-Nummern, keine Decision/kein Risk, keine Technologie**): Reporting Foundation → Asset and Component Inventory → Vulnerability Intelligence Ingestion → Vulnerability Correlation → Exposure and Remediation → Reporting Implementation. Reporting: professionelle PDF-Berichte, CoreOps-Design/Logo/Mandantenprofile, DE/EN, Inventar-/Log-/Update-/Deployment-/Topologie-/Audit-/Evidence-/Vulnerability-Berichte, Redaction vor Rendering, getrennte Disclosure-/Export-Autorisierung, keine Raw Secrets. Vulnerability: Inventar (HW/OS/Firmware/SW/Pakete/Container/Images/SBOM), Identitäten (CPE/purl/Firmware-ID/Image Digest/SBOM Component), Quellen (CVE/NVD/Advisories/CISA KEV/EPSS/VEX), Match Confidence, getrennte Zustände, Produktnamensmatch ≠ Betroffenheit, Offline-Snapshots/CorePacks, Remediation über Deployment Governance.
+- **Milestone-Vormerkung:** Nach `CO-WP-026` gebündelter `CO-WP-021…026` Foundation Milestone Review (Lessons Learned, NDF Candidates, Decision-/Risk-Wachstum, Foundation-Konsistenz, Roadmap, nächste Phase); noch nicht terminiert.
 
 ## Nächstes Work Package
 
-`CO-WP-025 – Data Classification, Retention and Redaction` (docs-only; planned-next; erst nach Nova Review von CO-WP-024 und Human-Maintainer-Commit).
+`CO-WP-026 – Self-Protection, Degraded Modes and Recovery Mode` (security-baseline; planned-next; **noch nicht begonnen**; erst nach Nova Review von CO-WP-025 und Human-Maintainer-Commit).
 
 ## Human-Maintainer-Gates
 

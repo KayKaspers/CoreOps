@@ -368,7 +368,34 @@ not performed
 
 Drei neue Dokumente: Secrets, Configuration Vault and Custody Governance (Concepts, Classification, Vault Boundary, Authorities, Secret Lifecycle, Identity/Instances, Retrieval/Distribution/Injection/Use, Disclosure/Export, Isolation, CorePack/Deployment Boundary, Audit, Profiles, Failure/Fail-Closed), Key Material, Rotation, Revocation and Recovery Policy (Key Custody, Identity/Instances, Bootstrap/Root/Recovery Material, Rotation, Revocation/Suspension/Reinstatement, Recovery, Destruction, Break-Glass Material, Offline, Backup/Recovery Boundary, Deployment/Rollback Boundary, Audit, Isolation, Failure/Fail-Closed) und Configuration Source of Truth and Secret Reference Model (Source of Truth, Versions/Overlays, Sensitive Configuration, Secret Reference Model, Resolution, Runtime-Effective/Drift, Reconciliation, Target/Workspace/Environment Binding, Deployment/Blueprint/CorePack Integration, Offline, Audit, Failure/Fail-Closed). Decision Index +14 (DEC-S-318…331; nach Nova-GO-WITH-NOTES-Deduplizierung, ursprünglich 16), Risk Register +5 (RISK-295…299, gesamt 299; Wachstumsgrenze §36 eingehalten). Keine Vault-/KMS-/HSM-/TPM-/PKI-/Key-/Secret-/Config-/Rotation-/Backup-/Transfer-/Sync-Technologie ausgewählt; keine ADR; bestehende Identity-/Authorization-/Trust-/Deployment-/Artifact-/Evidence-/Offline-/CorePack-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.
 
-Next planned WP nach Nova Review und Human-Maintainer-Commit: `CO-WP-025 – Data Classification, Retention and Redaction`.
+`CO-WP-024` nach Human-Maintainer-Commit (`916ba66`) und Push `completed-go-with-notes`.
+
+## Data Classification, Retention and Redaction
+
+Current implemented WP:
+`CO-WP-025 – Data Classification, Retention and Redaction` – Nova Review `GO WITH NOTES`; Notes-Runde geschlossen; `completed-go-with-notes`. Human-Maintainer-Commit ausstehend (Push nicht als erfolgt dargestellt).
+
+## Future Reporting and Vulnerability Roadmap (roadmap-candidate)
+
+Registriert als zukünftige Capability-Chain **ohne** WP-Nummern (`roadmap-candidate` · `not scheduled` · `WP identifier pending queue review` · `not implemented`; keine Technologieauswahl, keine Decision/kein Risk): Reporting Foundation → Asset and Component Inventory → Vulnerability Intelligence Ingestion → Vulnerability Correlation → Exposure and Remediation → Reporting Implementation. Reporting-Mindestscope: professionelle PDF-Berichte, CoreOps-Standarddesign/eigenes Logo/Corporate-Design-/Mandantenprofile/Template-Branding-Version, Management-/Standard-/Detailberichte, DE/EN, Inventar-/Log-/Update-/Deployment-/Topologie-/Audit-/Evidence-/Vulnerability-Berichte, Redaction vor Rendering, getrennte Disclosure-/Export-Autorisierung, keine Raw Secrets/Credentials. Vulnerability-Mindestscope: Inventarisierung (HW/OS/Firmware/Software/Pakete/Dienste/Container/Images/Bibliotheken/SBOM), Identitäten (CPE/purl/Paketkoordinate/Firmware-ID/Image Digest/SBOM Component Identity), Quellen (CVE/NVD-CPE/Advisories/CISA KEV/EPSS/SBOM-VEX), Match Confidence, getrennte Zustände (Candidate/Applicability/Confirmed/Not-Affected/Mitigated/Remediated/Verification-Pending/Outcome-Unknown), Produktnamensmatch ≠ bestätigte Betroffenheit, Offline Vulnerability-Intelligence-Snapshots/CorePacks, Remediation über Deployment Governance, Re-Inventarisierung/Verifikation, professionelle PDF-Vulnerability-Berichte. Details in der [WORK_PACKAGE_QUEUE.md](../project-system/WORK_PACKAGE_QUEUE.md) (Roadmap-Abschnitt).
+
+**Milestone-Vormerkung:** Nach Abschluss von `CO-WP-026` gebündelter `CO-WP-021…026` Foundation Milestone Review (Lessons Learned, NDF Candidates, Decision-/Risk-Wachstum, Foundation-Konsistenz, Reporting-/Vulnerability-Roadmap, nächste Phase); noch nicht terminiert.
+
+Current data-governance foundation:
+Data classification classes (public/internal/sensitive/restricted/secret-bearing/evidence-protected/unknown), classification identity/scope/version/freshness, separated data authorities, collection/minimization, handling lifecycle, retention policy with start events/expiry, preservation holds, deletion/purge/destruction lifecycle with verification, redaction as governed derived view, masking/pseudonymization/anonymization-claim boundaries, controlled disclosure/export, log/telemetry/audit/evidence/secret/backup/offline integration and reconciliation defined. data classification ≠ deployment profile ≠ connectivity class ≠ national-security classification; classification label ≠ proven compliance; unknown-classification → fail-closed; collection permitted ≠ every later use; retention expired ≠ deletion completed; deletion requested ≠ authorized ≠ executed ≠ every copy removed; logical deletion ≠ physical destruction; redacted view ≠ modified source; redaction applied ≠ disclosure safe; masked/pseudonymized ≠ anonymous; hash ≠ anonymization; evidence retained ≠ all source data retainable; secret-bearing data remains bound to CO-WP-024; offline operation expands no retention/deletion/disclosure authority; unknown deletion outcome ≠ deleted.
+
+Classification, retention, redaction and disclosure technology:
+not selected
+
+Legal/regulatory mapping:
+none performed
+
+Validation:
+not performed
+
+Drei neue Dokumente: Data Classification and Handling Model (Concepts, Klassifikationsklassen, Classification Identity/Freshness, Autoritäten, Collection/Minimization, Handling Lifecycle, Isolation, Secret-Grenze, Profile), Data Retention, Deletion and Preservation Policy (Retention Policy, Start Events/Expiry, Preservation Holds, Copies/Backups, Deletion/Purge/Destruction, Deletion Evidence, Offline/Evidence Return, Evidence Retention Boundary, Failure/Fail-Closed) und Redaction, Minimization and Controlled Disclosure Policy (Minimization, Redaction/Derived Views, Masking/Pseudonymization/Anonymization Claims, Controlled Disclosure, Export, Logs/Telemetry/Topology, Audit/Evidence, Secret-Grenze, Backup/Offline, Residual Disclosure, Fail-Closed). Decision Index +13 (DEC-S-332…344), Risk Register +5 (RISK-300…304, gesamt 304; Wachstumsgrenze §33 eingehalten). Keine Retention-/Deletion-/Archiv-/DLP-/Discovery-/Redaction-/Masking-/Anonymisierungs-/Storage-/Backup-/Encryption-/Sync-Technologie ausgewählt; keine ADR; keine reine Technology-Deferral-Decision; keine Compliance-/Rechts-/Zertifizierungsbehauptung; bestehende Data-/Audit-/Evidence-/Telemetry-/Topology-/Secret-/Offline-/CorePack-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.
+
+Next planned WP nach Nova Review und Human-Maintainer-Commit: `CO-WP-026 – Self-Protection, Degraded Modes and Recovery Mode`.
 
 ## Current Goal
 
