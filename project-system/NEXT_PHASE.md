@@ -326,7 +326,28 @@ not started
 
 Drei neue Dokumente: Artifact Identity, Provenance and SBOM Model (Artifact-Klassen/-Identität, Version/Revision/Instance/Alias/Resolution, Lifecycle, Rollen, Provenance/Integrity/Validation/Trust, SBOM/Components/Dependencies, Deployment Binding, Offline), Artifact Dependency, Compatibility and Distribution Model (Resolution, Component Identity, Dependency Classes/Relationships, Compatibility, Vulnerability/Advisory, Withdrawal/Revocation/Replacement, Existing Deployments, Delayed Revocation) und Artifact Trust, Quarantine and Revocation Policy (Authority, Quarantine, Trust Decision, Revocation/Reinstatement, Existing-Deployment-Response, Exceptions, Offline, Fail-Closed). Decision Index +15 (DEC-S-289…303), Risk Register +5 (RISK-285…289, gesamt 289; Wachstumsgrenze §4 eingehalten). Keine Registry-/Package-/SBOM-/Hash-/Signing-/Trust-Anchor-/Transparency-/Scanner-/Build-/Dependency-Resolution-Technologie ausgewählt; keine ADR; Deployment-/Integration-/Domain-Pack-/Data-/API-/Event-/Evidence-/Telemetry-/Topology-/Identity-/Authorization-/State-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.
 
-Next planned WP nach Nova Review und Human-Maintainer-Commit: `CO-WP-023 – Restricted, Isolated, Air-Gapped Operation and CorePack`.
+`CO-WP-022` nach Human-Maintainer-Commit (`5b68154`) und Push `completed-go-with-notes`.
+
+## Restricted, Isolated, Air-Gapped Operation and CorePack
+
+Current implemented WP:
+`CO-WP-023 – Restricted, Isolated, Air-Gapped Operation and CorePack` – pending Nova review.
+
+Current restricted-operation foundation:
+Connectivity classes (connected/restricted-connected/intermittently-connected/isolated/air-gapped/recovery-only), delegated offline authority, CorePack identity, manifest, content population/resolution, assembly, provenance/integrity/validation/trust/compatibility, target binding, transfer, receipt, import quarantine, assessment, activation, partial activation, update/delta, revocation/reinstatement, rollback/recovery and evidence-return governance defined. offline ≠ air-gapped; isolated ≠ trusted; network unavailable ≠ security controls optional; central unavailable ≠ local authority expands; CorePack ≠ Domain Pack/artifact/blueprint/backup/evidence package; transferred ≠ imported ≠ trusted ≠ approved-for-activation ≠ activated ≠ deployment authorised; contents do not inherit trust/compatibility from the container; target binding preserved through transfer/import/activation; quarantine release ≠ activation authorization; delta activation requires a confirmed exact base revision; delayed revocation and time uncertainty explicit; offline authorization action-/target-/scope-/version-/purpose-/time-bound and not reusable.
+
+CorePack and offline technology:
+not selected
+
+Offline runtime and activation:
+not implemented
+
+Validation:
+not performed
+
+Drei neue Dokumente: Restricted, Isolated and Air-Gapped Operation Model (Connectivity Classes, Authority Boundary, Central/Local Authority, Offline Identity, Freshness, Time/Clock Uncertainty, Restricted/Degraded Modes, Import/Activation Boundary, Evidence Return/Reconciliation, Isolation, Failure), CorePack Identity, Content and Lifecycle Model (Boundary, Classes, Identity, Version/Revision/Instances, Manifest, Content Population/Resolution, Assembly, Provenance/Integrity/Validation/Trust/Compatibility, Target Binding, Lifecycle, Transfer/Receipt/Import/Quarantine/Activation, Partial Activation, Updates/Deltas, Revocation/Reinstatement, Rollback/Recovery, Evidence Return) und Offline Trust, Activation, Revocation and Transfer Policy (Authority, CorePack/Content Trust, Target Binding, Transfer/Receipt/Quarantine/Assessment/Approval/Activation/Execution Authorization, Freshness, Revocation Snapshot/Delayed Revocation, Exceptions, Updates/Deltas, Partial/Unknown, Rollback/Recovery, Restricted/Degraded, Evidence Return, Disclosure/Export, Isolation, Fail-Closed). Decision Index +14 (DEC-S-304…317), Risk Register +5 (RISK-290…294, gesamt 294; Wachstumsgrenze §4 eingehalten). Keine Package-/Manifest-/Installer-/Update-/Transfer-/Removable-Media-/Hash-/Signing-/Trust-Anchor-/PKI-/Encryption-/Synchronisations-/Reconciliation-Technologie und keine Offline-Runtime ausgewählt; keine ADR; Artifact-/Deployment-/Domain-Pack-/Integration-/Data-/API-/Event-/Evidence-/Telemetry-/Topology-/Identity-/Authorization-/State-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.
+
+Next planned WP nach Nova Review und Human-Maintainer-Commit: `CO-WP-024 – Secrets, Configuration Vault and Key Custody`.
 
 ## Current Goal
 

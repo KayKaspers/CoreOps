@@ -361,13 +361,22 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 - Decision Index +15 (DEC-S-289…303), Risk Register +5 (RISK-285…289, gesamt 289; Wachstumsgrenze §4 eingehalten).
 - **Keine Registry-/Package-/SBOM-/Hash-/Signing-/Trust-Anchor-/Transparency-/Scanner-/Build-/Dependency-Resolution-Technologie ausgewählt; keine ADR; Deployment-/Integration-/Domain-Pack-/Data-/API-/Event-/Evidence-/Telemetry-/Topology-/Identity-/Authorization-/State-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.**
 
+## Restricted, Isolated, Air-Gapped Operation and CorePack (CO-WP-023)
+
+- Drei neue Dokumente: [RESTRICTED_ISOLATED_AND_AIR_GAPPED_OPERATION_MODEL.md](../docs/architecture/RESTRICTED_ISOLATED_AND_AIR_GAPPED_OPERATION_MODEL.md), [COREPACK_IDENTITY_CONTENT_AND_LIFECYCLE_MODEL.md](../docs/architecture/COREPACK_IDENTITY_CONTENT_AND_LIFECYCLE_MODEL.md), [OFFLINE_TRUST_ACTIVATION_REVOCATION_AND_TRANSFER_POLICY.md](../docs/security/OFFLINE_TRUST_ACTIVATION_REVOCATION_AND_TRANSFER_POLICY.md).
+- Connectivity Classes getrennt (`connected/restricted-connected/intermittently-connected/isolated/air-gapped/recovery-only`); `offline ≠ air-gapped`; `isolated ≠ trusted`; `network unavailable ≠ security controls optional`; keine Klassifiziertnetz-Eignung. Authority Boundary: `central unavailable ≠ local authority expands`; `local activation authority ≠ deployment execution authorization`; Delegation scope-/purpose-/profile-/version-/zeitgebunden.
+- `CorePack ≠ Domain Pack/artifact/deployment blueprint/backup/evidence package`; Identity/Version/Revision/Assembly-/Transfer-/Import-/Activation-Instance getrennt; `transferred ≠ imported ≠ trusted ≠ approved-for-activation ≠ activated ≠ deployment authorised`. Content Resolution bindet konkrete Revision (`mutable alias ≠ final binding`); Contents erben Trust/Compatibility nicht vom Container.
+- Target Binding durch Transfer/Import/Activation erhalten; `quarantine release ≠ activation authorization`; Partial/Unknown Activation sichtbar (`no automatic retry → reconciliation`); Delta erfordert bestätigte exakte Baseline; Delayed Revocation sichtbar (`no local revocation entry ≠ not revoked centrally`); Offline Authorization action-/target-/scope-/version-/purpose-/time-bound und nicht wiederverwendbar; Rollback erfordert aktuelle Trust-/Revocation-/Compatibility-Bewertung; Evidence Return (`returned ≠ complete ≠ sufficient`); Export-Autorität getrennt; keine Rohsecrets.
+- Decision Index +14 (DEC-S-304…317), Risk Register +5 (RISK-290…294, gesamt 294; Wachstumsgrenze §4 eingehalten).
+- **Keine Package-/Manifest-/Installer-/Update-/Transfer-/Removable-Media-/Hash-/Signing-/Trust-Anchor-/PKI-/Encryption-/Synchronisations-/Reconciliation-Technologie und keine Offline-Runtime ausgewählt; keine ADR; Artifact-/Deployment-/Domain-Pack-/Integration-/Data-/API-/Event-/Evidence-/Telemetry-/Topology-/Identity-/Authorization-/State-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.**
+
 ## Letztes Work Package
 
-`CO-WP-022 – Artifact Trust, SBOM, Provenance and Revocation` (docs-only / artifact identity, software-supply-chain and trust-governance foundation). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-021 – completed-go-with-notes` (Commit a152091).
+`CO-WP-023 – Restricted, Isolated, Air-Gapped Operation and CorePack` (docs-only / restricted-operation, offline-distribution and CorePack governance foundation). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-022 – completed-go-with-notes` (Commit 5b68154, gepusht).
 
 ## Nächstes Work Package
 
-`CO-WP-023 – Restricted, Isolated, Air-Gapped Operation and CorePack` (docs-only; planned-next; erst nach Nova Review von CO-WP-022 und Human-Maintainer-Commit).
+`CO-WP-024 – Secrets, Configuration Vault and Key Custody` (security-baseline; planned-next; erst nach Nova Review von CO-WP-023 und Human-Maintainer-Commit).
 
 ## Human-Maintainer-Gates
 

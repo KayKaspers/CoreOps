@@ -23,7 +23,15 @@ Universelle, self-hosted und offline-fähige Operations Control Plane, die Sourc
 
 ## Letztes Work Package
 
-`CO-WP-022 – Artifact Trust, SBOM, Provenance and Revocation` (docs-only / artifact identity, software-supply-chain and trust-governance foundation) — **Nova Review pending**. Vorheriges WP: `CO-WP-021 – completed-go-with-notes` (Commit a152091).
+`CO-WP-023 – Restricted, Isolated, Air-Gapped Operation and CorePack` (docs-only / restricted-operation, offline-distribution and CorePack governance foundation) — **Nova Review pending**. Vorheriges WP: `CO-WP-022 – completed-go-with-notes` (Commit 5b68154, gepusht).
+
+## Restricted, Isolated, Air-Gapped Operation and CorePack (CO-WP-023)
+
+- Drei neue Dokumente: Restricted/Isolated/Air-Gapped Operation Model, CorePack Identity/Content/Lifecycle Model, Offline Trust/Activation/Revocation/Transfer Policy.
+- Connectivity Classes getrennt (`connected/restricted-connected/intermittently-connected/isolated/air-gapped/recovery-only`); `offline ≠ air-gapped`; `isolated ≠ trusted`; `network unavailable ≠ security controls optional`; `central unavailable ≠ local authority expands`; `local activation authority ≠ deployment execution authorization`; keine Klassifiziertnetz-Eignung.
+- `CorePack ≠ Domain Pack/artifact/blueprint/backup/evidence package`; Identity/Version/Revision/Assembly-/Transfer-/Import-/Activation-Instance getrennt; `transferred ≠ imported ≠ trusted ≠ approved-for-activation ≠ activated ≠ deployment authorised`; Content Resolution bindet konkrete Revision (`mutable alias ≠ final binding`); Contents erben Trust/Compatibility nicht vom Container; Target Binding durch Transfer/Import/Activation erhalten.
+- `quarantine release ≠ activation authorization`; Partial/Unknown Activation sichtbar (`no automatic retry → reconciliation`); Delta erfordert bestätigte exakte Baseline; Delayed Revocation sichtbar (`no local revocation entry ≠ not revoked centrally`); Offline Authorization action-/target-/scope-/version-/purpose-/time-bound und nicht wiederverwendbar; Rollback braucht aktuelle Trust-/Revocation-/Compatibility-Bewertung; Evidence Return (`returned ≠ complete ≠ sufficient`); Export-Autorität getrennt; keine Rohsecrets.
+- Decision Index +14 (DEC-S-304…317), Risk Register +5 (RISK-290…294, gesamt 294; Wachstumsgrenze §4 eingehalten). Keine Package-/Manifest-/Installer-/Update-/Transfer-/Hash-/Signing-/Trust-Anchor-/PKI-/Encryption-/Reconciliation-Technologie und keine Offline-Runtime; keine ADR; Artifact-/Deployment-/Domain-Pack-/Integration-/Data-/API-/Event-/Evidence-/Telemetry-/Topology-/Identity-/Authorization-/State-/Capability-/Threat-Dateien + Lessons-Learned + NDF-Kandidaten unverändert; keine NDF-Rückführung.
 
 ## Artifact Trust, SBOM, Provenance and Revocation (CO-WP-022)
 
@@ -238,7 +246,7 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 
 ## Nächstes Work Package
 
-`CO-WP-023 – Restricted, Isolated, Air-Gapped Operation and CorePack` (docs-only; planned-next; erst nach Nova Review von CO-WP-022 und Human-Maintainer-Commit). Die 004er-Erweiterungsserie (004A…004E), CO-WP-005…021, beide Milestone Lessons Reviews (005…012, 013…020) und CO-WP-022 sind bearbeitet; CO-WP-021 ist `completed-go-with-notes` (Commit a152091), CO-WP-022 ist `implemented-awaiting-nova-review`. CO-WP-014…020 und der Milestone-Review-Commit wurden gepusht; CO-WP-021 committet aber noch nicht gepusht (Branch ahead 1 bei Preflight); CO-WP-022 noch nicht committet. Push von CO-WP-021/022 nach HM-Commit von CO-WP-022 vorgesehen. Milestone-Bündelentscheidung für NDF-Kandidaten 008…013 liegt bei Nova/HM. External: NDF-Release-Zuordnung für die drei Adoption-Commits (001…007) ausstehend.
+`CO-WP-024 – Secrets, Configuration Vault and Key Custody` (security-baseline; planned-next; erst nach Nova Review von CO-WP-023 und Human-Maintainer-Commit). Die 004er-Erweiterungsserie (004A…004E), CO-WP-005…022, beide Milestone Lessons Reviews (005…012, 013…020) und CO-WP-023 sind bearbeitet; CO-WP-022 ist `completed-go-with-notes` (Commit 5b68154), CO-WP-023 ist `implemented-awaiting-nova-review`. CO-WP-021 und CO-WP-022 wurden committet und gepusht (Branch bei Preflight level mit origin/main). Push von CO-WP-023 nach HM-Commit vorgesehen. Milestone-Bündelentscheidung für NDF-Kandidaten 008…013 liegt bei Nova/HM. External: NDF-Release-Zuordnung für die drei Adoption-Commits (001…007) ausstehend.
 
 ## Aktuelle Blocker
 

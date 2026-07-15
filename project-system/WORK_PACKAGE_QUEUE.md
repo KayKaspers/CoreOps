@@ -39,9 +39,9 @@ Jedes Work Package hat genau **einen** primären Typ.
 | CO-WP-019 | docs-only         | Telemetry and Normalization Schema                             | completed-go-with-notes        |
 | CO-WP-020 | docs-only         | Topology Graph, Evidence and Manual Authority                  | completed-go-with-notes        |
 | CO-WP-021 | docs-only         | Deployment Control Plane and Blueprint Schema                  | completed-go-with-notes        |
-| CO-WP-022 | security-baseline | Artifact Trust, SBOM, Provenance and Revocation                | implemented-awaiting-nova-review|
-| CO-WP-023 | docs-only         | Restricted, Isolated, Air-Gapped Operation and CorePack        | planned-next                  |
-| CO-WP-024 | security-baseline | Secrets, Configuration Vault and Key Custody                   | planned                       |
+| CO-WP-022 | security-baseline | Artifact Trust, SBOM, Provenance and Revocation                | completed-go-with-notes        |
+| CO-WP-023 | docs-only         | Restricted, Isolated, Air-Gapped Operation and CorePack        | implemented-awaiting-nova-review|
+| CO-WP-024 | security-baseline | Secrets, Configuration Vault and Key Custody                   | planned-next                  |
 | CO-WP-025 | docs-only         | Data Classification, Retention and Redaction                   | planned                       |
 | CO-WP-026 | security-baseline | Self-Protection, Degraded Modes and Recovery Mode              | planned                       |
 | CO-WP-027 | docs-only         | UX Information Architecture and Dashboard System               | planned                       |
@@ -56,7 +56,7 @@ Jedes Work Package hat genau **einen** primären Typ.
 ## Regeln
 
 - Genau ein primärer Typ pro Work Package.
-- Nur `CO-WP-023` ist der nächste geplante Schritt (`planned-next`). `CO-WP-022` ist `implemented-awaiting-nova-review` und wird erst nach Nova Review und Human-Maintainer-Commit als abgeschlossen geführt.
+- Nur `CO-WP-024` ist der nächste geplante Schritt (`planned-next`). `CO-WP-023` ist `implemented-awaiting-nova-review` und wird erst nach Nova Review und Human-Maintainer-Commit als abgeschlossen geführt. `CO-WP-022` ist nach Human-Maintainer-Commit (`5b68154`) und Push `completed-go-with-notes`.
 - Keine automatische Freigabe eines Folge-Work-Packages.
 - Die Queue ist noch **nicht** final scope-locked.
 - Änderungen an der Queue nur durch ein später freigegebenes Work Package.
