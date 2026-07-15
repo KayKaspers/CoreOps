@@ -23,7 +23,15 @@ Universelle, self-hosted und offline-fähige Operations Control Plane, die Sourc
 
 ## Letztes Work Package
 
-`CO-WP-023 – Restricted, Isolated, Air-Gapped Operation and CorePack` (docs-only / restricted-operation, offline-distribution and CorePack governance foundation) — **Nova Review pending**. Vorheriges WP: `CO-WP-022 – completed-go-with-notes` (Commit 5b68154, gepusht).
+`CO-WP-024 – Secrets, Configuration Vault and Key Custody` (docs-only / security, configuration, secret-lifecycle and key-custody governance foundation) — **Nova Review `GO WITH NOTES`; Nova-Notes 1–4 vor dem Commit geschlossen; `completed-go-with-notes`; Human-Maintainer-Commit ausstehend**. Vorheriges WP: `CO-WP-023 – completed-go-with-notes` (Commit b324aad, gepusht).
+
+## Secrets, Configuration Vault and Key Custody (CO-WP-024)
+
+- Drei neue Dokumente: Secrets/Configuration Vault and Custody Governance, Key Material/Rotation/Revocation/Recovery Policy, Configuration Source of Truth and Secret Reference Model. Baut auf MOD-SEC-001/MOD-STA-001, CO-WP-010, CO-WP-009 auf; kein Parallelmodell.
+- `secret ≠ ordinary configuration`; `secret reference ≠ secret value`; `credential possession ≠ authorization`; `retrieval ≠ use ≠ export`; `key identity ≠ key material ≠ custody`; `custody ≠ use authority`; `vault availability ≠ secret trust`. Vault = logische Governance-Grenze (kein Produkt); 15 Secret-/Config-Klassen; getrennte Autoritäten (owner ≠ custodian ≠ user; rotation ≠ reinstatement; backup operator ≠ recovery authority; machine principal ≠ human approval).
+- Secret Lifecycle (proposed…destroyed/outcome-unknown); Secret Identity/Version/Value-Revision/Instances getrennt; Retrieval/Distribution/Injection/Use getrennt (`injected ≠ consumed`). Rotation vollständig erst nach Consumer-Assessment; Revocation mit Identity Binding + Freshness (`no local entry ≠ not revoked`); Bootstrap/Root/Recovery/Break-Glass bounded/one-time (keine dauerhafte Autorität); Recovery ≠ Reinstatement; Rollback reaktiviert kein revoked/expired/compromised Material.
+- Configuration Source of Truth ≠ Runtime State; Secret References fail-closed (kein Fallback); Drift ≠ auto-remediated. CorePack Trust ≠ Secret Trust; Deployment Authorization ≠ Secret-Use Authorization; Offline erweitert keine Autorität (Offline-Authorization nicht wiederverwendbar); Audit/Evidence ohne Secret Values. Profile (Standard/Hardened/Government) = Kontrollstärke, keine Compliance/Zertifizierung.
+- Decision Index +14 (DEC-S-318…331; nach Nova-GO-WITH-NOTES-Deduplizierung, ursprünglich 16), Risk Register +5 (RISK-295…299, gesamt 299; Wachstumsgrenze §36 eingehalten). Keine Vault-/KMS-/HSM-/TPM-/PKI-/Key-/Secret-/Config-/Rotation-/Backup-/Sync-Technologie; Rohsecret-/Rohschlüsselspeicherung nicht entschieden; keine ADR; bestehende Identity-/Authorization-/Trust-/Deployment-/Artifact-/Evidence-/Offline-/CorePack-/Threat-Dateien + Lessons-Learned + NDF-Kandidaten unverändert; keine NDF-Rückführung.
 
 ## Restricted, Isolated, Air-Gapped Operation and CorePack (CO-WP-023)
 
@@ -246,7 +254,7 @@ Vollständiger NDF-v1.0.0-Skills-Pack lokal unter `.claude/skills/` verfügbar (
 
 ## Nächstes Work Package
 
-`CO-WP-024 – Secrets, Configuration Vault and Key Custody` (security-baseline; planned-next; erst nach Nova Review von CO-WP-023 und Human-Maintainer-Commit). Die 004er-Erweiterungsserie (004A…004E), CO-WP-005…022, beide Milestone Lessons Reviews (005…012, 013…020) und CO-WP-023 sind bearbeitet; CO-WP-022 ist `completed-go-with-notes` (Commit 5b68154), CO-WP-023 ist `implemented-awaiting-nova-review`. CO-WP-021 und CO-WP-022 wurden committet und gepusht (Branch bei Preflight level mit origin/main). Push von CO-WP-023 nach HM-Commit vorgesehen. Milestone-Bündelentscheidung für NDF-Kandidaten 008…013 liegt bei Nova/HM. External: NDF-Release-Zuordnung für die drei Adoption-Commits (001…007) ausstehend.
+`CO-WP-025 – Data Classification, Retention and Redaction` (docs-only; planned-next; **noch nicht begonnen**; erst nach Human-Maintainer-Commit von CO-WP-024). Die 004er-Erweiterungsserie (004A…004E), CO-WP-005…023, beide Milestone Lessons Reviews (005…012, 013…020) und CO-WP-024 sind bearbeitet; CO-WP-023 ist `completed-go-with-notes` (Commit b324aad), CO-WP-024 ist nach Nova Review `GO WITH NOTES` und geschlossener Korrekturrunde (Notes 1–4) `completed-go-with-notes` — Human-Maintainer-Commit ausstehend, Push nicht als erfolgt dargestellt. CO-WP-021/022/023 wurden committet und gepusht (Branch bei CO-WP-024-Preflight level mit origin/main). Milestone-Bündelentscheidung für NDF-Kandidaten 008…013 liegt bei Nova/HM. External: NDF-Release-Zuordnung für die drei Adoption-Commits (001…007) ausstehend.
 
 ## Aktuelle Blocker
 

@@ -370,13 +370,22 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 - Decision Index +14 (DEC-S-304…317), Risk Register +5 (RISK-290…294, gesamt 294; Wachstumsgrenze §4 eingehalten).
 - **Keine Package-/Manifest-/Installer-/Update-/Transfer-/Removable-Media-/Hash-/Signing-/Trust-Anchor-/PKI-/Encryption-/Synchronisations-/Reconciliation-Technologie und keine Offline-Runtime ausgewählt; keine ADR; Artifact-/Deployment-/Domain-Pack-/Integration-/Data-/API-/Event-/Evidence-/Telemetry-/Topology-/Identity-/Authorization-/State-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.**
 
+## Secrets, Configuration Vault and Key Custody (CO-WP-024)
+
+- Drei neue Dokumente: [SECRETS_CONFIGURATION_VAULT_AND_CUSTODY_GOVERNANCE.md](../docs/security/SECRETS_CONFIGURATION_VAULT_AND_CUSTODY_GOVERNANCE.md), [KEY_MATERIAL_ROTATION_REVOCATION_AND_RECOVERY_POLICY.md](../docs/security/KEY_MATERIAL_ROTATION_REVOCATION_AND_RECOVERY_POLICY.md), [CONFIGURATION_SOURCE_OF_TRUTH_AND_SECRET_REFERENCE_MODEL.md](../docs/architecture/CONFIGURATION_SOURCE_OF_TRUTH_AND_SECRET_REFERENCE_MODEL.md). Baut auf MOD-SEC-001/MOD-STA-001, CO-WP-010 (Credential Lifecycle) und CO-WP-009 (Break-Glass) auf; kein Parallelmodell.
+- `secret ≠ ordinary configuration`; `secret reference ≠ secret value`; `credential ≠ identity`; `credential possession ≠ authorization`; `logical secret identity ≠ version ≠ value revision ≠ value instance ≠ lease`; `retrieval permitted ≠ use permitted ≠ export permitted`; `key identity ≠ key material ≠ custody`; `key custody ≠ unrestricted key use`; `vault availability ≠ secret trust`.
+- Vault = logische Governance-Grenze (kein Produkt). 15 Secret-/Config-Klassen; getrennte Autoritäten (owner ≠ custodian ≠ user; retrieval ≠ use ≠ export; rotation ≠ reinstatement; backup operator ≠ recovery authority; machine principal ≠ human approval). Secret Lifecycle (proposed…destroyed/outcome-unknown); Retrieval/Distribution/Injection/Use getrennt (`injected ≠ consumed`).
+- Rotation vollständig erst nach Consumer-State-Assessment (`new version ≠ rotation complete`; `unknown consumer ≠ safe`); Revocation mit Identity Binding + Freshness (`no local entry ≠ not revoked centrally`); Bootstrap/Root/Recovery/Break-Glass bounded/one-time, mandatory Rotation/Invalidation, keine dauerhafte Autorität; Recovery ≠ Reinstatement ≠ globaler Trust; Rollback reaktiviert kein revoked/expired/compromised Material. Configuration Source of Truth ≠ Runtime State; Secret References fail-closed; Drift ≠ auto-remediated. CorePack Trust ≠ Secret Trust; Deployment Authorization ≠ Secret-Use Authorization; Offline erweitert keine Autorität, Offline-Authorization nicht wiederverwendbar; Audit/Evidence ohne Secret Values.
+- Decision Index +14 (DEC-S-318…331; nach Nova-GO-WITH-NOTES-Deduplizierung, ursprünglich 16), Risk Register +5 (RISK-295…299, gesamt 299; Wachstumsgrenze §36 eingehalten).
+- **Keine Vault-/KMS-/HSM-/TPM-/PKI-/Key-Format-/Algorithmus-/Secret-Store-/Injection-/Configuration-/Rotation-/Backup-/Transfer-/Sync-Technologie ausgewählt; Rohsecret-/Rohschlüsselspeicherung nicht entschieden; keine ADR; bestehende Identity-/Authorization-/Trust-/Deployment-/Artifact-/Evidence-/Offline-/CorePack-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.**
+
 ## Letztes Work Package
 
-`CO-WP-023 – Restricted, Isolated, Air-Gapped Operation and CorePack` (docs-only / restricted-operation, offline-distribution and CorePack governance foundation). Umsetzung abgeschlossen, Nova Review ausstehend. Vorheriges WP: `CO-WP-022 – completed-go-with-notes` (Commit 5b68154, gepusht).
+`CO-WP-024 – Secrets, Configuration Vault and Key Custody` (docs-only / security, configuration, secret-lifecycle and key-custody governance foundation). Nova Review `GO WITH NOTES`; verbindliche Nova-Notes 1–4 vor dem Commit geschlossen; `completed-go-with-notes`; Human-Maintainer-Commit ausstehend (Push nicht als erfolgt dargestellt). Vorheriges WP: `CO-WP-023 – completed-go-with-notes` (Commit b324aad, gepusht).
 
 ## Nächstes Work Package
 
-`CO-WP-024 – Secrets, Configuration Vault and Key Custody` (security-baseline; planned-next; erst nach Nova Review von CO-WP-023 und Human-Maintainer-Commit).
+`CO-WP-025 – Data Classification, Retention and Redaction` (docs-only; planned-next; erst nach Nova Review von CO-WP-024 und Human-Maintainer-Commit).
 
 ## Human-Maintainer-Gates
 

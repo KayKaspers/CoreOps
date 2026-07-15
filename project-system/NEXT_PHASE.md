@@ -347,7 +347,28 @@ not performed
 
 Drei neue Dokumente: Restricted, Isolated and Air-Gapped Operation Model (Connectivity Classes, Authority Boundary, Central/Local Authority, Offline Identity, Freshness, Time/Clock Uncertainty, Restricted/Degraded Modes, Import/Activation Boundary, Evidence Return/Reconciliation, Isolation, Failure), CorePack Identity, Content and Lifecycle Model (Boundary, Classes, Identity, Version/Revision/Instances, Manifest, Content Population/Resolution, Assembly, Provenance/Integrity/Validation/Trust/Compatibility, Target Binding, Lifecycle, Transfer/Receipt/Import/Quarantine/Activation, Partial Activation, Updates/Deltas, Revocation/Reinstatement, Rollback/Recovery, Evidence Return) und Offline Trust, Activation, Revocation and Transfer Policy (Authority, CorePack/Content Trust, Target Binding, Transfer/Receipt/Quarantine/Assessment/Approval/Activation/Execution Authorization, Freshness, Revocation Snapshot/Delayed Revocation, Exceptions, Updates/Deltas, Partial/Unknown, Rollback/Recovery, Restricted/Degraded, Evidence Return, Disclosure/Export, Isolation, Fail-Closed). Decision Index +14 (DEC-S-304…317), Risk Register +5 (RISK-290…294, gesamt 294; Wachstumsgrenze §4 eingehalten). Keine Package-/Manifest-/Installer-/Update-/Transfer-/Removable-Media-/Hash-/Signing-/Trust-Anchor-/PKI-/Encryption-/Synchronisations-/Reconciliation-Technologie und keine Offline-Runtime ausgewählt; keine ADR; Artifact-/Deployment-/Domain-Pack-/Integration-/Data-/API-/Event-/Evidence-/Telemetry-/Topology-/Identity-/Authorization-/State-/Capability-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.
 
-Next planned WP nach Nova Review und Human-Maintainer-Commit: `CO-WP-024 – Secrets, Configuration Vault and Key Custody`.
+`CO-WP-023` nach Human-Maintainer-Commit (`b324aad`) und Push `completed-go-with-notes`.
+
+## Secrets, Configuration Vault and Key Custody
+
+Current implemented WP:
+`CO-WP-024 – Secrets, Configuration Vault and Key Custody` – Nova Review `GO WITH NOTES`; verbindliche Nova-Notes 1–4 vor dem Commit geschlossen; `completed-go-with-notes`. Human-Maintainer-Commit ausstehend (Push nicht als erfolgt dargestellt).
+
+Current secret and configuration foundation:
+Secret/sensitive-configuration classification, logical vault governance boundary, separated secret/key/configuration authorities, secret lifecycle, secret identity/version/instances, retrieval/distribution/injection/use, disclosure/export, key custody, root/bootstrap/recovery/break-glass material, rotation, revocation/suspension/reinstatement, recovery/destruction, configuration source of truth, secret-reference model, drift/reconciliation and offline secret governance defined. secret ≠ ordinary configuration; secret reference ≠ secret value; credential possession ≠ authorization; retrieval ≠ use ≠ export; key identity ≠ key material ≠ custody; vault availability ≠ secret trust; rotation completion requires consumer-state assessment; revocation has identity binding and freshness; offline operation does not expand authority and offline authorizations are non-reusable; break-glass creates no permanent authority; recovery ≠ reinstatement; rollback does not reactivate revoked/expired/compromised material; CorePack trust ≠ secret trust; deployment authorization ≠ secret-use authorization; audit and evidence contain no secret values.
+
+Vault, KMS, HSM, TPM, PKI and secret/key/configuration technology:
+not selected
+
+Raw secret and raw key storage:
+not decided
+
+Validation:
+not performed
+
+Drei neue Dokumente: Secrets, Configuration Vault and Custody Governance (Concepts, Classification, Vault Boundary, Authorities, Secret Lifecycle, Identity/Instances, Retrieval/Distribution/Injection/Use, Disclosure/Export, Isolation, CorePack/Deployment Boundary, Audit, Profiles, Failure/Fail-Closed), Key Material, Rotation, Revocation and Recovery Policy (Key Custody, Identity/Instances, Bootstrap/Root/Recovery Material, Rotation, Revocation/Suspension/Reinstatement, Recovery, Destruction, Break-Glass Material, Offline, Backup/Recovery Boundary, Deployment/Rollback Boundary, Audit, Isolation, Failure/Fail-Closed) und Configuration Source of Truth and Secret Reference Model (Source of Truth, Versions/Overlays, Sensitive Configuration, Secret Reference Model, Resolution, Runtime-Effective/Drift, Reconciliation, Target/Workspace/Environment Binding, Deployment/Blueprint/CorePack Integration, Offline, Audit, Failure/Fail-Closed). Decision Index +14 (DEC-S-318…331; nach Nova-GO-WITH-NOTES-Deduplizierung, ursprünglich 16), Risk Register +5 (RISK-295…299, gesamt 299; Wachstumsgrenze §36 eingehalten). Keine Vault-/KMS-/HSM-/TPM-/PKI-/Key-/Secret-/Config-/Rotation-/Backup-/Transfer-/Sync-Technologie ausgewählt; keine ADR; bestehende Identity-/Authorization-/Trust-/Deployment-/Artifact-/Evidence-/Offline-/CorePack-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.
+
+Next planned WP nach Nova Review und Human-Maintainer-Commit: `CO-WP-025 – Data Classification, Retention and Redaction`.
 
 ## Current Goal
 
