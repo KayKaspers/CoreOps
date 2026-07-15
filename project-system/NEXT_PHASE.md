@@ -373,7 +373,7 @@ Drei neue Dokumente: Secrets, Configuration Vault and Custody Governance (Concep
 ## Data Classification, Retention and Redaction
 
 Current implemented WP:
-`CO-WP-025 – Data Classification, Retention and Redaction` – Nova Review `GO WITH NOTES`; Notes-Runde geschlossen; `completed-go-with-notes`. Human-Maintainer-Commit ausstehend (Push nicht als erfolgt dargestellt).
+`CO-WP-025 – Data Classification, Retention and Redaction` – Nova Review `GO WITH NOTES`; Notes-Runde geschlossen; `completed-go-with-notes` (Commit 3419664, gepusht).
 
 ## Future Reporting and Vulnerability Roadmap (roadmap-candidate)
 
@@ -395,7 +395,26 @@ not performed
 
 Drei neue Dokumente: Data Classification and Handling Model (Concepts, Klassifikationsklassen, Classification Identity/Freshness, Autoritäten, Collection/Minimization, Handling Lifecycle, Isolation, Secret-Grenze, Profile), Data Retention, Deletion and Preservation Policy (Retention Policy, Start Events/Expiry, Preservation Holds, Copies/Backups, Deletion/Purge/Destruction, Deletion Evidence, Offline/Evidence Return, Evidence Retention Boundary, Failure/Fail-Closed) und Redaction, Minimization and Controlled Disclosure Policy (Minimization, Redaction/Derived Views, Masking/Pseudonymization/Anonymization Claims, Controlled Disclosure, Export, Logs/Telemetry/Topology, Audit/Evidence, Secret-Grenze, Backup/Offline, Residual Disclosure, Fail-Closed). Decision Index +13 (DEC-S-332…344), Risk Register +5 (RISK-300…304, gesamt 304; Wachstumsgrenze §33 eingehalten). Keine Retention-/Deletion-/Archiv-/DLP-/Discovery-/Redaction-/Masking-/Anonymisierungs-/Storage-/Backup-/Encryption-/Sync-Technologie ausgewählt; keine ADR; keine reine Technology-Deferral-Decision; keine Compliance-/Rechts-/Zertifizierungsbehauptung; bestehende Data-/Audit-/Evidence-/Telemetry-/Topology-/Secret-/Offline-/CorePack-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.
 
-Next planned WP nach Nova Review und Human-Maintainer-Commit: `CO-WP-026 – Self-Protection, Degraded Modes and Recovery Mode`.
+## Self-Protection, Degraded Modes and Recovery Mode
+
+Current implemented WP:
+`CO-WP-026 – Self-Protection, Degraded Modes and Recovery Mode` – Nova Review `GO WITH NOTES`; Notes-Runde geschlossen; `completed-go-with-notes`. Human-Maintainer-Commit ausstehend (Push nicht als erfolgt dargestellt).
+
+Current self-protection foundation:
+Control-plane/managed-plane boundary, 15 protected assets, 23 protective-condition trigger categories, protection assessment (20 fields), 12 fault domains/blast radius, 20 protective actions with a six-level priority order, ten operational modes (normal/guarded/restricted/read-only/degraded/containment/recovery-only/recovery/emergency-stop/unknown) with a capability restriction matrix over 23 capability groups, degraded-mode and containment governance, recovery authority, recovery mode, 15 recovery stages, 11 recovery input classes with current trust/revocation/compatibility reassessment, partial/unknown recovery outcomes, offline/agent recovery, break-glass boundary and recovery exit defined. CoreOps self-protection ≠ protection of every managed asset; control-plane health ≠ managed-system health; process running ≠ platform governable; governability ≠ technical reachability; monitoring unavailable ≠ system healthy; audit unavailable ≠ no operation occurred; trigger ≠ compromise proven; absence of trigger ≠ safety; read-only mode ≠ guaranteed absence of side effects; degraded ≠ unrestricted/permanent; containment ≠ recovery; recovery mode ≠ ordinary mode ≠ backup restore ≠ rollback; service restored ≠ authority restored; previously trusted ≠ currently trusted; partial/unknown recovery ≠ safe retry; offline operation does not expand local recovery authority; break-glass creates no permanent authority; recovery exit requires reassessment and reconciliation.
+
+Self-protection, health, HA, failover, recovery and isolation technology:
+not selected
+
+Self-healing and automatic recovery:
+not implemented
+
+Validation:
+not performed
+
+Drei neue Dokumente: Self-Protection and Control-Plane Safety Model (Control-/Managed-Plane, Schutzgüter, Protective Conditions/Trigger, Protection Assessment, Fault Domains/Blast Radius, Protective Actions/Priority, Integrationsgrenzen, Profile, Failure), Degraded Mode and Capability Restriction Model (zehn Operational Modes, Mode Entry/Exit, Capability Restriction Matrix, Read-only, Restricted/Guarded, Degraded, Containment, Emergency Stop, Unknown State, Profile) und Recovery Mode Authority and Controlled Restoration Policy (Recovery Authority, Recovery Mode, 15 Stufen, Inputs, Trust-Reassessment, Partial/Unknown, Offline/Agent, Break-Glass, Audit/Reconciliation, Data Classification, Recovery Exit). Decision Index +13 (DEC-S-345…357), Risk Register +5 (RISK-305…309, gesamt 309; Wachstumsgrenze §39 eingehalten; adressiert RISK-11 Self-Dependency). Keine Health-/Watchdog-/HA-/Failover-/Cluster-/Quorum-/Recovery-/Self-Healing-/Monitoring-/Backup-/Isolation-/Integrity-Scanning-/Orchestration-/Sync-/Reconciliation-Technologie ausgewählt; keine ADR; keine Technology-Deferral-Decision; keine Security-/Resilience-/Recovery-Readiness-/Compliance-Behauptung; bestehende Foundation-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.
+
+**Verbindlicher nächster Schritt:** gebündelter `CO-WP-021…026` Foundation Milestone Review — Status: `planned-next` · `not started` (keine WP-Nummer; Lessons Learned und NDF Candidates werden erst dort gebündelt behandelt). Spätere Queue-Einträge (`CO-WP-027`…`CO-WP-031`) sind **retained**, aber bis zum Abschluss des Milestone Reviews **nicht unmittelbar ausführbar**.
 
 ## Current Goal
 

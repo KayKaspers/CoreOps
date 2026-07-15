@@ -43,8 +43,8 @@ Jedes Work Package hat genau **einen** primären Typ.
 | CO-WP-023 | docs-only         | Restricted, Isolated, Air-Gapped Operation and CorePack        | completed-go-with-notes        |
 | CO-WP-024 | security-baseline | Secrets, Configuration Vault and Key Custody                   | completed-go-with-notes        |
 | CO-WP-025 | docs-only         | Data Classification, Retention and Redaction                   | completed-go-with-notes        |
-| CO-WP-026 | security-baseline | Self-Protection, Degraded Modes and Recovery Mode              | planned-next                  |
-| CO-WP-027 | docs-only         | UX Information Architecture and Dashboard System               | planned                       |
+| CO-WP-026 | security-baseline | Self-Protection, Degraded Modes and Recovery Mode              | completed-go-with-notes        |
+| CO-WP-027 | docs-only         | UX Information Architecture and Dashboard System               | planned (retained, not immediately executable) |
 | CO-WP-028 | docs-only         | Test Strategy, Fixtures and Integration Lab                    | planned                       |
 | CO-WP-029 | review-only       | Cross-Document Consistency and ADR Candidate Review            | planned                       |
 | CO-WP-030 | review-only       | Foundation Readiness Review                                    | planned                       |
@@ -52,7 +52,7 @@ Jedes Work Package hat genau **einen** primären Typ.
 
 > **Milestone-Hinweis 1 (nicht nummeriert):** `Milestone Lessons Review CO-WP-005 through CO-WP-012` — `completed-go-with-notes`. Gebündelter docs-only Review der acht Foundation-WPs; Ergebnis **GO WITH NOTES FOR CO-WP-013** (Commit 74f8e32). Keine `CO-WP-*`-ID; verändert die Queue-Reihenfolge nicht. Follow-ups (Capability-Count-Reconciliation, Risk-Register-Konsolidierung, Decision-Status-Harmonisierung) sind für ~`CO-WP-029`/`CO-WP-030` vorgemerkt.
 > **Milestone-Hinweis 2 (nicht nummeriert):** `Milestone Lessons Review CO-WP-013 through CO-WP-020` — `completed-go-with-notes` (Commit d09d91b). Gebündelter docs-only Review der acht Foundation-WPs (24 Dokumente); Ergebnis **GO WITH NOTES FOR CO-WP-021**. Neues Dokument `project-brain/MILESTONE_REVIEW_CO_WP_013_TO_020.md`; Lessons LL-023…030; NDF-Kandidaten NDF-FC-COREOPS-011…013 (`candidate-pending-nova-review`). Keine `CO-WP-*`-ID; verändert die Queue-Reihenfolge nicht. `CO-WP-021` bleibt `planned-next`. Follow-ups (Risk-Konsolidierung, Decision-Status-Harmonisierung, Capability-Count, Dokumentationsökonomie) für ~`CO-WP-029`/`CO-WP-030`. Decision Index und Risk Register read-only unverändert.
-> **Milestone-Vormerkung 3 (Planungshinweis, nicht nummeriert):** After completion of `CO-WP-026`, perform a bundled `CO-WP-021…026` Foundation Milestone Review. Umfang: gebündelte Lessons Learned · NDF Candidates · Decision-/Risk-Wachstum · Foundation-Konsistenz · Reporting-/Vulnerability-Roadmap · nächste Phase. Noch **nicht** terminiert; keine `CO-WP-*`-ID; verändert die Queue-Reihenfolge nicht; Lessons-Learned-/NDF-Register bleiben jetzt unverändert.
+> **Milestone-Vormerkung 3 (Planungshinweis, nicht nummeriert):** After completion of `CO-WP-026`, perform a bundled `CO-WP-021…026` Foundation Milestone Review — Status: `planned-next` · `not started`. Umfang: gebündelte Lessons Learned · NDF Candidates · Decision-/Risk-Wachstum · Foundation-Konsistenz · Reporting-/Vulnerability-Roadmap · nächste Phase. Keine `CO-WP-*`-ID; verändert die Queue-Reihenfolge nicht; Lessons-Learned-/NDF-Register bleiben jetzt unverändert.
 
 ## Zukünftige Reporting- und Vulnerability-Roadmap (roadmap-candidate, nicht nummeriert)
 
@@ -74,7 +74,8 @@ Geplante Capability-Chain (ohne WP-Nummern):
 ## Regeln
 
 - Genau ein primärer Typ pro Work Package.
-- Nur `CO-WP-026` ist der nächste geplante Schritt (`planned-next`) und **noch nicht begonnen**. `CO-WP-025` ist nach **Nova Review `GO WITH NOTES`** und geschlossener Notes-Runde `completed-go-with-notes`; der Human-Maintainer-Commit steht noch aus (Push wird **nicht** als bereits erfolgt dargestellt). `CO-WP-024` (`916ba66`) und `CO-WP-023` (`b324aad`) sind committet, gepusht und `completed-go-with-notes`.
+- **Verbindlicher nächster Schritt ist der gebündelte `CO-WP-021…026` Foundation Milestone Review** (Milestone-Vormerkung 3; keine `CO-WP-*`-ID; `planned-next`; **noch nicht begonnen**). `CO-WP-026` ist nach **Nova Review `GO WITH NOTES`** und geschlossener Notes-Runde `completed-go-with-notes`; der Human-Maintainer-Commit steht noch aus (Push wird **nicht** als bereits erfolgt dargestellt). `CO-WP-025` (`3419664`), `CO-WP-024` (`916ba66`) und `CO-WP-023` (`b324aad`) sind committet, gepusht und `completed-go-with-notes`.
+- Spätere Queue-Einträge (`CO-WP-027`…`CO-WP-031`) bleiben erhalten (**retained**), sind aber **nicht unmittelbar ausführbar**, solange der `CO-WP-021…026` Milestone Review nicht abgeschlossen ist. Kein reguläres Folge-WP (insbesondere nicht `CO-WP-027`) ist freigegeben; der Milestone Review selbst ist ebenfalls `not started`.
 - Keine automatische Freigabe eines Folge-Work-Packages.
 - Die Queue ist noch **nicht** final scope-locked.
 - Änderungen an der Queue nur durch ein später freigegebenes Work Package.

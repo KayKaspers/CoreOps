@@ -388,9 +388,18 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 - Decision Index +13 (DEC-S-332…344), Risk Register +5 (RISK-300…304, gesamt 304; Wachstumsgrenze §33 eingehalten).
 - **Keine Retention-/Deletion-/Archiv-/DLP-/Discovery-/Redaction-/Masking-/Anonymisierungs-/Storage-/Backup-/Encryption-/Sync-Technologie ausgewählt; keine ADR; keine reine Technology-Deferral-Decision; keine Compliance-/Rechts-/Zertifizierungsbehauptung; bestehende Data-/Audit-/Evidence-/Telemetry-/Topology-/Secret-/Offline-/CorePack-/Threat-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.**
 
+## Self-Protection, Degraded Modes and Recovery Mode (CO-WP-026)
+
+- Drei neue Dokumente: [SELF_PROTECTION_AND_CONTROL_PLANE_SAFETY_MODEL.md](../docs/security/SELF_PROTECTION_AND_CONTROL_PLANE_SAFETY_MODEL.md), [DEGRADED_MODE_AND_CAPABILITY_RESTRICTION_MODEL.md](../docs/architecture/DEGRADED_MODE_AND_CAPABILITY_RESTRICTION_MODEL.md), [RECOVERY_MODE_AUTHORITY_AND_CONTROLLED_RESTORATION_POLICY.md](../docs/governance/RECOVERY_MODE_AUTHORITY_AND_CONTROLLED_RESTORATION_POLICY.md). Adressiert RISK-11 (Self-Dependency); erweitert die Operational States aus CO-WP-023 §14; kein Parallelmodell.
+- `CoreOps self-protection ≠ protection of every managed asset`; `control-plane health ≠ managed-system health`; `process running ≠ platform governable`; **`governability ≠ bloße technische Erreichbarkeit`**; `monitoring unavailable ≠ system healthy`; `audit unavailable ≠ no operation occurred`; `trigger observed ≠ compromise proven`; `trigger absent ≠ platform safe`. 15 Schutzgüter, 23 Trigger-Kategorien, Protection Assessment (20 Felder), 12 Fault Domains (`shared infrastructure ≠ shared authority`; `fault in one workspace ≠ automatic global shutdown`), 20 Schutzmaßnahmen mit sechsstufiger Priorität (`protective action ≠ punishment/root-cause remediation`).
+- Zehn Operational Modes (normal/guarded/restricted/read-only/degraded/containment/recovery-only/recovery/emergency-stop/unknown) mit Capability Restriction Matrix über 23 Capability-Gruppen (permitted/with-approval/bounded-recovery/suspended/prohibited/unknown-fail-closed). `read-only mode ≠ no side effects`; `read-only UI ≠ read-only platform`; `restricted ≠ read-only`; `guarded ≠ degraded`; `degraded ≠ authority expansion/indefinite exception` (DEC-S-316); `containment ≠ recovery`; `emergency-stop ≠ permanent shutdown`; `unknown ≠ normal/safe` → fail-closed.
+- Recovery: `recovery mode ≠ ordinary mode ≠ backup restore ≠ rollback`; Recovery Authority eigenständig/begrenzt (`recovery operator ≠ recovery approver`; `local administrator ≠ recovery authority`; `break-glass ≠ unrestricted/permanent recovery authority`); 15 Stufen (`technical restoration ≠ governance restoration`; `service reachable ≠ recovery verified`); 11 Input-Klassen mit aktueller Trust-/Revocation-/Compatibility-Bewertung (`previously trusted ≠ currently trusted`; `backup exists ≠ valid for this target`); `secret restored ≠ secret trusted`; `key recovered ≠ key use authorized`; Partial/Unknown blockieren unsichere Wiederholung; Offline erweitert keine Recovery-Autorität; Recovery Exit braucht Reassessment/Verification/Reconciliation und kann in guarded/restricted/degraded austreten.
+- Decision Index +13 (DEC-S-345…357), Risk Register +5 (RISK-305…309, gesamt 309; Wachstumsgrenze §39 eingehalten).
+- **Keine Health-/Watchdog-/HA-/Failover-/Cluster-/Quorum-/Recovery-/Self-Healing-/Monitoring-/Backup-/Isolation-/Integrity-Scanning-/Orchestration-/Sync-/Reconciliation-Technologie ausgewählt; keine ADR; keine Technology-Deferral-Decision; keine Security-/Resilience-/Recovery-Readiness-/Compliance-Behauptung; bestehende Foundation-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.**
+
 ## Letztes Work Package
 
-`CO-WP-025 – Data Classification, Retention and Redaction` (docs-only / data-governance, retention, minimization, redaction and controlled-disclosure foundation). Nova Review `GO WITH NOTES`; Notes-Runde geschlossen; `completed-go-with-notes`; Human-Maintainer-Commit ausstehend (Push nicht als erfolgt dargestellt). Vorheriges WP: `CO-WP-024 – completed-go-with-notes` (Commit 916ba66, gepusht).
+`CO-WP-026 – Self-Protection, Degraded Modes and Recovery Mode` (docs-only / control-plane self-protection, degraded-operation and governed-recovery foundation). Nova Review `GO WITH NOTES`; Notes-Runde geschlossen; `completed-go-with-notes`; Human-Maintainer-Commit ausstehend (Push nicht als erfolgt dargestellt). Vorheriges WP: `CO-WP-025 – completed-go-with-notes` (Commit 3419664, gepusht).
 
 ## Zukünftige Roadmap und Milestone-Vormerkung
 
@@ -399,7 +408,7 @@ Architekturform, Frontend, Backend/API, Datenhaltung, Topologie-Persistenz, Cach
 
 ## Nächstes Work Package
 
-`CO-WP-026 – Self-Protection, Degraded Modes and Recovery Mode` (security-baseline; planned-next; **noch nicht begonnen**; erst nach Nova Review von CO-WP-025 und Human-Maintainer-Commit).
+**Verbindlicher nächster Schritt: gebündelter `CO-WP-021…026` Foundation Milestone Review** — Status `planned-next` · `not started` (keine WP-Nummer; erst nach Human-Maintainer-Commit von CO-WP-026). Umfang: gebündelte Lessons Learned · NDF Candidates · Decision-/Risk-Wachstum · Foundation-Konsistenz · Reporting-/Vulnerability-Roadmap · nächste Phase. Spätere Queue-Einträge (`CO-WP-027`…`CO-WP-031`) sind **retained**, aber bis zum Abschluss des Milestone Reviews **nicht unmittelbar ausführbar**; kein reguläres Folge-WP ist freigegeben.
 
 ## Human-Maintainer-Gates
 
