@@ -433,7 +433,38 @@ LL-031…038 konsolidiert (Lessons gesamt 38). NDF-FC-COREOPS-014…015 registri
 Grenzen:
 Kein NDF-Transfer; NDF v1.0.0 bleibt normativ, post-v1.0-`main` nur informativ und methodisch genutzt. Keine CDS-Adoption, kein CDS-Import, kein CDS-Pilot; eine nicht-aktivierende Gate-Notiz für `CO-WP-027` ist vermerkt. Decision Index und Risk Register read-only unverändert; kein Foundation-Dokument geändert; `CO-WP-027` nicht begonnen.
 
-**Verbindlicher nächster Schritt:** Human-Maintainer-Commit des Milestone Reviews. Erst danach entscheiden Nova/Human Maintainer über die Freigabe des nächsten regulären Queue-Eintrags. Empfehlung des Reviews: `GO WITH NOTES FOR CO-WP-027` — **keine** Freigabe erteilt. Spätere Queue-Einträge (`CO-WP-027`…`CO-WP-031`) bleiben **retained** und sind nicht freigegeben.
+**Abschluss:** Der Milestone Review ist durch den Human Maintainer committet und gepusht (**`2e1ab66`**, Branch gleichauf mit `origin/main`); Status `completed-go-with-notes`. Die Empfehlung lautete `GO WITH NOTES FOR CO-WP-027`; die Freigabe von `CO-WP-027` erfolgte anschließend durch den Human Maintainer. `CO-WP-028`…`CO-WP-031` bleiben **retained** und sind nicht freigegeben.
+
+## UX Information Architecture and Dashboard System
+
+Current implemented WP:
+`CO-WP-027 – UX Information Architecture and Dashboard System` – Nova Review `GO WITH NOTES`; Notes-Runde (Notes 1–3) geschlossen; `completed-go-with-notes` (Human-Maintainer-Commit ausstehend). Repository-Baseline `2e1ab66`.
+
+Nova-Notes-Closure (1–3):
+(1) **UX-Dimensionen präsentationsseitig begrenzt** — die elf Dimensionen sind eine Darstellungsordnung über bestehenden autoritativen Modellen, **kein** neues autoritatives Statusschema, kein Statusobjekt, kein Lebenszyklus (`UX presentation dimensions ≠ new authoritative status schema`; `presentation ≠ source-of-truth ownership`). Kein Subjekt muss alle elf Dimensionen materialisieren; Anwendbarkeit und Wert sind getrennt (`not applicable ≠ unknown`; `dimension not applicable to a subject ≠ applicable dimension whose value is unknown`); jede Dimension bleibt durch ihr bestehendes autoritatives Modell governt.
+(2) **Presentation Context vs Authorization Scope getrennt** — die Experience-Ebene **referenziert** bestehende Scope-Identitäten und bindet eine Sicht daran; MOD-IAM-001/MOD-POL-001 bleiben allein autoritativ (`presentation context ≠ authorization scope`; `referencing a scope identity ≠ performing authorization`; `context narrowing ≠ permission mutation`; `navigation ≠ authorization`; `UI visibility ≠ permission result`). Kein zweites Scope-Modell; RBAC-Foundation-Dateien unverändert.
+(3) **Simple/Expert-Fallback als Darstellungsentscheidung präzisiert** — `safe presentation fallback: Simple / reduced-complexity presentation`, ausdrücklich **kein** anderer Autorisierungszustand und **keine** Rechteeinschränkung (`Simple mode ≠ fewer permissions`; `Expert mode ≠ more permissions`; `Expert mode ≠ Break Glass`; `mode preference ≠ authorization`). Presentation Modes und Operational Modes sind explizit abgegrenzt.
+
+Current UX foundation:
+Drei neue Dokumente: UX Information Architecture and Navigation Model (Experience-Autoritätsgrenze, Presentation Context über die acht bestehenden RBAC-Scopes, 13 Top-Level-Informationsbereiche mit Capability-/Modul-Traceability, Domain Lenses, Application Shell, Navigationssemantik, Overview→List→Detail→Evidence, State-Navigation, vier Ursachenklassen für Nichtverfügbarkeit, Simple/Expert-Semantik, degradierte/offline Sichtbarkeit, sechs Nullzustände, Such-/Hilfe-Einstiegspunkte, CDS Reconciliation Boundary), Dashboard Information Hierarchy and State Presentation Model (Dashboard-Autoritätsgrenze, Scope-Bindung, vierstufige Informationshierarchie, Region-/Summary-Item-Semantik ohne Komponentenwahl, Priorisierungsregeln, **elf getrennte Statusdimensionen**, Freshness/Confidence/Validation, Evidence und Provenance-Pfad, Abdeckung/Partial/Unknown, Konfliktsichtbarkeit, Capability-/Permission-Darstellung, Operational Mode, CoreScore-Grenze, last-known vs current, Leer-/Fehler-/Offline-Zustände, Profile, read-first-Grenze) und UX Action Safety, Accessibility and Disclosure Policy (Experience-Ausführungsgrenze, zehnstufiger Dangerous-Action-Pfad, acht Pflichtangaben, Bestätigungsgrenze, Preview/Plan, Ziel-/Scope-Bindung, Ergebnis-/Partial-/Unknown-/Verifikationsdarstellung, Simple/Expert-Autoritätsgrenze, zwölf Accessibility-Designanforderungen, DE/EN, Accessibility-Claim-Grenze, Klassifikation/Redaction/Secret-/Evidence-Grenzen, sieben Export-/Copy-/Rendering-Flächen, Isolation, Failure/Unknown). `presentation ≠ source of truth`; `dashboard representation ≠ authoritative domain state`; `summary ≠ completeness`; `navigation ≠ domain ownership ≠ target binding`; `selection ≠ authorization`; `hidden ≠ nonexistent`; `Simple mode ≠ different authorization model`; `Expert mode ≠ authority expansion`; `permission denied ≠ capability unavailable ≠ unknown ≠ restricted by mode`; `unknown ≠ healthy`; `stale ≠ current`; `partial ≠ complete`; `degraded ≠ failed`; `preview ≠ execution`; `confirmation ≠ approval`; `approval ≠ execution authorization`; `executed ≠ successful ≠ verified`; `evidence reference ≠ raw evidence discloseable`; `secret reference ≠ secret value`.
+
+Frontend, component, routing, state-management, design, charting and accessibility-tooling technology:
+not selected
+
+Accessibility:
+Designanforderung; **keine** WCAG-Konformität, **keine** Validierung, **kein** Screen-Reader-Nachweis, **keine** Keyboard-Tests, **keine** Zertifizierung, **keine** Accessibility-Evidenz erzeugt
+
+Simple/Expert:
+im autoritativen Produktmodell (Concept V3, Abschnitt UX) **bereits benannt**, dort **ohne** Semantik; UX-Semantik in CO-WP-027 definiert, **ohne** neue Autorität
+
+Register:
+Decision Index +8 (DEC-S-358…365, lückenlos); Risk Register +4 (RISK-310…313, gesamt 313), Severity bewusst differenziert (1× high, 3× medium). Erster Accessibility-Eintrag des Registers (RISK-313). Keine ADR.
+
+CDS:
+`Candidate` / **read-only** Vergleichseingabe. Keine Adoption, kein Import, keine Tokens, kein Product Profile, **kein** aktivierter Pilot, keine Adoption-Evidenz. `CDS-WP-017` inaktiv. Der CDS-Reife-Re-Check bleibt vor jeder substanziellen Designübernahme erforderlich.
+
+Grenzen:
+Kein NDF-Transfer; NDF v1.0.0 bleibt normativ. Lessons-Learned-Register und NDF-Feedback-Kandidaten **unverändert** (Sammlung für den späteren Milestone Review). Keine Technologieauswahl, keine Mockups, keine Screenshots, kein Implementierungsanspruch. `CO-WP-028` nicht begonnen.
 
 ## Current Goal
 
@@ -464,7 +495,7 @@ Dokumentation, Scope, Architektur, Security, Governance und Verträge definieren
 
 ## Next Work Package
 
-Kein reguläres Work Package ist freigegeben. Zuletzt bearbeitet: `Foundation Milestone Review CO-WP-021…026` (unnummeriert, `completed-go-with-notes`, Nova Review `GO WITH NOTES`). Nächster Schritt ist der Human-Maintainer-Commit dieses Milestone Reviews; erst danach entscheiden Nova/Human Maintainer über die Freigabe des nächsten Queue-Eintrags (`CO-WP-027 – UX Information Architecture and Dashboard System`, derzeit **retained**, nicht freigegeben).
+Zuletzt bearbeitet: `CO-WP-027 – UX Information Architecture and Dashboard System` — Nova Review `GO WITH NOTES`, Notes-Runde (1–3) geschlossen, Status `completed-go-with-notes`. Nächster Schritt ist der **Human-Maintainer-Commit von `CO-WP-027`**. Erst anschließend entscheiden Nova/Human Maintainer über die Freigabe des nächsten Queue-Eintrags (`CO-WP-028 – Test Strategy, Fixtures and Integration Lab`, derzeit **retained**, nicht freigegeben, nicht begonnen). Der vorangegangene `Foundation Milestone Review CO-WP-021…026` ist `completed-go-with-notes` und committet (`2e1ab66`).
 
 ## Foundation Exit Conditions
 

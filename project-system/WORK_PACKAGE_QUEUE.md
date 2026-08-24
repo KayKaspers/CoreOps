@@ -44,7 +44,7 @@ Jedes Work Package hat genau **einen** primären Typ.
 | CO-WP-024 | security-baseline | Secrets, Configuration Vault and Key Custody                   | completed-go-with-notes        |
 | CO-WP-025 | docs-only         | Data Classification, Retention and Redaction                   | completed-go-with-notes        |
 | CO-WP-026 | security-baseline | Self-Protection, Degraded Modes and Recovery Mode              | completed-go-with-notes        |
-| CO-WP-027 | docs-only         | UX Information Architecture and Dashboard System               | planned (retained, not immediately executable) |
+| CO-WP-027 | docs-only         | UX Information Architecture and Dashboard System               | completed-go-with-notes        |
 | CO-WP-028 | docs-only         | Test Strategy, Fixtures and Integration Lab                    | planned                       |
 | CO-WP-029 | review-only       | Cross-Document Consistency and ADR Candidate Review            | planned                       |
 | CO-WP-030 | review-only       | Foundation Readiness Review                                    | planned                       |
@@ -74,8 +74,9 @@ Geplante Capability-Chain (ohne WP-Nummern):
 ## Regeln
 
 - Genau ein primärer Typ pro Work Package.
-- **Der gebündelte `CO-WP-021…026` Foundation Milestone Review ist abgeschlossen** (Milestone-Hinweis 3; keine `CO-WP-*`-ID; `completed-go-with-notes`; Nova Review **GO WITH NOTES**). `CO-WP-026` ist nach **Nova Review `GO WITH NOTES`** und geschlossener Notes-Runde `completed-go-with-notes` und **committet** (`399de21`); der Branch ist mit `origin/main` gleichauf. `CO-WP-025` (`3419664`), `CO-WP-024` (`916ba66`) und `CO-WP-023` (`b324aad`) sind ebenfalls committet, gepusht und `completed-go-with-notes`.
-- Spätere Queue-Einträge (`CO-WP-027`…`CO-WP-031`) bleiben erhalten (**retained**). Der Milestone Review **empfiehlt** `GO WITH NOTES FOR CO-WP-027`, **erteilt aber keine Freigabe**: kein reguläres Folge-WP (insbesondere nicht `CO-WP-027`) ist freigegeben, solange Nova und der Human Maintainer den Milestone Review nicht abgenommen haben. Für `CO-WP-027` gilt zusätzlich der CDS-Gate-Hinweis (Re-Check der dann aktuellen CDS-Reife, Consumer-Evidenz und Pilot-Autorisierung vor substanzieller Designübernahme; **aktiviert keinen Pilot**).
+- **Der gebündelte `CO-WP-021…026` Foundation Milestone Review ist abgeschlossen und committet** (Milestone-Hinweis 3; keine `CO-WP-*`-ID; `completed-go-with-notes`; Nova Review **GO WITH NOTES**; Human-Maintainer-Commit **`2e1ab66`**, gepusht; Branch gleichauf mit `origin/main`). `CO-WP-026` ist `completed-go-with-notes` und committet (`399de21`); `CO-WP-025` (`3419664`), `CO-WP-024` (`916ba66`) und `CO-WP-023` (`b324aad`) sind ebenfalls committet, gepusht und `completed-go-with-notes`.
+- **`CO-WP-027` ist bearbeitet und nach Nova Review `GO WITH NOTES` mit geschlossener Notes-Runde (Notes 1–3) `completed-go-with-notes`** (drei neue Foundation-Dokumente; Human-Maintainer-Commit ausstehend). Notes-Closure: (1) die elf Darstellungsdimensionen sind ausdrücklich **kein** neues autoritatives Statusschema, kein Subjekt muss alle materialisieren, `not applicable ≠ unknown`; (2) `presentation context ≠ authorization scope` — die Experience-Ebene referenziert bestehende Scope-Identitäten, MOD-IAM-001/MOD-POL-001 bleiben allein autoritativ, kein zweites Scope-Modell; (3) der Fallback bei fehlender Modus-Präferenz ist ein `safe presentation fallback` (Simple/reduced-complexity presentation), **kein** anderer Autorisierungszustand. Der CDS-Gate-Hinweis wurde eingehalten: CDS bleibt **read-only** Vergleichseingabe, **keine** Adoption, **kein** Import, **kein** aktivierter Pilot; ein Re-Check der dann aktuellen CDS-Reife, Consumer-Evidenz und Pilot-Autorisierung bleibt vor jeder substanziellen Designübernahme erforderlich.
+- Spätere Queue-Einträge (`CO-WP-028`…`CO-WP-031`) bleiben erhalten (**retained**) und sind **nicht** freigegeben; `CO-WP-028` ist nicht begonnen.
 - Keine automatische Freigabe eines Folge-Work-Packages.
 - Die Queue ist noch **nicht** final scope-locked.
 - Änderungen an der Queue nur durch ein später freigegebenes Work Package.
