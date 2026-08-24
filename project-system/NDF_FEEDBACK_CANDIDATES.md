@@ -451,13 +451,82 @@
 - **Backlink Status:** none
 - **Notes:** Evidenz aus CO-WP-020 (Manual Authority) auf Basis Break Glass (CO-WP-009) und Divergence Exceptions (CO-WP-012). Kein Transfer/keine Adoption automatisch gestartet.
 
+## NDF-FC-COREOPS-014
+
+- **Candidate ID:** NDF-FC-COREOPS-014
+- **Source Lesson ID:** LL-036
+- **Source Project:** CoreOps
+- **Source Work Package:** CO-WP-021…CO-WP-026 (Foundation Milestone Review, mit externer Betriebsevidenz)
+- **Category:** Process / Change and Recovery Governance
+- **Title:** Bindung des Wiederherstellungsziels an den erfassten Vorzustand
+- **Generalized Observation:** Governance-Vorlagen formulieren regelmäßig „Wiederherstellung behauptet ≠ Wiederherstellung verifiziert", benennen aber nicht die **Referenz** der Verifikation. Ist die Wiederherstellung des Vorzustands das erklärte Ziel, muss das Wiederherstellungsziel an den **erfassten beobachteten** Vorzustand gebunden sein, nicht an einen angenommenen oder fest kodierten Zustand. Abgrenzung: gilt nicht bei Forward Recovery; ein erfasster Vorzustand ist ein Referenzpunkt, keine Trust-Aussage.
+- **Cross-Project Impact:** Relevant für jedes Projekt mit rückführbaren Änderungen an Konfiguration, Paket-/Abhängigkeitszuständen oder Infrastruktur — unabhängig von Domäne und Technologie.
+- **Recommended NDF Change:** Als Guidance-Muster für Change-/Recovery-Vorlagen dokumentieren: Vorzustands-Erfassung als benannte Referenz, plus die Abgrenzung Vorzustands-Wiederherstellung vs. Forward Recovery.
+- **Potential NDF Target Area:** NDF Change-/Rollback-/Recovery-Guidance.
+- **Evidence:** `docs/security/SAFE_REMEDIATION_AND_STATE_CHANGE_POLICY.md` §16; `docs/security/DEPLOYMENT_TARGETING_EXECUTION_AND_RECOVERY_POLICY.md` §22; `docs/governance/RECOVERY_MODE_AUTHORITY_AND_CONTROLLED_RESTORATION_POLICY.md` §9/§11; `project-brain/MILESTONE_REVIEW_CO_WP_021_TO_026.md` §23.2 (repository-weite Suche ohne Treffer für Vorzustands-Erfassung).
+- **Security Relevance:** yes.
+- **Privacy Review:** PASS.
+- **Public-Neutrality Review:** PASS (Betriebsevidenz generisch; keine Umgebungsdetails, Hostnamen, Pfade oder Produktzuordnungen).
+- **Existing NDF Rule Check:** kein bekanntes verbindliches NDF-Äquivalent.
+- **Duplicate Check:** kein Duplikat zu NDF-FC-COREOPS-011 (Unknown Outcome/Retry) oder 012 (Evidence-Dimensionen); dort geht es um Ergebnisunsicherheit bzw. Evidenzgüte, hier um die Referenzquelle einer Wiederherstellung.
+- **Breaking-Change Potential:** gering (additive Guidance).
+- **Suggested Bundle:** potenzielles Bundle „Change and Recovery Verification" (mit 015).
+- **Status:** candidate-pending-nova-review
+- **Nova Gate:** pending
+- **Human-Maintainer Gate:** pending
+- **Transfer Readiness:** nicht bewertet; kein Transfer gestartet.
+- **Intake Work Package:** —
+- **Intake Commit:** —
+- **NDF Work Package:** —
+- **Adoption Work Package:** —
+- **NDF Adoption Commit:** —
+- **Adoption Status:** not started
+- **NDF Adoption Version:** —
+- **Backlink Status:** none
+- **Notes:** Evidenzstärke der zugrunde liegenden Betriebsbeobachtung: `limited` (Einzelfall, projektextern, nicht reproduziert, kein CoreOps-Code beteiligt). Der Kandidat stützt sich zusätzlich auf die im Repository verifizierte Abwesenheit eines Vorzustands-Erfassungskonzepts. Kein Transfer/keine Adoption automatisch gestartet.
+
+## NDF-FC-COREOPS-015
+
+- **Candidate ID:** NDF-FC-COREOPS-015
+- **Source Lesson ID:** LL-037
+- **Source Project:** CoreOps
+- **Source Work Package:** CO-WP-021…CO-WP-026 (Foundation Milestone Review, mit externer Betriebsevidenz)
+- **Category:** Process / Change Verification
+- **Title:** Expected-vs-actual-Änderungsvergleich als eigenständiges Evidenzkonzept
+- **Generalized Observation:** Wo eine Vorschau bzw. Simulation vor der Ausführung vorgeschrieben ist, prüft die nachgelagerte Verifikation üblicherweise nur, ob der **gewünschte Zustand** erreicht wurde. Der Vergleich **vorhergesagte gegen tatsächliche Änderungsmenge** ist eine davon getrennte Achse: er misst die Verlässlichkeit der Vorschau. Eine materielle Abweichung ist ein eigenständiges Signal, das eine bestandene Zustandsprüfung nicht sichtbar macht. Die Grenze „Simulation ≠ Ausführungsfreigabe" bleibt unberührt.
+- **Cross-Project Impact:** Relevant für jedes Projekt mit Preview-/Dry-Run-/Plan-vor-Apply-Verfahren.
+- **Recommended NDF Change:** Als Guidance-Muster dokumentieren: Vorschau-Treue als getrennte Evidenzachse neben der Zielzustandsprüfung, ohne die Freigabe-Semantik der Vorschau zu verändern.
+- **Potential NDF Target Area:** NDF Verification-/Evidence-Guidance.
+- **Evidence:** `docs/security/SAFE_REMEDIATION_AND_STATE_CHANGE_POLICY.md` §6 (`simulate/preview`, `preview must not mutate target state`); `docs/architecture/PROJECT_BRIEF.md` (Grundsatz „Preview vor Execute"); `docs/architecture/CONCEPT_DECISION_CLASSIFICATION.md` BG-04; `docs/architecture/FOUNDATION_CAPABILITY_MATRIX.md` CAP-DEPLOY-003; `project-brain/MILESTONE_REVIEW_CO_WP_021_TO_026.md` §23.3.
+- **Security Relevance:** no.
+- **Privacy Review:** PASS.
+- **Public-Neutrality Review:** PASS (Betriebsevidenz generisch; keine Umgebungsdetails oder Produktzuordnungen).
+- **Existing NDF Rule Check:** kein bekanntes verbindliches NDF-Äquivalent.
+- **Duplicate Check:** kein Duplikat zu NDF-FC-COREOPS-012 (Evidence-Dimensionen/Sufficiency); dort geht es um die Güte vorhandener Evidenz, hier um eine zusätzliche Vergleichsachse.
+- **Breaking-Change Potential:** gering (additive Guidance).
+- **Suggested Bundle:** potenzielles Bundle „Change and Recovery Verification" (mit 014).
+- **Status:** candidate-pending-nova-review
+- **Nova Gate:** pending
+- **Human-Maintainer Gate:** pending
+- **Transfer Readiness:** nicht bewertet; kein Transfer gestartet.
+- **Intake Work Package:** —
+- **Intake Commit:** —
+- **NDF Work Package:** —
+- **Adoption Work Package:** —
+- **NDF Adoption Commit:** —
+- **Adoption Status:** not started
+- **NDF Adoption Version:** —
+- **Backlink Status:** none
+- **Notes:** Evidenzstärke der zugrunde liegenden Betriebsbeobachtung: `limited` (Einzelfall, projektextern, nicht reproduziert). Kein Transfer/keine Adoption automatisch gestartet.
+
 ## Zusammenfassung
 
-- **Anzahl Kandidaten:** 13 (NDF-FC-COREOPS-001…007 adoptiert; NDF-FC-COREOPS-008…010 aus Milestone Review CO-WP-005…012; NDF-FC-COREOPS-011…013 neu aus Milestone Review CO-WP-013…020)
-- **Status-Verteilung (nach Milestone Review CO-WP-013…020):** `adopted-in-ndf` 7 · `candidate-pending-nova-review` 6 · `transferred-to-ndf` 0
+- **Anzahl Kandidaten:** 15 (NDF-FC-COREOPS-001…007 adoptiert; NDF-FC-COREOPS-008…010 aus Milestone Review CO-WP-005…012; NDF-FC-COREOPS-011…013 aus Milestone Review CO-WP-013…020; NDF-FC-COREOPS-014…015 neu aus dem Foundation Milestone Review CO-WP-021…026)
+- **Status-Verteilung (nach Foundation Milestone Review CO-WP-021…026):** `adopted-in-ndf` 7 · `candidate-pending-nova-review` 8 · `transferred-to-ndf` 0
 - **Bundles (Transfer Package 001):** Bundle 1 „Work-Package Safety and Source Handling" (001, 003, 004), Bundle 2 „Skills Availability and Context Economy" (002), Bundle 3 „Governance and Status Modeling" (005, 006, 007)
 - **Nova Gate:** approved für alle 7. **Human-Maintainer Gate:** approved für alle 7. **Intake Work Package:** NDF-INTAKE-COREOPS-001 für alle 7 (Commit d08e35e).
 - **Adoption-Zuordnung:** Adoption A `NDF-ADOPT-COREOPS-001A` (Commit 1ebffa6) — Kandidaten 001, 003, 004. Adoption B `NDF-ADOPT-COREOPS-001B` (Commit e894c6f) — Kandidat 002. Adoption C `NDF-ADOPT-COREOPS-001C` (Commit ebf716c) — Kandidaten 005, 006, 007.
 - **Alle sieben Kandidaten wurden über drei geprüfte Human-Maintainer-Commits in den aktuellen NDF-Entwicklungszweig adoptiert.** Release-Versionszuordnung bleibt offen (`not yet assigned`); keine NDF-Version wird behauptet. `adopted-in-ndf` bedeutet **nicht** "in einer veröffentlichten NDF-Version enthalten".
-- **Neue Kandidaten aus dem Milestone Review CO-WP-005…012 (008, 009, 010) und CO-WP-013…020 (011, 012, 013):** Status `candidate-pending-nova-review`; Nova Gate und Human-Maintainer Gate `pending`; kein Transfer, keine Adoption und kein NDF-Commit gestartet. Erwartete Nova-/Human-Maintainer-Bündelentscheidung für 008…013. Die Zeilen zum Transfer Package 001 (Adoption/Intake/Commits) beziehen sich ausschließlich auf Kandidaten 001–007.
-- **Mögliche Bündel für 008…013 (Vorschlag, nicht entschieden):** „Decision & Status Modeling" (008), „Security Coherence" (009, 010), „Execution & Data Governance" (011, 012), „Human Governance & Manual Authority" (013).
+- **Neue Kandidaten aus dem Milestone Review CO-WP-005…012 (008, 009, 010), CO-WP-013…020 (011, 012, 013) und dem Foundation Milestone Review CO-WP-021…026 (014, 015):** Status `candidate-pending-nova-review`; Nova Gate und Human-Maintainer Gate `pending`; kein Transfer, keine Adoption und kein NDF-Commit gestartet. Erwartete Nova-/Human-Maintainer-Bündelentscheidung für 008…015. Die Zeilen zum Transfer Package 001 (Adoption/Intake/Commits) beziehen sich ausschließlich auf Kandidaten 001–007.
+- **Mögliche Bündel für 008…015 (Vorschlag, nicht entschieden):** „Decision & Status Modeling" (008), „Security Coherence" (009, 010), „Execution & Data Governance" (011, 012), „Human Governance & Manual Authority" (013), „Change and Recovery Verification" (014, 015).
+- **Im Foundation Milestone Review CO-WP-021…026 bewertet und ausdrücklich NICHT promoted:** consumer-gebundene Dependency-Contract-Health (LL-035; Betriebsdomänen-Muster, teilweise durch 012 abgedeckt) · protected unexpected drift (zu eng an das CoreOps-Drift-Modell gebunden) · Cleanup-/Restoration-Verifikation (projektintern bereits umgesetzt, als Framework-Kandidat derzeit zu schwach) · Revisionsbindung/Zustandsketten/Referenzieren-statt-Duplizieren (LL-031/032/033; durch 009 und 011 teilabgedeckt). Deduplikation erfolgte **vor** Registrierung; keine Dublette angelegt.

@@ -666,14 +666,190 @@ Owner-Rollen: `Human Maintainer` · `Nova` · `Implementation Agent` · `Securit
 - **Follow-up Work Package:** Dokumentationsökonomie-Prüfung (~CO-WP-030)
 - **Notes:** Konsolidiert im Milestone Review CO-WP-013…020; erweitert LL-020/LL-021.
 
+## LL-031
+
+- **Source Project:** CoreOps
+- **Source Work Package:** CO-WP-021…CO-WP-026 (Milestone Review)
+- **Date or Phase:** Foundation 0.1
+- **Title:** Bindung privilegierter Aktionen an konkrete Revisionen statt an veränderliche Aliase skaliert als ein Muster über mehrere Domänen
+- **Context:** Deployment (021), Artifact Trust (022), CorePack (023), Secret/Key Custody (024) und Recovery (026) binden privilegierte Aktionen jeweils an eine konkrete, bewertete Revision; ein Alias dient nur der Discovery.
+- **Observation:** Dieselbe Regel wurde in fünf Domänen wiederverwendet, ohne zu kollidieren oder ein Parallelmodell zu erzeugen — belegt durch `mutable alias ≠ final privileged-deployment binding` (022), `mutable alias ≠ final binding` (023) und „Mutable Aliases sind **keine** finale Recovery-Bindung" (026 §9).
+- **Evidence:** ARTIFACT_TRUST_QUARANTINE_AND_REVOCATION_POLICY (Security Invariants); COREPACK_IDENTITY_CONTENT_AND_LIFECYCLE_MODEL §12; RECOVERY_MODE_AUTHORITY_AND_CONTROLLED_RESTORATION_POLICY §9; DEPLOYMENT_CONTROL_PLANE_AND_EXECUTION_MODEL §13; Milestone Review CO-WP-021…026 §12.
+- **Impact:** Ein einziges Bindungsmuster verhindert Alias-Drift und Doppelmodellierung über die gesamte Supply- und Recovery-Kette.
+- **Contributing Factor or Root Cause:** Frühe Trennung `identity ≠ alias ≠ version ≠ revision ≠ instance` in CO-WP-022, danach konsequent referenziert.
+- **Recommended Project Change:** In späteren Implementierungs-WPs als Pflichtprüfung führen (jede privilegierte Resolution bindet eine Revision).
+- **Classification:** LL-ARCHITECTURE
+- **Secondary Classifications:** LL-SECURITY
+- **Reusable Beyond CoreOps:** yes
+- **Security Relevance:** yes
+- **NDF Candidate ID:** — (durch NDF-FC-COREOPS-009 teilabgedeckt; keine Dublette registriert)
+- **Owner Role:** Security Review
+- **Status:** observed
+- **Follow-up Work Package:** spätere Implementierungs-/Konsistenz-WPs (~CO-WP-029)
+- **Notes:** Konsolidiert im Milestone Review CO-WP-021…026.
+
+## LL-032
+
+- **Source Project:** CoreOps
+- **Source Work Package:** CO-WP-021…CO-WP-026 (Milestone Review)
+- **Date or Phase:** Foundation 0.1
+- **Title:** Mehrstufige Zustandsketten statt binärer Erfolgsmodelle verhindern stille Autoritätssprünge
+- **Context:** CorePack (`transferred ≠ imported ≠ trusted ≠ activated ≠ deployment authorised`), Secret Use (zehn getrennte Zustände von `retrieval request` bis `outcome verification`) und Recovery (15 Stufen) modellieren Ketten statt Erfolg/Fehlschlag.
+- **Observation:** Jede Kettenstufe trägt eigene Autorität; keine Stufe impliziert die nächste — belegt durch `stage completed ≠ next stage automatically authorized` (026 §8) und `quarantine release ≠ activation authorization` (023).
+- **Evidence:** COREPACK_IDENTITY_CONTENT_AND_LIFECYCLE_MODEL §20; SECRETS_CONFIGURATION_VAULT_AND_CUSTODY_GOVERNANCE §11; RECOVERY_MODE_AUTHORITY_AND_CONTROLLED_RESTORATION_POLICY §8; Milestone Review CO-WP-021…026 §11.
+- **Impact:** Autoritätsgrenzen bleiben auch bei Teil- und Unbekannt-Ausgängen intakt; keine impliziten Freigaben.
+- **Contributing Factor or Root Cause:** Konsequente Anwendung des Unknown-Outcome-Musters (LL-024) auf Lebenszyklen statt auf Einzelergebnisse.
+- **Recommended Project Change:** Zustandsketten in API-/UI-Design (CO-WP-027) und Teststrategie (CO-WP-028) sichtbar halten, nicht auf Erfolg/Fehlschlag reduzieren.
+- **Classification:** LL-ARCHITECTURE
+- **Secondary Classifications:** LL-SECURITY
+- **Reusable Beyond CoreOps:** yes
+- **Security Relevance:** yes
+- **NDF Candidate ID:** — (erweitert LL-024/NDF-FC-COREOPS-011; keine Dublette registriert)
+- **Owner Role:** Nova
+- **Status:** observed
+- **Follow-up Work Package:** CO-WP-027/028
+- **Notes:** Konsolidiert im Milestone Review CO-WP-021…026; erweitert LL-024.
+
+## LL-033
+
+- **Source Project:** CoreOps
+- **Source Work Package:** CO-WP-021…CO-WP-026 (Milestone Review)
+- **Date or Phase:** Foundation 0.1
+- **Title:** Eine einmal autoritativ definierte und danach referenzierte Querschnittsgrenze verhindert Parallelmodelle
+- **Context:** CO-WP-023 definierte die Offline-Autoritätsgrenze autoritativ; CO-WP-024, 025 und 026 referenzierten sie für Secrets, Retention/Disclosure und Recovery, statt eigene Offline-Modelle zu bauen.
+- **Observation:** Referenzieren statt Duplizieren hielt `central authority unavailable ≠ local authority expands automatically` über vier WPs wortgleich und senkte zugleich die Registerlast — der stärkste Dedup-Befund des Milestones.
+- **Evidence:** RESTRICTED_ISOLATED_AND_AIR_GAPPED_OPERATION_MODEL §7-12; KEY_MATERIAL_ROTATION_REVOCATION_AND_RECOVERY_POLICY §14; CONFIGURATION_SOURCE_OF_TRUTH_AND_SECRET_REFERENCE_MODEL §16; SELF_PROTECTION_AND_CONTROL_PLANE_SAFETY_MODEL (Invarianten); Milestone Review CO-WP-021…026 §14.
+- **Impact:** Keine Offline-Invariantendubletten ab CO-WP-024; das Verfahren ist auf die Invarianten-Grundkette übertragbar (LL-030).
+- **Contributing Factor or Root Cause:** Autoritative Erstdefinition in einem WP plus Dedup-Disziplin in den Folge-WPs.
+- **Recommended Project Change:** Referenzieren-statt-Duplizieren als Standard für alle Querschnittsinvarianten beibehalten und auf das Invarianten-Referenzdokument (LL-030) anwenden.
+- **Classification:** LL-SECURITY
+- **Secondary Classifications:** LL-ARCHITECTURE, LL-DOCUMENTATION
+- **Reusable Beyond CoreOps:** yes
+- **Security Relevance:** yes
+- **NDF Candidate ID:** — (Methodenmuster; durch NDF-FC-COREOPS-009 teilabgedeckt)
+- **Owner Role:** Security Review
+- **Status:** observed
+- **Follow-up Work Package:** Dokumentationsökonomie (~CO-WP-030)
+- **Notes:** Konsolidiert im Milestone Review CO-WP-021…026; stützt LL-030.
+
+## LL-034
+
+- **Source Project:** CoreOps
+- **Source Work Package:** CO-WP-021…CO-WP-026 (Milestone Review)
+- **Date or Phase:** Foundation 0.1
+- **Title:** Recovery ist ein Autoritäts- und Trust-Problem, nicht nur ein Restore-Problem
+- **Context:** CO-WP-026 trennt Recovery Mode von Backup Restore und Deployment Rollback und verlangt für den Exit Reassessment, Verification und Reconciliation; 021 und 024 liefern die technischen Rollback-/Recovery-Bausteine.
+- **Observation:** `technical restoration ≠ governance restoration`, `service restored ≠ authority restored` und `previously trusted ≠ currently trusted` sind die entscheidenden Grenzen: ein wieder laufender Dienst mit historisch vertrauten Inputs ist kein wiederhergestellter Governance-Zustand.
+- **Evidence:** RECOVERY_MODE_AUTHORITY_AND_CONTROLLED_RESTORATION_POLICY §6-10/§16; DEPLOYMENT_CONTROL_PLANE_AND_EXECUTION_MODEL §24-25; KEY_MATERIAL_ROTATION_REVOCATION_AND_RECOVERY_POLICY §11; Milestone Review CO-WP-021…026 §16.
+- **Impact:** Recovery-Design wird als Autoritäts-/Trust-Problem geplant statt als reines Wiederherstellungsproblem; verhindert verfrühte Exit-Entscheidungen.
+- **Contributing Factor or Root Cause:** Bewusste Schichtung dreier Recovery-Ebenen mit expliziter Disambiguierung statt eines einzigen Restore-Begriffs.
+- **Recommended Project Change:** Spätere Recovery-Runbooks an den 15 Stufen und der Exit-Checkliste ausrichten, nicht an Backup-Werkzeugen.
+- **Classification:** LL-SECURITY
+- **Secondary Classifications:** LL-ARCHITECTURE
+- **Reusable Beyond CoreOps:** yes
+- **Security Relevance:** yes
+- **NDF Candidate ID:** —
+- **Owner Role:** Security Review
+- **Status:** observed
+- **Follow-up Work Package:** spätere Recovery-Design-/Implementierungs-WPs
+- **Notes:** Konsolidiert im Milestone Review CO-WP-021…026.
+
+## LL-035
+
+- **Source Project:** CoreOps
+- **Source Work Package:** CO-WP-021…CO-WP-026 (Milestone Review, mit externer Betriebsevidenz)
+- **Date or Phase:** Foundation 0.1
+- **Title:** Health muss quell-, scope- und pfadgebunden sein; ein globaler Health-Boolean verdeckt reale Betriebszustände
+- **Context:** Externe Betriebsevidenz (generisch): ein Provider-Prozess war aktiv, exponierte nach einem Paket-Update aber einen materiell anderen Endpunkt-/Authentifizierungsvertrag; die konsumierende Anwendung schlug fehl, obwohl der Dienst als aktiv galt. Zugleich war ein lokaler Anwendungs-Origin gesund, während ein externer Erreichbarkeitspfad es nicht war.
+- **Observation:** Das bestehende CoreOps-Telemetriemodell trägt den Fall bereits: Health hat sechs Klassen (`self-reported · externally observed · synthetic · dependency · derived · unknown`) sowie Source, Freshness und Observation Scope, und führt `dependency healthy ≠ service healthy` und `self-reported healthy ≠ externally verified healthy`. Nicht abgedeckt bleibt die **consumer-gebundene Vertragsprüfung** — ein Abhängigkeitsvertrag kann brechen, während jede Health-Klasse `healthy` meldet.
+- **Evidence:** TELEMETRY_SIGNAL_AND_NORMALIZATION_MODEL §17; CONFIGURATION_SOURCE_OF_TRUTH_AND_SECRET_REFERENCE_MODEL (`configuration applied ≠ workload healthy`); SELF_PROTECTION_AND_CONTROL_PLANE_SAFETY_MODEL (`process running ≠ platform governable`); Milestone Review CO-WP-021…026 §22.
+- **Impact:** Bestätigt die geschichtete Health-Modellierung als richtig und benennt genau eine enge Lücke, ohne ein neues Health-Modell zu rechtfertigen.
+- **Contributing Factor or Root Cause:** Prozess-/Dienstzustand wird in der Praxis als Stellvertreter für Nutzbarkeit gelesen; der Vertrag zwischen Konsument und Anbieter wird nicht separat geprüft.
+- **Recommended Project Change:** Später prüfen, ob `synthetic` Health explizit als consumer-gebundener Pfad-Probe ausgeprägt und `integration-capability drift` sinngemäß auf Managed-Plane-Abhängigkeiten übertragen wird. Kein neues Health-Modell.
+- **Classification:** LL-ARCHITECTURE
+- **Secondary Classifications:** LL-SECURITY
+- **Reusable Beyond CoreOps:** yes
+- **Security Relevance:** yes
+- **NDF Candidate ID:** — (bewertet, **nicht** promoted: Betriebsdomänen-Muster, teilweise durch NDF-FC-COREOPS-012 abgedeckt)
+- **Owner Role:** Nova
+- **Status:** observed
+- **Follow-up Work Package:** späteres Design-/Implementierungs-WP
+- **Notes:** Externe Operations-Evidenz, Stärke `limited` (Einzelfall, nicht reproduziert, kein CoreOps-Code beteiligt); generisch zusammengefasst, keine Umgebungsdetails übernommen.
+
+## LL-036
+
+- **Source Project:** CoreOps
+- **Source Work Package:** CO-WP-021…CO-WP-026 (Milestone Review, mit externer Betriebsevidenz)
+- **Date or Phase:** Foundation 0.1
+- **Title:** Der erfasste beobachtete Vorzustand ist die belastbarere Wiederherstellungsreferenz als ein angenommener Zustand
+- **Context:** Externe Betriebsevidenz (generisch): vor einer Änderung wurde ein umfangreicher Paket-Hold-Bestand erfasst, nur die nötige Teilmenge temporär verändert und anschließend exakt auf den erfassten Vorzustand zurückgeführt; ein unabhängiger Vergleich bestätigte Zustandsidentität.
+- **Observation:** CoreOps führt bereits durchgängig `rollback completed ≠ original state restored unless verified` — sagt aber nirgends, **wogegen** verifiziert wird. Eine repository-weite Suche nach Vorzustands-Erfassung (`pre-change state`, `captured state`, `restore point`, `restoration target`) ergab keinen Treffer. Der gemessene Vorzustand ist die belastbarere Referenz als eine Annahme.
+- **Evidence:** SAFE_REMEDIATION_AND_STATE_CHANGE_POLICY §16; DEPLOYMENT_TARGETING_EXECUTION_AND_RECOVERY_POLICY §22; RECOVERY_MODE_AUTHORITY_AND_CONTROLLED_RESTORATION_POLICY §9/§11 (`old configuration ≠ known-good configuration`); Milestone Review CO-WP-021…026 §23.2.
+- **Impact:** Wiederherstellungsziele werden messbar statt angenommen; `restoration claimed ≠ restoration verified` erhält einen konkreten Vergleichsanker.
+- **Contributing Factor or Root Cause:** Verifikationsinvarianten wurden formuliert, ohne die Referenzquelle der Verifikation zu benennen.
+- **Recommended Project Change:** In einem späteren Design-WP prüfen. **Abgrenzung:** gilt nur, wenn Vorzustands-Wiederherstellung das erklärte Recovery-Ziel ist — bei Forward Recovery ausdrücklich nicht; ein erfasster Vorzustand ist ein Referenzpunkt, keine Trust-Aussage (`previously trusted ≠ currently trusted` bleibt bindend).
+- **Classification:** LL-ARCHITECTURE
+- **Secondary Classifications:** LL-PROCESS
+- **Reusable Beyond CoreOps:** yes
+- **Security Relevance:** yes
+- **NDF Candidate ID:** NDF-FC-COREOPS-014
+- **Owner Role:** Security Review
+- **Status:** observed
+- **Follow-up Work Package:** späteres Recovery-Design-WP
+- **Notes:** Externe Operations-Evidenz, Stärke `limited`; generisch zusammengefasst, keine Umgebungsdetails übernommen.
+
+## LL-037
+
+- **Source Project:** CoreOps
+- **Source Work Package:** CO-WP-021…CO-WP-026 (Milestone Review, mit externer Betriebsevidenz)
+- **Date or Phase:** Foundation 0.1
+- **Title:** Simulation ohne Expected-vs-Actual-Vergleich belegt keine Simulationstreue
+- **Context:** Externe Betriebsevidenz (generisch): eine Paketoperation wurde vor der Ausführung simuliert; simulierte und tatsächliche Mutationsmenge stimmten überein, was die Verlässlichkeit der Simulation stützte.
+- **Observation:** „Preview vor Execute" ist ein CoreOps-Gründungsprinzip und `simulate/preview` ist ein eigener Schritt mit `preview must not mutate target state`. Die vorhandene Verifikation vergleicht jedoch **beobachteten gegen gewünschten** Zustand (Konvergenz) — nicht **vorhergesagte gegen tatsächliche** Mutationsmenge. Eine materielle Abweichung der Vorhersagetreue würde heute nirgends erfasst; die Konvergenzprüfung könnte trotzdem `verified-converged` melden.
+- **Evidence:** SAFE_REMEDIATION_AND_STATE_CHANGE_POLICY §6; PROJECT_BRIEF (Grundsätze); CONCEPT_DECISION_CLASSIFICATION BG-04; FOUNDATION_CAPABILITY_MATRIX CAP-DEPLOY-003; Milestone Review CO-WP-021…026 §23.3.
+- **Impact:** Vorhersagetreue wird als eigenständige Evidenzachse sichtbar, statt in der Konvergenzprüfung unterzugehen.
+- **Contributing Factor or Root Cause:** Preview wurde als Freigabehilfe modelliert, nicht als überprüfbare Vorhersage.
+- **Recommended Project Change:** In einem späteren Design-WP als Evidenzkonzept prüfen, ohne `simulation ≠ authorization` aufzuweichen — eine erfolgreiche Simulation bleibt keine Ausführungsfreigabe.
+- **Classification:** LL-PROCESS
+- **Secondary Classifications:** LL-ARCHITECTURE
+- **Reusable Beyond CoreOps:** yes
+- **Security Relevance:** no
+- **NDF Candidate ID:** NDF-FC-COREOPS-015
+- **Owner Role:** Nova
+- **Status:** observed
+- **Follow-up Work Package:** späteres Design-/Implementierungs-WP
+- **Notes:** Externe Operations-Evidenz, Stärke `limited`; generisch zusammengefasst, keine Umgebungsdetails übernommen.
+
+## LL-038
+
+- **Source Project:** CoreOps
+- **Source Work Package:** CO-WP-021…CO-WP-026 (Milestone Review)
+- **Date or Phase:** Foundation 0.1
+- **Title:** Wenn nahezu jedes neue Risiko `high` ist, trägt Severity keine Priorisierungsinformation mehr
+- **Context:** Die 30 in CO-WP-021…026 erfassten Risiken (RISK-280…309, exakt 5 je WP) verteilen sich auf **29 `high` und 1 `medium`** — kein `low`. Zugleich blieb die `open`-Zahl gegenüber dem vorigen Milestone unverändert bei 17; alle 30 neuen Einträge wurden direkt `treatment-planned`.
+- **Observation:** Die Wachstumsgrenze wurde vorbildlich eingehalten, aber zwei Bewertungsfelder verlieren Trennschärfe: Severity unterscheidet nicht mehr zwischen Risiken, und der Lifecycle unterscheidet nicht zwischen „noch unbewertet" und „Behandlung geplant". Das ist ein Kalibrierungs-, kein Sicherheitsbefund.
+- **Evidence:** RISK_REGISTER (verifiziert: 309 gesamt, high 167/medium 118/low 24; treatment-planned 292/open 17; RISK-280…309 severity-ausgezählt); Milestone Review CO-WP-021…026 §18; erweitert LL-029.
+- **Impact:** Ohne Rekalibrierung kann der Readiness Review Risiken nicht priorisieren, weil die Mehrheit formal gleichrangig ist.
+- **Contributing Factor or Root Cause:** Foundation-Risiken beschreiben überwiegend Fehlinterpretationen von Invarianten mit potenziell hoher Wirkung; ohne Vergleichsmaßstab wird jede solche Wirkung als `high` erfasst.
+- **Recommended Project Change:** In der Register-Konsolidierung eine Severity-Rekalibrierung und eine Lifecycle-Differenzierung vorsehen (Review-Daten, Unterscheidung unbewertet/geplant). Bestehende Einträge nicht ohne WP-Autorität umbewerten.
+- **Classification:** LL-PROCESS
+- **Secondary Classifications:** LL-DOCUMENTATION
+- **Reusable Beyond CoreOps:** partly
+- **Security Relevance:** no
+- **NDF Candidate ID:** — (projektlokaler Registerbefund)
+- **Owner Role:** Project Governance
+- **Status:** observed
+- **Follow-up Work Package:** CO-WP-029/030
+- **Notes:** Konsolidiert im Milestone Review CO-WP-021…026; erweitert LL-022/LL-029. Register read-only; nichts umbewertet.
+
 ## Zusammenfassung
 
-- **Anzahl Lessons:** 30 (LL-001…LL-013 retrospektiv, LL-014…LL-015 aus CO-WP-004B selbst, LL-016 aus CO-WP-004B2, LL-017…LL-022 aus dem Milestone Review CO-WP-005…012, LL-023…LL-030 aus dem Milestone Review CO-WP-013…020)
-- **Verteilung nach Primärklasse:** LL-PROCESS 14 (004,005,006,010,011,013,014,015,016,017,019,020,021,028) · LL-PROMPT 1 (001) · LL-TOOLING 1 (002) · LL-SECURITY 4 (003,024,025,027) · LL-ARCHITECTURE 6 (007,008,012,018,023,026) · LL-DOCUMENTATION 4 (009,022,029,030)
-  > Korrektur (CO-WP-004B1): Der vorherige Eintrag listete fälschlich 9 IDs für LL-PROCESS (inkl. „001"), obwohl „8" als Zahl genannt war. Ursache: LL-001 trägt `LL-PROCESS` nur als **Sekundärklasse**; ihre Primärklasse ist `LL-PROMPT`. Keine Lesson wurde umklassifiziert. Fortschreibung (Milestone Review 005…012): LL-016…LL-022. Fortschreibung (Milestone Review 013…020): LL-023…LL-030. Summe 14+1+1+4+6+4 = 30.
-- **Verteilung nach Status:** `validated` 14 (LL-001…LL-013, LL-016) · `observed` 16 (LL-014, LL-015, LL-017…LL-030)
-- **NDF-relevante Lessons (Reusable Beyond CoreOps: yes):** 28 (`yes`); LL-022, LL-029 = `partly`
-- **NDF-Kandidaten aus den Milestone Reviews:** LL-017 → NDF-FC-COREOPS-008 · LL-018 → NDF-FC-COREOPS-009 · LL-019 → NDF-FC-COREOPS-010 · LL-024 → NDF-FC-COREOPS-011 · LL-026 → NDF-FC-COREOPS-012 · LL-027 → NDF-FC-COREOPS-013 (alle `candidate-pending-nova-review`)
-- **Projektlokal ohne eigenen NDF-Kandidaten:** LL-006, LL-007, LL-009, LL-010, LL-012, LL-014, LL-015, LL-020, LL-021, LL-022, LL-023, LL-025, LL-028, LL-029, LL-030 (Muster bereits projektintern umgesetzt, durch bestehende NDF-Prozessführung/Kandidaten teilabgedeckt, kandidatfähig-aber-nicht-promoted bzw. zu spezifisch für einen eigenständigen Kandidaten)
+- **Anzahl Lessons:** 38 (LL-001…LL-013 retrospektiv, LL-014…LL-015 aus CO-WP-004B selbst, LL-016 aus CO-WP-004B2, LL-017…LL-022 aus dem Milestone Review CO-WP-005…012, LL-023…LL-030 aus dem Milestone Review CO-WP-013…020, LL-031…LL-038 aus dem Foundation Milestone Review CO-WP-021…026)
+- **Verteilung nach Primärklasse:** LL-PROCESS 16 (004,005,006,010,011,013,014,015,016,017,019,020,021,028,037,038) · LL-PROMPT 1 (001) · LL-TOOLING 1 (002) · LL-SECURITY 6 (003,024,025,027,033,034) · LL-ARCHITECTURE 10 (007,008,012,018,023,026,031,032,035,036) · LL-DOCUMENTATION 4 (009,022,029,030)
+  > Korrektur (CO-WP-004B1): Der vorherige Eintrag listete fälschlich 9 IDs für LL-PROCESS (inkl. „001"), obwohl „8" als Zahl genannt war. Ursache: LL-001 trägt `LL-PROCESS` nur als **Sekundärklasse**; ihre Primärklasse ist `LL-PROMPT`. Keine Lesson wurde umklassifiziert. Fortschreibung (Milestone Review 005…012): LL-016…LL-022. Fortschreibung (Milestone Review 013…020): LL-023…LL-030. Fortschreibung (Foundation Milestone Review 021…026): LL-031…LL-038. Summe 16+1+1+6+10+4 = 38.
+- **Verteilung nach Status:** `validated` 14 (LL-001…LL-013, LL-016) · `observed` 24 (LL-014, LL-015, LL-017…LL-038)
+- **NDF-relevante Lessons (Reusable Beyond CoreOps: yes):** 35 (`yes`); LL-022, LL-029, LL-038 = `partly`
+- **NDF-Kandidaten aus den Milestone Reviews:** LL-017 → NDF-FC-COREOPS-008 · LL-018 → NDF-FC-COREOPS-009 · LL-019 → NDF-FC-COREOPS-010 · LL-024 → NDF-FC-COREOPS-011 · LL-026 → NDF-FC-COREOPS-012 · LL-027 → NDF-FC-COREOPS-013 · LL-036 → NDF-FC-COREOPS-014 · LL-037 → NDF-FC-COREOPS-015 (alle `candidate-pending-nova-review`)
+- **Projektlokal ohne eigenen NDF-Kandidaten:** LL-006, LL-007, LL-009, LL-010, LL-012, LL-014, LL-015, LL-020, LL-021, LL-022, LL-023, LL-025, LL-028, LL-029, LL-030, LL-031, LL-032, LL-033, LL-034, LL-035, LL-038 (Muster bereits projektintern umgesetzt, durch bestehende NDF-Prozessführung/Kandidaten teilabgedeckt, kandidatfähig-aber-nicht-promoted bzw. zu spezifisch für einen eigenständigen Kandidaten)
 
 **Bestätigung:** Keine Lesson wurde ohne lokale Evidenz erfunden. Keine Lesson ist bereits als NDF übernommen markiert.

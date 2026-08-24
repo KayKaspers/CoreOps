@@ -379,7 +379,7 @@ Current implemented WP:
 
 Registriert als zukünftige Capability-Chain **ohne** WP-Nummern (`roadmap-candidate` · `not scheduled` · `WP identifier pending queue review` · `not implemented`; keine Technologieauswahl, keine Decision/kein Risk): Reporting Foundation → Asset and Component Inventory → Vulnerability Intelligence Ingestion → Vulnerability Correlation → Exposure and Remediation → Reporting Implementation. Reporting-Mindestscope: professionelle PDF-Berichte, CoreOps-Standarddesign/eigenes Logo/Corporate-Design-/Mandantenprofile/Template-Branding-Version, Management-/Standard-/Detailberichte, DE/EN, Inventar-/Log-/Update-/Deployment-/Topologie-/Audit-/Evidence-/Vulnerability-Berichte, Redaction vor Rendering, getrennte Disclosure-/Export-Autorisierung, keine Raw Secrets/Credentials. Vulnerability-Mindestscope: Inventarisierung (HW/OS/Firmware/Software/Pakete/Dienste/Container/Images/Bibliotheken/SBOM), Identitäten (CPE/purl/Paketkoordinate/Firmware-ID/Image Digest/SBOM Component Identity), Quellen (CVE/NVD-CPE/Advisories/CISA KEV/EPSS/SBOM-VEX), Match Confidence, getrennte Zustände (Candidate/Applicability/Confirmed/Not-Affected/Mitigated/Remediated/Verification-Pending/Outcome-Unknown), Produktnamensmatch ≠ bestätigte Betroffenheit, Offline Vulnerability-Intelligence-Snapshots/CorePacks, Remediation über Deployment Governance, Re-Inventarisierung/Verifikation, professionelle PDF-Vulnerability-Berichte. Details in der [WORK_PACKAGE_QUEUE.md](../project-system/WORK_PACKAGE_QUEUE.md) (Roadmap-Abschnitt).
 
-**Milestone-Vormerkung:** Nach Abschluss von `CO-WP-026` gebündelter `CO-WP-021…026` Foundation Milestone Review (Lessons Learned, NDF Candidates, Decision-/Risk-Wachstum, Foundation-Konsistenz, Reporting-/Vulnerability-Roadmap, nächste Phase); noch nicht terminiert.
+**Milestone-Hinweis:** Der gebündelte `CO-WP-021…026` Foundation Milestone Review ist **durchgeführt** (Ergebnis `GO WITH NOTES`); siehe eigenen Abschnitt weiter unten.
 
 Current data-governance foundation:
 Data classification classes (public/internal/sensitive/restricted/secret-bearing/evidence-protected/unknown), classification identity/scope/version/freshness, separated data authorities, collection/minimization, handling lifecycle, retention policy with start events/expiry, preservation holds, deletion/purge/destruction lifecycle with verification, redaction as governed derived view, masking/pseudonymization/anonymization-claim boundaries, controlled disclosure/export, log/telemetry/audit/evidence/secret/backup/offline integration and reconciliation defined. data classification ≠ deployment profile ≠ connectivity class ≠ national-security classification; classification label ≠ proven compliance; unknown-classification → fail-closed; collection permitted ≠ every later use; retention expired ≠ deletion completed; deletion requested ≠ authorized ≠ executed ≠ every copy removed; logical deletion ≠ physical destruction; redacted view ≠ modified source; redaction applied ≠ disclosure safe; masked/pseudonymized ≠ anonymous; hash ≠ anonymization; evidence retained ≠ all source data retainable; secret-bearing data remains bound to CO-WP-024; offline operation expands no retention/deletion/disclosure authority; unknown deletion outcome ≠ deleted.
@@ -398,7 +398,7 @@ Drei neue Dokumente: Data Classification and Handling Model (Concepts, Klassifik
 ## Self-Protection, Degraded Modes and Recovery Mode
 
 Current implemented WP:
-`CO-WP-026 – Self-Protection, Degraded Modes and Recovery Mode` – Nova Review `GO WITH NOTES`; Notes-Runde geschlossen; `completed-go-with-notes`. Human-Maintainer-Commit ausstehend (Push nicht als erfolgt dargestellt).
+`CO-WP-026 – Self-Protection, Degraded Modes and Recovery Mode` – Nova Review `GO WITH NOTES`; Notes-Runde geschlossen; `completed-go-with-notes` (Commit 399de21, gepusht; Branch gleichauf mit origin/main).
 
 Current self-protection foundation:
 Control-plane/managed-plane boundary, 15 protected assets, 23 protective-condition trigger categories, protection assessment (20 fields), 12 fault domains/blast radius, 20 protective actions with a six-level priority order, ten operational modes (normal/guarded/restricted/read-only/degraded/containment/recovery-only/recovery/emergency-stop/unknown) with a capability restriction matrix over 23 capability groups, degraded-mode and containment governance, recovery authority, recovery mode, 15 recovery stages, 11 recovery input classes with current trust/revocation/compatibility reassessment, partial/unknown recovery outcomes, offline/agent recovery, break-glass boundary and recovery exit defined. CoreOps self-protection ≠ protection of every managed asset; control-plane health ≠ managed-system health; process running ≠ platform governable; governability ≠ technical reachability; monitoring unavailable ≠ system healthy; audit unavailable ≠ no operation occurred; trigger ≠ compromise proven; absence of trigger ≠ safety; read-only mode ≠ guaranteed absence of side effects; degraded ≠ unrestricted/permanent; containment ≠ recovery; recovery mode ≠ ordinary mode ≠ backup restore ≠ rollback; service restored ≠ authority restored; previously trusted ≠ currently trusted; partial/unknown recovery ≠ safe retry; offline operation does not expand local recovery authority; break-glass creates no permanent authority; recovery exit requires reassessment and reconciliation.
@@ -414,7 +414,26 @@ not performed
 
 Drei neue Dokumente: Self-Protection and Control-Plane Safety Model (Control-/Managed-Plane, Schutzgüter, Protective Conditions/Trigger, Protection Assessment, Fault Domains/Blast Radius, Protective Actions/Priority, Integrationsgrenzen, Profile, Failure), Degraded Mode and Capability Restriction Model (zehn Operational Modes, Mode Entry/Exit, Capability Restriction Matrix, Read-only, Restricted/Guarded, Degraded, Containment, Emergency Stop, Unknown State, Profile) und Recovery Mode Authority and Controlled Restoration Policy (Recovery Authority, Recovery Mode, 15 Stufen, Inputs, Trust-Reassessment, Partial/Unknown, Offline/Agent, Break-Glass, Audit/Reconciliation, Data Classification, Recovery Exit). Decision Index +13 (DEC-S-345…357), Risk Register +5 (RISK-305…309, gesamt 309; Wachstumsgrenze §39 eingehalten; adressiert RISK-11 Self-Dependency). Keine Health-/Watchdog-/HA-/Failover-/Cluster-/Quorum-/Recovery-/Self-Healing-/Monitoring-/Backup-/Isolation-/Integrity-Scanning-/Orchestration-/Sync-/Reconciliation-Technologie ausgewählt; keine ADR; keine Technology-Deferral-Decision; keine Security-/Resilience-/Recovery-Readiness-/Compliance-Behauptung; bestehende Foundation-Dateien, Lessons-Learned-Register und NDF-Feedback-Kandidaten unverändert; keine NDF-Rückführung.
 
-**Verbindlicher nächster Schritt:** gebündelter `CO-WP-021…026` Foundation Milestone Review — Status: `planned-next` · `not started` (keine WP-Nummer; Lessons Learned und NDF Candidates werden erst dort gebündelt behandelt). Spätere Queue-Einträge (`CO-WP-027`…`CO-WP-031`) sind **retained**, aber bis zum Abschluss des Milestone Reviews **nicht unmittelbar ausführbar**.
+## Foundation Milestone Review (CO-WP-021…026)
+
+Durchgeführt als gebündelter, unnummerierter review-only Milestone über sechs Foundation-WPs und 18 Dokumente. Nova Review `GO WITH NOTES`; nachgelagerte Incident-Coverage-Tally-Korrektur `GO`; Status: `completed-go-with-notes`. Neues Dokument: [MILESTONE_REVIEW_CO_WP_021_TO_026.md](../project-brain/MILESTONE_REVIEW_CO_WP_021_TO_026.md).
+
+Ergebnis:
+**GO WITH NOTES** — Foundation-Kohärenz über Deployment → Artifact Trust → Restricted/Offline/CorePack → Secrets/Key Custody → Data Classification/Retention/Disclosure → Self-Protection/Degraded/Recovery ist gegeben; 0 Konflikte, 0 Parallelmodelle. Alle geforderten Cross-Foundation-Invarianten gehalten. Claim Boundaries und Technologie-Deferral vollständig; nichts ausgewählt, nichts behauptet.
+
+Register (read-only, unverändert):
+Decision Index `DEC-S-357` (+84 über die sechs WPs, lückenlos, je WP 15/15/14/14/13/13). Risk Register 309 (+30, exakt 5 je WP; severity high 167/medium 118/low 24; lifecycle treatment-planned 292/open 17). Zwei Registerqualitäts-Befunde: Severity verliert Trennschärfe (29 der 30 neuen Risiken `high`) und der Lifecycle bleibt uniform (`open` unverändert bei 17) → Rekalibrierung in der Konsolidierung `CO-WP-029/030`.
+
+Reale Betriebsevidenz (extern, Stärke `limited`, generisch zusammengefasst):
+Bestätigt die Foundation. Coverage-Matrix über 15 Konzepte: 5 `already covered` · 4 `partially covered` · 4 `genuine extension` (alle eng, alle später) · 2 `duplicate/reject`. „Safe Change Transaction" ist ein **Kompositionsmuster** über bestehenden Modellen, **kein** neuer Lebenszyklus und **keine** neue Autorität. Geschichtete, scope-gebundene Health ist bereits abgedeckt; offen bleibt eine consumer-gebundene Vertragsprüfung. `restoration claimed ≠ restoration verified` ist abgedeckt; die Bindung des Wiederherstellungsziels an den **erfassten** Vorzustand ist eine echte, enge Erweiterung. Ein Recovery Set wäre ein Komposit über den bestehenden Recovery Inputs (Set-Identität, Konsistenzgrenze, Scope-Vollständigkeit) — keine Backup-Technologie, keine neue Autorität.
+
+Lessons und NDF-Kandidaten:
+LL-031…038 konsolidiert (Lessons gesamt 38). NDF-FC-COREOPS-014…015 registriert (`candidate-pending-nova-review`, Kandidaten gesamt 15; 008…015 pending). Vier weitere Muster wurden bewertet und ausdrücklich **nicht** promoted.
+
+Grenzen:
+Kein NDF-Transfer; NDF v1.0.0 bleibt normativ, post-v1.0-`main` nur informativ und methodisch genutzt. Keine CDS-Adoption, kein CDS-Import, kein CDS-Pilot; eine nicht-aktivierende Gate-Notiz für `CO-WP-027` ist vermerkt. Decision Index und Risk Register read-only unverändert; kein Foundation-Dokument geändert; `CO-WP-027` nicht begonnen.
+
+**Verbindlicher nächster Schritt:** Human-Maintainer-Commit des Milestone Reviews. Erst danach entscheiden Nova/Human Maintainer über die Freigabe des nächsten regulären Queue-Eintrags. Empfehlung des Reviews: `GO WITH NOTES FOR CO-WP-027` — **keine** Freigabe erteilt. Spätere Queue-Einträge (`CO-WP-027`…`CO-WP-031`) bleiben **retained** und sind nicht freigegeben.
 
 ## Current Goal
 
@@ -445,7 +464,7 @@ Dokumentation, Scope, Architektur, Security, Governance und Verträge definieren
 
 ## Next Work Package
 
-`CO-WP-004C – BSI and Public-Sector Readiness Baseline` (after CO-WP-004B2 Nova review and Kay-Commit)
+Kein reguläres Work Package ist freigegeben. Zuletzt bearbeitet: `Foundation Milestone Review CO-WP-021…026` (unnummeriert, `completed-go-with-notes`, Nova Review `GO WITH NOTES`). Nächster Schritt ist der Human-Maintainer-Commit dieses Milestone Reviews; erst danach entscheiden Nova/Human Maintainer über die Freigabe des nächsten Queue-Eintrags (`CO-WP-027 – UX Information Architecture and Dashboard System`, derzeit **retained**, nicht freigegeben).
 
 ## Foundation Exit Conditions
 
