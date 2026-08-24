@@ -438,7 +438,7 @@ Kein NDF-Transfer; NDF v1.0.0 bleibt normativ, post-v1.0-`main` nur informativ u
 ## UX Information Architecture and Dashboard System
 
 Current implemented WP:
-`CO-WP-027 – UX Information Architecture and Dashboard System` – Nova Review `GO WITH NOTES`; Notes-Runde (Notes 1–3) geschlossen; `completed-go-with-notes` (Human-Maintainer-Commit ausstehend). Repository-Baseline `2e1ab66`.
+`CO-WP-027 – UX Information Architecture and Dashboard System` – Nova Review `GO WITH NOTES`; Notes-Runde (Notes 1–3) geschlossen; `completed-go-with-notes`; durch den Human Maintainer **committet und gepusht als `1dee29d`** (`1dee29d19fe500588161c5878cbbb76e5dbb0812`). Repository-Baseline `1dee29d`.
 
 Nova-Notes-Closure (1–3):
 (1) **UX-Dimensionen präsentationsseitig begrenzt** — die elf Dimensionen sind eine Darstellungsordnung über bestehenden autoritativen Modellen, **kein** neues autoritatives Statusschema, kein Statusobjekt, kein Lebenszyklus (`UX presentation dimensions ≠ new authoritative status schema`; `presentation ≠ source-of-truth ownership`). Kein Subjekt muss alle elf Dimensionen materialisieren; Anwendbarkeit und Wert sind getrennt (`not applicable ≠ unknown`; `dimension not applicable to a subject ≠ applicable dimension whose value is unknown`); jede Dimension bleibt durch ihr bestehendes autoritatives Modell governt.
@@ -464,7 +464,42 @@ CDS:
 `Candidate` / **read-only** Vergleichseingabe. Keine Adoption, kein Import, keine Tokens, kein Product Profile, **kein** aktivierter Pilot, keine Adoption-Evidenz. `CDS-WP-017` inaktiv. Der CDS-Reife-Re-Check bleibt vor jeder substanziellen Designübernahme erforderlich.
 
 Grenzen:
-Kein NDF-Transfer; NDF v1.0.0 bleibt normativ. Lessons-Learned-Register und NDF-Feedback-Kandidaten **unverändert** (Sammlung für den späteren Milestone Review). Keine Technologieauswahl, keine Mockups, keine Screenshots, kein Implementierungsanspruch. `CO-WP-028` nicht begonnen.
+Kein NDF-Transfer; NDF v1.0.0 bleibt normativ. Lessons-Learned-Register und NDF-Feedback-Kandidaten **unverändert** (Sammlung für den späteren Milestone Review). Keine Technologieauswahl, keine Mockups, keine Screenshots, kein Implementierungsanspruch. `CO-WP-028` wurde anschließend durch den Human Maintainer freigegeben und ist bearbeitet (siehe folgender Abschnitt).
+
+## Test Strategy, Fixtures and Integration Lab
+
+Current implemented WP:
+`CO-WP-028 – Test Strategy, Fixtures and Integration Lab` (docs-only) – Nova Review `GO WITH NOTES`; Notes-Runde (Notes 1–3) geschlossen; **`completed-go-with-notes`** (Human-Maintainer-Commit ausstehend). Repository-Baseline `1dee29d`.
+
+Nova-Notes-Closure (1–3):
+(1) **Claim Boundary Set statt Reifeleiter** — die Claim-Aussagen sind eine Menge voneinander **unabhängiger Nicht-Implikationen**, ausdrücklich **keine** universelle Reifeleiter (`claim boundary set ≠ universal maturity ladder`). Nur `test planned → test implemented → test executed → test result` ist eine echte lokale Progression; `support`, `production readiness`, `security validation`, `accessibility validation`, `fixture representativeness` und `operational validation` bleiben eigenständige Dimensionen mit eigener Autorität und eigener Evidenzanforderung und werden **nicht** zu Pflichtsprossen (`eigenständige Dimension ≠ Endstufe einer Testprogression`; `Testfall ohne Bezug zu diesen Dimensionen ≠ unvollständiger Testfall`).
+(2) **Revision ≠ Staleness** — eine neue Test-Case-, Fixture- oder Source-Revision macht bestehende Test-Evidenz **nicht** automatisch `stale`. Evidenz zu Revision A bleibt **historische Evidenz für Revision A** (`Evidenz zu Revision A ≠ Validierungsevidenz für Revision B`; `neue Revision B ≠ Evidenz zu Revision A wird stale`); eine materielle Revisionsänderung etabliert lediglich **keine Anwendbarkeit** auf die neue Revision und erfordert **Reassessment bzw. Revalidierung**. `stale` wird ausschließlich dort verwendet, wo das bestehende Evidence-Freshness-Modell Staleness feststellt. Historische Evidenz wird nicht umgeschrieben; es entsteht **kein** eigener Test-Evidence-Lebenszyklus.
+(3) **Queue-Kopfzeile neutralisiert** — die veraltete Router-Aussage („`CO-WP-013` ist der nächste geplante Schritt") wurde durch neutrale Governance-Formulierung ersetzt: die Queue ist die autoritative registrierte Foundation-Queue, kein Folge-WP ist automatisch freigegeben, und der aktuelle Ausführungs-/Review-Stand ergibt sich aus den Statusspalten und den Current-State-Spiegeln. **Keine** Aussage, dass `CO-WP-029` autorisiert wäre.
+Keine neuen Decisions, keine neuen Risks, keine Renumerierung; DEC-S-366…373 und RISK-314…316 unverändert (nur die Note-1-Wortlautkorrektur in DEC-S-366).
+
+Current test foundation:
+Drei neue Dokumente unter `docs/testing/`: **Foundation Test Strategy and Validation Model** (Validierungs-Autoritätsgrenze, **Claim Boundary Set** unabhängiger Nicht-Implikationen — keine universelle Reifeleiter, zehn aus CoreOps abgeleitete Testebenen `TL-1`…`TL-10` mit je Purpose/Subject/Input/Fixture/Evidenz/Failure-Bedeutung/Nicht-Belegbarem/Automatisierungs- und Offline-Eignung, zehn Subject-Klassen, Test-Case-Traceability-Contract mit 18 Feldern, sechs Ergebniszustände, Negativ-/Fail-Closed-Primat mit 17 Pflichtfamilien, zehn Foundation-Szenarienfamilien, Integration-Contract-Testing über die sechs Capability-Dimensionen, neun CO-WP-027-Designannahmen als Testsubjekte, neun Accessibility-/Lokalisierungs-Evidenzanforderungen, 14 Coverage-Dimensionen, Evidenz-/Reproduzierbarkeitsbindung, **Risk-to-Test-Matrix über alle 21 auf CO-WP-028 gerichteten Risiken**, fünf Execution Gates, Exit-Semantik), **Synthetic Fixture and Test Data Governance** (Fixture-Autoritätsgrenze, elf Identitätsfelder, elf Fixture-Prinzipien, 19 Fixture-Klassen mit Domänen-Anwendbarkeit, Expected-Outcome-Deklaration, Fidelity-Grenze, Bindung an Klassifikation/Minimierung/Redaction/Retention/Secrets/Isolation, sieben Disclosure-Flächen, Produktionsdaten-Ausnahmebedingungen, sechsstufiger Lebenszyklus) und **Integration Lab, Scenario and Evidence Model** (Lab-Autoritätsgrenze, Environment Declaration, sechs konzeptionelle Rollen, sieben Umgebungsprofile auf bestehenden Connectivity-/Mode-Konzepten, sechs Test-Double-Klassen mit Pflicht-Fidelity, neun Sicherheitskontrollen, Zielbindung, Credential-Grenze, Reset/Disposability, Szenariomodell, Integration-Contract-Szenarien, Degraded-/Offline-/Recovery-Übung, Lab-Evidenz im bestehenden Evidence-Modell, Reproduzierbarkeits- und Interpretationsgrenzen, achtstufiges Provisioning Gate, CDS-Grenze).
+
+Claim-Grenzen:
+`test planned ≠ test implemented ≠ test executed ≠ test passed ≠ requirement universally satisfied`; `fixture passed ≠ production validated`; `synthetic fixture ≠ real environment`; `simulator success ≠ provider compatibility`; `integration-lab success ≠ production readiness`; `one successful run ≠ regression confidence`; `no failing test ≠ absence of defect`; `coverage reported ≠ coverage complete`; `not tested ≠ passed`; `blocked ≠ failed`; `inconclusive ≠ passed`; `not applicable ≠ unknown`; `test evidence ≠ operational authority`; `validation evidence ≠ approval`; `validation ≠ support`; `lab role ≠ production authority`; `lab target ≠ production target`; `lab credential ≠ production credential`.
+
+Test execution, lab and technology:
+Testimplementierung **nicht** erfolgt · Testausführung **nicht** erfolgt · Validierung **nicht** erfolgt · Integration Lab **nicht** bereitgestellt · keine Verbindung zu einem Ziel · kein externer API-Aufruf · kein Scan · keine Technologie ausgewählt (Framework, Sprache, CI, Container, Virtualisierung, Mock, Browser-Automation, Load-Test, Accessibility-Scanner, Security-Scanner, Datenbank, Message Broker, Lab-Orchestrator, Netzwerkemulator, Test-Management, Coverage, Reporting).
+
+Accessibility:
+Evidenz**anforderungen** definiert; **keine** WCAG-Konformität, **keine** Validierung, **kein** Screenreader-Nachweis, **keine** Keyboard-Tests, **keine** Zertifizierung, **kein** Werkzeug ausgewählt oder ausgeführt.
+
+Existing risk coverage:
+Alle **21** auf `CO-WP-028` gerichteten Risiken (RISK-233, 261, 263, 265, 283, 287, 288, 291, 293, 299, 300, 301, 302, 304, 305, 306, 307, 308, 309, 311, 313) sind in der Risk-to-Test-Matrix vollständig abgebildet — keiner zurückgestellt, keiner ausgelassen, **keiner geschlossen**; alle bleiben `treatment-planned`.
+
+Register:
+Decision Index +8 (DEC-S-366…373, lückenlos); Risk Register +3 (RISK-314…316, gesamt 316), Severity differenziert (2× high, 1× medium); erste Test-, Fixture-, Coverage- und Laboreinträge des Registers. Die ausgewiesenen Level-Summen wurden aus den ID-Listen neu berechnet (Tally-Hinweis im Register). Keine ADR.
+
+CDS:
+**Nicht aktiviert.** Keine CDS-Testevidenz importiert oder referenziert; `CoreOps test strategy ≠ CDS consumer evidence automatically`; `CDS Candidate evidence ≠ CoreOps validation`. Ein späterer Pilot erfordert eigene, explizite Autorisierung.
+
+Grenzen:
+Kein NDF-Transfer; NDF v1.0.0 bleibt normativ. Lessons-Learned-Register und NDF-Feedback-Kandidaten **unverändert** (Sammlung für den späteren Review-Bundle). Kein bestehendes Foundation-Dokument geändert. Foundation Readiness bleibt `CO-WP-030`. `CO-WP-029` nicht begonnen.
 
 ## Current Goal
 
@@ -495,7 +530,7 @@ Dokumentation, Scope, Architektur, Security, Governance und Verträge definieren
 
 ## Next Work Package
 
-Zuletzt bearbeitet: `CO-WP-027 – UX Information Architecture and Dashboard System` — Nova Review `GO WITH NOTES`, Notes-Runde (1–3) geschlossen, Status `completed-go-with-notes`. Nächster Schritt ist der **Human-Maintainer-Commit von `CO-WP-027`**. Erst anschließend entscheiden Nova/Human Maintainer über die Freigabe des nächsten Queue-Eintrags (`CO-WP-028 – Test Strategy, Fixtures and Integration Lab`, derzeit **retained**, nicht freigegeben, nicht begonnen). Der vorangegangene `Foundation Milestone Review CO-WP-021…026` ist `completed-go-with-notes` und committet (`2e1ab66`).
+Zuletzt bearbeitet: `CO-WP-028 – Test Strategy, Fixtures and Integration Lab` (docs-only) — Nova Review `GO WITH NOTES`, Notes-Runde (1–3) geschlossen, Status **`completed-go-with-notes`**. Nächster Schritt ist der **Human-Maintainer-Commit von `CO-WP-028`** (Staging, Commit, Push). Erst anschließend entscheiden Nova/Human Maintainer über die Freigabe des nächsten Queue-Eintrags (`CO-WP-029 – Cross-Document Consistency and ADR Candidate Review`, derzeit **retained**, nicht freigegeben, nicht begonnen, **nicht** automatisch autorisiert). Das vorangegangene `CO-WP-027 – UX Information Architecture and Dashboard System` ist `completed-go-with-notes` und committet (`1dee29d`, gepusht); davor der `Foundation Milestone Review CO-WP-021…026` (`completed-go-with-notes`, Commit `2e1ab66`).
 
 ## Foundation Exit Conditions
 
