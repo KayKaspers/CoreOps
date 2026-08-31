@@ -22,7 +22,7 @@ Project Brief, Foundation Scope Lock und Release-Taxonomie erstellt (CO-WP-003: 
 
 ## Capability Matrix and Support Boundary
 
-Foundation Capability Matrix (74 Capabilities) und initiale Observe-Supportgrenze erstellt (CO-WP-004: GO WITH NOTES, `Proposed for acceptance`); durch Human-Maintainer-Commit angenommen. Drei Statusdimensionen und Support-Evidence definiert; `CCR-12` vorgeschlagen aufgelöst. Keine Runtime-Capability implementiert, keine Integration `supported`.
+Foundation Capability Matrix (94 Capabilities über 13 Domains; in der CO-WP-004-Zusammenfassung seinerzeit als „74" ausgewiesen, Zählkorrektur in CO-WP-004E/CO-WP-029) und initiale Observe-Supportgrenze erstellt (CO-WP-004: GO WITH NOTES, `Proposed for acceptance`); durch Human-Maintainer-Commit angenommen. Drei Statusdimensionen und Support-Evidence definiert; `CCR-12` vorgeschlagen aufgelöst. Keine Runtime-Capability implementiert, keine Integration `supported`.
 
 ## Sovereignty and BSI Orientation
 
@@ -352,7 +352,7 @@ Drei neue Dokumente: Restricted, Isolated and Air-Gapped Operation Model (Connec
 ## Secrets, Configuration Vault and Key Custody
 
 Current implemented WP:
-`CO-WP-024 – Secrets, Configuration Vault and Key Custody` – Nova Review `GO WITH NOTES`; verbindliche Nova-Notes 1–4 vor dem Commit geschlossen; `completed-go-with-notes`. Human-Maintainer-Commit ausstehend (Push nicht als erfolgt dargestellt).
+`CO-WP-024 – Secrets, Configuration Vault and Key Custody` – Nova Review `GO WITH NOTES`; verbindliche Nova-Notes 1–4 vor dem Commit geschlossen; `completed-go-with-notes` (Commit `916ba66`, gepusht; siehe Abschlusszeile am Ende dieses Abschnitts).
 
 Current secret and configuration foundation:
 Secret/sensitive-configuration classification, logical vault governance boundary, separated secret/key/configuration authorities, secret lifecycle, secret identity/version/instances, retrieval/distribution/injection/use, disclosure/export, key custody, root/bootstrap/recovery/break-glass material, rotation, revocation/suspension/reinstatement, recovery/destruction, configuration source of truth, secret-reference model, drift/reconciliation and offline secret governance defined. secret ≠ ordinary configuration; secret reference ≠ secret value; credential possession ≠ authorization; retrieval ≠ use ≠ export; key identity ≠ key material ≠ custody; vault availability ≠ secret trust; rotation completion requires consumer-state assessment; revocation has identity binding and freshness; offline operation does not expand authority and offline authorizations are non-reusable; break-glass creates no permanent authority; recovery ≠ reinstatement; rollback does not reactivate revoked/expired/compromised material; CorePack trust ≠ secret trust; deployment authorization ≠ secret-use authorization; audit and evidence contain no secret values.
@@ -469,7 +469,7 @@ Kein NDF-Transfer; NDF v1.0.0 bleibt normativ. Lessons-Learned-Register und NDF-
 ## Test Strategy, Fixtures and Integration Lab
 
 Current implemented WP:
-`CO-WP-028 – Test Strategy, Fixtures and Integration Lab` (docs-only) – Nova Review `GO WITH NOTES`; Notes-Runde (Notes 1–3) geschlossen; **`completed-go-with-notes`** (Human-Maintainer-Commit ausstehend). Repository-Baseline `1dee29d`.
+`CO-WP-028 – Test Strategy, Fixtures and Integration Lab` (docs-only) – Nova Review `GO WITH NOTES`; Notes-Runde (Notes 1–3) geschlossen; **`completed-go-with-notes`**; durch den Human Maintainer **committet und gepusht als `b7827b8`** (`b7827b89f76aba61fb255cfbf5a6682d4191cefe`). Repository-Baseline zum Zeitpunkt der CO-WP-028-Bearbeitung: `1dee29d`.
 
 Nova-Notes-Closure (1–3):
 (1) **Claim Boundary Set statt Reifeleiter** — die Claim-Aussagen sind eine Menge voneinander **unabhängiger Nicht-Implikationen**, ausdrücklich **keine** universelle Reifeleiter (`claim boundary set ≠ universal maturity ladder`). Nur `test planned → test implemented → test executed → test result` ist eine echte lokale Progression; `support`, `production readiness`, `security validation`, `accessibility validation`, `fixture representativeness` und `operational validation` bleiben eigenständige Dimensionen mit eigener Autorität und eigener Evidenzanforderung und werden **nicht** zu Pflichtsprossen (`eigenständige Dimension ≠ Endstufe einer Testprogression`; `Testfall ohne Bezug zu diesen Dimensionen ≠ unvollständiger Testfall`).
@@ -499,7 +499,35 @@ CDS:
 **Nicht aktiviert.** Keine CDS-Testevidenz importiert oder referenziert; `CoreOps test strategy ≠ CDS consumer evidence automatically`; `CDS Candidate evidence ≠ CoreOps validation`. Ein späterer Pilot erfordert eigene, explizite Autorisierung.
 
 Grenzen:
-Kein NDF-Transfer; NDF v1.0.0 bleibt normativ. Lessons-Learned-Register und NDF-Feedback-Kandidaten **unverändert** (Sammlung für den späteren Review-Bundle). Kein bestehendes Foundation-Dokument geändert. Foundation Readiness bleibt `CO-WP-030`. `CO-WP-029` nicht begonnen.
+Kein NDF-Transfer; NDF v1.0.0 bleibt normativ. Lessons-Learned-Register und NDF-Feedback-Kandidaten **unverändert** (Sammlung für den späteren Review-Bundle). Kein bestehendes Foundation-Dokument geändert. Foundation Readiness bleibt `CO-WP-030`.
+
+## Cross-Document Consistency and ADR Candidate Review
+
+Current implemented WP:
+`CO-WP-029 – Cross-Document Consistency and ADR Candidate Review` (review-only) – Nova Review `GO WITH NOTES`; Notes-Runde (Notes 1–3) geschlossen; **`completed-go-with-notes`**; Human-Maintainer-Commit ausstehend. Repository-Baseline `b7827b8`.
+
+Neues Dokument: [CROSS_DOCUMENT_CONSISTENCY_AND_ADR_CANDIDATE_REVIEW.md](../project-brain/CROSS_DOCUMENT_CONSISTENCY_AND_ADR_CANDIDATE_REVIEW.md).
+
+Ergebnis:
+Foundation-weite Konsistenz über **105** Foundation-Dokumente (26.245 Zeilen, ohne den importierten NDF-Skills-Pack) ist **gegeben**; keine materielle Foundation-Contradiction, **0** Parallelmodelle, **0** konkurrierende Autoritätsmodelle. Die Befunde sind durchweg Referenz-, Zähl- und Current-State-Spiegel-Defekte, keine inhaltlichen Widersprüche.
+
+Mechanisch korrigiert:
+DEC-S-88 wurde in drei Prosa-Referenzen fälschlich als Break-Glass-Entscheidung geführt (autoritativ: *Session technology*); korrigiert auf DEC-S-84/DEC-S-85/DEC-S-147. Capability-Count `74 → 94` und Domain-Count `12 → 13` in den Current-State-Spiegeln und in der Matrix-Zusammenfassung selbst. Zwei fehlgeleitete interne Verweise. Current-State-Spiegel auf `b7827b8` reconciled.
+
+Register:
+**Keine** neuen Decisions, **keine** neuen Risks, **keine** neuen ADRs, **keine** Renumerierung, **keine** Statusmigration, **keine** Severity-Änderung. Decision Index `DEC-S-373` (lückenlos, keine Duplikate); Risk Register 316 (lückenlos, keine Duplikate; Level 170/122/24 und Status 299/17 arithmetisch korrekt).
+
+ADR:
+32 Kandidaten (ADR-0001…0030 aus Concept §51 plus zwei Foundation-Klärungen) vollständig inventarisiert und dispositioniert. **Kein ADR akzeptiert, keine ADR-Datei erzeugt, keine Technologie ausgewählt.** Die readiness-relevante ADR-Basis besteht aus dem autoritativen `DEC-A`-Inventar, den Decision-Zuordnungen der Tabellen **mit** `ADR Required`-Spalte, der CO-WP-029-Dispositionsmatrix und den expliziten Human-Maintainer-Entscheidungen; sie ist **vollständig**. Die fehlende `ADR Required`-Spalte an `DEC-S-38…373` sagt **nichts** über den ADR-Bedarf aus (`fehlende Spalte ≠ erforderlich`, `≠ nicht erforderlich`; `DEC-S Lifecycle Status ≠ ADR-Disposition`).
+
+Befunde und HM-Inputs:
+25 Befunde (0 BLOCKER · 7 MAJOR · 12 MINOR · 6 NOTE), alle mit expliziter Disposition: `corrected` 7 · `open-human-decision` 8 · `open-readiness-review` 5 · `deferred-post-foundation` 1 · `note-only` 4. `finding severity ≠ finding lifecycle status`; `MAJOR ≠ automatischer READINESS BLOCKER`; `weitergereicht ≠ stillschweigend akzeptiert`. Die 14 HM-Inputs (`HM-1`…`HM-14`) sind vor einem **positiven** Readiness-Verdikt aufzulösen, sind aber **keine** Vorbedingung für den *Beginn* von `CO-WP-030`; **vor Beginn zwingend erforderlich: keiner**. `CO-WP-030` klassifiziert sie selbst als `HUMAN DECISION REQUIRED` / `READINESS BLOCKER` / `READINESS NOTE` / `POST-FOUNDATION / NON-BLOCKING`.
+
+Severity-Kalibrierung:
+Das Register veröffentlicht **keine verbindliche** Likelihood × Impact → Level-Abbildung. Die Modal-Abbildung dieses Reviews ist eine **rein analytische Heuristik**, **keine** Registernorm. Die 24 auffälligen Zeilen sind **Kalibrierungs-Reviewkandidaten**, ausdrücklich **keine** nachgewiesenen Fehlbewertungen (`Abweichung von der Heuristik ≠ registrierter Risiko-Defekt`). Alle registrierten Severities bleiben unverändert gültig.
+
+Grenzen:
+Kein Readiness-Urteil, keine Release-Bewertung, keine Testausführung, kein Integration Lab, kein NDF-Transfer, keine CDS-Adoption. Foundation Readiness bleibt `CO-WP-030`; `CO-WP-030` und `CO-WP-031` sind **nicht** begonnen und **nicht** freigegeben.
 
 ## Current Goal
 
@@ -530,7 +558,7 @@ Dokumentation, Scope, Architektur, Security, Governance und Verträge definieren
 
 ## Next Work Package
 
-Zuletzt bearbeitet: `CO-WP-028 – Test Strategy, Fixtures and Integration Lab` (docs-only) — Nova Review `GO WITH NOTES`, Notes-Runde (1–3) geschlossen, Status **`completed-go-with-notes`**. Nächster Schritt ist der **Human-Maintainer-Commit von `CO-WP-028`** (Staging, Commit, Push). Erst anschließend entscheiden Nova/Human Maintainer über die Freigabe des nächsten Queue-Eintrags (`CO-WP-029 – Cross-Document Consistency and ADR Candidate Review`, derzeit **retained**, nicht freigegeben, nicht begonnen, **nicht** automatisch autorisiert). Das vorangegangene `CO-WP-027 – UX Information Architecture and Dashboard System` ist `completed-go-with-notes` und committet (`1dee29d`, gepusht); davor der `Foundation Milestone Review CO-WP-021…026` (`completed-go-with-notes`, Commit `2e1ab66`).
+Zuletzt bearbeitet: `CO-WP-029 – Cross-Document Consistency and ADR Candidate Review` (review-only) — Nova Review `GO WITH NOTES`, Notes-Runde (1–3) geschlossen, Status **`completed-go-with-notes`**. Nächster Schritt ist der **Human-Maintainer-Commit von `CO-WP-029`** (Staging, Commit, Push). Erst anschließend entscheiden Nova/Human Maintainer über die Freigabe des nächsten Queue-Eintrags (`CO-WP-030 – Foundation Readiness Review`, derzeit **retained**, nicht freigegeben, nicht begonnen, **nicht** automatisch autorisiert). Das vorangegangene `CO-WP-028 – Test Strategy, Fixtures and Integration Lab` ist `completed-go-with-notes` und committet (`b7827b8`, gepusht); davor `CO-WP-027 – UX Information Architecture and Dashboard System` (`completed-go-with-notes`, Commit `1dee29d`, gepusht) und der `Foundation Milestone Review CO-WP-021…026` (`completed-go-with-notes`, Commit `2e1ab66`).
 
 ## Foundation Exit Conditions
 

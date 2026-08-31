@@ -108,7 +108,7 @@ Forward Recovery bei unmöglichem/unvollständigem/riskanterem Rollback; `recove
 
 ## 24. Manual Authority
 
-Manuelle Aktionen (Target Exclusion, Pause, Resume, Wave Expansion, Rollback, Forward Recovery, Known Exception, Verification Note) bleiben human-attributable, scope-bound, zeit-/reviewgebunden, auditierbar und **nicht-destruktiv** gegenüber bestehender Evidence. **Machine Principals imitieren keine Human Approval/Manual Authority** (konsistent mit [Topology Manual Authority](../architecture/TOPOLOGY_MANUAL_AUTHORITY_AND_DISCLOSURE_POLICY.md)).
+Manuelle Aktionen (Target Exclusion, Pause, Resume, Wave Expansion, Rollback, Forward Recovery, Known Exception, Verification Note) bleiben human-attributable, scope-bound, zeit-/reviewgebunden, auditierbar und **nicht-destruktiv** gegenüber bestehender Evidence. **Machine Principals imitieren keine Human Approval/Manual Authority** (konsistent mit [Topology Manual Authority](TOPOLOGY_MANUAL_AUTHORITY_AND_DISCLOSURE_POLICY.md)).
 
 ## 25. Offline Deployment
 
@@ -157,7 +157,7 @@ Nicht ausgewählt/implementiert: Execution-/Rollback-/Recovery-/Rollout-Engine, 
 
 ## 33. Compatibility
 
-Konsistent mit Control-Plane-/Blueprint-Companion, [Policy/Approval/Execution](POLICY_DECISION_AND_EVALUATION_MODEL.md), [Integration Trust](INTEGRATION_TRUST_FAILURE_AND_RECOVERY_POLICY.md), [Migration Integrity](DATA_MIGRATION_INTEGRITY_AND_RECOVERY_POLICY.md), [Topology Manual Authority](../architecture/TOPOLOGY_MANUAL_AUTHORITY_AND_DISCLOSURE_POLICY.md), [Audit Policy](AUDIT_INTEGRITY_RETENTION_AND_DISCLOSURE_POLICY.md), [Threat Model](COREOPS_FOUNDATION_THREAT_MODEL.md). Konkretisiert DEC-P-02, DEC-P-04, DEC-G-04, DEC-G-07.
+Konsistent mit Control-Plane-/Blueprint-Companion, [Policy/Approval/Execution](POLICY_DECISION_AND_EVALUATION_MODEL.md), [Integration Trust](INTEGRATION_TRUST_FAILURE_AND_RECOVERY_POLICY.md), [Migration Integrity](DATA_MIGRATION_INTEGRITY_AND_RECOVERY_POLICY.md), [Topology Manual Authority](TOPOLOGY_MANUAL_AUTHORITY_AND_DISCLOSURE_POLICY.md), [Audit Policy](AUDIT_INTEGRITY_RETENTION_AND_DISCLOSURE_POLICY.md), [Threat Model](COREOPS_FOUNDATION_THREAT_MODEL.md). Konkretisiert DEC-P-02, DEC-P-04, DEC-G-04, DEC-G-07.
 
 ## 34. Open Questions
 

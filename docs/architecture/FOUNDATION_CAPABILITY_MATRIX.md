@@ -396,7 +396,8 @@ Additive per-Capability-Zuordnung (gleiche IDs, keine parallele Liste). Spalten:
 
 ## Zusammenfassung
 
-- **Domains:** 12 (Platform · Identity · Inventory · Discovery · Monitoring · Network · Topology · Print · Virtualization · Deployments · Automation · Trust · Protection — Topology als eigenständige Gruppe innerhalb der Network-nahen Domänen geführt).
+- **Domains:** 13 (Platform · Identity · Inventory · Discovery · Monitoring · Network · Topology · Print · Virtualization · Deployments · Automation · Trust · Protection — Topology als eigenständige Gruppe innerhalb der Network-nahen Domänen geführt).
+  > **Domain-Zählkorrektur (CO-WP-029):** Die Summenangabe lautete „12", während dieselbe Aufzählung **13** Domänen benennt und die Capability-IDs **13** eindeutige Domänen-Präfixe tragen (`AUTOMATION`, `DEPLOY`, `DISCOVERY`, `IDENTITY`, `INVENTORY`, `MONITORING`, `NETWORK`, `PLATFORM`, `PRINT`, `PROTECT`, `TOPOLOGY`, `TRUST`, `VIRT`). Rein mechanische Korrektur der Summenangabe: **keine** Domäne hinzugefügt, entfernt, umbenannt oder neu zugeordnet; **keine** Capability verändert.
 - **Capabilities gesamt:** 94.
   > **Zählkorrektur (CO-WP-004E):** Die frühere Zusammenfassung nannte „74". Eine deterministische Zeilenzählung (`grep -cE "^\| CAP-"`) ergibt **94** eindeutige Capability-Zeilen mit 94 eindeutigen IDs und ohne Duplikate. Keine Capability wurde hinzugefügt oder entfernt; nur die Summenangabe wurde auf den tatsächlichen Bestand korrigiert. Weitere Projektdokumente, die noch „74" nennen, sollten in einem späteren Documentation-Consistency-Schritt abgeglichen werden (an Nova gemeldet).
 - **Implementation Status:** 94× `not-implemented` (100 %).
