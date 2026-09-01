@@ -1,6 +1,6 @@
 # CoreOps – Foundation Capability Matrix
 
-> Document Status: Proposed for acceptance
+> Document Status: Accepted
 > Technical Architecture Status: Unconfirmed
 > Normative Framework: NDF v1.0.0 (Tag `v1.0.0`, Commit `9dcadc1`) — `main` informativ, nicht normativ
 > Erzeugt durch `CO-WP-004 – Foundation Capability Matrix and Initial Support Boundary` (docs-only)
@@ -399,7 +399,7 @@ Additive per-Capability-Zuordnung (gleiche IDs, keine parallele Liste). Spalten:
 - **Domains:** 13 (Platform · Identity · Inventory · Discovery · Monitoring · Network · Topology · Print · Virtualization · Deployments · Automation · Trust · Protection — Topology als eigenständige Gruppe innerhalb der Network-nahen Domänen geführt).
   > **Domain-Zählkorrektur (CO-WP-029):** Die Summenangabe lautete „12", während dieselbe Aufzählung **13** Domänen benennt und die Capability-IDs **13** eindeutige Domänen-Präfixe tragen (`AUTOMATION`, `DEPLOY`, `DISCOVERY`, `IDENTITY`, `INVENTORY`, `MONITORING`, `NETWORK`, `PLATFORM`, `PRINT`, `PROTECT`, `TOPOLOGY`, `TRUST`, `VIRT`). Rein mechanische Korrektur der Summenangabe: **keine** Domäne hinzugefügt, entfernt, umbenannt oder neu zugeordnet; **keine** Capability verändert.
 - **Capabilities gesamt:** 94.
-  > **Zählkorrektur (CO-WP-004E):** Die frühere Zusammenfassung nannte „74". Eine deterministische Zeilenzählung (`grep -cE "^\| CAP-"`) ergibt **94** eindeutige Capability-Zeilen mit 94 eindeutigen IDs und ohne Duplikate. Keine Capability wurde hinzugefügt oder entfernt; nur die Summenangabe wurde auf den tatsächlichen Bestand korrigiert. Weitere Projektdokumente, die noch „74" nennen, sollten in einem späteren Documentation-Consistency-Schritt abgeglichen werden (an Nova gemeldet).
+  > **Zählkorrektur (CO-WP-004E):** Die frühere Zusammenfassung nannte „74". Eine deterministische Zeilenzählung (`grep -cE "^\| CAP-"`) ergibt **94** eindeutige Capability-Zeilen mit 94 eindeutigen IDs und ohne Duplikate. Keine Capability wurde hinzugefügt oder entfernt; nur die Summenangabe wurde auf den tatsächlichen Bestand korrigiert. Der Abgleich der übrigen „74"-Referenzen ist in `CO-WP-029` **abgeschlossen** (Commit `6afa7ab`) und in `CO-WP-031` deterministisch nachgeprüft; kein Dokument führt „74" mehr als autoritative Summe. Verbleibende „74"-Nennungen sind ausschließlich historische Review- und Lessons-Aufzeichnungen und bleiben als solche erhalten (`RISK-66` `closed`, HM-8).
 - **Implementation Status:** 94× `not-implemented` (100 %).
 - **Support Status:** 94× `not-supported` (100 %). Keine Integration `supported`.
 - **Read/Write-Verteilung:** `read` und `platform` dominieren die frühen Meilensteine; `write-target` ausschließlich ab `Deploy`/`Extend`/`Automate` und **nie** im Observe-Meilenstein.

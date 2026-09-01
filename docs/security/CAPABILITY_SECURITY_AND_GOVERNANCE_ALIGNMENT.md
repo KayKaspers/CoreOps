@@ -167,7 +167,7 @@ No capability is validated in this WP. Alignment status is documentation-only. V
 
 - Which capabilities become mandatory per profile vs. optional?
 - Which PSR mappings currently marked `mapping-review-required` need refinement?
-- Reconciliation of the project-wide capability count (see Foundation Matrix count note): several documents cite "74" while the matrix contains 94 rows — reconcile in a later documentation-consistency step.
+- Reconciliation of the project-wide capability count (see Foundation Matrix count note): **completed**. The authoritative count is **94** unique capability IDs; the reconciliation of the remaining "74" references was carried out in `CO-WP-029` (commit `6afa7ab`) and deterministically re-verified in `CO-WP-031`. No document states "74" as the authoritative count any more; the remaining occurrences are historical review and lessons records and are retained as such (`RISK-66` `closed`, HM-8).
 - When is version-accurate BSI control mapping scheduled (separate WP)?
 
 ## 20. Next Decision

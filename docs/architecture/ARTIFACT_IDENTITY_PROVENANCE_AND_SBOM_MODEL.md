@@ -124,7 +124,7 @@ maintainer          ≠ revocation authority automatically
 
 ## 12. Source and Producer
 
-Source (Ursprungscode/-quelle) und Producer (erzeugende Instanz) getrennt; `producer stated ≠ producer verified`. Source Trust ist zeitgebunden (konsistent mit [Domain Pack Trust](DOMAIN_PACK_TRUST_PROVENANCE_AND_LIFECYCLE_POLICY.md)).
+Source (Ursprungscode/-quelle) und Producer (erzeugende Instanz) getrennt; `producer stated ≠ producer verified`. Source Trust ist zeitgebunden (konsistent mit [Domain Pack Trust](../security/DOMAIN_PACK_TRUST_PROVENANCE_AND_LIFECYCLE_POLICY.md)).
 
 ## 13. Builder and Build Context
 
@@ -244,7 +244,7 @@ Nicht ausgewählt/implementiert: Artifact Registry/Package Repository, Package-/
 
 ## 30. Compatibility
 
-Konsistent mit [Deployment](DEPLOYMENT_CONTROL_PLANE_AND_EXECUTION_MODEL.md)/[Blueprint](DEPLOYMENT_BLUEPRINT_VERSIONING_AND_COMPATIBILITY_MODEL.md), [Integration Trust](../security/INTEGRATION_TRUST_FAILURE_AND_RECOVERY_POLICY.md), [Domain Pack Trust](DOMAIN_PACK_TRUST_PROVENANCE_AND_LIFECYCLE_POLICY.md), [Evidence Model](EVIDENCE_REFERENCE_VALIDATION_AND_LINEAGE_MODEL.md), [Field Provenance](FIELD_PROVENANCE_AND_DATA_LINEAGE_STANDARD.md), [Policy/Execution](../security/POLICY_DECISION_AND_EVALUATION_MODEL.md), [Foundation Scope Lock](../governance/FOUNDATION_SCOPE_LOCK.md). Konkretisiert DEC-P-02, DEC-G-05, die Sovereignty-/Dependency-Linie und die adoptierten NDF-Supply-Chain-Kandidaten.
+Konsistent mit [Deployment](DEPLOYMENT_CONTROL_PLANE_AND_EXECUTION_MODEL.md)/[Blueprint](DEPLOYMENT_BLUEPRINT_VERSIONING_AND_COMPATIBILITY_MODEL.md), [Integration Trust](../security/INTEGRATION_TRUST_FAILURE_AND_RECOVERY_POLICY.md), [Domain Pack Trust](../security/DOMAIN_PACK_TRUST_PROVENANCE_AND_LIFECYCLE_POLICY.md), [Evidence Model](EVIDENCE_REFERENCE_VALIDATION_AND_LINEAGE_MODEL.md), [Field Provenance](FIELD_PROVENANCE_AND_DATA_LINEAGE_STANDARD.md), [Policy/Execution](../security/POLICY_DECISION_AND_EVALUATION_MODEL.md), [Foundation Scope Lock](../governance/FOUNDATION_SCOPE_LOCK.md). Konkretisiert DEC-P-02, DEC-G-05, die Sovereignty-/Dependency-Linie und die adoptierten NDF-Supply-Chain-Kandidaten.
 
 ## 31. Open Questions
 

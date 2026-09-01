@@ -172,7 +172,7 @@ Nicht ausgewählt: Archiv-/Paketformat · Manifestformat · Installer · Update-
 
 ## 24. Compatibility
 
-Konsistent mit [DEC-P-02](../../project-system/DECISION_INDEX.md) (Offline First), [Deployment Control Plane (CO-WP-021)](DEPLOYMENT_CONTROL_PLANE_AND_EXECUTION_MODEL.md), [Artifact Trust (CO-WP-022)](../security/ARTIFACT_TRUST_QUARANTINE_AND_REVOCATION_POLICY.md), [Policy/Approval/Execution (CO-WP-013)](../security/EXECUTION_AUTHORIZATION_AND_GUARD_POLICY.md) und den Offline-Grenzen aus [CO-WP-011](SOURCE_OF_TRUTH_AND_FIELD_PROVENANCE_MODEL.md)/[CO-WP-016](DATA_OWNERSHIP_AND_PERSISTENCE_MODEL.md). Keine bestehende Foundation-Invariante wird geschwächt.
+Konsistent mit [DEC-P-02](../../project-system/DECISION_INDEX.md) (Offline First), [Deployment Control Plane (CO-WP-021)](DEPLOYMENT_CONTROL_PLANE_AND_EXECUTION_MODEL.md), [Artifact Trust (CO-WP-022)](../security/ARTIFACT_TRUST_QUARANTINE_AND_REVOCATION_POLICY.md), [Policy/Approval/Execution (CO-WP-013)](../security/EXECUTION_AUTHORIZATION_AND_GUARD_POLICY.md) und den Offline-Grenzen aus [CO-WP-011](SOURCE_OF_TRUTH_AND_STATE_AUTHORITY_MODEL.md)/[CO-WP-016](DATA_OWNERSHIP_AND_PERSISTENCE_MODEL.md). Keine bestehende Foundation-Invariante wird geschwächt.
 
 ## 25. Open Questions
 

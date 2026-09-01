@@ -1,6 +1,6 @@
 # CoreOps – Initial Support Boundary (Observe Target)
 
-> Status: **Proposed for acceptance**
+> Status: **Accepted**
 > Normative Framework: NDF v1.0.0 (Tag `v1.0.0`, Commit `9dcadc1`) — `main` informativ, nicht normativ
 > Erzeugt durch `CO-WP-004` (docs-only). Begleitdokument: [FOUNDATION_CAPABILITY_MATRIX.md](../architecture/FOUNDATION_CAPABILITY_MATRIX.md).
 

@@ -17,9 +17,9 @@ Dieses Dokument ist ein **kompaktes, vorläufiges Gerüst**. Es enthält bewusst
 7. Extend *(vorläufig)* — Windows, Hyper-V, Kubernetes, Netzwerk-/Druckerbereitstellung, Firmware.
 8. Scale *(vorläufig)* — Multi-Site, Site Relay, HA, Multi-Tenant.
 
-## Release-Taxonomie (Proposed for acceptance)
+## Release-Taxonomie (Accepted)
 
-Die frühere Kollision zwischen `Foundation 0.1` und `Release 0.1 – Observe` ist in CO-WP-003 vorgeschlagen aufgelöst (siehe [RELEASE_TAXONOMY.md](docs/governance/RELEASE_TAXONOMY.md)):
+Die frühere Kollision zwischen `Foundation 0.1` und `Release 0.1 – Observe` ist in CO-WP-003 aufgelöst und durch `HM-1` für Foundation 0.1 verbindlich bestätigt (siehe [RELEASE_TAXONOMY.md](docs/governance/RELEASE_TAXONOMY.md)):
 
 ```text
 Foundation documentation release:
@@ -31,7 +31,7 @@ v0.1.0-alpha.1 candidate
 
 - `Foundation 0.1` ist die dokumentations-/governanceorientierte Phase (kein funktionaler Produktrelease).
 - `Observe` ist der erste funktionale Produktmeilenstein; sein erster Prerelease-Kandidat ist `v0.1.0-alpha.1` (erst nach funktionaler Implementierung und separater Readiness-Prüfung).
-- Status `Proposed for acceptance` bis zum Human-Maintainer-Commit. Es wird **kein** Tag und **kein** Release erzeugt.
+- Status `Accepted` (Human-Maintainer-Commit `fcee985`; `HM-1` `APPROVED`). Es wird **kein** Tag und **kein** Release erzeugt; ein Foundation-Release ist **nicht** autorisiert.
 
 ## Strategische Richtungen (Accepted Product Direction, CO-WP-004A)
 
@@ -39,7 +39,7 @@ v0.1.0-alpha.1 candidate
 - **Hardened Profile** ist ein späterer Foundation-/Release-Kandidat.
 - **Government Profile** ist ein späterer Readiness-Kandidat (keine Zertifizierung/Zulassung).
 - **BSI-Nachweisartefakte** werden in späteren Work Packages definiert (BSI-orientiert; siehe [BSI_ALIGNMENT_POSITIONING.md](docs/security/BSI_ALIGNMENT_POSITIONING.md)) — keine Zertifizierung versprochen.
-- **ITIL-/PRINCE2-Tailoring** bleibt offen (Kandidaten; Entscheidung in `CO-WP-004D`).
+- **ITIL-/PRINCE2-Tailoring** ist in `CO-WP-004D` entschieden: ITIL `adopted-with-tailoring` (Guidance), PRINCE2 Version 7 `optional-profile`. NDF bleibt das primäre Software- und Repository-Governance-Framework. Keine Vollübernahme, keine Zertifizierung, keine verpflichtende externe ITSM- oder Projektmanagement-Plattform (siehe [ITIL_AND_PRINCE2_APPLICABILITY_AND_TAILORING.md](docs/governance/ITIL_AND_PRINCE2_APPLICABILITY_AND_TAILORING.md)).
 - **Lessons Learned** werden projektübergreifend kontrolliert ausgewertet; NDF-Rückfluss nur via eigenes NDF-WP (`CO-WP-004B`).
 
 ## Hinweise

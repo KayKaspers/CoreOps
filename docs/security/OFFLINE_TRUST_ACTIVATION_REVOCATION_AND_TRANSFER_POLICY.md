@@ -207,7 +207,7 @@ Nicht ausgewählt: Signing · Hash · Trust Anchor · PKI · Encryption · Trans
 
 ## 35. Compatibility
 
-Konsistent mit [DEC-P-02](../../project-system/DECISION_INDEX.md) (Offline First), [CO-WP-013](EXECUTION_AUTHORIZATION_AND_GUARD_POLICY.md), [CO-WP-021](../architecture/DEPLOYMENT_CONTROL_PLANE_AND_EXECUTION_MODEL.md), [CO-WP-022](ARTIFACT_TRUST_QUARANTINE_AND_REVOCATION_POLICY.md) und den Offline-Grenzen aus [CO-WP-011](../architecture/SOURCE_OF_TRUTH_AND_FIELD_PROVENANCE_MODEL.md)/[CO-WP-016](DATA_MIGRATION_INTEGRITY_AND_RECOVERY_POLICY.md)/[CO-WP-018](AUDIT_INTEGRITY_RETENTION_AND_DISCLOSURE_POLICY.md). Keine bestehende Foundation-Invariante wird geschwächt.
+Konsistent mit [DEC-P-02](../../project-system/DECISION_INDEX.md) (Offline First), [CO-WP-013](EXECUTION_AUTHORIZATION_AND_GUARD_POLICY.md), [CO-WP-021](../architecture/DEPLOYMENT_CONTROL_PLANE_AND_EXECUTION_MODEL.md), [CO-WP-022](ARTIFACT_TRUST_QUARANTINE_AND_REVOCATION_POLICY.md) und den Offline-Grenzen aus [CO-WP-011](../architecture/SOURCE_OF_TRUTH_AND_STATE_AUTHORITY_MODEL.md)/[CO-WP-016](DATA_MIGRATION_INTEGRITY_AND_RECOVERY_POLICY.md)/[CO-WP-018](AUDIT_INTEGRITY_RETENTION_AND_DISCLOSURE_POLICY.md). Keine bestehende Foundation-Invariante wird geschwächt.
 
 ## 36. Open Questions
 

@@ -1,10 +1,10 @@
 # CoreOps – Foundation 0.1 Scope Lock
 
-> Status: **Proposed for acceptance**
+> Status: **Accepted**
 > Normative Framework: NDF v1.0.0 (Tag `v1.0.0`, Commit `9dcadc1`) — `main` informativ, nicht normativ
 > Erzeugt durch `CO-WP-003` (docs-only)
 
-Bis zum Nova Review und Human-Maintainer-Commit ist dieser Scope Lock ein Vorschlag. Nach dem Human-Maintainer-Commit gilt er als bindende Projektgovernance.
+Nova Review und Human-Maintainer-Commit (`fcee985`) liegen vor; dieser Scope Lock ist damit bindende Projektgovernance.
 
 ## Purpose
 

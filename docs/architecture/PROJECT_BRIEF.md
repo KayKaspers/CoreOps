@@ -1,6 +1,6 @@
 # CoreOps – Project Brief
 
-> Document Status: Proposed for acceptance
+> Document Status: Accepted
 > Decision Type: Product and Foundation Scope
 > Technical Architecture Status: Unconfirmed
 > Normative Framework: NDF v1.0.0 (Tag `v1.0.0`, Commit `9dcadc1`) — `main` informativ, nicht normativ
@@ -71,7 +71,7 @@ Foundation 0.1 liefert ausschließlich Dokumentation, Architekturmodelle, Sicher
 
 ## 12. Langfristige Produktmeilensteine
 
-Foundation → Observe → Map → Plan → Deploy → Automate → Extend → Scale. Meilensteinnamen und Versions-Taxonomie: [RELEASE_TAXONOMY.md](../governance/RELEASE_TAXONOMY.md). Nummern/Versionen sind vorläufig bzw. `Proposed for acceptance`.
+Foundation → Observe → Map → Plan → Deploy → Automate → Extend → Scale. Meilensteinnamen und Versions-Taxonomie: [RELEASE_TAXONOMY.md](../governance/RELEASE_TAXONOMY.md). Die Foundation-/Observe-Release-Taxonomie ist für Foundation 0.1 `Accepted` (`HM-1`); `v0.0.1-foundation` bleibt ein Foundation-**Tag-Kandidat** bis zu einer separaten Autorisierung. Die endgültige Versionsnummerierung der Meilensteine nach `Observe` bleibt offen und vorläufig. Diese Klarstellung autorisiert **keinen** Tag und **kein** Release.
 
 ## 13. Erfolgskriterien der Foundation
 

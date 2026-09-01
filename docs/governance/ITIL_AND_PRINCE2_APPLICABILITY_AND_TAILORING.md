@@ -15,7 +15,7 @@ Tailoring decision for two external governance frameworks: ITIL (service-managem
 
 ## 2. Purpose
 
-Decide, traceably, which high-level ITIL and PRINCE2 concepts CoreOps uses as guidance, which it explicitly does not adopt, how the two frameworks relate to NDF, and how framework overload and duplicate governance are prevented — consistent with the [NDF External Framework Tailoring Guidance](../../../Nova-Development-Framework/docs/governance/NDF_EXTERNAL_FRAMEWORK_TAILORING_GUIDANCE.md) (read-only reference; adopted from CoreOps cross-project candidate 007).
+Decide, traceably, which high-level ITIL and PRINCE2 concepts CoreOps uses as guidance, which it explicitly does not adopt, how the two frameworks relate to NDF, and how framework overload and duplicate governance are prevented — consistent with the **NDF External Framework Tailoring Guidance** (source citation: Nova-Development-Framework, normative release `v1.0.0`, tag `v1.0.0`, commit `9dcadc1`, repository path `docs/governance/NDF_EXTERNAL_FRAMEWORK_TAILORING_GUIDANCE.md`; read-only source citation only — no repository link, no clone-layout dependency, no external runtime dependency, and no adoption of any newer NDF version. Adopted from CoreOps cross-project candidate 007).
 
 ## 3. Scope
 

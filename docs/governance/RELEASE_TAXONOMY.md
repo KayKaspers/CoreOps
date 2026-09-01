@@ -1,10 +1,10 @@
 # CoreOps – Release and Version Taxonomy
 
-> Status: **Proposed for acceptance**
+> Status: **Accepted**
 > Normative Framework: NDF v1.0.0 (Tag `v1.0.0`, Commit `9dcadc1`) — `main` informativ, nicht normativ
 > Erzeugt durch `CO-WP-003` (docs-only)
 
-Bis zum Nova Review und Human-Maintainer-Commit ist diese Taxonomie ein Vorschlag. Nach dem Human-Maintainer-Commit gilt sie als bindende Projektgovernance. **Dieses Dokument erzeugt keinen Tag und keinen Release.**
+Nova Review und Human-Maintainer-Commit (`fcee985`) liegen vor; `HM-1` hat die Foundation-Release-Taxonomie für Foundation 0.1 verbindlich bestätigt. Diese Taxonomie ist damit bindende Projektgovernance. **Dieses Dokument erzeugt keinen Tag und keinen Release.**
 
 ## Purpose
 

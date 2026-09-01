@@ -22,7 +22,12 @@ language:
 delivery:
   self_hosted: target            # Zielbild, noch zu bestaetigen
   offline_capable: target        # Zielbild, noch zu bestaetigen
-  docker_first: pending          # Delivery Baseline noch nicht verbindlich bestaetigt
+  docker_first: baseline         # Foundation 0.1 Delivery Baseline (HM-2, APPROVED
+                                 # WITH BOUNDARY). Docker-first != Docker-only;
+                                 # != zwingende interne Anwendungsarchitektur;
+                                 # != zwingende Runtime-Abhaengigkeit;
+                                 # != Observe-Voraussetzung. Noch nicht implementiert;
+                                 # keine Container-Technologie ausgewaehlt.
 
 governance:
   documentation: required
