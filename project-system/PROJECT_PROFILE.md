@@ -2,7 +2,7 @@
 
 > **Slogan:** One Dashboard. Controlled Operations.
 
-**Status:** Foundation 0.1 abgeschlossen (`HM-F1`) und als Tag veröffentlicht; Post-Foundation-Governance-Transition, Observe noch nicht autorisiert
+**Status:** Foundation 0.1 abgeschlossen (`HM-F1`) und als Tag veröffentlicht; Phase `Observe` betreten und mit Grenze autorisiert (`HM-O1`); Implementierung und produktiver Anwendungscode weiterhin nicht autorisiert
 **NDF-Basis:** Nova-Development-Framework `v1.0.0` (Tag `v1.0.0`, Commit `9dcadc1`) — der Branch `main` ist **nicht** normativ.
 **Erzeugt durch:** Work Package `CO-WP-001` (docs-only, Core Governance Skeleton)
 
@@ -10,7 +10,7 @@
 
 ## Aktueller Projektstand (autoritative Current-State-Oberfläche)
 
-> Dieser Abschnitt ist die **einzige Current-State-Aussage dieses Dokuments**. Alle nachfolgenden Abschnitte sind entweder der historische `CO-WP-001`-Initialschnappschuss (§§1–17) oder historische Pro-WP-Konsolidierungsblöcke. Fortgeschrieben durch die unnummerierten, dokumentations-only Reconciliations **Post-Publication Current-State Reconciliation** (`HM-C1` / `HM-C1A` `APPROVED`, remote integriert) und **Foundation-Phase-Closure-Current-State-Reconciliation** (`HM-F1R` `APPROVED`).
+> Dieser Abschnitt ist die **einzige Current-State-Aussage dieses Dokuments**. Alle nachfolgenden Abschnitte sind entweder der historische `CO-WP-001`-Initialschnappschuss (§§1–17) oder historische Pro-WP-Konsolidierungsblöcke. Fortgeschrieben durch die unnummerierten, dokumentations-only Reconciliations **Post-Publication Current-State Reconciliation** (`HM-C1` / `HM-C1A` `APPROVED`, remote integriert) und **Foundation-Phase-Closure-Current-State-Reconciliation** (`HM-F1R` `APPROVED`) sowie zuletzt durch die konsolidierte Aufnahme von `HM-O1`…`HM-O4` in `CO-WP-032`.
 
 | Dimension | Stand |
 | --------- | ----- |
@@ -19,18 +19,27 @@
 | Ziel-Commit des Tags | `af02b28fd46b39eb9c2fce9a515ac4c09cb4ffba` (der jeweils aktuelle HEAD wird aus Git ermittelt und hier **nicht** selbstreferenziell eingebettet) |
 | GitHub Release | **NOT CREATED** — `HM-R11` `NOT AUTHORIZED / CLOSED` |
 | Foundation-0.1-Phase | **CLOSED** — förmlich geschlossen durch `HM-F1` **`APPROVED / COMPLETE`** |
-| Aktuelle Phase | **Post-Foundation-Governance-Transition** — **nicht** `Observe` |
-| Observe | **NOT AUTHORIZED** |
-| `HM-O1` (Bounded Observe Phase Entry) | **NOT YET GRANTED** — nächstes Gate nach Nova Review und erfolgreicher Remote-Integration dieser Reconciliation |
-| `CO-WP-032` | **NOT AUTHORIZED** (keine `CO-WP-*`-ID vergeben) |
+| Aktuelle Phase | **`Observe`** — betreten und mit Grenze autorisiert |
+| Observe | **ENTERED / AUTHORIZED WITH BOUNDARY** |
+| `HM-O1` (Bounded Observe Phase Entry) | **APPROVED WITH BOUNDARY** |
+| Erster Observe-Wertslice | **`LOCAL LINUX HOST IDENTITY & BASIC SYSTEM OBSERVATION` — SELECTED** (`HM-O2` **APPROVED**) |
+| `CO-WP-032` | **AUTHORIZED** (`HM-O3` **APPROVED**); Ausführung **AUTHORIZED — DOCS-ONLY MIT EXAKTER SCHREIBGRENZE** (`HM-O4` **APPROVED WITH EXACT BOUNDARY**); Queue-Status **`completed-go-with-notes`**; Nova Initial Review `REWORK — narrow semantic closure`, beide blockierenden Notes **CLOSED**, **Nova Final Review `GO`**; Human-Maintainer-Repository-Integration **AUSSTEHEND**, Remote-Integration **noch nicht erfolgt** |
+| Produktiver Anwendungscode | **NOT AUTHORIZED** — und **keiner vorhanden** |
 | Implementierung | **NOT AUTHORIZED** |
+| Sprache / Runtime | **NOT SELECTED** |
+| `P-1` (Zielautorisierung) | **NOT AUTHORIZED** — Gate B; **keine** Voraussetzung für Produktivcode-Autorisierung |
+| `P-2` (No-Mutation-Evidenz) | Evidenzmethode/-plan **DEFINIERT** (Gate A) · Erfüllung **NOT SATISFIED** (Gate B) — null Tests implementiert, null ausgeführt; Erfüllung ist der Implementierung und Ausführung nachgelagert |
+| `P-3` (Erhebungsmechanismus) | **NOT SELECTED** |
+| Zielzugriff | **NOT AUTHORIZED** |
+| Reale Beobachtung | **NOT AUTHORIZED** — und keine durchgeführt |
+| Testausführung | **NOT AUTHORIZED** |
+| `CO-WP-033` | **NOT CREATED / NOT RESERVED** |
 | Funktionaler CoreOps-Produktrelease | **NEIN** |
-| Produktiver Anwendungscode | **KEINER** |
 | Akzeptierte ADRs | **0** (unverändert) |
 | Technische Architektur | weiterhin **unbestätigt**; keine Technologie ausgewählt |
 | Runtime-Capabilities / `supported`-Integrationen | **0** / **0** |
 
-Bindend: `Foundation-Arbeit abgeschlossen ≠ Foundation-Phase abgeschlossen` (die Schließung erfolgte durch `HM-F1`, nicht durch die Arbeit oder die Tag-Publikation) · `Foundation-Phase abgeschlossen ≠ Observe autorisiert` · `Tag veröffentlicht ≠ funktionaler Produktrelease` · `Current-State-Reconciliation ≠ Governance-Autorisierung`.
+Bindend: `Foundation-Arbeit abgeschlossen ≠ Foundation-Phase abgeschlossen` (die Schließung erfolgte durch `HM-F1`, nicht durch die Arbeit oder die Tag-Publikation) · `Foundation-Phase abgeschlossen ≠ Observe autorisiert` · `Observe betreten ≠ Zielzugriff` · `Wertslice gewählt ≠ produktiver Code autorisiert` · `Work-Package-Ausführung autorisiert ≠ produktiver Code autorisiert` · `Tag veröffentlicht ≠ funktionaler Produktrelease` · `Empfehlung ≠ Autorisierung` · `Current-State-Reconciliation ≠ Governance-Autorisierung`.
 
 > **Geltung des Foundation Scope Lock nach Phasenabschluss.** Der [FOUNDATION_SCOPE_LOCK.md](../docs/governance/FOUNDATION_SCOPE_LOCK.md) governt die **abgeschlossene** Foundation-0.1-Phase und bleibt für diese verbindlich. Er ist **keine** dauerhafte Verbotsnorm für jede künftige produktive Arbeit. Post-Foundation-Arbeit — insbesondere produktiver Anwendungscode — benötigt eine **eigene, ausdrückliche Human-Maintainer-Autorisierung**; eine solche ist derzeit **nicht** erteilt. Das Scope-Lock-Dokument selbst wird durch diese Reconciliation **nicht** geändert.
 
@@ -583,6 +592,18 @@ Folgende Themen benötigen vor jeder verbindlichen technischen Festlegung einen 
 - **Autoritätsstand:** **Durch `CO-WP-031` bzw. die Post-Integration-Reconciliation erteilte Release-Autorisierung: KEINE · erteilte Tag-Autorisierung: KEINE · erzeugter Tag: KEINER · erzeugtes oder veröffentlichtes Release: KEINES · erteilte Observe-Autorisierung: KEINE.** Der Abschluss und die Integration von `CO-WP-031` autorisieren **kein** Release und **keine** Post-Foundation-Arbeit. Jede spätere Tag-Erzeugung, Tag-Publikation oder GitHub-Release-Erzeugung ist ein **eigenes, davon getrenntes Human-Maintainer-Autoritätsereignis**.
 - **Register nach Abgleich (deterministisch nachgerechnet):** Decision Index 373 `DEC-S` lückenlos und duplikatfrei; Foundation Decisions 21 — `open` 9 · `clarified` 7 · `binding-governance` 4 · `verified` 1. Risk Register 316 Einträge lückenlos und duplikatfrei; Status `treatment-planned` 314 · `open` 1 (`RISK-29`) · `closed` 1 (`RISK-66`); Level `high 170` / `medium 122` / `low 24` unverändert. **Kein Risiko `accepted-by-human`.**
 - **Grenzen (`CO-WP-031` und Post-Integration-Reconciliation):** **kein** Foundation-Release, **kein** Tag erzeugt oder autorisiert, **keine** Veröffentlichung, **kein** ADR erzeugt oder akzeptiert, **keine** Risikoannahme, **keine** CCR geschlossen, **keine** neue Decision-/Risk-/ADR-ID, **keine** Technologieauswahl, **keine** Observe-Autorisierung, **kein** Git-Write durch AI. Jede spätere Tag- oder Release-Aktion ist ein **eigenes Human-Maintainer-Autoritätsereignis** außerhalb dieser Arbeit. `Release-Empfehlung ≠ Release-Autorisierung`; `Tag-Kandidat ≠ Tag-Autorisierung`; `Tag-Source-Snapshot ≠ Tag-Ereignis`.
+
+### CO-WP-032 – Observe Slice Contract and Productive-Code Transition Prerequisites (`docs-only`)
+
+- **Autoritätskette:** `HM-O1` **`APPROVED WITH BOUNDARY`** (Eintritt in die Phase `Observe`, mit Grenze) · `HM-O2` **`APPROVED`** (erster Wertslice *Local Linux Host Identity & Basic System Observation* **SELECTED**) · `HM-O3` **`APPROVED`** (`CO-WP-032` autorisiert) · `HM-O4` **`APPROVED WITH EXACT BOUNDARY`** (Ausführung docs-only mit exakter Schreibgrenze). Baseline `147fcc8`.
+- **Drei neue Dokumente:** [OBSERVE_LOCAL_LINUX_HOST_OBSERVATION_CONTRACT.md](../docs/architecture/OBSERVE_LOCAL_LINUX_HOST_OBSERVATION_CONTRACT.md) · [OBSERVE_LOCAL_LINUX_HOST_TEST_ENVELOPE.md](../docs/testing/OBSERVE_LOCAL_LINUX_HOST_TEST_ENVELOPE.md) · [PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md](../docs/governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md).
+- **Observation Contract:** Beobachtungsidentität und -subjekt (genau ein lokaler Linux-Host); `target_id` als reine Beobachtungsidentität mit `observed target identity ≠ managed-resource identity`, `discovered ≠ managed`, `discovered ≠ trusted`; Feld-/Semantikmatrix über 18 Feld-/Konzeptzeilen mit Zweck, Raw/Normalized-Status, Provenance-Anforderung, Required/Conditional, Absenzsemantik und expliziten Nicht-Implikationen; achtwertiges `observation_outcome` (`success`, `partial`, `source-absent`, `source-unavailable`, `permission-denied`, `unsupported`, `source-malformed`, `normalization-failed`) mit **zweistufigem Envelope**, damit `partial` keine feldweise Ursache verschluckt; `observed_at ≠ received_at`, kein fabrizierter Zeitstempel; strikte Raw-/Normalized-Trennung mit `parser assumption ≠ observed evidence`; Provenance-Mindestsatz je Feld, fail-closed ohne Provenance; **gebundenes** Freshness-Modell aus der bestehenden Field-Provenance-Menge (`expired` bewusst nicht verwendet) — konkrete Altersschwellen ausdrücklich **`PROPOSED / UNACCEPTED`**. **Keine** Health-Semantik.
+- **Test Envelope:** zehn Mindestfälle `OBS-LLH-TC-01`…`OBS-LLH-TC-10` (normale Beobachtung, Quelle abwesend, nicht verfügbar, malformed, stale, Berechtigung verweigert, nicht unterstützt, Provenance ungültig, Normalisierung fehlgeschlagen, No-Mutation-Sentinel) mit je Testintent, Setupkonzept, erwartetem `observation_outcome`, erwarteter Datensemantik, erwartetem Provenance-Verhalten, verbotener Inferenz und künftiger Evidenzanforderung. **Tests implementiert: NEIN. Tests ausgeführt: NEIN.** Jeder Fall trägt heute `not run`. Der No-Mutation-Sentinel benennt die sieben kumulativen Evidenzanforderungen für `P-2`; `read-only ≠ side-effect-free` bleibt erhalten. `P-2` bleibt **`NOT SATISFIED`**.
+- **Productive-Code Transition Prerequisites:** Foundation-Beziehung (`Foundation 0.1` `CLOSED`; der Scope Lock governt die abgeschlossene Phase und ist **keine** dauerhafte Verbotsnorm, `Foundation-Schließung ≠ Produktivcode-Autorisierung`) · Observe-Autoritätsgrenze · **Zwei-Gate-Trennung** (`Gate A` Produktivcode/Implementierung, `Gate B` Zielzugriff/Ausführung; `Produktivcode-Autorisierung ≠ Zielautorisierung`) · Gate-A-Implementierungsautorität (neun kumulative Voraussetzungen, noch **nicht kumulativ erfüllt**: mehrere offen, die Voraussetzung zu Teststrategie und `P-2`-Evidenzmethode **teilweise** erfüllt — Human-Maintainer-Disposition steht aus) · `P-1`-Anforderungen (**Gate B**) · `P-2`-Lebenszyklus (Evidenzmethode **DEFINIERT** auf Gate A · Erfüllung **`NOT SATISFIED`** auf Gate B, der Implementierung und Ausführung nachgelagert) · `P-3`-Entscheidungspaket (fünf Mechanismusklassen über zehn Kriterien; Empfehlung Option A primär, B ergänzend, C nicht als Standardweg, D/E ausgeschlossen — **`PROPOSED / UNACCEPTED`**) · Sprach-/Runtime-Entscheidungspaket (sechs Kandidaten über elf Kriterien; Empfehlung Go, Alternative Rust — **`PROPOSED / UNACCEPTED`**) · Source-Tree-Vorschlag (rollenbasiert, sprachidiomneutral, **nicht angelegt**) · Dependency-Admission-Gate (Standardbibliothek vs. Drittabhängigkeit, zehn Kriterien) · Package-Manager-/Lockfile-Implikationen · Build-/Packaging-Implikationen · `NEW-8` · ADR-/Decision-Voraussetzungen · Testvoraussetzungen · zwei getrennte fail-closed Transition-Checklisten (**Gate A** vor produktivem Code: 3 von 14 erfüllt, 1 teilweise, 10 offen · **Gate B** vor realer Beobachtung/Ausführung: 0 von 8 erfüllt) · ausdrückliche Kein-automatischer-Nachfolger-Regel.
+- **`NEW-8`-Empfehlung:** `README.md` vor dem ersten produktiven Source-Commit **RECOMMEND YES** (mit Mindestinhalt einschließlich ehrlichem Status); Lizenz-Disposition vor der Veröffentlichung produktiven Quellcodes **RECOMMEND YES**; Abgrenzung privat/intern gegenüber Weitergabe gegenüber öffentlicher Veröffentlichung (`public repository ≠ open source`, `no license ≠ permission granted`). **Beide Empfehlungen sind `PROPOSED / UNACCEPTED`; weder `README.md` noch `LICENSE` wurde erstellt.** `README/LICENSE-Empfehlung ≠ Artefaktautorisierung`.
+- **Capability-Basis:** ausschließlich bestehende Capabilities `CAP-DISCOVERY-004`, `CAP-INVENTORY-001`, `CAP-INVENTORY-004`, `CAP-MONITORING-007` referenziert — **ohne** Änderung an Implementierungs-, Support-, Evidence- oder Kompatibilitätsstatus. `Auswahl für einen Slice ≠ Implementierung`.
+- **Grenzen:** **kein** produktiver Anwendungscode · **kein** Source Tree · **kein** Testcode · **keine** Fixtures · **keine** Dependency · **kein** Lockfile · **kein** Package-Manifest · **kein** Build- oder CI-Artefakt · **kein** `README.md` · **kein** `LICENSE` · **kein** ADR erzeugt oder akzeptiert · **keine** Decision-, Risk- oder Capability-ID · **kein** Zielzugriff · **keine** reale Beobachtung · **keine** Testausführung · **keine** Technologieauswahl · **kein** Git-Write durch den Agenten. `DECISION_INDEX.md`, `RISK_REGISTER.md`, `LESSONS_LEARNED_REGISTER.md`, `NDF_FEEDBACK_CANDIDATES.md`, `FOUNDATION_SCOPE_LOCK.md`, `RELEASE_TAXONOMY.md`, `ROADMAP.md` und `.claude/**` **unverändert**.
+- **Status:** Queue-Status **`completed-go-with-notes`** (Statusvokabular `planned` · `completed-go` · `completed-go-with-notes`; angewandter Präzedenzfall `CO-WP-030`: Notes-/Rework-Runde geschlossen plus Nova Final Review `GO` → `completed-go-with-notes`; **kein** neuer Statuswert erfunden). **Nova Initial Review `REWORK — narrow semantic closure`; beide blockierenden Notes CLOSED; Nova Final Review `GO`. Human-Maintainer-Repository-Integration: AUSSTEHEND** — kein Commit, kein Push, keine Remote-Integration erfolgt oder behauptet. `CO-WP-033` **NOT CREATED / NOT RESERVED** — es erfolgt keine automatische Freigabe eines Folge-Work-Packages.
 
 ## Notes
 

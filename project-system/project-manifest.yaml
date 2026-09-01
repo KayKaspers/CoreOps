@@ -7,26 +7,44 @@ project:
   name: CoreOps
   slug: coreops
   slogan: "One Dashboard. Controlled Operations."
-  status: foundation-0-1-closed-post-foundation-transition
+  status: observe-entered-bounded-docs-only-contract-and-governance-work
                                  # Rein deskriptiver aktueller Projektzustand,
-                                 # KEINE Produktreife- oder Release-Taxonomie und
-                                 # KEINE Autoritaet ueber die akzeptierte Release
-                                 # Taxonomy (docs/governance/RELEASE_TAXONOMY.md).
+                                 # KEINE Produktreife-, Release-, Support-,
+                                 # Capability- oder Implementierungsreife-Taxonomie
+                                 # und KEINE Autoritaet ueber die akzeptierte
+                                 # Release Taxonomy
+                                 # (docs/governance/RELEASE_TAXONOMY.md).
                                  # Bedeutung woertlich: die Foundation-0.1-
                                  # Dokumentations-/Governance-Phase ist durch die
                                  # Human-Maintainer-Entscheidung HM-F1
                                  # (APPROVED / COMPLETE) foermlich GESCHLOSSEN; ihr
                                  # Stand ist als annotierter, unsignierter Tag
-                                 # v0.0.1-foundation veroeffentlicht. Das Projekt
-                                 # befindet sich in der Post-Foundation-Governance-
-                                 # Transition.
-                                 # Impliziert NICHT: Observe autorisiert oder
-                                 # begonnen (HM-O1 noch nicht erteilt);
-                                 # NICHT: CO-WP-032 autorisiert;
-                                 # NICHT: Implementierung begonnen;
-                                 # NICHT: Zielzugriff autorisiert;
+                                 # v0.0.1-foundation veroeffentlicht. Die Phase
+                                 # Observe ist durch HM-O1 (APPROVED WITH BOUNDARY)
+                                 # BETRETEN und mit Grenze autorisiert. HM-O2
+                                 # (APPROVED) hat den ersten Wertslice gewaehlt:
+                                 # Local Linux Host Identity & Basic System
+                                 # Observation. HM-O3 (APPROVED) hat CO-WP-032
+                                 # autorisiert; HM-O4 (APPROVED WITH EXACT
+                                 # BOUNDARY) begrenzt dessen Ausfuehrung auf
+                                 # docs-only. Aktuell laeuft ausschliesslich
+                                 # dokumentations- und governanceorientierte
+                                 # Vertrags- und Uebergangsarbeit.
+                                 # Impliziert NICHT: Implementierung autorisiert
+                                 # oder begonnen;
+                                 # NICHT: produktiver Anwendungscode autorisiert
+                                 # oder vorhanden;
+                                 # NICHT: Sprache oder Runtime ausgewaehlt;
+                                 # NICHT: Erhebungsmechanismus ausgewaehlt (P-3);
+                                 # NICHT: Zielzugriff autorisiert (P-1);
+                                 # NICHT: No-Mutation-Evidenz erbracht (P-2);
+                                 # NICHT: reale Beobachtung durchgefuehrt;
+                                 # NICHT: Tests implementiert oder ausgefuehrt;
+                                 # NICHT: Capability implementiert oder supported;
                                  # NICHT: funktionaler Produktrelease;
-                                 # NICHT: GitHub Release (HM-R11 NOT AUTHORIZED).
+                                 # NICHT: GitHub Release (HM-R11 NOT AUTHORIZED);
+                                 # NICHT: ein Folge-Work-Package erzeugt oder
+                                 # reserviert.
   project_type: Universal Operations Control Plane
 
 roles:
