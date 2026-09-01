@@ -7,17 +7,22 @@
 **Technology Selection:** None
 **ADR Acceptance:** None — 0 ADR-Dateien, 0 akzeptierte ADRs, 0 neue ADR-IDs
 **Risk Acceptance:** None — kein Risiko `accepted-by-human`
-**Tag Created:** **NO**
-**Release Created:** **NO**
-**Publication Performed:** **NO**
+**Tag Action durch `CO-WP-031` / diese Reconciliation:** **NONE** — kein Tag erzeugt, verschoben, gepusht oder signiert
+**Release Action durch `CO-WP-031` / diese Reconciliation:** **NONE** — kein Release erzeugt
+**Publication Action durch `CO-WP-031` / diese Reconciliation:** **NONE** — keine Veröffentlichung durchgeführt
+**Tag-Autorisierung erteilt durch `CO-WP-031` / diese Reconciliation:** **NO**
+**Release-Autorisierung erteilt durch `CO-WP-031` / diese Reconciliation:** **NO**
+**Observe-Autorisierung erteilt durch `CO-WP-031` / diese Reconciliation:** **NO**
 **Work Package Status:** **`completed-go-with-notes`**
 **Nova Review State:** **Nova Final Review `GO WITH NOTES`** (Notes 1–2 geschlossen)
-**Human-Maintainer Commit:** **PENDING**
-**Human-Maintainer Push:** **PENDING**
-**Observe:** **NOT AUTHORIZED**
-**Human-Maintainer Release Authorization State:** **NOT GRANTED**
+**Human-Maintainer Commit:** **COMPLETED** — `286331af467db7e9e3cfeea89efa33c1a1028788` (`286331a`)
+**Human-Maintainer Push:** **COMPLETED** — `main` = `origin/main` = `286331a`
+**Remote Integration:** **COMPLETED**
+**Post-Integration Reconciliation:** dokumentations-only, unnummeriert — siehe §22
 
 > Dieses Dokument ist **Release-Vorbereitung**. Es ist kein Release, keine Tag-Erzeugung, keine Veröffentlichung, keine Implementierung, keine Technologieauswahl, keine ADR-Annahme, keine Risikoannahme und keine Observe-Autorisierung. Es erteilt **keine** Freigabe.
+>
+> **Autoritätsgrenze der obigen Felder.** Die Aussagen zu Tag, Release, Veröffentlichung und Autorisierung sind ausdrücklich **auf `CO-WP-031` und diese Reconciliation bezogen** und dadurch dauerhaft wahr. Eine spätere Tag-Erzeugung, Tag-Publikation, GitHub-Release-Erzeugung oder Veröffentlichung ist ein **eigenes, davon getrenntes Human-Maintainer-Autoritätsereignis außerhalb dieses Quell-Snapshots**; sie macht keine dieser Aussagen falsch und erfordert **keine** erneute Änderung dieses Snapshots, nur um ihr Eintreten zu protokollieren. Zum Zeitpunkt dieser Reconciliation existierten **0 Tags** (lokal und remote) und **kein** Release. Bindend: `Tag-Source-Snapshot ≠ Tag-Ereignis` · `Source-Commit ≠ Tag-Objekt` · `Vorbereitungsartefakt ≠ Release-Autorisierung` · `Release-Empfehlung ≠ Release-Autorisierung` · `Tag-Kandidat ≠ Tag-Autorisierung` · `READY ≠ RELEASED`.
 
 ---
 
@@ -45,12 +50,14 @@ Normative Framework-Basis: NDF `v1.0.0` (Tag `v1.0.0`, Commit `9dcadc1`); `main`
 |---|---|---|
 | Repository | `D:/Projects/CoreOps` (origin `https://github.com/KayKaspers/CoreOps`) | PASS |
 | Branch | `main` | PASS |
-| HEAD | `f4ac1d67a10e8961a09970ab3edf4d1f0482f6fd` | PASS |
-| `origin/main` | `f4ac1d67a10e8961a09970ab3edf4d1f0482f6fd` | PASS — identisch |
+| HEAD vor Beginn | `f4ac1d67a10e8961a09970ab3edf4d1f0482f6fd` | PASS |
+| `origin/main` vor Beginn | `f4ac1d67a10e8961a09970ab3edf4d1f0482f6fd` | PASS — identisch |
 | Working Tree vor Beginn | clean | PASS |
 | Index vor Beginn | leer | PASS |
 | Merge / Rebase / Cherry-Pick / Revert | keiner | PASS |
-| Tags im Repository | **0** | PASS |
+| Tags im Repository vor Beginn | **0** | PASS |
+
+> **Historischer Preflight (`D-01`).** Sämtliche Zeilen dieser Tabelle sind die **Preflight-Werte vor Beginn** von `CO-WP-031` am Stand `f4ac1d6`. Sie sind **keine** Current-State-Angaben dieses Snapshots. Der `CO-WP-031`-Integrationscommit ist `286331af467db7e9e3cfeea89efa33c1a1028788`; der jeweils aktuelle HEAD wird aus Git ermittelt und hier **nicht** selbstreferenziell eingebettet.
 
 ### 2.1 Deterministisches Repository-Inventar
 
@@ -68,7 +75,9 @@ Normative Framework-Basis: NDF `v1.0.0` (Tag `v1.0.0`, Commit `9dcadc1`); `main`
 | davon Metadaten (`project-manifest.yaml`, `ndf-skills-lock.json`) | 2 |
 | ausführbarer Code · Migrationen · CI-/Build-Pipelines · Container-Definitionen · Lockfiles · Dependencies | **0** |
 
-**Änderungsdelta durch `CO-WP-031`:** ein neues Markdown-Dokument (dieses Artefakt) und Änderungen an 19 bestehenden Dateien (Phase B: 18; Nova-Notes-Abschluss: zusätzlich [WORK_PACKAGE_QUEUE.md](../project-system/WORK_PACKAGE_QUEUE.md)). Nach einem Human-Maintainer-Commit wären es 149 versionierte Dateien, davon 147 Markdown. **Dieser Commit ist nicht erfolgt.**
+**Änderungsdelta durch `CO-WP-031`:** ein neues Markdown-Dokument (dieses Artefakt) und Änderungen an 19 bestehenden Dateien (Phase B: 18; Nova-Notes-Abschluss: zusätzlich [WORK_PACKAGE_QUEUE.md](../project-system/WORK_PACKAGE_QUEUE.md)).
+
+**Stand nach der Integration von `CO-WP-031`.** `CO-WP-031` wurde durch den Human Maintainer als **`286331af467db7e9e3cfeea89efa33c1a1028788`** committet und gepusht. Deterministisches Inventar (`git ls-files`) an diesem Commit: **149 versionierte Dateien**, davon **147 Markdown** und **2 Metadaten**. Die Tabelle in §2.1 bleibt unverändert die Zählung **zum Stand `f4ac1d6`**; beide Zählungen folgen derselben expliziten Zählregel. Es wird **keine** neue autoritative „Foundation-Korpus"-Zahl definiert.
 
 ---
 
@@ -88,9 +97,9 @@ Autoritative Quelle: [WORK_PACKAGE_QUEUE.md](../project-system/WORK_PACKAGE_QUEU
 | `CO-WP-028` | docs-only | Teststrategie, Fixtures, Integration Lab | completed-go-with-notes | **`b7827b8`** |
 | `CO-WP-029` | review-only | Cross-Document Consistency and ADR Candidate Review | completed-go-with-notes | **`6afa7ab`** |
 | `CO-WP-030` | review-only | Foundation Readiness Review | completed-go-with-notes | **`f4ac1d6`** |
-| `CO-WP-031` | release-prep | **Foundation 0.1 Release Preparation** | completed-go-with-notes (Nova Final Review `GO WITH NOTES`) | — (Human-Maintainer-Commit ausstehend) |
+| `CO-WP-031` | release-prep | **Foundation 0.1 Release Preparation** | completed-go-with-notes (Nova Final Review `GO WITH NOTES`) | **`286331a`** |
 
-**Queue-Status von `CO-WP-031`.** Das Statusvokabular der Queue-Statusspalte umfasst ausschließlich `planned` · `completed-go` · `completed-go-with-notes`. Während der Phase-B-Bearbeitung existierte kein wahrheitsgemäßer Zwischenwert, weshalb `CO-WP-031` bis zum Nova Final Review auf `planned` verblieb. **Mit dem Nova Final Review `GO WITH NOTES` ist `completed-go-with-notes` der wahrheitsgemäße Endstatus**; die Queue führt ihn seitdem. **Es wurde kein neuer Statuswert erfunden.** Der Abschluss des Work Packages ist **keine** Release-, Tag- oder Observe-Autorisierung; der Human-Maintainer-Commit und -Push stehen aus.
+**Queue-Status von `CO-WP-031`.** Das Statusvokabular der Queue-Statusspalte umfasst ausschließlich `planned` · `completed-go` · `completed-go-with-notes`. Während der Phase-B-Bearbeitung existierte kein wahrheitsgemäßer Zwischenwert, weshalb `CO-WP-031` bis zum Nova Final Review auf `planned` verblieb. **Mit dem Nova Final Review `GO WITH NOTES` ist `completed-go-with-notes` der wahrheitsgemäße Endstatus**; die Queue führt ihn seitdem. **Es wurde kein neuer Statuswert erfunden.** Der Human-Maintainer-Commit und -Push sind erfolgt: `CO-WP-031` ist als **`286331af467db7e9e3cfeea89efa33c1a1028788`** integriert. Der Abschluss und die Integration des Work Packages sind **keine** Release-, Tag- oder Observe-Autorisierung; eine solche entsteht ausschließlich durch ein eigenes, ausdrückliches Human-Maintainer-Autoritätsereignis.
 
 ---
 
@@ -300,7 +309,7 @@ Sämtliche folgenden Punkte sind **ausdrücklich deklariert**, gebunden und **ni
 | **`NEW-2`** | Zwei Verweise in [ARTIFACT_IDENTITY_PROVENANCE_AND_SBOM_MODEL.md](../docs/architecture/ARTIFACT_IDENTITY_PROVENANCE_AND_SBOM_MODEL.md) auf `DOMAIN_PACK_TRUST_PROVENANCE_AND_LIFECYCLE_POLICY.md` ohne `../security/`-Präfix | `APPROVED` — rein mechanische Linkhygiene | **korrigiert** (beide) |
 | **`NEW-3`** | Einziger Verweis, der das Repository verlässt: NDF-Guidance über eine Geschwister-Checkout-Pfadabhängigkeit in [ITIL_AND_PRINCE2_APPLICABILITY_AND_TAILORING.md](../docs/governance/ITIL_AND_PRINCE2_APPLICABILITY_AND_TAILORING.md) | `APPROVED WITH BOUNDARY` | **ersetzt** durch reine Quellenangabe (Nova-Development-Framework, `v1.0.0`, Tag `v1.0.0`, Commit `9dcadc1`, Pfad im NDF-Repository). **Keine** neue NDF-Version übernommen, **keine** externe Laufzeitabhängigkeit |
 | **`NEW-4`** | `project-manifest.yaml` führte `docker_first: pending` im Widerspruch zu `HM-2`; das Manifest steht auf **Rang 6** der Source-of-Truth-Hierarchie und damit über Project Brief, Decision Index und Risk Register | `APPROVED` | **korrigiert** auf `docker_first: baseline` mit ausdrücklich erhaltener `HM-2`-Grenze. `self_hosted`, `offline_capable`, Projektstatus, NDF-Level und CI-Status **unverändert** |
-| **`NEW-5`** | Fünf Artefakte behaupteten am Release-Baseline weiterhin, der `CO-WP-030`-Human-Maintainer-Commit stehe aus — dieser Commit **ist** `f4ac1d6` | `APPROVED` | **korrigiert** in den vier Current-State-Spiegeln. [FOUNDATION_0_1_READINESS_REVIEW.md](FOUNDATION_0_1_READINESS_REVIEW.md) bleibt als historisches Artefakt **unverändert** |
+| **`NEW-5`** | Fünf Artefakte behaupteten am Release-Baseline weiterhin, der `CO-WP-030`-Human-Maintainer-Commit stehe aus — dieser Commit **ist** `f4ac1d6` | `APPROVED` | **teilweise korrigiert in `CO-WP-031`** — die Korrektur erfasste die Abschnitte „Nächstes Work Package" der vier Current-State-Spiegel, **nicht** deren Abschnitte „Letztes Work Package" / „Current implemented WP" und **nicht** den `CO-WP-030`-Bullet der Queue. Die verbleibende Current-State-Drift ist durch die Post-Integration-Reconciliation geschlossen (§22). [FOUNDATION_0_1_READINESS_REVIEW.md](FOUNDATION_0_1_READINESS_REVIEW.md) bleibt als historisches Artefakt **unverändert** |
 | **`NEW-6`** | `ROADMAP.md` führte die Release-Taxonomie weiterhin als `Proposed for acceptance` / „vorgeschlagen" trotz `HM-1` | `APPROVED` | **korrigiert**, gemeinsam mit `RELEASE_TAXONOMY.md`; `HM-1` bleibt Autorität |
 | **`NEW-7`** | Korpuszählung: `CO-WP-030` nannte 105 Dokumente; deterministisch ergaben sich andere Werte | `DISPOSITIONED WITH BOUNDARY` | **keine** neue autoritative Korpuszahl definiert. §2.1 nennt ausschließlich Inventarzahlen mit **expliziter Zählregel** (`git ls-files`). Historische Zählangaben **nicht** umgeschrieben |
 | **`NEW-8`** | Kein `README.md`, kein `LICENSE` im öffentlichen Repository | `DEFERRED — kein `CO-WP-031`-Blocker` | **nicht behoben.** Weder Datei erstellt, **kein** Risiko registriert, **kein** Exit Gate. Als gebundener Restpunkt in §11 deklariert |
@@ -327,7 +336,7 @@ Deterministische Prüfliste. Eine Zeile gilt nur als erfüllt, wenn die genannte
 | 9 | Decision Index in sich konsistent | 373 `DEC-S` lückenlos/duplikatfrei; Summenangaben = nachgerechnete Zeilenwerte | **SATISFIED** |
 | 10 | Risk Register ohne unbehandelten Foundation-Blocker | 316 lückenlos/duplikatfrei; **`RISK-29` bleibt unbehandelt und `open`**, ist aber `planning`/`medium` und ausdrücklich deklariert (§9.2, §11) | **SATISFIED WITH NOTE** |
 | 11 | Release-Taxonomie bindend und in sich konsistent | `RELEASE_TAXONOMY.md` `Accepted` · `ROADMAP.md` `Accepted` · `DEC-O-02` `clarified` — drei Quellen deckungsgleich | **SATISFIED** |
-| 12 | Release-Kandidat identifiziert, **nicht** erzeugt | `v0.0.1-foundation` benannt (§14); `git tag --list` leer | **SATISFIED** |
+| 12 | Release-Kandidat identifiziert, **nicht** erzeugt | `v0.0.1-foundation` benannt (§14); `git tag --list` zum Prüfzeitpunkt leer; durch `CO-WP-031` kein Tag erzeugt | **SATISFIED** |
 | 13 | Release-Inhalt auf Dokumentation/Governance begrenzt | §2.1 — 146 Markdown + 2 Metadaten; sonst nichts | **SATISFIED** |
 | 14 | Kein produktiver Anwendungscode | 0 ausführbare Dateien, Migrationen, CI-Pipelines, Container-Definitionen, Lockfiles, Dependencies | **SATISFIED** |
 | 15 | Claims und Non-Claims explizit | §16 | **SATISFIED** |
@@ -339,7 +348,7 @@ Deterministische Prüfliste. Eine Zeile gilt nur als erfüllt, wenn die genannte
 | 21 | Release-Evidenz nachvollziehbar | §§2–12 mit Pfaden, Commits und Zeilenbezug | **SATISFIED** |
 | 22 | Deferred Items ausdrücklich nicht-blockierend und gebunden | §11 | **SATISFIED** |
 | 23 | Gate 24 durch ein eigenes Artefakt belegt | **dieses Dokument** | **SATISFIED** |
-| 24 | Release-Reife-Empfehlung getrennt von HM-Autorisierung | §17 (Empfehlung) · §18 (Nicht-Aktionen) · §19 (Nova Final Review `GO WITH NOTES`) · §20 (HM **NOT GRANTED**) | **SATISFIED** |
+| 24 | Release-Reife-Empfehlung getrennt von HM-Autorisierung | §17 (Empfehlung) · §18 (Nicht-Aktionen) · §19 (Nova Final Review `GO WITH NOTES`) · §20 (durch `CO-WP-031` erteilte Release-/Tag-Autorisierung: **keine**) | **SATISFIED** |
 
 **Bilanz: 23 `SATISFIED` · 1 `SATISFIED WITH NOTE` (Gate-Kriterium 10) · 0 unerfüllt.**
 
@@ -354,22 +363,27 @@ Foundation 0.1
 Tag candidate:  v0.0.1-foundation
 ```
 
-| Aussage | Zustand |
+| Aussage (Autoritätsbezug: `CO-WP-031` und die Post-Integration-Reconciliation) | Zustand |
 |---|---|
 | Kandidat identifiziert | **ja** — `v0.0.1-foundation`, gemäß [RELEASE_TAXONOMY.md](../docs/governance/RELEASE_TAXONOMY.md) |
-| Tag erzeugt | **NEIN** — `git tag --list` ist leer; 0 Refs unter `refs/tags` |
-| Tag-Erzeugung autorisiert | **NEIN** |
-| Release erzeugt | **NEIN** |
-| GitHub Release erzeugt | **NEIN** |
-| Veröffentlichung durchgeführt | **NEIN** |
+| Tag durch `CO-WP-031` / diese Reconciliation erzeugt, verschoben oder gepusht | **NEIN** |
+| Tag-Erzeugung durch `CO-WP-031` / diese Reconciliation autorisiert | **NEIN** |
+| Release durch `CO-WP-031` / diese Reconciliation erzeugt | **NEIN** |
+| GitHub Release durch `CO-WP-031` / diese Reconciliation erzeugt | **NEIN** |
+| Veröffentlichung durch `CO-WP-031` / diese Reconciliation durchgeführt | **NEIN** |
 | Archiv / Paket / Binary / Container Image | **NEIN** — nicht erzeugt und nicht vorgesehen |
+| Snapshot-Zeitpunkt-Evidenz (Stand Reconciliation) | `git tag --list` leer; 0 Refs unter `refs/tags` lokal und remote; kein Release |
 
 ```text
-Tag candidate  !=  created tag
-Tag candidate  !=  tag authorization
+Tag candidate       !=  created tag
+Tag candidate       !=  tag authorization
+Tag source snapshot !=  tag event
+Source commit       !=  tag object
 ```
 
 Erstellung, Veröffentlichung und Signierung von Tags und Releases sind ausschließlich dem Human Maintainer vorbehalten.
+
+> **Stabilitätshinweis.** Die obigen Zeilen sind **autoritätsbezogen** formuliert und bleiben dauerhaft wahr. Eine spätere, separat autorisierte Human-Maintainer-Aktion — Tag-Erzeugung, Tag-Push, GitHub-Release-Erzeugung oder Veröffentlichung — ist ein **eigenes Autoritätsereignis außerhalb dieses Quell-Snapshots**. Sie macht keine dieser Zeilen falsch und erfordert **keine** erneute Änderung dieses Snapshots. Nur die ausdrücklich als *Snapshot-Zeitpunkt-Evidenz* gekennzeichnete Zeile ist zeitgebunden und als solche datiert zu lesen.
 
 ---
 
@@ -377,7 +391,7 @@ Erstellung, Veröffentlichung und Signierung von Tags und Releases sind ausschli
 
 Ein etwaiger Foundation-Release-Kandidat `v0.0.1-foundation` enthielte **ausschließlich** Foundation-Dokumentation und -Governance:
 
-- 146 Markdown-Dateien (91 `docs/`, 8 `project-system/`, 7 `project-brain/`, 1 Repository-Wurzel, 39 `.claude/skills/` als provenance-gebundener NDF-Skills-Pack) sowie zwei Metadatendateien (`project-manifest.yaml`, `ndf-skills-lock.json`) — Zählregel §2.1.
+- **147 Markdown-Dateien** — 91 `docs/`, 8 `project-system/`, 8 `project-brain/`, 1 Repository-Wurzel (`ROADMAP.md`), 39 `.claude/skills/` als provenance-gebundener NDF-Skills-Pack (Commit `9dcadc1`) — sowie **2 Metadatendateien** (`project-manifest.yaml`, `ndf-skills-lock.json`). **Versionierte Dateien gesamt: 149.** Zählregel wie §2.1 (`git ls-files`), Stand: `CO-WP-031`-Integrationscommit `286331a`. Dies ist eine **deterministische Git-Inventarzahl**, **keine** neue autoritative „Foundation-Korpus"-Metrik.
 - **Kein** produktiver Anwendungscode, **kein** Frontend, **kein** Backend, **keine** Agent-/Relay-Implementierung.
 - **Keine** ausführbaren Migrationen, Build-/CI-Pipelines, Container-Builds, Lockfiles oder Package-Dependencies.
 - **Keine** Runtime-Implementierung, **kein** ausführbares Produktrelease, **kein** Binary, **kein** Container Image.
@@ -443,7 +457,7 @@ RELEASE READY WITH NOTES  !=  Human-Maintainer-Release-Autorisierung
 
 ## 18. Explicit Non-Actions
 
-In `CO-WP-031` wurde **nicht** ausgeführt:
+In `CO-WP-031` **und** in der Post-Integration-Reconciliation (§22) wurde **nicht** ausgeführt:
 
 **kein** Tag · **kein** Release · **keine** GitHub-Release-Erzeugung · **keine** Veröffentlichung · **kein** Archiv, Paket, Binary oder Container Image · **kein** Git-Write durch ein AI-System (`add`, `commit`, `push`, `tag`, `merge`, `rebase`, `checkout`, `reset`, `stash`, `clean`, `config`, `pull`, `fetch`) · **keine** Observe-Implementierung und **keine** Observe-Autorisierung · **keine** ADR-Datei, **keine** ADR-Annahme, **keine** neue ADR-ID · **keine** Risikoannahme und kein `accepted-by-human` · **keine** `CCR`-Schließung · **keine** neue Decision-, Risk- oder CCR-ID · **keine** Technologie- oder Datenbankauswahl · **keine** Implementierung, **kein** Anwendungscode · **keine** Änderung an der Foundation-Scope-Lock-Semantik · **kein** realer Zielzugriff, **keine** Discovery, **kein** Netzwerk-, Credential- oder Secret-Zugriff · **keine** Skriptausführung mit operativer Wirkung.
 
@@ -462,12 +476,24 @@ NOVA FINAL REVIEW:  GO WITH NOTES   (Notes 1-2 geschlossen)
 ## 20. Human-Maintainer Release Authorization State
 
 ```text
-HUMAN-MAINTAINER RELEASE AUTHORIZATION:  NOT GRANTED
+RELEASE AUTHORIZATION GRANTED BY CO-WP-031 / THIS RECONCILIATION:  NO
+TAG AUTHORIZATION     GRANTED BY CO-WP-031 / THIS RECONCILIATION:  NO
+OBSERVE AUTHORIZATION GRANTED BY CO-WP-031 / THIS RECONCILIATION:  NO
 ```
 
-Aus diesem Dokument folgt **keine** Release-Aktion. Es autorisiert **nicht**: Foundation Release · Tag-Erzeugung · Release-Publikation · GitHub Release · Veröffentlichung · Deployment · Observe-Implementierung · Observe-Autorisierung · ADR-Annahme · Risikoannahme · Git-Writes durch AI.
+Aus diesem Dokument folgt **keine** Release-Aktion. Es autorisiert **nicht**: Foundation Release · Tag-Erzeugung · Tag-Publikation · Release-Publikation · GitHub Release · Veröffentlichung · Deployment · Observe-Implementierung · Observe-Autorisierung · ADR-Annahme · Risikoannahme · Git-Writes durch AI.
 
-Staging, Commit, Push, Tag, Release und Veröffentlichung erfolgen ausschließlich durch den Human Maintainer. Der Nova Final Review ist erfolgt (`GO WITH NOTES`); **Human-Maintainer-Commit und -Push stehen aus**, und eine Release-, Tag- oder Observe-Autorisierung bleibt eine davon **getrennte, ausdrückliche** Entscheidung.
+Staging, Commit, Push, Tag, Release und Veröffentlichung erfolgen ausschließlich durch den Human Maintainer. Der Nova Final Review ist erfolgt (`GO WITH NOTES`); **Human-Maintainer-Commit und -Push sind erfolgt** — `CO-WP-031` ist als **`286331af467db7e9e3cfeea89efa33c1a1028788`** integriert.
+
+**Autoritätsereignis-Grenze.** Eine Release-, Tag- oder Observe-Autorisierung ist davon **getrennt** und wird durch dieses Dokument **nicht** erteilt. Jede spätere Human-Maintainer-Autorisierung sowie jede daraus folgende Tag-Erzeugung, Tag-Publikation, GitHub-Release-Erzeugung oder Veröffentlichung ist ein **eigenes Autoritätsereignis außerhalb dieses Quell-Snapshots**. Ein solches Ereignis macht die obigen Aussagen **nicht** falsch — sie sind auf `CO-WP-031` und diese Reconciliation bezogen — und erfordert **keine** erneute Änderung dieses Snapshots.
+
+```text
+Tag source snapshot        !=  tag event
+Source commit              !=  tag object
+Preparation artifact       !=  release authorization
+Release recommendation     !=  release authorization
+READY                      !=  RELEASED
+```
 
 ---
 
@@ -496,16 +522,51 @@ VERDIKT:   RELEASE READY WITH NOTES
 NOTES:     6 offene CCR (CCR-05/CCR-07 vor Deploy) · RISK-29 open ·
            NEW-8 (README/Lizenz) deferred · HM-7/9/10/11/12 · NF-3
 
-NICHT:     kein Tag · kein Release · keine Veröffentlichung · kein Git-Write durch AI ·
+NICHT durch CO-WP-031 / die Reconciliation:
+           kein Tag · kein Release · keine Veröffentlichung · kein Git-Write durch AI ·
            keine ADR · keine Risikoannahme · keine CCR-Schließung · keine Implementierung ·
-           keine Observe-Autorisierung · keine Scope-Lock-Semantikänderung
+           keine Tag-/Release-/Observe-Autorisierung · keine Scope-Lock-Semantikänderung
 
 STATUS:    CO-WP-031 = completed-go-with-notes · Nova Final Review = GO WITH NOTES
-           (Notes 1-2 geschlossen) · HM-Commit PENDING · HM-Push PENDING
-           HM-Release-Autorisierung NOT GRANTED · Release NOT CREATED/NOT PUBLISHED
-           Tag NOT CREATED/NOT AUTHORIZED · Observe NOT AUTHORIZED
+           (Notes 1-2 geschlossen)
+           CO-WP-031 Integrationscommit = 286331af467db7e9e3cfeea89efa33c1a1028788
+           HM-Push = COMPLETED · Remote-Integration = COMPLETED
+           Tag-/Release-/Observe-Autorisierung erteilt durch CO-WP-031
+           bzw. die Reconciliation = NO
+           Jede spätere Tag-/Release-Autorisierung oder -Aktion ist ein eigenes
+           Human-Maintainer-Autoritätsereignis ausserhalb dieses Snapshots.
+
+RECONCILE: eine spätere dokumentations-only Post-Integration-Release-Snapshot-
+           Reconciliation aktualisiert die Current-State-Spiegel (§22).
+           Deren eigener Commit-SHA wird bewusst NICHT selbstreferenziell
+           eingebettet; der aktuelle HEAD wird aus Git ermittelt.
 ```
 
 ---
 
-**Ende `CO-WP-031`.** Release-Vorbereitung durchgeführt; Release-Reife-Kandidatverdikt `RELEASE READY WITH NOTES`; **Nova Final Review `GO WITH NOTES`**, Notes 1–2 geschlossen; Status `completed-go-with-notes`. **Human-Maintainer-Commit und -Push stehen aus. Human-Maintainer-Release-Autorisierung nicht erteilt. Kein Tag erzeugt oder autorisiert, kein Release erzeugt oder veröffentlicht, Observe nicht autorisiert, kein Git-Write durch ein AI-System.** `Foundation Release Preparation ≠ Foundation Release`; `Release-Empfehlung ≠ Release-Autorisierung`; `Tag-Kandidat ≠ Tag-Autorisierung`; `READY ≠ RELEASED`.
+## 22. Post-Integration Release-Snapshot Reconciliation
+
+> **Art:** unnummerierte, dokumentations-only Reconciliation. **Kein** neues Work Package, **keine** Wiedereröffnung von `CO-WP-031`, **kein** Foundation Release, **keine** Tag- oder Release-Aktion, **keine** Tag- oder Release-Autorisierung.
+
+`CO-WP-031` wurde durch den Human Maintainer als **`286331af467db7e9e3cfeea89efa33c1a1028788`** committet und gepusht; die Remote-Integration ist abgeschlossen. Ein anschließendes read-only Release-Decision-Preflight stellte fest, dass der so entstandene Snapshot **Current-State-Aussagen** enthielt, die den Commit bestritten, in dem sie standen (`Human-Maintainer-Commit/-Push PENDING` bzw. `ausstehend`), sowie eine falsifizierte Zukunftsprojektion des Inventars, einen veralteten Live-HEAD und eine unvollständig protokollierte `NEW-5`-Disposition (§12).
+
+Diese Reconciliation schließt ausschließlich diese Current-State-Hygiene in **sechs** Dateien: [FOUNDATION_0_1_RELEASE_PREPARATION.md](FOUNDATION_0_1_RELEASE_PREPARATION.md), [PROJECT_BRAIN.md](PROJECT_BRAIN.md), [CONTEXT_PACK_FOUNDATION_0_1.md](CONTEXT_PACK_FOUNDATION_0_1.md), [NEXT_PHASE.md](../project-system/NEXT_PHASE.md), [PROJECT_PROFILE.md](../project-system/PROJECT_PROFILE.md), [WORK_PACKAGE_QUEUE.md](../project-system/WORK_PACKAGE_QUEUE.md).
+
+**Ausdrücklich nicht geändert:** [DECISION_INDEX.md](../project-system/DECISION_INDEX.md) · [RISK_REGISTER.md](../project-system/RISK_REGISTER.md) · [project-manifest.yaml](../project-system/project-manifest.yaml) · [FOUNDATION_SCOPE_LOCK.md](../docs/governance/FOUNDATION_SCOPE_LOCK.md) · [RELEASE_TAXONOMY.md](../docs/governance/RELEASE_TAXONOMY.md) · [ROADMAP.md](../ROADMAP.md) · [PROJECT_BRIEF.md](../docs/architecture/PROJECT_BRIEF.md) · sämtliche historischen Review-Artefakte ([FOUNDATION_0_1_READINESS_REVIEW.md](FOUNDATION_0_1_READINESS_REVIEW.md), [CROSS_DOCUMENT_CONSISTENCY_AND_ADR_CANDIDATE_REVIEW.md](CROSS_DOCUMENT_CONSISTENCY_AND_ADR_CANDIDATE_REVIEW.md), die drei Milestone Reviews) · alles unter `.claude/skills/`.
+
+**Keine** neue Decision · **kein** neues Risiko · **kein** neues ADR · **keine** ADR-Annahme · **keine** Risikoannahme · **keine** `CCR`-Schließung · **keine** neue `CO-WP-*`-ID · **keine** Änderung der Queue-Reihenfolge · **keine** Severity-, Target- oder Statusmigration · **keine** Technologieauswahl. Register unverändert: Decision Index 373 `DEC-S`; Risk Register 316 Einträge, `treatment-planned` 314 · `open` 1 (`RISK-29`) · `closed` 1 (`RISK-66`) · `accepted-by-human` 0.
+
+**Selbstreferenz-Konvention (bindend).** Der `CO-WP-031`-Integrationscommit `286331a` wird namentlich geführt. Der Commit **dieser** Reconciliation wird **bewusst nicht** selbstreferenziell eingebettet; der jeweils aktuelle HEAD wird aus Git ermittelt (`git rev-parse HEAD`). Zu unterscheiden:
+
+```text
+CO-WP-031 implementation/integration commit  =  286331a   (namentlich geführt)
+post-integration reconciliation commit       =  beschrieben, nicht SHA-eingebettet
+```
+
+**Release-Ereignis-Grenze.** Weder `CO-WP-031` noch diese Reconciliation erzeugt einen Tag oder ein Release oder erteilt eine Tag-, Release- oder Observe-Autorisierung. Jede spätere Tag-Erzeugung, Tag-Publikation, GitHub-Release-Erzeugung oder Veröffentlichung ist ein **eigenes Human-Maintainer-Autoritätsereignis außerhalb dieses Quell-Snapshots** und erfordert **keine** weitere Mutation dieses Snapshots, nur um ihr Eintreten festzuhalten.
+
+Nach dieser Reconciliation ist ein Nova Review erforderlich. Erst danach folgen — jeweils als eigene, ausdrückliche Human-Maintainer-Entscheidung — die Freigabe des Quellcommits, die Tag-Erzeugung, der Tag-Push und gegebenenfalls ein GitHub Release.
+
+---
+
+**Ende `CO-WP-031`.** Release-Vorbereitung durchgeführt; Release-Reife-Kandidatverdikt `RELEASE READY WITH NOTES`; **Nova Final Review `GO WITH NOTES`**, Notes 1–2 geschlossen; Status `completed-go-with-notes`; **durch den Human Maintainer committet und gepusht als `286331af467db7e9e3cfeea89efa33c1a1028788`**. **Weder `CO-WP-031` noch die Post-Integration-Reconciliation (§22) hat einen Tag oder ein Release erzeugt oder eine Tag-, Release- oder Observe-Autorisierung erteilt; kein Git-Write durch ein AI-System.** Jede spätere Tag- oder Release-Aktion ist ein getrenntes Human-Maintainer-Autoritätsereignis außerhalb dieses Snapshots. `Foundation Release Preparation ≠ Foundation Release`; `Release-Empfehlung ≠ Release-Autorisierung`; `Tag-Kandidat ≠ Tag-Autorisierung`; `Tag-Source-Snapshot ≠ Tag-Ereignis`; `READY ≠ RELEASED`.
