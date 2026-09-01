@@ -7,7 +7,21 @@ project:
   name: CoreOps
   slug: coreops
   slogan: "One Dashboard. Controlled Operations."
-  status: foundation-initial-bootstrap
+  status: foundation-0-1-documentation-published-phase-closure-pending
+                                 # Rein deskriptiver aktueller Projektzustand,
+                                 # KEINE Produktreife- oder Release-Taxonomie und
+                                 # KEINE Autoritaet ueber die akzeptierte Release
+                                 # Taxonomy (docs/governance/RELEASE_TAXONOMY.md).
+                                 # Bedeutung woertlich: die Foundation-0.1-
+                                 # Dokumentations-/Governance-Arbeit ist abgeschlossen
+                                 # und als annotierter, unsignierter Tag
+                                 # v0.0.1-foundation veroeffentlicht; der formale
+                                 # Abschluss der Foundation-Phase ist NOCH NICHT
+                                 # entschieden (HM-F1 nicht erteilt).
+                                 # Impliziert NICHT: Foundation-Phase abgeschlossen;
+                                 # NICHT: Observe autorisiert; NICHT: funktionaler
+                                 # Produktrelease; NICHT: Implementierung begonnen;
+                                 # NICHT: GitHub Release (HM-R11 NOT AUTHORIZED).
   project_type: Universal Operations Control Plane
 
 roles:

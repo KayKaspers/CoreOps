@@ -2,11 +2,43 @@
 
 > **Slogan:** One Dashboard. Controlled Operations.
 
-**Status:** Foundation – Initial Bootstrap
+**Status:** Foundation 0.1 – Dokumentations-/Governance-Arbeit abgeschlossen und als Tag veröffentlicht; Phasenabschluss noch nicht entschieden
 **NDF-Basis:** Nova-Development-Framework `v1.0.0` (Tag `v1.0.0`, Commit `9dcadc1`) — der Branch `main` ist **nicht** normativ.
 **Erzeugt durch:** Work Package `CO-WP-001` (docs-only, Core Governance Skeleton)
 
 ---
+
+## Aktueller Projektstand (autoritative Current-State-Oberfläche)
+
+> Dieser Abschnitt ist die **einzige Current-State-Aussage dieses Dokuments**. Alle nachfolgenden Abschnitte sind entweder der historische `CO-WP-001`-Initialschnappschuss (§§1–17) oder historische Pro-WP-Konsolidierungsblöcke. Ergänzt durch die unnummerierte, dokumentations-only **Post-Publication Current-State Reconciliation** (`HM-C1` `APPROVED`).
+
+| Dimension | Stand |
+| --------- | ----- |
+| Foundation-0.1-Dokumentations-/Governance-Arbeit | **COMPLETE** — `CO-WP-001`…`CO-WP-031` inkl. `CO-WP-001A` und `CO-WP-004A`…`004E` sämtlich `completed-go-with-notes` (autoritativ: [WORK_PACKAGE_QUEUE.md](WORK_PACKAGE_QUEUE.md)) |
+| Foundation-Publikation | **PUBLISHED AS ANNOTATED TAG `v0.0.1-foundation`** — annotiert, **unsigniert**, unveränderlich; Tag-Objekt `7f74d5dcccf10490d2f87f7a292b2e7e20813630` |
+| Ziel-Commit des Tags | `af02b28fd46b39eb9c2fce9a515ac4c09cb4ffba` (der jeweils aktuelle HEAD wird aus Git ermittelt und hier **nicht** selbstreferenziell eingebettet) |
+| GitHub Release | **NOT CREATED** — `HM-R11` `NOT AUTHORIZED / CLOSED` |
+| Foundation-Phasenabschluss | **NOT YET DECIDED** — `HM-F1` **nicht erteilt** |
+| Observe | **NOT AUTHORIZED** |
+| `CO-WP-032` | **NOT AUTHORIZED** (keine `CO-WP-*`-ID vergeben) |
+| Implementierung | **NOT AUTHORIZED** |
+| Funktionaler CoreOps-Produktrelease | **NEIN** |
+| Produktiver Anwendungscode | **KEINER** |
+| Akzeptierte ADRs | **0** (unverändert) |
+| Technische Architektur | weiterhin **unbestätigt**; keine Technologie ausgewählt |
+| Runtime-Capabilities / `supported`-Integrationen | **0** / **0** |
+
+Bindend: `Foundation-Arbeit abgeschlossen ≠ Foundation-Phase abgeschlossen` · `Foundation-Phase abgeschlossen ≠ Observe autorisiert` · `Tag veröffentlicht ≠ funktionaler Produktrelease` · `Current-State-Reconciliation ≠ Foundation-Phase-Abschluss`.
+
+---
+
+## Historischer Initialschnappschuss — §§1–17 (`CO-WP-001`)
+
+> **Semantische Grenze.** Die folgenden Abschnitte **§1 bis §17** sind der **originale, unveränderte Profiltext aus `CO-WP-001`** (Core Governance Skeleton) und beschreiben den **damaligen** Projektstand. Sie sind **HISTORICAL_SNAPSHOT** und ausdrücklich **keine** Current-State-Aussage.
+>
+> Insbesondere sind **§9 Foundation-Status**, **§14 Bekannte Initialrisiken**, **§15 Offene Foundation-Fragen** und **§16 Nächster Meilenstein** durch die spätere Foundation-Arbeit sachlich überholt (u. a.: die Foundation-Queue ist vollständig ausgeführt; es existiert weit mehr als das Core Governance Skeleton; die NDF-Level-Frage ist über `CCR-03` geklärt; Docker-first ist über `HM-2` als Delivery Baseline bestätigt; die Release-Taxonomie ist `Accepted` über `HM-1`; `CO-WP-002` ist längst abgeschlossen). Sie werden **bewusst nicht umgeschrieben**, weil sie als historische Evidenz erhalten bleiben.
+>
+> **Für den aktuellen Stand gilt ausschließlich** der Abschnitt *Aktueller Projektstand* oben sowie — autoritativ — [WORK_PACKAGE_QUEUE.md](WORK_PACKAGE_QUEUE.md), [DECISION_INDEX.md](DECISION_INDEX.md) und [RISK_REGISTER.md](RISK_REGISTER.md).
 
 ## 1. Projektname und Slogan
 
@@ -156,6 +188,12 @@ Folgende Themen benötigen vor jeder verbindlichen technischen Festlegung einen 
 - Delivery Baseline (`docker-first`)
 
 ---
+
+## Historische Pro-WP-Konsolidierungsblöcke (`CO-WP-003` ff.)
+
+> **Semantische Grenze.** Alle folgenden `… Konsolidierung`-Abschnitte sind **HISTORICAL_CONSOLIDATION**: Sie halten das Ergebnis des jeweiligen Work Packages **zum Zeitpunkt seiner Bearbeitung** fest. Statusangaben wie `(Proposed for acceptance)`, `Nova Review pending` oder eine damalige Bezeichnung von `v0.0.1-foundation` als Tag-**Kandidat** sind **zeitgebundene Aufzeichnungen** und werden **bewusst nicht** auf den heutigen Stand umgeschrieben.
+>
+> Für den heutigen Stand gilt ausschließlich der Abschnitt *Aktueller Projektstand* oben; für Dokumentstatus die Header der jeweiligen Dokumente; für Work-Package-Status [WORK_PACKAGE_QUEUE.md](WORK_PACKAGE_QUEUE.md).
 
 ## CO-WP-003 Konsolidierung
 

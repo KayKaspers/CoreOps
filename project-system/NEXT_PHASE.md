@@ -6,7 +6,11 @@
 
 `Foundation 0.1 – Platform Foundation`
 
-> Vorläufiger Arbeitsname. Die Phasen- und Release-Taxonomie wurde durch `CO-WP-003` festgelegt und ist für Foundation 0.1 durch `HM-1` verbindlich bestätigt ([RELEASE_TAXONOMY.md](../docs/governance/RELEASE_TAXONOMY.md): `Accepted`); `v0.0.1-foundation` bleibt ein Tag-Kandidat, und diese Feststellung autorisiert weder Tag noch Release.
+> Vorläufiger Arbeitsname. Die Phasen- und Release-Taxonomie wurde durch `CO-WP-003` festgelegt und ist für Foundation 0.1 durch `HM-1` verbindlich bestätigt ([RELEASE_TAXONOMY.md](../docs/governance/RELEASE_TAXONOMY.md): `Accepted`).
+>
+> **Foundation-Publikationsstand:** Der Foundation-Tag `v0.0.1-foundation` ist **veröffentlicht** — annotiert, **unsigniert**, unveränderlich; Tag-Objekt `7f74d5dcccf10490d2f87f7a292b2e7e20813630`, Ziel-Commit des Tags `af02b28fd46b39eb9c2fce9a515ac4c09cb4ffba`. Die Publikation erfolgte durch die eigenständigen Human-Maintainer-Autoritätsereignisse `HM-R8` (Quellcommit-Autorisierung), `HM-R9` (lokale annotierte Tag-Erzeugung) und `HM-R10` (Tag-Publikation) — jeweils **außerhalb** des getaggten Quell-Snapshots. Ein **GitHub Release wurde nicht erzeugt** (`HM-R11` `NOT AUTHORIZED / CLOSED`). `v0.1.0-alpha.1` bleibt ausschließlich **Kandidat** für den ersten Observe-Prerelease.
+>
+> Bindend: `Foundation-Dokumentationsrelease ≠ funktionaler Produktrelease` · `Tag veröffentlicht ≠ Foundation-Phase abgeschlossen` · `Tag veröffentlicht ≠ Observe autorisiert`. Der **Abschluss der Foundation-Phase ist noch nicht entschieden** (`HM-F1` nicht erteilt); Observe ist **nicht** autorisiert.
 
 ## Local NDF Skills Baseline
 
@@ -94,7 +98,7 @@ Alle 7 Kandidaten auf `adopted-in-ndf` (drei Adoption-Commits 1ebffa6 / e894c6f 
 
 ## Observed, Desired, Effective State and Drift
 
-Current implemented WP: `CO-WP-012 – Observed, Desired, Effective State and Drift` – pending Nova review.
+In diesem Abschnitt behandeltes WP: `CO-WP-012 – Observed, Desired, Effective State and Drift`. Der hier festgehaltene Stand `pending Nova review` ist der **historische** Bearbeitungsstand dieses Work Packages; der heute gültige Status ergibt sich ausschließlich aus [WORK_PACKAGE_QUEUE.md](WORK_PACKAGE_QUEUE.md) (`completed-go-with-notes`). Das zuletzt bearbeitete Work Package ist **nicht** `CO-WP-012` — siehe §`Next Work Package`.
 
 Current state-management foundation:
 Desired, observed, effective and last-known state semantics, drift detection, convergence and safe-remediation governance defined.
@@ -274,7 +278,7 @@ Drei neue Dokumente: Topology Graph and Relationship Model (Node/Relationship Cl
 
 ## Milestone Lessons Review (CO-WP-013…020)
 
-Current milestone:
+In diesem Abschnitt behandelter Milestone:
 CO-WP-013 through CO-WP-020 reviewed — `Milestone Lessons Review CO-WP-013 through CO-WP-020` `completed-go-with-notes` (Commit d09d91b). Ergebnis: **GO WITH NOTES FOR CO-WP-021**.
 
 Current foundation:
@@ -309,7 +313,7 @@ Drei neue Dokumente: Deployment Control Plane and Execution Model (Control-Plane
 
 ## Artifact Trust, SBOM, Provenance and Revocation
 
-Current implemented WP:
+In diesem Abschnitt behandeltes WP:
 `CO-WP-022 – Artifact Trust, SBOM, Provenance and Revocation` – pending Nova review.
 
 Current artifact foundation:
@@ -330,7 +334,7 @@ Drei neue Dokumente: Artifact Identity, Provenance and SBOM Model (Artifact-Klas
 
 ## Restricted, Isolated, Air-Gapped Operation and CorePack
 
-Current implemented WP:
+In diesem Abschnitt behandeltes WP:
 `CO-WP-023 – Restricted, Isolated, Air-Gapped Operation and CorePack` – pending Nova review.
 
 Current restricted-operation foundation:
@@ -351,7 +355,7 @@ Drei neue Dokumente: Restricted, Isolated and Air-Gapped Operation Model (Connec
 
 ## Secrets, Configuration Vault and Key Custody
 
-Current implemented WP:
+In diesem Abschnitt behandeltes WP:
 `CO-WP-024 – Secrets, Configuration Vault and Key Custody` – Nova Review `GO WITH NOTES`; verbindliche Nova-Notes 1–4 vor dem Commit geschlossen; `completed-go-with-notes` (Commit `916ba66`, gepusht; siehe Abschlusszeile am Ende dieses Abschnitts).
 
 Current secret and configuration foundation:
@@ -372,7 +376,7 @@ Drei neue Dokumente: Secrets, Configuration Vault and Custody Governance (Concep
 
 ## Data Classification, Retention and Redaction
 
-Current implemented WP:
+In diesem Abschnitt behandeltes WP:
 `CO-WP-025 – Data Classification, Retention and Redaction` – Nova Review `GO WITH NOTES`; Notes-Runde geschlossen; `completed-go-with-notes` (Commit 3419664, gepusht).
 
 ## Future Reporting and Vulnerability Roadmap (roadmap-candidate)
@@ -397,7 +401,7 @@ Drei neue Dokumente: Data Classification and Handling Model (Concepts, Klassifik
 
 ## Self-Protection, Degraded Modes and Recovery Mode
 
-Current implemented WP:
+In diesem Abschnitt behandeltes WP:
 `CO-WP-026 – Self-Protection, Degraded Modes and Recovery Mode` – Nova Review `GO WITH NOTES`; Notes-Runde geschlossen; `completed-go-with-notes` (Commit 399de21, gepusht; Branch gleichauf mit origin/main).
 
 Current self-protection foundation:
@@ -437,7 +441,7 @@ Kein NDF-Transfer; NDF v1.0.0 bleibt normativ, post-v1.0-`main` nur informativ u
 
 ## UX Information Architecture and Dashboard System
 
-Current implemented WP:
+In diesem Abschnitt behandeltes WP:
 `CO-WP-027 – UX Information Architecture and Dashboard System` – Nova Review `GO WITH NOTES`; Notes-Runde (Notes 1–3) geschlossen; `completed-go-with-notes`; durch den Human Maintainer **committet und gepusht als `1dee29d`** (`1dee29d19fe500588161c5878cbbb76e5dbb0812`). Repository-Baseline `1dee29d`.
 
 Nova-Notes-Closure (1–3):
@@ -468,7 +472,7 @@ Kein NDF-Transfer; NDF v1.0.0 bleibt normativ. Lessons-Learned-Register und NDF-
 
 ## Test Strategy, Fixtures and Integration Lab
 
-Current implemented WP:
+In diesem Abschnitt behandeltes WP:
 `CO-WP-028 – Test Strategy, Fixtures and Integration Lab` (docs-only) – Nova Review `GO WITH NOTES`; Notes-Runde (Notes 1–3) geschlossen; **`completed-go-with-notes`**; durch den Human Maintainer **committet und gepusht als `b7827b8`** (`b7827b89f76aba61fb255cfbf5a6682d4191cefe`). Repository-Baseline zum Zeitpunkt der CO-WP-028-Bearbeitung: `1dee29d`.
 
 Nova-Notes-Closure (1–3):
@@ -574,7 +578,7 @@ Dokumentation, Scope, Architektur, Security, Governance und Verträge definieren
 
 ## Next Work Package
 
-Zuletzt bearbeitet: `CO-WP-031 – Foundation 0.1 Release Preparation` (`release-prep`) — durch ausdrückliche Human-Maintainer-Autorisierung bearbeitet; Phase A (Decision Packet, read-only), Phase B (Anwendung von `HM-4`, `HM-5`, `HM-6`, `HM-8`, `HM-13`, `HM-14`, Dokumentstatus-Header-Reconciliation, NF-2-Statusabgleich) und der Abschluss der beiden Nova-Notes sind ausgeführt; Ergebnisartefakt [FOUNDATION_0_1_RELEASE_PREPARATION.md](../project-brain/FOUNDATION_0_1_RELEASE_PREPARATION.md). **Nova Final Review `GO WITH NOTES`** (Notes 1–2 geschlossen); Status **`completed-go-with-notes`**; Release-Reife-Kandidat **`RELEASE READY WITH NOTES`**. `CO-WP-031` ist durch den Human Maintainer **committet und gepusht als `286331af467db7e9e3cfeea89efa33c1a1028788`**; die Remote-Integration ist abgeschlossen. Der aktuelle Repository-Stand umfasst zusätzlich eine unnummerierte, dokumentations-only **Post-Integration-Release-Snapshot-Reconciliation** der Current-State-Spiegel; deren Commit-SHA wird bewusst nicht selbstreferenziell eingebettet, der aktuelle HEAD wird aus Git ermittelt. **Nächste Governance-Aktion: Nova Review dieser Reconciliation, anschließend die Human-Maintainer-Integrationsgates und danach — als eigene, ausdrückliche Entscheidung — die Wahl des Quellcommits für den Foundation-Tag. Eine Tag-, Release- oder Observe-Autorisierung ist nicht erteilt.** `CO-WP-030 – Foundation Readiness Review` ist abgeschlossen (`completed-go-with-notes`, Nova Review `GO WITH NOTES`, Notes-Runde 1–3 geschlossen, **Nova Final Review `GO`**) und durch den Human Maintainer **committet und gepusht als `f4ac1d6`** (`f4ac1d67a10e8961a09970ab3edf4d1f0482f6fd`, Branch gleichauf mit `origin/main`). `CO-WP-030` hat **kein** Release-Urteil gefällt und **keine** Human-Maintainer-Entscheidung getroffen; `HM-1`, `HM-2` und `HM-3` wurden vom Human Maintainer entschieden und dort nur protokolliert und angewandt.
+Zuletzt bearbeitet: `CO-WP-031 – Foundation 0.1 Release Preparation` (`release-prep`) — durch ausdrückliche Human-Maintainer-Autorisierung bearbeitet; Phase A (Decision Packet, read-only), Phase B (Anwendung von `HM-4`, `HM-5`, `HM-6`, `HM-8`, `HM-13`, `HM-14`, Dokumentstatus-Header-Reconciliation, NF-2-Statusabgleich) und der Abschluss der beiden Nova-Notes sind ausgeführt; Ergebnisartefakt [FOUNDATION_0_1_RELEASE_PREPARATION.md](../project-brain/FOUNDATION_0_1_RELEASE_PREPARATION.md). **Nova Final Review `GO WITH NOTES`** (Notes 1–2 geschlossen); Status **`completed-go-with-notes`**; Release-Reife-Kandidat **`RELEASE READY WITH NOTES`**. `CO-WP-031` ist durch den Human Maintainer **committet und gepusht als `286331af467db7e9e3cfeea89efa33c1a1028788`**; die Remote-Integration ist abgeschlossen. Der aktuelle Repository-Stand umfasst zusätzlich eine unnummerierte, dokumentations-only **Post-Integration-Release-Snapshot-Reconciliation** der Current-State-Spiegel; deren Commit-SHA wird bewusst nicht selbstreferenziell eingebettet, der aktuelle HEAD wird aus Git ermittelt. **Aktueller Autoritätsstand (nach `HM-R8`…`HM-R11` und `HM-C1`):** `HM-R8` Quellcommit-Autorisierung **COMPLETE** · `HM-R9` lokale annotierte Tag-Erzeugung **COMPLETE** · `HM-R10` Tag-Publikation **COMPLETE** · `HM-R11` GitHub Release **NOT AUTHORIZED / CLOSED**. Der Foundation-Tag `v0.0.1-foundation` ist damit **veröffentlicht** (Tag-Objekt `7f74d5dcccf10490d2f87f7a292b2e7e20813630`, Ziel-Commit `af02b28fd46b39eb9c2fce9a515ac4c09cb4ffba`); ein **GitHub Release existiert nicht**. `HM-C1` hat anschließend die vorliegende unnummerierte, dokumentations-only **Post-Publication Current-State Reconciliation** der fünf Current-State-Dateien autorisiert — **kein** neues Work Package, **keine** `CO-WP-*`-ID, **keine** Wiedereröffnung von `CO-WP-031`, **keine** Tag- oder Release-Aktion, **keine** Register-, Queue- oder Taxonomie-Änderung. **Nächste Governance-Aktion: Nova Review dieser Reconciliation, danach die Human-Maintainer-Repository-/Staging-/Commit-/Push-Gates; erst nach erfolgreicher Remote-Integration folgt `HM-F1 – Foundation 0.1 Phase Closure` als eigene, ausdrückliche Human-Maintainer-Entscheidung.** Bindend: `Current-State-Reconciliation ≠ Foundation-Phase-Abschluss`. **`HM-F1` ist nicht erteilt; die Foundation-Phase ist nicht abgeschlossen. Observe ist nicht autorisiert; `CO-WP-032` ist nicht autorisiert; Implementierung ist nicht autorisiert; ein funktionaler CoreOps-Produktrelease existiert nicht; produktiver Anwendungscode existiert nicht.** `CO-WP-030 – Foundation Readiness Review` ist abgeschlossen (`completed-go-with-notes`, Nova Review `GO WITH NOTES`, Notes-Runde 1–3 geschlossen, **Nova Final Review `GO`**) und durch den Human Maintainer **committet und gepusht als `f4ac1d6`** (`f4ac1d67a10e8961a09970ab3edf4d1f0482f6fd`, Branch gleichauf mit `origin/main`). `CO-WP-030` hat **kein** Release-Urteil gefällt und **keine** Human-Maintainer-Entscheidung getroffen; `HM-1`, `HM-2` und `HM-3` wurden vom Human Maintainer entschieden und dort nur protokolliert und angewandt.
 
 Das Readiness-Verdikt ist **`FOUNDATION_READINESS: READY WITH NOTES`**. Die vormals blockierenden Human-Maintainer-Entscheidungen `HM-1`, `HM-2` und `HM-3` sind entschieden und in der eng begrenzten Neubewertung der Exit Gates 3 und 8 angewandt; die übrigen 22 Gates wurden **nicht** erneut geöffnet. Erforderliche Foundation-Nacharbeit: **keine**. Es verbleibt **kein** Blocker — weder inhaltlich noch bezüglich Entscheidungsverfügbarkeit.
 
