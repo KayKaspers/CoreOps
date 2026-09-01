@@ -1,7 +1,7 @@
 # CoreOps – Productive-Code Transition Prerequisites
 
 > Document Status: Implemented; Nova Review abgeschlossen (Initial `REWORK — narrow semantic closure`, beide blockierenden Notes CLOSED, **Nova Final Review `GO`**); `completed-go-with-notes`
-> Human-Maintainer-Repository-Integration: PENDING — kein Commit, kein Push, keine Remote-Integration
+> Human-Maintainer-Repository-Integration: COMPLETE — integrierter Commit `9999114200bf18baaadfb508e8464720b75e352e`; Push COMPLETE; Remote-Integration COMPLETE; `origin/main` = `9999114200bf18baaadfb508e8464720b75e352e`
 > Artifact Class: Governance-Gate-Dokument (docs-only)
 > Phase: `Observe` — betreten und mit Grenze autorisiert (`HM-O1` `APPROVED WITH BOUNDARY`)
 > Productive Code: **NOT AUTHORIZED** · Implementation: **NOT AUTHORIZED** (Gate A, §16.1)
@@ -543,9 +543,9 @@ Eine spätere Produktivcode-Autorisierung gilt **nicht** als vorbereitet, solang
 | - | ----- | ------------------------------ | ----------- |
 | A-1 | **Observe-Phasenautorität** | Observe betreten und die Grenze von `HM-O1` ausdrücklich benannt | **erfüllt** — `HM-O1` `APPROVED WITH BOUNDARY` |
 | A-2 | **Gewählter Value Slice** | ein benannter, eng begrenzter Slice | **erfüllt** — `HM-O2` `APPROVED` |
-| A-3 | **`CO-WP-032` geschlossen** | Nova Review abgeschlossen **und** Human-Maintainer-Integration erfolgt | **offen** — Nova-Seite erfüllt (`GO`), Human-Maintainer-Integration ausstehend |
+| A-3 | **`CO-WP-032` geschlossen** | Nova Review abgeschlossen **und** Human-Maintainer-Integration erfolgt | **erfüllt** — Nova Final Review `GO`, Human-Maintainer-Integration abgeschlossen (Commit `9999114`) |
 | A-4 | **Nova Review** | Bewertung des Slice-Vertrags, des Test Envelope und dieses Gate-Dokuments liegt vor | **erfüllt** — Initial Review `REWORK — narrow semantic closure`, beide blockierenden Notes CLOSED, **Nova Final Review `GO`** |
-| A-5 | **Repository-Integration** | Human-Maintainer-Staging, -Commit und -Push erfolgreich durchgeführt | **offen** |
+| A-5 | **Repository-Integration** | Human-Maintainer-Staging, -Commit und -Push erfolgreich durchgeführt | **erfüllt** — Commit `9999114200bf18baaadfb508e8464720b75e352e`, gepusht, `origin/main` gleichauf |
 | A-6 | **`P-3`-Entscheidung** | Erhebungsmechanismus und Transport ausdrücklich entschieden | **offen** — `NOT SELECTED` |
 | A-7 | **Sprach-/Runtime-Entscheidung** | Plattform ausdrücklich entschieden | **offen** — `NOT SELECTED` |
 | A-8 | **Source-Tree-Entscheidung** | Struktur ausdrücklich entschieden | **offen** — `PROPOSED / UNACCEPTED` |
@@ -556,7 +556,7 @@ Eine spätere Produktivcode-Autorisierung gilt **nicht** als vorbereitet, solang
 | A-13 | **Build-/Packaging-Disposition** | Reproduzierbarkeit, Offline-Build und Artefaktidentität entschieden, soweit §12 sie als erforderlich ausweist | **offen** |
 | A-14 | **Ausdrückliche Implementierungs-Work-Package-Autorität** | ein eigenes, ausdrücklich autorisiertes implementierungsorientiertes Work Package mit benanntem Scope | **offen** — nicht erteilt |
 
-**Bilanz Gate A: 3 von 14 erfüllt, 1 teilweise, 10 offen. Gate A ist nicht passiert.**
+**Bilanz Gate A: 5 von 14 erfüllt, 1 teilweise, 8 offen. Gate A ist nicht passiert.**
 
 **Ausdrücklich nicht in dieser Checkliste:** `P-1` · `P-2` erfüllt · Testausführungsautorität · Fixtures · Lab. Sie sind **keine** Voraussetzung dafür, produktiven Quellcode zu schreiben oder zu autorisieren.
 
@@ -611,4 +611,4 @@ Additiv. **Keine** Änderung an Foundation Scope Lock, Release-Taxonomie, Decisi
 
 ## 19. Next Decision
 
-Der Nova Final Review dieses Dokuments ist erfolgt (`GO`, Gate-A-Punkt `A-4` erfüllt); als Nächstes folgen die Human-Maintainer-Repository-, Staging-, Commit- und Push-Gates (Gate-A-Punkte `A-3` und `A-5`). **Danach** — und jeweils als eigene, ausdrückliche Human-Maintainer-Entscheidung — die verbleibenden Gate-A-Punkte `A-6` bis `A-14` (§16.1). **Erst danach und erst mit einer vorhandenen Implementierung** werden die Gate-B-Punkte `B-1` bis `B-8` (§16.2) überhaupt bewertbar. Dieses Dokument trifft **keine** dieser Entscheidungen.
+Der Nova Final Review dieses Dokuments ist erfolgt (`GO`) und die Human-Maintainer-Repository-Integration ist abgeschlossen (Commit `9999114200bf18baaadfb508e8464720b75e352e`, gepusht); die Gate-A-Punkte `A-1` bis `A-5` sind damit erfüllt. **Als Nächstes** — und jeweils als eigene, ausdrückliche Human-Maintainer-Entscheidung — die verbleibenden Gate-A-Punkte `A-6` bis `A-14` (§16.1). **Erst danach und erst mit einer vorhandenen Implementierung** werden die Gate-B-Punkte `B-1` bis `B-8` (§16.2) überhaupt bewertbar. Dieses Dokument trifft **keine** dieser Entscheidungen.
