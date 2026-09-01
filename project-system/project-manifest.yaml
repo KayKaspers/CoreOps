@@ -7,20 +7,25 @@ project:
   name: CoreOps
   slug: coreops
   slogan: "One Dashboard. Controlled Operations."
-  status: foundation-0-1-documentation-published-phase-closure-pending
+  status: foundation-0-1-closed-post-foundation-transition
                                  # Rein deskriptiver aktueller Projektzustand,
                                  # KEINE Produktreife- oder Release-Taxonomie und
                                  # KEINE Autoritaet ueber die akzeptierte Release
                                  # Taxonomy (docs/governance/RELEASE_TAXONOMY.md).
                                  # Bedeutung woertlich: die Foundation-0.1-
-                                 # Dokumentations-/Governance-Arbeit ist abgeschlossen
-                                 # und als annotierter, unsignierter Tag
-                                 # v0.0.1-foundation veroeffentlicht; der formale
-                                 # Abschluss der Foundation-Phase ist NOCH NICHT
-                                 # entschieden (HM-F1 nicht erteilt).
-                                 # Impliziert NICHT: Foundation-Phase abgeschlossen;
-                                 # NICHT: Observe autorisiert; NICHT: funktionaler
-                                 # Produktrelease; NICHT: Implementierung begonnen;
+                                 # Dokumentations-/Governance-Phase ist durch die
+                                 # Human-Maintainer-Entscheidung HM-F1
+                                 # (APPROVED / COMPLETE) foermlich GESCHLOSSEN; ihr
+                                 # Stand ist als annotierter, unsignierter Tag
+                                 # v0.0.1-foundation veroeffentlicht. Das Projekt
+                                 # befindet sich in der Post-Foundation-Governance-
+                                 # Transition.
+                                 # Impliziert NICHT: Observe autorisiert oder
+                                 # begonnen (HM-O1 noch nicht erteilt);
+                                 # NICHT: CO-WP-032 autorisiert;
+                                 # NICHT: Implementierung begonnen;
+                                 # NICHT: Zielzugriff autorisiert;
+                                 # NICHT: funktionaler Produktrelease;
                                  # NICHT: GitHub Release (HM-R11 NOT AUTHORIZED).
   project_type: Universal Operations Control Plane
 

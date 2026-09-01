@@ -2,7 +2,7 @@
 
 > **Slogan:** One Dashboard. Controlled Operations.
 
-**Status:** Foundation 0.1 – Dokumentations-/Governance-Arbeit abgeschlossen und als Tag veröffentlicht; Phasenabschluss noch nicht entschieden
+**Status:** Foundation 0.1 abgeschlossen (`HM-F1`) und als Tag veröffentlicht; Post-Foundation-Governance-Transition, Observe noch nicht autorisiert
 **NDF-Basis:** Nova-Development-Framework `v1.0.0` (Tag `v1.0.0`, Commit `9dcadc1`) — der Branch `main` ist **nicht** normativ.
 **Erzeugt durch:** Work Package `CO-WP-001` (docs-only, Core Governance Skeleton)
 
@@ -10,7 +10,7 @@
 
 ## Aktueller Projektstand (autoritative Current-State-Oberfläche)
 
-> Dieser Abschnitt ist die **einzige Current-State-Aussage dieses Dokuments**. Alle nachfolgenden Abschnitte sind entweder der historische `CO-WP-001`-Initialschnappschuss (§§1–17) oder historische Pro-WP-Konsolidierungsblöcke. Ergänzt durch die unnummerierte, dokumentations-only **Post-Publication Current-State Reconciliation** (`HM-C1` `APPROVED`).
+> Dieser Abschnitt ist die **einzige Current-State-Aussage dieses Dokuments**. Alle nachfolgenden Abschnitte sind entweder der historische `CO-WP-001`-Initialschnappschuss (§§1–17) oder historische Pro-WP-Konsolidierungsblöcke. Fortgeschrieben durch die unnummerierten, dokumentations-only Reconciliations **Post-Publication Current-State Reconciliation** (`HM-C1` / `HM-C1A` `APPROVED`, remote integriert) und **Foundation-Phase-Closure-Current-State-Reconciliation** (`HM-F1R` `APPROVED`).
 
 | Dimension | Stand |
 | --------- | ----- |
@@ -18,8 +18,10 @@
 | Foundation-Publikation | **PUBLISHED AS ANNOTATED TAG `v0.0.1-foundation`** — annotiert, **unsigniert**, unveränderlich; Tag-Objekt `7f74d5dcccf10490d2f87f7a292b2e7e20813630` |
 | Ziel-Commit des Tags | `af02b28fd46b39eb9c2fce9a515ac4c09cb4ffba` (der jeweils aktuelle HEAD wird aus Git ermittelt und hier **nicht** selbstreferenziell eingebettet) |
 | GitHub Release | **NOT CREATED** — `HM-R11` `NOT AUTHORIZED / CLOSED` |
-| Foundation-Phasenabschluss | **NOT YET DECIDED** — `HM-F1` **nicht erteilt** |
+| Foundation-0.1-Phase | **CLOSED** — förmlich geschlossen durch `HM-F1` **`APPROVED / COMPLETE`** |
+| Aktuelle Phase | **Post-Foundation-Governance-Transition** — **nicht** `Observe` |
 | Observe | **NOT AUTHORIZED** |
+| `HM-O1` (Bounded Observe Phase Entry) | **NOT YET GRANTED** — nächstes Gate nach Nova Review und erfolgreicher Remote-Integration dieser Reconciliation |
 | `CO-WP-032` | **NOT AUTHORIZED** (keine `CO-WP-*`-ID vergeben) |
 | Implementierung | **NOT AUTHORIZED** |
 | Funktionaler CoreOps-Produktrelease | **NEIN** |
@@ -28,7 +30,9 @@
 | Technische Architektur | weiterhin **unbestätigt**; keine Technologie ausgewählt |
 | Runtime-Capabilities / `supported`-Integrationen | **0** / **0** |
 
-Bindend: `Foundation-Arbeit abgeschlossen ≠ Foundation-Phase abgeschlossen` · `Foundation-Phase abgeschlossen ≠ Observe autorisiert` · `Tag veröffentlicht ≠ funktionaler Produktrelease` · `Current-State-Reconciliation ≠ Foundation-Phase-Abschluss`.
+Bindend: `Foundation-Arbeit abgeschlossen ≠ Foundation-Phase abgeschlossen` (die Schließung erfolgte durch `HM-F1`, nicht durch die Arbeit oder die Tag-Publikation) · `Foundation-Phase abgeschlossen ≠ Observe autorisiert` · `Tag veröffentlicht ≠ funktionaler Produktrelease` · `Current-State-Reconciliation ≠ Governance-Autorisierung`.
+
+> **Geltung des Foundation Scope Lock nach Phasenabschluss.** Der [FOUNDATION_SCOPE_LOCK.md](../docs/governance/FOUNDATION_SCOPE_LOCK.md) governt die **abgeschlossene** Foundation-0.1-Phase und bleibt für diese verbindlich. Er ist **keine** dauerhafte Verbotsnorm für jede künftige produktive Arbeit. Post-Foundation-Arbeit — insbesondere produktiver Anwendungscode — benötigt eine **eigene, ausdrückliche Human-Maintainer-Autorisierung**; eine solche ist derzeit **nicht** erteilt. Das Scope-Lock-Dokument selbst wird durch diese Reconciliation **nicht** geändert.
 
 ---
 
