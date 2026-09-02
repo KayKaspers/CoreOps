@@ -18,6 +18,7 @@
 > Normative Release: Not yet assigned
 > Normative Framework: NDF v1.0.0 (Tag `v1.0.0`, Commit `9dcadc1`) — `main` informativ, nicht normativ
 > Erzeugt durch `CO-WP-032` (docs-only / Observe Slice Contract and Productive-Code Transition Prerequisites)
+> Nachträgliche docs-only Änderung: Regel **R6** — heterogene All-Failure-Zusammensetzung — ergänzt in §9, §10.4, §10.5, §22 und §23 (kanonische Nicht-Emission bei evidenzerhaltender Retention des erzeugten Materials). Grundlage ist die ausdrückliche Human-Maintainer-Entscheidung zur heterogenen All-Failure-Zusammensetzung; **kein** Decision-Identifier vergeben, **kein** ADR, **keine** Risk-, CCR- oder Capability-Kennung, **kein** neues und **kein** reserviertes Work Package.
 
 ## 1. Status
 
@@ -170,7 +171,7 @@ Kanonische Feldidentität folgt [FIELD_PROVENANCE_AND_DATA_LINEAGE_STANDARD.md](
 | `received_at` | Zeitpunkt der Entgegennahme/Ingestion | M | — | **conditional** — nur wo Erhebung und Entgegennahme materiell getrennt sind | Feld entfällt als `not-applicable`, **nicht** `unknown` | nicht Beobachtungszeit |
 | `freshness` | Aktualitätszustand je Feld | M | leitet sich aus `observed_at` und Kontext ab | **required** je beobachtetem Feld | `unknown` | nicht healthy · nicht trusted · nicht authorized · `stale` nicht unavailable |
 | `field_observation_outcome` | Ergebnis je Feld — Feld-Vokabular §10.3 (neun Werte, einschließlich `provenance-invalid`) | M | — | **required** je Feld | — | nicht Envelope-Ergebnis · nicht Emissions-Disposition · nicht Zielzustand |
-| `observation_outcome` | Ergebnis des Erhebungsvorgangs — Envelope-Vokabular §10.2 (acht Werte) | M | — | **required**, außer wo §10.5 R1 oder R5 greift; dann wird **keiner** behauptet | — | nicht Feld-Ergebnis · nicht Health · nicht Support · nicht Autorisierung · `provenance-invalid` ist **kein** Wert dieses Vokabulars |
+| `observation_outcome` | Ergebnis des Erhebungsvorgangs — Envelope-Vokabular §10.2 (acht Werte) | M | — | **required** für jede tatsächlich ausgegebene kanonische Observation (§7); ausgenommen sind ausschließlich §10.5 **R1**, **R5** und **R6** — dort wird **keiner** behauptet **und** der Datensatz wird **nicht** als kanonische Observation ausgegeben (`record-discarded`, §10.4) | — | nicht Feld-Ergebnis · nicht Health · nicht Support · nicht Autorisierung · `provenance-invalid` ist **kein** Wert dieses Vokabulars |
 | Emissions-Disposition | ob und wie der Datensatz ausgegeben wird — §10.4 (`emitted` · `field-withheld` · `record-discarded`) | M | — | **required** | — | nicht `observation_outcome` · `record-discarded` nicht Fehlschlag · nicht Zielzustand |
 | `provenance_ref` | Verweis auf den Provenance-Satz | M | — | **required** | Ohne Provenance ist die Observation nicht verwertbar (fail-closed) | Provenance nicht Trust |
 | `evidence_ref` | Evidence Reference gemäß Evidence-Modell §9 | M | — | **conditional** — nur wo eine Evidence Reference tatsächlich erzeugt wurde | Feld entfällt; **keine** fiktive Referenz | Reference nicht Artefakt · nicht Zugriffsberechtigung · nicht Sufficiency |
@@ -185,6 +186,13 @@ absent field      != empty string
 unsupported       != failed
 observation error != target unhealthy
 permission denied != target unavailable
+```
+
+Die Requiredness-Ausnahme für `observation_outcome` weicht §7 **nicht** auf. Greift §10.5 R1, R5 oder R6, entsteht **keine** kanonische Observation: es wird weder ein `observation_outcome` behauptet noch ein Datensatz als Observation ausgegeben. Umgekehrt trägt jede tatsächlich ausgegebene kanonische Observation weiterhin **zwingend** ein `observation_outcome` (§7) — diese Mindestbestandteilspflicht bleibt unverändert und wird **nicht** bedingt gestellt.
+
+```text
+emitted canonical Observation   => observation_outcome present
+no observation_outcome asserted => record not emitted as a canonical Observation
 ```
 
 Es wird **keine** Health-Semantik definiert. Der Slice erzeugt **kein** Feld, das eine Aussage über Gesundheit, Zustandsgüte, Compliance, Risiko oder Handlungsbedarf trifft.
@@ -274,15 +282,40 @@ Getrenntes Vokabular; beschreibt **Verarbeitung und Ausgabe**, nicht das Beobach
 | ---- | --------- |
 | `emitted` | Der Beobachtungsdatensatz wird ausgegeben — mit allen Feldern und ihren `field_observation_outcome`-Werten |
 | `field-withheld` | Ein einzelnes Feld fließt **nicht** in die normalisierte Repräsentation ein; sein Raw-Wert, seine Provenance-Angaben und sein `field_observation_outcome` bleiben im Datensatz sichtbar |
-| `record-discarded` | Der Datensatz wird als Beobachtung **nicht** ausgegeben, weil er nicht provenance-tragfähig ist. Es wird **kein** `observation_outcome` behauptet. Ein Provenance-Defekt-Record bleibt für Audit erhalten |
+| `record-discarded` | Der Datensatz wird **nicht** als kanonische Observation ausgegeben, weil eine **zwingende Gültigkeitsbedingung** einer kanonischen Observation nicht wahrheitsgemäß erfüllbar ist. Es wird **kein** `observation_outcome` behauptet. Das bereits erzeugte Material bleibt nach den unten stehenden Erhaltungsregeln erhalten; in den Fällen R1 und R5 bleibt insbesondere der Provenance-Defekt-Record für Audit erhalten |
 
 ```text
-record discarded  != observation outcome
-record discarded  != failed observation
-record discarded  != target unhealthy
-field withheld    != field absent
+record discarded     != observation outcome
+record discarded     != failed observation
+record discarded     != target unhealthy
+record discarded     != target state
+record discarded     != deletion
+field withheld       != field absent
 emission disposition != observation outcome
+diagnostic retained  != canonical Observation emitted
+diagnostic material  != governed audit record
 ```
+
+**Tragendes Prinzip.** Eine kanonische Observation wird **nicht** ausgegeben, wenn eine **zwingende Gültigkeitsbedingung** einer kanonischen Observation nicht **wahrheitsgemäß** erfüllt werden kann. Das ist ausdrücklich **nicht** gleichbedeutend damit, dass in jedem Auslöserfall ein einzelnes §7-Feld syntaktisch unbefüllbar wäre: bei R6 sind die §7-Bestandteile technisch vorhanden — unbefüllbar ist allein eine **wahre** Envelope-Aussage innerhalb des begrenzten Acht-Werte-Vokabulars (§10.2).
+
+**Geschlossene Auslöserliste.** `record-discarded` tritt ausschließlich in den folgenden drei, in §10.5 abschließend definierten Fällen ein:
+
+1. **R1** — ungültige Subjektzuordnung: `target_id` fehlt oder seine Provenance ist ungültig (§8.2, §9).
+2. **R5** — keine provenance-tragfähige, verwertbare Beobachtung: alle sonst beobachteten Felder sind `provenance-invalid` (§13).
+3. **R6** — keine wahrheitsgemäße Envelope-Zusammensetzung innerhalb des begrenzten Acht-Werte-Vokabulars: kein Feld `success`, mindestens zwei nicht-`provenance-invalid`-Felder, und unter diesen mehr als ein unterschiedlicher Erhebungsausgang.
+
+Die Liste ist **abschließend**. Ein weiterer Auslöser entsteht **nicht** durch Auslegung; die Erweiterung dieser Auslöserliste benötigt eine **eigene, ausdrückliche Human-Maintainer-Autorisierung**.
+
+**Erhaltung des erzeugten Materials.** `record-discarded` ist **kein** Löschvorgang. Nach den **bestehenden** Semantiken bleiben erhalten:
+
+- die feldweisen `field_observation_outcome`-Werte mit ihrer je eigenen Ursache, einzeln unterscheidbar (§10.3),
+- die Provenance-Angaben je Feld (§13),
+- der Raw-Wert dort, wo ein Raw-Wert entstanden ist (§12),
+- der Kontext des Erhebungsversuchs (`collection_attempt_ref`, §7) — in den Fällen R1 und R5 einschließlich des Provenance-Defekt-Records.
+
+Dieses Material ist `internal diagnostic` beziehungsweise `audit-relevant diagnostic` im Sinne von [TELEMETRY_SIGNAL_AND_NORMALIZATION_MODEL.md](TELEMETRY_SIGNAL_AND_NORMALIZATION_MODEL.md) §15. Es entsteht dadurch **keine** neue Artefaktklasse und **kein** neues Vokabular. Die Einstufung als **governed audit record** ist eine eigene Aussage des Audit-/Evidence-Modells (`MOD-EVD-001`, §16) und folgt **nicht** automatisch aus der Retention des Diagnosematerials.
+
+Ob und wie dieses Material geführt wird, ist hier **nicht** entschieden: Es wird **keine** Storage-Technologie, **keine** Datenbank, **keine** Persistenzform, **keine** Aufbewahrungsdauer, **kein** Löschmechanismus, **keine** Logging-Implementierung und **kein** Telemetrieprotokoll ausgewählt (§20).
 
 ### 10.5 Deterministische Zusammensetzung
 
@@ -295,13 +328,25 @@ Die folgenden Regeln sind verbindlich und in dieser Reihenfolge auszuwerten:
 | **R3** | mindestens ein Feld `success` **und** mindestens ein Feld ein anderer Wert (einschließlich `provenance-invalid`) | `partial` | `emitted`; jedes `provenance-invalid`-Feld zusätzlich `field-withheld` |
 | **R4** | kein Feld `success`, aber alle nicht-`provenance-invalid`-Felder tragen **denselben** Erhebungsausgang X | X | `emitted` |
 | **R5** | **alle** sonst beobachteten Felder sind `provenance-invalid` | **keiner** — es wird keiner behauptet | `record-discarded`; Provenance-Defekt-Record bleibt erhalten |
+| **R6** | kein Feld `success`, **mindestens zwei** nicht-`provenance-invalid`-Felder, und unter diesen **mehr als ein** unterschiedlicher Erhebungsausgang | **keiner** — es wird keiner behauptet | `record-discarded`; feldweise Ursachen, Provenance, vorhandenes Raw und Erhebungskontext bleiben erhalten (§10.4) |
 
-Zu den beiden von R3 und R5 abgedeckten Fällen ausdrücklich:
+Zu den von R3, R5 und R6 abgedeckten Fällen ausdrücklich:
 
 - **Einige Felder gültig, einige `provenance-invalid`** → R3: Envelope `partial`; jede feldweise Ursache bleibt einzeln erhalten und sichtbar; die betroffenen Felder werden `field-withheld` und **nicht** normalisiert; der Datensatz wird ausgegeben.
 - **Alle sonst beobachteten Felder `provenance-invalid`** → R5: Der Erhebungsvorgang hat nichts Provenance-Tragfähiges erzeugt; es wird **kein** Envelope-Wert behauptet und der Datensatz wird **nicht** als Beobachtung ausgegeben. Das ist eine Emissions-Disposition, **kein** `observation_outcome`.
+- **Kein Feld `success` und verschiedene Erhebungsausgänge unter mindestens zwei verwertbaren Feldern** → R6: Innerhalb des begrenzten Acht-Werte-Vokabulars (§10.2) existiert **keine** Envelope-Aussage, die wahr wäre. Es wird deshalb **kein** Envelope-Wert behauptet, **kein** synthetisches Aggregat gebildet, `partial` **nicht** aufgeweicht (der von `partial` geforderte `success`-Anteil fehlt) und **keine** Präzedenz- oder Schwereordnung zwischen den Ausgängen eingeführt — kein Ausgang „gewinnt“. Der Datensatz wird `record-discarded` und **nicht** als kanonische Observation ausgegeben; die feldweisen Ursachen bleiben einzeln unterscheidbar, Provenance und vorhandenes Raw bleiben erhalten, das erzeugte Diagnosematerial bleibt unter den bestehenden Semantiken erhalten (§10.4). Es entsteht **kein** neunter Envelope-Wert.
 
-`provenance-invalid`-Felder liefern **niemals** einen Envelope-Wert; sie können lediglich R3 auslösen oder — wenn sie alle Felder betreffen — R5.
+`provenance-invalid`-Felder liefern **niemals** einen Envelope-Wert; sie können lediglich R3 auslösen oder — wenn sie alle Felder betreffen — R5. Für R6 zählen sie **nicht** mit: R6 bewertet ausschließlich die nicht-`provenance-invalid`-Felder.
+
+R6 ist **deterministisch**: Bedingung und Ergebnis sind vollständig aus den feldweisen Ausgängen bestimmt — ohne Ermessen, ohne Reihenfolgeabhängigkeit unter den Feldern und ohne Auswahl eines „führenden“ Ausgangs. R4 und R6 sind disjunkt und lückenlos: tragen alle nicht-`provenance-invalid`-Felder **denselben** Ausgang, greift R4; tragen sie **verschiedene**, greift R6. R4 bleibt dadurch **unverändert**.
+
+R1, R5 und R6 bleiben unterscheidbar:
+
+```text
+R1 = invalid subject attribution       (target_id)
+R5 = nothing provenance-bearing/usable (all fields provenance-invalid)
+R6 = no truthful envelope composition  (heterogeneous all-failure)
+```
 
 ### 10.6 Verhältnis zu bestehenden Vokabularen
 
@@ -476,7 +521,10 @@ Additiv und spezialisierend. **Kein** Parallelmodell zu State-, Provenance-, Tel
 
 ## 22. Open Questions
 
-- **Nicht abgedeckte Zusammensetzungslage (§10.5):** kein Feld `success` **und** die nicht-`provenance-invalid`-Felder tragen **verschiedene** Erhebungsausgänge. R4 greift nicht (kein gemeinsamer Ausgang), R3 greift nicht (kein `success`), R5 greift nicht (nicht alle `provenance-invalid`). Es wird hier **bewusst kein** Wert erfunden und `partial` **nicht** aufgeweicht; die Regel ist vor einer Implementierung ausdrücklich zu entscheiden. Bis dahin gilt fail-closed: es wird **kein** Envelope-Wert behauptet.
+**Geschlossen — nicht mehr offen.** Die zuvor hier geführte Zusammensetzungslage (§10.5: kein Feld `success` **und** verschiedene Erhebungsausgänge unter den nicht-`provenance-invalid`-Feldern) ist **entschieden**. Sie ist durch die ausdrückliche Human-Maintainer-Entscheidung zur heterogenen All-Failure-Zusammensetzung als Regel **R6** (§10.5) aufgelöst: **kein** Envelope-Wert wird behauptet, der Datensatz wird **nicht** als kanonische Observation ausgegeben (`record-discarded`), und das erzeugte Material bleibt nach den bestehenden Semantiken erhalten (§10.4). Die Entscheidung weicht `partial` **nicht** auf, führt **keinen** neunten Envelope-Wert ein und begründet **keine** Präzedenz- oder Schwereordnung. Für sie wurde **kein** Decision-Identifier, **kein** ADR, **keine** Risk-, CCR- oder Capability-Kennung und **kein** Work Package erzeugt oder reserviert.
+
+Weiterhin offen:
+
 - Ableitungsregel und Stabilitätsgarantie für `target_id` (an `P-3` gebunden).
 - Konkrete Freshness-Schwellen je Feldgruppe (erst nach `P-3`, dann Human-Maintainer-gebunden).
 - Ob und wo `received_at` im Slice überhaupt materiell getrennt auftritt.
@@ -485,4 +533,23 @@ Additiv und spezialisierend. **Kein** Parallelmodell zu State-, Provenance-, Tel
 
 ## 23. Next Decision
 
-Der Nova Final Review dieses Vertrags ist erfolgt (`GO`); als Nächstes folgen die Human-Maintainer-Repository-, Staging-, Commit- und Push-Gates. **Danach** — und nur durch eigene, ausdrückliche Human-Maintainer-Entscheidungen — `P-1` (Zielautorisierung), `P-3` (Erhebungsmechanismus) und die Sprach-/Runtime-Entscheidung. Dieser Vertrag autorisiert **keine** davon.
+**Aktueller Stand.** `CO-WP-032` ist **abgeschlossen und remote integriert**: Nova Final Review `GO`; Human-Maintainer-Integrationscommit `9999114200bf18baaadfb508e8464720b75e352e`, gepusht; die anschließende Post-Integrations-Reconciliation steht auf `390da5cc8629dfa9cbea990c0a3c4ba4cb156e9b`. Die Repository-, Staging-, Commit- und Push-Gates für `CO-WP-032` sind damit **erledigt** und **nicht** mehr der nächste Schritt.
+
+Der vorliegende R6-Nachtrag ist eine docs-only Änderung im Arbeitsverzeichnis. Staging, Commit, Push, Tag und jede weitere Repository-Aktion liegen unverändert **ausschließlich** beim Human Maintainer ([Repository Governance Standard](../governance/REPOSITORY_GOVERNANCE_STANDARD.md) §6). Ein künftiger Integrationsstand dieses Nachtrags wird hier **nicht** vorweggenommen und **kein** Commit-Identifier dafür vorhergesagt.
+
+**Offen — und jeweils nur durch eine eigene, ausdrückliche Human-Maintainer-Entscheidung:** die verbleibenden Gate-A-Punkte ([PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §16.1), insbesondere `P-3` (Erhebungsmechanismus), die Sprach-/Runtime-Entscheidung und die übrigen Dispositionen; **erst danach und erst mit vorhandener Implementierung** werden `P-1` (Zielautorisierung) und die Gate-B-Punkte (§16.2) überhaupt bewertbar.
+
+```text
+Gate A:            NOT PASSED
+Gate B:            NOT PASSED
+productive code:   NOT AUTHORIZED
+implementation:    NOT AUTHORIZED
+P-1:               NOT AUTHORIZED
+P-3:               NOT SELECTED
+language/runtime:  NOT SELECTED
+target access:     NOT AUTHORIZED
+test execution:    NOT AUTHORIZED
+successor WP:      none created, none reserved
+```
+
+Dieser Vertrag autorisiert **keine** davon. Die R6-Entscheidung ist eine Semantikfestlegung und **keine** Freigabe: `R6 decided != productive code authorized`, `R6 decided != implementation authorized`.

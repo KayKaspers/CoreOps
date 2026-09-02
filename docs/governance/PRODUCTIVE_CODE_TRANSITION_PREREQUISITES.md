@@ -17,6 +17,7 @@
 > Normative Release: Not yet assigned
 > Normative Framework: NDF v1.0.0 (Tag `v1.0.0`, Commit `9dcadc1`) — `main` informativ, nicht normativ
 > Erzeugt durch `CO-WP-032` (docs-only / Observe Slice Contract and Productive-Code Transition Prerequisites)
+> Nachträgliche docs-only Änderung: Die Human-Maintainer-Entscheidung zur heterogenen All-Failure-Zusammensetzung (Observation Contract §10.5 **R6**) ist in §14 als Decision-Disposition aufgenommen und wird vom bestehenden Gate-A-Punkt `A-11` getragen. Es entsteht **keine** zusätzliche Gate-A-Checklistenzeile, **kein** Decision-Identifier und **kein** ADR. `A-11` bleibt **offen**, `A-12` bleibt **teilweise**; Gate A bleibt **5 von 14 erfüllt, 1 teilweise, 8 offen — nicht passiert**, Gate B bleibt **0 von 8 — nicht passiert**.
 
 ## 1. Status und Zweck
 
@@ -490,6 +491,22 @@ Vor einer produktiven Implementierung sind mindestens folgende Punkte zu disposi
 | Dependency-Admission | Inkraftsetzung des Gates aus §10 | nicht in Kraft |
 | `NEW-8` | `README` / `LICENSE` | `deferred`, Empfehlung liegt vor |
 | Build/Packaging | Reproduzierbarkeit, Offline-Build, Artefaktidentität | nicht entschieden |
+| Envelope-Zusammensetzung (R6) | heterogene All-Failure-Zusammensetzung im [Observation Contract](../architecture/OBSERVE_LOCAL_LINUX_HOST_OBSERVATION_CONTRACT.md) §10.5 — kanonische Nicht-Emission bei evidenzerhaltender Retention des erzeugten Materials | **entschieden** — ausdrückliche Human-Maintainer-Entscheidung; dokumentarisch umgesetzt (Observation Contract §9, §10.4, §10.5, §22; Test Envelope `OBS-LLH-TC-11`); **kein** Decision-Identifier, **kein** ADR |
+
+**Zur Zeile „Envelope-Zusammensetzung (R6)“.** Diese Entscheidung ist **getroffen** und in den Slice-Dokumenten dokumentarisch umgesetzt. Sie wird hier als **Decision-Disposition** geführt und vom bestehenden Gate-A-Punkt `A-11` (§16.1) **getragen**. Es entsteht dafür **keine** zusätzliche Gate-A-Checklistenzeile, **keine** neue Checklistenkennung, **keine** Decision-, Risk-, ADR-, CCR- oder Capability-Kennung, **kein** Support-Status-Eintrag, **keine** Lesson, **kein** NDF-Feedback-Eintrag und **kein** Work Package — insbesondere wird **kein** Nachfolge-Work-Package erzeugt oder reserviert (§17). Auch der zugehörige docs-only Nachtrag erzeugt **keine** ADR-Datei und **keine** Zeile im Decision Index oder Risk Register; es existieren weiterhin **0** ADR-Dateien und **0** akzeptierte ADRs.
+
+**`A-11` bleibt `offen`.** `A-11` verlangt die Disposition **der Punkte dieser §14**. Die übrigen Zeilen — `P-3`, Sprache/Runtime, Source Tree, Dependency-Admission, `NEW-8`, Build/Packaging — sind weiterhin unentschieden. Eine einzelne entschiedene Zeile erfüllt `A-11` daher **nicht**.
+
+**`A-12` bleibt `teilweise`.** Die freigegebene Abfolge lautet: **R6-Semantikdisposition → Definition von `OBS-LLH-TC-11` → Human-Maintainer-Disposition von `A-12`**. Die ersten beiden Schritte sind mit dem docs-only Nachtrag erfolgt; der dritte — die Human-Maintainer-Disposition der Testdesign- und `P-2`-Methodendefinition — ist **nicht** erfolgt. `A-12` bleibt deshalb unverändert **teilweise** (§16.1). Die Gate-A-Bilanz bleibt damit unverändert **5 von 14 erfüllt, 1 teilweise, 8 offen — Gate A ist nicht passiert**; die Gate-B-Bilanz bleibt **0 von 8 — realer Zielzugriff bleibt untersagt**.
+
+```text
+one decision disposed != A-11 satisfied
+R6 decided            != A-12 disposed
+R6 decided            != productive code authorized
+R6 decided            != implementation authorized
+R6 decided            != target access authorized
+Gate A passed         != Gate B passed
+```
 
 **Verhältnis zu den offenen `CCR`.** Die sechs offenen `CCR` bleiben offen und werden hier **nicht** geschlossen. `CCR-05` und `CCR-07` tragen `MUST CLOSE BEFORE DEPLOY`; das Readiness Review hat festgestellt, dass beide privilegierte beziehungsweise Offline-Ausführung betreffen und einen read-only Slice **nicht** berühren — sie sind ausdrücklich **keine** Observe-Precondition. Diese Feststellung wird hier nur referenziert, nicht neu getroffen.
 
@@ -508,7 +525,7 @@ Die Testvoraussetzungen verteilen sich auf **beide** Gates und dürfen nicht ver
 
 Auf dieser Ebene ist ausschließlich verlangt, dass **definiert ist, was später geprüft und belegt werden muss** — nicht, dass es bereits geprüft oder belegt wäre.
 
-1. **Teststrategie beziehungsweise künftige Validierungsanforderungen definiert** — für den Slice erfüllt durch den Test Envelope (zehn Mindestfälle mit Intent, erwartetem Ausgang, Datensemantik, Provenance-Verhalten, verbotener Inferenz und künftiger Evidenzanforderung).
+1. **Teststrategie beziehungsweise künftige Validierungsanforderungen definiert** — für den Slice erfüllt durch den Test Envelope (elf Mindestfälle mit Intent, erwartetem Ausgang, Datensemantik, Provenance-Verhalten, verbotener Inferenz und künftiger Evidenzanforderung).
 2. **`P-2`-Evidenzmethode definiert** — erfüllt durch Test Envelope §8.3 (sieben kumulative Anforderungen). **Nicht** verlangt: dass die Evidenz vorliegt.
 3. `P-3` entschieden — **offen**; ohne die Entscheidung ist kein Fall implementierbar.
 4. Sprache/Runtime entschieden — **offen**; ohne die Entscheidung existiert kein Testwerkzeug.

@@ -16,6 +16,7 @@
 > Normative Release: Not yet assigned
 > Normative Framework: NDF v1.0.0 (Tag `v1.0.0`, Commit `9dcadc1`) — `main` informativ, nicht normativ
 > Erzeugt durch `CO-WP-032` (docs-only / Observe Slice Contract and Productive-Code Transition Prerequisites)
+> Nachträgliche docs-only Änderung: konzeptioneller Mindestfall `OBS-LLH-TC-11` (heterogene All-Failure-Zusammensetzung, [Observation Contract](../architecture/OBSERVE_LOCAL_LINUX_HOST_OBSERVATION_CONTRACT.md) §10.5 **R6**) ergänzt; §13 auf den tatsächlichen Stand korrigiert. Grundlage ist die ausdrückliche Human-Maintainer-Entscheidung zur heterogenen All-Failure-Zusammensetzung; **kein** Decision-Identifier vergeben, **kein** ADR, **kein** neues und **kein** reserviertes Work Package. `OBS-LLH-TC-11` ist **nicht implementiert**, **nicht ausgeführt** und trägt `not run`.
 
 ## 1. Status
 
@@ -32,11 +33,11 @@ Dieser Envelope erzeugt **kein** zweites Test-, Ergebnis- oder Evidenzvokabular.
 
 ## 2. Purpose
 
-Sicherstellen, dass die Vertragsunterscheidungen des Slices — Absenz, Nichtverfügbarkeit, Berechtigungsverweigerung, Nichtunterstützung, Malformedness, Normalisierungsfehler, Staleness, Provenance-Ungültigkeit und Nicht-Mutation — **prüfbar formuliert** sind, **bevor** ein Erhebungsmechanismus, eine Sprache oder ein Zielzugriff gewählt wird. Ein Fall, dessen Beobachtungspunkt heute nicht benennbar ist, wäre später auch nicht belegbar.
+Sicherstellen, dass die Vertragsunterscheidungen des Slices — Absenz, Nichtverfügbarkeit, Berechtigungsverweigerung, Nichtunterstützung, Malformedness, Normalisierungsfehler, Staleness, Provenance-Ungültigkeit, heterogene All-Failure-Zusammensetzung (Envelope-Zusammensetzbarkeit) und Nicht-Mutation — **prüfbar formuliert** sind, **bevor** ein Erhebungsmechanismus, eine Sprache oder ein Zielzugriff gewählt wird. Ein Fall, dessen Beobachtungspunkt heute nicht benennbar ist, wäre später auch nicht belegbar.
 
 ## 3. Scope
 
-Zehn Mindestfälle (§7) · Traceability-Bindung (§5) · Ergebnisvokabular-Bindung (§6) · No-Mutation-Sentinel (§8) · Test-Claim-Grenze (§9) · Ausführungsvoraussetzungen (§10).
+Elf Mindestfälle (§7) · Traceability-Bindung (§5) · Ergebnisvokabular-Bindung (§6) · No-Mutation-Sentinel (§8) · Test-Claim-Grenze (§9) · Ausführungsvoraussetzungen (§10).
 
 ## 4. Non-Goals
 
@@ -50,7 +51,7 @@ Zehn Mindestfälle (§7) · Traceability-Bindung (§5) · Ergebnisvokabular-Bind
 
 Jeder Fall dieses Envelopes ist ein **Testfall-Entwurf** im Sinne des [Test Case Traceability Contract](FOUNDATION_TEST_STRATEGY_AND_VALIDATION_MODEL.md) §10. Er trägt hier bereits: Test Case Identity, Subject under Test, Source Contract, Declared Scope, Stimulus, Expected Outcome, Expected Prohibited Outcome, Observation Points, Evidence Requirements und Result Limitations. **Nicht** gefüllt und ausdrücklich offen bleiben: Fixture References (Fixtures existieren nicht), Environment/Profile (kein Lab bereitgestellt), Test Case Revision jenseits der Erstfassung.
 
-Die Test-Case-Kennungen `OBS-LLH-TC-01` … `OBS-LLH-TC-10` sind **Testfall-Identitäten** — ausdrücklich **keine** Decision-, Risk-, ADR-, Capability- oder Work-Package-IDs und **kein** neues Register.
+Die Test-Case-Kennungen `OBS-LLH-TC-01` … `OBS-LLH-TC-11` sind **Testfall-Identitäten** — ausdrücklich **keine** Decision-, Risk-, ADR-, Capability- oder Work-Package-IDs und **kein** neues Register.
 
 ```text
 test case references authority != test case becomes authority
@@ -88,6 +89,7 @@ Ebenenzuordnung folgt der bestehenden Taxonomie (§8 der Teststrategie). Eine Eb
 | `OBS-LLH-TC-08` | Provenance ungültig | `TL-2` + `TL-7` | `field_observation_outcome = provenance-invalid` (Feld-Vokabular); Envelope nach §10.5 R3 `partial` **oder** nach R5 kein Envelope-Wert bei Emissions-Disposition `record-discarded` | `not run` |
 | `OBS-LLH-TC-09` | Normalisierung fehlgeschlagen | `TL-2` | `normalization-failed` | `not run` |
 | `OBS-LLH-TC-10` | No-Mutation-Sentinel | `TL-7` | ergebnisunabhängig — siehe §8 | `not run` |
+| `OBS-LLH-TC-11` | Heterogene All-Failure-Zusammensetzung | `TL-2` + `TL-3`, *level assignment pending `P-3`* | **kein** Envelope-Wert (§10.5 **R6**); Emissions-Disposition `record-discarded` | `not run` |
 
 ### 7.2 `OBS-LLH-TC-01` — Normale Beobachtung
 
@@ -196,6 +198,38 @@ partial            != failed
 
 Siehe §8. Der Fall ist heute `not run`; `P-2` bleibt **`NOT SATISFIED`**.
 
+### 7.12 `OBS-LLH-TC-11` — Heterogene All-Failure-Zusammensetzung
+
+- **Test intent:** Belegen, dass ein Erhebungsvorgang **ohne** jedes `success`-Feld und mit **verschiedenen** Fehlerursachen unter den verwertbaren Feldern **keinen** Envelope-Wert erfindet, sondern nach [Observation Contract](../architecture/OBSERVE_LOCAL_LINUX_HOST_OBSERVATION_CONTRACT.md) §10.5 **R6** ohne kanonische Observation endet — bei vollständig erhaltener feldweiser Unterscheidbarkeit.
+- **Setup concept:** Ein Beobachtungssubjekt, bei dem **kein** Feld `success` erreicht, **mindestens zwei** Felder **nicht** `provenance-invalid` sind und diese Felder **verschiedene** Erhebungsausgänge tragen — etwa ein Feld `permission-denied` und ein Feld `source-absent`. Kombination der bestehenden Fixture-Klassen (`permission-denied` + `missing`); die konkrete Kombinierbarkeit ist erst nach `P-3` bestimmbar. *Level assignment pending `P-3`*.
+- **Expected `observation_outcome`:** **keiner.** Auf Envelope-Ebene wird **kein** Wert des Acht-Werte-Vokabulars (§10.2) behauptet.
+- **Erwartete Vokabularzuordnung (drei getrennte Ebenen, [Observation Contract](../architecture/OBSERVE_LOCAL_LINUX_HOST_OBSERVATION_CONTRACT.md) §10.1):**
+  - **Feldebene:** jedes Feld trägt seinen **eigenen** `field_observation_outcome` aus dem Neun-Werte-Feld-Vokabular (§10.3); die Ursachen bleiben **einzeln unterscheidbar** und werden **nicht** zusammengefasst.
+  - **Envelopeebene:** **kein** `observation_outcome`. Ausdrücklich **kein** `partial`, **kein** synthetisches Aggregat, **kein** neunter Wert.
+  - **Emissionsebene:** `record-discarded` (§10.4) — ausschließlich eine **Verarbeitungs-/Ausgabe-Disposition**, **kein** Beobachtungsergebnis und **kein** Löschvorgang.
+- **Expected data semantics:** Der Datensatz wird **nicht** als kanonische Observation ausgegeben. Es entsteht **kein** Ersatz-, Default- oder Näherungswert und **keine** synthetische Envelope-Aussage. Es wird **keine** Präzedenz- und **keine** Schwereordnung zwischen den Fehlerursachen angewandt; kein Ausgang „gewinnt“. `partial` wird **nicht** aufgeweicht — der von `partial` geforderte `success`-Anteil fehlt.
+- **Expected provenance behavior:** Die Provenance bleibt je Feld verfügbar; ein Raw-Wert bleibt dort verfügbar, wo einer entstanden ist; der Kontext des Erhebungsversuchs bleibt erhalten. Das erzeugte Diagnose-/Evidenzmaterial wird **nicht** stillschweigend gelöscht (§10.4). Die Retention erfolgt unter den **bestehenden** Semantiken — es wird **keine** Speicher-, Persistenz-, Aufbewahrungs- oder Löschtechnik geprüft oder vorausgesetzt.
+- **Prohibited inference:** ausdrücklich verbindlich:
+
+```text
+kein Envelope-Wert  != partial
+kein Envelope-Wert  != failed observation
+record discarded    != observation outcome
+record discarded    != failed observation
+record discarded    != deletion
+record discarded    != target state
+diagnostic retained != canonical Observation emitted
+diagnostic material != governed audit record
+R6 decided          != productive code authorized
+R6 decided          != implementation authorized
+R6 decided          != test execution authorized
+```
+
+Aus R6 folgt **nichts** über das Ziel: weder Gesundheit noch Erreichbarkeit noch Defekt. Aus R6 folgt ebenso **keine** Autorisierung: die Regel ist eine Semantikfestlegung, **keine** Freigabe von Implementierung, Zielzugriff oder Testausführung.
+
+- **Future evidence requirement:** Ein Record, der zeigt: (a) es wurde **kein** Envelope-Wert behauptet; (b) `partial` wurde **nicht** verwendet; (c) es wurde **keine** Präzedenz- oder Schwereordnung angewandt; (d) es wurde **keine** kanonische Observation ausgegeben; (e) `record-discarded` ist als reine Verarbeitungs-/Emissions-Disposition ausgewiesen; (f) jede feldweise Fehlerursache ist einzeln nachvollziehbar geblieben; (g) die Provenance ist weiterhin verfügbar; (h) ein vorhandener Raw-Wert ist weiterhin verfügbar; (i) das Diagnose-/Evidenzmaterial wurde **nicht** stillschweigend gelöscht; (j) es entstand **kein** neunter Envelope-Wert; (k) es wurde **keine** Aussage über die Zielgesundheit und **keine** Autorisierungsaussage abgeleitet. Die Revisionsbindung nach [Teststrategie](FOUNDATION_TEST_STRATEGY_AND_VALIDATION_MODEL.md) §18 gilt unverändert.
+- **Heutiges Ergebnis:** `not run`. Der Fall ist **nicht implementiert**, **nicht ausgeführt** und **nicht bestanden**; er erzeugt **keine** Evidenz. `not run != passed`.
+
 ## 8. No-Mutation-Sentinel
 
 ### 8.1 Gegenstand
@@ -220,7 +254,7 @@ Erforderlich ist **beobachtetes geschütztes Verhalten**, nicht das Ausbleiben e
 1. **Deklarierte Mutationsgrenze.** Vorab und schriftlich: welche Zielzustände als „unverändert" gelten müssen und welche Nebeneffekte innerhalb der autorisierten Grenze ausdrücklich zulässig sind. Ohne diese Vorab-Deklaration ist jedes spätere Ergebnis unfalsifizierbar.
 2. **Vorher-/Nachher-Beobachtung an benannten Beobachtungspunkten** — mit derselben Erhebungsmethode, unter deklarierter Environment Identity, mit Zeitbindung und Clock-Unsicherheit.
 3. **Ausgeführte Negativ-Familien der Teststrategie §12** — mindestens `unknown target`, `wrong target` und `missing execution authorization` als **implementierte und ausgeführte** Tests, deren Record das Schutzverhalten selbst zeigt: Aktion blieb blockiert · **kein** Seiteneffekt am Ziel · Denial als Record sichtbar · Grund ist der spezifizierte Grund.
-4. **Fehlerpfad-Abdeckung.** Auch die Fälle `OBS-LLH-TC-02` bis `OBS-LLH-TC-09` dürfen keine Mutation erzeugen — insbesondere kein Retry-Sturm, keine Rechteeskalation, keine Reparatur, kein Anlegen fehlender Quellen.
+4. **Fehlerpfad-Abdeckung.** Auch die Fälle `OBS-LLH-TC-02` bis `OBS-LLH-TC-09` **sowie** `OBS-LLH-TC-11` dürfen keine Mutation erzeugen — insbesondere kein Retry-Sturm, keine Rechteeskalation, keine Reparatur, kein Anlegen fehlender Quellen. Für `OBS-LLH-TC-11` gilt zusätzlich, dass auch die Nicht-Emission (`record-discarded`) und die Retention des erzeugten Diagnosematerials keine Mutation am beobachteten Ziel erzeugen dürfen. Alle genannten Fälle sind **künftige** Anforderungen: sie tragen heute `not run`, sind **nicht implementiert** und **nicht ausgeführt** — aus ihrer Nennung folgt **keine** bereits erzeugte Evidenz (`case enumerated != case implemented`).
 5. **Deklarierte Restunsicherheit.** Welche Nebeneffekte mit der gewählten Methode **nicht** beobachtbar waren. Nicht beobachtbar ist nicht dasselbe wie nicht vorhanden.
 6. **Unabhängige Reproduzierbarkeit** durch eine Person, die den Pfad nicht gebaut hat, unter deklarierter Revisionskombination (Teststrategie §18).
 7. **Explizite Human-Maintainer-Autorisierung** sowohl des Zielzugriffs (`P-1`) als auch der Testausführung.
@@ -286,7 +320,7 @@ Zusätzlich für diesen Envelope:
 test envelope defined  != test suite exists
 case enumerated        != case implemented
 expected outcome named != outcome ever observed
-ten cases              != coverage complete
+eleven cases           != coverage complete
 test strategy defined  != tests implemented
 P-2 evidence plan      != P-2 satisfied
 test design            != test execution
@@ -335,4 +369,24 @@ Additiv. **Keine** Änderung an Teststrategie, Fixture-Governance, Lab-Modell, E
 
 ## 13. Next Decision
 
-Der Nova Final Review dieses Envelopes ist erfolgt (`GO`); als Nächstes folgen die Human-Maintainer-Repository-, Staging-, Commit- und Push-Gates. Testimplementierung, Testausführung, Fixture- und Lab-Bereitstellung bleiben getrennte, ausdrücklich zu autorisierende spätere Arbeit. **Dieser Envelope autorisiert keine davon.**
+**Aktueller Stand.** `CO-WP-032` ist **abgeschlossen und remote integriert**: Nova Final Review `GO`; Human-Maintainer-Integrationscommit `9999114200bf18baaadfb508e8464720b75e352e`, gepusht; die anschließende Post-Integrations-Reconciliation steht auf `390da5cc8629dfa9cbea990c0a3c4ba4cb156e9b`. Die Repository-, Staging-, Commit- und Push-Gates für `CO-WP-032` sind damit **erledigt** und **nicht** mehr der nächste Schritt.
+
+Der vorliegende docs-only Nachtrag (`OBS-LLH-TC-11` und diese Stands-Korrektur) liegt im Arbeitsverzeichnis. Staging, Commit, Push, Tag und jede weitere Repository-Aktion liegen unverändert **ausschließlich** beim Human Maintainer; ein künftiger Integrationsstand wird hier **nicht** vorweggenommen und **kein** Commit-Identifier dafür vorhergesagt.
+
+**Unverändert und ausdrücklich nicht erteilt:**
+
+```text
+Testimplementierung:   NOT AUTHORIZED
+Testausführung:        NOT AUTHORIZED
+Fixtures:              nicht bereitgestellt
+Lab-Environment:       nicht bereitgestellt
+P-1 / Zielzugriff:     NOT AUTHORIZED
+P-2 Evidenzplan:       DEFINED
+P-2 Erfüllung:         NOT SATISFIED
+P-3:                   NOT SELECTED
+Sprache / Runtime:     NOT SELECTED
+Tests implementiert:   0
+Tests ausgeführt:      0
+```
+
+Testimplementierung, Testausführung, Fixture- und Lab-Bereitstellung bleiben getrennte, ausdrücklich zu autorisierende spätere Arbeit. **Dieser Envelope autorisiert keine davon.** Die Aufnahme von `OBS-LLH-TC-11` ist eine **Testfalldefinition** und **keine** Implementierung, **keine** Ausführung und **keine** Evidenz: `case enumerated != case implemented`.
