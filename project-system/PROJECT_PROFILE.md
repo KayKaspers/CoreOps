@@ -10,7 +10,7 @@
 
 ## Aktueller Projektstand (autoritative Current-State-Oberfläche)
 
-> Dieser Abschnitt ist die **einzige Current-State-Aussage dieses Dokuments**. Alle nachfolgenden Abschnitte sind entweder der historische `CO-WP-001`-Initialschnappschuss (§§1–17) oder historische Pro-WP-Konsolidierungsblöcke. Fortgeschrieben durch die unnummerierten, dokumentations-only Reconciliations **Post-Publication Current-State Reconciliation** (`HM-C1` / `HM-C1A` `APPROVED`, remote integriert) und **Foundation-Phase-Closure-Current-State-Reconciliation** (`HM-F1R` `APPROVED`) sowie zuletzt durch die konsolidierte Aufnahme von `HM-O1`…`HM-O4` in `CO-WP-032`.
+> Dieser Abschnitt ist die **einzige Current-State-Aussage dieses Dokuments**. Alle nachfolgenden Abschnitte sind entweder der historische `CO-WP-001`-Initialschnappschuss (§§1–17) oder historische Pro-WP-Konsolidierungsblöcke. Fortgeschrieben durch die unnummerierten, dokumentations-only Reconciliations **Post-Publication Current-State Reconciliation** (`HM-C1` / `HM-C1A` `APPROVED`, remote integriert) und **Foundation-Phase-Closure-Current-State-Reconciliation** (`HM-F1R` `APPROVED`) sowie zuletzt durch die konsolidierte Aufnahme von `HM-O1`…`HM-O4` in `CO-WP-032` und durch die unnummerierte, dokumentations-only Anwendung der freigegebenen Human-Maintainer-`A-12`-Disposition (**kein** Work Package, **keine** neue Governance-Kennung).
 
 | Dimension | Stand |
 | --------- | ----- |
@@ -24,11 +24,14 @@
 | `HM-O1` (Bounded Observe Phase Entry) | **APPROVED WITH BOUNDARY** |
 | Erster Observe-Wertslice | **`LOCAL LINUX HOST IDENTITY & BASIC SYSTEM OBSERVATION` — SELECTED** (`HM-O2` **APPROVED**) |
 | `CO-WP-032` | **AUTHORIZED** (`HM-O3` **APPROVED**); Ausführung **AUTHORIZED — DOCS-ONLY MIT EXAKTER SCHREIBGRENZE** (`HM-O4` **APPROVED WITH EXACT BOUNDARY**); Queue-Status **`completed-go-with-notes`**; Nova Initial Review `REWORK — narrow semantic closure`, beide blockierenden Notes **CLOSED**, **Nova Final Review `GO`**; Human-Maintainer-Repository-Integration **ABGESCHLOSSEN** — Commit `9999114200bf18baaadfb508e8464720b75e352e`, gepusht, Remote-Integration **abgeschlossen**, `origin/main` gleichauf |
+| `A-12` (Teststrategie / künftige Validierungsanforderungen definiert) | **SATISFIED / erfüllt** — Testdesign **definiert**, `P-2`-Evidenzmethode **definiert**, Human-Maintainer-Disposition dieser Definition **APPROVED**; ausdrücklich **nicht** `P-2` erfüllt, **keine** Testimplementierung, **keine** Testausführung |
+| Gate A (vor Produktivcode / Implementierungsautorisierung) | **6 von 14 erfüllt, 0 teilweise, 8 offen — NOT PASSED**; offen: `A-6`, `A-7`, `A-8`, `A-9`, `A-10`, `A-11`, `A-13`, `A-14` |
+| Gate B (vor realer Beobachtung / Zielausführung) | **0 von 8 erfüllt — NOT PASSED** |
 | Produktiver Anwendungscode | **NOT AUTHORIZED** — und **keiner vorhanden** |
 | Implementierung | **NOT AUTHORIZED** |
 | Sprache / Runtime | **NOT SELECTED** |
 | `P-1` (Zielautorisierung) | **NOT AUTHORIZED** — Gate B; **keine** Voraussetzung für Produktivcode-Autorisierung |
-| `P-2` (No-Mutation-Evidenz) | Evidenzmethode/-plan **DEFINIERT** (Gate A) · Erfüllung **NOT SATISFIED** (Gate B) — null Tests implementiert, null ausgeführt; Erfüllung ist der Implementierung und Ausführung nachgelagert |
+| `P-2` (No-Mutation-Evidenz) | Evidenzmethode/-plan **DEFINIERT** (Gate A) · Gate-A-Human-Maintainer-Disposition **APPROVED** · Erfüllung **NOT SATISFIED** (Gate B) — null Tests implementiert, null ausgeführt, No-Mutation-Evidenz **KEINE**; Erfüllung ist der Implementierung und Ausführung nachgelagert (`Evidenzplan dispositioniert ≠ Evidenz vorhanden`) |
 | `P-3` (Erhebungsmechanismus) | **NOT SELECTED** |
 | Zielzugriff | **NOT AUTHORIZED** |
 | Reale Beobachtung | **NOT AUTHORIZED** — und keine durchgeführt |
@@ -39,7 +42,7 @@
 | Technische Architektur | weiterhin **unbestätigt**; keine Technologie ausgewählt |
 | Runtime-Capabilities / `supported`-Integrationen | **0** / **0** |
 
-Bindend: `Foundation-Arbeit abgeschlossen ≠ Foundation-Phase abgeschlossen` (die Schließung erfolgte durch `HM-F1`, nicht durch die Arbeit oder die Tag-Publikation) · `Foundation-Phase abgeschlossen ≠ Observe autorisiert` · `Observe betreten ≠ Zielzugriff` · `Wertslice gewählt ≠ produktiver Code autorisiert` · `Work-Package-Ausführung autorisiert ≠ produktiver Code autorisiert` · `Tag veröffentlicht ≠ funktionaler Produktrelease` · `Empfehlung ≠ Autorisierung` · `Current-State-Reconciliation ≠ Governance-Autorisierung`.
+Bindend: `Foundation-Arbeit abgeschlossen ≠ Foundation-Phase abgeschlossen` (die Schließung erfolgte durch `HM-F1`, nicht durch die Arbeit oder die Tag-Publikation) · `Foundation-Phase abgeschlossen ≠ Observe autorisiert` · `Observe betreten ≠ Zielzugriff` · `Wertslice gewählt ≠ produktiver Code autorisiert` · `Work-Package-Ausführung autorisiert ≠ produktiver Code autorisiert` · `Tag veröffentlicht ≠ funktionaler Produktrelease` · `Empfehlung ≠ Autorisierung` · `Current-State-Reconciliation ≠ Governance-Autorisierung` · `A-12 erfüllt ≠ Gate A passiert` · `A-12 erfüllt ≠ P-2 erfüllt` · `Testdesign akzeptiert ≠ Test implementiert` · `Testdesign akzeptiert ≠ Implementierung autorisiert`.
 
 > **Geltung des Foundation Scope Lock nach Phasenabschluss.** Der [FOUNDATION_SCOPE_LOCK.md](../docs/governance/FOUNDATION_SCOPE_LOCK.md) governt die **abgeschlossene** Foundation-0.1-Phase und bleibt für diese verbindlich. Er ist **keine** dauerhafte Verbotsnorm für jede künftige produktive Arbeit. Post-Foundation-Arbeit — insbesondere produktiver Anwendungscode — benötigt eine **eigene, ausdrückliche Human-Maintainer-Autorisierung**; eine solche ist derzeit **nicht** erteilt. Das Scope-Lock-Dokument selbst wird durch diese Reconciliation **nicht** geändert.
 

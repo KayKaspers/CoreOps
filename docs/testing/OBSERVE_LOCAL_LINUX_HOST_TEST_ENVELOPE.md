@@ -9,7 +9,7 @@
 > Successor Work Package: none created, none reserved
 > Tests planned: YES · Tests implemented: **NO** · Tests executed: **NO** · Test evidence produced: **NONE**
 > Target Authorization (`P-1`): Not authorized — Gate B; **not** a prerequisite for writing productive code
-> No-Mutation Evidence (`P-2`): method/plan **DEFINED** (§8.3) · satisfaction **NOT SATISFIED** — Gate B, downstream of implementation and execution
+> No-Mutation Evidence (`P-2`): method/plan **DEFINED** (§8.3) · Human-Maintainer-Disposition **APPROVED** (Gate-A-Punkt `A-12` erfüllt, [Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §16.1) · satisfaction **NOT SATISFIED** — Gate B, downstream of implementation and execution
 > Collection Mechanism (`P-3`): Not selected
 > Language / Runtime: Not selected
 > Test Execution Authorization: Not granted
@@ -275,12 +275,14 @@ ein einzelner erfolgreicher Lauf     != Regressionsvertrauen
 
 | Zustand | Gate | Stand |
 | ------- | ---- | ----- |
-| **`P-2`-Evidenzmethode / -plan definiert** | Gate A — vor Produktivcode | **DEFINIERT** — die sieben kumulativen Anforderungen aus §8.3 |
+| **`P-2`-Evidenzmethode / -plan definiert** | Gate A — vor Produktivcode | **DEFINIERT** — die sieben kumulativen Anforderungen aus §8.3; die Human-Maintainer-Disposition dieser Definition ist **APPROVED** (Gate-A-Punkt `A-12` erfüllt) |
 | **`P-2` erfüllt** | Gate B — vor realer Beobachtung | **`NOT SATISFIED`** |
 
 ```text
-P-2 evidence plan != P-2 satisfied
-test design       != test execution
+P-2 evidence plan      != P-2 satisfied
+evidence plan approved != evidence produced
+test design            != test execution
+test design accepted   != test implemented
 ```
 
 **Warum die Erfüllung erst nach der Implementierung möglich ist.** Die Anforderungen aus §8.3 setzen einen **ausführbaren** Beobachtungspfad, freigegebene Fixtures, eine deklarierte Umgebung sowie getrennte Ziel- und Ausführungsautorität voraus. Keine davon kann existieren, bevor überhaupt implementiert wurde. `P-2` als Vorbedingung für die Autorisierung produktiven Codes zu führen wäre daher **zirkulär**: die Evidenz verlangte genau das, was sie freigeben soll. Auf Gate-A-Ebene ist deshalb ausschließlich verlangt, dass die **Methode feststeht** — was mit §8.3 der Fall ist.
@@ -291,13 +293,14 @@ test design       != test execution
 
 ```text
 P-2 evidence plan:    DEFINED  (§8.3, seven cumulative requirements)
+P-2 plan disposition: HUMAN-MAINTAINER DISPOSITION APPROVED (Gate A, A-12)
 P-2 satisfaction:     NOT SATISFIED
 Tests implemented:    0
 Tests executed:       0
 No-mutation evidence: NONE
 ```
 
-Dieses Dokument **beschafft** diese Evidenz nicht und darf nicht so gelesen werden, als hätte es sie beschafft. Ein definierter Evidenzweg ist keine Evidenz.
+Dieses Dokument **beschafft** diese Evidenz nicht und darf nicht so gelesen werden, als hätte es sie beschafft. Ein definierter Evidenzweg ist keine Evidenz — und ein **dispositionierter** Evidenzweg ebenso wenig: die freigegebene Human-Maintainer-`A-12`-Disposition akzeptiert die Methode als **definiert** und erzeugt dadurch **keine** Evidenz.
 
 ## 9. Test-Claim-Grenze
 
@@ -342,7 +345,7 @@ Das Claim Boundary Set ist **keine** Reifeleiter; `support`, `production readine
 
 Kein Fall dieses Envelopes ist heute ausführbar.
 
-> **Gate-Zuordnung.** Die folgende Liste ist eine **Ausführungs**-Voraussetzungsliste. Sie beschreibt, was vor **Testausführung und realer Beobachtung** vorliegen muss — Gate B im Sinne von [PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §16.2. **Keiner** ihrer Punkte ist eine Voraussetzung dafür, produktiven Quellcode zu schreiben oder zu autorisieren. Auf Gate-A-Ebene ist aus diesem Dokument ausschließlich verlangt, dass Testdesign und `P-2`-Evidenzmethode **definiert** sind — beides ist mit §7 und §8.3 der Fall.
+> **Gate-Zuordnung.** Die folgende Liste ist eine **Ausführungs**-Voraussetzungsliste. Sie beschreibt, was vor **Testausführung und realer Beobachtung** vorliegen muss — Gate B im Sinne von [PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §16.2. **Keiner** ihrer Punkte ist eine Voraussetzung dafür, produktiven Quellcode zu schreiben oder zu autorisieren. Auf Gate-A-Ebene ist aus diesem Dokument ausschließlich verlangt, dass Testdesign und `P-2`-Evidenzmethode **definiert** sind — beides ist mit §7 und §8.3 der Fall, und die Human-Maintainer-Disposition dieser Definition ist erteilt (Gate-A-Punkt `A-12` **erfüllt**). An der folgenden Ausführungs-Voraussetzungsliste ändert das **nichts**: jeder Punkt bleibt offen, jeder Fall bleibt `not run`.
 
 Eine spätere Ausführung erfordert **kumulativ** (konsistent mit Teststrategie §20, ergänzt um die Slice-Preconditions):
 
@@ -381,7 +384,7 @@ Testausführung:        NOT AUTHORIZED
 Fixtures:              nicht bereitgestellt
 Lab-Environment:       nicht bereitgestellt
 P-1 / Zielzugriff:     NOT AUTHORIZED
-P-2 Evidenzplan:       DEFINED
+P-2 Evidenzplan:       DEFINED / HUMAN-MAINTAINER-DISPOSITION APPROVED
 P-2 Erfüllung:         NOT SATISFIED
 P-3:                   NOT SELECTED
 Sprache / Runtime:     NOT SELECTED

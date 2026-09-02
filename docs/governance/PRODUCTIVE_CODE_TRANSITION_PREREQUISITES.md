@@ -6,7 +6,7 @@
 > Phase: `Observe` — betreten und mit Grenze autorisiert (`HM-O1` `APPROVED WITH BOUNDARY`)
 > Productive Code: **NOT AUTHORIZED** · Implementation: **NOT AUTHORIZED** (Gate A, §16.1)
 > `P-1` Target Authorization: **NOT AUTHORIZED** — Gate B (§16.2); **not** a Gate-A prerequisite
-> `P-2` No-Mutation Evidence: method/plan **DEFINED** (Gate A) · satisfaction **NOT SATISFIED** — Gate B, downstream of implementation and execution
+> `P-2` No-Mutation Evidence: method/plan **DEFINED** (Gate A) · Human-Maintainer-Disposition **APPROVED** (Gate-A-Punkt `A-12` erfüllt, §16.1) · satisfaction **NOT SATISFIED** — Gate B, downstream of implementation and execution
 > `P-3` Collection Mechanism: **NOT SELECTED**
 > Language / Runtime: **NOT SELECTED**
 > Source Tree: **NOT CREATED** · Dependencies: **NONE ADMITTED** · Lockfile: **NONE**
@@ -17,7 +17,8 @@
 > Normative Release: Not yet assigned
 > Normative Framework: NDF v1.0.0 (Tag `v1.0.0`, Commit `9dcadc1`) — `main` informativ, nicht normativ
 > Erzeugt durch `CO-WP-032` (docs-only / Observe Slice Contract and Productive-Code Transition Prerequisites)
-> Nachträgliche docs-only Änderung: Die Human-Maintainer-Entscheidung zur heterogenen All-Failure-Zusammensetzung (Observation Contract §10.5 **R6**) ist in §14 als Decision-Disposition aufgenommen und wird vom bestehenden Gate-A-Punkt `A-11` getragen. Es entsteht **keine** zusätzliche Gate-A-Checklistenzeile, **kein** Decision-Identifier und **kein** ADR. `A-11` bleibt **offen**, `A-12` bleibt **teilweise**; Gate A bleibt **5 von 14 erfüllt, 1 teilweise, 8 offen — nicht passiert**, Gate B bleibt **0 von 8 — nicht passiert**.
+> Nachträgliche docs-only Änderung: Die Human-Maintainer-Entscheidung zur heterogenen All-Failure-Zusammensetzung (Observation Contract §10.5 **R6**) ist in §14 als Decision-Disposition aufgenommen und wird vom bestehenden Gate-A-Punkt `A-11` getragen. Es entsteht **keine** zusätzliche Gate-A-Checklistenzeile, **kein** Decision-Identifier und **kein** ADR. `A-11` bleibt **offen**.
+> Nachträgliche docs-only Current-State-Anwendung: Die freigegebene Human-Maintainer-`A-12`-Disposition ist angewandt. Die Abfolge **R6-Semantikdisposition → Definition von `OBS-LLH-TC-11` → Human-Maintainer-Disposition von `A-12`** ist damit **vollständig**; `A-12` steht auf **erfüllt** (§16.1). Gate A: **6 von 14 erfüllt, 0 teilweise, 8 offen — nicht passiert**; Gate B unverändert **0 von 8 — nicht passiert**. `A-12` erfüllt bedeutet ausschließlich, dass Testdesign und `P-2`-Evidenzmethode als **definiert** akzeptiert sind: **0** Tests implementiert, **0** Tests ausgeführt, No-Mutation-Evidenz **keine**, `P-2` **`NOT SATISFIED`**, produktiver Anwendungscode und Implementierung **NOT AUTHORIZED**. Es entsteht **kein** Work Package, **keine** `CO-WP-033`, **kein** ADR und **keine** Decision-, Risk-, CCR-, Capability-, Support-Status-, Lessons- oder NDF-Feedback-Kennung.
 
 ## 1. Status und Zweck
 
@@ -107,7 +108,7 @@ Implementierungsautorität ist **eigenständig** und entsteht nicht als Nebenwir
 8. eine definierte Teststrategie beziehungsweise definierte künftige Validierungsanforderungen — einschließlich der **definierten `P-2`-Evidenzmethode**, ausdrücklich **nicht** deren Erfüllung,
 9. die Build-/Packaging-Disposition, soweit dieses Dokument sie als tatsächlich erforderlich ausweist (§12).
 
-Fehlt auch nur eine, ist **keine** Implementierungsautorität gegeben. Derzeit sind die neun Voraussetzungen **nicht kumulativ erfüllt**: mehrere stehen offen, und die Voraussetzung zu Teststrategie und `P-2`-Evidenzmethode (Punkt 8) ist lediglich **teilweise** erfüllt — Testdesign und Evidenzmethode sind definiert, die erforderliche Human-Maintainer-Disposition steht aus (Gate-A-Punkt `A-12` **teilweise**, §16.1).
+Fehlt auch nur eine, ist **keine** Implementierungsautorität gegeben. Derzeit sind die neun Voraussetzungen **nicht kumulativ erfüllt**: mehrere stehen offen. Die Voraussetzung zu Teststrategie und `P-2`-Evidenzmethode (Punkt 8) ist **erfüllt** — Testdesign und Evidenzmethode sind definiert, und die erforderliche Human-Maintainer-Disposition dieser Definition ist erteilt (Gate-A-Punkt `A-12` **erfüllt**, §16.1). Das betrifft ausschließlich den **Definitionsstand**: `P-2` bleibt **`NOT SATISFIED`**, es ist **kein** Test implementiert und **kein** Test ausgeführt.
 
 **Ausdrücklich nicht Bestandteil von Gate A:** `P-1` · die Erfüllung von `P-2` · Testausführungsautorität · Fixture-Freigabe · Lab-Bereitstellung. Diese gehören zu Gate B (§16.2).
 
@@ -144,7 +145,7 @@ Dieses Dokument **autorisiert kein Ziel** und benennt keines.
 
 | Zustand | Gate | Stand heute |
 | ------- | ---- | ----------- |
-| **`P-2`-Evidenzmethode / -plan definiert** | Gate A (§4.2 Punkt 8) | **DEFINIERT** — die sieben kumulativen Anforderungen stehen im [Test Envelope](../testing/OBSERVE_LOCAL_LINUX_HOST_TEST_ENVELOPE.md) §8.3 |
+| **`P-2`-Evidenzmethode / -plan definiert** | Gate A (§4.2 Punkt 8) | **DEFINIERT** — die sieben kumulativen Anforderungen stehen im [Test Envelope](../testing/OBSERVE_LOCAL_LINUX_HOST_TEST_ENVELOPE.md) §8.3; Human-Maintainer-Disposition **APPROVED** (`A-12` erfüllt, §16.1) |
 | **`P-2` erfüllt** | Gate B | **`NOT SATISFIED`** |
 
 ```text
@@ -497,11 +498,17 @@ Vor einer produktiven Implementierung sind mindestens folgende Punkte zu disposi
 
 **`A-11` bleibt `offen`.** `A-11` verlangt die Disposition **der Punkte dieser §14**. Die übrigen Zeilen — `P-3`, Sprache/Runtime, Source Tree, Dependency-Admission, `NEW-8`, Build/Packaging — sind weiterhin unentschieden. Eine einzelne entschiedene Zeile erfüllt `A-11` daher **nicht**.
 
-**`A-12` bleibt `teilweise`.** Die freigegebene Abfolge lautet: **R6-Semantikdisposition → Definition von `OBS-LLH-TC-11` → Human-Maintainer-Disposition von `A-12`**. Die ersten beiden Schritte sind mit dem docs-only Nachtrag erfolgt; der dritte — die Human-Maintainer-Disposition der Testdesign- und `P-2`-Methodendefinition — ist **nicht** erfolgt. `A-12` bleibt deshalb unverändert **teilweise** (§16.1). Die Gate-A-Bilanz bleibt damit unverändert **5 von 14 erfüllt, 1 teilweise, 8 offen — Gate A ist nicht passiert**; die Gate-B-Bilanz bleibt **0 von 8 — realer Zielzugriff bleibt untersagt**.
+**`A-12` ist `erfüllt`.** Die freigegebene Abfolge lautete: **R6-Semantikdisposition → Definition von `OBS-LLH-TC-11` → Human-Maintainer-Disposition von `A-12`**. Die ersten beiden Schritte sind mit dem docs-only Nachtrag erfolgt; der dritte — die Human-Maintainer-Disposition der Testdesign- und `P-2`-Methodendefinition — ist mit der freigegebenen Human-Maintainer-`A-12`-Disposition **erfolgt**. Die Abfolge ist damit **vollständig**, und `A-12` steht auf **erfüllt** (§16.1). Die Gate-A-Bilanz lautet damit **6 von 14 erfüllt, 0 teilweise, 8 offen — Gate A ist weiterhin nicht passiert**; die Gate-B-Bilanz bleibt **0 von 8 — realer Zielzugriff bleibt untersagt**. Die Disposition akzeptiert ausschließlich den **Definitionsstand** von Teststrategie und `P-2`-Evidenzmethode; sie implementiert **keinen** Test, führt **keinen** Test aus, erzeugt **keine** Evidenz, erfüllt `P-2` **nicht** und berührt `A-11` **nicht**.
 
 ```text
 one decision disposed != A-11 satisfied
 R6 decided            != A-12 disposed
+A-12 disposed         != A-11 satisfied
+A-12 satisfied        != Gate A passed
+A-12 satisfied        != P-2 satisfied
+A-12 satisfied        != tests implemented
+A-12 satisfied        != tests executed
+A-12 satisfied        != implementation authorized
 R6 decided            != productive code authorized
 R6 decided            != implementation authorized
 R6 decided            != target access authorized
@@ -529,6 +536,8 @@ Auf dieser Ebene ist ausschließlich verlangt, dass **definiert ist, was später
 2. **`P-2`-Evidenzmethode definiert** — erfüllt durch Test Envelope §8.3 (sieben kumulative Anforderungen). **Nicht** verlangt: dass die Evidenz vorliegt.
 3. `P-3` entschieden — **offen**; ohne die Entscheidung ist kein Fall implementierbar.
 4. Sprache/Runtime entschieden — **offen**; ohne die Entscheidung existiert kein Testwerkzeug.
+
+**Disposition dieser Definitionen.** Die Punkte 1 und 2 sind durch die freigegebene Human-Maintainer-`A-12`-Disposition als für Gate A **hinreichend definiert akzeptiert** (Gate-A-Punkt `A-12` **erfüllt**, §16.1). Die Akzeptanz betrifft ausschließlich den **Definitionsstand**: sie ändert die `P-2`-Evidenzmethode **nicht**, autorisiert **keine** Testimplementierung und **keine** Testausführung, erzeugt **keine** Evidenz und erfüllt `P-2` **nicht**. Die Punkte 3 und 4 bleiben unverändert **offen**.
 
 ### 15.2 Gate B — vor Testausführung und realer Beobachtung
 
@@ -569,11 +578,11 @@ Eine spätere Produktivcode-Autorisierung gilt **nicht** als vorbereitet, solang
 | A-9 | **Dependency-Admission-Disposition** | Admission-Gate in Kraft; jede vorgesehene Abhängigkeit einzeln zugelassen oder ausdrücklich keine | **offen** — nicht in Kraft, **0** zugelassen |
 | A-10 | **`NEW-8`-Disposition** | `README` und `LICENSE` entschieden — auch eine bewusste Nicht-Erstellung ist eine Disposition | **offen** — `deferred`, Empfehlung liegt vor |
 | A-11 | **ADR-/Decision-Disposition** | die Punkte aus §14 entschieden oder ausdrücklich zurückgestellt | **offen** |
-| A-12 | **Teststrategie / künftige Validierungsanforderungen definiert** | §15.1 Punkte 1 und 2 — einschließlich der **definierten `P-2`-Evidenzmethode**; ausdrücklich **nicht** `P-2` erfüllt | **teilweise** — Testdesign und `P-2`-Methode **definiert**; die Human-Maintainer-Disposition dieser Definition steht aus |
+| A-12 | **Teststrategie / künftige Validierungsanforderungen definiert** | §15.1 Punkte 1 und 2 — einschließlich der **definierten `P-2`-Evidenzmethode**; ausdrücklich **nicht** `P-2` erfüllt | **erfüllt** — Testdesign **definiert**, `P-2`-Evidenzmethode **definiert**, Human-Maintainer-Disposition dieser Definition **erteilt**. Ausdrücklich **nicht** `P-2` erfüllt: **0** Tests implementiert, **0** ausgeführt, No-Mutation-Evidenz **keine** |
 | A-13 | **Build-/Packaging-Disposition** | Reproduzierbarkeit, Offline-Build und Artefaktidentität entschieden, soweit §12 sie als erforderlich ausweist | **offen** |
 | A-14 | **Ausdrückliche Implementierungs-Work-Package-Autorität** | ein eigenes, ausdrücklich autorisiertes implementierungsorientiertes Work Package mit benanntem Scope | **offen** — nicht erteilt |
 
-**Bilanz Gate A: 5 von 14 erfüllt, 1 teilweise, 8 offen. Gate A ist nicht passiert.**
+**Bilanz Gate A: 6 von 14 erfüllt, 0 teilweise, 8 offen. Gate A ist nicht passiert.** Offen bleiben genau acht Punkte: `A-6`, `A-7`, `A-8`, `A-9`, `A-10`, `A-11`, `A-13` und `A-14`.
 
 **Ausdrücklich nicht in dieser Checkliste:** `P-1` · `P-2` erfüllt · Testausführungsautorität · Fixtures · Lab. Sie sind **keine** Voraussetzung dafür, produktiven Quellcode zu schreiben oder zu autorisieren.
 
@@ -628,4 +637,4 @@ Additiv. **Keine** Änderung an Foundation Scope Lock, Release-Taxonomie, Decisi
 
 ## 19. Next Decision
 
-Der Nova Final Review dieses Dokuments ist erfolgt (`GO`) und die Human-Maintainer-Repository-Integration ist abgeschlossen (Commit `9999114200bf18baaadfb508e8464720b75e352e`, gepusht); die Gate-A-Punkte `A-1` bis `A-5` sind damit erfüllt. **Als Nächstes** — und jeweils als eigene, ausdrückliche Human-Maintainer-Entscheidung — die verbleibenden Gate-A-Punkte `A-6` bis `A-14` (§16.1). **Erst danach und erst mit einer vorhandenen Implementierung** werden die Gate-B-Punkte `B-1` bis `B-8` (§16.2) überhaupt bewertbar. Dieses Dokument trifft **keine** dieser Entscheidungen.
+Der Nova Final Review dieses Dokuments ist erfolgt (`GO`) und die Human-Maintainer-Repository-Integration ist abgeschlossen (Commit `9999114200bf18baaadfb508e8464720b75e352e`, gepusht); die Gate-A-Punkte `A-1` bis `A-5` sind damit erfüllt; `A-12` ist durch die freigegebene Human-Maintainer-`A-12`-Disposition ebenfalls **erfüllt**. **Als Nächstes** — und jeweils als eigene, ausdrückliche Human-Maintainer-Entscheidung — die verbleibenden acht offenen Gate-A-Punkte `A-6`, `A-7`, `A-8`, `A-9`, `A-10`, `A-11`, `A-13` und `A-14` (§16.1). **Erst danach und erst mit einer vorhandenen Implementierung** werden die Gate-B-Punkte `B-1` bis `B-8` (§16.2) überhaupt bewertbar. Dieses Dokument trifft **keine** dieser Entscheidungen.
