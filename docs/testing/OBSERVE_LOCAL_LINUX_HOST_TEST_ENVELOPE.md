@@ -10,13 +10,14 @@
 > Tests planned: YES · Tests implemented: **NO** · Tests executed: **NO** · Test evidence produced: **NONE**
 > Target Authorization (`P-1`): Not authorized — Gate B; **not** a prerequisite for writing productive code
 > No-Mutation Evidence (`P-2`): method/plan **DEFINED** (§8.3) · Human-Maintainer-Disposition **APPROVED** (Gate-A-Punkt `A-12` erfüllt, [Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §16.1) · satisfaction **NOT SATISFIED** — Gate B, downstream of implementation and execution
-> Collection Mechanism (`P-3`): Not selected
+> Collection Mechanism (`P-3`): **SELECTED** — Mechanismusklasse ausdrücklich entschieden ([Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §7.5): Option A primär, Option B ausschließlich ergänzend, Option C nicht Standardweg, Option D und E für diesen Slice ausgeschlossen, **kein** Netzwerktransport. **Keine** Auswahl von Pfad, API, Bibliothek, Werkzeug, Sprache oder Runtime; **keine** Testimplementierungs- oder Testausführungsautorisierung.
 > Language / Runtime: Not selected
 > Test Execution Authorization: Not granted
 > Normative Release: Not yet assigned
 > Normative Framework: NDF v1.0.0 (Tag `v1.0.0`, Commit `9dcadc1`) — `main` informativ, nicht normativ
 > Erzeugt durch `CO-WP-032` (docs-only / Observe Slice Contract and Productive-Code Transition Prerequisites)
 > Nachträgliche docs-only Änderung: konzeptioneller Mindestfall `OBS-LLH-TC-11` (heterogene All-Failure-Zusammensetzung, [Observation Contract](../architecture/OBSERVE_LOCAL_LINUX_HOST_OBSERVATION_CONTRACT.md) §10.5 **R6**) ergänzt; §13 auf den tatsächlichen Stand korrigiert. Grundlage ist die ausdrückliche Human-Maintainer-Entscheidung zur heterogenen All-Failure-Zusammensetzung; **kein** Decision-Identifier vergeben, **kein** ADR, **kein** neues und **kein** reserviertes Work Package. `OBS-LLH-TC-11` ist **nicht implementiert**, **nicht ausgeführt** und trägt `not run`.
+> Nachträgliche docs-only Current-State-Anwendung: Die freigegebene Human-Maintainer-`A-6`/`P-3`-Disposition ist angewandt. `P-3` ist **entschieden** (Mechanismusklasse, [Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §7.5); Gate-A-Punkt `A-6` ist **erfüllt**, Gate A steht auf **7 von 14 erfüllt, 0 teilweise, 7 offen — nicht passiert**, Gate B unverändert auf **0 von 8 — nicht passiert**. Die Ausführungsvoraussetzungen (§10) bleiben **insgesamt unerfüllt**: Testimplementierung und Testausführung **NOT AUTHORIZED**, **0** Tests implementiert, **0** Tests ausgeführt, `P-2` **`NOT SATISFIED`**, jeder Fall unverändert `not run`. `OBS-LLH-TC-11`-Semantik, **R6**-Semantik, Ergebnis- und Ausgangsvokabulare, Emissions-Dispositionen und die `P-2`-Evidenzanforderungen aus §8.3 bleiben **unverändert**. Es entsteht **kein** Work Package, **keine** `CO-WP-033`, **kein** ADR und **keine** Decision-, Risk-, CCR-, Capability-, Support-Status-, Lessons- oder NDF-Feedback-Kennung.
 
 ## 1. Status
 
@@ -71,7 +72,7 @@ test passed        != observation succeeded
 observation_outcome = the expectation a test case asserts against
 ```
 
-Ebenenzuordnung folgt der bestehenden Taxonomie (§8 der Teststrategie). Eine Ebenenzuordnung, die vom noch nicht entschiedenen Erhebungsmechanismus abhängt, ist als **`level assignment pending P-3`** gekennzeichnet und **nicht** vorentschieden.
+Ebenenzuordnung folgt der bestehenden Taxonomie (§8 der Teststrategie). Eine Ebenenzuordnung, die von der konkreten Realisierung des Erhebungsmechanismus abhängt, ist als **`level assignment pending concrete implementation/runtime realization; P-3 selected`** gekennzeichnet und **nicht** vorentschieden. Die `P-3`-**Mechanismusklasse** ist entschieden ([Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §7.5); die konkrete Implementierungs- und Runtime-Realisierung ist es **nicht** — Sprache/Runtime bleiben **`NOT SELECTED`**, es existiert **keine** Testimplementierung und **keine** Testausführungsautorisierung. Die Markierung bleibt daher — mit dieser präzisierten Formulierung — bestehen.
 
 ## 7. Mindestfälle
 
@@ -81,7 +82,7 @@ Ebenenzuordnung folgt der bestehenden Taxonomie (§8 der Teststrategie). Eine Eb
 | -- | ---- | ----- | -------------------------------- | --------------------- |
 | `OBS-LLH-TC-01` | Normale Beobachtung | `TL-2` + `TL-3` | `success` | `not run` |
 | `OBS-LLH-TC-02` | Quelle abwesend | `TL-3` (+ `TL-2`) | `source-absent` | `not run` |
-| `OBS-LLH-TC-03` | Quelle nicht verfügbar | `TL-3`, *level assignment pending `P-3`* | `source-unavailable` | `not run` |
+| `OBS-LLH-TC-03` | Quelle nicht verfügbar | `TL-3`, *level assignment pending concrete implementation/runtime realization; `P-3` selected* | `source-unavailable` | `not run` |
 | `OBS-LLH-TC-04` | Quelle malformed | `TL-2` + `TL-3` | `source-malformed` | `not run` |
 | `OBS-LLH-TC-05` | Quelle stale | `TL-8` (+ `TL-2`) | `success` **mit** `freshness = stale` | `not run` |
 | `OBS-LLH-TC-06` | Berechtigung verweigert | `TL-7` | `permission-denied` | `not run` |
@@ -89,7 +90,7 @@ Ebenenzuordnung folgt der bestehenden Taxonomie (§8 der Teststrategie). Eine Eb
 | `OBS-LLH-TC-08` | Provenance ungültig | `TL-2` + `TL-7` | `field_observation_outcome = provenance-invalid` (Feld-Vokabular); Envelope nach §10.5 R3 `partial` **oder** nach R5 kein Envelope-Wert bei Emissions-Disposition `record-discarded` | `not run` |
 | `OBS-LLH-TC-09` | Normalisierung fehlgeschlagen | `TL-2` | `normalization-failed` | `not run` |
 | `OBS-LLH-TC-10` | No-Mutation-Sentinel | `TL-7` | ergebnisunabhängig — siehe §8 | `not run` |
-| `OBS-LLH-TC-11` | Heterogene All-Failure-Zusammensetzung | `TL-2` + `TL-3`, *level assignment pending `P-3`* | **kein** Envelope-Wert (§10.5 **R6**); Emissions-Disposition `record-discarded` | `not run` |
+| `OBS-LLH-TC-11` | Heterogene All-Failure-Zusammensetzung | `TL-2` + `TL-3`, *level assignment pending concrete implementation/runtime realization; `P-3` selected* | **kein** Envelope-Wert (§10.5 **R6**); Emissions-Disposition `record-discarded` | `not run` |
 
 ### 7.2 `OBS-LLH-TC-01` — Normale Beobachtung
 
@@ -114,7 +115,7 @@ Ebenenzuordnung folgt der bestehenden Taxonomie (§8 der Teststrategie). Eine Eb
 ### 7.4 `OBS-LLH-TC-03` — Quelle nicht verfügbar
 
 - **Test intent:** Belegen, dass eine existierende, aber im Versuch nicht lesbare Quelle von Abwesenheit **und** von Berechtigungsverweigerung unterscheidbar bleibt.
-- **Setup concept:** Quelle existiert, ist aber im Erhebungsversuch nicht lesbar (transiente Nichtverfügbarkeit, Zeitüberschreitung, Ressourcenkonflikt). Fixture-Klasse `unavailable`. *Level assignment pending `P-3`*, weil die konkrete Unverfügbarkeitsform vom Erhebungsmechanismus abhängt.
+- **Setup concept:** Quelle existiert, ist aber im Erhebungsversuch nicht lesbar (transiente Nichtverfügbarkeit, Zeitüberschreitung, Ressourcenkonflikt). Fixture-Klasse `unavailable`. *Level assignment pending concrete implementation/runtime realization; `P-3` selected*, weil die konkrete Unverfügbarkeitsform vom Erhebungsmechanismus abhängt.
 - **Expected `observation_outcome`:** Feld `source-unavailable`; Envelope `partial`, sofern andere Felder `success` sind.
 - **Expected data semantics:** Kein Wert, kein Default, kein Rückgriff auf einen früheren Wert **innerhalb desselben Vorgangs**. Ein Rückgriff auf einen früheren Wert wäre `last-known state` und gehört zum State-Modell, nicht zum Erhebungsergebnis.
 - **Expected provenance behavior:** Ausgang, Versuchszeit, Erhebungsmechanismusklasse und — sofern vorhanden — Unverfügbarkeitsdetail als Provenance-Detail, **nicht** als eigener Outcome-Wert.
@@ -201,7 +202,7 @@ Siehe §8. Der Fall ist heute `not run`; `P-2` bleibt **`NOT SATISFIED`**.
 ### 7.12 `OBS-LLH-TC-11` — Heterogene All-Failure-Zusammensetzung
 
 - **Test intent:** Belegen, dass ein Erhebungsvorgang **ohne** jedes `success`-Feld und mit **verschiedenen** Fehlerursachen unter den verwertbaren Feldern **keinen** Envelope-Wert erfindet, sondern nach [Observation Contract](../architecture/OBSERVE_LOCAL_LINUX_HOST_OBSERVATION_CONTRACT.md) §10.5 **R6** ohne kanonische Observation endet — bei vollständig erhaltener feldweiser Unterscheidbarkeit.
-- **Setup concept:** Ein Beobachtungssubjekt, bei dem **kein** Feld `success` erreicht, **mindestens zwei** Felder **nicht** `provenance-invalid` sind und diese Felder **verschiedene** Erhebungsausgänge tragen — etwa ein Feld `permission-denied` und ein Feld `source-absent`. Kombination der bestehenden Fixture-Klassen (`permission-denied` + `missing`); die konkrete Kombinierbarkeit ist erst nach `P-3` bestimmbar. *Level assignment pending `P-3`*.
+- **Setup concept:** Ein Beobachtungssubjekt, bei dem **kein** Feld `success` erreicht, **mindestens zwei** Felder **nicht** `provenance-invalid` sind und diese Felder **verschiedene** Erhebungsausgänge tragen — etwa ein Feld `permission-denied` und ein Feld `source-absent`. Kombination der bestehenden Fixture-Klassen (`permission-denied` + `missing`); die konkrete Kombinierbarkeit ist erst nach `P-3` bestimmbar. *Level assignment pending concrete implementation/runtime realization; `P-3` selected*.
 - **Expected `observation_outcome`:** **keiner.** Auf Envelope-Ebene wird **kein** Wert des Acht-Werte-Vokabulars (§10.2) behauptet.
 - **Erwartete Vokabularzuordnung (drei getrennte Ebenen, [Observation Contract](../architecture/OBSERVE_LOCAL_LINUX_HOST_OBSERVATION_CONTRACT.md) §10.1):**
   - **Feldebene:** jedes Feld trägt seinen **eigenen** `field_observation_outcome` aus dem Neun-Werte-Feld-Vokabular (§10.3); die Ursachen bleiben **einzeln unterscheidbar** und werden **nicht** zusammengefasst.
@@ -349,7 +350,7 @@ Kein Fall dieses Envelopes ist heute ausführbar.
 
 Eine spätere Ausführung erfordert **kumulativ** (konsistent mit Teststrategie §20, ergänzt um die Slice-Preconditions):
 
-1. `P-3` — Entscheidung über Erhebungsmechanismus und Transport (**`NOT SELECTED`**).
+1. `P-3` — Entscheidung über Erhebungsmechanismus und Transport (**`SELECTED`**) — **erfüllt**. Der Human Maintainer hat die **Mechanismusklasse** entschieden ([Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §7.5): Option A primär, Option B ausschließlich ergänzend, Option C nicht Standardweg, Option D und E für diesen Slice ausgeschlossen, **kein** Netzwerktransport. Das ist **keine** Ausführungsautorisierung und **keine** Auswahl von Pfad, API, Bibliothek, Werkzeug, Sprache oder Runtime.
 2. Sprach-/Runtime-Entscheidung (**`NOT SELECTED`**).
 3. Implementierung des Beobachtungspfads (**nicht autorisiert**).
 4. Freigegebene Fixtures mit Identity, Revision und Provenance (**existieren nicht**).
@@ -357,7 +358,7 @@ Eine spätere Ausführung erfordert **kumulativ** (konsistent mit Teststrategie 
 6. `P-1` — separate Human-Maintainer-Zielautorisierung (**`NOT AUTHORIZED`**).
 7. Explizite Human-Maintainer-Autorisierung der **Testausführung** (**nicht erteilt**).
 
-Solange auch nur eine dieser Voraussetzungen offen ist, bleibt jeder Fall `not run` — und `not run != passed`.
+Punkt 1 ist **erfüllt**; die Punkte 2 bis 7 bleiben **offen**. Die Ausführungs-Voraussetzungsmenge bleibt damit **insgesamt unerfüllt**. Solange auch nur eine dieser Voraussetzungen offen ist, bleibt jeder Fall `not run` — und `not run != passed`. Es sind **0** Tests implementiert und **0** Tests ausgeführt; `P-2` bleibt **`NOT SATISFIED`**.
 
 ## 11. Compatibility
 
@@ -365,8 +366,8 @@ Additiv. **Keine** Änderung an Teststrategie, Fixture-Governance, Lab-Modell, E
 
 ## 12. Open Questions
 
-- Konkrete Fixture-Klassen und -Revisionen je Fall (erst nach `P-3`).
-- Environment-Profil für einen lokalen Linux-Host im Lab-Modell (erst nach `P-3`).
+- Konkrete Fixture-Klassen und -Revisionen je Fall — **offen**. Die `P-3`-Mechanismusklasse ist entschieden; die konkreten Fixture-Klassen und -Revisionen sind damit **nicht** bestimmt, **nicht** bereitgestellt und **nicht** freigegeben. Ihre Festlegung bleibt spätere, ausdrücklich zu autorisierende Arbeit.
+- Environment-Profil für einen lokalen Linux-Host im Lab-Modell — **offen**. Die `P-3`-Entscheidung liefert **kein** Lab-Profil; es ist weder definiert noch bereitgestellt noch autorisiert.
 - Ob der Sentinel zusätzlich eine Langzeit-/Wiederholungsdimension benötigt (Regressionsvertrauen).
 - Welche Nebeneffekte am Ziel mit der später gewählten Methode überhaupt beobachtbar sind.
 
@@ -376,7 +377,21 @@ Additiv. **Keine** Änderung an Teststrategie, Fixture-Governance, Lab-Modell, E
 
 Der vorliegende docs-only Nachtrag (`OBS-LLH-TC-11` und diese Stands-Korrektur) liegt im Arbeitsverzeichnis. Staging, Commit, Push, Tag und jede weitere Repository-Aktion liegen unverändert **ausschließlich** beim Human Maintainer; ein künftiger Integrationsstand wird hier **nicht** vorweggenommen und **kein** Commit-Identifier dafür vorhergesagt.
 
-**Unverändert und ausdrücklich nicht erteilt:**
+**`P-3` ist entschieden.** Der Human Maintainer hat den lokalen Erhebungsmechanismus als **Mechanismusklasse** ausgewählt ([Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §7.5). Gate-A-Punkt `A-6` ist damit **erfüllt**.
+
+```text
+P-3:                   SELECTED — Mechanismusklasse
+                       Option A primär · Option B ausschließlich ergänzend ·
+                       Option C nicht Standardweg · Option D/E ausgeschlossen ·
+                       kein Netzwerktransport
+A-6:                   erfüllt
+Gate A:                7 von 14 erfüllt, 0 teilweise, 7 offen — nicht passiert
+Gate B:                0 von 8 — nicht passiert
+```
+
+Die Entscheidung benennt **keinen** konkreten Quellpfad, **keine** API, **keine** Bibliothek, **kein** Kommando, **kein** Werkzeug, **keine** Sprache und **keine** Runtime. Sie autorisiert **keine** Testimplementierung, **keine** Testausführung, **keinen** Zielzugriff und **keine** reale Beobachtung, erfüllt `P-2` **nicht** und ändert an diesem Envelope inhaltlich **nichts**: **0** Tests implementiert, **0** Tests ausgeführt, jeder Fall unverändert `not run`.
+
+**Im Übrigen unverändert und ausdrücklich nicht erteilt:**
 
 ```text
 Testimplementierung:   NOT AUTHORIZED
@@ -386,7 +401,6 @@ Lab-Environment:       nicht bereitgestellt
 P-1 / Zielzugriff:     NOT AUTHORIZED
 P-2 Evidenzplan:       DEFINED / HUMAN-MAINTAINER-DISPOSITION APPROVED
 P-2 Erfüllung:         NOT SATISFIED
-P-3:                   NOT SELECTED
 Sprache / Runtime:     NOT SELECTED
 Tests implementiert:   0
 Tests ausgeführt:      0

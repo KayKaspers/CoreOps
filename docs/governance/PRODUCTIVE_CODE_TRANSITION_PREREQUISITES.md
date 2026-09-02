@@ -7,7 +7,7 @@
 > Productive Code: **NOT AUTHORIZED** · Implementation: **NOT AUTHORIZED** (Gate A, §16.1)
 > `P-1` Target Authorization: **NOT AUTHORIZED** — Gate B (§16.2); **not** a Gate-A prerequisite
 > `P-2` No-Mutation Evidence: method/plan **DEFINED** (Gate A) · Human-Maintainer-Disposition **APPROVED** (Gate-A-Punkt `A-12` erfüllt, §16.1) · satisfaction **NOT SATISFIED** — Gate B, downstream of implementation and execution
-> `P-3` Collection Mechanism: **NOT SELECTED**
+> `P-3` Collection Mechanism: **SELECTED** — ausdrückliche Human-Maintainer-Entscheidung innerhalb der unveränderten Decision Ceiling: Option A primär, Option B ausschließlich ergänzend, Option C **nicht** Standardweg, Option D und E für diesen Slice ausgeschlossen, **kein** Netzwerktransport (§7.5). **Kein** konkreter Pfad, **keine** API, **keine** Bibliothek, **kein** Werkzeug, **keine** Sprache und **keine** Runtime ausgewählt.
 > Language / Runtime: **NOT SELECTED**
 > Source Tree: **NOT CREATED** · Dependencies: **NONE ADMITTED** · Lockfile: **NONE**
 > `README.md` / `LICENSE`: **NOT CREATED** — Empfehlung ist keine Artefaktautorisierung
@@ -18,7 +18,8 @@
 > Normative Framework: NDF v1.0.0 (Tag `v1.0.0`, Commit `9dcadc1`) — `main` informativ, nicht normativ
 > Erzeugt durch `CO-WP-032` (docs-only / Observe Slice Contract and Productive-Code Transition Prerequisites)
 > Nachträgliche docs-only Änderung: Die Human-Maintainer-Entscheidung zur heterogenen All-Failure-Zusammensetzung (Observation Contract §10.5 **R6**) ist in §14 als Decision-Disposition aufgenommen und wird vom bestehenden Gate-A-Punkt `A-11` getragen. Es entsteht **keine** zusätzliche Gate-A-Checklistenzeile, **kein** Decision-Identifier und **kein** ADR. `A-11` bleibt **offen**.
-> Nachträgliche docs-only Current-State-Anwendung: Die freigegebene Human-Maintainer-`A-12`-Disposition ist angewandt. Die Abfolge **R6-Semantikdisposition → Definition von `OBS-LLH-TC-11` → Human-Maintainer-Disposition von `A-12`** ist damit **vollständig**; `A-12` steht auf **erfüllt** (§16.1). Gate A: **6 von 14 erfüllt, 0 teilweise, 8 offen — nicht passiert**; Gate B unverändert **0 von 8 — nicht passiert**. `A-12` erfüllt bedeutet ausschließlich, dass Testdesign und `P-2`-Evidenzmethode als **definiert** akzeptiert sind: **0** Tests implementiert, **0** Tests ausgeführt, No-Mutation-Evidenz **keine**, `P-2` **`NOT SATISFIED`**, produktiver Anwendungscode und Implementierung **NOT AUTHORIZED**. Es entsteht **kein** Work Package, **keine** `CO-WP-033`, **kein** ADR und **keine** Decision-, Risk-, CCR-, Capability-, Support-Status-, Lessons- oder NDF-Feedback-Kennung.
+> Nachträgliche docs-only Current-State-Anwendung: Die freigegebene Human-Maintainer-`A-12`-Disposition ist angewandt. Die Abfolge **R6-Semantikdisposition → Definition von `OBS-LLH-TC-11` → Human-Maintainer-Disposition von `A-12`** ist damit **vollständig**; `A-12` steht auf **erfüllt** (§16.1). Gate A nach dieser Anwendung: **6 von 14 erfüllt, 0 teilweise, 8 offen — nicht passiert** (durch die spätere `A-6`/`P-3`-Anwendung fortgeschrieben, siehe folgende Zeile); Gate B unverändert **0 von 8 — nicht passiert**. `A-12` erfüllt bedeutet ausschließlich, dass Testdesign und `P-2`-Evidenzmethode als **definiert** akzeptiert sind: **0** Tests implementiert, **0** Tests ausgeführt, No-Mutation-Evidenz **keine**, `P-2` **`NOT SATISFIED`**, produktiver Anwendungscode und Implementierung **NOT AUTHORIZED**. Es entsteht **kein** Work Package, **keine** `CO-WP-033`, **kein** ADR und **keine** Decision-, Risk-, CCR-, Capability-, Support-Status-, Lessons- oder NDF-Feedback-Kennung.
+> Nachträgliche docs-only Current-State-Anwendung: Die freigegebene Human-Maintainer-`A-6`/`P-3`-Disposition ist angewandt. `P-3` ist **entschieden** (§7.5): Option A primär, Option B ausschließlich ergänzend, Option C **nicht** Standardweg, Option D und E für diesen Slice ausgeschlossen, **kein** Netzwerktransport; die Decision Ceiling bleibt unverändert. Gate-A-Punkt `A-6` steht damit auf **erfüllt** (§16.1). Gate A: **7 von 14 erfüllt, 0 teilweise, 7 offen — nicht passiert**; offen bleiben genau `A-7`, `A-8`, `A-9`, `A-10`, `A-11`, `A-13` und `A-14`. Gate B unverändert **0 von 8 — nicht passiert**. Die Auswahl einer Mechanismusklasse ist **keine** Sprach-/Runtime-Auswahl, **keine** Source-Tree-Autorisierung, **keine** Dependency-Zulassung, **keine** Produktivcode- oder Implementierungsautorisierung, **keine** Testimplementierung, **keine** Testausführung, **keine** `P-1`-Erteilung, **keine** Zielzugriffs- oder Beobachtungsautorisierung, **keine** `P-2`-Erfüllung und **keine** Erfüllung von `A-11`; die `target_id`-Ableitungsregel des Observation Contract ist dadurch **nicht** entschieden. Es entsteht **kein** Work Package, **keine** `CO-WP-033`, **kein** ADR, **keine** ADR-Nummer und **keine** Decision-, Risk-, CCR-, Capability-, Support-Status-, Lessons- oder NDF-Feedback-Kennung; akzeptierte ADRs bleiben **0**.
 
 ## 1. Status und Zweck
 
@@ -108,7 +109,7 @@ Implementierungsautorität ist **eigenständig** und entsteht nicht als Nebenwir
 8. eine definierte Teststrategie beziehungsweise definierte künftige Validierungsanforderungen — einschließlich der **definierten `P-2`-Evidenzmethode**, ausdrücklich **nicht** deren Erfüllung,
 9. die Build-/Packaging-Disposition, soweit dieses Dokument sie als tatsächlich erforderlich ausweist (§12).
 
-Fehlt auch nur eine, ist **keine** Implementierungsautorität gegeben. Derzeit sind die neun Voraussetzungen **nicht kumulativ erfüllt**: mehrere stehen offen. Die Voraussetzung zu Teststrategie und `P-2`-Evidenzmethode (Punkt 8) ist **erfüllt** — Testdesign und Evidenzmethode sind definiert, und die erforderliche Human-Maintainer-Disposition dieser Definition ist erteilt (Gate-A-Punkt `A-12` **erfüllt**, §16.1). Das betrifft ausschließlich den **Definitionsstand**: `P-2` bleibt **`NOT SATISFIED`**, es ist **kein** Test implementiert und **kein** Test ausgeführt.
+Fehlt auch nur eine, ist **keine** Implementierungsautorität gegeben. Derzeit sind die neun Voraussetzungen **nicht kumulativ erfüllt**: mehrere stehen offen. Die `P-3`-Voraussetzung (Punkt 2) ist **erfüllt** — der lokale Erhebungsmechanismus ist als **Mechanismusklasse** ausdrücklich entschieden (§7.5; Gate-A-Punkt `A-6` **erfüllt**, §16.1); das ist ausdrücklich **keine** Sprach-/Runtime-, Source-Tree- oder Dependency-Entscheidung — die Punkte 3, 4 und 5 bleiben **offen**. Die Voraussetzung zu Teststrategie und `P-2`-Evidenzmethode (Punkt 8) ist **erfüllt** — Testdesign und Evidenzmethode sind definiert, und die erforderliche Human-Maintainer-Disposition dieser Definition ist erteilt (Gate-A-Punkt `A-12` **erfüllt**, §16.1). Das betrifft ausschließlich den **Definitionsstand**: `P-2` bleibt **`NOT SATISFIED`**, es ist **kein** Test implementiert und **kein** Test ausgeführt.
 
 **Ausdrücklich nicht Bestandteil von Gate A:** `P-1` · die Erfüllung von `P-2` · Testausführungsautorität · Fixture-Freigabe · Lab-Bereitstellung. Diese gehören zu Gate B (§16.2).
 
@@ -184,7 +185,7 @@ Mindestens die Negativ-Familien `unknown target`, `wrong target` und `missing ex
 
 ## 7. `P-3` — Decision Packet: lokaler Erhebungsmechanismus
 
-**Status: `NOT SELECTED`.** Das Folgende ist ein **Entscheidungspaket** — Optionsvergleich und Empfehlung, ausdrücklich `PROPOSED / UNACCEPTED`.
+**Status: `SELECTED` — durch eigene, ausdrückliche Human-Maintainer-Entscheidung (§7.5).** Dieser Abschnitt ist als **Entscheidungspaket** entstanden — Optionsvergleich und Empfehlung, ausdrücklich `PROPOSED / UNACCEPTED`. Diese Herkunft bleibt festgehalten: Optionsklassen (§7.2), Vergleichskriterien (§7.3) sowie die ursprüngliche Empfehlung und ihre Begründung (§7.4) bleiben unverändert erhalten und werden **nicht** rückwirkend zur Entscheidung umgedeutet. Die Empfehlung war eine Empfehlung; die Auswahl ist eine davon getrennte, spätere Human-Maintainer-Entscheidung (§7.5). Die Decision Ceiling (§7.1) bleibt unverändert.
 
 ### 7.1 Aktuelle Decision Ceiling
 
@@ -231,13 +232,61 @@ RECOMMENDATION (P-3):  Option A als primärer Mechanismus,
                        Option B ergänzend, wo A keine Quelle bietet.
                        Option C nicht als Standardweg.
                        Option D und Option E für diesen Slice ausgeschlossen.
-STATUS:                PROPOSED / UNACCEPTED
-P-3:                   NOT SELECTED
+RECOMMENDATION STATUS: PROPOSED / UNACCEPTED (Stand der Empfehlung)
+P-3 (heute):           SELECTED — eigene Human-Maintainer-Entscheidung (§7.5)
 ```
 
 **Begründung.** Option A liefert als einzige Option gleichzeitig die höchste Provenance-Qualität (die Quelle ist benennbar und der Raw-Wert ist der Quellinhalt selbst), die sauberste Fehlerbeobachtbarkeit (Abwesenheit, Verweigerung und Malformedness bleiben trennbar, was Abschnitt §10 des Observation Contract überhaupt erst prüfbar macht) und die höchste Testbarkeit (alle zehn Envelope-Fälle sind mit Datei-Fixtures darstellbar). Option B schließt Lücken dort, wo keine standardisierte Datei existiert, verliert dabei aber Provenance-Tiefe: die Plattform hat bereits interpretiert. Option C wird **nicht** als Standardweg empfohlen, weil Werkzeugausgaben für Menschen und nicht für Verträge formatiert sind, weil Exit-Code und Textausgabe die vier zu trennenden Fehlerursachen vermischen und weil ein Subprozessstart das Seiteneffektprofil unnötig vergrößert. Option D und E überschreiten Abhängigkeits- beziehungsweise Privilegiengrenze und sind für einen ersten read-only Slice nicht vertretbar; E verletzt die Decision Ceiling unmittelbar.
 
-**Diese Empfehlung ist keine Auswahl.** Sie benennt keine konkreten Pfade, keine Bibliothek und kein Werkzeug. `P-3` bleibt **`NOT SELECTED`**, bis der Human Maintainer entscheidet.
+**Diese Empfehlung ist keine Auswahl.** Sie benennt keine konkreten Pfade, keine Bibliothek und kein Werkzeug. Die spätere Auswahl ist **nicht** durch diese Empfehlung entstanden, sondern durch eine eigene, ausdrückliche Human-Maintainer-Entscheidung (§7.5).
+
+### 7.5 Human-Maintainer-Entscheidung
+
+Der Human Maintainer hat `P-3` ausdrücklich **entschieden**. Die Entscheidung ist eine **Mechanismusklassen-Entscheidung** und bleibt vollständig innerhalb der unveränderten Decision Ceiling aus §7.1.
+
+```text
+DECISION (P-3):        SELECTED
+PRIMARY:               Option A — direktes Lesen standardisierter OS-Identitäts-
+                       und Systeminformationsdateien auf dem lokalen Host
+SUPPLEMENTARY ONLY:    Option B — In-Process-Systeminformationsschnittstellen der
+                       Standardbibliothek/Plattform, ausschließlich dort, wo die
+                       verlangte Beobachtung aus einer geeigneten standardisierten
+                       Dateiquelle nicht wahrheitsgemäß gewonnen werden kann
+NOT THE STANDARD PATH: Option C
+EXCLUDED (this slice): Option D · Option E
+TRANSPORT:             kein Netzwerktransport
+CEILING:               unverändert — local Linux host only · no remote host ·
+                       no network transport · no credentials · no secrets ·
+                       no privileged execution
+DECIDED BY:            Human Maintainer — eigene, ausdrückliche Entscheidung
+```
+
+**Was diese Entscheidung ausdrücklich nicht auswählt.** Sie benennt **keinen** konkreten Quellpfad, **keine** API, **keine** Bibliothek, **kein** Kommando, **kein** Werkzeug, **keine** Sprache und **keine** Runtime. Ausgewählt ist die **Klasse** des Erhebungsmechanismus, nicht ihre Realisierung.
+
+```text
+mechanism class selected != source path selected
+mechanism class selected != API selected
+mechanism class selected != library selected
+mechanism class selected != tool selected
+mechanism class selected != language/runtime selected
+mechanism class selected != target_id derivation decided
+mechanism class selected != source tree authorized
+mechanism class selected != dependency admitted
+mechanism class selected != productive code authorized
+mechanism class selected != implementation authorized
+mechanism class selected != tests implemented
+mechanism class selected != tests executed
+mechanism class selected != P-1 authorized
+mechanism class selected != target access authorized
+mechanism class selected != real observation authorized
+mechanism class selected != P-2 satisfied
+mechanism class selected != A-11 satisfied
+mechanism class selected != ADR accepted
+A-6 satisfied            != Gate A passed
+Gate A passed            != Gate B passed
+```
+
+Die Entscheidung erfüllt den Gate-A-Punkt `A-6` (§16.1). Sie erzeugt **keine** ADR-Datei, **keine** ADR-Nummer, **keine** Decision-ID, **keine** Zeile im Decision Index oder Risk Register, **keine** Risk-, CCR-, Capability-, Support-Status-, Lessons- oder NDF-Feedback-Kennung und **kein** Work Package; akzeptierte ADRs bleiben **0** und `A-11` bleibt **offen** (§14). Im [Observation Contract](../architecture/OBSERVE_LOCAL_LINUX_HOST_OBSERVATION_CONTRACT.md) bleibt `collection_mechanism_class` unverändert **Provenance-Metadatum**; die dortige `target_id`-Ableitungsregel ist durch diese Entscheidung **nicht** entschieden. Der Observation Contract wird durch sie **nicht** geändert.
 
 ## 8. Decision Packet: Sprache und Runtime
 
@@ -486,7 +535,7 @@ Vor einer produktiven Implementierung sind mindestens folgende Punkte zu disposi
 
 | Punkt | Gegenstand | Aktueller Stand |
 | ----- | ---------- | --------------- |
-| `P-3` | Erhebungsmechanismus und Transport für `CAP-DISCOVERY-004` — im Readiness Review ausdrücklich als ADR-pflichtig bezeichnet | `NOT SELECTED` |
+| `P-3` | Erhebungsmechanismus und Transport für `CAP-DISCOVERY-004` — im Readiness Review ausdrücklich als ADR-pflichtig bezeichnet | **entschieden** — `SELECTED` / dispositioniert durch ausdrückliche Human-Maintainer-Entscheidung (§7.5): Option A primär, Option B ausschließlich ergänzend, Option C nicht Standardweg, Option D/E ausgeschlossen, kein Netzwerktransport; **kein** Decision-Identifier, **kein** ADR |
 | Sprache/Runtime | erste Implementierungsplattform | `NOT SELECTED` |
 | Source Tree | Anwendungsstruktur | `PROPOSED / UNACCEPTED` |
 | Dependency-Admission | Inkraftsetzung des Gates aus §10 | nicht in Kraft |
@@ -494,11 +543,13 @@ Vor einer produktiven Implementierung sind mindestens folgende Punkte zu disposi
 | Build/Packaging | Reproduzierbarkeit, Offline-Build, Artefaktidentität | nicht entschieden |
 | Envelope-Zusammensetzung (R6) | heterogene All-Failure-Zusammensetzung im [Observation Contract](../architecture/OBSERVE_LOCAL_LINUX_HOST_OBSERVATION_CONTRACT.md) §10.5 — kanonische Nicht-Emission bei evidenzerhaltender Retention des erzeugten Materials | **entschieden** — ausdrückliche Human-Maintainer-Entscheidung; dokumentarisch umgesetzt (Observation Contract §9, §10.4, §10.5, §22; Test Envelope `OBS-LLH-TC-11`); **kein** Decision-Identifier, **kein** ADR |
 
+**Zur Zeile `P-3`.** Diese Entscheidung ist **getroffen** und wird hier als **Decision-Disposition** geführt. Sie wird — wie die R6-Zeile — vom bestehenden Gate-A-Punkt `A-11` (§16.1) **erfasst**, erfüllt ihn aber **nicht**. Wie die für diese Zeile dokumentierte ADR-Pflicht dauerhaft eingelöst wird, ist hier **nicht** entschieden: es entsteht **keine** ADR-Datei, **keine** ADR-Nummer, **keine** Decision-ID, **keine** `HM-*`-Kennung, **keine** Zeile im Decision Index oder Risk Register und **kein** Work Package. Es existieren weiterhin **0** ADR-Dateien und **0** akzeptierte ADRs.
+
 **Zur Zeile „Envelope-Zusammensetzung (R6)“.** Diese Entscheidung ist **getroffen** und in den Slice-Dokumenten dokumentarisch umgesetzt. Sie wird hier als **Decision-Disposition** geführt und vom bestehenden Gate-A-Punkt `A-11` (§16.1) **getragen**. Es entsteht dafür **keine** zusätzliche Gate-A-Checklistenzeile, **keine** neue Checklistenkennung, **keine** Decision-, Risk-, ADR-, CCR- oder Capability-Kennung, **kein** Support-Status-Eintrag, **keine** Lesson, **kein** NDF-Feedback-Eintrag und **kein** Work Package — insbesondere wird **kein** Nachfolge-Work-Package erzeugt oder reserviert (§17). Auch der zugehörige docs-only Nachtrag erzeugt **keine** ADR-Datei und **keine** Zeile im Decision Index oder Risk Register; es existieren weiterhin **0** ADR-Dateien und **0** akzeptierte ADRs.
 
-**`A-11` bleibt `offen`.** `A-11` verlangt die Disposition **der Punkte dieser §14**. Die übrigen Zeilen — `P-3`, Sprache/Runtime, Source Tree, Dependency-Admission, `NEW-8`, Build/Packaging — sind weiterhin unentschieden. Eine einzelne entschiedene Zeile erfüllt `A-11` daher **nicht**.
+**`A-11` bleibt `offen`.** `A-11` verlangt die Disposition **der Punkte dieser §14**. Die übrigen Zeilen — Sprache/Runtime, Source Tree, Dependency-Admission, `NEW-8`, Build/Packaging — sind weiterhin unentschieden. Zwei entschiedene Zeilen (`P-3` und die R6-Zusammensetzung) erfüllen `A-11` daher **nicht**; ebenso bleibt offen, wie die dokumentierte ADR-Pflicht dauerhaft eingelöst wird.
 
-**`A-12` ist `erfüllt`.** Die freigegebene Abfolge lautete: **R6-Semantikdisposition → Definition von `OBS-LLH-TC-11` → Human-Maintainer-Disposition von `A-12`**. Die ersten beiden Schritte sind mit dem docs-only Nachtrag erfolgt; der dritte — die Human-Maintainer-Disposition der Testdesign- und `P-2`-Methodendefinition — ist mit der freigegebenen Human-Maintainer-`A-12`-Disposition **erfolgt**. Die Abfolge ist damit **vollständig**, und `A-12` steht auf **erfüllt** (§16.1). Die Gate-A-Bilanz lautet damit **6 von 14 erfüllt, 0 teilweise, 8 offen — Gate A ist weiterhin nicht passiert**; die Gate-B-Bilanz bleibt **0 von 8 — realer Zielzugriff bleibt untersagt**. Die Disposition akzeptiert ausschließlich den **Definitionsstand** von Teststrategie und `P-2`-Evidenzmethode; sie implementiert **keinen** Test, führt **keinen** Test aus, erzeugt **keine** Evidenz, erfüllt `P-2` **nicht** und berührt `A-11` **nicht**.
+**`A-12` ist `erfüllt`.** Die freigegebene Abfolge lautete: **R6-Semantikdisposition → Definition von `OBS-LLH-TC-11` → Human-Maintainer-Disposition von `A-12`**. Die ersten beiden Schritte sind mit dem docs-only Nachtrag erfolgt; der dritte — die Human-Maintainer-Disposition der Testdesign- und `P-2`-Methodendefinition — ist mit der freigegebenen Human-Maintainer-`A-12`-Disposition **erfolgt**. Die Abfolge ist damit **vollständig**, und `A-12` steht auf **erfüllt** (§16.1). Die Gate-A-Bilanz lautete damit **6 von 14 erfüllt, 0 teilweise, 8 offen**; nach der späteren, davon getrennten Human-Maintainer-`A-6`/`P-3`-Disposition lautet sie **7 von 14 erfüllt, 0 teilweise, 7 offen — Gate A ist weiterhin nicht passiert**; die Gate-B-Bilanz bleibt **0 von 8 — realer Zielzugriff bleibt untersagt**. Die Disposition akzeptiert ausschließlich den **Definitionsstand** von Teststrategie und `P-2`-Evidenzmethode; sie implementiert **keinen** Test, führt **keinen** Test aus, erzeugt **keine** Evidenz, erfüllt `P-2` **nicht** und berührt `A-11` **nicht**.
 
 ```text
 one decision disposed != A-11 satisfied
@@ -512,6 +563,11 @@ A-12 satisfied        != implementation authorized
 R6 decided            != productive code authorized
 R6 decided            != implementation authorized
 R6 decided            != target access authorized
+P-3 selected          != language/runtime selected
+P-3 selected          != target_id derivation decided
+P-3 selected          != A-11 satisfied
+P-3 selected          != ADR accepted
+P-3 selected          != Gate A passed
 Gate A passed         != Gate B passed
 ```
 
@@ -534,10 +590,10 @@ Auf dieser Ebene ist ausschließlich verlangt, dass **definiert ist, was später
 
 1. **Teststrategie beziehungsweise künftige Validierungsanforderungen definiert** — für den Slice erfüllt durch den Test Envelope (elf Mindestfälle mit Intent, erwartetem Ausgang, Datensemantik, Provenance-Verhalten, verbotener Inferenz und künftiger Evidenzanforderung).
 2. **`P-2`-Evidenzmethode definiert** — erfüllt durch Test Envelope §8.3 (sieben kumulative Anforderungen). **Nicht** verlangt: dass die Evidenz vorliegt.
-3. `P-3` entschieden — **offen**; ohne die Entscheidung ist kein Fall implementierbar.
+3. `P-3` entschieden — **erfüllt**; der Erhebungsmechanismus ist als Mechanismusklasse ausdrücklich entschieden (§7.5). Das autorisiert **keine** Implementierung eines Falls.
 4. Sprache/Runtime entschieden — **offen**; ohne die Entscheidung existiert kein Testwerkzeug.
 
-**Disposition dieser Definitionen.** Die Punkte 1 und 2 sind durch die freigegebene Human-Maintainer-`A-12`-Disposition als für Gate A **hinreichend definiert akzeptiert** (Gate-A-Punkt `A-12` **erfüllt**, §16.1). Die Akzeptanz betrifft ausschließlich den **Definitionsstand**: sie ändert die `P-2`-Evidenzmethode **nicht**, autorisiert **keine** Testimplementierung und **keine** Testausführung, erzeugt **keine** Evidenz und erfüllt `P-2` **nicht**. Die Punkte 3 und 4 bleiben unverändert **offen**.
+**Disposition dieser Definitionen.** Die Punkte 1 und 2 sind durch die freigegebene Human-Maintainer-`A-12`-Disposition als für Gate A **hinreichend definiert akzeptiert** (Gate-A-Punkt `A-12` **erfüllt**, §16.1). Die Akzeptanz betrifft ausschließlich den **Definitionsstand**: sie ändert die `P-2`-Evidenzmethode **nicht**, autorisiert **keine** Testimplementierung und **keine** Testausführung, erzeugt **keine** Evidenz und erfüllt `P-2` **nicht**. Punkt 3 ist durch die ausdrückliche Human-Maintainer-`P-3`-Entscheidung **erfüllt** (§7.5); Punkt 4 bleibt unverändert **offen** — ohne Sprach-/Runtime-Entscheidung existiert kein Testwerkzeug. Es bleibt **kein** Test implementiert und **kein** Test ausgeführt.
 
 ### 15.2 Gate B — vor Testausführung und realer Beobachtung
 
@@ -572,7 +628,7 @@ Eine spätere Produktivcode-Autorisierung gilt **nicht** als vorbereitet, solang
 | A-3 | **`CO-WP-032` geschlossen** | Nova Review abgeschlossen **und** Human-Maintainer-Integration erfolgt | **erfüllt** — Nova Final Review `GO`, Human-Maintainer-Integration abgeschlossen (Commit `9999114`) |
 | A-4 | **Nova Review** | Bewertung des Slice-Vertrags, des Test Envelope und dieses Gate-Dokuments liegt vor | **erfüllt** — Initial Review `REWORK — narrow semantic closure`, beide blockierenden Notes CLOSED, **Nova Final Review `GO`** |
 | A-5 | **Repository-Integration** | Human-Maintainer-Staging, -Commit und -Push erfolgreich durchgeführt | **erfüllt** — Commit `9999114200bf18baaadfb508e8464720b75e352e`, gepusht, `origin/main` gleichauf |
-| A-6 | **`P-3`-Entscheidung** | Erhebungsmechanismus und Transport ausdrücklich entschieden | **offen** — `NOT SELECTED` |
+| A-6 | **`P-3`-Entscheidung** | Erhebungsmechanismus und Transport ausdrücklich entschieden | **erfüllt** — `SELECTED` (§7.5): Option A primär, Option B ausschließlich ergänzend, Option C nicht Standardweg, Option D/E für diesen Slice ausgeschlossen, **kein** Netzwerktransport. Ausdrücklich **keine** Sprach-/Runtime-, Pfad-, API-, Bibliotheks- oder Werkzeugauswahl |
 | A-7 | **Sprach-/Runtime-Entscheidung** | Plattform ausdrücklich entschieden | **offen** — `NOT SELECTED` |
 | A-8 | **Source-Tree-Entscheidung** | Struktur ausdrücklich entschieden | **offen** — `PROPOSED / UNACCEPTED` |
 | A-9 | **Dependency-Admission-Disposition** | Admission-Gate in Kraft; jede vorgesehene Abhängigkeit einzeln zugelassen oder ausdrücklich keine | **offen** — nicht in Kraft, **0** zugelassen |
@@ -582,7 +638,7 @@ Eine spätere Produktivcode-Autorisierung gilt **nicht** als vorbereitet, solang
 | A-13 | **Build-/Packaging-Disposition** | Reproduzierbarkeit, Offline-Build und Artefaktidentität entschieden, soweit §12 sie als erforderlich ausweist | **offen** |
 | A-14 | **Ausdrückliche Implementierungs-Work-Package-Autorität** | ein eigenes, ausdrücklich autorisiertes implementierungsorientiertes Work Package mit benanntem Scope | **offen** — nicht erteilt |
 
-**Bilanz Gate A: 6 von 14 erfüllt, 0 teilweise, 8 offen. Gate A ist nicht passiert.** Offen bleiben genau acht Punkte: `A-6`, `A-7`, `A-8`, `A-9`, `A-10`, `A-11`, `A-13` und `A-14`.
+**Bilanz Gate A: 7 von 14 erfüllt, 0 teilweise, 7 offen. Gate A ist nicht passiert.** Offen bleiben genau sieben Punkte: `A-7`, `A-8`, `A-9`, `A-10`, `A-11`, `A-13` und `A-14`.
 
 **Ausdrücklich nicht in dieser Checkliste:** `P-1` · `P-2` erfüllt · Testausführungsautorität · Fixtures · Lab. Sie sind **keine** Voraussetzung dafür, produktiven Quellcode zu schreiben oder zu autorisieren.
 
@@ -637,4 +693,4 @@ Additiv. **Keine** Änderung an Foundation Scope Lock, Release-Taxonomie, Decisi
 
 ## 19. Next Decision
 
-Der Nova Final Review dieses Dokuments ist erfolgt (`GO`) und die Human-Maintainer-Repository-Integration ist abgeschlossen (Commit `9999114200bf18baaadfb508e8464720b75e352e`, gepusht); die Gate-A-Punkte `A-1` bis `A-5` sind damit erfüllt; `A-12` ist durch die freigegebene Human-Maintainer-`A-12`-Disposition ebenfalls **erfüllt**. **Als Nächstes** — und jeweils als eigene, ausdrückliche Human-Maintainer-Entscheidung — die verbleibenden acht offenen Gate-A-Punkte `A-6`, `A-7`, `A-8`, `A-9`, `A-10`, `A-11`, `A-13` und `A-14` (§16.1). **Erst danach und erst mit einer vorhandenen Implementierung** werden die Gate-B-Punkte `B-1` bis `B-8` (§16.2) überhaupt bewertbar. Dieses Dokument trifft **keine** dieser Entscheidungen.
+Der Nova Final Review dieses Dokuments ist erfolgt (`GO`) und die Human-Maintainer-Repository-Integration ist abgeschlossen (Commit `9999114200bf18baaadfb508e8464720b75e352e`, gepusht); die Gate-A-Punkte `A-1` bis `A-5` sind damit erfüllt; `A-12` ist durch die freigegebene Human-Maintainer-`A-12`-Disposition ebenfalls **erfüllt**, `A-6` durch die ausdrückliche Human-Maintainer-`P-3`-Entscheidung (§7.5). **Als Nächstes** — und jeweils als eigene, ausdrückliche Human-Maintainer-Entscheidung — die verbleibenden sieben offenen Gate-A-Punkte `A-7`, `A-8`, `A-9`, `A-10`, `A-11`, `A-13` und `A-14` (§16.1). Die `P-3`-Entscheidung autorisiert `A-7` **nicht**: Sprache und Runtime bleiben **`NOT SELECTED`**. **Erst danach und erst mit einer vorhandenen Implementierung** werden die Gate-B-Punkte `B-1` bis `B-8` (§16.2) überhaupt bewertbar. Dieses Dokument trifft **keine** dieser Entscheidungen.
