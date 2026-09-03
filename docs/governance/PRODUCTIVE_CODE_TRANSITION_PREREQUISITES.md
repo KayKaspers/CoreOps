@@ -8,8 +8,8 @@
 > `P-1` Target Authorization: **NOT AUTHORIZED** — Gate B (§16.2); **not** a Gate-A prerequisite
 > `P-2` No-Mutation Evidence: method/plan **DEFINED** (Gate A) · Human-Maintainer-Disposition **APPROVED** (Gate-A-Punkt `A-12` erfüllt, §16.1) · satisfaction **NOT SATISFIED** — Gate B, downstream of implementation and execution
 > `P-3` Collection Mechanism: **SELECTED** — ausdrückliche Human-Maintainer-Entscheidung innerhalb der unveränderten Decision Ceiling: Option A primär, Option B ausschließlich ergänzend, Option C **nicht** Standardweg, Option D und E für diesen Slice ausgeschlossen, **kein** Netzwerktransport (§7.5). **Kein** konkreter Pfad, **keine** API, **keine** Bibliothek, **kein** Werkzeug, **keine** Sprache und **keine** Runtime ausgewählt.
-> Language / Runtime: **SELECTED** — **Go**, ausdrückliche Human-Maintainer-Entscheidung; ausgewählt ist ausschließlich die **Sprach-/Runtime-Klasse** für den ersten Observe-Slice (§8.4). **Keine** Go-Version, **keine** Distribution, **keine** Toolchain-Version, **kein** Modul-/Paketlayout, **keine** konkrete API, **kein** Quellpfad, **keine** Abhängigkeit, **kein** Build-Werkzeug, **kein** Paketformat und **kein** breiterer CoreOps-Technologie-Stack ausgewählt.
-> Source Tree: **NOT CREATED** · Dependencies: **NONE ADMITTED** · Lockfile: **NONE**
+> Language / Runtime: **SELECTED** — **Go**, ausdrückliche Human-Maintainer-Entscheidung; ausgewählt ist ausschließlich die **Sprach-/Runtime-Klasse** für den ersten Observe-Slice (§8.4). **Keine** Go-Version, **keine** Distribution, **keine** Toolchain-Version, **keine** konkrete API, **keine** Abhängigkeit, **kein** Build-Werkzeug, **kein** Paketformat und **kein** breiterer CoreOps-Technologie-Stack ausgewählt. Modul-/Paketlayout und Quellbaumplatzierung sind durch **diese** Entscheidung ebenfalls **nicht** ausgewählt worden; sie sind inzwischen durch die davon getrennte Source-Tree-Entscheidung (§9.2) entschieden — siehe die folgende Zeile.
+> Source Tree: **DECIDED** — ausdrückliche Human-Maintainer-Entscheidung (§9.2): repository-verwurzelte Go-Struktur; künftiger Modulwurzelort Repository-Wurzelverzeichnis; Einstiegspunkt `cmd/coreops/`; kanonische Beobachtungsdomäne `internal/observe/`; Erhebung `internal/observe/collect/`; Normalisierung zunächst **ohne** eigenes Paket innerhalb `internal/observe/`; Tests künftig **colocated `*_test.go`**; **kein** `pkg/`, **kein** `src/`, **kein** Top-Level-`tests/`, **keine** öffentliche Go-API. **NOT CREATED** — **kein** Verzeichnis, **keine** Datei, **kein** `cmd/`, **kein** `internal/`, **kein** `go.mod`, **kein** `go.sum` angelegt oder autorisiert; Modulpfad, Go-Version, Go-Distribution und Toolchain-Version **nicht** entschieden · Dependencies: **NONE ADMITTED** · Lockfile: **NONE**
 > `README.md` / `LICENSE`: **NOT CREATED** — Empfehlung ist keine Artefaktautorisierung
 > Work Package: `CO-WP-032`, primärer Typ `docs-only` — autorisiert durch `HM-O3` `APPROVED`; Ausführungsgrenze `HM-O4` `APPROVED WITH EXACT BOUNDARY` (docs-only)
 > Successor Work Package: none created, none reserved
@@ -20,7 +20,8 @@
 > Nachträgliche docs-only Änderung: Die Human-Maintainer-Entscheidung zur heterogenen All-Failure-Zusammensetzung (Observation Contract §10.5 **R6**) ist in §14 als Decision-Disposition aufgenommen und wird vom bestehenden Gate-A-Punkt `A-11` getragen. Es entsteht **keine** zusätzliche Gate-A-Checklistenzeile, **kein** Decision-Identifier und **kein** ADR. `A-11` bleibt **offen**.
 > Nachträgliche docs-only Current-State-Anwendung: Die freigegebene Human-Maintainer-`A-12`-Disposition ist angewandt. Die Abfolge **R6-Semantikdisposition → Definition von `OBS-LLH-TC-11` → Human-Maintainer-Disposition von `A-12`** ist damit **vollständig**; `A-12` steht auf **erfüllt** (§16.1). Gate A nach dieser Anwendung: **6 von 14 erfüllt, 0 teilweise, 8 offen — nicht passiert** (durch die spätere `A-6`/`P-3`-Anwendung fortgeschrieben, siehe folgende Zeile); Gate B unverändert **0 von 8 — nicht passiert**. `A-12` erfüllt bedeutet ausschließlich, dass Testdesign und `P-2`-Evidenzmethode als **definiert** akzeptiert sind: **0** Tests implementiert, **0** Tests ausgeführt, No-Mutation-Evidenz **keine**, `P-2` **`NOT SATISFIED`**, produktiver Anwendungscode und Implementierung **NOT AUTHORIZED**. Es entsteht **kein** Work Package, **keine** `CO-WP-033`, **kein** ADR und **keine** Decision-, Risk-, CCR-, Capability-, Support-Status-, Lessons- oder NDF-Feedback-Kennung.
 > Nachträgliche docs-only Current-State-Anwendung: Die freigegebene Human-Maintainer-`A-6`/`P-3`-Disposition ist angewandt. `P-3` ist **entschieden** (§7.5): Option A primär, Option B ausschließlich ergänzend, Option C **nicht** Standardweg, Option D und E für diesen Slice ausgeschlossen, **kein** Netzwerktransport; die Decision Ceiling bleibt unverändert. Gate-A-Punkt `A-6` steht damit auf **erfüllt** (§16.1). Gate A nach dieser Anwendung: **7 von 14 erfüllt, 0 teilweise, 7 offen — nicht passiert** (durch die spätere `A-7`-Anwendung fortgeschrieben, siehe folgende Zeile); offen blieben genau `A-7`, `A-8`, `A-9`, `A-10`, `A-11`, `A-13` und `A-14`. Gate B unverändert **0 von 8 — nicht passiert**. Die Auswahl einer Mechanismusklasse ist **keine** Sprach-/Runtime-Auswahl, **keine** Source-Tree-Autorisierung, **keine** Dependency-Zulassung, **keine** Produktivcode- oder Implementierungsautorisierung, **keine** Testimplementierung, **keine** Testausführung, **keine** `P-1`-Erteilung, **keine** Zielzugriffs- oder Beobachtungsautorisierung, **keine** `P-2`-Erfüllung und **keine** Erfüllung von `A-11`; die `target_id`-Ableitungsregel des Observation Contract ist dadurch **nicht** entschieden. Es entsteht **kein** Work Package, **keine** `CO-WP-033`, **kein** ADR, **keine** ADR-Nummer und **keine** Decision-, Risk-, CCR-, Capability-, Support-Status-, Lessons- oder NDF-Feedback-Kennung; akzeptierte ADRs bleiben **0**.
-> Nachträgliche docs-only Current-State-Anwendung: Die freigegebene Human-Maintainer-`A-7`-Disposition ist angewandt. Die Sprach-/Runtime-Entscheidung ist **getroffen** (§8.4): **Go** — ausschließlich als **Sprach-/Runtime-Klasse** für den ersten Observe-Slice; Rust bleibt als dokumentierte stärkste Alternative erhalten. Gate-A-Punkt `A-7` steht damit auf **erfüllt** (§16.1). Gate A: **8 von 14 erfüllt, 0 teilweise, 6 offen — nicht passiert**; offen bleiben genau `A-8`, `A-9`, `A-10`, `A-11`, `A-13` und `A-14`. Gate B unverändert **0 von 8 — nicht passiert**. Die Auswahl einer Sprach-/Runtime-Klasse ist **keine** Go-Versions-, Distributions- oder Toolchain-Auswahl, **kein** Modul-/Paketlayout, **keine** API- oder Quellpfadauswahl, **keine** Source-Tree-Autorisierung, **keine** Dependency-Zulassung, **keine** Build-/Packaging-Disposition, **keine** Produktivcode- oder Implementierungsautorisierung, **keine** Testimplementierung, **keine** Testausführung, **keine** `P-1`-Erteilung, **keine** Zielzugriffs- oder Beobachtungsautorisierung, **keine** `P-2`-Erfüllung, **keine** Erfüllung von `A-11` und **keine** Auswahl eines breiteren CoreOps-Technologie-Stacks; die technische Architektur bleibt im Übrigen **unbestätigt**. Es entsteht **kein** Work Package, **keine** `CO-WP-033`, **kein** ADR, **keine** ADR-Nummer und **keine** Decision-, Risk-, CCR-, Capability-, Support-Status-, Lessons- oder NDF-Feedback-Kennung; akzeptierte ADRs bleiben **0**.
+> Nachträgliche docs-only Current-State-Anwendung: Die freigegebene Human-Maintainer-`A-7`-Disposition ist angewandt. Die Sprach-/Runtime-Entscheidung ist **getroffen** (§8.4): **Go** — ausschließlich als **Sprach-/Runtime-Klasse** für den ersten Observe-Slice; Rust bleibt als dokumentierte stärkste Alternative erhalten. Gate-A-Punkt `A-7` steht damit auf **erfüllt** (§16.1). Gate A nach dieser Anwendung: **8 von 14 erfüllt, 0 teilweise, 6 offen — nicht passiert** (durch die spätere `A-8`-Anwendung fortgeschrieben, siehe folgende Zeile); offen blieben genau `A-8`, `A-9`, `A-10`, `A-11`, `A-13` und `A-14`. Gate B unverändert **0 von 8 — nicht passiert**. Die Auswahl einer Sprach-/Runtime-Klasse ist **keine** Go-Versions-, Distributions- oder Toolchain-Auswahl, **kein** Modul-/Paketlayout, **keine** API- oder Quellpfadauswahl, **keine** Source-Tree-Autorisierung, **keine** Dependency-Zulassung, **keine** Build-/Packaging-Disposition, **keine** Produktivcode- oder Implementierungsautorisierung, **keine** Testimplementierung, **keine** Testausführung, **keine** `P-1`-Erteilung, **keine** Zielzugriffs- oder Beobachtungsautorisierung, **keine** `P-2`-Erfüllung, **keine** Erfüllung von `A-11` und **keine** Auswahl eines breiteren CoreOps-Technologie-Stacks; die technische Architektur bleibt im Übrigen **unbestätigt**. Es entsteht **kein** Work Package, **keine** `CO-WP-033`, **kein** ADR, **keine** ADR-Nummer und **keine** Decision-, Risk-, CCR-, Capability-, Support-Status-, Lessons- oder NDF-Feedback-Kennung; akzeptierte ADRs bleiben **0**.
+> Nachträgliche docs-only Current-State-Anwendung: Die freigegebene Human-Maintainer-`A-8`-Disposition ist angewandt. Die Source-Tree-Entscheidung ist **getroffen** (§9.2): `DECIDED — APPROVE OPTION A WITH NOVA BOUNDARY CLARIFICATIONS`. Entschieden ist eine repository-verwurzelte, Go-idiomatische Anwendungsstruktur: künftiger Modulwurzelort Repository-Wurzelverzeichnis; Einstiegspunkt `cmd/coreops/` ausschließlich für Komposition/Bootstrap — **keine** kanonische Beobachtungsdomänenlogik, **keine** Erhebungssemantik, **keine** Normalisierungssemantik; kanonische Beobachtungsdomäne `internal/observe/` (**internal/privat**); Erhebung `internal/observe/collect/` mit der `P-3`-Realisierung (Option A primär, Option B ausschließlich ergänzend), ohne Envelope-Zusammensetzung, ohne R1–R6, ohne kanonisches Vokabular und ohne Normalisierung; Normalisierung bleibt zunächst **ohne** eigenes Paket als quellunabhängige Rolle innerhalb `internal/observe/`; Tests künftig **colocated `*_test.go`**, **kein** Top-Level-`tests/`, paketlokales `testdata/` ausschließlich als **künftige** Fixture-Ablage, falls und sobald Fixture-/Testautorität besteht; **kein** `pkg/`, **kein** `src/`, **keine** öffentliche Go-API. Verbindliche Abhängigkeitsrichtung: `internal/observe/collect` → `internal/observe` zulässig; `internal/observe` → `internal/observe/collect` **untersagt**. Gate-A-Punkt `A-8` steht damit auf **erfüllt** (§16.1). Gate A: **9 von 14 erfüllt, 0 teilweise, 5 offen — nicht passiert**; offen bleiben genau `A-9`, `A-10`, `A-11`, `A-13` und `A-14`. Gate B unverändert **0 von 8 — nicht passiert**. Die Entscheidung legt **kein** Verzeichnis und **keine** Datei an: `cmd/` und `internal/` sind **nicht** angelegt; `go.mod` ist **nicht** angelegt und **nicht** autorisiert; ein `go.sum` ist durch `A-8` **nicht gefordert**, **nicht** angelegt und **nicht** autorisiert und wäre nur dann am Repository-Wurzelort zu erwarten, wenn eine solche Datei später durch einen autorisierten Modul-, Dependency- oder Toolchain-Stand rechtmäßig erzeugt wird; Modulpfad, Go-Version, Go-Distribution und Toolchain-Version bleiben **nicht** entschieden. Die spätere Anlage der neuen Top-Level-Struktur `cmd/` und `internal/` benötigt eine ausdrücklich autorisierte Architektur-/Governance-Work-Package-Grenze nach [Repository Governance Standard](REPOSITORY_GOVERNANCE_STANDARD.md) §12; ein späteres `A-14`-Work-Package genügt dafür **nur dann**, wenn sein freigegebener Scope diese Autorität ausdrücklich trägt — **automatisch** autorisiert `A-14` `cmd/` und `internal/` **nicht**. Die Auswahl einer Quellbaumstruktur ist **keine** Verzeichnis- oder Dateianlage, **keine** Dependency-Zulassung, **keine** Build-/Packaging-Disposition, **keine** Produktivcode- oder Implementierungsautorisierung, **keine** Testimplementierung, **keine** Testausführung, **keine** Fixture-Freigabe, **keine** `P-1`-Erteilung, **keine** Zielzugriffs- oder Beobachtungsautorisierung, **keine** `P-2`-Erfüllung und **keine** Erfüllung von `A-11`, `A-13` oder `A-14`. Es entsteht **kein** Work Package, **keine** `CO-WP-033`, **kein** ADR, **keine** ADR-Nummer und **keine** Decision-, Risk-, CCR-, Capability-, Support-Status-, Lessons- oder NDF-Feedback-Kennung; akzeptierte ADRs bleiben **0**. Der [Observation Contract](../architecture/OBSERVE_LOCAL_LINUX_HOST_OBSERVATION_CONTRACT.md) bleibt **unverändert** und **technologieunabhängig**; eine Paketplatzierung begründet **keine** neue semantische Autorität: `internal/observe` ist **nicht** `MOD-OBS-001`, ein Repository-Paket ist **keine** logische Modulautorität, und die kanonische Go-Domäne ist **nicht** der Observation Contract.
 
 ## 1. Status und Zweck
 
@@ -110,7 +111,7 @@ Implementierungsautorität ist **eigenständig** und entsteht nicht als Nebenwir
 8. eine definierte Teststrategie beziehungsweise definierte künftige Validierungsanforderungen — einschließlich der **definierten `P-2`-Evidenzmethode**, ausdrücklich **nicht** deren Erfüllung,
 9. die Build-/Packaging-Disposition, soweit dieses Dokument sie als tatsächlich erforderlich ausweist (§12).
 
-Fehlt auch nur eine, ist **keine** Implementierungsautorität gegeben. Derzeit sind die neun Voraussetzungen **nicht kumulativ erfüllt**: mehrere stehen offen. Die `P-3`-Voraussetzung (Punkt 2) ist **erfüllt** — der lokale Erhebungsmechanismus ist als **Mechanismusklasse** ausdrücklich entschieden (§7.5; Gate-A-Punkt `A-6` **erfüllt**, §16.1); das ist ausdrücklich **keine** Sprach-/Runtime-, Source-Tree- oder Dependency-Entscheidung. Die Sprach-/Runtime-Voraussetzung (Punkt 3) ist durch eine davon getrennte, eigene Human-Maintainer-Entscheidung **erfüllt** — **Go** als **Sprach-/Runtime-Klasse** für den ersten Observe-Slice (§8.4; Gate-A-Punkt `A-7` **erfüllt**, §16.1); auch das ist ausdrücklich **keine** Source-Tree-, Dependency- oder Build-/Packaging-Entscheidung — die Punkte 4 und 5 bleiben **offen**. Die Voraussetzung zu Teststrategie und `P-2`-Evidenzmethode (Punkt 8) ist **erfüllt** — Testdesign und Evidenzmethode sind definiert, und die erforderliche Human-Maintainer-Disposition dieser Definition ist erteilt (Gate-A-Punkt `A-12` **erfüllt**, §16.1). Das betrifft ausschließlich den **Definitionsstand**: `P-2` bleibt **`NOT SATISFIED`**, es ist **kein** Test implementiert und **kein** Test ausgeführt.
+Fehlt auch nur eine, ist **keine** Implementierungsautorität gegeben. Derzeit sind die neun Voraussetzungen **nicht kumulativ erfüllt**: mehrere stehen offen. Die `P-3`-Voraussetzung (Punkt 2) ist **erfüllt** — der lokale Erhebungsmechanismus ist als **Mechanismusklasse** ausdrücklich entschieden (§7.5; Gate-A-Punkt `A-6` **erfüllt**, §16.1); das ist ausdrücklich **keine** Sprach-/Runtime-, Source-Tree- oder Dependency-Entscheidung. Die Sprach-/Runtime-Voraussetzung (Punkt 3) ist durch eine davon getrennte, eigene Human-Maintainer-Entscheidung **erfüllt** — **Go** als **Sprach-/Runtime-Klasse** für den ersten Observe-Slice (§8.4; Gate-A-Punkt `A-7` **erfüllt**, §16.1); auch das ist ausdrücklich **keine** Source-Tree-, Dependency- oder Build-/Packaging-Entscheidung. Die Source-Tree-Voraussetzung (Punkt 4) ist durch eine davon wiederum getrennte, eigene Human-Maintainer-Entscheidung **erfüllt** — die Quellbaumstruktur ist ausdrücklich entschieden (§9.2; Gate-A-Punkt `A-8` **erfüllt**, §16.1); auch das ist ausdrücklich **keine** Verzeichnis- oder Dateianlage, **keine** Dependency-Zulassung und **keine** Build-/Packaging-Entscheidung — Punkt 5 bleibt **offen**. Die Voraussetzung zu Teststrategie und `P-2`-Evidenzmethode (Punkt 8) ist **erfüllt** — Testdesign und Evidenzmethode sind definiert, und die erforderliche Human-Maintainer-Disposition dieser Definition ist erteilt (Gate-A-Punkt `A-12` **erfüllt**, §16.1). Das betrifft ausschließlich den **Definitionsstand**: `P-2` bleibt **`NOT SATISFIED`**, es ist **kein** Test implementiert und **kein** Test ausgeführt.
 
 **Ausdrücklich nicht Bestandteil von Gate A:** `P-1` · die Erfüllung von `P-2` · Testausführungsautorität · Fixture-Freigabe · Lab-Bereitstellung. Diese gehören zu Gate B (§16.2).
 
@@ -385,11 +386,15 @@ A-7 satisfied != Gate A passed
 Gate A passed != Gate B passed
 ```
 
-Die Entscheidung erfüllt den Gate-A-Punkt `A-7` (§16.1). Sie erzeugt **keine** ADR-Datei, **keine** ADR-Nummer, **keine** Decision-ID, **keine** `HM-*`-Kennung, **keine** Zeile im Decision Index oder Risk Register, **keine** Risk-, CCR-, Capability-, Support-Status-, Lessons- oder NDF-Feedback-Kennung und **kein** Work Package; akzeptierte ADRs bleiben **0** und `A-11` bleibt **offen** (§14). Sie legt **kein** Verzeichnis und **keine** Datei an — insbesondere **kein** `go.mod`, **kein** `go.sum`, **kein** Package-Manifest, **keinen** Vendor-Baum und **kein** Lockfile; `A-8`, `A-9` und `A-13` bleiben **offen**. Der [Observation Contract](../architecture/OBSERVE_LOCAL_LINUX_HOST_OBSERVATION_CONTRACT.md) bleibt **technologieunabhängig**: die Entscheidung führt dort **keine** Go-spezifischen Typen, Schnittstellen, Schemata, Paket- oder Modulnamen, APIs, Quellpfade oder Implementierungskonventionen ein und ändert seine normative Beobachtungssemantik **nicht**.
+Die Entscheidung erfüllt den Gate-A-Punkt `A-7` (§16.1). Sie erzeugt **keine** ADR-Datei, **keine** ADR-Nummer, **keine** Decision-ID, **keine** `HM-*`-Kennung, **keine** Zeile im Decision Index oder Risk Register, **keine** Risk-, CCR-, Capability-, Support-Status-, Lessons- oder NDF-Feedback-Kennung und **kein** Work Package; akzeptierte ADRs bleiben **0** und `A-11` bleibt **offen** (§14). Sie legt **kein** Verzeichnis und **keine** Datei an — insbesondere **kein** `go.mod`, **kein** `go.sum`, **kein** Package-Manifest, **keinen** Vendor-Baum und **kein** Lockfile; `A-8`, `A-9` und `A-13` blieben zum Zeitpunkt dieser Entscheidung **offen** — `A-8` ist inzwischen durch eine davon getrennte, spätere Human-Maintainer-Entscheidung **erfüllt** (§9.2), `A-9` und `A-13` bleiben **offen**. Der [Observation Contract](../architecture/OBSERVE_LOCAL_LINUX_HOST_OBSERVATION_CONTRACT.md) bleibt **technologieunabhängig**: die Entscheidung führt dort **keine** Go-spezifischen Typen, Schnittstellen, Schemata, Paket- oder Modulnamen, APIs, Quellpfade oder Implementierungskonventionen ein und ändert seine normative Beobachtungssemantik **nicht**.
 
-## 9. Source-Tree-Vorschlag
+## 9. Source-Tree-Entscheidung
 
-**Status: `PROPOSED / UNACCEPTED`. Es wird kein Verzeichnis angelegt.** Der Vorschlag ist ausschließlich Markdown und beschreibt **Rollen**, keine Sprachidiome — das konkrete Verzeichnisidiom folgt der Sprachentscheidung aus §8 und ist hier bewusst nicht vorweggenommen.
+**Status: `DECIDED` — durch eigene, ausdrückliche Human-Maintainer-Entscheidung (§9.2). Es wird kein Verzeichnis angelegt.** Dieser Abschnitt ist als **Vorschlag** entstanden — eine rollenbasierte, ausdrücklich `PROPOSED / UNACCEPTED` gehaltene Struktur ohne Sprachidiom. Diese Herkunft bleibt festgehalten: der ursprüngliche Vorschlag (§9.1) bleibt unverändert erhalten und wird **nicht** rückwirkend zur Entscheidung umgedeutet. Der Vorschlag war ein Vorschlag; die Auswahl ist eine davon getrennte, spätere Human-Maintainer-Entscheidung (§9.2). Das konkrete Verzeichnisidiom folgt der Sprach-/Runtime-Entscheidung aus §8 und wurde erst nach ihr bestimmt.
+
+### 9.1 Ursprünglicher rollenbasierter Vorschlag (historisch, `PROPOSED / UNACCEPTED`)
+
+Der Vorschlag war ausschließlich Markdown und beschrieb **Rollen**, keine Sprachidiome:
 
 ```text
 <repository root>
@@ -417,11 +422,164 @@ Die Entscheidung erfüllt den Gate-A-Punkt `A-7` (§16.1). Sie erzeugt **keine**
 | Minimum an verfrühter Abstraktion | keine Plugin-, Adapter-, Registry-, Transport- oder Konfigurationsschicht; keine Datenbank; kein Service-Layer |
 | Standalone-First | ein Anwendungswurzelverzeichnis, ein Einstiegspunkt, keine externe Laufzeitvoraussetzung im Entwurf |
 
-**Ausdrücklich nicht Bestandteil des Vorschlags:** ein Frontend, eine API-Schicht, eine Persistenzschicht, ein Agent, ein Scheduler, ein Konfigurationssystem, eine CI-Definition, ein Containerartefakt.
+**Ausdrücklich nicht Bestandteil des Vorschlags:** ein Frontend, eine API-Schicht, eine Persistenzschicht, ein Agent, ein Scheduler, ein Konfigurationssystem, eine CI-Definition, ein Containerartefakt. Diese Ausschlüsse gelten für die Entscheidung aus §9.2 unverändert fort.
+
+### 9.2 Human-Maintainer-Entscheidung
+
+Der Human Maintainer hat die Source-Tree-Frage ausdrücklich **entschieden**. Die Entscheidung ist eine **Struktur- und Platzierungsentscheidung** für den **ersten Observe-Slice** und geht über diesen Zuschnitt nicht hinaus.
 
 ```text
-source-tree proposal != source tree created
+DECISION (source tree):  DECIDED — APPROVE OPTION A WITH NOVA BOUNDARY CLARIFICATIONS
+LAYOUT:                  repository-verwurzelte, Go-idiomatische Anwendungsstruktur
+MODULE ROOT (künftig):   Repository-Wurzelverzeichnis
+ENTRY POINT (künftig):   cmd/coreops/
+OBSERVATION DOMAIN:      internal/observe/           — internal/privat
+COLLECTION:              internal/observe/collect/   — internal/privat
+NORMALIZATION:           zunächst ohne eigenes Paket; quellunabhängige Rolle
+                         innerhalb internal/observe/
+TESTS (künftig):         colocated *_test.go
+NOT USED:                pkg/ · src/ · Top-Level-tests/ · öffentliche Go-API
+CREATED:                 nichts — kein Verzeichnis, keine Datei
+DECIDED BY:              Human Maintainer — eigene, ausdrückliche Entscheidung
+```
+
+**Künftige Struktur — entschieden, nicht angelegt.**
+
+```text
+<repository root>/
+├─ .claude/                   bestehend, unverändert
+├─ docs/                      bestehend, unverändert
+├─ project-brain/             bestehend, unverändert
+├─ project-system/            bestehend, unverändert
+├─ ROADMAP.md                 bestehend, unverändert
+├─ go.mod                     NUR künftiger Ort — nicht angelegt, nicht autorisiert
+├─ go.sum                     NUR bedingter künftiger Ort — ausschließlich falls
+│                             später durch einen autorisierten Modul-, Dependency-
+│                             oder Toolchain-Stand rechtmäßig erzeugt; durch A-8
+│                             nicht gefordert, nicht angelegt, nicht autorisiert
+├─ cmd/                       ENTSCHIEDEN — nicht angelegt
+│  └─ coreops/                Einstiegspunkt; ausschließlich Komposition/Bootstrap;
+│                             keine kanonische Beobachtungsdomänenlogik, keine
+│                             Erhebungssemantik, keine Normalisierungssemantik
+└─ internal/                  ENTSCHIEDEN — nicht angelegt
+   └─ observe/                kanonische Beobachtungsdomäne: kanonische
+      │                       Beobachtungsidentität · kanonische Feldidentitäten ·
+      │                       die gebundenen 8/9/3-Vokabulare · deterministische
+      │                       R1–R6-Zusammensetzung · observed_at/received_at ·
+      │                       Raw und Normalized getrennt gehalten ·
+      │                       Provenance-Struktur · Freshness-Vokabular ·
+      │                       Absenz-/Fehlersemantik · Normalisierung als
+      │                       quellunabhängige Rolle
+      └─ collect/             Erhebung: P-3-Realisierung (Option A primär,
+                              Option B ausschließlich ergänzend) · Raw-Beobachtungs-
+                              werte · feldweise Erhebungsausgänge · feldweise
+                              Provenance-Fakten
+```
+
+**Verbindliche Abhängigkeitsrichtung.**
+
+```text
+cmd/coreops              -> internal/observe             zulässig
+cmd/coreops              -> internal/observe/collect     zulässig, soweit die
+                                                         Komposition es erfordert
+internal/observe/collect -> internal/observe             zulässig
+internal/observe         -> internal/observe/collect     UNTERSAGT
+```
+
+`internal/observe` trägt **keine** Erhebungssemantik. `internal/observe/collect` trägt **keine** Envelope-Zusammensetzung, **kein** R1–R6, **kein** kanonisches Vokabular und **keine** Normalisierung. `cmd/coreops` trägt **keine** kanonische Beobachtungsdomänenlogik, **keine** Erhebungssemantik und **keine** Normalisierungssemantik.
+
+**Sichtbarkeit.** Alle künftigen Implementierungspakete liegen unterhalb von `internal/` und sind damit **internal/privat**. Eine öffentliche Go-API ist **nicht** ausgewählt und **nicht** autorisiert; `pkg/` wird **nicht** verwendet, `src/` wird **nicht** verwendet.
+
+**Normalisierung.** Zunächst **kein** eigenes Paket. Die Rolle bleibt vollständig erhalten und **quellunabhängig** innerhalb `internal/observe/`. Eine spätere Aufteilung in ein eigenes Paket benötigt eine **eigene, begründete Entscheidung**.
+
+**Tests.** Künftige Platzierungspolitik: Go-idiomatische, **colocated** `*_test.go`-Dateien neben ihren Paketen. **Kein** Top-Level-`tests/`. Ein **paketlokales** `testdata/` ist ausschließlich als **künftige** Ablage für Fixtures zulässig, **falls und sobald** Fixture- und Testautorität später besteht. Es wird **jetzt kein** `testdata/`-Verzeichnis angelegt und **keine** Fixture autorisiert. Der [Test Envelope](../testing/OBSERVE_LOCAL_LINUX_HOST_TEST_ENVELOPE.md) bleibt ein Governance-/Testdesign-Artefakt und begründet **kein** Quellbaumverzeichnis.
+
+```text
+test placement decided       != test implemented
+testdata placement permitted != fixture authorized
+test design defined          != test execution authorized
+```
+
+**Nicht** entschieden bleiben: konkrete Testdateinamen · In-Package- gegen External-Package-Testkonvention · Testframework · Fixture-Inhalt · Fixture-Identität · Testimplementierung · Testausführung · Testautorität.
+
+**`go.mod` und `go.sum`.** `A-8` entscheidet ausschließlich den **künftigen Ort** als Folge der Strukturwahl — mehr nicht.
+
+```text
+go.mod künftiger Ort:  Repository-Wurzelverzeichnis
+go.mod:                NICHT ANGELEGT · NICHT AUTORISIERT
+Modulpfad:             NICHT ENTSCHIEDEN
+Go-Version:            NICHT ENTSCHIEDEN
+Go-Distribution:       NICHT ENTSCHIEDEN
+Toolchain-Version:     NICHT ENTSCHIEDEN
+
+go.sum bedingter künftiger Ort:  Repository-Wurzelverzeichnis — ausschließlich
+                       dann, wenn eine solche Datei später durch einen
+                       autorisierten Modul-, Dependency- oder Toolchain-Stand
+                       rechtmäßig erzeugt wird
+go.sum:                DURCH A-8 NICHT GEFORDERT · NICHT ANGELEGT ·
+                       NICHT AUTORISIERT
+```
+
+Ein `go.sum` ist damit **weder zugesichert noch notwendigerweise zu erwarten**. Ein benannter Ort ist keine erzeugte Datei.
+
+### 9.3 Verzeichnisanlage — eigenständige `RGS`-§12-Grenze
+
+**Die Entscheidung wählt eine künftige Struktur; sie autorisiert deren Anlage nicht.**
+
+Der [Repository Governance Standard](REPOSITORY_GOVERNANCE_STANDARD.md) §12 verlangt für **neue Top-Level-Struktur** ein eigenes, ausdrücklich autorisiertes Architektur- oder Governance-Work-Package. `cmd/` und `internal/` wären neue Top-Level-Struktur. Diese Anforderung besteht **eigenständig** neben `A-14` und wird durch `A-8` **nicht** erfüllt:
+
+```text
+A-8 entscheidet:  künftige Struktur und Platzierung
+A-14 bleibt:      ausdrückliche implementierungsorientierte Work-Package-Autorität
+RGS §12 bleibt:   eigenständige Scope-Anforderung für die tatsächliche Anlage
+                  neuer Top-Level-Verzeichnisse
+```
+
+Ein späteres `A-14`-Work-Package genügt `RGS` §12 **nur dann**, wenn sein **freigegebener Scope ausdrücklich** die dafür erforderliche Architektur-/Governance-Autorität für die Anlage von `cmd/` und `internal/` trägt. Ein `A-14`-Work-Package autorisiert `cmd/` und `internal/` **nicht** automatisch.
+
+### 9.4 Was diese Entscheidung ausdrücklich nicht auswählt
+
+Sie benennt **keinen** Modulpfad, **keine** Go-Version, **keine** Go-Distribution, **keine** Toolchain-Version, **keine** konkrete API, **keine** konkrete Standardbibliotheksfunktion, **keinen** konkreten Erhebungsquellpfad, **keine** Abhängigkeit, **kein** Build-Werkzeug, **kein** Paketformat, **kein** Testframework und **keinen** breiteren CoreOps-Technologie-Stack. Sie legt **kein** Verzeichnis und **keine** Datei an.
+
+```text
+A-8 satisfied != source tree created
+A-8 satisfied != cmd/ created
+A-8 satisfied != internal/ created
+A-8 satisfied != go.mod created
+A-8 satisfied != go.sum created
+A-8 satisfied != module path decided
+A-8 satisfied != Go version decided
+A-8 satisfied != dependency admitted
+A-8 satisfied != build/packaging decided
+A-8 satisfied != productive code authorized
+A-8 satisfied != implementation authorized
+A-8 satisfied != test implementation authorized
+A-8 satisfied != test execution authorized
+A-8 satisfied != fixture authorized
+A-8 satisfied != P-1 granted
+A-8 satisfied != target access authorized
+A-8 satisfied != real observation authorized
+A-8 satisfied != P-2 satisfied
+A-8 satisfied != A-11 satisfied
+A-8 satisfied != A-13 satisfied
+A-8 satisfied != A-14 satisfied
+A-8 satisfied != CO-WP-033 created or reserved
+A-8 satisfied != Gate A passed
+Gate A passed != Gate B passed
+source-tree decision != source tree created
 directory named      != directory exists
+```
+
+Die Entscheidung erfüllt den Gate-A-Punkt `A-8` (§16.1). Sie erzeugt **keine** ADR-Datei, **keine** ADR-Nummer, **keine** Decision-ID, **keine** `HM-*`-Kennung, **keine** Zeile im Decision Index oder Risk Register, **keine** Risk-, CCR-, Capability-, Support-Status-, Lessons- oder NDF-Feedback-Kennung und **kein** Work Package; akzeptierte ADRs bleiben **0** und `A-11` bleibt **offen** (§14). Der [Observation Contract](../architecture/OBSERVE_LOCAL_LINUX_HOST_OBSERVATION_CONTRACT.md) bleibt **unverändert** und **technologieunabhängig**: die Entscheidung führt dort **keine** Go-spezifischen Typen, Schnittstellen, Schemata, Paket- oder Modulnamen, APIs, Quellpfade oder Implementierungskonventionen ein und ändert seine normative Beobachtungssemantik **nicht**. Eine Paketplatzierung begründet **keine** neue semantische Autorität.
+
+```text
+internal/observe     != MOD-OBS-001
+kanonische Go-Domäne != Observation Contract
+Repository-Paket     != logische Modulautorität
+shared semantics     != shared authority
+integration          != runtime dependency
+evidence             != authorization
+roadmap              != work-package authorization
 ```
 
 ## 10. Dependency-Admission-Gate
@@ -465,7 +623,7 @@ Transitive und reine Build-/Test-Abhängigkeiten unterliegen demselben Verfahren
 
 ### 10.3 Zielzustand für den ersten Slice
 
-Der entschiedene Zuschnitt (§7.5 Option A primär / Option B ausschließlich ergänzend, §8.4 Go) kommt plausibel **ohne** Drittabhängigkeit aus. Eine leere Abhängigkeitsliste ist für den ersten produktiven Commit ein **erklärtes und bevorzugtes Ziel**, keine bloße Möglichkeit — aber ausdrücklich **keine** Zusicherung: `plausibel != garantiert`. Durch die Sprach-/Runtime-Entscheidung wird **keine** Abhängigkeit zugelassen; das Admission-Gate ist **nicht** in Kraft (`A-9` **offen**), **0** Abhängigkeiten sind zugelassen und es ist **keine** konkrete Standardbibliotheks-API ausgewählt.
+Der entschiedene Zuschnitt (§7.5 Option A primär / Option B ausschließlich ergänzend, §8.4 Go) kommt plausibel **ohne** Drittabhängigkeit aus. Eine leere Abhängigkeitsliste ist für den ersten produktiven Commit ein **erklärtes und bevorzugtes Ziel**, keine bloße Möglichkeit — aber ausdrücklich **keine** Zusicherung: `plausibel != garantiert`. Durch die Sprach-/Runtime-Entscheidung wird **keine** Abhängigkeit zugelassen; das Admission-Gate ist **nicht** in Kraft (`A-9` **offen**), **0** Abhängigkeiten sind zugelassen und es ist **keine** konkrete Standardbibliotheks-API ausgewählt. Auch durch die **Source-Tree-Entscheidung** (§9.2) wird **keine** Abhängigkeit zugelassen: sie benennt keine, setzt keine voraus, legt **kein** `go.mod` und **kein** `go.sum` an und erzeugt **keinen** Vendor-Baum. Sollte ein späterer, gesondert autorisierter Modul-/Dependency-/Toolchain-Stand einen Vendor-Baum vorsehen, wäre dessen Ort eine bloße Folge der Strukturwahl (Repository-Wurzelverzeichnis) und **keine** Entscheidung darüber, dass er entsteht. `A-9` bleibt **offen**.
 
 ## 11. Package-Manager- und Lockfile-Implikationen
 
@@ -486,6 +644,15 @@ zero dependencies   != zero supply chain (toolchain remains in scope)
 ```
 
 **Derzeit existiert kein Package Manifest, kein Lockfile und kein Package Manager im Repository. Keines wird durch dieses Dokument autorisiert.**
+
+**Verhältnis zur Source-Tree-Entscheidung (§9.2).** `A-8` entscheidet ausschließlich den **künftigen Ort** eines Modulmanifests als Folge der Strukturwahl — **nicht** dessen Erzeugung und **nicht** dessen Inhalt. `go.mod` wäre am Repository-Wurzelverzeichnis zu erwarten, ist aber **nicht angelegt** und **nicht autorisiert**; Modulpfad, Go-Version, Go-Distribution und Toolchain-Version sind **nicht entschieden**. Ein `go.sum` ist durch `A-8` **nicht gefordert**, **nicht angelegt** und **nicht autorisiert**; es wäre — ebenfalls am Repository-Wurzelverzeichnis — ausschließlich dann zu erwarten, **falls** eine solche Datei später durch einen autorisierten Modul-, Dependency- oder Toolchain-Stand rechtmäßig erzeugt wird. Es ist damit **weder zugesichert noch notwendigerweise zu erwarten**.
+
+```text
+Ort benannt         != Datei erzeugt
+go.mod-Ort entschieden != go.mod autorisiert
+go.sum bedingt möglich != go.sum erwartet
+manifest absent      = the current state
+```
 
 ## 12. Build- und Packaging-Implikationen
 
@@ -508,6 +675,16 @@ CI configured       != quality established
 ```
 
 **Derzeit existiert keine Build-Definition, kein Containerartefakt und kein CI-Workflow. Keines wird durch dieses Dokument autorisiert.**
+
+**Verhältnis zur Source-Tree-Entscheidung (§9.2).** Die Source-Tree-Entscheidung liefert für `A-13` ausschließlich einen **Eingang** — den künftigen Ort eines Modulmanifests — und **keine** Disposition. Reproduzierbarkeit, Offline-Build, Artefaktidentität/SBOM, Build-Toolchain, Go-Version, Distribution, Toolchain-Version, Containerform, Artefakt- beziehungsweise Binärname, Paketformat und CI bleiben sämtlich **unentschieden**; `A-13` bleibt **offen**. Ein Verzeichnisname ist **kein** Artefaktname.
+
+```text
+A-8 satisfied     != A-13 satisfied
+go.mod-Ort        != Go-Version entschieden
+go.mod-Ort        != Toolchain entschieden
+Verzeichnisname   != Artefaktname
+build definition absent = the current state
+```
 
 ## 13. `NEW-8` — `README.md` und `LICENSE`
 
@@ -586,8 +763,8 @@ Vor einer produktiven Implementierung sind mindestens folgende Punkte zu disposi
 | Punkt | Gegenstand | Aktueller Stand |
 | ----- | ---------- | --------------- |
 | `P-3` | Erhebungsmechanismus und Transport für `CAP-DISCOVERY-004` — im Readiness Review ausdrücklich als ADR-pflichtig bezeichnet | **entschieden** — `SELECTED` / dispositioniert durch ausdrückliche Human-Maintainer-Entscheidung (§7.5): Option A primär, Option B ausschließlich ergänzend, Option C nicht Standardweg, Option D/E ausgeschlossen, kein Netzwerktransport; **kein** Decision-Identifier, **kein** ADR |
-| Sprache/Runtime | erste Implementierungsplattform | **entschieden** — `SELECTED` — **Go** / dispositioniert durch ausdrückliche Human-Maintainer-Entscheidung (§8.4): Sprach-/Runtime-**Klasse** ausschließlich für den ersten Observe-Slice, Rust als dokumentierte stärkste Alternative erhalten; **keine** Go-Version, **keine** Distribution, **keine** Toolchain, **kein** Paketlayout, **keine** API, **kein** Quellpfad, **keine** Abhängigkeit; **kein** Decision-Identifier, **kein** ADR |
-| Source Tree | Anwendungsstruktur | `PROPOSED / UNACCEPTED` |
+| Sprache/Runtime | erste Implementierungsplattform | **entschieden** — `SELECTED` — **Go** / dispositioniert durch ausdrückliche Human-Maintainer-Entscheidung (§8.4): Sprach-/Runtime-**Klasse** ausschließlich für den ersten Observe-Slice, Rust als dokumentierte stärkste Alternative erhalten; **keine** Go-Version, **keine** Distribution, **keine** Toolchain, **keine** API, **keine** Abhängigkeit; Paketlayout und Quellbaumplatzierung **nicht** durch diese, sondern durch die Zeile *Source Tree* entschieden; **kein** Decision-Identifier, **kein** ADR |
+| Source Tree | Anwendungsstruktur | **entschieden** — `DECIDED` / dispositioniert durch ausdrückliche Human-Maintainer-Entscheidung (§9.2): repository-verwurzelte Go-Struktur, `cmd/coreops/`, `internal/observe/`, `internal/observe/collect/`, Normalisierung zunächst ohne eigenes Paket innerhalb `internal/observe/`, colocated `*_test.go`, **kein** `pkg/`, **kein** `src/`, **kein** Top-Level-`tests/`, **keine** öffentliche Go-API; **kein** Verzeichnis und **keine** Datei angelegt, **kein** `go.mod`, **kein** `go.sum`, **kein** Modulpfad, **keine** Go-Version, **keine** Toolchain; **kein** Decision-Identifier, **kein** ADR |
 | Dependency-Admission | Inkraftsetzung des Gates aus §10 | nicht in Kraft |
 | `NEW-8` | `README` / `LICENSE` | `deferred`, Empfehlung liegt vor |
 | Build/Packaging | Reproduzierbarkeit, Offline-Build, Artefaktidentität | nicht entschieden |
@@ -597,11 +774,21 @@ Vor einer produktiven Implementierung sind mindestens folgende Punkte zu disposi
 
 **Zur Zeile „Sprache/Runtime“.** Diese Entscheidung ist **getroffen** und wird hier als **Decision-Disposition** geführt. Sie wird — wie die `P-3`- und die R6-Zeile — vom bestehenden Gate-A-Punkt `A-11` (§16.1) **erfasst**, erfüllt ihn aber **nicht**. Wie die dokumentierte ADR-Relevanz der Sprach-/Runtime-Wahl dauerhaft eingelöst wird, ist hier **nicht** entschieden: es entsteht **keine** ADR-Datei, **keine** ADR-Nummer, **keine** Decision-ID, **keine** `HM-*`-Kennung, **keine** Zeile im Decision Index oder Risk Register und **kein** Work Package. Es existieren weiterhin **0** ADR-Dateien und **0** akzeptierte ADRs.
 
+**Zur Zeile „Source Tree“.** Diese Entscheidung ist **getroffen** und wird hier als **Decision-Disposition** geführt. Sie wird — wie die `P-3`-, die Sprach-/Runtime- und die R6-Zeile — vom bestehenden Gate-A-Punkt `A-11` (§16.1) **erfasst**, erfüllt ihn aber **nicht**. Ob und wie die Struktur- und Platzierungsentscheidung dauerhaft ADR-seitig eingelöst wird, ist hier **nicht** entschieden. Das autoritative ADR-Kandidateninventar führt **keinen** Kandidaten für Quellbaum oder Repository-Layout; `ADR-0002` (modularer Monolith) betrifft die **Architekturform** und ist eine davon getrennte, **unentschiedene** Frage — die Source-Tree-Entscheidung erfüllt, präjudiziert und disponiert sie **nicht**. Die Vergabe von ADR-Nummern bleibt ausdrücklich Human-Maintainer-Sache: es entsteht **keine** ADR-Datei, **keine** ADR-Nummer, **kein** ADR-Kandidat, **keine** Decision-ID, **keine** `HM-*`-Kennung, **keine** Zeile im Decision Index oder Risk Register und **kein** Work Package. Es existieren weiterhin **0** ADR-Dateien und **0** akzeptierte ADRs.
+
+```text
+source tree decided != architecture form decided
+source tree decided != ADR-0002 disposed
+source tree decided != ADR required
+source tree decided != ADR accepted
+source tree decided != A-11 satisfied
+```
+
 **Zur Zeile „Envelope-Zusammensetzung (R6)“.** Diese Entscheidung ist **getroffen** und in den Slice-Dokumenten dokumentarisch umgesetzt. Sie wird hier als **Decision-Disposition** geführt und vom bestehenden Gate-A-Punkt `A-11` (§16.1) **getragen**. Es entsteht dafür **keine** zusätzliche Gate-A-Checklistenzeile, **keine** neue Checklistenkennung, **keine** Decision-, Risk-, ADR-, CCR- oder Capability-Kennung, **kein** Support-Status-Eintrag, **keine** Lesson, **kein** NDF-Feedback-Eintrag und **kein** Work Package — insbesondere wird **kein** Nachfolge-Work-Package erzeugt oder reserviert (§17). Auch der zugehörige docs-only Nachtrag erzeugt **keine** ADR-Datei und **keine** Zeile im Decision Index oder Risk Register; es existieren weiterhin **0** ADR-Dateien und **0** akzeptierte ADRs.
 
-**`A-11` bleibt `offen`.** `A-11` verlangt die Disposition **der Punkte dieser §14**. Die übrigen Zeilen — Source Tree, Dependency-Admission, `NEW-8`, Build/Packaging — sind weiterhin unentschieden. Drei entschiedene Zeilen (`P-3`, die R6-Zusammensetzung und Sprache/Runtime) erfüllen `A-11` daher **nicht**; ebenso bleibt offen, wie die dokumentierte ADR-Pflicht dauerhaft eingelöst wird.
+**`A-11` bleibt `offen`.** `A-11` verlangt die Disposition **der Punkte dieser §14**. Die übrigen Zeilen — Dependency-Admission, `NEW-8`, Build/Packaging — sind weiterhin unentschieden. Vier entschiedene Zeilen (`P-3`, die R6-Zusammensetzung, Sprache/Runtime und Source Tree) erfüllen `A-11` daher **nicht**; ebenso bleibt offen, wie die dokumentierte ADR-Pflicht dauerhaft eingelöst wird.
 
-**`A-12` ist `erfüllt`.** Die freigegebene Abfolge lautete: **R6-Semantikdisposition → Definition von `OBS-LLH-TC-11` → Human-Maintainer-Disposition von `A-12`**. Die ersten beiden Schritte sind mit dem docs-only Nachtrag erfolgt; der dritte — die Human-Maintainer-Disposition der Testdesign- und `P-2`-Methodendefinition — ist mit der freigegebenen Human-Maintainer-`A-12`-Disposition **erfolgt**. Die Abfolge ist damit **vollständig**, und `A-12` steht auf **erfüllt** (§16.1). Die Gate-A-Bilanz lautete damit **6 von 14 erfüllt, 0 teilweise, 8 offen**; nach der späteren, davon getrennten Human-Maintainer-`A-6`/`P-3`-Disposition **7 von 14 erfüllt, 0 teilweise, 7 offen**, und nach der wiederum davon getrennten Human-Maintainer-`A-7`-Disposition lautet sie **8 von 14 erfüllt, 0 teilweise, 6 offen — Gate A ist weiterhin nicht passiert**; die Gate-B-Bilanz bleibt **0 von 8 — realer Zielzugriff bleibt untersagt**. Die Disposition akzeptiert ausschließlich den **Definitionsstand** von Teststrategie und `P-2`-Evidenzmethode; sie implementiert **keinen** Test, führt **keinen** Test aus, erzeugt **keine** Evidenz, erfüllt `P-2` **nicht** und berührt `A-11` **nicht**.
+**`A-12` ist `erfüllt`.** Die freigegebene Abfolge lautete: **R6-Semantikdisposition → Definition von `OBS-LLH-TC-11` → Human-Maintainer-Disposition von `A-12`**. Die ersten beiden Schritte sind mit dem docs-only Nachtrag erfolgt; der dritte — die Human-Maintainer-Disposition der Testdesign- und `P-2`-Methodendefinition — ist mit der freigegebenen Human-Maintainer-`A-12`-Disposition **erfolgt**. Die Abfolge ist damit **vollständig**, und `A-12` steht auf **erfüllt** (§16.1). Die Gate-A-Bilanz lautete damit **6 von 14 erfüllt, 0 teilweise, 8 offen**; nach der späteren, davon getrennten Human-Maintainer-`A-6`/`P-3`-Disposition **7 von 14 erfüllt, 0 teilweise, 7 offen**, nach der wiederum davon getrennten Human-Maintainer-`A-7`-Disposition **8 von 14 erfüllt, 0 teilweise, 6 offen**, und nach der abermals davon getrennten Human-Maintainer-`A-8`-Disposition lautet sie **9 von 14 erfüllt, 0 teilweise, 5 offen — Gate A ist weiterhin nicht passiert**; die Gate-B-Bilanz bleibt **0 von 8 — realer Zielzugriff bleibt untersagt**. Die Disposition akzeptiert ausschließlich den **Definitionsstand** von Teststrategie und `P-2`-Evidenzmethode; sie implementiert **keinen** Test, führt **keinen** Test aus, erzeugt **keine** Evidenz, erfüllt `P-2` **nicht** und berührt `A-11` **nicht**.
 
 ```text
 one decision disposed != A-11 satisfied
@@ -623,6 +810,20 @@ P-3 selected          != Gate A passed
 Go selected           != A-11 satisfied
 Go selected           != ADR accepted
 Go selected           != Gate A passed
+source tree decided   != source tree created
+source tree decided   != cmd/ or internal/ created
+source tree decided   != go.mod created
+source tree decided   != go.sum created
+source tree decided   != module path decided
+source tree decided   != dependency admitted
+source tree decided   != build/packaging decided
+source tree decided   != implementation authorized
+source tree decided   != A-11 satisfied
+source tree decided   != A-13 satisfied
+source tree decided   != A-14 satisfied
+source tree decided   != ADR accepted
+source tree decided   != Gate A passed
+A-8 satisfied         != Gate A passed
 Gate A passed         != Gate B passed
 ```
 
@@ -684,8 +885,8 @@ Eine spätere Produktivcode-Autorisierung gilt **nicht** als vorbereitet, solang
 | A-4 | **Nova Review** | Bewertung des Slice-Vertrags, des Test Envelope und dieses Gate-Dokuments liegt vor | **erfüllt** — Initial Review `REWORK — narrow semantic closure`, beide blockierenden Notes CLOSED, **Nova Final Review `GO`** |
 | A-5 | **Repository-Integration** | Human-Maintainer-Staging, -Commit und -Push erfolgreich durchgeführt | **erfüllt** — Commit `9999114200bf18baaadfb508e8464720b75e352e`, gepusht, `origin/main` gleichauf |
 | A-6 | **`P-3`-Entscheidung** | Erhebungsmechanismus und Transport ausdrücklich entschieden | **erfüllt** — `SELECTED` (§7.5): Option A primär, Option B ausschließlich ergänzend, Option C nicht Standardweg, Option D/E für diesen Slice ausgeschlossen, **kein** Netzwerktransport. Ausdrücklich **keine** Sprach-/Runtime-, Pfad-, API-, Bibliotheks- oder Werkzeugauswahl |
-| A-7 | **Sprach-/Runtime-Entscheidung** | Plattform ausdrücklich entschieden | **erfüllt** — `SELECTED` — **Go** (§8.4), ausschließlich als **Sprach-/Runtime-Klasse** für den ersten Observe-Slice; Rust bleibt dokumentierte stärkste Alternative. Ausdrücklich **keine** Go-Versions-, Distributions-, Toolchain-, Paketlayout-, API-, Quellpfad-, Dependency- oder Build-/Packaging-Auswahl und **kein** breiterer Technologie-Stack |
-| A-8 | **Source-Tree-Entscheidung** | Struktur ausdrücklich entschieden | **offen** — `PROPOSED / UNACCEPTED` |
+| A-7 | **Sprach-/Runtime-Entscheidung** | Plattform ausdrücklich entschieden | **erfüllt** — `SELECTED` — **Go** (§8.4), ausschließlich als **Sprach-/Runtime-Klasse** für den ersten Observe-Slice; Rust bleibt dokumentierte stärkste Alternative. Ausdrücklich **keine** Go-Versions-, Distributions-, Toolchain-, API-, Dependency- oder Build-/Packaging-Auswahl und **kein** breiterer Technologie-Stack; Paketlayout und Quellbaumplatzierung sind **nicht** durch `A-7`, sondern durch `A-8` entschieden (§9.2) |
+| A-8 | **Source-Tree-Entscheidung** | Struktur ausdrücklich entschieden | **erfüllt** — `DECIDED` (§9.2), Disposition `APPROVE OPTION A WITH NOVA BOUNDARY CLARIFICATIONS`: repository-verwurzelte Go-Struktur; künftiger Modulwurzelort Repository-Wurzelverzeichnis; `cmd/coreops/` (nur Komposition/Bootstrap); `internal/observe/` (internal/privat); `internal/observe/collect/`; Normalisierung zunächst ohne eigenes Paket innerhalb `internal/observe/`; colocated `*_test.go`; **kein** `pkg/`, **kein** `src/`, **kein** Top-Level-`tests/`, **keine** öffentliche Go-API. Ausdrücklich **keine** Verzeichnis- oder Dateianlage, **kein** `go.mod`, **kein** `go.sum`, **kein** Modulpfad, **keine** Go-Versions-, Distributions- oder Toolchain-Auswahl, **keine** Dependency-Zulassung, **keine** Build-/Packaging-, Implementierungs-, Testimplementierungs-, Testausführungs- oder Fixture-Autorisierung; die Anlage von `cmd/` und `internal/` bleibt nach [Repository Governance Standard](REPOSITORY_GOVERNANCE_STANDARD.md) §12 eigenständig gate-pflichtig |
 | A-9 | **Dependency-Admission-Disposition** | Admission-Gate in Kraft; jede vorgesehene Abhängigkeit einzeln zugelassen oder ausdrücklich keine | **offen** — nicht in Kraft, **0** zugelassen |
 | A-10 | **`NEW-8`-Disposition** | `README` und `LICENSE` entschieden — auch eine bewusste Nicht-Erstellung ist eine Disposition | **offen** — `deferred`, Empfehlung liegt vor |
 | A-11 | **ADR-/Decision-Disposition** | die Punkte aus §14 entschieden oder ausdrücklich zurückgestellt | **offen** |
@@ -693,7 +894,7 @@ Eine spätere Produktivcode-Autorisierung gilt **nicht** als vorbereitet, solang
 | A-13 | **Build-/Packaging-Disposition** | Reproduzierbarkeit, Offline-Build und Artefaktidentität entschieden, soweit §12 sie als erforderlich ausweist | **offen** |
 | A-14 | **Ausdrückliche Implementierungs-Work-Package-Autorität** | ein eigenes, ausdrücklich autorisiertes implementierungsorientiertes Work Package mit benanntem Scope | **offen** — nicht erteilt |
 
-**Bilanz Gate A: 8 von 14 erfüllt, 0 teilweise, 6 offen. Gate A ist nicht passiert.** Offen bleiben genau sechs Punkte: `A-8`, `A-9`, `A-10`, `A-11`, `A-13` und `A-14`.
+**Bilanz Gate A: 9 von 14 erfüllt, 0 teilweise, 5 offen. Gate A ist nicht passiert.** Offen bleiben genau fünf Punkte: `A-9`, `A-10`, `A-11`, `A-13` und `A-14`.
 
 **Ausdrücklich nicht in dieser Checkliste:** `P-1` · `P-2` erfüllt · Testausführungsautorität · Fixtures · Lab. Sie sind **keine** Voraussetzung dafür, produktiven Quellcode zu schreiben oder zu autorisieren.
 
@@ -744,8 +945,8 @@ Es wird **keine** Nachfolger-Kennung vergeben, **keine** reserviert und **keine*
 
 ## 18. Compatibility
 
-Additiv. **Keine** Änderung an Foundation Scope Lock, Release-Taxonomie, Decision Index, Risk Register, Lessons-Learned-Register, NDF-Feedback-Kandidaten, Capability Matrix, Initial Support Boundary, Roadmap oder Teststrategie. **Kein** ADR erzeugt oder akzeptiert. **Keine** Decision-, Risk- oder ADR-ID vergeben. **Keine** Technologie wird durch dieses Dokument selbst ausgewählt; die `P-3`-Mechanismusklassen- und die Sprach-/Runtime-Entscheidung sind eigenständige Human-Maintainer-Entscheidungen (§7.5, §8.4) und ausdrücklich **kein** breiterer Technologie-Stack. **Kein** Artefakt außerhalb der neun autorisierten Pfade erzeugt. Breaking-Change-Potenzial: gering.
+Additiv. **Keine** Änderung an Foundation Scope Lock, Release-Taxonomie, Decision Index, Risk Register, Lessons-Learned-Register, NDF-Feedback-Kandidaten, Capability Matrix, Initial Support Boundary, Roadmap oder Teststrategie. **Kein** ADR erzeugt oder akzeptiert. **Keine** Decision-, Risk- oder ADR-ID vergeben. **Keine** Technologie wird durch dieses Dokument selbst ausgewählt; die `P-3`-Mechanismusklassen-, die Sprach-/Runtime- und die Source-Tree-Entscheidung sind eigenständige Human-Maintainer-Entscheidungen (§7.5, §8.4, §9.2) und ausdrücklich **kein** breiterer Technologie-Stack. Die Source-Tree-Entscheidung ist eine **Struktur- und Platzierungsentscheidung**; sie legt **kein** Verzeichnis und **keine** Datei an und ändert den [Observation Contract](../architecture/OBSERVE_LOCAL_LINUX_HOST_OBSERVATION_CONTRACT.md) **nicht**. **Kein** Artefakt außerhalb der neun autorisierten Pfade erzeugt. Breaking-Change-Potenzial: gering.
 
 ## 19. Next Decision
 
-Der Nova Final Review dieses Dokuments ist erfolgt (`GO`) und die Human-Maintainer-Repository-Integration ist abgeschlossen (Commit `9999114200bf18baaadfb508e8464720b75e352e`, gepusht); die Gate-A-Punkte `A-1` bis `A-5` sind damit erfüllt; `A-12` ist durch die freigegebene Human-Maintainer-`A-12`-Disposition ebenfalls **erfüllt**, `A-6` durch die ausdrückliche Human-Maintainer-`P-3`-Entscheidung (§7.5) und `A-7` durch die davon getrennte, ausdrückliche Human-Maintainer-Sprach-/Runtime-Entscheidung (§8.4). **Als Nächstes** — und jeweils als eigene, ausdrückliche Human-Maintainer-Entscheidung — die verbleibenden sechs offenen Gate-A-Punkte `A-8`, `A-9`, `A-10`, `A-11`, `A-13` und `A-14` (§16.1). Die `P-3`-Entscheidung hat `A-7` **nicht** autorisiert: sie wählte **keine** Sprache und **keine** Runtime aus; die Sprach-/Runtime-Auswahl ist eine davon getrennte, spätere Entscheidung (§8.4). Die Sprach-/Runtime-Entscheidung ihrerseits autorisiert `A-8` **nicht**: der Source Tree bleibt **`PROPOSED / UNACCEPTED`** und **nicht angelegt**; ebenso wenig autorisiert sie `A-9` oder `A-13`. **Erst danach und erst mit einer vorhandenen Implementierung** werden die Gate-B-Punkte `B-1` bis `B-8` (§16.2) überhaupt bewertbar. Dieses Dokument trifft **keine** dieser Entscheidungen.
+Der Nova Final Review dieses Dokuments ist erfolgt (`GO`) und die Human-Maintainer-Repository-Integration ist abgeschlossen (Commit `9999114200bf18baaadfb508e8464720b75e352e`, gepusht); die Gate-A-Punkte `A-1` bis `A-5` sind damit erfüllt; `A-12` ist durch die freigegebene Human-Maintainer-`A-12`-Disposition ebenfalls **erfüllt**, `A-6` durch die ausdrückliche Human-Maintainer-`P-3`-Entscheidung (§7.5), `A-7` durch die davon getrennte, ausdrückliche Human-Maintainer-Sprach-/Runtime-Entscheidung (§8.4) und `A-8` durch die abermals davon getrennte, ausdrückliche Human-Maintainer-Source-Tree-Entscheidung (§9.2). **Als Nächstes** — und jeweils als eigene, ausdrückliche Human-Maintainer-Entscheidung — die verbleibenden **fünf** offenen Gate-A-Punkte `A-9`, `A-10`, `A-11`, `A-13` und `A-14` (§16.1). Die `P-3`-Entscheidung hat `A-7` **nicht** autorisiert: sie wählte **keine** Sprache und **keine** Runtime aus; die Sprach-/Runtime-Auswahl war eine davon getrennte, spätere Entscheidung (§8.4). Die Sprach-/Runtime-Entscheidung ihrerseits hat `A-8` **nicht** autorisiert: die Source-Tree-Auswahl war eine davon getrennte, spätere Entscheidung (§9.2). Die Source-Tree-Entscheidung ihrerseits autorisiert **weder** `A-9` **noch** `A-13` **noch** `A-14`: sie lässt **keine** Abhängigkeit zu, disponiert Build und Packaging **nicht** und erteilt **keine** implementierungsorientierte Work-Package-Autorität. Sie legt **kein** Verzeichnis und **keine** Datei an; die Anlage von `cmd/` und `internal/` bleibt nach [Repository Governance Standard](REPOSITORY_GOVERNANCE_STANDARD.md) §12 eigenständig gate-pflichtig und wird durch ein späteres `A-14`-Work-Package **nur dann** getragen, wenn dessen freigegebener Scope diese Architektur-/Governance-Autorität ausdrücklich enthält. Es wird **kein** Nachfolge-Work-Package erzeugt und **keines** reserviert; `CO-WP-033` bleibt **nicht erzeugt und nicht reserviert** (§17). **Erst danach und erst mit einer vorhandenen Implementierung** werden die Gate-B-Punkte `B-1` bis `B-8` (§16.2) überhaupt bewertbar. Dieses Dokument trifft **keine** dieser Entscheidungen.

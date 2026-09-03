@@ -12,13 +12,15 @@
 > No-Mutation Evidence (`P-2`): method/plan **DEFINED** (§8.3) · Human-Maintainer-Disposition **APPROVED** (Gate-A-Punkt `A-12` erfüllt, [Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §16.1) · satisfaction **NOT SATISFIED** — Gate B, downstream of implementation and execution
 > Collection Mechanism (`P-3`): **SELECTED** — Mechanismusklasse ausdrücklich entschieden ([Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §7.5): Option A primär, Option B ausschließlich ergänzend, Option C nicht Standardweg, Option D und E für diesen Slice ausgeschlossen, **kein** Netzwerktransport. **Keine** Auswahl von Pfad, API, Bibliothek, Werkzeug, Sprache oder Runtime; **keine** Testimplementierungs- oder Testausführungsautorisierung.
 > Language / Runtime: **SELECTED** — **Go**, ausdrückliche Human-Maintainer-Entscheidung ([Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §8.4); ausgewählt ist ausschließlich die **Sprach-/Runtime-Klasse** für den ersten Observe-Slice. **Keine** Go-Version, **keine** Distribution, **keine** Toolchain, **kein** Testframework, **keine** Abhängigkeit; **keine** Testimplementierungs- oder Testausführungsautorisierung.
+> Source Tree: **DECIDED** — ausdrückliche Human-Maintainer-Entscheidung ([Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §9.2): repository-verwurzelte Go-Struktur, `cmd/coreops/`, `internal/observe/`, `internal/observe/collect/`; Normalisierung zunächst ohne eigenes Paket innerhalb `internal/observe/`. Künftige Testplatzierungspolitik: **colocated `*_test.go`**, **kein** Top-Level-`tests/`, paketlokales `testdata/` ausschließlich als **künftige** Fixture-Ablage, falls und sobald Fixture-/Testautorität besteht. **NOT CREATED** — **kein** Verzeichnis, **keine** Datei, **kein** `testdata/`, **kein** `go.mod`, **kein** `go.sum`. **Keine** Testframework-, Testdateinamen-, Testkonventions-, Fixture-, Testimplementierungs- oder Testausführungsauswahl und **keine** entsprechende Autorisierung.
 > Test Execution Authorization: Not granted
 > Normative Release: Not yet assigned
 > Normative Framework: NDF v1.0.0 (Tag `v1.0.0`, Commit `9dcadc1`) — `main` informativ, nicht normativ
 > Erzeugt durch `CO-WP-032` (docs-only / Observe Slice Contract and Productive-Code Transition Prerequisites)
 > Nachträgliche docs-only Änderung: konzeptioneller Mindestfall `OBS-LLH-TC-11` (heterogene All-Failure-Zusammensetzung, [Observation Contract](../architecture/OBSERVE_LOCAL_LINUX_HOST_OBSERVATION_CONTRACT.md) §10.5 **R6**) ergänzt; §13 auf den tatsächlichen Stand korrigiert. Grundlage ist die ausdrückliche Human-Maintainer-Entscheidung zur heterogenen All-Failure-Zusammensetzung; **kein** Decision-Identifier vergeben, **kein** ADR, **kein** neues und **kein** reserviertes Work Package. `OBS-LLH-TC-11` ist **nicht implementiert**, **nicht ausgeführt** und trägt `not run`.
 > Nachträgliche docs-only Current-State-Anwendung: Die freigegebene Human-Maintainer-`A-6`/`P-3`-Disposition ist angewandt. `P-3` ist **entschieden** (Mechanismusklasse, [Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §7.5); Gate-A-Punkt `A-6` ist **erfüllt**, Gate A stand nach dieser Anwendung auf **7 von 14 erfüllt, 0 teilweise, 7 offen — nicht passiert** (durch die spätere `A-7`-Anwendung fortgeschrieben, siehe folgende Zeile), Gate B unverändert auf **0 von 8 — nicht passiert**. Die Ausführungsvoraussetzungen (§10) bleiben **insgesamt unerfüllt**: Testimplementierung und Testausführung **NOT AUTHORIZED**, **0** Tests implementiert, **0** Tests ausgeführt, `P-2` **`NOT SATISFIED`**, jeder Fall unverändert `not run`. `OBS-LLH-TC-11`-Semantik, **R6**-Semantik, Ergebnis- und Ausgangsvokabulare, Emissions-Dispositionen und die `P-2`-Evidenzanforderungen aus §8.3 bleiben **unverändert**. Es entsteht **kein** Work Package, **keine** `CO-WP-033`, **kein** ADR und **keine** Decision-, Risk-, CCR-, Capability-, Support-Status-, Lessons- oder NDF-Feedback-Kennung.
-> Nachträgliche docs-only Current-State-Anwendung: Die freigegebene Human-Maintainer-`A-7`-Disposition ist angewandt. Die Sprach-/Runtime-Entscheidung ist **getroffen** — **Go**, ausschließlich als **Sprach-/Runtime-Klasse** für den ersten Observe-Slice ([Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §8.4); Gate-A-Punkt `A-7` ist **erfüllt**, Gate A steht auf **8 von 14 erfüllt, 0 teilweise, 6 offen — nicht passiert** (offen: `A-8`, `A-9`, `A-10`, `A-11`, `A-13`, `A-14`), Gate B unverändert auf **0 von 8 — nicht passiert**. Die Ausführungsvoraussetzungen (§10) bleiben **insgesamt unerfüllt**: Testimplementierung und Testausführung **NOT AUTHORIZED**, **0** Tests implementiert, **0** Tests ausgeführt, `P-2` **`NOT SATISFIED`**, Fixtures und Lab **nicht bereitgestellt**, `P-1` **`NOT AUTHORIZED`**, jeder Fall unverändert `not run`. `OBS-LLH-TC-11`-Semantik, **R6**-Semantik, Ergebnis- und Ausgangsvokabulare, Emissions-Dispositionen, Ebenenzuordnungen, Testintentionen, erwartete Ausgänge und die `P-2`-Evidenzanforderungen aus §8.3 bleiben **unverändert**. Es entsteht **kein** Work Package, **keine** `CO-WP-033`, **kein** ADR und **keine** Decision-, Risk-, CCR-, Capability-, Support-Status-, Lessons- oder NDF-Feedback-Kennung.
+> Nachträgliche docs-only Current-State-Anwendung: Die freigegebene Human-Maintainer-`A-7`-Disposition ist angewandt. Die Sprach-/Runtime-Entscheidung ist **getroffen** — **Go**, ausschließlich als **Sprach-/Runtime-Klasse** für den ersten Observe-Slice ([Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §8.4); Gate-A-Punkt `A-7` ist **erfüllt**, Gate A stand nach dieser Anwendung auf **8 von 14 erfüllt, 0 teilweise, 6 offen — nicht passiert** (durch die spätere `A-8`-Anwendung fortgeschrieben, siehe folgende Zeile; offen blieben `A-8`, `A-9`, `A-10`, `A-11`, `A-13`, `A-14`), Gate B unverändert auf **0 von 8 — nicht passiert**. Die Ausführungsvoraussetzungen (§10) bleiben **insgesamt unerfüllt**: Testimplementierung und Testausführung **NOT AUTHORIZED**, **0** Tests implementiert, **0** Tests ausgeführt, `P-2` **`NOT SATISFIED`**, Fixtures und Lab **nicht bereitgestellt**, `P-1` **`NOT AUTHORIZED`**, jeder Fall unverändert `not run`. `OBS-LLH-TC-11`-Semantik, **R6**-Semantik, Ergebnis- und Ausgangsvokabulare, Emissions-Dispositionen, Ebenenzuordnungen, Testintentionen, erwartete Ausgänge und die `P-2`-Evidenzanforderungen aus §8.3 bleiben **unverändert**. Es entsteht **kein** Work Package, **keine** `CO-WP-033`, **kein** ADR und **keine** Decision-, Risk-, CCR-, Capability-, Support-Status-, Lessons- oder NDF-Feedback-Kennung.
+> Nachträgliche docs-only Current-State-Anwendung: Die freigegebene Human-Maintainer-`A-8`-Disposition ist angewandt. Die Source-Tree-Entscheidung ist **getroffen** ([Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §9.2); Gate-A-Punkt `A-8` ist **erfüllt**, Gate A steht auf **9 von 14 erfüllt, 0 teilweise, 5 offen — nicht passiert** (offen: `A-9`, `A-10`, `A-11`, `A-13`, `A-14`), Gate B unverändert auf **0 von 8 — nicht passiert**. Für diesen Envelope folgt daraus ausschließlich eine **künftige Platzierungspolitik**: Tests künftig als **colocated `*_test.go`**-Dateien neben ihren Paketen, **kein** Top-Level-`tests/`, paketlokales `testdata/` ausschließlich als **künftige** Ablage für Fixtures, falls und sobald Fixture- und Testautorität besteht. Dieser Envelope bleibt ein **Governance-/Testdesign-Artefakt** und begründet **kein** Quellbaumverzeichnis; es wird **kein** Verzeichnis, **kein** `testdata/` und **keine** Testdatei angelegt. **Nicht** entschieden bleiben: Testframework, konkrete Testdateinamen, In-Package- gegen External-Package-Testkonvention, Fixture-Inhalt und Fixture-Identität. Die Ausführungsvoraussetzungen (§10) bleiben **insgesamt unerfüllt**: Testimplementierung und Testausführung **NOT AUTHORIZED**, **0** Tests implementiert, **0** Tests ausgeführt, `P-2` **`NOT SATISFIED`**, Fixtures und Lab **nicht bereitgestellt**, `P-1` **`NOT AUTHORIZED`**, jeder Fall unverändert `not run`. `OBS-LLH-TC-01`…`OBS-LLH-TC-11`-Identitäten und -Semantik, **R6**-Semantik, Ergebnis- und Ausgangsvokabulare, Emissions-Dispositionen, Ebenenzuordnungen, Testintentionen, erwartete und verbotene Ausgänge, die `P-2`-Evidenzanforderungen aus §8.3 und die No-Mutation-Anforderungen bleiben **unverändert**. Es entsteht **kein** Work Package, **keine** `CO-WP-033`, **kein** ADR und **keine** Decision-, Risk-, CCR-, Capability-, Support-Status-, Lessons- oder NDF-Feedback-Kennung; akzeptierte ADRs bleiben **0** und `A-11` bleibt **offen**.
 
 ## 1. Status
 
@@ -330,6 +332,10 @@ test strategy defined  != tests implemented
 P-2 evidence plan      != P-2 satisfied
 test design            != test execution
 read-only              != side-effect-free
+source tree decided          != test suite exists
+test placement decided       != test implemented
+testdata placement permitted != fixture authorized
+test design defined          != test execution authorized
 ```
 
 Und für die Autoritätsseite, damit dieses Dokument nicht als Vorbedingung für Gate A missverstanden wird:
@@ -349,6 +355,8 @@ Kein Fall dieses Envelopes ist heute ausführbar.
 
 > **Gate-Zuordnung.** Die folgende Liste ist eine **Ausführungs**-Voraussetzungsliste. Sie beschreibt, was vor **Testausführung und realer Beobachtung** vorliegen muss — Gate B im Sinne von [PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §16.2. **Keiner** ihrer Punkte ist eine Voraussetzung dafür, produktiven Quellcode zu schreiben oder zu autorisieren. Auf Gate-A-Ebene ist aus diesem Dokument ausschließlich verlangt, dass Testdesign und `P-2`-Evidenzmethode **definiert** sind — beides ist mit §7 und §8.3 der Fall, und die Human-Maintainer-Disposition dieser Definition ist erteilt (Gate-A-Punkt `A-12` **erfüllt**). An der folgenden Ausführungs-Voraussetzungsliste ändert das **nichts**: jeder Punkt bleibt offen, jeder Fall bleibt `not run`.
 
+> **Verhältnis zur Source-Tree-Entscheidung (`A-8`).** Die entschiedene Quellbaumstruktur ([Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §9.2) legt ausschließlich eine **künftige Platzierungspolitik** fest — colocated `*_test.go`, **kein** Top-Level-`tests/`, paketlokales `testdata/` nur als künftige Fixture-Ablage. An dieser Voraussetzungsliste ändert sie **nichts**: sie fügt **keinen** Punkt hinzu, erfüllt **keinen** Punkt und hebt **keinen** Punkt auf. Sie ist **keine** Testimplementierungs-, Testausführungs- oder Fixture-Autorisierung, wählt **kein** Testframework und legt **keine** Datei und **kein** Verzeichnis an. Jeder Punkt 3 bis 7 bleibt offen, jeder Fall bleibt `not run`.
+
 Eine spätere Ausführung erfordert **kumulativ** (konsistent mit Teststrategie §20, ergänzt um die Slice-Preconditions):
 
 1. `P-3` — Entscheidung über Erhebungsmechanismus und Transport (**`SELECTED`**) — **erfüllt**. Der Human Maintainer hat die **Mechanismusklasse** entschieden ([Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §7.5): Option A primär, Option B ausschließlich ergänzend, Option C nicht Standardweg, Option D und E für diesen Slice ausgeschlossen, **kein** Netzwerktransport. Das ist **keine** Ausführungsautorisierung und **keine** Auswahl von Pfad, API, Bibliothek, Werkzeug, Sprache oder Runtime.
@@ -367,7 +375,7 @@ Additiv. **Keine** Änderung an Teststrategie, Fixture-Governance, Lab-Modell, E
 
 ## 12. Open Questions
 
-- Konkrete Fixture-Klassen und -Revisionen je Fall — **offen**. Die `P-3`-Mechanismusklasse ist entschieden; die konkreten Fixture-Klassen und -Revisionen sind damit **nicht** bestimmt, **nicht** bereitgestellt und **nicht** freigegeben. Ihre Festlegung bleibt spätere, ausdrücklich zu autorisierende Arbeit.
+- Konkrete Fixture-Klassen und -Revisionen je Fall — **offen**. Die `P-3`-Mechanismusklasse ist entschieden; die konkreten Fixture-Klassen und -Revisionen sind damit **nicht** bestimmt, **nicht** bereitgestellt und **nicht** freigegeben. Auch die Source-Tree-Entscheidung bestimmt sie **nicht**: sie erlaubt lediglich ein **paketlokales** `testdata/` als **künftige** Ablage, falls und sobald Fixture- und Testautorität besteht — `testdata placement permitted != fixture authorized`. Ihre Festlegung bleibt spätere, ausdrücklich zu autorisierende Arbeit.
 - Environment-Profil für einen lokalen Linux-Host im Lab-Modell — **offen**. Die `P-3`-Entscheidung liefert **kein** Lab-Profil; es ist weder definiert noch bereitgestellt noch autorisiert.
 - Ob der Sentinel zusätzlich eine Langzeit-/Wiederholungsdimension benötigt (Regressionsvertrauen).
 - Welche Nebeneffekte am Ziel mit der später gewählten Methode überhaupt beobachtbar sind.
@@ -397,19 +405,51 @@ Gate B:                0 von 8 — nicht passiert
 ```text
 Sprache / Runtime:     SELECTED — Go (Sprach-/Runtime-Klasse, erster Observe-Slice)
                        Rust bleibt dokumentierte stärkste Alternative
-NICHT ausgewählt:      Go-Version · Distribution · Toolchain · Testframework ·
-                       Modul-/Paketlayout · konkrete API · Quellpfad ·
+NICHT ausgewählt       Go-Version · Distribution · Toolchain · Testframework ·
+(durch A-7):           Modul-/Paketlayout · konkrete API · Quellpfad ·
                        Abhängigkeit · Build/Packaging ·
                        breiterer Technologie-Stack
+                       (das Modul-/Paketlayout ist inzwischen durch die
+                       folgende Source-Tree-Entscheidung entschieden; die
+                       übrigen bleiben unausgewählt)
 A-7:                   erfüllt
 Gate A:                8 von 14 erfüllt, 0 teilweise, 6 offen — nicht passiert
-                       offen: A-8 · A-9 · A-10 · A-11 · A-13 · A-14
+                       (Stand dieser Anwendung; siehe die folgende
+                       Source-Tree-Anwendung)
+                       offen blieben: A-8 · A-9 · A-10 · A-11 · A-13 · A-14
 Gate B:                0 von 8 — nicht passiert
 ```
 
 Auch diese Entscheidung autorisiert **keine** Testimplementierung, **keine** Testausführung, **keinen** Zielzugriff und **keine** reale Beobachtung, erfüllt `P-2` **nicht** und ändert an diesem Envelope inhaltlich **nichts**: Testintentionen, erwartete Ausgänge, Ebenenzuordnungen, Ergebnis- und Ausgangsvokabulare, Emissions-Dispositionen sowie die sieben `P-2`-Evidenzanforderungen bleiben **unverändert**; **0** Tests implementiert, **0** Tests ausgeführt, jeder Fall unverändert `not run`.
 
 Die Entscheidung benennt **keinen** konkreten Quellpfad, **keine** API, **keine** Bibliothek, **kein** Kommando, **kein** Werkzeug, **keine** Sprache und **keine** Runtime. Sie autorisiert **keine** Testimplementierung, **keine** Testausführung, **keinen** Zielzugriff und **keine** reale Beobachtung, erfüllt `P-2` **nicht** und ändert an diesem Envelope inhaltlich **nichts**: **0** Tests implementiert, **0** Tests ausgeführt, jeder Fall unverändert `not run`.
+
+**Die Source-Tree-Entscheidung ist getroffen.** Der Human Maintainer hat die Quellbaumstruktur für den ersten Observe-Slice ausgewählt ([Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §9.2). Gate-A-Punkt `A-8` ist damit **erfüllt**.
+
+```text
+Source Tree:           DECIDED — repository-verwurzelte Go-Struktur
+                       cmd/coreops/ · internal/observe/ ·
+                       internal/observe/collect/
+                       Normalisierung zunächst ohne eigenes Paket innerhalb
+                       internal/observe/
+Testplatzierung:       künftig colocated *_test.go
+                       kein Top-Level-tests/
+                       paketlokales testdata/ nur als künftige Fixture-Ablage,
+                       falls und sobald Fixture-/Testautorität besteht
+NICHT ausgewählt:      Testframework · konkrete Testdateinamen ·
+                       In-Package- gegen External-Package-Testkonvention ·
+                       Fixture-Inhalt · Fixture-Identität · Modulpfad ·
+                       Go-Version · Distribution · Toolchain · Abhängigkeit ·
+                       Build/Packaging
+NICHT angelegt:        Verzeichnis · Datei · cmd/ · internal/ · testdata/ ·
+                       go.mod · go.sum · Testdatei · Fixture
+A-8:                   erfüllt
+Gate A:                9 von 14 erfüllt, 0 teilweise, 5 offen — nicht passiert
+                       offen: A-9 · A-10 · A-11 · A-13 · A-14
+Gate B:                0 von 8 — nicht passiert
+```
+
+Auch diese Entscheidung autorisiert **keine** Testimplementierung, **keine** Testausführung, **keine** Fixture, **keinen** Zielzugriff und **keine** reale Beobachtung, erfüllt `P-2` **nicht** und ändert an diesem Envelope inhaltlich **nichts**: Testfall-Identitäten, Testintentionen, erwartete und verbotene Ausgänge, Ebenenzuordnungen, Ergebnis- und Ausgangsvokabulare, Emissions-Dispositionen sowie die sieben `P-2`-Evidenzanforderungen bleiben **unverändert**; **0** Tests implementiert, **0** Tests ausgeführt, jeder Fall unverändert `not run`. Sie entscheidet ausschließlich eine **künftige Platzierungspolitik** — `test placement decided != test implemented`.
 
 **Im Übrigen unverändert und ausdrücklich nicht erteilt:**
 
@@ -423,6 +463,10 @@ P-2 Evidenzplan:       DEFINED / HUMAN-MAINTAINER-DISPOSITION APPROVED
 P-2 Erfüllung:         NOT SATISFIED
 Sprache / Runtime:     SELECTED — Go (nur Klasse; keine Version, keine
                        Toolchain, kein Testframework, keine Implementierung)
+Source Tree:           DECIDED — nicht angelegt; nur künftige Platzierungs-
+                       politik (colocated *_test.go; kein Top-Level-tests/;
+                       paketlokales testdata/ nur künftig und nur bei später
+                       bestehender Fixture-/Testautorität)
 Tests implementiert:   0
 Tests ausgeführt:      0
 ```

@@ -30,12 +30,49 @@ project:
                                  # docs-only. Aktuell laeuft ausschliesslich
                                  # dokumentations- und governanceorientierte
                                  # Vertrags- und Uebergangsarbeit.
+                                 # Entschieden (Gate A, jeweils eigene,
+                                 # ausdrueckliche Human-Maintainer-Entscheidung,
+                                 # jeweils ohne ADR und ohne Decision-ID):
+                                 # P-3 Erhebungsmechanismus AUSGEWAEHLT -
+                                 # ausschliesslich als Mechanismusklasse
+                                 # (Option A primaer, Option B ausschliesslich
+                                 # ergaenzend, Option C nicht Standardweg,
+                                 # Option D und E ausgeschlossen, kein
+                                 # Netzwerktransport); A-6 erfuellt.
+                                 # Sprache/Runtime AUSGEWAEHLT - Go,
+                                 # ausschliesslich als Sprach-/Runtime-Klasse
+                                 # fuer den ersten Observe-Slice; A-7 erfuellt.
+                                 # Source Tree ENTSCHIEDEN - repository-
+                                 # verwurzelte Go-Struktur: cmd/coreops/,
+                                 # internal/observe/, internal/observe/collect/;
+                                 # Normalisierung zunaechst ohne eigenes Paket
+                                 # innerhalb internal/observe/; Tests kuenftig
+                                 # colocated *_test.go; kein pkg/, kein src/,
+                                 # kein Top-Level-tests/, keine oeffentliche
+                                 # Go-API; A-8 erfuellt.
+                                 # Gate A: 9 von 14 erfuellt, 0 teilweise,
+                                 # 5 offen - NICHT PASSIERT (offen: A-9, A-10,
+                                 # A-11, A-13, A-14). Gate B: 0 von 8 -
+                                 # NICHT PASSIERT.
                                  # Impliziert NICHT: Implementierung autorisiert
                                  # oder begonnen;
                                  # NICHT: produktiver Anwendungscode autorisiert
                                  # oder vorhanden;
-                                 # NICHT: Sprache oder Runtime ausgewaehlt;
-                                 # NICHT: Erhebungsmechanismus ausgewaehlt (P-3);
+                                 # NICHT: Source Tree angelegt - kein cmd/,
+                                 # kein internal/, kein testdata/, keine
+                                 # Quelldatei, keine Testdatei, keine Fixture;
+                                 # die Anlage neuer Top-Level-Struktur bleibt
+                                 # nach Repository Governance Standard
+                                 # Abschnitt 12 eigenstaendig gate-pflichtig;
+                                 # NICHT: go.mod oder go.sum angelegt oder
+                                 # autorisiert; Modulpfad, Go-Version,
+                                 # Distribution und Toolchain-Version nicht
+                                 # entschieden;
+                                 # NICHT: Abhaengigkeit zugelassen (0 zugelassen,
+                                 # Admission-Gate nicht in Kraft, A-9 offen);
+                                 # NICHT: Build/Packaging entschieden (A-13 offen);
+                                 # NICHT: ADR erzeugt oder akzeptiert
+                                 # (akzeptierte ADRs 0, A-11 offen);
                                  # NICHT: Zielzugriff autorisiert (P-1);
                                  # NICHT: No-Mutation-Evidenz erbracht (P-2);
                                  # NICHT: reale Beobachtung durchgefuehrt;
