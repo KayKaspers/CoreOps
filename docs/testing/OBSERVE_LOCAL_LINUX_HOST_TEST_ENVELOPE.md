@@ -11,13 +11,14 @@
 > Target Authorization (`P-1`): Not authorized — Gate B; **not** a prerequisite for writing productive code
 > No-Mutation Evidence (`P-2`): method/plan **DEFINED** (§8.3) · Human-Maintainer-Disposition **APPROVED** (Gate-A-Punkt `A-12` erfüllt, [Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §16.1) · satisfaction **NOT SATISFIED** — Gate B, downstream of implementation and execution
 > Collection Mechanism (`P-3`): **SELECTED** — Mechanismusklasse ausdrücklich entschieden ([Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §7.5): Option A primär, Option B ausschließlich ergänzend, Option C nicht Standardweg, Option D und E für diesen Slice ausgeschlossen, **kein** Netzwerktransport. **Keine** Auswahl von Pfad, API, Bibliothek, Werkzeug, Sprache oder Runtime; **keine** Testimplementierungs- oder Testausführungsautorisierung.
-> Language / Runtime: Not selected
+> Language / Runtime: **SELECTED** — **Go**, ausdrückliche Human-Maintainer-Entscheidung ([Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §8.4); ausgewählt ist ausschließlich die **Sprach-/Runtime-Klasse** für den ersten Observe-Slice. **Keine** Go-Version, **keine** Distribution, **keine** Toolchain, **kein** Testframework, **keine** Abhängigkeit; **keine** Testimplementierungs- oder Testausführungsautorisierung.
 > Test Execution Authorization: Not granted
 > Normative Release: Not yet assigned
 > Normative Framework: NDF v1.0.0 (Tag `v1.0.0`, Commit `9dcadc1`) — `main` informativ, nicht normativ
 > Erzeugt durch `CO-WP-032` (docs-only / Observe Slice Contract and Productive-Code Transition Prerequisites)
 > Nachträgliche docs-only Änderung: konzeptioneller Mindestfall `OBS-LLH-TC-11` (heterogene All-Failure-Zusammensetzung, [Observation Contract](../architecture/OBSERVE_LOCAL_LINUX_HOST_OBSERVATION_CONTRACT.md) §10.5 **R6**) ergänzt; §13 auf den tatsächlichen Stand korrigiert. Grundlage ist die ausdrückliche Human-Maintainer-Entscheidung zur heterogenen All-Failure-Zusammensetzung; **kein** Decision-Identifier vergeben, **kein** ADR, **kein** neues und **kein** reserviertes Work Package. `OBS-LLH-TC-11` ist **nicht implementiert**, **nicht ausgeführt** und trägt `not run`.
-> Nachträgliche docs-only Current-State-Anwendung: Die freigegebene Human-Maintainer-`A-6`/`P-3`-Disposition ist angewandt. `P-3` ist **entschieden** (Mechanismusklasse, [Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §7.5); Gate-A-Punkt `A-6` ist **erfüllt**, Gate A steht auf **7 von 14 erfüllt, 0 teilweise, 7 offen — nicht passiert**, Gate B unverändert auf **0 von 8 — nicht passiert**. Die Ausführungsvoraussetzungen (§10) bleiben **insgesamt unerfüllt**: Testimplementierung und Testausführung **NOT AUTHORIZED**, **0** Tests implementiert, **0** Tests ausgeführt, `P-2` **`NOT SATISFIED`**, jeder Fall unverändert `not run`. `OBS-LLH-TC-11`-Semantik, **R6**-Semantik, Ergebnis- und Ausgangsvokabulare, Emissions-Dispositionen und die `P-2`-Evidenzanforderungen aus §8.3 bleiben **unverändert**. Es entsteht **kein** Work Package, **keine** `CO-WP-033`, **kein** ADR und **keine** Decision-, Risk-, CCR-, Capability-, Support-Status-, Lessons- oder NDF-Feedback-Kennung.
+> Nachträgliche docs-only Current-State-Anwendung: Die freigegebene Human-Maintainer-`A-6`/`P-3`-Disposition ist angewandt. `P-3` ist **entschieden** (Mechanismusklasse, [Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §7.5); Gate-A-Punkt `A-6` ist **erfüllt**, Gate A stand nach dieser Anwendung auf **7 von 14 erfüllt, 0 teilweise, 7 offen — nicht passiert** (durch die spätere `A-7`-Anwendung fortgeschrieben, siehe folgende Zeile), Gate B unverändert auf **0 von 8 — nicht passiert**. Die Ausführungsvoraussetzungen (§10) bleiben **insgesamt unerfüllt**: Testimplementierung und Testausführung **NOT AUTHORIZED**, **0** Tests implementiert, **0** Tests ausgeführt, `P-2` **`NOT SATISFIED`**, jeder Fall unverändert `not run`. `OBS-LLH-TC-11`-Semantik, **R6**-Semantik, Ergebnis- und Ausgangsvokabulare, Emissions-Dispositionen und die `P-2`-Evidenzanforderungen aus §8.3 bleiben **unverändert**. Es entsteht **kein** Work Package, **keine** `CO-WP-033`, **kein** ADR und **keine** Decision-, Risk-, CCR-, Capability-, Support-Status-, Lessons- oder NDF-Feedback-Kennung.
+> Nachträgliche docs-only Current-State-Anwendung: Die freigegebene Human-Maintainer-`A-7`-Disposition ist angewandt. Die Sprach-/Runtime-Entscheidung ist **getroffen** — **Go**, ausschließlich als **Sprach-/Runtime-Klasse** für den ersten Observe-Slice ([Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §8.4); Gate-A-Punkt `A-7` ist **erfüllt**, Gate A steht auf **8 von 14 erfüllt, 0 teilweise, 6 offen — nicht passiert** (offen: `A-8`, `A-9`, `A-10`, `A-11`, `A-13`, `A-14`), Gate B unverändert auf **0 von 8 — nicht passiert**. Die Ausführungsvoraussetzungen (§10) bleiben **insgesamt unerfüllt**: Testimplementierung und Testausführung **NOT AUTHORIZED**, **0** Tests implementiert, **0** Tests ausgeführt, `P-2` **`NOT SATISFIED`**, Fixtures und Lab **nicht bereitgestellt**, `P-1` **`NOT AUTHORIZED`**, jeder Fall unverändert `not run`. `OBS-LLH-TC-11`-Semantik, **R6**-Semantik, Ergebnis- und Ausgangsvokabulare, Emissions-Dispositionen, Ebenenzuordnungen, Testintentionen, erwartete Ausgänge und die `P-2`-Evidenzanforderungen aus §8.3 bleiben **unverändert**. Es entsteht **kein** Work Package, **keine** `CO-WP-033`, **kein** ADR und **keine** Decision-, Risk-, CCR-, Capability-, Support-Status-, Lessons- oder NDF-Feedback-Kennung.
 
 ## 1. Status
 
@@ -72,7 +73,7 @@ test passed        != observation succeeded
 observation_outcome = the expectation a test case asserts against
 ```
 
-Ebenenzuordnung folgt der bestehenden Taxonomie (§8 der Teststrategie). Eine Ebenenzuordnung, die von der konkreten Realisierung des Erhebungsmechanismus abhängt, ist als **`level assignment pending concrete implementation/runtime realization; P-3 selected`** gekennzeichnet und **nicht** vorentschieden. Die `P-3`-**Mechanismusklasse** ist entschieden ([Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §7.5); die konkrete Implementierungs- und Runtime-Realisierung ist es **nicht** — Sprache/Runtime bleiben **`NOT SELECTED`**, es existiert **keine** Testimplementierung und **keine** Testausführungsautorisierung. Die Markierung bleibt daher — mit dieser präzisierten Formulierung — bestehen.
+Ebenenzuordnung folgt der bestehenden Taxonomie (§8 der Teststrategie). Eine Ebenenzuordnung, die von der konkreten Realisierung des Erhebungsmechanismus abhängt, ist als **`level assignment pending concrete implementation/runtime realization; P-3 selected`** gekennzeichnet und **nicht** vorentschieden. Die `P-3`-**Mechanismusklasse** ist entschieden ([Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §7.5); die konkrete Implementierungs- und Runtime-Realisierung ist es **nicht**: die Sprach-/Runtime-**Klasse** ist zwar entschieden (**Go**, [Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §8.4), aber es sind **keine** Go-Version, **keine** Toolchain, **kein** Testframework, **keine** konkrete API und **keine** Implementierung ausgewählt; es existiert **keine** Testimplementierung und **keine** Testausführungsautorisierung. `Sprach-/Runtime-Klasse ausgewählt != konkrete Implementierungs-/Runtime-Realisierung`. Die Markierung bleibt daher — mit dieser präzisierten Formulierung — bestehen.
 
 ## 7. Mindestfälle
 
@@ -351,14 +352,14 @@ Kein Fall dieses Envelopes ist heute ausführbar.
 Eine spätere Ausführung erfordert **kumulativ** (konsistent mit Teststrategie §20, ergänzt um die Slice-Preconditions):
 
 1. `P-3` — Entscheidung über Erhebungsmechanismus und Transport (**`SELECTED`**) — **erfüllt**. Der Human Maintainer hat die **Mechanismusklasse** entschieden ([Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §7.5): Option A primär, Option B ausschließlich ergänzend, Option C nicht Standardweg, Option D und E für diesen Slice ausgeschlossen, **kein** Netzwerktransport. Das ist **keine** Ausführungsautorisierung und **keine** Auswahl von Pfad, API, Bibliothek, Werkzeug, Sprache oder Runtime.
-2. Sprach-/Runtime-Entscheidung (**`NOT SELECTED`**).
+2. Sprach-/Runtime-Entscheidung (**`SELECTED` — Go**) — **erfüllt**. Der Human Maintainer hat die **Sprach-/Runtime-Klasse** für den ersten Observe-Slice entschieden ([Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §8.4). Das ist **keine** Ausführungsautorisierung und **keine** Auswahl von Go-Version, Distribution, Toolchain, Testframework, konkreter API oder Abhängigkeit.
 3. Implementierung des Beobachtungspfads (**nicht autorisiert**).
 4. Freigegebene Fixtures mit Identity, Revision und Provenance (**existieren nicht**).
 5. Bereitgestelltes Lab-Environment mit deklarierter Environment Identity (**nicht bereitgestellt**).
 6. `P-1` — separate Human-Maintainer-Zielautorisierung (**`NOT AUTHORIZED`**).
 7. Explizite Human-Maintainer-Autorisierung der **Testausführung** (**nicht erteilt**).
 
-Punkt 1 ist **erfüllt**; die Punkte 2 bis 7 bleiben **offen**. Die Ausführungs-Voraussetzungsmenge bleibt damit **insgesamt unerfüllt**. Solange auch nur eine dieser Voraussetzungen offen ist, bleibt jeder Fall `not run` — und `not run != passed`. Es sind **0** Tests implementiert und **0** Tests ausgeführt; `P-2` bleibt **`NOT SATISFIED`**.
+Die Punkte 1 und 2 sind **erfüllt**; die Punkte 3 bis 7 bleiben **offen**. Die Ausführungs-Voraussetzungsmenge bleibt damit **insgesamt unerfüllt**. Solange auch nur eine dieser Voraussetzungen offen ist, bleibt jeder Fall `not run` — und `not run != passed`. Es sind **0** Tests implementiert und **0** Tests ausgeführt; `P-2` bleibt **`NOT SATISFIED`**.
 
 ## 11. Compatibility
 
@@ -386,8 +387,27 @@ P-3:                   SELECTED — Mechanismusklasse
                        kein Netzwerktransport
 A-6:                   erfüllt
 Gate A:                7 von 14 erfüllt, 0 teilweise, 7 offen — nicht passiert
+                       (Stand dieser Anwendung; siehe die folgende
+                       Sprach-/Runtime-Anwendung)
 Gate B:                0 von 8 — nicht passiert
 ```
+
+**Die Sprach-/Runtime-Entscheidung ist getroffen.** Der Human Maintainer hat die **Sprach-/Runtime-Klasse** für den ersten Observe-Slice ausgewählt ([Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §8.4). Gate-A-Punkt `A-7` ist damit **erfüllt**.
+
+```text
+Sprache / Runtime:     SELECTED — Go (Sprach-/Runtime-Klasse, erster Observe-Slice)
+                       Rust bleibt dokumentierte stärkste Alternative
+NICHT ausgewählt:      Go-Version · Distribution · Toolchain · Testframework ·
+                       Modul-/Paketlayout · konkrete API · Quellpfad ·
+                       Abhängigkeit · Build/Packaging ·
+                       breiterer Technologie-Stack
+A-7:                   erfüllt
+Gate A:                8 von 14 erfüllt, 0 teilweise, 6 offen — nicht passiert
+                       offen: A-8 · A-9 · A-10 · A-11 · A-13 · A-14
+Gate B:                0 von 8 — nicht passiert
+```
+
+Auch diese Entscheidung autorisiert **keine** Testimplementierung, **keine** Testausführung, **keinen** Zielzugriff und **keine** reale Beobachtung, erfüllt `P-2` **nicht** und ändert an diesem Envelope inhaltlich **nichts**: Testintentionen, erwartete Ausgänge, Ebenenzuordnungen, Ergebnis- und Ausgangsvokabulare, Emissions-Dispositionen sowie die sieben `P-2`-Evidenzanforderungen bleiben **unverändert**; **0** Tests implementiert, **0** Tests ausgeführt, jeder Fall unverändert `not run`.
 
 Die Entscheidung benennt **keinen** konkreten Quellpfad, **keine** API, **keine** Bibliothek, **kein** Kommando, **kein** Werkzeug, **keine** Sprache und **keine** Runtime. Sie autorisiert **keine** Testimplementierung, **keine** Testausführung, **keinen** Zielzugriff und **keine** reale Beobachtung, erfüllt `P-2` **nicht** und ändert an diesem Envelope inhaltlich **nichts**: **0** Tests implementiert, **0** Tests ausgeführt, jeder Fall unverändert `not run`.
 
@@ -401,7 +421,8 @@ Lab-Environment:       nicht bereitgestellt
 P-1 / Zielzugriff:     NOT AUTHORIZED
 P-2 Evidenzplan:       DEFINED / HUMAN-MAINTAINER-DISPOSITION APPROVED
 P-2 Erfüllung:         NOT SATISFIED
-Sprache / Runtime:     NOT SELECTED
+Sprache / Runtime:     SELECTED — Go (nur Klasse; keine Version, keine
+                       Toolchain, kein Testframework, keine Implementierung)
 Tests implementiert:   0
 Tests ausgeführt:      0
 ```

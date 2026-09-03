@@ -8,8 +8,8 @@
 > Work Package: `CO-WP-032`, primärer Typ `docs-only` — autorisiert durch `HM-O3` `APPROVED`; Ausführungsgrenze `HM-O4` `APPROVED WITH EXACT BOUNDARY` (docs-only)
 > Successor Work Package: none created, none reserved
 > Implementation Status: Not implemented
-> Collection Mechanism (`P-3`): Not selected
-> Language / Runtime: Not selected
+> Collection Mechanism (`P-3`): **SELECTED** — ausschließlich als **Mechanismusklasse**, entschieden **außerhalb** dieses Vertrags ([PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §7.5): Option A primär, Option B ausschließlich ergänzend, Option C **nicht** Standardweg, Option D und E für diesen Slice ausgeschlossen, **kein** Netzwerktransport. **Kein** konkreter Quellpfad, **keine** API, **keine** Bibliothek, **kein** Werkzeug und **kein** Erhebungsintervall ausgewählt; die `target_id`-Ableitungsregel ist dadurch **nicht** entschieden.
+> Language / Runtime: **SELECTED** — ausschließlich als **Sprach-/Runtime-Klasse** für den ersten Observe-Slice: **Go**, entschieden **außerhalb** dieses Vertrags ([PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §8.4). **Keine** Go-Version, **keine** Distribution, **keine** Toolchain, **keine** API, **keine** Bibliothek, **kein** Paket-/Modulname, **kein** Quellpfad, **keine** Implementierung und **kein** breiterer Technologie-Stack ausgewählt. Dieser Vertrag bleibt **technologieunabhängig**.
 > Target Authorization (`P-1`): Not authorized
 > No-Mutation Evidence (`P-2`): Not satisfied
 > Tests implemented / executed: None / None
@@ -19,6 +19,7 @@
 > Normative Framework: NDF v1.0.0 (Tag `v1.0.0`, Commit `9dcadc1`) — `main` informativ, nicht normativ
 > Erzeugt durch `CO-WP-032` (docs-only / Observe Slice Contract and Productive-Code Transition Prerequisites)
 > Nachträgliche docs-only Änderung: Regel **R6** — heterogene All-Failure-Zusammensetzung — ergänzt in §9, §10.4, §10.5, §22 und §23 (kanonische Nicht-Emission bei evidenzerhaltender Retention des erzeugten Materials). Grundlage ist die ausdrückliche Human-Maintainer-Entscheidung zur heterogenen All-Failure-Zusammensetzung; **kein** Decision-Identifier vergeben, **kein** ADR, **keine** Risk-, CCR- oder Capability-Kennung, **kein** neues und **kein** reserviertes Work Package.
+> Nachträgliche docs-only Current-State-Reconciliation: Die veralteten Statusaussagen zu `P-3` und zur Sprach-/Runtime-Frage sind auf den tatsächlichen Stand gebracht (Kopf, §4, §8.3, §13, §14, §20, §22, §23). Beide Entscheidungen sind **außerhalb** dieses Vertrags durch eigene, ausdrückliche Human-Maintainer-Entscheidungen getroffen und in [PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §7.5 und §8.4 dokumentiert. Diese Reconciliation ist **ausschließlich** eine Statusangleichung: die normative Beobachtungssemantik dieses Vertrags — Feldidentitäten, Feld-/Semantikmatrix, Envelope-Semantik, das achtwertige `observation_outcome`-Vokabular, das neunwertige Feld-Vokabular, die drei Emissions-Dispositionen, **R1** bis **R6**, Raw-/Normalized-Trennung, Provenance-Anforderungen, `observed_at`/`received_at`, Freshness-Vokabular, Absenz-/Fehlersemantik, Modulautorität, Sicherheitsinvarianten und `target_id`-Semantik — bleibt **unverändert**. Es entsteht **kein** Work Package, **kein** ADR, **keine** ADR-Nummer und **keine** Decision-, Risk-, CCR-, Capability-, Support-Status-, Lessons- oder NDF-Feedback-Kennung; akzeptierte ADRs bleiben **0**.
 
 ## 1. Status
 
@@ -44,7 +45,7 @@ Beobachtungsidentität · Beobachtungssubjekt · `target_id`-Semantik · Hostnam
 
 ## 4. Non-Goals
 
-- **Kein** Erhebungsmechanismus, **kein** Transport, **kein** Agent/Agentless-Entscheid (`P-3` bleibt `NOT SELECTED`).
+- **Kein** Erhebungsmechanismus, **kein** Transport, **kein** Agent/Agentless-Entscheid — dieser Vertrag trifft **keine** solche Auswahl. Die `P-3`-**Mechanismusklasse** ist außerhalb dieses Vertrags entschieden ([PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §7.5); ihre konkrete Realisierung — Quellpfad, API, Bibliothek, Werkzeug, Erhebungsintervall — ist es **nicht**.
 - **Keine** Sprache, **kein** Runtime, **kein** Schemaformat, **kein** Serialisierungsformat, **keine** Storage-Technologie.
 - **Keine** Health-Semantik, **kein** Score, **kein** Aggregat, **kein** Statusrollup.
 - **Keine** Discovery über den lokalen Host hinaus, **kein** Netzwerkziel, **keine** Credentials, **keine** Secrets, **keine** privilegierte Ausführung.
@@ -137,7 +138,7 @@ target_id stable           != identity verified
 
 ### 8.3 Identitätsableitung
 
-Die konkrete Ableitungsregel für `target_id` ist **offen** und an `P-3` gebunden. Verbindlich ist nur:
+Die konkrete Ableitungsregel für `target_id` ist **offen**. Sie ist an die konkrete `P-3`-**Realisierung** gebunden: die `P-3`-Mechanismusklasse ist zwar entschieden, die Ableitungsregel dadurch aber ausdrücklich **nicht** (`mechanism class selected != target_id derivation decided`). Verbindlich ist nur:
 
 - `target_id` ist innerhalb der Beobachtungsdomäne stabil und nicht wiederverwendbar zu behandeln ([Repository Governance Standard](../governance/REPOSITORY_GOVERNANCE_STANDARD.md) §13).
 - `hostname` ist **kein** `target_id`. Ein Hostname ist ein **beobachtetes Feld**: veränderlich, nicht eindeutig und als Identität nicht tragfähig.
@@ -408,7 +409,7 @@ collection mechanism class != selected technology
 
 Ein Feld ohne verwertbare Provenance ist **nicht** verwendbar: sein `field_observation_outcome` lautet `provenance-invalid` (Feld-Vokabular §10.3 — **kein** `observation_outcome`-Wert), seine Emissions-Disposition lautet `field-withheld` (§10.4), und es fließt **nicht** in eine normalisierte Repräsentation ein (fail-closed). Betrifft der Provenance-Defekt `target_id` oder alle sonst beobachteten Felder, greifen §10.5 R1 beziehungsweise R5: der Datensatz wird `record-discarded` und es wird **kein** `observation_outcome` behauptet.
 
-`collection_mechanism_class` benennt bewusst eine **Klasse**, nicht ein Werkzeug — die Werkzeug- und Transportwahl ist `P-3` und **nicht getroffen**.
+`collection_mechanism_class` benennt bewusst eine **Klasse**, nicht ein Werkzeug. Die **Werkzeugwahl** ist **nicht getroffen**; außerhalb dieses Vertrags entschieden sind ausschließlich die `P-3`-**Mechanismusklasse** und der Transport (**kein** Netzwerktransport) — **kein** konkretes Werkzeug, **keine** konkrete Quelle und **keine** konkrete API ([PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §7.5). An der Provenance-Anforderung ändert das **nichts**.
 
 ## 14. Freshness-Modell (bounded)
 
@@ -441,7 +442,7 @@ unknown freshness != current
 | `os_release`, `kernel_release` | mittelfristig | Grenze an Update-/Reboot-Rhythmus zu binden |
 | `hostname` | administrativ jederzeit änderbar | kurze Grenze; niedrige Beständigkeitsannahme |
 
-Zahlenwerte werden hier **bewusst nicht** gesetzt: die sinnvolle Grenze hängt vom Erhebungsintervall ab, das an `P-3` gebunden und **nicht entschieden** ist. Die Schwellenfestlegung ist eine spätere, ausdrücklich Human-Maintainer-gebundene Entscheidung.
+Zahlenwerte werden hier **bewusst nicht** gesetzt: die sinnvolle Grenze hängt vom **Erhebungsintervall** ab. Die `P-3`-Mechanismusklasse ist entschieden, das Erhebungsintervall selbst ist es **nicht** (`mechanism class selected != collection cadence selected`). Die Schwellenfestlegung ist eine spätere, ausdrücklich Human-Maintainer-gebundene Entscheidung.
 
 ## 15. Absenz- und Fehlersemantik
 
@@ -513,7 +514,23 @@ Bestehende Szenarien, **keine** neuen IDs: THR-012 und THR-013 (Telemetrie, stal
 
 ## 20. Technology Boundary
 
-**Nicht ausgewählt:** Erhebungsmechanismus · Transport · Agent/Agentless · Sprache · Runtime · Schemaformat · Serialisierung · Storage · Scheduler · Zeitquelle · Parserbibliothek. `P-3` bleibt `NOT SELECTED`; die Decision-Pakete stehen in [PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) und sind `PROPOSED / UNACCEPTED`.
+**Durch diesen Vertrag nicht ausgewählt:** Erhebungsmechanismus · Transport · Agent/Agentless · Sprache · Runtime · Schemaformat · Serialisierung · Storage · Scheduler · Zeitquelle · Parserbibliothek. Dieser Vertrag bleibt **technologieunabhängig** und trifft **keine** dieser Auswahlen.
+
+**Stand außerhalb dieses Vertrags (Current State).** Zwei eng begrenzte Entscheidungen sind durch eigene, ausdrückliche Human-Maintainer-Entscheidungen getroffen und in [PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) dokumentiert: `P-3` ist **`SELECTED`** — ausschließlich als **Mechanismusklasse** (dort §7.5: Option A primär, Option B ausschließlich ergänzend, Option C nicht Standardweg, Option D und E für diesen Slice ausgeschlossen, **kein** Netzwerktransport) — und die **Sprach-/Runtime-Klasse** ist **`SELECTED`**: **Go** (dort §8.4), ausschließlich als Klasse für den ersten Observe-Slice. **Nicht** ausgewählt bleiben: konkreter Quellpfad · konkrete API · Bibliothek · Werkzeug · Erhebungsintervall · Go-Version · Distribution · Toolchain · Modul-/Paketlayout · Schemaformat · Serialisierung · Storage · Scheduler · Zeitquelle · Parserbibliothek · breiterer Technologie-Stack. Die übrigen dortigen Decision-Pakete — Source Tree sowie `README`/`LICENSE` — bleiben `PROPOSED / UNACCEPTED`.
+
+Für diesen Vertrag folgt daraus **nichts**: er führt **keine** sprachspezifischen Typen, Schnittstellen, Schemata, Paket- oder Modulnamen, APIs, Quellpfade oder Implementierungskonventionen ein, und seine normative Beobachtungssemantik bleibt **unverändert**.
+
+```text
+mechanism class selected        != source path selected
+mechanism class selected        != API selected
+mechanism class selected        != collection cadence selected
+mechanism class selected        != target_id derivation decided
+language/runtime class selected != language version selected
+language/runtime class selected != toolchain selected
+language/runtime class selected != implementation selected
+language/runtime class selected != broader technology stack selected
+technology decided outside      != this contract changed
+```
 
 ## 21. Compatibility
 
@@ -525,8 +542,8 @@ Additiv und spezialisierend. **Kein** Parallelmodell zu State-, Provenance-, Tel
 
 Weiterhin offen:
 
-- Ableitungsregel und Stabilitätsgarantie für `target_id` (an `P-3` gebunden).
-- Konkrete Freshness-Schwellen je Feldgruppe (erst nach `P-3`, dann Human-Maintainer-gebunden).
+- Ableitungsregel und Stabilitätsgarantie für `target_id` — an die konkrete `P-3`-**Realisierung** gebunden; die entschiedene Mechanismusklasse entscheidet sie **nicht**.
+- Konkrete Freshness-Schwellen je Feldgruppe — erst nach der konkreten `P-3`-Realisierung und dem daraus folgenden Erhebungsintervall, dann Human-Maintainer-gebunden.
 - Ob und wo `received_at` im Slice überhaupt materiell getrennt auftritt.
 - Ob eine Evidence Reference je Observation verpflichtend wird oder bedingt bleibt.
 - Kanonische Feld-IDs und ihre Versionierung (bewusst nicht hier festgelegt).
@@ -537,18 +554,26 @@ Weiterhin offen:
 
 Der vorliegende R6-Nachtrag ist eine docs-only Änderung im Arbeitsverzeichnis. Staging, Commit, Push, Tag und jede weitere Repository-Aktion liegen unverändert **ausschließlich** beim Human Maintainer ([Repository Governance Standard](../governance/REPOSITORY_GOVERNANCE_STANDARD.md) §6). Ein künftiger Integrationsstand dieses Nachtrags wird hier **nicht** vorweggenommen und **kein** Commit-Identifier dafür vorhergesagt.
 
-**Offen — und jeweils nur durch eine eigene, ausdrückliche Human-Maintainer-Entscheidung:** die verbleibenden Gate-A-Punkte ([PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §16.1), insbesondere `P-3` (Erhebungsmechanismus), die Sprach-/Runtime-Entscheidung und die übrigen Dispositionen; **erst danach und erst mit vorhandener Implementierung** werden `P-1` (Zielautorisierung) und die Gate-B-Punkte (§16.2) überhaupt bewertbar.
+**Offen — und jeweils nur durch eine eigene, ausdrückliche Human-Maintainer-Entscheidung:** die verbleibenden **sechs** Gate-A-Punkte ([PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §16.1) — Source-Tree-Entscheidung (`A-8`), Dependency-Admission (`A-9`), `NEW-8` / `README`-`LICENSE` (`A-10`), ADR-/Decision-Disposition (`A-11`), Build-/Packaging-Disposition (`A-13`) und ein ausdrücklich autorisiertes implementierungsorientiertes Work Package (`A-14`). **Nicht** mehr offen sind `P-3` (`A-6`) und die Sprach-/Runtime-Entscheidung (`A-7`): beide sind ausschließlich als **Klasse** entschieden, autorisieren **keine** Implementierung und ändern diesen Vertrag **nicht**. **Erst danach und erst mit vorhandener Implementierung** werden `P-1` (Zielautorisierung) und die Gate-B-Punkte (§16.2) überhaupt bewertbar.
 
 ```text
-Gate A:            NOT PASSED
-Gate B:            NOT PASSED
+Gate A:            NOT PASSED — 8 von 14 erfüllt, 0 teilweise, 6 offen
+                   (offen: A-8 · A-9 · A-10 · A-11 · A-13 · A-14)
+Gate B:            NOT PASSED — 0 von 8
 productive code:   NOT AUTHORIZED
 implementation:    NOT AUTHORIZED
 P-1:               NOT AUTHORIZED
-P-3:               NOT SELECTED
-language/runtime:  NOT SELECTED
+P-2:               NOT SATISFIED
+P-3:               SELECTED — nur Mechanismusklasse; kein Quellpfad,
+                   keine API, keine Bibliothek, kein Werkzeug,
+                   kein Erhebungsintervall, target_id-Ableitung
+                   nicht entschieden
+language/runtime:  SELECTED — nur Klasse (Go); keine Version, keine
+                   Distribution, keine Toolchain, keine API, keine
+                   Implementierung, kein breiterer Technologie-Stack
 target access:     NOT AUTHORIZED
 test execution:    NOT AUTHORIZED
+accepted ADRs:     0
 successor WP:      none created, none reserved
 ```
 
