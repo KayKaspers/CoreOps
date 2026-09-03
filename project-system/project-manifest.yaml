@@ -85,8 +85,53 @@ project:
                                  # transitive Schliessung. Eine Update-Policy
                                  # autorisiert keinen kuenftigen Abhaengigkeits-
                                  # stand.
-                                 # Gate A: 10 von 14 erfuellt, 0 teilweise,
-                                 # 4 offen - NICHT PASSIERT (offen: A-10, A-11,
+                                 # NEW-8 (README / LICENSE) ENTSCHIEDEN -
+                                 # Gate-A-Punkt A-10 erfuellt; Disposition
+                                 # APPROVE README + APACHE-2.0 PUBLICATION MODEL
+                                 # WITH NOVA BOUNDARY CLARIFICATIONS.
+                                 # README.md SHALL EXIST - jedoch NICHT
+                                 # vorhanden und NICHT zur Erstellung
+                                 # autorisiert; Zeitpunkt: eine eigene,
+                                 # ausdruecklich autorisierte Repository-
+                                 # Aenderung VOR dem ersten produktiven
+                                 # Source-Commit, einschliesslich Remote-
+                                 # Integration. README-Autoritaet: oeffentliche
+                                 # Zusammenfassung ohne normative Autoritaet;
+                                 # die Source-of-Truth-Hierarchie bleibt
+                                 # unveraendert; quantitative Angaben sind
+                                 # Spiegel und keine Autoritaet - duplizierte
+                                 # Zaehler minimieren, autoritative Verweise
+                                 # bevorzugen, hart kodierte Zahlen nur
+                                 # ausdruecklich aktuell, gepflegt und
+                                 # nicht-autoritativ.
+                                 # LICENSE SHALL EXIST - jedoch NICHT vorhanden
+                                 # und NICHT zur Erstellung autorisiert.
+                                 # Veroeffentlichungsrechte-Modus:
+                                 # PUBLIC / OPEN SOURCE.
+                                 # Outbound-Lizenz: Apache-2.0, standardmaessiger
+                                 # und unveraenderter Lizenztext erst bei
+                                 # spaeterer, gesondert autorisierter Erstellung;
+                                 # der Lizenztext wird hier NICHT wiedergegeben.
+                                 # Beitragsprogramm NICHT AKTIV; CONTRIBUTING.md
+                                 # nicht autorisiert; CLA keine; DCO keiner.
+                                 # Urheberrechtliche Rechteeinraeumung ist keine
+                                 # Namens- oder Markenrechtseinraeumung; keine
+                                 # eingetragene Marke beansprucht; gesonderte
+                                 # Markenrichtlinie zurueckgestellt.
+                                 # Behauptungsgrenzen bleiben in Kraft: keine
+                                 # Produktionsreife, Zertifizierung, Support-
+                                 # zusage, SLA, Verfuegbarkeits-, Wartungs- oder
+                                 # Kompatibilitaetsgarantie.
+                                 # Erstellungsautoritaet: eine Datei entsteht
+                                 # erst mit (1) einer ausdruecklich autorisierten
+                                 # Repository-/Work-Package-Grenze, die die Datei
+                                 # und ihre oeffentliche Inhaltsautoritaet
+                                 # benennt, (2) der Autorisierung des konkreten
+                                 # Inhalts bzw. des standardmaessigen Lizenz-
+                                 # textes und (3) den Human-Maintainer-
+                                 # Repository-, Staging-, Commit- und Push-Gates.
+                                 # Gate A: 11 von 14 erfuellt, 0 teilweise,
+                                 # 3 offen - NICHT PASSIERT (offen: A-11,
                                  # A-13, A-14). Gate B: 0 von 8 -
                                  # NICHT PASSIERT.
                                  # Impliziert NICHT: Implementierung autorisiert
@@ -117,9 +162,28 @@ project:
                                  # oder vendoriert; kein Vendor-Baum, kein
                                  # Lockfile, kein Package-Manifest;
                                  # NICHT: null Drittabhaengigkeiten bedeutet null
-                                 # Lieferkette (A-10 offen: eine erste konkrete
-                                 # Drittzulassung setzt eine ausreichende
-                                 # Veroeffentlichungs-/Lizenzdisposition voraus);
+                                 # Lieferkette (A-10 ist inzwischen erfuellt und
+                                 # das Outbound-Modell definiert, sodass das
+                                 # Lizenzkriterium fuer einen kuenftigen
+                                 # konkreten Kandidaten grundsaetzlich bewertbar
+                                 # waere - bewertbar bedeutet NICHT bewertet,
+                                 # kompatibel bedeutet NICHT zugelassen);
+                                 # NICHT: README.md, LICENSE, NOTICE,
+                                 # CONTRIBUTING.md oder SECURITY.md erstellt
+                                 # oder zur Erstellung autorisiert (A-10
+                                 # erfuellt bedeutet NICHT Artefakt erstellt;
+                                 # Apache-2.0 ausgewaehlt bedeutet NICHT
+                                 # Apache-2.0-Datei erstellt);
+                                 # NICHT: Beitragsprogramm aktiv (Repository
+                                 # sichtbar bedeutet NICHT Beitragsprogramm
+                                 # aktiv; Pull Request moeglich bedeutet NICHT
+                                 # Beitrag angenommen);
+                                 # NICHT: Veroeffentlichung produktiven
+                                 # Quellcodes autorisiert (lizenziert bedeutet
+                                 # NICHT gewaehrleistet; Open Source bedeutet
+                                 # NICHT unterstuetzter Dienst);
+                                 # NICHT: eingetragene Marke vorhanden oder
+                                 # Markenrichtlinie erstellt;
                                  # NICHT: Build/Packaging entschieden (A-13 offen);
                                  # NICHT: ADR erzeugt oder akzeptiert
                                  # (akzeptierte ADRs 0, A-11 offen);
