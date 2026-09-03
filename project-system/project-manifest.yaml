@@ -50,9 +50,44 @@ project:
                                  # colocated *_test.go; kein pkg/, kein src/,
                                  # kein Top-Level-tests/, keine oeffentliche
                                  # Go-API; A-8 erfuellt.
-                                 # Gate A: 9 von 14 erfuellt, 0 teilweise,
-                                 # 5 offen - NICHT PASSIERT (offen: A-9, A-10,
-                                 # A-11, A-13, A-14). Gate B: 0 von 8 -
+                                 # Dependency Admission IN KRAFT - Gate-A-Punkt
+                                 # A-9 erfuellt; Disposition APPROVE OPTION B
+                                 # WITH NOVA BOUNDARY CLARIFICATIONS.
+                                 # Zugelassene Drittabhaengigkeiten: 0; konkret
+                                 # zugelassen: keine; erster Observe-Slice
+                                 # ZERO-THIRD-PARTY-DEFAULT - Drittabhaengigkeits-
+                                 # nutzung untersagt, solange die konkrete
+                                 # Abhaengigkeit nicht das vollstaendige
+                                 # Admission-Verfahren durchlaufen und eine
+                                 # ausdrueckliche Human-Maintainer-Zulassung
+                                 # erhalten hat; Bequemlichkeit ist keine
+                                 # hinreichende Begruendung. Standardbibliothek
+                                 # der gewaehlten Go-Distribution und ohne
+                                 # separaten Softwarebezug genutzte Plattform-
+                                 # faehigkeit benoetigen keine individuelle
+                                 # Drittzulassung - deren Lieferkette ist dadurch
+                                 # NICHT geklaert; Go-Distribution, Standard-
+                                 # bibliothek und Toolchain bleiben A-13 bzw.
+                                 # nachgelagerter Governance zugeordnet. Jedes
+                                 # separat bezogene Modul, Paket, jede Bibliothek
+                                 # und jedes Werkzeug - einschliesslich
+                                 # golang.org/x/... sofern nicht tatsaechlich
+                                 # Standardbibliothek - ist Drittabhaengigkeit.
+                                 # Transitive, Build-only-, Test-only-, separat
+                                 # bezogene Tooling-/Codegenerierungs- und
+                                 # vendorierte Abhaengigkeiten sind im Scope;
+                                 # vendored ist nicht Erstpartei. Zulassung
+                                 # ausschliesslich durch den Human Maintainer, je
+                                 # konkreter Abhaengigkeit und nur innerhalb eines
+                                 # ausdruecklich autorisierten Work-Package-
+                                 # Scopes; gebunden an Version/Revision, Digest,
+                                 # Herkunft, Lizenzstand und aufgeloeste
+                                 # transitive Schliessung. Eine Update-Policy
+                                 # autorisiert keinen kuenftigen Abhaengigkeits-
+                                 # stand.
+                                 # Gate A: 10 von 14 erfuellt, 0 teilweise,
+                                 # 4 offen - NICHT PASSIERT (offen: A-10, A-11,
+                                 # A-13, A-14). Gate B: 0 von 8 -
                                  # NICHT PASSIERT.
                                  # Impliziert NICHT: Implementierung autorisiert
                                  # oder begonnen;
@@ -69,7 +104,22 @@ project:
                                  # Distribution und Toolchain-Version nicht
                                  # entschieden;
                                  # NICHT: Abhaengigkeit zugelassen (0 zugelassen,
-                                 # Admission-Gate nicht in Kraft, A-9 offen);
+                                 # keine konkret zugelassen; das Admission-Gate
+                                 # ist in Kraft und A-9 erfuellt - Policy in Kraft
+                                 # bedeutet NICHT Abhaengigkeit zugelassen;
+                                 # Vorschlag bedeutet NICHT Zulassung; WP
+                                 # autorisiert bedeutet NICHT Abhaengigkeit
+                                 # zugelassen);
+                                 # NICHT: Paket, Modul, Bibliothek, Werkzeug,
+                                 # Testframework, Build-Werkzeug oder
+                                 # Codegenerator ausgewaehlt;
+                                 # NICHT: Abhaengigkeit installiert, aufgeloest
+                                 # oder vendoriert; kein Vendor-Baum, kein
+                                 # Lockfile, kein Package-Manifest;
+                                 # NICHT: null Drittabhaengigkeiten bedeutet null
+                                 # Lieferkette (A-10 offen: eine erste konkrete
+                                 # Drittzulassung setzt eine ausreichende
+                                 # Veroeffentlichungs-/Lizenzdisposition voraus);
                                  # NICHT: Build/Packaging entschieden (A-13 offen);
                                  # NICHT: ADR erzeugt oder akzeptiert
                                  # (akzeptierte ADRs 0, A-11 offen);
