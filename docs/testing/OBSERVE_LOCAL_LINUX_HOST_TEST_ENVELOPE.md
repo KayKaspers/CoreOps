@@ -23,7 +23,8 @@
 > Nachträgliche docs-only Current-State-Anwendung: Die freigegebene Human-Maintainer-`A-7`-Disposition ist angewandt. Die Sprach-/Runtime-Entscheidung ist **getroffen** — **Go**, ausschließlich als **Sprach-/Runtime-Klasse** für den ersten Observe-Slice ([Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §8.4); Gate-A-Punkt `A-7` ist **erfüllt**, Gate A stand nach dieser Anwendung auf **8 von 14 erfüllt, 0 teilweise, 6 offen — nicht passiert** (durch die spätere `A-8`-Anwendung fortgeschrieben, siehe folgende Zeile; offen blieben `A-8`, `A-9`, `A-10`, `A-11`, `A-13`, `A-14`), Gate B unverändert auf **0 von 8 — nicht passiert**. Die Ausführungsvoraussetzungen (§10) bleiben **insgesamt unerfüllt**: Testimplementierung und Testausführung **NOT AUTHORIZED**, **0** Tests implementiert, **0** Tests ausgeführt, `P-2` **`NOT SATISFIED`**, Fixtures und Lab **nicht bereitgestellt**, `P-1` **`NOT AUTHORIZED`**, jeder Fall unverändert `not run`. `OBS-LLH-TC-11`-Semantik, **R6**-Semantik, Ergebnis- und Ausgangsvokabulare, Emissions-Dispositionen, Ebenenzuordnungen, Testintentionen, erwartete Ausgänge und die `P-2`-Evidenzanforderungen aus §8.3 bleiben **unverändert**. Es entsteht **kein** Work Package, **keine** `CO-WP-033`, **kein** ADR und **keine** Decision-, Risk-, CCR-, Capability-, Support-Status-, Lessons- oder NDF-Feedback-Kennung.
 > Nachträgliche docs-only Current-State-Anwendung: Die freigegebene Human-Maintainer-`A-8`-Disposition ist angewandt. Die Source-Tree-Entscheidung ist **getroffen** ([Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §9.2); Gate-A-Punkt `A-8` ist **erfüllt**, Gate A stand nach dieser Anwendung auf **9 von 14 erfüllt, 0 teilweise, 5 offen — nicht passiert** (durch die spätere `A-9`-Anwendung fortgeschrieben, siehe folgende Zeile; offen blieben `A-9`, `A-10`, `A-11`, `A-13`, `A-14`), Gate B unverändert auf **0 von 8 — nicht passiert**. Für diesen Envelope folgt daraus ausschließlich eine **künftige Platzierungspolitik**: Tests künftig als **colocated `*_test.go`**-Dateien neben ihren Paketen, **kein** Top-Level-`tests/`, paketlokales `testdata/` ausschließlich als **künftige** Ablage für Fixtures, falls und sobald Fixture- und Testautorität besteht. Dieser Envelope bleibt ein **Governance-/Testdesign-Artefakt** und begründet **kein** Quellbaumverzeichnis; es wird **kein** Verzeichnis, **kein** `testdata/` und **keine** Testdatei angelegt. **Nicht** entschieden bleiben: Testframework, konkrete Testdateinamen, In-Package- gegen External-Package-Testkonvention, Fixture-Inhalt und Fixture-Identität. Die Ausführungsvoraussetzungen (§10) bleiben **insgesamt unerfüllt**: Testimplementierung und Testausführung **NOT AUTHORIZED**, **0** Tests implementiert, **0** Tests ausgeführt, `P-2` **`NOT SATISFIED`**, Fixtures und Lab **nicht bereitgestellt**, `P-1` **`NOT AUTHORIZED`**, jeder Fall unverändert `not run`. `OBS-LLH-TC-01`…`OBS-LLH-TC-11`-Identitäten und -Semantik, **R6**-Semantik, Ergebnis- und Ausgangsvokabulare, Emissions-Dispositionen, Ebenenzuordnungen, Testintentionen, erwartete und verbotene Ausgänge, die `P-2`-Evidenzanforderungen aus §8.3 und die No-Mutation-Anforderungen bleiben **unverändert**. Es entsteht **kein** Work Package, **keine** `CO-WP-033`, **kein** ADR und **keine** Decision-, Risk-, CCR-, Capability-, Support-Status-, Lessons- oder NDF-Feedback-Kennung; akzeptierte ADRs bleiben **0** und `A-11` bleibt **offen**.
 > Nachträgliche docs-only Current-State-Anwendung: Die freigegebene Human-Maintainer-`A-9`-Disposition ist angewandt. Das **Dependency-Admission-Gate ist in Kraft** ([Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §10, Disposition `APPROVE OPTION B WITH NOVA BOUNDARY CLARIFICATIONS`); Gate-A-Punkt `A-9` ist **erfüllt**, Gate A stand nach dieser Anwendung auf **10 von 14 erfüllt, 0 teilweise, 4 offen — nicht passiert** (durch die spätere `A-10`-Anwendung fortgeschrieben, siehe folgende Zeile; offen blieben `A-10`, `A-11`, `A-13`, `A-14`), Gate B unverändert auf **0 von 8 — nicht passiert**. Zugelassene Drittabhängigkeiten: **0**; konkret zugelassen: **keine**; erster Observe-Slice: **Zero-Third-Party-Default**. Für diesen Envelope folgt daraus ausschließlich eine **Testabhängigkeitsgrenze**: die Testeinrichtungen der Go-Standardbibliothek benötigen **keine** individuelle Drittzulassung; ein **separat bezogenes** Testframework, -werkzeug oder eine -bibliothek benötigt die **vollständige** `A-9`-Zulassung; transitive Testabhängigkeiten sind **im Scope**. Es ist **kein** Testframework, **keine** Testbibliothek, **kein** Testwerkzeug, **keine** Assertions-, Mock- oder Fixture-Bibliothek und **keine** Testabhängigkeit ausgewählt, empfohlen oder zugelassen. Die Ausführungsvoraussetzungen (§10) bleiben **insgesamt unerfüllt**: Testimplementierung und Testausführung **NOT AUTHORIZED**, **0** Tests implementiert, **0** Tests ausgeführt, `P-2` **`NOT SATISFIED`**, Fixtures und Lab **nicht bereitgestellt**, `P-1` **`NOT AUTHORIZED`**, jeder konzeptionelle Fall unverändert `not run`. `OBS-LLH-TC-01`…`OBS-LLH-TC-11`-Identitäten und -Semantik, **R6**-Semantik, Ergebnis- und Ausgangsvokabulare, Emissions-Dispositionen, Ebenenzuordnungen, Testintentionen, erwartete und verbotene Ausgänge, die `P-2`-Evidenzmethode aus §8.3 und die No-Mutation-Anforderungen bleiben **unverändert**. Es entsteht **kein** Work Package, **keine** `CO-WP-033`, **kein** ADR, **kein** Dependency-Admission-Register und **keine** Decision-, Risk-, CCR-, Capability-, Support-Status-, Lessons- oder NDF-Feedback-Kennung; akzeptierte ADRs bleiben **0** und `A-11` bleibt **offen**.
-> Nachträgliche docs-only Current-State-Anwendung: Die freigegebene Human-Maintainer-`A-10`-Disposition ist angewandt. Die `NEW-8`-Entscheidung (`README` / `LICENSE`) ist **getroffen** ([Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §13, Disposition `APPROVE README + APACHE-2.0 PUBLICATION MODEL WITH NOVA BOUNDARY CLARIFICATIONS`); Gate-A-Punkt `A-10` ist **erfüllt**, Gate A steht auf **11 von 14 erfüllt, 0 teilweise, 3 offen — nicht passiert** (offen: `A-11`, `A-13`, `A-14`), Gate B unverändert auf **0 von 8 — nicht passiert**. `README.md` **soll existieren** — zu erstellen in einer eigenen, ausdrücklich autorisierten Repository-Änderung **vor** dem ersten produktiven Source-Commit — und ist inzwischen durch eine davon getrennte, ausdrücklich autorisierte Human-Maintainer-Publikations-Realisierung **erstellt und vorhanden**; `LICENSE` **soll existieren** und ist ebenso **erstellt und vorhanden** (standardmäßiger, **unveränderter** Apache-2.0-Text); Veröffentlichungsrechte-Modell **PUBLIC / OPEN SOURCE**, Outbound-Lizenz **Apache-2.0**; Beitragsprogramm **NICHT AKTIV**. `A-10` selbst hat die Dateien **nicht** erstellt; die Erstellungsautorität stammt ausschließlich aus jener gesonderten Autorisierung. `A-9` bleibt **erfüllt**, zugelassene Drittabhängigkeiten bleiben **0**. **Diese Angaben sind ausschließlich Current-State-Kontext und berühren die Testsemantik dieses Envelope nicht.** Für diesen Envelope folgt **keine** inhaltliche Änderung: die Identitäten `OBS-LLH-TC-01`…`OBS-LLH-TC-11`, ihre Testintentionen, erwarteten und verbotenen Ausgänge, die **R6**- und `OBS-LLH-TC-11`-Semantik, die Beobachtungsausgangs- und Ergebnisvokabulare, die Emissions-Dispositionen, die Ebenenzuordnungen, die `P-2`-Evidenzmethode aus §8.3, die No-Mutation-Anforderungen und die aus `A-9` folgende Testabhängigkeitsgrenze bleiben **unverändert**. Es ist **kein** Testframework vorhanden oder ausgewählt; Testimplementierung und Testausführung bleiben **NOT AUTHORIZED**; **0** Tests implementiert, **0** Tests ausgeführt, `P-2` **`NOT SATISFIED`**, `P-1` **`NOT AUTHORIZED`**, Fixtures und Lab **nicht bereitgestellt**, jeder konzeptionelle Fall unverändert `not run`. Die Disposition erstellt **keine** Datei, autorisiert **keine** Dateierstellung, **keine** Testimplementierung, **keine** Testausführung, **keine** Fixture, **keinen** Zielzugriff, **keine** reale Beobachtung und **keine** Veröffentlichung produktiven Quellcodes; die spätere, gesondert autorisierte Publikations-Realisierung hat ausschließlich `README.md` und `LICENSE` erstellt und autorisiert von alledem ebenfalls **nichts**. Es entsteht **kein** Work Package, **keine** `CO-WP-033`, **kein** ADR und **keine** Decision-, Risk-, CCR-, Capability-, Support-Status-, Lessons- oder NDF-Feedback-Kennung; akzeptierte ADRs bleiben **0** und `A-11` bleibt **offen**.
+> Nachträgliche docs-only Current-State-Anwendung: Die freigegebene Human-Maintainer-`A-10`-Disposition ist angewandt. Die `NEW-8`-Entscheidung (`README` / `LICENSE`) ist **getroffen** ([Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §13, Disposition `APPROVE README + APACHE-2.0 PUBLICATION MODEL WITH NOVA BOUNDARY CLARIFICATIONS`); Gate-A-Punkt `A-10` ist **erfüllt**, Gate A stand nach dieser Anwendung auf **11 von 14 erfüllt, 0 teilweise, 3 offen — nicht passiert** (durch die spätere `A-13`-Anwendung fortgeschrieben, siehe folgende Zeile; offen blieben `A-11`, `A-13`, `A-14`), Gate B unverändert auf **0 von 8 — nicht passiert**. `README.md` **soll existieren** — zu erstellen in einer eigenen, ausdrücklich autorisierten Repository-Änderung **vor** dem ersten produktiven Source-Commit — und ist inzwischen durch eine davon getrennte, ausdrücklich autorisierte Human-Maintainer-Publikations-Realisierung **erstellt und vorhanden**; `LICENSE` **soll existieren** und ist ebenso **erstellt und vorhanden** (standardmäßiger, **unveränderter** Apache-2.0-Text); Veröffentlichungsrechte-Modell **PUBLIC / OPEN SOURCE**, Outbound-Lizenz **Apache-2.0**; Beitragsprogramm **NICHT AKTIV**. `A-10` selbst hat die Dateien **nicht** erstellt; die Erstellungsautorität stammt ausschließlich aus jener gesonderten Autorisierung. `A-9` bleibt **erfüllt**, zugelassene Drittabhängigkeiten bleiben **0**. **Diese Angaben sind ausschließlich Current-State-Kontext und berühren die Testsemantik dieses Envelope nicht.** Für diesen Envelope folgt **keine** inhaltliche Änderung: die Identitäten `OBS-LLH-TC-01`…`OBS-LLH-TC-11`, ihre Testintentionen, erwarteten und verbotenen Ausgänge, die **R6**- und `OBS-LLH-TC-11`-Semantik, die Beobachtungsausgangs- und Ergebnisvokabulare, die Emissions-Dispositionen, die Ebenenzuordnungen, die `P-2`-Evidenzmethode aus §8.3, die No-Mutation-Anforderungen und die aus `A-9` folgende Testabhängigkeitsgrenze bleiben **unverändert**. Es ist **kein** Testframework vorhanden oder ausgewählt; Testimplementierung und Testausführung bleiben **NOT AUTHORIZED**; **0** Tests implementiert, **0** Tests ausgeführt, `P-2` **`NOT SATISFIED`**, `P-1` **`NOT AUTHORIZED`**, Fixtures und Lab **nicht bereitgestellt**, jeder konzeptionelle Fall unverändert `not run`. Die Disposition erstellt **keine** Datei, autorisiert **keine** Dateierstellung, **keine** Testimplementierung, **keine** Testausführung, **keine** Fixture, **keinen** Zielzugriff, **keine** reale Beobachtung und **keine** Veröffentlichung produktiven Quellcodes; die spätere, gesondert autorisierte Publikations-Realisierung hat ausschließlich `README.md` und `LICENSE` erstellt und autorisiert von alledem ebenfalls **nichts**. Es entsteht **kein** Work Package, **keine** `CO-WP-033`, **kein** ADR und **keine** Decision-, Risk-, CCR-, Capability-, Support-Status-, Lessons- oder NDF-Feedback-Kennung; akzeptierte ADRs bleiben **0** und `A-11` bleibt **offen**.
+> Nachträgliche docs-only Current-State-Anwendung: Die freigegebene Human-Maintainer-`A-13`-Disposition ist angewandt. Die Build-/Packaging-Entscheidung ist **getroffen** ([Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §12, Disposition `APPROVE MINIMUM-SUFFICIENT BUILD/PACKAGING DISPOSITION WITH NOVA BOUNDARY CLARIFICATIONS`, Geltung ausschließlich erster Observe-Slice); Gate-A-Punkt `A-13` ist **erfüllt**, Gate A steht auf **12 von 14 erfüllt, 0 teilweise, 2 offen — nicht passiert** (offen: `A-11`, `A-14`), Gate B unverändert auf **0 von 8 — nicht passiert**. Auf **Governance-Ebene** entschieden sind: Reproduzierbarkeitsmodell **DECLARED-INPUT / DETERMINISTIC-IDENTITY** (Bit-für-Bit-Gleichheit **Design-Ziel**, **keine** Evidenzaussage), **Offline-Build erforderlich** (`GOTOOLCHAIN=local`, `GOPROXY=off`, fail-closed netzwerkfreie Ausführungsgrenze, konkrete Realisierung **zurückgestellt**), Build-Mechanismus **standardmäßige Go-Toolchain unmittelbar**, Go-Distributionsherkunftsklasse **offizielles Upstream-Go-Projekt-Release** mit exakter Patch-Pinning-**Regel** und Digest-Verifikationspflicht, `CGO_ENABLED=0`, `-trimpath`, `-buildvcs=false`, Quellrevision **über Provenance**, Go-Modulmechanismus **ausgewählt**, Artefaktklasse **Anwendungs-/Service-Artefakt** nach dem bestehenden Artifact-Identity-Modell, Ziel-OS-Klasse **Linux**, erste Artefaktform **natives Go-Executable**, SBOM-/Provenance-**Behandlung definiert**. **Zurückgestellt** bleiben: exakte Go-Version · Modulpfad · ausführbarer Basisname · `GOARCH` · Digest-Algorithmus · SBOM-Format/-Generator · Signatur-/Hash-Technologie · Container · CI. **Diese Angaben sind ausschließlich Current-State-Kontext und berühren die Testsemantik dieses Envelope nicht.** Für diesen Envelope folgt **keine** inhaltliche Änderung: die Identitäten `OBS-LLH-TC-01`…`OBS-LLH-TC-11`, ihre Testintentionen, erwarteten und verbotenen Ausgänge, die **R6**- und `OBS-LLH-TC-11`-Semantik, die Beobachtungsausgangs- und Ergebnisvokabulare, die Record-Discarded- und Provenance-Semantik, die Emissions-Dispositionen, die Ebenenzuordnungen, die `P-2`-Evidenzmethode aus §8.3, die No-Mutation-Anforderungen und die aus `A-9` folgende Testabhängigkeitsgrenze bleiben **unverändert**. `A-13` wählt **kein** Testframework, **keine** Testbibliothek und **kein** Testwerkzeug aus und lässt **keine** Abhängigkeit zu — zugelassene Drittabhängigkeiten bleiben **0**; ein separat bezogenes Test- oder Build-Werkzeug bleibt vollständig `A-9`-pflichtig. Es ist **kein** Testkommando, **keine** Toolchain-Ausführung und **kein** Build autorisiert: Toolchain-Beschaffung und -Installation **NICHT AUTORISIERT**, Build-Ausführung **NICHT AUTORISIERT**, Testimplementierung und Testausführung bleiben **NOT AUTHORIZED**; **0** Tests implementiert, **0** Tests ausgeführt, `P-2` **`NOT SATISFIED`**, `P-1` **`NOT AUTHORIZED`**, Fixtures und Lab **nicht bereitgestellt**, jeder konzeptionelle Fall unverändert `not run`. Es entsteht **kein** Work Package, **keine** `CO-WP-033`, **kein** ADR und **keine** Decision-, Risk-, CCR-, Capability-, Support-Status-, Lessons- oder NDF-Feedback-Kennung; akzeptierte ADRs bleiben **0** und `A-11` bleibt **offen**.
 
 ## 1. Status
 
@@ -78,7 +79,7 @@ test passed        != observation succeeded
 observation_outcome = the expectation a test case asserts against
 ```
 
-Ebenenzuordnung folgt der bestehenden Taxonomie (§8 der Teststrategie). Eine Ebenenzuordnung, die von der konkreten Realisierung des Erhebungsmechanismus abhängt, ist als **`level assignment pending concrete implementation/runtime realization; P-3 selected`** gekennzeichnet und **nicht** vorentschieden. Die `P-3`-**Mechanismusklasse** ist entschieden ([Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §7.5); die konkrete Implementierungs- und Runtime-Realisierung ist es **nicht**: die Sprach-/Runtime-**Klasse** ist zwar entschieden (**Go**, [Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §8.4), aber es sind **keine** Go-Version, **keine** Toolchain, **kein** Testframework, **keine** konkrete API und **keine** Implementierung ausgewählt; es existiert **keine** Testimplementierung und **keine** Testausführungsautorisierung. `Sprach-/Runtime-Klasse ausgewählt != konkrete Implementierungs-/Runtime-Realisierung`. Die Markierung bleibt daher — mit dieser präzisierten Formulierung — bestehen.
+Ebenenzuordnung folgt der bestehenden Taxonomie (§8 der Teststrategie). Eine Ebenenzuordnung, die von der konkreten Realisierung des Erhebungsmechanismus abhängt, ist als **`level assignment pending concrete implementation/runtime realization; P-3 selected`** gekennzeichnet und **nicht** vorentschieden. Die `P-3`-**Mechanismusklasse** ist entschieden ([Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §7.5); die konkrete Implementierungs- und Runtime-Realisierung ist es **nicht**: die Sprach-/Runtime-**Klasse** ist zwar entschieden (**Go**, [Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §8.4), aber es sind **keine** exakte Go-Version, **keine** beschaffte oder installierte Toolchain, **kein** Testframework, **keine** konkrete API und **keine** Implementierung ausgewählt oder vorhanden — die durch `A-13` entschiedene Build-/Toolchain-**Governance** (§12) ändert daran **nichts**; es existiert **keine** Testimplementierung und **keine** Testausführungsautorisierung. `Sprach-/Runtime-Klasse ausgewählt != konkrete Implementierungs-/Runtime-Realisierung`. Die Markierung bleibt daher — mit dieser präzisierten Formulierung — bestehen.
 
 ## 7. Mindestfälle
 
@@ -521,7 +522,8 @@ NICHT autorisiert:     Testimplementierung · Testausführung · Fixture ·
 A-9:                   unverändert erfüllt — 0 Drittabhängigkeiten zugelassen
 A-10:                  erfüllt
 Gate A:                11 von 14 erfüllt, 0 teilweise, 3 offen — nicht passiert
-                       offen: A-11 · A-13 · A-14
+                       (durch die spätere A-13-Anwendung fortgeschrieben)
+                       offen blieben: A-11 · A-13 · A-14
 Gate B:                0 von 8 — nicht passiert
 ```
 
@@ -541,6 +543,70 @@ A-10 erfüllt   != P-1 erteilt
 A-10 erfüllt   != P-2 erfüllt
 A-10 erfüllt   != Abhängigkeit zugelassen
 A-10 erfüllt   != Gate A passiert
+```
+
+**Die Build-/Packaging-Entscheidung ist getroffen.** Der Human Maintainer hat die Build-, Reproduzierbarkeits-, Offline-Build-, Toolchain-Governance- und Artefaktidentitätsfragen für den ersten Observe-Slice auf **Governance-Ebene** dispositioniert ([Transition Prerequisites](../governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md) §12). Gate-A-Punkt `A-13` ist damit **erfüllt**. Diese Zeilen sind **Current-State-Kontext** und **keine** Testsemantik.
+
+```text
+Reproduzierbarkeit:    DECLARED-INPUT / DETERMINISTIC-IDENTITY-Modell;
+                       Bit-für-Bit-Gleichheit ist DESIGN-ZIEL und
+                       ausdrücklich KEINE Gate-A-Evidenzaussage
+Offline-Build:         ERFORDERLICH — GOTOOLCHAIN=local, GOPROXY=off,
+                       zusätzlich eine fail-closed netzwerkfreie
+                       Ausführungsgrenze (konkrete Realisierung
+                       ZURÜCKGESTELLT); kein Proxy, kein Mirror, kein
+                       Vendor-Mechanismus, kein Paket-Repository ausgewählt
+Build-Mechanismus:     standardmäßige Go-Toolchain unmittelbar; kein Make,
+                       kein Task Runner, kein Wrapper, kein Codegenerator,
+                       kein Build-only-Drittwerkzeug zugelassen
+Go-Distribution:       Herkunftsklasse offizielles Upstream-Go-Projekt-
+                       Release; exakte Go-Version ZURÜCKGESTELLT;
+                       Toolchain-Beschaffung und -Installation
+                       NICHT AUTORISIERT
+CGO / Build-Flags:     CGO_ENABLED=0 · -trimpath · -buildvcs=false;
+                       Quellrevision über Provenance
+Modulmodell:           Go-Modulmechanismus AUSGEWÄHLT; go.mod und go.sum
+                       NICHT ANGELEGT / NICHT AUTORISIERT; Modulpfad
+                       ZURÜCKGESTELLT
+Artefakt:              Klasse Anwendungs-/Service-Artefakt nach dem
+                       bestehenden Artifact-Identity-Modell; Digest später
+                       erforderlich, Algorithmus ZURÜCKGESTELLT;
+                       ausführbarer Basisname ZURÜCKGESTELLT
+Build-Ziel:            Ziel-OS-Klasse Linux; GOARCH ZURÜCKGESTELLT
+Erste Artefaktform:    natives Go-Executable; Container und CI
+                       ZURÜCKGESTELLT
+SBOM / Provenance:     Behandlung DEFINIERT — NICHT ERZEUGT
+Testwerkzeuge:         durch A-13 KEIN Testframework, KEINE Testbibliothek
+                       und KEIN Testwerkzeug ausgewählt oder zugelassen;
+                       separat bezogene Werkzeuge bleiben A-9-pflichtig
+NICHT autorisiert:     Toolchain-Beschaffung · Toolchain-Installation ·
+                       Build-Ausführung · Artefakterstellung ·
+                       Digest-/Provenance-/SBOM-Erzeugung ·
+                       Testimplementierung · Testausführung · Fixture ·
+                       Zielzugriff · reale Beobachtung · jede
+                       Dateierstellung
+A-9:                   unverändert erfüllt — 0 Drittabhängigkeiten zugelassen
+A-13:                  erfüllt
+Gate A:                12 von 14 erfüllt, 0 teilweise, 2 offen — nicht passiert
+                       offen: A-11 · A-14
+Gate B:                0 von 8 — nicht passiert
+```
+
+Für diesen Envelope folgt daraus **keine** inhaltliche Änderung. Die Identitäten `OBS-LLH-TC-01`…`OBS-LLH-TC-11`, ihre Testintentionen, erwarteten und verbotenen Ausgänge, die **R6**- und `OBS-LLH-TC-11`-Semantik, die Beobachtungsausgangs- und Ergebnisvokabulare, die Record-Discarded- und Provenance-Semantik, das Testergebnisvokabular, die Emissions-Dispositionen, die Ebenenzuordnungen, die `P-2`-Evidenzmethode aus §8.3, die No-Mutation-Anforderungen und die aus `A-9` folgende Testabhängigkeitsgrenze bleiben **unverändert**. **Kein** konkretes Testkommando und **keine** Toolchain-Ausführung ist autorisiert; **0** Tests implementiert, **0** Tests ausgeführt, jeder konzeptionelle Fall unverändert `not run`.
+
+```text
+A-13 erfüllt   != Toolchain beschafft
+A-13 erfüllt   != Toolchain installiert
+A-13 erfüllt   != Build ausgeführt
+A-13 erfüllt   != Artefakt erzeugt
+A-13 erfüllt   != Testframework ausgewählt
+A-13 erfüllt   != Testimplementierung autorisiert
+A-13 erfüllt   != Testausführung autorisiert
+A-13 erfüllt   != Fixture freigegeben
+A-13 erfüllt   != P-1 erteilt
+A-13 erfüllt   != P-2 erfüllt
+A-13 erfüllt   != Abhängigkeit zugelassen
+A-13 erfüllt   != Gate A passiert
 ```
 
 **Im Übrigen unverändert und ausdrücklich nicht erteilt:**
@@ -568,6 +634,17 @@ README / LICENSE:      SHALL EXIST — beide ERSTELLT / VORHANDEN; Erstellung
                        Veröffentlichungsmodus PUBLIC / OPEN SOURCE;
                        Outbound-Lizenz Apache-2.0; Beitragsprogramm
                        NICHT AKTIV
+Build / Packaging:     DECIDED (A-13 erfüllt) — nur Governance-Ebene:
+                       Reproduzierbarkeits-, Offline-Build-, Toolchain-
+                       Governance-, Modul-, Artefaktidentitäts-, Ziel- und
+                       Packaging-Disposition entschieden; exakte Go-Version,
+                       Modulpfad, Executable-Name, GOARCH, Digest-
+                       Algorithmus, SBOM-Format, Container und CI
+                       ZURÜCKGESTELLT; kein Build ausgeführt, kein Artefakt,
+                       kein Digest, keine Provenance, keine SBOM
+Gate A:                12 von 14 erfüllt, 0 teilweise, 2 offen —
+                       nicht passiert (offen: A-11 · A-14)
+Gate B:                0 von 8 — nicht passiert
 Tests implementiert:   0
 Tests ausgeführt:      0
 ```

@@ -68,7 +68,14 @@ project:
                                  # Drittzulassung - deren Lieferkette ist dadurch
                                  # NICHT geklaert; Go-Distribution, Standard-
                                  # bibliothek und Toolchain bleiben A-13 bzw.
-                                 # nachgelagerter Governance zugeordnet. Jedes
+                                 # nachgelagerter Governance zugeordnet - A-13
+                                 # ist inzwischen erfuellt und ordnet die
+                                 # offizielle Upstream-Go-Distributions-/
+                                 # Toolchain-KLASSE der A-13-Grenze zu, ohne
+                                 # individuelle A-9-Drittzulassung; separat
+                                 # bezogene Build-, Test-, Codegenerierungs-,
+                                 # Packaging- und SBOM-Werkzeuge bleiben
+                                 # vollstaendig A-9-pflichtig. Jedes
                                  # separat bezogene Modul, Paket, jede Bibliothek
                                  # und jedes Werkzeug - einschliesslich
                                  # golang.org/x/... sofern nicht tatsaechlich
@@ -134,9 +141,55 @@ project:
                                  # Inhalts bzw. des standardmaessigen Lizenz-
                                  # textes und (3) den Human-Maintainer-
                                  # Repository-, Staging-, Commit- und Push-Gates.
-                                 # Gate A: 11 von 14 erfuellt, 0 teilweise,
-                                 # 3 offen - NICHT PASSIERT (offen: A-11,
-                                 # A-13, A-14). Gate B: 0 von 8 -
+                                 # Build/Packaging ENTSCHIEDEN - Gate-A-Punkt
+                                 # A-13 erfuellt; Disposition APPROVE MINIMUM-
+                                 # SUFFICIENT BUILD/PACKAGING DISPOSITION WITH
+                                 # NOVA BOUNDARY CLARIFICATIONS; Geltung
+                                 # ausschliesslich erster Observe-Slice und
+                                 # ausschliesslich auf Governance-Ebene.
+                                 # Reproduzierbarkeitsmodell DECLARED-INPUT /
+                                 # DETERMINISTIC-IDENTITY - derselbe Quellstand
+                                 # mit denselben deklarierten Build-Eingaengen
+                                 # erzeugt ein identifizierbar gleiches
+                                 # Artefakt; Bit-fuer-Bit-Gleichheit ist
+                                 # DESIGN-ZIEL und ausdruecklich KEINE
+                                 # Gate-A-Evidenzaussage.
+                                 # Offline-Build ERFORDERLICH: GOTOOLCHAIN=local,
+                                 # GOPROXY=off, zusaetzlich eine fail-closed
+                                 # netzwerkfreie Ausfuehrungsgrenze, deren
+                                 # konkrete Realisierung ZURUECKGESTELLT ist;
+                                 # kein Dependency-Proxy, kein Mirror, kein
+                                 # Vendor-Mechanismus, kein Paket-Repository
+                                 # ausgewaehlt.
+                                 # Build-Mechanismus: standardmaessige
+                                 # Go-Toolchain unmittelbar; kein Make, kein
+                                 # Task Runner, kein Wrapper, kein
+                                 # Codegenerator, kein Build-only-Drittwerkzeug.
+                                 # Go-Distributionsherkunftsklasse: offizielles
+                                 # Upstream-Go-Projekt-Release, mit Regel
+                                 # exakter Patch-Pinnung, unveraenderlicher
+                                 # Distributionsartefakt-Identitaet und
+                                 # Digest-Verifikation vor Verwendung; die
+                                 # EXAKTE Go-Version bleibt ZURUECKGESTELLT.
+                                 # CGO deaktiviert fuer den ersten Slice
+                                 # (CGO_ENABLED=0); -trimpath; -buildvcs=false;
+                                 # Quellrevision ueber Provenance.
+                                 # Go-Modulmechanismus AUSGEWAEHLT; Modulpfad
+                                 # ZURUECKGESTELLT.
+                                 # Artefaktidentitaet nach dem bestehenden
+                                 # Artifact Identity, Provenance and SBOM Model;
+                                 # Artefaktklasse Anwendungs-/Service-Artefakt;
+                                 # Artefakt-Digest spaeter erforderlich,
+                                 # Algorithmus ZURUECKGESTELLT; ausfuehrbarer
+                                 # Basisname ZURUECKGESTELLT.
+                                 # Ziel-OS-Klasse LINUX; GOARCH ZURUECKGESTELLT.
+                                 # Erste Artefaktform: natives Go-Executable;
+                                 # Container und CI ZURUECKGESTELLT.
+                                 # SBOM- und Provenance-Behandlung DEFINIERT,
+                                 # Artefakte NICHT ERZEUGT.
+                                 # Gate A: 12 von 14 erfuellt, 0 teilweise,
+                                 # 2 offen - NICHT PASSIERT (offen: A-11,
+                                 # A-14). Gate B: 0 von 8 -
                                  # NICHT PASSIERT.
                                  # Impliziert NICHT: Implementierung autorisiert
                                  # oder begonnen;
@@ -149,9 +202,12 @@ project:
                                  # nach Repository Governance Standard
                                  # Abschnitt 12 eigenstaendig gate-pflichtig;
                                  # NICHT: go.mod oder go.sum angelegt oder
-                                 # autorisiert; Modulpfad, Go-Version,
-                                 # Distribution und Toolchain-Version nicht
-                                 # entschieden;
+                                 # autorisiert; Modulpfad, exakte Go-Version
+                                 # und exakte Toolchain-/Distributionsartefakt-
+                                 # Identitaet nicht entschieden (die Go-
+                                 # DistributionsherkunftsKLASSE ist durch A-13
+                                 # entschieden; Modulmechanismus ausgewaehlt
+                                 # bedeutet NICHT go.mod autorisiert);
                                  # NICHT: Abhaengigkeit zugelassen (0 zugelassen,
                                  # keine konkret zugelassen; das Admission-Gate
                                  # ist in Kraft und A-9 erfuellt - Policy in Kraft
@@ -194,7 +250,17 @@ project:
                                  # NICHT unterstuetzter Dienst);
                                  # NICHT: eingetragene Marke vorhanden oder
                                  # Markenrichtlinie erstellt;
-                                 # NICHT: Build/Packaging entschieden (A-13 offen);
+                                 # NICHT durch A-13: Build ausgefuehrt, Artefakt
+                                 # erzeugt, Digest, Provenance oder SBOM erzeugt,
+                                 # Toolchain beschafft oder installiert, exakte
+                                 # Go-Version ausgewaehlt, Modulpfad ausgewaehlt,
+                                 # ausfuehrbarer Basisname ausgewaehlt, GOARCH
+                                 # ausgewaehlt, Container oder CI ausgewaehlt,
+                                 # Dockerfile, Containerkonfiguration oder
+                                 # .github/-Artefakt autorisiert
+                                 # (A-13 erfuellt bedeutet NICHT Realisierung;
+                                 # Anforderung definiert bedeutet NICHT Evidenz
+                                 # erzeugt);
                                  # NICHT: ADR erzeugt oder akzeptiert
                                  # (akzeptierte ADRs 0, A-11 offen);
                                  # NICHT: Zielzugriff autorisiert (P-1);
