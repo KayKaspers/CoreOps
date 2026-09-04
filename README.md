@@ -18,15 +18,33 @@ file links to the authoritative source instead of duplicating it.
 - Foundation 0.1 is **closed**.
 - The `Observe` phase has been **entered with an explicit boundary**.
 - There is **no functional CoreOps product release**. No usable product is claimed.
-- Productive application code is **not authorized** and **not present**.
-- Implementation is **not authorized**.
-- `Gate A` (productive code / implementation) is **not passed**.
+- `Gate A` (productive code / implementation) is **passed**.
+- A **narrowly scoped implementation work package** — `CO-WP-033`, *Observe Canonical
+  Observation Domain — First Productive Source* — is **created and authorized**.
+- Implementation is therefore **authorized within that scope**, but it has **not been
+  carried out**.
+- Productive application code is **not present**. There is no Go source tree and no Go
+  module.
+- That work package runs in two stages. **Stage 1** (this documentation-only
+  reconciliation of the current state) is **authorized**. **Stage 2** — the first
+  productive source — is **conditionally authorized** and **not started**; it may only
+  begin after Stage 1 has been reviewed, committed, pushed and confirmed as integrated
+  in the remote repository.
+- **Nothing has been built and nothing has been executed.** No target has been observed.
 - `Gate B` (target access / execution) is **not passed**.
-- The publication artifacts `README.md` and `LICENSE` now exist. Their creation was a
+- The publication artifacts `README.md` and `LICENSE` exist. Their creation was a
   separately authorized repository action and authorizes nothing further.
 
 For the authoritative, maintained gate and transition state, see
 [Productive-Code Transition Prerequisites](docs/governance/PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md).
+The distinctions above are binding:
+
+```text
+implementation authorized  != implementation present
+Gate A passed              != Gate B passed
+Gate A passed              != product usable
+productive source absent   != implementation unauthorized
+```
 
 ## What CoreOps Is
 
@@ -87,17 +105,28 @@ Foundation 0.1 is closed. The `Observe` phase has been entered with an explicit
 boundary. The first selected Observe value slice is
 **Local Linux Host Identity & Basic System Observation**.
 
-Selection is not delivery. The following distinctions are binding:
+The slice is defined as a read-only observation contract. A narrowly scoped
+implementation work package for it — `CO-WP-033` — is created and authorized, and
+`Gate A` is passed. The current work is that package's **Stage 1**: a
+documentation-only reconciliation of the repository's recorded state. **Stage 2**, the
+first productive source, is conditionally authorized and has **not started**; it may
+only begin once Stage 1 is reviewed, committed, pushed and confirmed as integrated in
+the remote repository.
+
+Authorization is not delivery. The following distinctions are binding:
 
 ```text
-Observe entered        != target access authorized
-slice selected         != productive source authorized
-slice selected         != slice implemented
-contract documented    != behaviour implemented
+Observe entered            != target access authorized
+slice selected             != slice implemented
+contract documented        != behaviour implemented
+implementation authorized  != implementation performed
+implementation authorized  != productive source present
+Stage 2 authorized         != Stage 2 started
+Gate A passed              != Gate B passed
 ```
 
-The slice is defined as a read-only observation contract. It is **not** implemented,
-no target access is authorized, and no real observation has been performed.
+The slice is **not** implemented. No productive source exists, no target access is
+authorized, and no real observation has been performed.
 
 ## Governance and Architecture Sources
 

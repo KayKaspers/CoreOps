@@ -27,9 +27,47 @@ project:
                                  # Observation. HM-O3 (APPROVED) hat CO-WP-032
                                  # autorisiert; HM-O4 (APPROVED WITH EXACT
                                  # BOUNDARY) begrenzt dessen Ausfuehrung auf
-                                 # docs-only. Aktuell laeuft ausschliesslich
+                                 # docs-only. CO-WP-032 ist abgeschlossen und
+                                 # remote integriert.
+                                 # CO-WP-033 - Observe Canonical Observation
+                                 # Domain - First Productive Source ist durch
+                                 # eine eigene, ausdrueckliche Human-
+                                 # Maintainer-Autorisierung CREATED /
+                                 # AUTHORIZED; primaerer Typ feature
+                                 # (bestehender Typ aus COREOPS_CONCEPT_V3;
+                                 # KEIN neuer Typ eingefuehrt), Phase Observe,
+                                 # autorisierte Baseline
+                                 # 4db1a7cc013bd35ced552532819e77467404c823.
+                                 # Queue-Statusspalte planned nach unveraen-
+                                 # dertem Statusvokabular (planned /
+                                 # completed-go / completed-go-with-notes);
+                                 # KEIN neuer Statuswert, KEIN neues
+                                 # Statusfeld erfunden.
+                                 # Gate-A-Punkt A-14 ERFUELLT; Gate A
+                                 # PASSIERT. Gate B unveraendert 0 von 8 -
+                                 # NICHT PASSIERT.
+                                 # Zweistufiges Ausfuehrungsmodell:
+                                 # Stage 1 AUTHORIZED - ausschliesslich
                                  # dokumentations- und governanceorientierte
-                                 # Vertrags- und Uebergangsarbeit.
+                                 # Current-State-Realisierung (Queue, A-14/
+                                 # Gate A, Current-State-Carrier, README);
+                                 # KEIN produktiver Quellcode, KEIN Quell-
+                                 # verzeichnis, KEINE .go-Datei. Aktuell
+                                 # laeuft ausschliesslich diese Stage-1-
+                                 # Arbeit.
+                                 # Stage 2 CONDITIONALLY AUTHORIZED -
+                                 # NOT STARTED, NOT EXECUTED, NOT REALIZED;
+                                 # zulaessig erst nach erfolgreicher Stage-1-
+                                 # Ausfuehrung, Nova Review, Human-Maintainer-
+                                 # Staging, -Commit, -Push und bestaetigter
+                                 # Remote-Integration von Stage 1.
+                                 # Fuer Stage 2 nach Repository Governance
+                                 # Standard Abschnitt 12 ausdruecklich
+                                 # erteilt: internal/ -> internal/observe/.
+                                 # NICHT autorisiert: cmd/, pkg/, src/,
+                                 # Top-Level-tests/, testdata/, .github/,
+                                 # ADR-Verzeichnisse, internal/observe/
+                                 # collect/. Keine Auslegungserweiterung.
                                  # Entschieden (Gate A, jeweils eigene,
                                  # ausdrueckliche Human-Maintainer-Entscheidung,
                                  # jeweils ohne ADR und ohne Decision-ID):
@@ -263,20 +301,38 @@ project:
                                  # DEC-D-03, DEC-D-06, CCR-09 samt der
                                  # weiteren offenen CCR, HM-5, HM-6,
                                  # RISK-15 und RISK-20.
-                                 # Gate A: 13 von 14 erfuellt, 0 teilweise,
-                                 # 1 offen - NICHT PASSIERT (offen: genau
-                                 # A-14). Gate B: 0 von 8 -
-                                 # NICHT PASSIERT.
-                                 # Impliziert NICHT: Implementierung autorisiert
-                                 # oder begonnen;
-                                 # NICHT: produktiver Anwendungscode autorisiert
-                                 # oder vorhanden;
+                                 # Gate A: 14 von 14 erfuellt, 0 teilweise,
+                                 # 0 offen - PASSIERT (A-14 erfuellt).
+                                 # Autoritative Quelle:
+                                 # docs/governance/
+                                 # PRODUCTIVE_CODE_TRANSITION_PREREQUISITES.md
+                                 # Abschnitt 16.1; die Zahl hier ist ein
+                                 # gepflegter, NICHT-AUTORITATIVER
+                                 # Current-State-Spiegel.
+                                 # Gate B: 0 von 8 - NICHT PASSIERT.
+                                 # Impliziert NICHT: Implementierung begonnen
+                                 # oder durchgefuehrt - sie ist innerhalb des
+                                 # freigegebenen CO-WP-033-Scopes autorisiert,
+                                 # ihre Ausuebung aber der bedingt
+                                 # autorisierten, nicht begonnenen Stage 2
+                                 # zugewiesen;
+                                 # NICHT: produktiver Anwendungscode vorhanden
+                                 # - er ist autorisiert, aber NICHT VORHANDEN;
+                                 # NICHT: Gate B passiert; NICHT: pauschale
+                                 # Implementierungsautoritaet ueber den
+                                 # freigegebenen Scope hinaus;
                                  # NICHT: Source Tree angelegt - kein cmd/,
-                                 # kein internal/, kein testdata/, keine
+                                 # kein internal/, kein internal/observe/,
+                                 # kein testdata/, keine
                                  # Quelldatei, keine Testdatei, keine Fixture;
                                  # die Anlage neuer Top-Level-Struktur bleibt
                                  # nach Repository Governance Standard
-                                 # Abschnitt 12 eigenstaendig gate-pflichtig;
+                                 # Abschnitt 12 eigenstaendig gate-pflichtig
+                                 # und ist fuer Stage 2 ausschliesslich fuer
+                                 # internal/ -> internal/observe/ erteilt;
+                                 # Stage 1 legt nichts davon an
+                                 # (Abschnitt-12-Autoritaet erteilt bedeutet
+                                 # NICHT Verzeichnis angelegt);
                                  # NICHT: go.mod oder go.sum angelegt oder
                                  # autorisiert; Modulpfad, exakte Go-Version
                                  # und exakte Toolchain-/Distributionsartefakt-
@@ -350,8 +406,33 @@ project:
                                  # NICHT: Capability implementiert oder supported;
                                  # NICHT: funktionaler Produktrelease;
                                  # NICHT: GitHub Release (HM-R11 NOT AUTHORIZED);
-                                 # NICHT: ein Folge-Work-Package erzeugt oder
-                                 # reserviert.
+                                 # NICHT: ein Folge-Work-Package zu CO-WP-033
+                                 # erzeugt oder reserviert - insbesondere
+                                 # KEINE CO-WP-034. CO-WP-033 selbst ist
+                                 # NICHT als automatischer Nachfolger
+                                 # entstanden, sondern ausschliesslich durch
+                                 # einen eigenen, ausdruecklichen Human-
+                                 # Maintainer-Autorisierungsakt.
+                                 # Bindend: Human-Maintainer-Autorisierung
+                                 # bedeutet NICHT Repository-Realisierung;
+                                 # Repository-Realisierung bedeutet NICHT
+                                 # produktive Implementierung; A-14 erfuellt
+                                 # bedeutet NICHT Stage 2 begonnen; Gate A
+                                 # passiert bedeutet NICHT produktiver
+                                 # Quellcode vorhanden; Implementierung
+                                 # autorisiert bedeutet NICHT Implementierung
+                                 # durchgefuehrt; Stage 2 bedingt autorisiert
+                                 # bedeutet NICHT Stage 2 jetzt ausfuehrbar;
+                                 # produktiver Quellcode abwesend bedeutet
+                                 # NICHT Implementierung nicht autorisiert;
+                                 # Stage 1 abgeschlossen bedeutet NICHT
+                                 # Stage 2 automatisch begonnen.
+                                 # Der Observation Contract bleibt allein
+                                 # normativ: internal/observe ist NICHT der
+                                 # Observation Contract, ein Go-Typ ist NICHT
+                                 # kanonisches Governance-Vokabular, und
+                                 # Quellcode ist NICHT Source of Truth des
+                                 # Vertrags.
   project_type: Universal Operations Control Plane
 
 roles:
