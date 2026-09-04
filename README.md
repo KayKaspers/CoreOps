@@ -20,7 +20,7 @@ file links to the authoritative source instead of duplicating it.
 - There is **no functional CoreOps product release**. No usable product is claimed.
 - `Gate A` (productive code / implementation) is **passed**.
 - A **narrowly scoped implementation work package** — `CO-WP-033`, *Observe Canonical
-  Observation Domain — First Productive Source* — is **created and authorized**.
+  Observation Domain — First Productive Source* — is **completed and closed**.
 - Implementation is therefore **authorized within that scope**, and a first bounded
   increment of it has been **carried out**.
 - A **first bounded piece of productive Go source** is present, under
@@ -29,11 +29,11 @@ file links to the authoritative source instead of duplicating it.
 - That source has **not been compiled, not been built, not been formatted with
   `gofmt`, not been vetted, not been tested and not been executed**, and it has
   **observed no target**. There is still **no Go module**: no `go.mod` and no `go.sum`.
-- That work package runs in two stages. **Stage 1** (a documentation-only
-  reconciliation of the current state) is **complete and integrated in the remote
-  repository**. **Stage 2** — the first productive source — is **authorized** and has
-  been **carried out**; it is awaiting review. The work package itself is **not
-  closed**.
+- That work package ran in two stages. **Stage 1** (a documentation-only
+  reconciliation of the current state) and **Stage 2** (the first productive source)
+  are both **complete and integrated in the remote repository**. The work package
+  itself is **closed**. Closing it created **no** successor work package and reserved
+  **no** identifier.
 - **Nothing has been built and nothing has been executed.** No target has been observed.
 - `Gate B` (target access / execution) is **not passed**.
 - The publication artifacts `README.md` and `LICENSE` exist. Their creation was a
@@ -51,6 +51,10 @@ productive source present  != product usable
 productive source present  != Gate B passed
 Gate A passed              != Gate B passed
 Stage 2 implemented        != work package closed
+work package closed        != build verified
+work package closed        != tested
+work package closed        != Gate B passed
+work package closed        != successor authorized
 ```
 
 ## What CoreOps Is
@@ -119,11 +123,12 @@ boundary. The first selected Observe value slice is
 **Local Linux Host Identity & Basic System Observation**.
 
 The slice is defined as a read-only observation contract. A narrowly scoped
-implementation work package for it — `CO-WP-033` — is created and authorized, and
+implementation work package for it — `CO-WP-033` — is completed and closed, and
 `Gate A` is passed. That package's **Stage 1**, a documentation-only reconciliation of
-the repository's recorded state, is complete and integrated. The current work is its
-**Stage 2**: the first productive source, under [`internal/observe/`](internal/observe).
-Stage 2 has been carried out and is awaiting review.
+the repository's recorded state, and its **Stage 2**, the first productive source under
+[`internal/observe/`](internal/observe), are both complete and integrated. Closing the
+work package authorized no follow-on work: no successor work package exists, and none
+is reserved.
 
 Authorization is not delivery, and source is not a product. The following distinctions
 are binding:
@@ -137,6 +142,8 @@ productive source present  != buildable
 productive source present  != tested
 productive source present  != target access
 Stage 2 implemented        != work package closed
+work package closed        != slice delivered
+work package closed        != successor authorized
 Gate A passed              != Gate B passed
 ```
 

@@ -7,13 +7,22 @@ project:
   name: CoreOps
   slug: coreops
   slogan: "One Dashboard. Controlled Operations."
-  status: observe-entered-bounded-docs-only-contract-and-governance-work
+  status: observe-entered-bounded-first-productive-source-present
                                  # Rein deskriptiver aktueller Projektzustand,
                                  # KEINE Produktreife-, Release-, Support-,
                                  # Capability- oder Implementierungsreife-Taxonomie
                                  # und KEINE Autoritaet ueber die akzeptierte
                                  # Release Taxonomy
                                  # (docs/governance/RELEASE_TAXONOMY.md).
+                                 # Der Statuswert bedeutet AUSSCHLIESSLICH:
+                                 # Observe ist betreten; die Arbeit bleibt
+                                 # bounded; erster produktiver Source ist
+                                 # vorhanden. Er bedeutet NICHT: Gate B
+                                 # bestanden, Build verifiziert, Tests
+                                 # bestanden, Zielzugriff autorisiert,
+                                 # P-1 erfuellt, P-2 erfuellt, Collector
+                                 # vorhanden, Produkt nutzbar, Deployment,
+                                 # Release oder Produktionsreife.
                                  # Bedeutung woertlich: die Foundation-0.1-
                                  # Dokumentations-/Governance-Phase ist durch die
                                  # Human-Maintainer-Entscheidung HM-F1
@@ -32,17 +41,23 @@ project:
                                  # CO-WP-033 - Observe Canonical Observation
                                  # Domain - First Productive Source ist durch
                                  # eine eigene, ausdrueckliche Human-
-                                 # Maintainer-Autorisierung CREATED /
-                                 # AUTHORIZED; primaerer Typ feature
+                                 # Maintainer-Autorisierung erzeugt und
+                                 # autorisiert worden und inzwischen
+                                 # COMPLETED / CLOSED; primaerer Typ feature
                                  # (bestehender Typ aus COREOPS_CONCEPT_V3;
                                  # KEIN neuer Typ eingefuehrt), Phase Observe,
                                  # autorisierte Baseline
                                  # 4db1a7cc013bd35ced552532819e77467404c823.
-                                 # Queue-Statusspalte planned nach unveraen-
-                                 # dertem Statusvokabular (planned /
-                                 # completed-go / completed-go-with-notes);
-                                 # KEIN neuer Statuswert, KEIN neues
-                                 # Statusfeld erfunden.
+                                 # Queue-Statusspalte completed-go-with-notes
+                                 # nach unveraendertem Statusvokabular
+                                 # (planned / completed-go /
+                                 # completed-go-with-notes); bis zum Nova
+                                 # Final Review stand der Eintrag auf planned,
+                                 # weil kein wahrheitsgemaesser Zwischenwert
+                                 # existiert; KEIN neuer Statuswert, KEIN
+                                 # neues Statusfeld erfunden.
+                                 # completed-go-with-notes bedeutet NICHT
+                                 # eine offene blockierende Note.
                                  # Gate-A-Punkt A-14 ERFUELLT; Gate A
                                  # PASSIERT. Gate B unveraendert 0 von 8 -
                                  # NICHT PASSIERT.
@@ -54,8 +69,11 @@ project:
                                  # KEIN produktiver Quellcode erzeugt.
                                  # Remote integriert als Commit
                                  # 751e753a4ff1b9ae38a84627881da6a4e4679efd.
-                                 # Stage 2 AUTHORIZED - AUSGEFUEHRT; die
-                                 # Bedingung (erfolgreiche Stage-1-Ausfuehrung,
+                                 # Stage 2 AUTHORIZED - AUSGEFUEHRT und
+                                 # REMOTE INTEGRIERT als Commit
+                                 # dc2899e9f2e2d3880b49c222cee6559ea933cb05;
+                                 # die Bedingung (erfolgreiche Stage-1-
+                                 # Ausfuehrung,
                                  # Nova Review, Human-Maintainer-Staging,
                                  # -Commit, -Push und bestaetigte Remote-
                                  # Integration von Stage 1) ist ERFUELLT.
@@ -74,10 +92,18 @@ project:
                                  # Zielzugriff, KEIN Netzwerk, KEINE
                                  # Hosterhebung; KEIN go.mod, KEIN go.sum;
                                  # Drittabhaengigkeiten 0.
-                                 # Nova Review fuer Stage 2 AUSSTEHEND;
-                                 # Work Package NICHT GESCHLOSSEN
-                                 # (Stage-2-Implementierung realisiert ist
-                                 # NICHT Work-Package-Abschluss).
+                                 # Review-Lebenszyklus Stage 2: Nova Initial
+                                 # Review REWORK mit genau einer blockierenden
+                                 # Note BN-1 (R4 / partielle Semantik-
+                                 # absicherung) - BN-1 CLOSED, die
+                                 # schliessende Korrektur ist im integrierten
+                                 # Stage-2-Commit enthalten - Nova Final
+                                 # Review GO. Work Package COMPLETED /
+                                 # CLOSED (Stage-2-Implementierung realisiert
+                                 # ist NICHT Work-Package-Abschluss; der
+                                 # Abschluss folgt erst aus dem Nova Final
+                                 # Review und der Human-Maintainer-
+                                 # Integration).
                                  # Fuer Stage 2 nach Repository Governance
                                  # Standard Abschnitt 12 ausdruecklich
                                  # erteilt: internal/ -> internal/observe/.
@@ -452,8 +478,10 @@ project:
                                  # ausgefuehrt bedeutet NICHT bestanden;
                                  # Stage-2-Implementierung realisiert bedeutet
                                  # NICHT Work-Package-Abschluss; Work Package
-                                 # aktiv bedeutet NICHT naechstes Work
-                                 # Package autorisiert; null Drittabhaengig-
+                                 # abgeschlossen bedeutet NICHT naechstes Work
+                                 # Package autorisiert; kein Nachfolger
+                                 # bedeutet NICHT Roadmap abgeschlossen;
+                                 # null Drittabhaengig-
                                  # keiten bedeutet NICHT null Lieferkette.
                                  # Der Observation Contract bleibt allein
                                  # normativ: internal/observe ist NICHT der
