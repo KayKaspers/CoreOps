@@ -187,8 +187,84 @@ project:
                                  # Container und CI ZURUECKGESTELLT.
                                  # SBOM- und Provenance-Behandlung DEFINIERT,
                                  # Artefakte NICHT ERZEUGT.
-                                 # Gate A: 12 von 14 erfuellt, 0 teilweise,
-                                 # 2 offen - NICHT PASSIERT (offen: A-11,
+                                 # ADR-/Decision-Behandlung ENTSCHIEDEN -
+                                 # Gate-A-Punkt A-11 erfuellt; Disposition
+                                 # APPROVE ADR-TREATMENT MATRIX WITH
+                                 # DEFERRED TRIGGERS WITH NOVA BOUNDARY
+                                 # CLARIFICATIONS; Geltung ausschliesslich
+                                 # erster Observe-Slice; Gegenstand
+                                 # ausschliesslich die ADR-/Decision-
+                                 # Behandlung der sieben Punkte aus
+                                 # PRODUCTIVE_CODE_TRANSITION_PREREQUISITES
+                                 # Abschnitt 14. ADR-Behandlung je Zeile:
+                                 # P-3 T2; Sprache/Runtime T2;
+                                 # Source Tree T4; Dependency-Admission T4;
+                                 # NEW-8 T4; Build/Packaging T5;
+                                 # Envelope-Zusammensetzung (R6) T4.
+                                 # T2 = ADR-Record zurueckgestellt bis
+                                 # Relevanzausloeser; T4 = kein gesonderter
+                                 # ADR fuer die aktuelle Entscheidung
+                                 # erforderlich; T5 = bestehende ADR-
+                                 # Kandidaten- und Decision-Objekte regieren
+                                 # ihre eigenen zurueckgestellten
+                                 # Gegenstaende weiter.
+                                 # Der von A-11 verlangte ausdrueckliche
+                                 # Human-Maintainer-Akt IST diese
+                                 # Abschnitt-14-ADR-Behandlungsdisposition;
+                                 # es entsteht KEIN unabhaengiges Meta-Gate
+                                 # oberhalb dieser Zeilen, und unveraendert
+                                 # gilt: alle Abschnitt-14-Zeilen entschieden
+                                 # bedeutet NICHT A-11 erfuellt.
+                                 # Die zugehoerige ADR-Relevanzregel gilt
+                                 # ausschliesslich fuer A-11 und den ersten
+                                 # Observe-Slice; sie ist KEINE projektweite
+                                 # ADR-Politik und KEIN dauerhafter
+                                 # ADR-Governance-Standard.
+                                 # Zurueckgestellt ist NICHT erloschen: T2
+                                 # und T5 halten die dokumentierte
+                                 # ADR-Relevanz aufrecht; ein spaeterer
+                                 # Relevanzausloeser verlangt VOR der
+                                 # ausloesenden Architekturfestlegung einen
+                                 # neuen ausdruecklichen Governance-Akt.
+                                 # Akzeptierte ADRs 0; ADR-Dateien 0;
+                                 # keine ADR-Nummer vergeben und keine
+                                 # reserviert; kein ADR-Verzeichnis und
+                                 # keine ADR-Vorlage; ADR-Ort und
+                                 # ADR-Vorlage NICHT ENTSCHIEDEN;
+                                 # DECISION_INDEX UNVERAENDERT;
+                                 # Risk Register UNVERAENDERT.
+                                 # A-11 erfuellt bedeutet NICHT: ADR erzeugt
+                                 # oder akzeptiert, ADR-Nummer vergeben oder
+                                 # reserviert, Decision Index oder Risk
+                                 # Register geaendert, A-14 erfuellt, Gate A
+                                 # passiert, Implementierung oder produktiver
+                                 # Code autorisiert, Source Tree angelegt,
+                                 # go.mod angelegt, Go-Quelle erzeugt, Build
+                                 # autorisiert, Toolchain beschafft,
+                                 # Abhaengigkeit zugelassen, Test
+                                 # implementiert oder ausgefuehrt,
+                                 # P-1 erteilt, P-2 erfuellt oder CO-WP-033
+                                 # erzeugt bzw. reserviert.
+                                 # Fuer sich genommen KEIN ADR-Ausloeser:
+                                 # erste produktive Go-Quelle; Anlage einer
+                                 # autorisierten Wurzel-go.mod; Auswahl der
+                                 # exakten zulaessigen Go-Patch-Version;
+                                 # gewoehnliche paketlokale Erst-Slice-
+                                 # Implementierung; Erst-Slice-P-3-
+                                 # Realisierung innerhalb der bereits
+                                 # freigegebenen Mechanismusgrenze.
+                                 # A-11 schliesst, verengt, verdraengt oder
+                                 # stuft bestehende Kandidaten- und
+                                 # Decision-Objekte NICHT um - darunter
+                                 # ADR-0002, ADR-0005, ADR-0009, ADR-0013,
+                                 # ADR-0024, ADR-0030, DEC-A-0031,
+                                 # DEC-A-0032, DEC-S-03, DEC-S-184,
+                                 # DEC-S-303, DEC-O-05, DEC-O-07, DEC-O-09,
+                                 # DEC-D-03, DEC-D-06, CCR-09 samt der
+                                 # weiteren offenen CCR, HM-5, HM-6,
+                                 # RISK-15 und RISK-20.
+                                 # Gate A: 13 von 14 erfuellt, 0 teilweise,
+                                 # 1 offen - NICHT PASSIERT (offen: genau
                                  # A-14). Gate B: 0 von 8 -
                                  # NICHT PASSIERT.
                                  # Impliziert NICHT: Implementierung autorisiert
@@ -262,7 +338,11 @@ project:
                                  # Anforderung definiert bedeutet NICHT Evidenz
                                  # erzeugt);
                                  # NICHT: ADR erzeugt oder akzeptiert
-                                 # (akzeptierte ADRs 0, A-11 offen);
+                                 # (akzeptierte ADRs 0, ADR-Dateien 0, keine
+                                 # ADR-Nummer vergeben und keine reserviert,
+                                 # ADR-Ort und ADR-Vorlage nicht entschieden,
+                                 # DECISION_INDEX und Risk Register
+                                 # unveraendert);
                                  # NICHT: Zielzugriff autorisiert (P-1);
                                  # NICHT: No-Mutation-Evidenz erbracht (P-2);
                                  # NICHT: reale Beobachtung durchgefuehrt;
