@@ -47,20 +47,37 @@ project:
                                  # PASSIERT. Gate B unveraendert 0 von 8 -
                                  # NICHT PASSIERT.
                                  # Zweistufiges Ausfuehrungsmodell:
-                                 # Stage 1 AUTHORIZED - ausschliesslich
+                                 # Stage 1 COMPLETE - ausschliesslich
                                  # dokumentations- und governanceorientierte
                                  # Current-State-Realisierung (Queue, A-14/
                                  # Gate A, Current-State-Carrier, README);
-                                 # KEIN produktiver Quellcode, KEIN Quell-
-                                 # verzeichnis, KEINE .go-Datei. Aktuell
-                                 # laeuft ausschliesslich diese Stage-1-
-                                 # Arbeit.
-                                 # Stage 2 CONDITIONALLY AUTHORIZED -
-                                 # NOT STARTED, NOT EXECUTED, NOT REALIZED;
-                                 # zulaessig erst nach erfolgreicher Stage-1-
-                                 # Ausfuehrung, Nova Review, Human-Maintainer-
-                                 # Staging, -Commit, -Push und bestaetigter
-                                 # Remote-Integration von Stage 1.
+                                 # KEIN produktiver Quellcode erzeugt.
+                                 # Remote integriert als Commit
+                                 # 751e753a4ff1b9ae38a84627881da6a4e4679efd.
+                                 # Stage 2 AUTHORIZED - AUSGEFUEHRT; die
+                                 # Bedingung (erfolgreiche Stage-1-Ausfuehrung,
+                                 # Nova Review, Human-Maintainer-Staging,
+                                 # -Commit, -Push und bestaetigte Remote-
+                                 # Integration von Stage 1) ist ERFUELLT.
+                                 # Angelegt sind internal/ und
+                                 # internal/observe/ mit genau sechs
+                                 # produktiven Go-Quelldateien:
+                                 # observation.go, field.go, outcome.go,
+                                 # provenance.go, freshness.go,
+                                 # composition.go. Sie realisieren
+                                 # ausschliesslich bereits normative Semantik
+                                 # des Observation Contract; der Vertrag
+                                 # bleibt allein normativ.
+                                 # NICHT kompiliert, NICHT gebaut, NICHT
+                                 # gofmt-geprueft, NICHT go-vet-geprueft,
+                                 # NICHT getestet, NICHT ausgefuehrt; KEIN
+                                 # Zielzugriff, KEIN Netzwerk, KEINE
+                                 # Hosterhebung; KEIN go.mod, KEIN go.sum;
+                                 # Drittabhaengigkeiten 0.
+                                 # Nova Review fuer Stage 2 AUSSTEHEND;
+                                 # Work Package NICHT GESCHLOSSEN
+                                 # (Stage-2-Implementierung realisiert ist
+                                 # NICHT Work-Package-Abschluss).
                                  # Fuer Stage 2 nach Repository Governance
                                  # Standard Abschnitt 12 ausdruecklich
                                  # erteilt: internal/ -> internal/observe/.
@@ -310,29 +327,34 @@ project:
                                  # gepflegter, NICHT-AUTORITATIVER
                                  # Current-State-Spiegel.
                                  # Gate B: 0 von 8 - NICHT PASSIERT.
-                                 # Impliziert NICHT: Implementierung begonnen
-                                 # oder durchgefuehrt - sie ist innerhalb des
-                                 # freigegebenen CO-WP-033-Scopes autorisiert,
-                                 # ihre Ausuebung aber der bedingt
-                                 # autorisierten, nicht begonnenen Stage 2
-                                 # zugewiesen;
-                                 # NICHT: produktiver Anwendungscode vorhanden
-                                 # - er ist autorisiert, aber NICHT VORHANDEN;
+                                 # Impliziert NICHT: Implementierung ueber den
+                                 # freigegebenen CO-WP-033-Scope hinaus - in
+                                 # Stage 2 ist ausschliesslich das erste
+                                 # begrenzte, I/O-freie Inkrement der
+                                 # kanonischen Beobachtungsdomaene
+                                 # durchgefuehrt;
+                                 # NICHT: Anwendungscode ueber internal/
+                                 # observe/ hinaus vorhanden - dort liegen
+                                 # sechs .go-Dateien, sonst nirgends;
+                                 # NICHT: Quellcode kompiliert, gebaut,
+                                 # gofmt-geprueft, go-vet-geprueft, getestet
+                                 # oder ausgefuehrt;
                                  # NICHT: Gate B passiert; NICHT: pauschale
                                  # Implementierungsautoritaet ueber den
                                  # freigegebenen Scope hinaus;
-                                 # NICHT: Source Tree angelegt - kein cmd/,
-                                 # kein internal/, kein internal/observe/,
-                                 # kein testdata/, keine
-                                 # Quelldatei, keine Testdatei, keine Fixture;
+                                 # NICHT: Source Tree vollstaendig angelegt -
+                                 # kein cmd/, kein internal/observe/collect/,
+                                 # kein pkg/, kein src/, kein Top-Level-tests/,
+                                 # kein testdata/, keine Testdatei, keine
+                                 # Fixture, kein Vendor-Baum;
                                  # die Anlage neuer Top-Level-Struktur bleibt
                                  # nach Repository Governance Standard
-                                 # Abschnitt 12 eigenstaendig gate-pflichtig
-                                 # und ist fuer Stage 2 ausschliesslich fuer
-                                 # internal/ -> internal/observe/ erteilt;
-                                 # Stage 1 legt nichts davon an
-                                 # (Abschnitt-12-Autoritaet erteilt bedeutet
-                                 # NICHT Verzeichnis angelegt);
+                                 # Abschnitt 12 eigenstaendig gate-pflichtig;
+                                 # die fuer Stage 2 erteilte Abschnitt-12-
+                                 # Autoritaet internal/ -> internal/observe/
+                                 # ist AUSGEUEBT UND ERSCHOEPFT
+                                 # (Abschnitt-12-Autoritaet ausgeuebt bedeutet
+                                 # NICHT weitere Struktur autorisiert);
                                  # NICHT: go.mod oder go.sum angelegt oder
                                  # autorisiert; Modulpfad, exakte Go-Version
                                  # und exakte Toolchain-/Distributionsartefakt-
@@ -421,12 +443,18 @@ project:
                                  # passiert bedeutet NICHT produktiver
                                  # Quellcode vorhanden; Implementierung
                                  # autorisiert bedeutet NICHT Implementierung
-                                 # durchgefuehrt; Stage 2 bedingt autorisiert
-                                 # bedeutet NICHT Stage 2 jetzt ausfuehrbar;
-                                 # produktiver Quellcode abwesend bedeutet
-                                 # NICHT Implementierung nicht autorisiert;
-                                 # Stage 1 abgeschlossen bedeutet NICHT
-                                 # Stage 2 automatisch begonnen.
+                                 # durchgefuehrt; Stage 1 abgeschlossen
+                                 # bedeutet NICHT Stage 2 automatisch
+                                 # begonnen; produktive Quelle vorhanden
+                                 # bedeutet NICHT Quelle kompiliert, NICHT
+                                 # baubar, NICHT getestet, NICHT Zielzugriff
+                                 # und NICHT Gate B passiert; nicht
+                                 # ausgefuehrt bedeutet NICHT bestanden;
+                                 # Stage-2-Implementierung realisiert bedeutet
+                                 # NICHT Work-Package-Abschluss; Work Package
+                                 # aktiv bedeutet NICHT naechstes Work
+                                 # Package autorisiert; null Drittabhaengig-
+                                 # keiten bedeutet NICHT null Lieferkette.
                                  # Der Observation Contract bleibt allein
                                  # normativ: internal/observe ist NICHT der
                                  # Observation Contract, ein Go-Typ ist NICHT

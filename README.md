@@ -21,15 +21,19 @@ file links to the authoritative source instead of duplicating it.
 - `Gate A` (productive code / implementation) is **passed**.
 - A **narrowly scoped implementation work package** — `CO-WP-033`, *Observe Canonical
   Observation Domain — First Productive Source* — is **created and authorized**.
-- Implementation is therefore **authorized within that scope**, but it has **not been
-  carried out**.
-- Productive application code is **not present**. There is no Go source tree and no Go
-  module.
-- That work package runs in two stages. **Stage 1** (this documentation-only
-  reconciliation of the current state) is **authorized**. **Stage 2** — the first
-  productive source — is **conditionally authorized** and **not started**; it may only
-  begin after Stage 1 has been reviewed, committed, pushed and confirmed as integrated
-  in the remote repository.
+- Implementation is therefore **authorized within that scope**, and a first bounded
+  increment of it has been **carried out**.
+- A **first bounded piece of productive Go source** is present, under
+  [`internal/observe/`](internal/observe). It is I/O-free by authorized design: it reads
+  no file, no host fact and no network, and it starts no process.
+- That source has **not been compiled, not been built, not been formatted with
+  `gofmt`, not been vetted, not been tested and not been executed**, and it has
+  **observed no target**. There is still **no Go module**: no `go.mod` and no `go.sum`.
+- That work package runs in two stages. **Stage 1** (a documentation-only
+  reconciliation of the current state) is **complete and integrated in the remote
+  repository**. **Stage 2** — the first productive source — is **authorized** and has
+  been **carried out**; it is awaiting review. The work package itself is **not
+  closed**.
 - **Nothing has been built and nothing has been executed.** No target has been observed.
 - `Gate B` (target access / execution) is **not passed**.
 - The publication artifacts `README.md` and `LICENSE` exist. Their creation was a
@@ -40,10 +44,13 @@ For the authoritative, maintained gate and transition state, see
 The distinctions above are binding:
 
 ```text
-implementation authorized  != implementation present
+productive source present  != source compiles
+productive source present  != buildable
+productive source present  != tested
+productive source present  != product usable
+productive source present  != Gate B passed
 Gate A passed              != Gate B passed
-Gate A passed              != product usable
-productive source absent   != implementation unauthorized
+Stage 2 implemented        != work package closed
 ```
 
 ## What CoreOps Is
@@ -83,9 +90,15 @@ Currently, this repository consists primarily of documentation and project state
 - **Project-brain and context artifacts** — the maintained working memory and context
   packs used to carry project state between sessions.
 - **Publication artifacts** — this `README.md` and the root [`LICENSE`](LICENSE).
+- **A first bounded piece of productive Go source** — the canonical observation domain
+  of the first Observe slice, under [`internal/observe/`](internal/observe). It models
+  the observation envelope, the canonical field identities, the bounded outcome and
+  freshness vocabularies, the per-field provenance structure and the deterministic
+  envelope composition rules of the observation contract. It performs no collection.
 
-There is no productive application code in this repository. There is no Go source
-tree and no Go module metadata.
+That source is the only productive application code in this repository. There is no Go
+module metadata: no `go.mod` and no `go.sum`. Nothing in the repository has been
+compiled, built, formatted with `gofmt`, vetted, tested or executed.
 
 ## What This Repository Does Not Yet Provide
 
@@ -107,26 +120,30 @@ boundary. The first selected Observe value slice is
 
 The slice is defined as a read-only observation contract. A narrowly scoped
 implementation work package for it — `CO-WP-033` — is created and authorized, and
-`Gate A` is passed. The current work is that package's **Stage 1**: a
-documentation-only reconciliation of the repository's recorded state. **Stage 2**, the
-first productive source, is conditionally authorized and has **not started**; it may
-only begin once Stage 1 is reviewed, committed, pushed and confirmed as integrated in
-the remote repository.
+`Gate A` is passed. That package's **Stage 1**, a documentation-only reconciliation of
+the repository's recorded state, is complete and integrated. The current work is its
+**Stage 2**: the first productive source, under [`internal/observe/`](internal/observe).
+Stage 2 has been carried out and is awaiting review.
 
-Authorization is not delivery. The following distinctions are binding:
+Authorization is not delivery, and source is not a product. The following distinctions
+are binding:
 
 ```text
 Observe entered            != target access authorized
 slice selected             != slice implemented
 contract documented        != behaviour implemented
-implementation authorized  != implementation performed
-implementation authorized  != productive source present
-Stage 2 authorized         != Stage 2 started
+productive source present  != source compiles
+productive source present  != buildable
+productive source present  != tested
+productive source present  != target access
+Stage 2 implemented        != work package closed
 Gate A passed              != Gate B passed
 ```
 
-The slice is **not** implemented. No productive source exists, no target access is
-authorized, and no real observation has been performed.
+The observation contract remains the sole normative source for the semantics the
+source models; where the two differ, the source is wrong. The slice is **not**
+delivered: the collection path does not exist, no target access is authorized, and no
+real observation has been performed.
 
 ## Governance and Architecture Sources
 
