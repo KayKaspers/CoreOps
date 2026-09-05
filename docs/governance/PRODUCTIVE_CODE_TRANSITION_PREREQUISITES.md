@@ -33,6 +33,8 @@
 > Nachträgliche Current-State-Anwendung (`CO-WP-033` **Stage 2** — erste produktive Quelle, **nicht** docs-only) — **zeitgebundener Snapshot; ihre Aussagen zu Review- und Abschlussstand sind durch die nachfolgende Closure-Anwendung fortgeschrieben und ausdrücklich kein Current State**: Stage 1 ist **abgeschlossen und remote integriert** (integrierter Commit `751e753a4ff1b9ae38a84627881da6a4e4679efd`); die Bedingung der Stage-2-Autorisierung ist damit **erfüllt** und **Stage 2 ist ausgeführt**. Angelegt sind ausschließlich `internal/` und `internal/observe/` sowie darin genau **sechs** produktive Go-Quelldateien — `observation.go`, `field.go`, `outcome.go`, `provenance.go`, `freshness.go`, `composition.go` —, die ausschließlich bereits normative Semantik des [Observation Contract](../architecture/OBSERVE_LOCAL_LINUX_HOST_OBSERVATION_CONTRACT.md) realisieren: kanonischer Observation-Envelope (§7), kanonische Feldidentitäten (§9), die gebundenen Vokabulare **8** / **9** / **3** (§10.2, §10.3, §10.4), Per-Field-Provenance (§13), das gebundene Freshness-Vokabular (§14) und die deterministische Zusammensetzung **R1**–**R6** (§10.5). **Autoritätsquelle:** der bestehende Human-Maintainer-Autorisierungsakt; diese Anwendung erzeugt **keine** Autorität. Der Observation Contract bleibt **allein normativ** und **unverändert**: `internal/observe != Observation Contract` · `internal/observe != MOD-OBS-001` · `Go-Typ != kanonisches Governance-Vokabular` · `Quellcode != Source of Truth des Vertrags`. **Ausdrücklich nicht entstanden:** `go.mod`, `go.sum`, Modulpfad, Go-Versionsauswahl, Toolchain-Beschaffung oder -Installation, `cmd/`, `internal/observe/collect/`, `pkg/`, `src/`, Top-Level-`tests/`, `testdata/`, `.github/`, ADR-Verzeichnis, Testquelle, Fixture, Vendor-Baum, Build-, CI- oder Release-Artefakt. **Ausdrücklich nicht ausgeführt:** Kompilierung, Build, `gofmt`, `go vet`, Testimplementierung, Testausführung, Zielzugriff, Hosterhebung, Netzwerkzugriff. Zugelassene Drittabhängigkeiten bleiben **0**; die Standardbibliotheksnutzung beschränkt sich auf `time` in `observation.go` (Zeittyp; `time.Now` wird **nicht** aufgerufen, **kein** Zeitstempel fabriziert). **Weiterhin offen und nicht implementiert:** `target_id`-Ableitungsregel, konkrete Freshness-Schwellen (`PROPOSED / UNACCEPTED`), konkrete Normalisierungstransformation, `P-3`-Realisierung. **Gate A** bleibt **passiert** (14 von 14); **Gate B** bleibt **0 von 8 — NICHT PASSIERT**; `P-1` bleibt **NOT AUTHORIZED**, `P-2` bleibt **NOT SATISFIED**. Es entsteht **kein** ADR, **keine** ADR-Nummer, **keine** Decision-, Risk-, CCR-, Capability-, Support-Status-, Lessons- oder NDF-Feedback-Kennung, **kein** neues Work Package und **keine** Änderung an [WORK_PACKAGE_QUEUE.md](../../project-system/WORK_PACKAGE_QUEUE.md). Verbindlich: `Stage-2-Implementierung realisiert != Work-Package-Abschluss` · `produktive Quelle vorhanden != Quelle kompiliert` · `produktive Quelle vorhanden != baubar` · `produktive Quelle vorhanden != getestet` · `produktive Quelle vorhanden != Zielzugriff` · `produktive Quelle vorhanden != Gate B passiert` · `nicht ausgeführt != bestanden`. `CO-WP-033` bleibt **offen**; Nova Review steht **aus**; Staging, Commit und Push bleiben ausschließlich Human-Maintainer-Autorität.
 > Nachträgliche Current-State-Anwendung (`CO-WP-033` **Closure** — Work-Package-Abschluss, docs-only): Der Human Maintainer hat die Closure von `CO-WP-033` ausdrücklich **autorisiert** (autorisierte Baseline `dc2899e9f2e2d3880b49c222cee6559ea933cb05`). **Stage 1** ist **ABGESCHLOSSEN UND REMOTE INTEGRIERT** (Commit `751e753a4ff1b9ae38a84627881da6a4e4679efd`), **Stage 2** ist **ABGESCHLOSSEN UND REMOTE INTEGRIERT** (Commit `dc2899e9f2e2d3880b49c222cee6559ea933cb05`). **Review-Lebenszyklus von Stage 2:** Nova Initial Review **`REWORK`** mit genau einer blockierenden Note `BN-1` (`R4` / partielle Semantikabsicherung: eine als `partial` zusammengesetzte Envelope verlangt mindestens ein `Field` mit Ausgang `success`) → die schließende Korrektur ist im integrierten Stage-2-Commit enthalten, **`BN-1` CLOSED** → **Nova Final Review `GO`**. `CO-WP-033` ist damit **COMPLETED / CLOSED**; der Queue-Status lautet **`completed-go-with-notes`** und bildet ausschließlich diesen Review-Lebenszyklus ab — `completed-go-with-notes != offene blockierende Note`. **Autoritätsquelle:** der Human-Maintainer-Closure-Autorisierungsakt; diese Anwendung erzeugt **keine** Autorität und **keine** Governance-Objekte. **Unverändert:** Gate A **passiert** (14 von 14) · Gate B **0 von 8 — NICHT PASSIERT** · `P-1` **`NOT AUTHORIZED`** · `P-2` **`NOT SATISFIED`** · Tests **0 implementiert / 0 ausgeführt** · Testquelle **keine** · **keine** Kompilierung, **kein** Build, **kein** `gofmt`, **kein** `go vet`, **kein** Artefakt · **kein** `go.mod`, **kein** `go.sum`, **kein** Modulpfad, **keine** Go-Version, **keine** Toolchain · **kein** `cmd/`, **kein** `internal/observe/collect/`, **kein** Collector · **kein** Zielzugriff, **keine** reale Beobachtung, **kein** Netzwerk · Drittabhängigkeiten **0** · akzeptierte ADRs **0** · Decision Index und Risk Register **unverändert** · **kein** Deployment, **kein** Release, **keine** Produktionsreife. **Nicht erzeugt:** Decision-, Risk-, ADR-, CCR-, Capability-, Support-Status-, Lessons- oder NDF-Feedback-Kennung sowie **kein** Folge-Work-Package — insbesondere **keine** `CO-WP-034`. Der [Observation Contract](../architecture/OBSERVE_LOCAL_LINUX_HOST_OBSERVATION_CONTRACT.md) ist von dieser Anwendung **nicht** berührt und bleibt **unverändert**; seine bekannte Current-State-Staleness ist ausdrücklich **zurückgestellt** und **nicht** Gegenstand dieser Closure. Verbindlich: `Closure-Autorisierung != Closure-Integration` · `CO-WP-033 abgeschlossen != Gate B passiert` · `CO-WP-033 abgeschlossen != Build verifiziert` · `CO-WP-033 abgeschlossen != Tests bestanden` · `CO-WP-033 abgeschlossen != Zielzugriff` · `CO-WP-033 abgeschlossen != Produkt nutzbar` · `CO-WP-033 abgeschlossen != Deployment` · `CO-WP-033 abgeschlossen != Release` · `Abschluss != Nachfolgerautorisierung` · `kein Nachfolger != Roadmap abgeschlossen`.
 
+> Nachträgliche docs-only Current-State-Anwendung (`CO-WP-034` **Stage A** — WP Activation / Authority Recording): Der Human Maintainer hat `CO-WP-034 – First Source Verification: Go Module, Build & Unit-Test Enablement` (primärer Typ `test-only`; Phase `Observe`; autorisierte Baseline `983b7698e65de59024c78a4cef5837891cf27608`) ausdrücklich **autorisiert**. Diese Anwendung **zeichnet ausschließlich die bereits erteilte Autorität auf**; sie übt sie **nicht** aus. Aufgezeichnet sind: exakte Go-Version **`1.27.1`**, offizielle Upstream-Go-Binärdistribution mit human-maintainer-verifizierter Artefaktidentität/SHA-256 als **Stage-B-Vorbedingung**, exakter Modulpfad **`github.com/KayKaspers/CoreOps`**, Zero-Third-Party-Modulschluss, die Stage-B-Laufkontrollen `GOTOOLCHAIN=local`/`GOPROXY=off`/`GOSUMDB=off`/`GOVCS=*:off`/`CGO_ENABLED=0`, die primäre Netzisolation **Windows Sandbox mit `Networking = Disable`**, die ephemere Cache-/Temp-Grenze, die exakte technische Dateiautorität für Stage B, die **begrenzte** Testausführungsautorität, das Stage-B-Gate, die Read-only-Regel für die Produktivquelle und die Verifikationsmatrix. **Nicht erzeugt und in Stage A nicht autorisiert:** `go.mod`, `go.sum`, jede `*_test.go`-Datei, `docs/testing/OBSERVE_FIRST_SOURCE_VERIFICATION_EVIDENCE.md`. **Nicht ausgeführt:** Go-Toolchain, `gofmt`, `go vet`, `go build`, `go test`, Windows Sandbox, Verifikationscaches. **Gate A bleibt `14 von 14` — PASSIERT. Gate B bleibt `0 von 8` — NICHT PASSIERT**; `B-5` ist durch diese Aufzeichnung **nicht** erfüllt (§16.2, Gate-B-Grenznotiz). **Stage B ist nicht freigegeben** und erfordert eine eigene, ausdrückliche Human-Maintainer-Continue-Entscheidung. Details: §17.2.
+
 ## 1. Status und Zweck
 
 Dieses Dokument definiert das **Governance-Gate vor späterem produktivem Anwendungscode**. Es bereitet Entscheidungen **vor**; es trifft keine. Jede hier enthaltene Empfehlung ist ausdrücklich `PROPOSED / UNACCEPTED` und wird erst durch eine eigene, ausdrückliche Human-Maintainer-Entscheidung verbindlich.
@@ -1384,6 +1386,15 @@ Dieses Gate wird **erst nach** Gate A und **erst nach** einer vorhandenen Implem
 
 **Bilanz Gate B: 0 von 8 erfüllt. Realer Zielzugriff bleibt untersagt.**
 
+> **Gate-B-Grenznotiz zur `CO-WP-034`-Testautorität (fail-closed, `B-5` bleibt offen).** Der Human Maintainer hat innerhalb von `CO-WP-034` eine **begrenzte lokale Testausführung** autorisiert (§17.2). Diese Autorität ist **ausschließlich** auf die bestehende, **I/O-freie** kanonische Observation Domain unter `internal/observe/` gerichtet — **kein** reales Ziel, **kein** Collector, **keine** Hostquelle, **kein** Netz, **kein** SSH, **keine** Remote-Ausführung, **keine** reale Beobachtung, **keine** Fixture, **kein** Lab. Dieses Gate governt demgegenüber ausdrücklich die Voraussetzungen **vor realer Beobachtung / Zielausführung**. `B-5` verlangt die Testausführungsautorität **in diesem Sinne**; ob die auf die reine Domäne begrenzte Autorität ihn ganz oder teilweise deckt, ist aus dem bestehenden autoritativen Text **nicht** eindeutig ableitbar. Nach der Fail-closed-Regel dieses Dokuments wird `B-5` daher **nicht** als erfüllt gewertet und **nicht** selbst befördert; die Bilanz bleibt **unverändert**. Die Auflösung dieser Grenzfrage ist eine **eigene Human-Maintainer-Disposition** und wird hier **nicht** vorweggenommen. Bindend:
+>
+> ```text
+> Testausführungsautorität aufgezeichnet != B-5 erfüllt
+> begrenzte Domänen-Testautorität        != Testausführungsautorität für reale Beobachtung
+> B-5 erfüllt                            != Gate B passiert
+> Autorität innerhalb eines WP           != Gate-B-Punkt bewertet
+> ```
+
 ```text
 checklist documented != checklist satisfied
 Gate A open          = productive code NOT AUTHORIZED
@@ -1445,6 +1456,77 @@ Tests:            0 implementiert · 0 ausgeführt · Testquelle KEINE
 Drittabhängigk.:  0
 Zielzugriff:      KEINER — P-1 NOT AUTHORIZED · P-2 NOT SATISFIED
 Nachfolger:       KEINER erzeugt · KEINER reserviert · KEINE CO-WP-034
+                  (Stand zum Abschluss von CO-WP-033; die Aussage über
+                  den Abschluss bleibt zutreffend. CO-WP-034 ist später
+                  durch einen davon GETRENNTEN, ausdrücklichen Human-
+                  Maintainer-Autorisierungsakt entstanden — siehe §17.2.)
+```
+
+### 17.2 Current State — `CO-WP-034`
+
+`CO-WP-034 – First Source Verification: Go Module, Build & Unit-Test Enablement` ist **erzeugt und autorisiert** (Queue-Status `planned`; primärer Typ `test-only` aus dem bestehenden Typenkatalog — **kein** neuer Typ eingeführt; Phase `Observe`; Wertslice *Local Linux Host Identity & Basic System Observation*; autorisierte Baseline `983b7698e65de59024c78a4cef5837891cf27608`). Die Entstehung erfolgte **ausschließlich** durch einen eigenen, ausdrücklichen Human-Maintainer-Autorisierungsakt und **nicht** aus dem Abschluss von `CO-WP-033` (angewandter Präzedenzfall `CO-WP-033`). Die Regel aus §17 bleibt unverändert in Kraft und ist auf `CO-WP-034` erneut angewandt: dessen Autorisierung erzeugt **keinen** Nachfolger, reserviert **keine** Kennung — insbesondere **keine** `CO-WP-035` — und begründet **keine** Erwartung.
+
+**Begrenzter Zweck.** Die kleinste reproduzierbare lokale Go-Build-/Test-Hülle herstellen, die zur Verifikation der **bereits vorhandenen** `CO-WP-033`-Produktivquelle erforderlich ist — **ohne** Produktfunktionalität, **ohne** Collector-Verhalten, **ohne** Zielzugriff.
+
+**Zweistufiges Ausführungsmodell.** **Stage A — WP Activation / Authority Recording** ist **AUTORISIERT** und ausschließlich docs-only. Sie besteht aus der Queue-Realisierung und der Aufzeichnung der bereits erteilten Human-Maintainer-Autorität in genau **vier** bestehenden Trägerdokumenten ([WORK_PACKAGE_QUEUE.md](../../project-system/WORK_PACKAGE_QUEUE.md), dieses Dokument, [OBSERVE_LOCAL_LINUX_HOST_TEST_ENVELOPE.md](../testing/OBSERVE_LOCAL_LINUX_HOST_TEST_ENVELOPE.md), [NEXT_PHASE.md](../../project-system/NEXT_PHASE.md)) — **keine** fünfte Datei, **keine** Anlage, **keine** Löschung, **keine** Umbenennung, **keine** Verschiebung. **Stage B ist NICHT FREIGEGEBEN**; sie erfordert eine **eigene, davon getrennte, ausdrückliche Human-Maintainer-Continue-Entscheidung** nach Nova-Review und Human-Maintainer-Integration von Stage A.
+
+**Toolchain-Entscheidung (aufgezeichnet, nicht ausgeübt).** Exakte Go-Version **`1.27.1`** — **kein** `latest`, **kein** `1.27.x`, **kein** `>=1.27`, **kein** `auto`. Distributionsklasse: **offizielle Upstream-Go-Binärdistribution**; bevorzugtes Host-Artefakt `go1.27.1.windows-amd64.zip`. Exakte Artefaktidentität, SHA-256 und lokaler Bereitstellungspfad müssen **vor** jeder Stage-B-Toolchain-Nutzung **human-maintainer-verifiziert** sein. Toolchain-**Nutzung** ist eine **Stage-B-Vorbedingung**; Toolchain-**Beschaffung**, **-Installation**, **-Aktualisierung** und **automatisches Toolchain-Switching** sind **NICHT AUTORISIERT**.
+
+**Modulentscheidung (aufgezeichnet, nicht ausgeführt).** Exakter Modulpfad **`github.com/KayKaspers/CoreOps`**; künftige minimale `go.mod`-Direktiven `module github.com/KayKaspers/CoreOps` und `go 1.27.1`. `require` **none** · `replace` **none** · `exclude` **none** · `retract` **none** · externe Abhängigkeiten **0** · `go.sum` **nicht erwartet**. **`go.mod` ist in Stage A weder angelegt noch autorisiert.**
+
+**Offline-/Toolchain-Umgebungsautorität (Stage-B-Laufkontrollen).** `GOTOOLCHAIN=local` · `GOPROXY=off` · `GOSUMDB=off` · `GOVCS=*:off` · `CGO_ENABLED=0`. **Kein** persistentes `go env -w`, **kein** generischer Environment-Dump. Es handelt sich um **autorisierte Stage-B-Laufkontrollen**, **nicht** um Stage-A-Ausführungshandlungen.
+
+**Fail-closed Netzgrenze.** Primäre Human-Maintainer-Entscheidung: **Windows Sandbox mit `Networking = Disable`** — ausschließlich nutzbar, sofern bereits vom Human Maintainer bereitgestellt. `CO-WP-034` darf Windows Sandbox **nicht** aktivieren, **nicht** installieren, das Windows-Feature **nicht** hinzufügen und Host-Windows-Features **nicht** rekonfigurieren. Stage B hat **fail-closed abzubrechen**, wenn die erforderliche Umgebung nicht verfügbar ist. Bindend: `Environment-Flags allein ≠ hinreichende fail-closed Netzisolation`.
+
+**Cache-/Temp-Grenze.** Stage B verwendet ausdrücklich **ephemere** Verifikationspfade für `GOCACHE`, `GOTMPDIR` und `GOMODCACHE` (semantische Beispielorte `C:\CoreOpsVerify\gocache`, `C:\CoreOpsVerify\tmp`, `C:\CoreOpsVerify\gomodcache`). Sie sind **ephemer**, **kein** Repository-Zustand, **kein** Produktzustand und **keine** Evidenzautorität. **In Stage A nicht angelegt.**
+
+**Technische Stage-B-Dateiautorität (autorisierter WP-Scope, Ausführung nicht freigegeben).** Geplante Anlage: `go.mod` · `internal/observe/observation_test.go` · `internal/observe/field_test.go` · `internal/observe/outcome_test.go` · `internal/observe/provenance_test.go` · `internal/observe/freshness_test.go` · `internal/observe/composition_test.go` · `docs/testing/OBSERVE_FIRST_SOURCE_VERIFICATION_EVIDENCE.md`. **In Stage A ausdrücklich nicht angelegt.**
+
+**Testautorität (aufgezeichnet).** Der Human Maintainer hat **begrenzte lokale Testausführung** innerhalb `CO-WP-034` autorisiert, ausschließlich gegen die bestehende, **I/O-freie** Observation Domain — **kein** reales Ziel, **kein** Collector, **keine** Hostquelle, **kein** Netz, **kein** SSH, **keine** Remote-Ausführung, **keine** reale Beobachtung. Bindend: `begrenzte Testautorität erteilt ≠ Stage B freigegeben`.
+
+**Autorisierte Stage-B-Verifikationsmatrix.** (1) exakte Go-Versionsverifikation · (2) Modulidentitätsverifikation · (3) Zero-Third-Party-Modulschluss · (4) read-only `gofmt`-Verifikation · (5) `go vet` · (6) paketweiser `go build` · (7) begrenzte Unit-Tests. **Nicht enthalten:** Coverage-Gate · Race-Detector-Pflicht · CI · Container-Build · natives Executable · SBOM · Release-Artefakt. **Stage A führt keinen dieser Punkte aus.**
+
+**Produktivquelle — hart read-only.** Die sechs Go-Quelldateien unter `internal/observe/` (`observation.go`, `field.go`, `outcome.go`, `provenance.go`, `freshness.go`, `composition.go`) werden **nicht** geändert: **kein** `gofmt`-Schreiblauf, **keine** Bereinigung, **keine** Kommentaränderung, **kein** Refactoring, **kein** Bugfix, **keine** Umbenennung, **keine** API-Anpassung, **keine** Whitespace-Änderung. Findet Stage B später einen Verstoß gegen `gofmt`, `go vet`, `go build` oder einen korrekten vertragsabgeleiteten Test, gilt **`STOP — SOURCE_VERIFICATION_FAILED`**; eine Korrektur der Produktivquelle erfordert eine **eigene `code-fix`-Autorität**. Bindend: `VERIFY ≠ REPAIR PRODUCT SOURCE`.
+
+**Standalone-First.** `CO-WP-034` begründet **keine** technische Anforderung an Core Vision, NDF-Runtime, Core-Dev, Core Brain, CDS, CDF, MCP, zentrale Core DB oder zentralen Core Event Bus. Build und Test müssen allein mit dem CoreOps-Repository, der freigegebenen lokalen Go-Toolchain und der freigegebenen isolierten Verifikationsumgebung funktionieren.
+
+**Gate-Verhältnis.** **Gate A bleibt `14 von 14` erfüllt — PASSIERT** (§16.1). **Gate B bleibt `0 von 8` — NICHT PASSIERT** (§16.2); `B-5` ist durch die Aufzeichnung der Testausführungsautorität **nicht** erfüllt und **nicht** selbst befördert (§16.2, Gate-B-Grenznotiz); `B-1`, `B-2`, `B-3`, `B-4`, `B-6`, `B-7` und `B-8` bleiben **offen**.
+
+**Compatibility dieser Anwendung.** **Keine** Änderung an der Observation-Contract-Semantik, an der historischen `A-13`-Entscheidungssemantik, am historischen `A-14`-Stand, an `P-1`, `P-2` oder `P-3`, an der Dependency-Admission-Policy oder an der Release-Governance. **Keine** neue Decision-, Risk-, ADR-, CCR-, Capability-, Support-Status-, Lessons- oder NDF-Feedback-Kennung.
+
+```text
+CO-WP-034:        CREATED / AUTHORIZED
+Queue-Status:     planned  (planned != unautorisiert)
+Primärer Typ:     test-only
+Baseline:         983b7698e65de59024c78a4cef5837891cf27608
+Stage A:          AUTORISIERT · AUSGEFÜHRT im Arbeitsverzeichnis
+                  (4 Trägerdokumente; docs-only)
+Stage B:          NICHT GESTARTET · NICHT FREIGEGEBEN
+                  erfordert eigene HM-Continue-Entscheidung
+Go-Version:       1.27.1  (exakt; kein latest/1.27.x/>=1.27/auto)
+Distribution:     offizielle Upstream-Go-Binärdistribution
+                  go1.27.1.windows-amd64.zip (bevorzugtes Host-Artefakt)
+Artefaktprüfung:  Stage-B-Vorbedingung (Identität + SHA-256 + Pfad)
+Modulpfad:        github.com/KayKaspers/CoreOps
+require/replace/exclude/retract: none · externe Deps: 0 · go.sum: nicht erwartet
+Laufkontrollen:   GOTOOLCHAIN=local · GOPROXY=off · GOSUMDB=off
+                  GOVCS=*:off · CGO_ENABLED=0  (kein go env -w)
+Netzisolation:    Windows Sandbox / Networking = Disable (primär)
+                  nur falls bereits vom HM bereitgestellt; NICHT gestartet
+Cache/Temp:       ephemer · kein Repo-/Produktzustand · keine Evidenzautorität
+                  in Stage A NICHT angelegt
+go.mod / go.sum:  NICHT ANGELEGT · in Stage A NICHT AUTORISIERT
+Testquelle:       KEINE · 6 geplante *_test.go in Stage A NICHT angelegt
+Evidenzdokument:  NICHT ANGELEGT
+Produktivquelle:  UNVERÄNDERT · hart read-only
+Toolchain:        NICHT BESCHAFFT · NICHT INSTALLIERT · NICHT AUSGEFÜHRT
+gofmt/go vet/go build/go test: NICHT AUSGEFÜHRT
+Tests:            0 implementiert · 0 ausgeführt · Evidenz KEINE
+Verifikation:     KEINE durchgeführt
+Gate A:           14 von 14 — PASSIERT
+Gate B:           0 von 8 — NICHT PASSIERT · B-5 offen (nicht befördert)
+Zielzugriff:      KEINER — P-1 NOT AUTHORIZED · P-2 NOT SATISFIED
+Nachfolger:       KEINER erzeugt · KEINER reserviert · KEINE CO-WP-035
 ```
 
 ## 18. Compatibility
